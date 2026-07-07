@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Placeholders - Stellaris Wiki</title>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="skin-vectorparadox static-mirror">
 <div id="mw-wrapper">
   <header id="mw-header">
-    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
   </header>
   <main id="content" class="mw-body" role="main">
     <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Placeholders</span></h1>
@@ -17,8 +17,8 @@
       <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
 <div class="mw-parser-output"><p><b>Placeholders</b> are for compatibility with other mods, are bits of code that are designed to be ignored by the game until they are overwritten by another mod. This allows to reduce the amount of errors in the logs.
 Not all entries are capable of having placeholders without breaking the code, either because they are subject to the DUPL bug, too complex to handle, or don't allow them.
-The file naming must respect the load order to be loaded first, for more details, see <a href="/Modding.html#Overwriting_specific_elements" title="Modding">Overwriting specific elements</a>.
-</p><p><b>Since v3.14</b>, <a href="https://stellaris.paradoxwikis.com/Inline_scripts" class="mw-redirect" title="Inline scripts">inline scripts</a> have been established as good practices, which can replace the old global flags and trigger placeholder concept (if they can be used at the specific points; initiated by modder TTFTCUTS (Gigastructures)<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> and RoAdd independently), in combination with global <a href="/Dynamic_modding.html#Scripted_variables" title="Dynamic modding">scripted variables</a>. This has the advance of increased performance and loading time, and reduces even the error logs to zero. So instead of checking a condition every time the evaluation is performed, this happens once when the game is loaded, depending on whether a mod is missing (placeholder value 0 when merging) or present (value 1 provided by the mod).
+The file naming must respect the load order to be loaded first, for more details, see <a href="Modding.html#Overwriting_specific_elements" title="Modding">Overwriting specific elements</a>.
+</p><p><b>Since v3.14</b>, <a href="https://stellaris.paradoxwikis.com/Inline_scripts" class="mw-redirect" title="Inline scripts">inline scripts</a> have been established as good practices, which can replace the old global flags and trigger placeholder concept (if they can be used at the specific points; initiated by modder TTFTCUTS (Gigastructures)<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> and RoAdd independently), in combination with global <a href="Dynamic_modding.html#Scripted_variables" title="Dynamic modding">scripted variables</a>. This has the advance of increased performance and loading time, and reduces even the error logs to zero. So instead of checking a condition every time the evaluation is performed, this happens once when the game is loaded, depending on whether a mod is missing (placeholder value 0 when merging) or present (value 1 provided by the mod).
 No extra scripted effect or triggers are necessary anymore, just the global scripted "<b>placeholder variable</b>" for the specific mod and if needed the standardized inline script (e.g. <code>merger_of_rules/toggled_code</code> from "The Merger of Rules" mod).
 </p><p>
 If you just want other mods to be compatible with your mod, all you need to do is declare a specific scripted mod variable. For example: </p><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="nd">@has_planetary_diversity</span> <span class="o">=</span> <span class="mi">1</span>
@@ -296,7 +296,7 @@ For example:
 <dl><dt>Known issues</dt>
 <dd>Authorities are loaded in a random order since v3.12.</dd>
 <dd>District and megastructures order is dependant of load/declaration order.</dd>
-<dd>Technologies will inherit the <code>potential</code> part of the code if the overwriting tech doesn't have one, thus the use of an <a href="/Mod_detection.html" title="Mod detection">ID Trigger</a>: a scripted trigger that the mod author sets to <code>always = yes</code> while the mod checking it uses a placeholder one.</dd></dl>
+<dd>Technologies will inherit the <code>potential</code> part of the code if the overwriting tech doesn't have one, thus the use of an <a href="Mod_detection.html" title="Mod detection">ID Trigger</a>: a scripted trigger that the mod author sets to <code>always = yes</code> while the mod checking it uses a placeholder one.</dd></dl>
 <div class="mw-references-wrap"><ol class="references">
 <li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https:github.com/Inny78/Merger-of-Rules/pull/2">Implementation of a Toggled Code Inline by TTFTCUTS</a></span>
 </li>

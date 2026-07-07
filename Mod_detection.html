@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mod detection - Stellaris Wiki</title>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="skin-vectorparadox static-mirror">
 <div id="mw-wrapper">
   <header id="mw-header">
-    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
   </header>
   <main id="content" class="mw-body" role="main">
     <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Mod detection</span></h1>
@@ -19,7 +19,7 @@
 </p><p><b>Global Flag</b>: You can set a global flag to identify your mod in an event that will fire at game start.
 The main disadvantage is that you can't check for it before game start, making it unusable for things like policies or buildings for example.
 </p><p>These two other methods are preferable:
-</p><p><b>ID Trigger</b>: An ID Trigger is a scripted trigger that is set to be always true. The mod that wants to detect it will need to use a <a href="/Placeholders.html" title="Placeholders">placeholder</a> trigger set to be always false. If the target mod is present, it will overwrite this trigger.
+</p><p><b>ID Trigger</b>: An ID Trigger is a scripted trigger that is set to be always true. The mod that wants to detect it will need to use a <a href="Placeholders.html" title="Placeholders">placeholder</a> trigger set to be always false. If the target mod is present, it will overwrite this trigger.
 </p><p><b>ID Variable</b>: This method is efficient in jobs calculations. The target mod creates a scripted variable set to 1, and to detect it, a placeholder variable set to 0 will be overwritten if the target mod is present.
 </p><p>It can then be used as a multiplier, or checked for its value.
 </p>

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Economy modding - Stellaris Wiki</title>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="skin-vectorparadox static-mirror">
 <div id="mw-wrapper">
   <header id="mw-header">
-    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
   </header>
   <main id="content" class="mw-body" role="main">
     <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Economy modding</span></h1>
@@ -20,7 +20,7 @@
 <p><span style="white-space:nowrap">Version</span>
 </p>
 </div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
-<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
 <p>This page is about modding of <a href="https://stellaris.paradoxwikis.com/Economy" class="mw-redirect" title="Economy">Economy</a>.
@@ -59,7 +59,7 @@
 <li><b>ai_weight</b> - How valuable should the AI consider this resource to be.</li>
 <li><b>ai_wants</b> - How much the AI wants this resource.</li>
 <li><b>prerequisites</b> - A list of technology keys to be researched before the empire can exploit this resource.</li>
-<li><b>visibility_prerequisite</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that determines if the empire should see this resource. Vanilla resources always have "always = yes".</li></ul>
+<li><b>visibility_prerequisite</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> that determines if the empire should see this resource. Vanilla resources always have "always = yes".</li></ul>
 <h3><span class="mw-headline" id="How_to_Make_my_Resources_Shown">How to Make my Resources Shown</span></h3>
 <p>The most easy way is to head to "interface/resource_groups/xxx.txt" and add the new resources to existing groups.
 </p><p>If more resource groups were added through mods, the new resource groups won't be shown without modding "interface/main.gui".
@@ -134,10 +134,10 @@ For instance, the following economy category
 </p>
 <ul><li><b>category = &lt;economy category key&gt;</b> - What economy category should this economy unit fall into. This economy will also be affected by modifiers related to the economy category.</li>
 <li><b>produces/upkeep/cost</b> - Production/Upkeep/Cost statement. Multiple allowed. Depending on the game object, some of them might make no sense, for example, an empire edict do not need the produces and upkeep statements.
-<ul><li><b>trigger</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this statement block apply.</li>
+<ul><li><b>trigger</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine should this statement block apply.</li>
 <li><b>&lt;resource key&gt; = &lt;float&gt;</b> - Multiple allowed.</li></ul></li></ul>
 <h4><span class="mw-headline" id="Economy_Unit_Example">Economy Unit Example</span></h4>
-<p>For example, the <a href="/Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher job has the following economy unit:
+<p>For example, the <a href="Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher job has the following economy unit:
 </p>
 <pre>resources = {
 	category = planet_researchers
@@ -158,123 +158,123 @@ For instance, the following economy category
 	}
 }
 </pre>
-<p>For this statement, a researcher will always produce <a href="https://stellaris.paradoxwikis.com/Research" title="Research"><img alt="Research.png" src="images/Research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Research points each <span class="effect-green" style="font-weight:bold;">+4</span>, and will also produce <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Unity <span class="effect-green" style="font-weight:bold;">+1</span> if the empire has the civic <a href="/Civics.html#Technocracy" title="Technocracy"><img alt="Technocracy" src="images/Civic_technocracy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Technocracy. In addition, a researcher will always cost <a href="https://stellaris.paradoxwikis.com/Consumer_goods" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Consumer Goods <span class="effect-red" style="font-weight:bold;">−2</span> for an upkeep cost. All these can be modified by modifiers like "planet_researchers_produces_mult".  See <a href="https://stellaris.paradoxwikis.com/Modifiers#Economic_Categories" class="mw-redirect" title="Modifiers">Modifiers#Economic_Categories</a> for how these modifiers are generated.
+<p>For this statement, a researcher will always produce <a href="https://stellaris.paradoxwikis.com/Research" title="Research"><img alt="Research.png" src="images/Research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Research points each <span class="effect-green" style="font-weight:bold;">+4</span>, and will also produce <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Unity <span class="effect-green" style="font-weight:bold;">+1</span> if the empire has the civic <a href="Civics.html#Technocracy" title="Technocracy"><img alt="Technocracy" src="images/Civic_technocracy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Technocracy. In addition, a researcher will always cost <a href="https://stellaris.paradoxwikis.com/Consumer_goods" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Consumer Goods <span class="effect-red" style="font-weight:bold;">−2</span> for an upkeep cost. All these can be modified by modifiers like "planet_researchers_produces_mult".  See <a href="https://stellaris.paradoxwikis.com/Modifiers#Economic_Categories" class="mw-redirect" title="Modifiers">Modifiers#Economic_Categories</a> for how these modifiers are generated.
 </p>
 <h2><span class="mw-headline" id="Trade_Route">Trade Route</span></h2>
 <p>Trade value collection is implemented through Starbase <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> while piracy suppression is implemented through Ship Modifiers.
 </p><p>Trade Value Conversion policy is defined at "common/policies/00_policies.txt". It doesn't directly affect actual trade route conversion rate.
 </p><p>Trade Value Conversion rates are abstract game objects defined at "common/trade_conversions/xxx.txt".
 </p>
-<ul><li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this conversion type apply. (Country scope)</li>
+<ul><li><b>potential</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine should this conversion type apply. (Country scope)</li>
 <li><b>weight</b> - If multiple conversions are valid to an empire, one with the highest weight wins.</li>
 <li><b>economic_category = &lt;economy category key&gt;</b> - Economy category of this conversion. Vanilla always use "trade_routes".</li>
 <li><b>conversion_rate</b> - A list of "&lt;resource key&gt; = &lt;float&gt;" pairs. Resource of this kind generated from trade routes every month is equal to the number provided here * collected empire trade value total.</li></ul>
 <h2><span class="mw-headline" id="Branch_Office">Branch Office</span></h2>
 <p>Branch Office value algorithm is hard-coded but some parameters are defined at "common/defines/00_defines.txt".
 </p><p>Branch Office resource production is implemented through a <a href="https://stellaris.paradoxwikis.com/Modifiers#Static_Modifier" class="mw-redirect" title="Modifiers">Static Modifier</a>, namely "branch_office_value". Vanilla has <code>planet_branch_offices_energy_produces_add = 1</code>, which means the branch office produces <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Energy Credits <span class="effect-green" style="font-weight:bold;">+1</span> for every point of Branch Office value.
-</p><p>Branch Office Buildings are special buildings with the field "branch_office_building = yes". See <a href="/Building_modding.html" title="Building modding">Building modding</a> for details.
+</p><p>Branch Office Buildings are special buildings with the field "branch_office_building = yes". See <a href="Building_modding.html" title="Building modding">Building modding</a> for details.
 </p>
 <div style="clear:both;"></div>
 <div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
-<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="Modding.html" title="Modding">Modding</a></b></div>
 <div style="font-size:0.9em;">
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire_modding.html" title="Empire modding">Empire</a> • <a href="Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="Policies_modding.html" title="Policies modding">Policies</a> • <a href="Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="Technology_modding.html" title="Technology modding">Technologies</a> • <a href="Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Leaders.html" title="Leaders">Leaders</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader_modding.html" title="Leader modding">Leaders</a> • <a href="Traits_modding.html" title="Traits modding">Leader traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species_modding.html" title="Species modding">Species</a> • <a href="Traits_modding.html" title="Traits modding">Species traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Land_warfare.html" title="Land warfare">Land warfare</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Army_modding.html" title="Army modding">Armies</a> • <a href="Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="War_modding.html" title="War modding">Casus Belli • War goals</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Event_modding.html" title="Event modding">Events</a> • <a href="Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a class="mw-selflink selflink">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="Defines.html" title="Defines">Defines</a> • <a class="mw-selflink selflink">Resources • Economy</a> • <a href="Game_start_modding.html" title="Game start modding">Game start</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="Font_modding.html" title="Font modding">Fonts</a> • <a href="Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="Flag_modding.html" title="Flag modding">Flags</a> • <a href="Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="Interface_modding.html" title="Interface modding">Interface</a> • <a href="Icon_modding.html" title="Icon modding">Icons</a> • <a href="Music_modding.html" title="Music modding">Music</a> • <a href="Localisation_modding.html" title="Localisation modding">Localisation</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
 </td></tr></tbody></table>
 </div></div>
 <!-- 

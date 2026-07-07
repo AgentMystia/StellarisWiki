@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Event modding - Stellaris Wiki</title>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="skin-vectorparadox static-mirror">
 <div id="mw-wrapper">
   <header id="mw-header">
-    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
   </header>
   <main id="content" class="mw-body" role="main">
     <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Event modding</span></h1>
@@ -20,7 +20,7 @@
 <p><span style="white-space:nowrap">Version</span>
 </p>
 </div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
-<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.6.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
@@ -66,20 +66,20 @@
 <p>There are several types of events:
 </p>
 <ol><li><code>event</code> – for an entire game (global event)</li>
-<li><code>country_event</code> – for an entire <a href="/Empire_modding.html" title="Empire modding">empire</a></li>
-<li><code>planet_event</code> – for a <a href="/Planet_modding.html" title="Planet modding">planet</a></li>
-<li><code>fleet_event</code> – for a <a href="/Fleet_modding.html" title="Fleet modding">fleet</a></li>
-<li><code>ship_event</code> – for a <a href="/Ship_modding.html" title="Ship modding">ship</a></li>
+<li><code>country_event</code> – for an entire <a href="Empire_modding.html" title="Empire modding">empire</a></li>
+<li><code>planet_event</code> – for a <a href="Planet_modding.html" title="Planet modding">planet</a></li>
+<li><code>fleet_event</code> – for a <a href="Fleet_modding.html" title="Fleet modding">fleet</a></li>
+<li><code>ship_event</code> – for a <a href="Ship_modding.html" title="Ship modding">ship</a></li>
 <li><code>pop_faction_event</code> – for a <a href="https://stellaris.paradoxwikis.com/Faction" class="mw-redirect" title="Faction">faction</a></li>
-<li><code>pop_group_event</code> – for a <a href="/Population.html" title="Population">population</a> unit (since v4.0, former <code>pop_event</code>)</li>
+<li><code>pop_group_event</code> – for a <a href="Population.html" title="Population">population</a> unit (since v4.0, former <code>pop_event</code>)</li>
 <li><code>observer_event</code> – for the observer (development usage only; use console command "observe" to enter observer mode)</li>
-<li><code>system_event</code> – for a <a href="/System_modding.html" title="System modding">system</a>, <a href="/Scopes.html#Scope_Types" title="Scopes">galactic_object</a> (since v3.0)</li>
-<li><code>starbase_event</code> – for a <a href="/Starbase_modding.html" title="Starbase modding">starbase</a> (since v3.0)</li>
-<li><code>leader_event</code> – for a <a href="/Leader_modding.html" title="Leader modding">leader</a> (since v3.0)</li>
+<li><code>system_event</code> – for a <a href="System_modding.html" title="System modding">system</a>, <a href="Scopes.html#Scope_Types" title="Scopes">galactic_object</a> (since v3.0)</li>
+<li><code>starbase_event</code> – for a <a href="Starbase_modding.html" title="Starbase modding">starbase</a> (since v3.0)</li>
+<li><code>leader_event</code> – for a <a href="Leader_modding.html" title="Leader modding">leader</a> (since v3.0)</li>
 <li><code>espionage_operation_event</code> – for use inside <a href="https://stellaris.paradoxwikis.com/Espionage" class="mw-redirect" title="Espionage">espionage</a> operations (since v3.0)</li>
 <li><code>first_contact_event</code> – for <a href="https://stellaris.paradoxwikis.com/First_contact" class="mw-redirect" title="First contact">first contacts</a> (since v3.0)</li>
-<li><code>situation_event</code> – for a <a href="/Situations.html" title="Situations">situation</a> (since v3.3)</li>
-<li><code>agreement_event</code> – for <a href="/Subject_empire.html#Terms_of_agreement" title="Subject empire">subject agreements</a> (since v3.4)</li></ol>
+<li><code>situation_event</code> – for a <a href="Situations.html" title="Situations">situation</a> (since v3.3)</li>
+<li><code>agreement_event</code> – for <a href="Subject_empire.html#Terms_of_agreement" title="Subject empire">subject agreements</a> (since v3.4)</li></ol>
 <h2><span class="mw-headline" id="Basic_Behavior">Basic Behavior</span></h2>
 <h3><span class="mw-headline" id="Namespace_and_Event_ID">Namespace and Event ID</span></h3>
 <p>The top of every event file must contain a namespace line.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> The namespace is used as the basis for identifying all events in the file. If you open the <code>on_action_events.txt</code> file near the top of the file you will find <code>namespace = action</code>. Then every event in this file has an ID that starts with <code>action</code> followed by a period then a unique number as shown here for the <code>actions.8</code> event:
@@ -115,7 +115,7 @@
 </p><p>Similarly works <code>fire_only_once = yes</code>. However unlike <code>is_triggered_only</code> the code will still be polled, only to be removed after it was executed at least once. Also, as of 2.1.2, the conditions for a <code>fire_only_once</code> event should exclude the event firing a second time or error log entries are created.
 </p>
 <h3><span class="mw-headline" id="Condition">Condition</span></h3>
-<p>Events can have conditions represented with <code>trigger</code> section of <a href="/Conditions.html" title="Conditions">Condition</a> statements . If the condition is evaluated false, this event doesn't trigger. Here is an example from the event "apoc.1".
+<p>Events can have conditions represented with <code>trigger</code> section of <a href="Conditions.html" title="Conditions">Condition</a> statements . If the condition is evaluated false, this event doesn't trigger. Here is an example from the event "apoc.1".
 </p>
 <div class="mw-highlight mw-highlight-lang-tcl mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="nv">trigger</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="k">{</span><span class="w"></span>
 <span class="w"> 	</span><span class="nv">owner</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="k">{</span><span class="w"></span>
@@ -177,7 +177,7 @@ If an entry is not included, it will be ignored. They work for planet, pop, syst
 <p>By default every Event will display a window and thus needs at least one option and a number of textfields to display. In order to suppress that window (and the need to set all the necessary text fields) <code>hide_window = yes</code> can be used. This is mainly used to trigger events that are used for achievements or events that the player should not know are happening.
 </p>
 <h3><span class="mw-headline" id="Code_execution">Code execution</span></h3>
-<p>The primary place for code is the <code>immediate</code> section of <a href="/Effects.html" title="Effects">Effect</a> statements. Most events have all their code contained inside this block. You can use if statement in <code>immediate</code> section, like the following, as seen in colony.events.txt.
+<p>The primary place for code is the <code>immediate</code> section of <a href="Effects.html" title="Effects">Effect</a> statements. Most events have all their code contained inside this block. You can use if statement in <code>immediate</code> section, like the following, as seen in colony.events.txt.
 </p>
 <div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">immediate</span> <span class="o">=</span> <span class="p">{</span>
  	<span class="k">if</span> <span class="o">=</span> <span class="p">{</span>
@@ -223,12 +223,12 @@ Do note that when defining scopes, local event_targets will not be properly scop
 </p>
 <h2><span class="mw-headline" id="On_Actions">On Actions</span></h2>
 <p>Aside from the default polling another very common way to get an event triggered is <code>on_action</code>. The vanilla game itself has a number of events registered this way in <code>Stellaris\common\on_actions\00_on_actions.txt</code>
-</p><p>Mods can provide their own, uniquely named, on_action file whose events are called in addition the vanilla events. The file should be put into <code>Stellaris\common\on_actions\</code>, but the <a href="/Modding.html#Guidelines" title="Modding">Modding Guidelines</a> should be observed
+</p><p>Mods can provide their own, uniquely named, on_action file whose events are called in addition the vanilla events. The file should be put into <code>Stellaris\common\on_actions\</code>, but the <a href="Modding.html#Guidelines" title="Modding">Modding Guidelines</a> should be observed
 </p><p>The situations of triggering range from polling less aggressive (monthly or yearly) to numerous developments of the galaxy like ending of a planetary invasion, survey, entering of a system and so forth. This is later part is comparable to registering an Event in a GUI Environment of many higher programming languages.
 </p><p>Registered events should be marked with "triggered only" modifier. As easily dozens of events can be registered to any one development (often belonging to the same chain) the triggers decide which events are actually called.
 </p><p>A special case is random events which have a specific chance to trigger anytime that development happens. However, the triggers can make this a lot rarer than even chance might indicates.
 </p><p>Aside from "on_actions", events can be triggered from any file with an effects field. Most notable are anomalies, but one can similarly trigger an event from e.g. within an edict (it will then trigger every time the edict is activated), policy, diplomatic action, etc.
-</p><p>Since 3.0 you can define your own "on_actions" in script by <a href="/Effects.html" title="Effects">effect</a> <code>fire_on_action = { on_action = &lt;string&gt; scopes = { from = X fromfrom = Y } }</code>.
+</p><p>Since 3.0 you can define your own "on_actions" in script by <a href="Effects.html" title="Effects">effect</a> <code>fire_on_action = { on_action = &lt;string&gt; scopes = { from = X fromfrom = Y } }</code>.
 Do note that when defining scopes, fire_on_action appears to be considered a scope and all non-event_target scopes require a prev added before them (<code>from = prev</code> will scope to the scope firing the on_action, and to scope to the previous scope <code>from = prevprev</code> must be used instead).
 In addition, event_targets will not be properly scoped to in events firing from the on_action if used for any scope above from (fromfrom, fromfromfrom, etc.).<sup id="cite_ref-scopes_8-1" class="reference"><a href="#cite_note-scopes-8">&#91;8&#93;</a></sup>
 </p>
@@ -324,7 +324,7 @@ In addition, event_targets will not be properly scoped to in events firing from 
 </p><p><b>allow</b> Defines if the option is choosable. A option can be both shown and not choosable, often to show which options will become available with specific play. This subblock is comparable to the "Enabled" value or property in many GUI environments. The check is done only when the Event window is first shown and not updated with game progress.
 </p><p><b>tag</b> Special tag to indicate that this is the option to dismiss/hire a leader, only works if the country event has <code>event_window_type = leader_recruit</code> (added with 3.8). 
 </p><p><b>hide_option_if_not_allowed</b> Special option that hides this Option if it's not allowed, only works if the country event has <code>event_window_type = leader_recruit</code> (added with 3.10). 
-</p><p><b><a href="/Effects.html" title="Effects">Effect</a> statements</b> can be put into the body of the option. No special block must be put around it.
+</p><p><b><a href="Effects.html" title="Effects">Effect</a> statements</b> can be put into the body of the option. No special block must be put around it.
 </p><p>The game tries to generate a tooltip for this option based on all the effects. <code>custom_tooltip = xxx</code> can be used to show the player a tooltip in addition to the generated tooltips. Also, <code>hidden_effect = { … }</code> can be used to contain other effects to prevent the game from generating tooltips based on them.
 </p>
 <div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">option</span> <span class="o">=</span> <span class="p">{</span>
@@ -612,7 +612,7 @@ In addition, event_targets will not be properly scoped to in events firing from 
 </li>
 <li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">(in-game pre_triggers docu "000_added_pre_triggers_to_planet_events.txt").</span>
 </li>
-<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><code class="tooltip">is_ai</code> –  Probably <a href="/Patch_3.3.html" title="Patch 3.3">Stellaris 3.3 "Libra" update</a> fixed this trigger, as part of the comprehensive scripting and modifier system overhaul.</span>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><code class="tooltip">is_ai</code> –  Probably <a href="Patch_3.3.html" title="Patch 3.3">Stellaris 3.3 "Libra" update</a> fixed this trigger, as part of the comprehensive scripting and modifier system overhaul.</span>
 </li>
 <li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">"possible_pre_triggers" to jobs, see "common/pop_jobs/000_pretriggers.txt"</span>
 </li>
@@ -622,112 +622,112 @@ In addition, event_targets will not be properly scoped to in events firing from 
 </li>
 <li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">See the Modding Page for Custom Event Window modding &gt; <a href="https://stellaris.paradoxwikis.com//stellaris.paradoxwikis.com/Interface_modding" class="new" title="/stellaris.paradoxwikis.com/Interface modding (page does not exist)">Interface modding - Stellaris Wiki</a></span>
 </li>
-<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">See <i><a href="/Event_pictures.html" title="Event pictures">Event pictures</a></i> for more.</span>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">See <i><a href="Event_pictures.html" title="Event pictures">Event pictures</a></i> for more.</span>
 </li>
 <li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text">Forum: <a href="https://forum.paradoxplaza.com/forum/index.php?threads/1523352" class="extiw" title="forum:1523352">Stellaris Dev Diary #253 – Three in One 3.4 'Cepheus’ Patch Notes and more!</a>, 2022-05-05</span>
 </li>
 </ol></div>
 <div style="clear:both;"></div>
 <div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
-<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="Modding.html" title="Modding">Modding</a></b></div>
 <div style="font-size:0.9em;">
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire_modding.html" title="Empire modding">Empire</a> • <a href="Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="Policies_modding.html" title="Policies modding">Policies</a> • <a href="Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="Technology_modding.html" title="Technology modding">Technologies</a> • <a href="Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Leaders.html" title="Leaders">Leaders</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader_modding.html" title="Leader modding">Leaders</a> • <a href="Traits_modding.html" title="Traits modding">Leader traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species_modding.html" title="Species modding">Species</a> • <a href="Traits_modding.html" title="Traits modding">Species traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Land_warfare.html" title="Land warfare">Land warfare</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Army_modding.html" title="Army modding">Armies</a> • <a href="Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="War_modding.html" title="War modding">Casus Belli • War goals</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Events</a> • <a href="Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="Defines.html" title="Defines">Defines</a> • <a href="Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="Game_start_modding.html" title="Game start modding">Game start</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="Font_modding.html" title="Font modding">Fonts</a> • <a href="Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="Flag_modding.html" title="Flag modding">Flags</a> • <a href="Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="Interface_modding.html" title="Interface modding">Interface</a> • <a href="Icon_modding.html" title="Icon modding">Icons</a> • <a href="Music_modding.html" title="Music modding">Music</a> • <a href="Localisation_modding.html" title="Localisation modding">Localisation</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
 </td></tr></tbody></table>
 </div></div>
 <!-- 

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ship modding - Stellaris Wiki</title>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="skin-vectorparadox static-mirror">
 <div id="mw-wrapper">
   <header id="mw-header">
-    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
   </header>
   <main id="content" class="mw-body" role="main">
     <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Ship modding</span></h1>
@@ -20,10 +20,10 @@
 <p><span style="white-space:nowrap">Version</span>
 </p>
 </div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
-<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.0.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
-<p>This page is about modding of <a href="https://stellaris.paradoxwikis.com/Ships" class="mw-redirect" title="Ships">Ships</a>, <a href="/Ship_designer.html" title="Ship designer">Sections and Components</a>.
+<p>This page is about modding of <a href="https://stellaris.paradoxwikis.com/Ships" class="mw-redirect" title="Ships">Ships</a>, <a href="Ship_designer.html" title="Ship designer">Sections and Components</a>.
 </p>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
@@ -189,7 +189,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <tr>
 <td><b>graphical_culture = { mammalian_01 … }</b>
 </td>
-<td colspan="5">A list of <a href="/Species_modding.html" title="Species modding">Graphical Cultures</a> this ship size is valid to have. Can also specify as <code>graphical_culture = no</code> to indicate that this ship size doesn't need Graphical Cultures.
+<td colspan="5">A list of <a href="Species_modding.html" title="Species modding">Graphical Cultures</a> this ship size is valid to have. Can also specify as <code>graphical_culture = no</code> to indicate that this ship size doesn't need Graphical Cultures.
 </td></tr>
 <tr>
 <td><b>entity = some_entity</b>
@@ -439,7 +439,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <tr>
 <td><b>potential_construction</b>
 </td>
-<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check should this ship size appear in the construction list of a Starbase or Megastructure. (Starbase or Megastructure scope, use <code>is_scope_type</code> to check scope type; FROM is the builder empire)
+<td colspan="2">A block of <a href="Conditions.html" title="Conditions">Conditions</a> to check should this ship size appear in the construction list of a Starbase or Megastructure. (Starbase or Megastructure scope, use <code>is_scope_type</code> to check scope type; FROM is the builder empire)
 </td>
 <td rowspan="2">Starbases usually have this field undefined, except for the Juggernaut.
 </td>
@@ -450,7 +450,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <tr>
 <td><b>possible_construction</b>
 </td>
-<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check can this ship size be built by a Starbase or Megastructure. If evaluated false, the construction option is still visible but grayed out with a tooltip. (Starbase or Megastructure scope, use <code>is_scope_type</code> to check scope type; FROM is the builder empire)
+<td colspan="2">A block of <a href="Conditions.html" title="Conditions">Conditions</a> to check can this ship size be built by a Starbase or Megastructure. If evaluated false, the construction option is still visible but grayed out with a tooltip. (Starbase or Megastructure scope, use <code>is_scope_type</code> to check scope type; FROM is the builder empire)
 </td>
 <td>The same. Among vanilla Defense Platforms, the Ion Cannon can only be built by Citadel-level Starbases.
 </td>
@@ -459,7 +459,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <tr>
 <td><b>resources</b>
 </td>
-<td colspan="5">An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this ship. This is the final cost if this ship size has <code>components_add_to_cost = no</code>. Although vanilla unused, resource productions is also allowed here.
+<td colspan="5">An <a href="Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this ship. This is the final cost if this ship size has <code>components_add_to_cost = no</code>. Although vanilla unused, resource productions is also allowed here.
 </td></tr>
 <tr>
 <td><b>min_upgrade_cost = { &lt;resource key&gt; = &lt;int&gt; }</b>
@@ -817,7 +817,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <tr>
 <td><b>resources</b>
 </td>
-<td>An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this Ship Section.
+<td>An <a href="Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this Ship Section.
 </td></tr>
 <tr>
 <td><b>ai_weight</b>
@@ -1008,21 +1008,21 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <td><b>size</b>
 </td>
 <td>One of the following is allowed.
-<ul><li><a href="/Ship_designer.html#Sections" title="Point defense"><img alt="Point defense" src="images/Slot_Point.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = point_defence</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Guided"><img alt="Guided" src="images/Slot_Guided.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = torpedo</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Extra large"><img alt="Extra large" src="images/Slot_XL.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = extra_large</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Titan"><img alt="Titan" src="images/Slot_Titan.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = titanic</code></li>
-<li><a href="/Ship_designer.html#Sections" title="World destroyer"><img alt="World destroyer" src="images/Slot_WD.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = planet_killer</code></li></ul>
+<ul><li><a href="Ship_designer.html#Sections" title="Point defense"><img alt="Point defense" src="images/Slot_Point.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = point_defence</code></li>
+<li><a href="Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
+<li><a href="Ship_designer.html#Sections" title="Guided"><img alt="Guided" src="images/Slot_Guided.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = torpedo</code></li>
+<li><a href="Ship_designer.html#Sections" title="Extra large"><img alt="Extra large" src="images/Slot_XL.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = extra_large</code></li>
+<li><a href="Ship_designer.html#Sections" title="Titan"><img alt="Titan" src="images/Slot_Titan.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = titanic</code></li>
+<li><a href="Ship_designer.html#Sections" title="World destroyer"><img alt="World destroyer" src="images/Slot_WD.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = planet_killer</code></li></ul>
 </td>
 <td>NOTE: Only large is currently in use.
 <p>small and medium can be added in component_slot_templates.
 </p>
-<ul><li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li></ul>
+<ul><li><a href="Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li></ul>
 </td></tr>
 <tr>
 <td><b>entities</b>
@@ -1065,7 +1065,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 </p><p>There are two type of Component Sets.
 </p>
 <ul><li>One is used to group weapon and utility components together to be used by Ship Designers that are usually the same type of Components of different sizes unlocked by a same Technology;</li>
-<li>Another is used to group all components that fix a <a href="/Ship_designer.html#Sections" title="Core"><img alt="Core" src="images/Slot_Common.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a> Core Component Slot which can be unlocked by different technologies.</li></ul>
+<li>Another is used to group all components that fix a <a href="Ship_designer.html#Sections" title="Core"><img alt="Core" src="images/Slot_Common.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a> Core Component Slot which can be unlocked by different technologies.</li></ul>
 <p>Core Components can be weapons and strike crafts, but such a weapon cannot fire and it doesn't have a turret entity. If it was a Planet Killer weapon, it can still be used but has no graphics.
 </p>
 <h3><span class="mw-headline" id="Data_Structure_4">Data Structure</span></h3>
@@ -1158,25 +1158,25 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <td><b>size</b>
 </td>
 <td>One of the following is allowed.
-<ul><li><a href="/Ship_designer.html#Sections" title="Point defense"><img alt="Point defense" src="images/Slot_Point.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = point_defence</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Guided"><img alt="Guided" src="images/Slot_Guided.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = torpedo</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Extra large"><img alt="Extra large" src="images/Slot_XL.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = extra_large</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Titan"><img alt="Titan" src="images/Slot_Titan.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = titanic</code></li>
-<li><a href="/Ship_designer.html#Sections" title="World destroyer"><img alt="World destroyer" src="images/Slot_WD.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = planet_killer</code></li></ul>
-<p>Without the <a href="/Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>&#32;Apocalypse DLC, ship designs with a Titanic or Planet Killer weapon cannot be saved as well as the weapons cannot be picked by a generated design.
+<ul><li><a href="Ship_designer.html#Sections" title="Point defense"><img alt="Point defense" src="images/Slot_Point.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = point_defence</code></li>
+<li><a href="Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
+<li><a href="Ship_designer.html#Sections" title="Guided"><img alt="Guided" src="images/Slot_Guided.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = torpedo</code></li>
+<li><a href="Ship_designer.html#Sections" title="Extra large"><img alt="Extra large" src="images/Slot_XL.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = extra_large</code></li>
+<li><a href="Ship_designer.html#Sections" title="Titan"><img alt="Titan" src="images/Slot_Titan.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = titanic</code></li>
+<li><a href="Ship_designer.html#Sections" title="World destroyer"><img alt="World destroyer" src="images/Slot_WD.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = planet_killer</code></li></ul>
+<p>Without the <a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>&#32;Apocalypse DLC, ship designs with a Titanic or Planet Killer weapon cannot be saved as well as the weapons cannot be picked by a generated design.
 </p>
 </td>
 <td>Only one is allowed.
-<ul><li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li></ul>
+<ul><li><a href="Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li></ul>
 </td>
 <td>One of the following is allowed.
-<ul><li><a href="/Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
-<li><a href="/Ship_designer.html#Sections" title="Auxiliary"><img alt="Auxiliary" src="images/Slot_Auxiliary.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = aux</code></li></ul>
+<ul><li><a href="Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
+<li><a href="Ship_designer.html#Sections" title="Auxiliary"><img alt="Auxiliary" src="images/Slot_Auxiliary.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = aux</code></li></ul>
 </td></tr>
 <tr>
 <td><b>type</b>
@@ -1190,7 +1190,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 </p><p>Point defenses is a stronger variant that it can target missiles and strike crafts.
 </p><p>Missiles have additional properties to specify missile stats, like speed, retarget range, missile hitpoints, and missile evasion.
 </p><p>Planet killers are no regular weapons. They can't be used in fleet battles, but can be used on planets by Colossi to trigger events.
-</p><p>Without the <a href="/Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>&#32;Apocalypse DLC, the fleet command to invoke the Planet Killer weapon can't be used.
+</p><p>Without the <a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>&#32;Apocalypse DLC, the fleet command to invoke the Planet Killer weapon can't be used.
 </p>
 </td>
 <td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
@@ -1258,7 +1258,7 @@ Weapon component entities should also have a locator named <code>turret_muzzle_0
 <tr>
 <td><b>resources</b>
 </td>
-<td colspan="3">An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this Component.
+<td colspan="3">An <a href="Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this Component.
 </td></tr>
 <tr>
 <td><b>modifier</b>
@@ -1734,8 +1734,8 @@ weapon_role_point_defense
 <h3><span id="How_does_Colossus_Weapons_Work.3F"></span><span class="mw-headline" id="How_does_Colossus_Weapons_Work?">How does Colossus Weapons Work?</span></h3>
 <div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px">Colossus Weapons are invoked through a fleet command of the Colossus.</span>
 <div class="mw-collapsible-content">
-<p>Before you can fire, a scripted-trigger called <code>can_destroy_planet_with_&lt;colossus weapon component key&gt;</code> is checked. Read the vanilla file "common/scripted_triggers/01_scripted_triggers_planet_killers.txt" and <a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> for details.
-</p><p>When the weapon is fired, an on-action called <code>on_destroy_planet_with_&lt;colossus weapon component key&gt;</code> is fired. Read the vanilla file "common/on_actions/01_planet_destruction.txt" and <a href="/Event_modding.html" title="Event modding">Event modding</a> for details.
+<p>Before you can fire, a scripted-trigger called <code>can_destroy_planet_with_&lt;colossus weapon component key&gt;</code> is checked. Read the vanilla file "common/scripted_triggers/01_scripted_triggers_planet_killers.txt" and <a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> for details.
+</p><p>When the weapon is fired, an on-action called <code>on_destroy_planet_with_&lt;colossus weapon component key&gt;</code> is fired. Read the vanilla file "common/on_actions/01_planet_destruction.txt" and <a href="Event_modding.html" title="Event modding">Event modding</a> for details.
 </p><p>There are also relevant localisation keys to the Colossus Weapons, more than just the component name and description.
 </p>
 <pre>FLEETORDER_DESTROY_PLANET_WITH_&lt;component key&gt;:0 "Preparing to crack $PLANET|Y$"
@@ -1791,7 +1791,7 @@ MESSAGE_DESC_FOR_&lt;component key&gt;:0 "was utterly destroyed by"
 <td>If yes, this ship will totally ignore auto movement patterns. If it is the fleet’s leader, you retain control to move to any point you direct while the rest of the fleet follows their movement patterns. If the ship goes through a hyperlane, the whole fleet will warp out.
 </td></tr></tbody></table>
 <h2><span class="mw-headline" id="Global_Ship_Designs">Global Ship Designs</span></h2>
-<p>Global Ship Designs are pre-scripted designs to be used by events with <a href="/Effects.html" title="Effects">Effects</a> such as <code>create_ship</code>. They are defined at <code>common/global_ship_designs/xyz.txt</code>.
+<p>Global Ship Designs are pre-scripted designs to be used by events with <a href="Effects.html" title="Effects">Effects</a> such as <code>create_ship</code>. They are defined at <code>common/global_ship_designs/xyz.txt</code>.
 </p>
 <h3><span class="mw-headline" id="Data_Structure_7">Data Structure</span></h3>
 <table class="wikitable mw-collapsible">
@@ -1859,105 +1859,105 @@ If your ship has weapons then each <code>weapon_component_template</code> also n
 </p>
 <div style="clear:both;"></div>
 <div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
-<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="Modding.html" title="Modding">Modding</a></b></div>
 <div style="font-size:0.9em;">
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire_modding.html" title="Empire modding">Empire</a> • <a href="Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="Policies_modding.html" title="Policies modding">Policies</a> • <a href="Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="Technology_modding.html" title="Technology modding">Technologies</a> • <a href="Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Leaders.html" title="Leaders">Leaders</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader_modding.html" title="Leader modding">Leaders</a> • <a href="Traits_modding.html" title="Traits modding">Leader traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species_modding.html" title="Species modding">Species</a> • <a href="Traits_modding.html" title="Traits modding">Species traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a class="mw-selflink selflink">Ships • Components</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a class="mw-selflink selflink">Ships • Components</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Land_warfare.html" title="Land warfare">Land warfare</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Army_modding.html" title="Army modding">Armies</a> • <a href="Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="War_modding.html" title="War modding">Casus Belli • War goals</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Event_modding.html" title="Event modding">Events</a> • <a href="Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="Defines.html" title="Defines">Defines</a> • <a href="Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="Game_start_modding.html" title="Game start modding">Game start</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="Font_modding.html" title="Font modding">Fonts</a> • <a href="Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="Flag_modding.html" title="Flag modding">Flags</a> • <a href="Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="Interface_modding.html" title="Interface modding">Interface</a> • <a href="Icon_modding.html" title="Icon modding">Icons</a> • <a href="Music_modding.html" title="Music modding">Music</a> • <a href="Localisation_modding.html" title="Localisation modding">Localisation</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
 </td></tr></tbody></table>
 </div></div>
 <!-- 

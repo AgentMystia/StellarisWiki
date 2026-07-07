@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pop Job modding - Stellaris Wiki</title>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="skin-vectorparadox static-mirror">
 <div id="mw-wrapper">
   <header id="mw-header">
-    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
   </header>
   <main id="content" class="mw-body" role="main">
     <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Pop Job modding</span></h1>
@@ -20,10 +20,10 @@
 <p><span style="white-space:nowrap">Version</span>
 </p>
 </div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
-<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
-<p>This page is about how to modify existing and how to create new <a href="/Jobs.html" title="Jobs">Jobs</a>.
+<p>This page is about how to modify existing and how to create new <a href="Jobs.html" title="Jobs">Jobs</a>.
 </p>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
@@ -83,7 +83,7 @@
 <td>(Optional) How long, in days, a pop of this category will take to demote. Defined (sometimes as 0) in vanilla for every pop category with a rank greater than 0 except worker.
 </td></tr>
 <tr>
-<td><b>should_apply_unemployment_penalties = { &lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt; }</b>
+<td><b>should_apply_unemployment_penalties = { &lt;<a href="Conditions.html" title="Conditions">conditions</a>&gt; }</b>
 </td>
 <td>If this block of conditions (Pop scope) evaluates to true, the modifiers in the unemployment_penalties block are applied and the unemployment empire alert is triggered. Vanilla usually disable unemployment alert for Pops of high living standard, being able to produce resources if unemployed.
 </td></tr>
@@ -118,7 +118,7 @@
 <tr>
 <td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>triggered_pop_modifier = {</b></span>
 <div class="mw-collapsible-content">
-<dl><dd>potential = { &lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt; }</dd>
+<dl><dd>potential = { &lt;<a href="Conditions.html" title="Conditions">conditions</a>&gt; }</dd>
 <dd>&lt;<a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a>&gt;</dd></dl></div></div></div><span style="visibility:hidden;color:transparent;">0</span><b>}</b>
 </td>
 <td>(Optional) A block of modifiers that are applied to the pop if the conditions in the potential block evaluate to true. Used in vanilla to apply a happiness bonus to unemployed pops with an unemployment happiness penalty if the Comfort the Fallen resolution is active.
@@ -126,17 +126,17 @@
 <tr>
 <td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>triggered_planet_modifier = {</b></span>
 <div class="mw-collapsible-content">
-<dl><dd>potential = { &lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt; }</dd>
+<dl><dd>potential = { &lt;<a href="Conditions.html" title="Conditions">conditions</a>&gt; }</dd>
 <dd>&lt;<a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a>&gt;</dd></dl></div></div></div><span style="visibility:hidden;color:transparent;">0</span><b>}</b>
 </td>
 <td>
 <ul><li>(no limit) A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a> that are applied to the planet the pop is on if the potential block evaluates true.</li>
 <li>Vanilla uses a series of these blocks to add <a href="https://stellaris.paradoxwikis.com/Trade" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade Value based on living standards. Living standards scripted triggers can be found in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/scripted_triggers/01_scripted_triggers_jobs.txt</span> and the corresponding trade value scripted variables used in vanilla are defined in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/scripted_variables/01_scripted_variables_megacorp.txt</span>.</li>
-<li>Also used in vanilla to define which pop categories the <a href="/Biological_traits.html#Budding" title="Budding"><img alt="Budding" src="images/Trait_plantoid_budding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Budding trait functions for.</li>
+<li>Also used in vanilla to define which pop categories the <a href="Biological_traits.html#Budding" title="Budding"><img alt="Budding" src="images/Trait_plantoid_budding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Budding trait functions for.</li>
 <li>Pop categories do not support an unconditional <code>planet_modifier</code>.</li></ul>
 </td></tr>
 <tr>
-<td><b>allow_resettlement = { &lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt; }</b>
+<td><b>allow_resettlement = { &lt;<a href="Conditions.html" title="Conditions">conditions</a>&gt; }</b>
 </td>
 <td>
 <ul><li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /> If this block of conditions evaluates to false, pops in this category can't be forcibly resettled.</li>
@@ -147,11 +147,11 @@
 <td><b>resettlement_cost = { &lt;<a href="https://stellaris.paradoxwikis.com/Resource" class="mw-redirect" title="Resource">resource</a>&gt; = &lt;int&gt; }</b>
 </td>
 <td>
-<ul><li>(Optional, no limit) May optionally include a <b>trigger = { &lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt; }</b> block. The cost to resettle a pop in this category is the sum of all costs in all resettlement_cost blocks that either evaluate to true or have no trigger conditions.</li>
+<ul><li>(Optional, no limit) May optionally include a <b>trigger = { &lt;<a href="Conditions.html" title="Conditions">conditions</a>&gt; }</b> block. The cost to resettle a pop in this category is the sum of all costs in all resettlement_cost blocks that either evaluate to true or have no trigger conditions.</li>
 <li>Resettlement cost modifications from civics are defined here in vanilla.</li></ul>
 </td></tr>
 <tr>
-<td><b>assign_to_pop = { &lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt; }</b>
+<td><b>assign_to_pop = { &lt;<a href="Conditions.html" title="Conditions">conditions</a>&gt; }</b>
 </td>
 <td>(Optional) This block of conditions is called whenever a pop is created, moved to another planet, or gets a new owner. The pop is then assigned to whichever pop category that evaluated to true has the highest weight.
 </td></tr>
@@ -175,7 +175,7 @@ The <a href="https://stellaris.paradoxwikis.com/Complex_Drone" title="Complex Dr
 <div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>How does slavery work?</b></span>
 <div class="mw-collapsible-content">
 <p>A Slave might take jobs from <a href="https://stellaris.paradoxwikis.com/Specialist" title="Specialist"><img alt="Pop cat specialist.png" src="images/Pop_cat_specialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Specialist or <a href="https://stellaris.paradoxwikis.com/Worker" title="Worker"><img alt="Pop cat worker.png" src="images/Pop_cat_worker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Worker Stratum, but a Slave will never receive the same amount of <a href="https://stellaris.paradoxwikis.com/Consumer_goods" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Consumer Goods upkeep of a Specialist or a Worker. Actually, <a href="https://stellaris.paradoxwikis.com/Slave" title="Slave"><img alt="Pop cat slave.png" src="images/Pop_cat_slave.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Slave is a special Stratum with no Jobs specifing itself of it, while it has a higher <code>weight</code> than any of the common Strata. It also has a custom <code>assign_to_pop</code>.
-</p><p>The actual Stratum of a Pop is selected from all Strata with a custom <code>assign_to_pop</code> plus the current Stratum of the Job the Pop is working in. For example, a Pop with Indentured Servitude slavery type working as an <a href="/Jobs.html#Artisan" title="Artisan"><img alt="Artisan" src="images/Job_artisan.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Artisan will choose its Stratum from <a href="https://stellaris.paradoxwikis.com/Specialist" title="Specialist"><img alt="Pop cat specialist.png" src="images/Pop_cat_specialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Specialist, <a href="https://stellaris.paradoxwikis.com/Worker" title="Worker"><img alt="Pop cat worker.png" src="images/Pop_cat_worker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Worker and <a href="https://stellaris.paradoxwikis.com/Slave" title="Slave"><img alt="Pop cat slave.png" src="images/Pop_cat_slave.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Slave, with Slave being with the highest <code>weight</code>, making this Pop a Slave beyond all. <i>(Worker do also have a custom <code>assign_to_pop</code>.)</i>
+</p><p>The actual Stratum of a Pop is selected from all Strata with a custom <code>assign_to_pop</code> plus the current Stratum of the Job the Pop is working in. For example, a Pop with Indentured Servitude slavery type working as an <a href="Jobs.html#Artisan" title="Artisan"><img alt="Artisan" src="images/Job_artisan.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Artisan will choose its Stratum from <a href="https://stellaris.paradoxwikis.com/Specialist" title="Specialist"><img alt="Pop cat specialist.png" src="images/Pop_cat_specialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Specialist, <a href="https://stellaris.paradoxwikis.com/Worker" title="Worker"><img alt="Pop cat worker.png" src="images/Pop_cat_worker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Worker and <a href="https://stellaris.paradoxwikis.com/Slave" title="Slave"><img alt="Pop cat slave.png" src="images/Pop_cat_slave.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Slave, with Slave being with the highest <code>weight</code>, making this Pop a Slave beyond all. <i>(Worker do also have a custom <code>assign_to_pop</code>.)</i>
 </p>
 During the days an unemployed <a href="https://stellaris.paradoxwikis.com/Specialist" title="Specialist"><img alt="Pop cat specialist.png" src="images/Pop_cat_specialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Specialist Pop wait for a Specialist or Elite job until its demotion, it still "sees" the <a href="https://stellaris.paradoxwikis.com/Worker" title="Worker"><img alt="Pop cat worker.png" src="images/Pop_cat_worker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Worker Stratum and view it as a lower weighted Stratum, making it unwilling to reconsider itself a Worker. If you enslave it now, it will "see" the <a href="https://stellaris.paradoxwikis.com/Slave" title="Slave"><img alt="Pop cat slave.png" src="images/Pop_cat_slave.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Slave Stratum being with higher <code>weight</code> than the Specialist Stratum, and it will now be forced to consider itself a Slave.</div></div></div>
 <div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>What if some parameters were changed?</b></span>
@@ -212,7 +212,7 @@ If the Specialist Stratum had lower <code>weight</code> than the Worker Stratum,
 <tr>
 <td><b>building_icon = &lt;building key&gt;</b>
 </td>
-<td>Determines the building icon of this Job to be shown in the planet population view behind the Pop portrait. For example, the <a href="/Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher job will use the science lab for a building icon. Nonexistent buildings can be specified and the texture file "gfx/interface/icons/buildings/&lt;building key&gt;.dds" will be used.
+<td>Determines the building icon of this Job to be shown in the planet population view behind the Pop portrait. For example, the <a href="Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher job will use the science lab for a building icon. Nonexistent buildings can be specified and the texture file "gfx/interface/icons/buildings/&lt;building key&gt;.dds" will be used.
 </td></tr>
 <tr>
 <td><b>clothes_texture_index = &lt;int&gt;</b>
@@ -222,7 +222,7 @@ If the Specialist Stratum had lower <code>weight</code> than the Worker Stratum,
 <tr>
 <td><b>icon = &lt;pop job key&gt;</b>
 </td>
-<td>Optional. Makes this Job to use the icon of another Job. For example, the <a href="/Jobs.html#Science_Director" title="Science Director"><img alt="Science Director" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Science Director uses the same icon as <a href="/Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher.
+<td>Optional. Makes this Job to use the icon of another Job. For example, the <a href="Jobs.html#Science_Director" title="Science Director"><img alt="Science Director" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Science Director uses the same icon as <a href="Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher.
 </td></tr>
 <tr>
 <td><b>possible_pre_triggers</b>
@@ -238,12 +238,12 @@ If the Specialist Stratum had lower <code>weight</code> than the Worker Stratum,
 <tr>
 <td><b>possible</b>
 </td>
-<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine can a Pop work in this Job. (Pop scope)
+<td>A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine can a Pop work in this Job. (Pop scope)
 </td></tr>
 <tr>
 <td><b>resources</b>
 </td>
-<td>An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Units</a> to determine the resource upkeep and production of this Job.  (Planet scope, root = pop scope)
+<td>An <a href="Economy_modding.html#Economy_Units" title="Economy modding">Economy Units</a> to determine the resource upkeep and production of this Job.  (Planet scope, root = pop scope)
 </td></tr>
 <tr>
 <td><b>planet_modifier</b><br /><b>triggered_planet_modifier</b>
@@ -258,7 +258,7 @@ If the Specialist Stratum had lower <code>weight</code> than the Worker Stratum,
 <tr>
 <td><b>pop_modifier</b><br /><b>triggered_pop_modifier</b>
 </td>
-<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Pop. Modifiers that add defense armies go here. See <a href="/Army_modding.html" title="Army modding">Army modding</a> for details of Pop-spawned defense armies.
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Pop. Modifiers that add defense armies go here. See <a href="Army_modding.html" title="Army modding">Army modding</a> for details of Pop-spawned defense armies.
 </td></tr>
 <tr>
 <td><b>weight</b>
@@ -271,9 +271,9 @@ If the Specialist Stratum had lower <code>weight</code> than the Worker Stratum,
 <div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>How to have a Job to produce something more or less without overwritting it?</b></span>
 <div class="mw-collapsible-content">
 <ul><li>If you are asking about how to make a Job to produce more resources of a certain type, head to the <code>resource</code> block and find its economy category, then head to the "common/economy_categories" to find what kind of modifiers are generated for this economy category.
-<ul><li>For example, <a href="/Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher has its own economy category that "produces_mult" modifiers would be generated, making modifiers like <code>job_researchers_physics_research_produces_mult</code> usable. However, since "produces_add" modifiers won't be generated, it's impossible to have researchers produce resources they originally can't, unless you overwrite the economy categories and force it to generate your required kind of modifiers.</li>
-<li>Also, <a href="/Jobs.html#Miner" title="Miner"><img alt="Miner" src="images/Job_miner.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Miner has its own economy category that both "produces_mult" and "produces_add" modifiers would be generated, making <code>job_miners_minerals_produces_add</code> usable. You can also use the modifier <code>job_miners_minor_artifacts_produces_add = 1</code> to make Miners produce <a href="/Minor_artifacts.html" title="Minor artifacts"><img alt="Minor artifacts.png" src="images/Minor_artifacts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Minor Artifacts <span class="effect-green" style="font-weight:bold;">+1</span>, just do what you want.</li>
-<li>If the job in question does not have its own economy category, for example, the <a href="/Jobs.html#Clerk" title="Clerk"><img alt="Clerk" src="images/Job_clerk.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Clerk, then it's impossible to make them produce more resources by modifiers without affecting other jobs at all.</li></ul></li>
+<ul><li>For example, <a href="Jobs.html#Researcher" title="Researcher"><img alt="Researcher" src="images/Job_researcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Researcher has its own economy category that "produces_mult" modifiers would be generated, making modifiers like <code>job_researchers_physics_research_produces_mult</code> usable. However, since "produces_add" modifiers won't be generated, it's impossible to have researchers produce resources they originally can't, unless you overwrite the economy categories and force it to generate your required kind of modifiers.</li>
+<li>Also, <a href="Jobs.html#Miner" title="Miner"><img alt="Miner" src="images/Job_miner.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Miner has its own economy category that both "produces_mult" and "produces_add" modifiers would be generated, making <code>job_miners_minerals_produces_add</code> usable. You can also use the modifier <code>job_miners_minor_artifacts_produces_add = 1</code> to make Miners produce <a href="Minor_artifacts.html" title="Minor artifacts"><img alt="Minor artifacts.png" src="images/Minor_artifacts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Minor Artifacts <span class="effect-green" style="font-weight:bold;">+1</span>, just do what you want.</li>
+<li>If the job in question does not have its own economy category, for example, the <a href="Jobs.html#Clerk" title="Clerk"><img alt="Clerk" src="images/Job_clerk.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Clerk, then it's impossible to make them produce more resources by modifiers without affecting other jobs at all.</li></ul></li>
 <li>If you are asking about how to make a Job to produce more modifiers, like <a href="https://stellaris.paradoxwikis.com/Amenities" title="Amenities"><img alt="Amenities.png" src="images/Amenities.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;Amenities, <a href="https://stellaris.paradoxwikis.com/Naval_capacity" title="Naval capacity"><img alt="Naval capacity.png" src="images/Fleet_size.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;Naval Capacity, <a href="https://stellaris.paradoxwikis.com/Crime" title="Crime"><img alt="Job criminal.png" src="images/Job_criminal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Crime Reduction, <a href="https://stellaris.paradoxwikis.com/Trade" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade Value, or <a href="https://stellaris.paradoxwikis.com/Administrative_capacity" title="Administrative capacity"><img alt="Mod country admin cap add.png" src="images/Mod_country_admin_cap_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Administrative Cap, then you have to overwrite the Jobs and use <code>triggered_(country/planet)_modifiers</code> to implement this. There are no modifiers to modify modifiers produced by Jobs.
 <ul><li>However, most of the modifiers produced by Jobs are <code>_add</code>. You can use <code>_mult</code> modifiers to multiply the overall Empire stat or Planet stat, effectively making relevant Jobs more effective.</li>
 <li>Despite the trait <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bureaucrat.png" class="image"><img alt="Leader trait bureaucrat.png" src="images/Leader_trait_bureaucrat.png" decoding="async" loading="lazy" width="29" height="29" data-file-width="29" data-file-height="29" /></a> Bureaucrat having a modifier that reads <code>planet_bureaucrats_produces_mult</code>, don't be confused, because <span class="effect-red" style="font-weight:bold;">this modifier has no effect and all it does is to confuse you.</span></li></ul></li></ul></div></div></div>
@@ -285,105 +285,105 @@ If the Specialist Stratum had lower <code>weight</code> than the Worker Stratum,
 <li><b>job_&lt;key&gt;_per_crime = &lt;float&gt;</b> - This modifier adds X jobs to the planet, where X is the planet crime multiplied by the value here.</li></ul>
 <div style="clear:both;"></div>
 <div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
-<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="Modding.html" title="Modding">Modding</a></b></div>
 <div style="font-size:0.9em;">
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire_modding.html" title="Empire modding">Empire</a> • <a href="Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="Policies_modding.html" title="Policies modding">Policies</a> • <a href="Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="Technology_modding.html" title="Technology modding">Technologies</a> • <a href="Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Leaders.html" title="Leaders">Leaders</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader_modding.html" title="Leader modding">Leaders</a> • <a href="Traits_modding.html" title="Traits modding">Leader traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species_modding.html" title="Species modding">Species</a> • <a href="Traits_modding.html" title="Traits modding">Species traits</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Land_warfare.html" title="Land warfare">Land warfare</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Army_modding.html" title="Army modding">Armies</a> • <a href="Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="War_modding.html" title="War modding">Casus Belli • War goals</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Event_modding.html" title="Event modding">Events</a> • <a href="Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="Defines.html" title="Defines">Defines</a> • <a href="Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="Game_start_modding.html" title="Game start modding">Game start</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="Font_modding.html" title="Font modding">Fonts</a> • <a href="Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="Flag_modding.html" title="Flag modding">Flags</a> • <a href="Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="Interface_modding.html" title="Interface modding">Interface</a> • <a href="Icon_modding.html" title="Icon modding">Icons</a> • <a href="Music_modding.html" title="Music modding">Music</a> • <a href="Localisation_modding.html" title="Localisation modding">Localisation</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
 </td></tr></tbody></table>
 </div></div>
 <!-- 
