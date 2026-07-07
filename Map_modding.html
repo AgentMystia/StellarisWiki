@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Map modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>The maps can be modded in two ways: either create new forms and sizes of generated maps or create a fully static &amp; pre-scripted map. 
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Directories_&amp;_Files"><span class="tocnumber">1</span> <span class="toctext">Directories &amp; Files</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#About_Galaxy_Modding"><span class="tocnumber">2</span> <span class="toctext">About Galaxy Modding</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Add_new_Galaxy_Size"><span class="tocnumber">3</span> <span class="toctext">Add new Galaxy Size</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Add_new_Galaxy_Shape"><span class="tocnumber">4</span> <span class="toctext">Add new Galaxy Shape</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Everything_about_galaxy_shapes_is_described_by_paradox_as_comments_in_galaxy_shapes.txt"><span class="tocnumber">4.1</span> <span class="toctext">Everything about galaxy shapes is described by paradox as comments in galaxy_shapes.txt</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Add_a_Static_Galaxy"><span class="tocnumber">5</span> <span class="toctext">Add a Static Galaxy</span></a></li>
+</ul>
+</div>
+
+<h3><span id="Directories_.26_Files"></span><span class="mw-headline" id="Directories_&amp;_Files">Directories &amp; Files</span></h3>
+<p>Relevant directories and files are the following:
+</p>
+<ul><li><code>Stellaris/common/solar_system_initializers/*</code></li>
+<li><code>Stellaris/common/random_names/base/00_random_names.txt</code></li>
+<li><code>Stellaris/map/galaxy/*</code></li>
+<li><code>Stellaris/map/setup_scenarios/*</code></li>
+<li><code>Stellaris/prescripted_countries/*</code></li></ul>
+<h3><span class="mw-headline" id="About_Galaxy_Modding">About Galaxy Modding</span></h3>
+<p>You can modify default templates provided by Paradox or create static maps. Both, dynamic and static maps have some default limitations:
+</p>
+<ul><li>Map radius (max 500)</li>
+<li>Default maximum amount of fallen empires (Vanilla only have 5 templates of fallen empires, so you shouldn't exceed 5)</li></ul>
+<p>Also creating too big maps (1000+ stars) can significantly reduce your performance, keep that in mind!
+</p>
+<h3><span class="mw-headline" id="Add_new_Galaxy_Size">Add new Galaxy Size</span></h3>
+<p>Adding a new galaxy size is the easiest form of modding the map. Simply copy one of the files in <code>./map/setup_scenarios/</code> (for example <code>huge.txt</code>) into your mods <code>map/setup_scenarios/</code> folder.
+Rename the file to something else (unless you want to overwrite an existing map type. Now you can simply change the options given, which should be self explanatory.
+</p>
+<pre>setup_scenario = {
+	name = "huge"
+	priority = 4					#priority decides in which order the scenarios are listed
+	num_stars = 1000
+	radius = 450					#should be less than 500, preferably less than ~460
+	num_empires = { min = 0 max = 30 }	#limits player customization
+	num_empire_default = 15
+	fallen_empire_default = 4
+	fallen_empire_max = 5
+	marauder_empire_default = 3
+	marauder_empire_max = 3
+	advanced_empire_default = 4
+	colonizable_planet_odds = 1.0
+	primitive_odds = 1.0
+	crisis_strength = 1.5
+	extra_crisis_strength = { 10 25 }   # You can put here more values, e.g. { 10 15 25 50 100 }
+ 
+	cluster_count = {             # Amount of empire clusters if "clustered" type is enabled in map settings
+		method = one_every_x_empire
+		#method = constant
+		value = 1
+		max = 6
+	}
+	cluster_radius = 150           # Radius in which empires will be placed in cluster
+	cluster_distance_from_core = 300
+ 
+	max_hyperlane_distance = 50
+ 
+	home_system_partitions = {     # How much systems have empire "systems cluster" and amount of hyperlanes which are leaving from them.
+		max_systems = 15
+		min_systems= 8
+ 
+		min_bridges = 2
+		max_bridges = 4
+ 
+		method = breadth_first
+	}
+ 
+	open_space_partitions = {      # Like above, only these "systems clusters" are general
+		max_systems = 10
+		min_systems= 4
+ 
+		min_bridges = 2
+		max_bridges = 4
+ 
+		method = depth_first
+	}
+ 
+	num_nebulas	= 10
+	nebula_size = 60  
+	nebula_min_dist = 200       # Minimum distance between nebulas
+ 
+	num_wormhole_pairs = { min = 0 max = 5 }
+	num_wormhole_pairs_default = 1
+	num_gateways = { min = 0 max = 5 }
+	num_gateways_default = 1
+	num_hyperlanes = { min=0.5 max= 3 }
+	num_hyperlanes_default = 1
+ 
+ 
+         # This is most important part, you need to define which shape will support this template of settings.
+	supports_shape = elliptical
+	supports_shape = spiral_2
+	supports_shape = spiral_3
+	supports_shape = spiral_4
+	supports_shape = spiral_6
+	supports_shape = ring
+	supports_shape = bar
+	supports_shape = starburst
+	supports_shape = cartwheel
+	supports_shape = spoked
+}
+</pre>
+<h3><span class="mw-headline" id="Add_new_Galaxy_Shape">Add new Galaxy Shape</span></h3>
+<p>Adding a new galaxy form can be done by adding a new type in the <code>map/galaxy/galaxy_shapes.txt</code> . Only a few
+options are available to actually change the output. Keep in mind that the background of a galaxy makes the core fairly bright, hiding stars there. So it might be good to change this, if a number of
+stars are in the core. Core whiteness files are in:
+<code>./gfx/FX/galaxy_center.shader</code>
+</p><p><code>./gfx/map</code>
+</p>
+<h5><span class="mw-headline" id="Everything_about_galaxy_shapes_is_described_by_paradox_as_comments_in_galaxy_shapes.txt">Everything about galaxy shapes is described by paradox as comments in galaxy_shapes.txt</span></h5>
+<h3><span class="mw-headline" id="Add_a_Static_Galaxy">Add a Static Galaxy</span></h3>
+<p>Adding a static galaxy is more involved and requires a number of steps. The most important part: generally if you are making a static galaxy, expect to define close to everything. The reason for this is,
+that the galaxy generator will break things if some stuff is predefined and other things are generated. For example, a race spawned into a random home world might start with the wrong climate in said home world 
+making the pops very unhappy. To prevent this the home world climate and the climate of the generated world in the solar system initializer must match. Other problems: Fallen Empires doesn't spawn, Precursors doesn't work, most of the origins/starting systems, part of the events, end-game crisis will be broken. 
+</p><p>
+A working example with everything what can be used:</p><pre>static_galaxy_scenario = { 
+ name = "MyGalaxy" # Name of Galaxy Preset - Listed when selecting the galaxy size in game.
+ priority = 10 # Where the preset will show in the galaxy size list.
+ radius = 500  # Max size is 500 (Specifically, the map in Stellaris is a box 1000x1000x10. From -500 to 500 but in a Z direction only from -5 to 5)
+ num_empires = { min = 10 max = 30 } 
+ num_empire_default = 10
+ fallen_empire_default = 4
+ fallen_empire_max = 4 # This number CANNOT exceed 5, as there are only 5 hard coded Fallen Empires in the Stellaris base game.
+ marauder_empire_default = 3
+ marauder_empire_max = 3
+ advanced_empire_default = 1 
+ colonizable_planet_odds = 1.0 
+ primitive_odds = 1.0 
+ crisis_strength = 0.75 
+ extra_crisis_strength = { 10 25 } 
+ num_wormhole_pairs = { min = 0 max = 5 } 
+ num_wormhole_pairs_default = 1 
+ num_gateways = { min = 0 max = 5 } 
+ num_gateways_default = 1 
+ random_hyperlanes = yes/no # If no you must add your own hyperlanes
+ core_radius = 0 
+ system = { id = "0" name = "" position = { x = 148 y = 121 } initializer = my_initializer_1  } 
+ system = { id = "1" name = "" position = { x = 148 y = 121 } initializer = my_initializer_1 spawn_weight = { base = 0 modifier = { add = 10 has_country_flag = my_country } } }
+ system = { id = "2" name = "" position = { x = { min = 150 max = 200} y = 121 } } # x and y can be placed in area
+ system = { id = "3" name = "" position = { x = 148 y = 121 z = 3} }
+ add_hyperlane = { from = "1" to = "2" }
+ add_hyperlane = { from = "0" to = "3" }
+ add_hyperlane = { from = "1" to = "0" }
+ nebula = { name = "Random Name" position = { x = 0 y = 0 } radius = 10 }
+}</pre>
+<!-- 
+NewPP limit report
+Cached time: 20260707181439
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.008 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 74/1000000
+Post‐expand include size: 1532/2097152 bytes
+Template argument size: 300/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3707/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.146      1 Template:Version
+100.00%    2.146      1 -total
+ 43.57%    0.935      1 Template:Infobox
+ 12.02%    0.258      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:5453-0!canonical and timestamp 20260707181439 and revision id 102365.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

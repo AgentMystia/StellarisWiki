@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Government modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Government modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>The following guide contains information related to modding empire's government and things contained inside related folder.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Governments"><span class="tocnumber">1</span> <span class="toctext">Governments</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Data_Structure"><span class="tocnumber">1.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Empire_Random_Names"><span class="tocnumber">1.2</span> <span class="toctext">Empire Random Names</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Authorities"><span class="tocnumber">2</span> <span class="toctext">Authorities</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Data_Structure_2"><span class="tocnumber">2.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Civics_and_Origins"><span class="tocnumber">3</span> <span class="toctext">Civics and Origins</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Data_Structure_3"><span class="tocnumber">3.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Examples"><span class="tocnumber">3.2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Civics"><span class="tocnumber">3.2.1</span> <span class="toctext">Civics</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Origins"><span class="tocnumber">3.2.2</span> <span class="toctext">Origins</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Special_Requirement_Syntax"><span class="tocnumber">4</span> <span class="toctext">Special Requirement Syntax</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Governments">Governments</span></h2>
+<p>Governments are automatically picked based on various factors for a flavor. They have few actual effects on gameplay. Vanilla uses civics, authorities and ethics to determine it. Governments are defined at "common/governments/xxx.txt".
+</p>
+<h3><span class="mw-headline" id="Data_Structure">Data Structure</span></h3>
+<table class="wikitable mw-collapsible mw-collapsed">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="80%">Description
+</th></tr>
+<tr>
+<td><b>ruler_title</b><br /><b>ruler_title_female</b>
+</td>
+<td>Localisation keys to determine the ruler title, such as "President" or "King". If the female title is undefined, the title will never differ by gender.
+</td></tr>
+<tr>
+<td><b>heir_title</b><br /><b>heir_title_female</b>
+</td>
+<td>Localisation keys to determine the heir title, such as "Prince". If the female title is undefined, the title will never differ by gender.
+</td></tr>
+<tr>
+<td><b>use_regnal_names = &lt;yes/no&gt;</b>
+</td>
+<td>If yes, the auto-generated ruler names will use regnal last names if the namelist of this species defined any.
+</td></tr>
+<tr>
+<td><b>dynastic_last_names = &lt;yes/no&gt;</b>
+</td>
+<td>If yes, the heirs will inherit the last word of the ruler's name for a last name. For example, a King named "Ohma Zi-O" may have an heir named "Grand Zi-O".
+</td></tr>
+<tr>
+<td><b>should_force_rename - &lt;yes/no&gt;</b>
+</td>
+<td>Force the empire that reformed into this government to randomize its empire name. AI only.
+</td></tr>
+<tr>
+<td><b>possible</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if this government type can be applied to an empire. (Country scope)
+</td></tr>
+<tr>
+<td><b>weight</b>
+</td>
+<td>If an empire is eligible to multiple government types, one with the highest weight wins. Common government forms like Military Dictatorship should have lower weight than specific government forms like Blood Court.
+</td></tr>
+<tr>
+<td><b>leader_class = &lt;governor/scientist/admiral/general&gt;</b>
+</td>
+<td>If the first ruler of the empire is elected out, that ruler will become a leader of specified class, rather than just disappear. Electoral governments only.
+</td></tr>
+<tr>
+<td><b>election_candidates</b>
+<ul><li><b>modifier</b>
+<ul><li><b>add = &lt;int&gt;</b></li>
+<li><a href="/Conditions.html" title="Conditions">Conditions</a> (Leader scope)</li></ul></li></ul>
+</td>
+<td>A section to specify who should and how likely they should participate the ruler election. Not required; if not specified, all leaders can participate. Electoral governments only.
+<p>Vanilla governments usually give the current ruler 100 weight and give weight to certain leader classes depending on the government itself, like Militarist governments usually allow only Admirals and Generals and Materialist governments usually allow only Scientists.
+</p>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Empire_Random_Names">Empire Random Names</span></h3>
+<p>All vanilla empire random names are directly linked to Government Types, meaning that new random names must be defined for the new government types, or the randomly generated AI empires using your new government will NOT receive a name and the game might crash.
+</p><p>Empire random names are defined at "common/random_names/xxx.txt".
+</p>
+<h2><span class="mw-headline" id="Authorities">Authorities</span></h2>
+<p>An Authority is how the empire distribute the internal political powers. An empire can only have one Authority. Authorities are defined at "common/governments/authorities/xxx.txt".
+</p>
+<h3><span class="mw-headline" id="Data_Structure_2">Data Structure</span></h3>
+<table class="wikitable mw-collapsible mw-collapsed">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="16%"><a href="/Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Democratic-like
+</th>
+<th width="16%"><a href="/Government.html#Oligarchic" title="Oligarchic"><img alt="Oligarchic" src="images/Auth_oligarchic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a><a href="/Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Oligarchic-like
+</th>
+<th width="16%"><a href="/Government.html#Dictatorial" title="Dictatorial"><img alt="Dictatorial" src="images/Auth_dictatorial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Dictatorial-like
+</th>
+<th width="16%"><a href="/Government.html#Imperial" title="Imperial"><img alt="Imperial" src="images/Auth_imperial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Imperial-like
+</th>
+<th width="16%"><a href="https://stellaris.paradoxwikis.com/Hive_Mind" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a><a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Immortal Ruler Authorities
+</th></tr>
+<tr>
+<td><b>playable</b>
+</td>
+<td colspan="5">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> executed under global scope to determine should this Authority appear in the GUI. Vanilla game uses this to hide DLC Authorities from being played by people who didn't buy relevant DLC. Since this doesn't affect the AI, it's better to use together with <b>random_weight</b>.
+</td></tr>
+<tr>
+<td><b>possible</b>
+</td>
+<td colspan="5">A block of <a href="/Government_modding.html#Special_Requirement_Syntax" title="Government modding">Special Requirement Syntax</a> that determines is this Authority compatible. Ethics, country types and species classes can be checked here. If evaluated false, this Authority will be grayed out from the empire creation menu and government reform window. Tooltips is generated only if this statement evaluated false.
+</td></tr>
+<tr>
+<td><b>random_weight</b>
+</td>
+<td colspan="5">Defines how likely this is to be picked randomly if it's valid.
+</td></tr>
+<tr>
+<td><b>election_type</b>
+</td>
+<td><code>election_type = democratic</code>
+<p>Election candidates will include the current ruler and every faction leader and randomly generated fillers if necessary.
+</p>
+</td>
+<td colspan="2"><code>election_type = oligarchic</code>
+<p>Election candidates will only include hired leaders.
+</p>
+</td>
+<td colspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>re_election_allowed = &lt;yes/no&gt;</b>
+</td>
+<td colspan="1">Vanilla Democratic authority has <b>yes</b> for this field and all other authorities have this field undefined.  Allows the current Ruler to run again and possibly be re-elected.
+</td>
+<td colspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>has_heir = &lt;yes/no&gt;</b>
+</td>
+<td colspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><code>has_heir = yes</code>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>can_have_emergency_elections = &lt;yes/no&gt;</b><br /><b>emergency_election_cost = &lt;int&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><code>can_have_emergency_elections = yes</code>
+<p>This empire can initiate an emergency election at a cost of a number of <a href="https://stellaris.paradoxwikis.com/Influence" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;Influence equal to <code>emergency_election_cost</code>.
+</p>
+</td>
+<td colspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>max_election_candidates = &lt;int&gt;</b>
+</td>
+<td>Vanilla Democratic authority has this undefined, making it to be the fallback <b>-1</b>, which means no limit.
+</td>
+<td colspan="2">Vanilla authorities have <b>4</b> for this property, making there to be up to 4 candidates.
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>election_term_years = &lt;int&gt;</b><br /><b>election_term_variance = &lt;int&gt;</b>
+</td>
+<td colspan="2">Determines how many years between elections. Actual election term is <code>election_term_years +/- election_term_variance</code>.
+</td>
+<td colspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>uses_mandates = &lt;yes/no&gt;</b>
+</td>
+<td>Default no.
+<p>If an authority has <code>election_type = democratic</code> but doesn't use mandates, this authority doesn't work properly.
+</p><p>See <a href="/Government.html#Mandates" title="Government">Mandates</a> and <a href="/Mandate_modding.html" title="Mandate modding">Mandate modding</a> for details. 
+</p>
+</td>
+<td colspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>has_agendas = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td colspan="4">Default no.
+<p>If this is toggled yes while the ruler is some sort of immortal, the empire will then have a permanent Agenda that can't be changed for the rest of the game.
+</p><p>See <a href="/Government.html#Agendas" title="Government">Agendas</a> and <a href="/Agenda_modding.html" title="Agenda modding">Agenda modding</a> for details.
+</p>
+</td></tr>
+<tr>
+<td><b>tags = { xxx yyy zzz }</b>
+</td>
+<td colspan="5">A set of localisation keys to briefingly describe the mechanics and effects of this authority other than modifiers.
+</td></tr>
+<tr>
+<td><b>country_modifier</b>
+</td>
+<td colspan="5">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire.
+</td></tr>
+<tr>
+<td><b>traits = { trait_xxx trait_yyy }</b>
+</td>
+<td colspan="5">A list of species trait keys to be added to the primary species of this empire. In the empire creation menu, these traits can't be removed, but more can be added if there is enough trait points and trait picks. Government reforming doesn't add or remove these traits.
+</td></tr>
+<tr>
+<td><b>can_reform = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Default yes. If no, empires can't reform into/out of this authority.
+</td></tr>
+<tr>
+<td><b>has_factions = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Default yes. If no, this Empire can't have factions. However, vanilla factions also exclude the ethic <a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness, making it unclear will this property do what it says.
+</td></tr>
+<tr>
+<td><b>valid_for_released_vassal = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Default yes. If no, a released vessal will never pick this Authority.
+</td></tr>
+<tr>
+<td><b>localization_postfix</b>
+</td>
+<td colspan="5">If specified as "_popopopo", a localisation key called "locacacaca" will be translated into "locacacaca_popopopo".
+<pre>l_english:
+ locacacaca:0 "How can you be sure that you are not just an advanced chatbot?"
+ locacacaca_popopopo:0 "I AM ADVANCED CHATBOT YOU LOSE"
+</pre>
+<p>If there is somewhere that should display the former, it will now display the later.
+</p>
+</td></tr></tbody></table>
+<p>Other effects an Authority might also have, such as immortal rulers, are heavily integrated into other vanilla files as well as events. Use <code>has_authority = auth_xxx</code> to check the Authority of an Empire.
+</p>
+<h2><span class="mw-headline" id="Civics_and_Origins">Civics and Origins</span></h2>
+<p>Civics are additional bonuses to the government of variable effects, some can even affect the playstyle. An empire can have any number of Civics (up to 3 if vanilla).
+</p><p>Origins are Civics with <code>is_origin = yes</code> statement. Since an empire can only have one origin and it can't be changed mid-game, some of the fields for civics are irrelevant to Origins. Also, they have additional fields.
+</p><p>They are defined at "common/governments/civics/xxx.txt".
+</p>
+<h3><span class="mw-headline" id="Data_Structure_3">Data Structure</span></h3>
+<table class="wikitable mw-collapsible mw-collapsed">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="40%">Civics
+</th>
+<th width="40%">Origins
+</th></tr>
+<tr>
+<td><b>is_origin = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>For obvious reason, this have to be set as <code>is_origin = yes</code>.
+</td></tr>
+<tr>
+<td><b>playable</b>
+</td>
+<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> executed under global scope to determine should this Civic or Origin appear in the empire creator and government reforming view. Vanilla uses this to hide DLC contents from being played by people who didn't buy relevant DLC. Since this doesn't affect the AI, it's better to use together with <b>random_weight</b>.
+</td></tr>
+<tr>
+<td><b>icon = &lt;path of dds file&gt;</b>
+</td>
+<td>Specifies an icon for this. Default icon path is <code>gfx/interface/icons/governments/civics/xxx.dds</code>.
+</td>
+<td>Vanilla Origins always have this specified.
+</td></tr>
+<tr>
+<td><b>picture = &lt;GFX key&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Specifies a picture for this Origin that is shown in empire creation menu.
+</td></tr>
+<tr>
+<td><b>starting_colony = &lt;planet class key&gt;</b>
+</td>
+<td>Changes the empire's starting colony planet class regardless of the player's choice. This statement doesn't affect climate preference trait.
+</td>
+<td rowspan="2">Origins have higher priority than civics.
+</td></tr>
+<tr>
+<td><b>habitability_preference = &lt;planet class key&gt;</b>
+</td>
+<td>Changes the empire's primary species' climate preference trait.
+</td></tr>
+<tr>
+<td><b>potential</b>
+</td>
+<td>A block of <a href="/Government_modding.html#Special_Requirement_Syntax" title="Government modding">Special Requirement Syntax</a> that determines is this Civic compatible. Incomptible Civics have no effect. If evaluated false, this Civic is hidden from the empire creation menu and government reform window, and if this Civic is already picked, it's rendered invalid without any tooltip. Vanilla use this to hide NPC-only civics and irrelevant civics for/from <a href="https://stellaris.paradoxwikis.com/Hive_Mind" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind, <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence, and <a href="/Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Corporate authorities.
+</td>
+<td>Origins that don't meet the potential requirements will be hidden from the Origin selection view, and if already chosen, the Origin selection will be set to the default origin Prosperous Unification. This field has no effect after the start of the game.
+</td></tr>
+<tr>
+<td><b>possible</b>
+</td>
+<td>A block of <a href="/Government_modding.html#Special_Requirement_Syntax" title="Government modding">Special Requirement Syntax</a> that determines is this Civic compatible. Incomptible Civics have no effect. If evaluated false, this Civic is grayed out from the empire creation menu and government reform window. This section will also generate a tooltip to tell the player what's the requirement of this Civic in empire creation menu and government reform window.
+</td>
+<td>Origins that don't meet the possible requirements will still be visible and chosen but such empire design can't be saved. This field has no effect after the start of the game.
+</td></tr>
+<tr>
+<td><b>pickable_at_start = &lt;yes/no&gt;</b>
+</td>
+<td>Whether this civic can be selected when you are creating a new empire. If not, it can only be picked by government reforming.
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>modification = &lt;yes/no&gt;</b>
+</td>
+<td>Default yes. If no, an empire can't add or remove this Civic after the start of the game. Used for playstyle restrictive civics like <a href="/Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers.
+</td></tr>
+<tr>
+<td><b>random_weight</b>
+</td>
+<td colspan="2">Defines how likely this is to be picked randomly if it's valid. Civics of stricter requirements tend to have higher random weight. If without this statement, the default is 1.
+</td></tr>
+<tr>
+<td><b>modifier</b>
+</td>
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire. If this Civic is considered incompatible, the Modifiers will be ignored.
+</td>
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire. These will always apply regardless of the Origin requirements.
+</td></tr>
+<tr>
+<td><b>description = &lt;localisation key&gt;</b>
+</td>
+<td colspan="2">A localisation key for effects description. This will be displayed before the modifier tooltips.
+</td></tr>
+<tr>
+<td><b>traits = { trait = trait_xxx  trait = trait_yyy }</b>
+</td>
+<td colspan="2">A list of species trait keys to be added to the primary species of this empire. In the empire creation menu, these traits can't be removed, but more can be added if there is enough trait points and trait picks. Government reforming doesn't add or remove these traits.
+</td></tr>
+<tr>
+<td><b>has_secondary_species</b>
+</td>
+<td colspan="2">This Civic or Origin requires a secondary species. It's unclear what if more than one Civics that require a secondary species is selected at the same time. An Origin with a secondary species will override the secondary species for a Civic.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>title</b></li></ul>
+</td>
+<td colspan="2">A localisation key for the title of the secondary species. <a href="https://stellaris.paradoxwikis.com/Syncretic_Evolution" title="Syncretic Evolution"><img alt="Origins syncretic evolution.png" src="images/Origins_syncretic_evolution.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Syncretic Evolution calls it "Syncretic Species".
+</td></tr>
+<tr>
+<td>
+<ul><li><b>traits = { trait = trait_xxx  trait = trait_yyy }</b></li></ul>
+</td>
+<td colspan="2">A list of species trait keys to be added to the secondary species. In the empire creation menu, these traits can't be removed, but more can be added if there is enough trait points and trait picks.
+</td></tr>
+<tr>
+<td><b>can_build_ruler_ship</b>
+</td>
+<td>Default no. If set to yes, this empire can build old-school oversized ships for each ruler. Vanilla unused.
+</td>
+<td rowspan="6" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>cost</b>
+</td>
+<td>How many civic points this will cost.  Defaults to 1.  Must be a positive integer.
+</td></tr>
+<tr>
+<td><b>swap_type</b>
+</td>
+<td>An entry that swaps civic name, flavor text and effect tooltip under certain condition. <a href="/Hive_mind_civics.html#Devouring_Swarm" title="Devouring Swarm"><img alt="Devouring Swarm" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Devouring Swarm uses this to swap into Terravore. Unlike <a href="/Tradition_modding.html" title="Tradition modding">Traditions</a>, the primary <b>modifier</b> block is NOT overwritten and there is NOT any local <b>modifier</b> block of swaps.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>name = &lt;localistion key&gt;</b></li></ul>
+</td>
+<td>Changes the name and flavor text of this civic.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>description = &lt;localisation key&gt;</b></li></ul>
+</td>
+<td>Changes the effect tooltip of this civic.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>trigger</b></li></ul>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check if this Civic swap should apply. Vanilla use "local_human_species_class = LITHOID" to swap Devouring Swarm for Lithoids. (Global scope)
+</td></tr>
+<tr>
+<td><b>advanced_start</b>
+</td>
+<td rowspan="5" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Default no. If set to no, the empire can't have advanced starts.
+</td></tr>
+<tr>
+<td><b>preferred_planet_class_neighbor</b>
+</td>
+<td>Default yes. If set to no, the guaranteed habitable worlds will not be guaranteed to match the empire's climate preference.
+</td></tr>
+<tr>
+<td><b>non_colonizable_planet_class_neighbor</b>
+</td>
+<td>Default no. If set to yes, the empire can't have guaranteed habitable worlds regardless of the galaxy settings.
+</td></tr>
+<tr>
+<td><b>initializers = { xxx yyy zzz }</b>
+</td>
+<td>A list of keys of solar_system_initializer. The solar system initializer the player picked for this empire in the empire creation menu will be ignored. If specified, the empire won't have guaranteed habitable worlds anyway unless the initializer creates some based on the galaxy settings.
+</td></tr>
+<tr>
+<td><b>flags = { xxx yyy zzz }</b>
+</td>
+<td>This empire will have these country flags set at the start of the game.
+</td></tr></tbody></table>
+<p>Implementions of other effects a Civic might also have, such as diplomatic restrictions, are integrated into other vanilla game files. Use <b>has_valid_civic</b> to check Civics.
+</p><p>Most of the other effects an Origin might also have (for example, starting conditions), are implemented through <a href="/Event_modding.html" title="Event modding">Events</a>. Use <b>has_origin</b> to check Origins.
+</p>
+<h3><span class="mw-headline" id="Examples">Examples</span></h3>
+<h4><span class="mw-headline" id="Civics">Civics</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Fanatic Purifiers</b></span>
+<div class="mw-collapsible-content">
+<pre>civic_fanatic_purifiers = {
+	modification = no
+	playable = { host_has_dlc = "Utopia" }
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		ethics = {
+			value = ethic_fanatic_xenophobe
+			OR = {
+				value = ethic_militarist
+				value = ethic_spiritualist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_barbaric_despoilers
+			}
+		}
+		origin = {
+			NOR = {
+				value = origin_syncretic_evolution
+				value = origin_common_ground
+				value = origin_hegemon
+			}
+		}
+	}
+	random_weight = {
+		base = 1000
+		modifier = {
+			factor = 0
+			NOT = { host_has_dlc = "Utopia" }
+		}
+	}
+
+	description = "civic_tooltip_fanatic_purifiers_effects"
+	modifier = {
+		ship_fire_rate_mult = 0.33
+		army_damage_mult = 0.33
+		starbase_shipyard_build_cost_mult = -0.15
+		country_naval_cap_mult = 0.33
+	}
+}
+</pre></div></div></div>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Driven Assimilator</b></span>
+<div class="mw-collapsible-content">
+<pre>civic_machine_assimilator = {
+	potential = { authority = { value = auth_machine_intelligence } }
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_machine_servitor
+				value = civic_machine_terminator
+			}
+		}
+	}
+	modification = no
+	random_weight = {
+		base = 5
+		modifier = {
+			factor = 0
+			NOT = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		}
+		modifier = {
+			# civic has no effect after galaxy generation, disable for random generation
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+	description = civic_tooltip_machine_assimilator_effects
+	has_secondary_species = {	# see game_start.11
+		title = civic_machine_assimilator_secondary_species
+		traits = {
+			trait = trait_cybernetic
+		}
+	}
+}
+</pre></div></div></div>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Devouring Swarm</b></span>
+<div class="mw-collapsible-content">
+<pre>civic_hive_devouring_swarm = {
+	modification = no
+	potential = {
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+		origin = {
+			NOR = {
+				value = origin_common_ground
+				value = origin_hegemon
+			}
+		}
+	}
+	random_weight = { base = 5 }
+
+	description = "civic_tooltip_devouring_swarm_effects"
+	modifier = {
+		country_starbase_influence_cost_mult = -0.5
+		ship_hull_mult = 0.25
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+		army_damage_mult = 0.40
+		category_biology_research_speed_mult = 0.20
+		starbase_shipyard_build_cost_mult = -0.25
+		country_naval_cap_mult = 0.33
+	}
+
+	swap_type = {
+		name = civic_hive_devouring_swarm_lithoid
+		description = "civic_tooltip_devouring_swarm_lithoid_effects"
+
+		trigger = {
+			local_human_species_class = LITHOID
+		}
+	}
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="Origins">Origins</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Syncretic Evolution</b></span>
+<div class="mw-collapsible-content">
+<pre>origin_syncretic_evolution = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_syncretic_evolution.dds"
+	picture = GFX_origin_syncretic_evolution
+
+	playable = {
+		host_has_dlc = "Utopia"
+	}
+
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = { NOT = { value = civic_fanatic_purifiers } }
+	}
+
+	description = civic_tooltip_syncretic_evolution_effects
+
+	has_secondary_species = {	# see game_start.11
+		title = civic_syncretic_evolution_secondary_species
+		traits = {
+			trait = trait_syncretic_proles
+		}
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+</pre></div></div></div>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Life Seeded</b></span>
+<div class="mw-collapsible-content">
+<pre>origin_life_seeded = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_life_seeded.dds"
+	picture = GFX_origin_life_seeded
+
+	starting_colony = pc_gaia
+	habitability_preference = pc_gaia
+	preferred_planet_class_neighbor = no
+
+	playable = {
+		host_has_dlc = "Apocalypse"
+	}
+
+	possible = {
+		authority = { NOT = { value = auth_machine_intelligence } }
+	}
+
+	description = "civic_tooltip_life_seeded_effects"
+
+	random_weight = {
+		base = 5
+	}
+}
+</pre></div></div></div>
+<h2><span class="mw-headline" id="Special_Requirement_Syntax">Special Requirement Syntax</span></h2>
+<p>The Civics use special requirement syntax and they don't accept regular <a href="/Conditions.html" title="Conditions">Conditions</a>. If it was implemented the other way, since incompatible Civics have no effect and a Civic can turn invalid literally anytime, it would be too performance intensive to check all empires for all civics everyday.
+</p><p>All they can check are civics, ethics, authorities, origins, country types and species archetypes. A single row of statement consist of "value = " and the relevant object key. Logical operators, namely NOT, AND, OR, and NOR, can be used to group one or more statements of the same category together, with an optional "text" entry which replaces the auto-generated tooltip for the entire logical block, but they cannot nest with each other and they cannot cross the category.
+</p><p>This is an example of this special syntax.
+</p>
+<pre>possible = {
+	authority = {
+		OR = {
+			<i># text specified here replaces auto-generated tooltips for this block</i>
+			text = civic_tooltip_dem_oli_dic
+			value = auth_democratic
+			value = auth_oligarchic
+			value = auth_dictatorial
+		}
+	}
+	ethics = {
+		value = ethic_fanatic_pacifist
+		NOR = {
+			text = civic_tooltip_not_authoritarian
+			value = ethic_authoritarian
+			value = ethic_fanatic_authoritarian
+		}
+	}
+	origin = {
+		NOR = {
+			value = origin_common_ground
+			value = origin_hegemon
+		}
+	}
+	species_archetype = {
+		<i># Only species archetypes can be specified here</i>
+		value = LITHOID
+	}
+}
+</pre>
+<p>Nested logic blocks <span class="effect-red" style="font-weight:bold;">don't work</span>.
+</p>
+<pre>ethics = {
+	OR = {
+		AND = {
+			value = ethic_fanatic_authoritarian
+			value = ethic_militarist
+		}
+		AND = {
+			value = ethic_authoritarian
+			value = ethic_fanatic_militarist
+		}
+	}
+}
+</pre>
+<p>Cross-category logic blocks <span class="effect-red" style="font-weight:bold;">don't work</span> either.
+</p>
+<pre>OR = {
+	ethics = {
+		value = ethic_materialist
+	}
+	authority = {
+		value = auth_imperial
+	}
+}
+</pre>
+<p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a class="mw-selflink selflink">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181329
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.091 seconds
+Real time usage: 0.112 seconds
+Preprocessor visited node count: 2166/1000000
+Post‐expand include size: 26978/2097152 bytes
+Template argument size: 9453/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3672/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   59.727      1 -total
+ 67.24%   40.158     30 Template:Icon
+ 17.66%   10.548      1 Template:ModdingNavbox
+ 16.81%   10.042      8 Template:Iconify
+ 12.91%    7.713      2 Template:Icon/c
+ 12.81%    7.653      1 Template:Navbox
+ 10.63%    6.352      2 Template:Icon/m
+  9.35%    5.586      3 Template:Icon/d
+  8.22%    4.912      2 Template:Icon/h
+  5.69%    3.399      1 Template:Icon/s
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:5015-0!canonical and timestamp 20260707181329 and revision id 106513.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

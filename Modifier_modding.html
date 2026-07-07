@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modifier modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Modifier modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.2.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>A <b>modifier</b> influences a scope's gameplay state, be it a country, planet, etc.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Modifier_fields"><span class="tocnumber">1</span> <span class="toctext">Modifier fields</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Modifier_Effects"><span class="tocnumber">1.1</span> <span class="toctext">Modifier Effects</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Modifiers_list"><span class="tocnumber">2</span> <span class="toctext">Modifiers list</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Auto-Generated_modifiers"><span class="tocnumber">3</span> <span class="toctext">Auto-Generated modifiers</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Economic_Categories"><span class="tocnumber">4</span> <span class="toctext">Economic Categories</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Hierarchy"><span class="tocnumber">4.1</span> <span class="toctext">Hierarchy</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Economic_Type"><span class="tocnumber">4.2</span> <span class="toctext">Economic Type</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Resource_Type"><span class="tocnumber">4.3</span> <span class="toctext">Resource Type</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Modifier_Type"><span class="tocnumber">4.4</span> <span class="toctext">Modifier Type</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Triggered_Economic_Units"><span class="tocnumber">4.5</span> <span class="toctext">Triggered Economic Units</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Localisation_and_Icons"><span class="tocnumber">4.6</span> <span class="toctext">Localisation and Icons</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Data_Structure"><span class="tocnumber">4.7</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Static_modifiers"><span class="tocnumber">5</span> <span class="toctext">Static modifiers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Static_modifier_integration"><span class="tocnumber">5.1</span> <span class="toctext">Static modifier integration</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Notification_modifiers"><span class="tocnumber">5.2</span> <span class="toctext">Notification modifiers</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#How_to_change_vanilla_static_modifiers?"><span class="tocnumber">5.3</span> <span class="toctext">How to change vanilla static modifiers?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Modifier_fields">Modifier fields</span></h2>
+<p>Modifiers are applied to a scope in a modifier or triggered_modifier field.  Some objects can apply modifiers to other scopes, in which case the field includes the scope applying to.  All the following Objects have modifier fields:
+</p>
+<table class="wikitable sortable mw-collapsible">
+<caption style="text-align: left; white-space:nowrap;">Objects that Accept Modifiers
+</caption>
+<tbody><tr>
+<th>Object</th>
+<th>Modifier field</th>
+<th>Field Scope</th>
+<th>Triggered modifier fields
+</th></tr>
+<tr>
+<td><a href="/Agenda_modding.html" title="Agenda modding">Agendas</a></td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td><a href="/Tradition_modding.html#Ascension_Perks" title="Tradition modding">Ascension Perks</a></td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td rowspan="2"><a href="/Building_modding.html#Data_Structure" title="Building modding">Buildings</a></td>
+<td>planet_modifier = {..}</td>
+<td>planet</td>
+<td rowspan="2">planet
+</td></tr>
+<tr>
+<td>country_modifier = {..}</td>
+<td>country
+</td></tr>
+<tr>
+<td>Colony Types</td>
+<td>planet_modifier = {..}</td>
+<td>planet</td>
+<td>?
+</td></tr>
+<tr>
+<td><a href="/Ship_modding.html#Components" title="Ship modding">Component Templates</a></td>
+<td>modifier = {..}<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup><br />ship_modifier = {..}</td>
+<td>ship</td>
+<td>none
+</td></tr>
+<tr>
+<td rowspan="3"><a href="/Planet_Generation_modding.html#Deposits" title="Planet Generation modding">Deposits</a></td>
+<td>planet_modifier = {..}</td>
+<td>planet</td>
+<td rowspan="3">planet
+</td></tr>
+<tr>
+<td>blocked_modifier = {..}</td>
+<td>planet
+</td></tr>
+<tr>
+<td>country_modifier = {..}</td>
+<td>country
+</td></tr>
+<tr>
+<td><a href="/Building_modding.html#Data_Structure" title="Building modding">Districts</a></td>
+<td>planet_modifier = {..}</td>
+<td>planet</td>
+<td>none
+</td></tr>
+<tr>
+<td><a href="/Edicts_modding.html" title="Edicts modding">Edicts</a></td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td rowspan="2">Espionage Assets</td>
+<td>passive = {..}</td>
+<td>country</td>
+<td rowspan="2">none
+</td></tr>
+<tr>
+<td>active = {..}</td>
+<td>country
+</td></tr>
+<tr>
+<td><a href="/Ethics_modding.html#Ethics" title="Ethics modding">Ethics</a></td>
+<td>country_modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td><a href="/Diplomacy_modding.html#Data_Structure_7" title="Diplomacy modding">Federation Laws</a></td>
+<td>modifier = {..}</td>
+<td>Federation</td>
+<td>none
+</td></tr>
+<tr>
+<td rowspan="3"><a href="/Diplomacy_modding.html#Data_Structure_5" title="Diplomacy modding">Federation Perks</a></td>
+<td>federation_modifier = {..}</td>
+<td>Federation</td>
+<td>none
+</td></tr>
+<tr>
+<td>members_modifier = {..}</td>
+<td>country
+</td></tr>
+<tr>
+<td>leader_modifier = {..}</td>
+<td>country
+</td></tr>
+<tr>
+<td><a href="/Government_modding.html#Authorities" title="Government modding">Authorities</a></td>
+<td>country_modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td><a href="/Government_modding.html#Data_Structure_3" title="Government modding">Civics &amp; Origins</a></td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td rowspan="3"><a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a></td>
+<td>country_modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td>station_modifier = {..}</td>
+<td>megastructure</td>
+<td>none
+</td></tr>
+<tr>
+<td>ship_modifier = {..}</td>
+<td>ship</td>
+<td>none
+</td></tr>
+<tr>
+<td>Menace Perks</td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td><a href="/Planet_modding.html#Planet_rules" title="Planet modding">Planet Class</a></td>
+<td>modifier = {..}</td>
+<td>planet</td>
+<td>none
+</td></tr>
+<tr>
+<td><a href="/Policies_modding.html" title="Policies modding">Policy Option</a></td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td rowspan="2"><a href="/Pop_Job_modding.html#Social_Strata" title="Pop Job modding">Pop Categories</a></td>
+<td>pop_modifier = {..}</td>
+<td>pop</td>
+<td rowspan="2">pop, planet
+</td></tr>
+<tr>
+<td>unemployment_penalty = {..}</td>
+<td>pop
+</td></tr>
+<tr>
+<td rowspan="3"><a href="/Pop_Job_modding.html#Jobs" title="Pop Job modding">Pop Jobs</a></td>
+<td>pop_modifier = {..}</td>
+<td>pop</td>
+<td rowspan="3">pop, planet, country
+</td></tr>
+<tr>
+<td>planet_modifier = {..}</td>
+<td>planet
+</td></tr>
+<tr>
+<td>country_modifier = {..}</td>
+<td>country
+</td></tr>
+<tr>
+<td><a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a></td>
+<td>none</td>
+<td>-</td>
+<td>country
+</td></tr>
+<tr>
+<td><a href="/Diplomacy_modding.html#Resolutions" title="Diplomacy modding">Galactic Community Resolution</a></td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>triggered_modifier
+</td></tr>
+<tr>
+<td><a href="/Ship_modding.html#Ship_Sizes" title="Ship modding">Ship Sizes</a></td>
+<td>modifier = {..}<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup><br />ship_modifier = {..}</td>
+<td>ship</td>
+<td>none
+</td></tr>
+<tr>
+<td>Species Rights</td>
+<td>pop_modifier = {..}</td>
+<td>pop</td>
+<td>pop
+</td></tr>
+<tr>
+<td>Star Classes</td>
+<td>modifier = {..}</td>
+<td>galactic_object</td>
+<td>none
+</td></tr>
+<tr>
+<td rowspan="5"><a href="/Starbase_modding.html#Starbase_Modules" title="Starbase modding">Starbase Buildings<br />Starbase Modules</a></td>
+<td>station_modifier = {..}</td>
+<td>ship</td>
+<td rowspan="5">station, country
+</td></tr>
+<tr>
+<td>country_modifier = {..}</td>
+<td>country
+</td></tr>
+<tr>
+<td>ship_modifier = {..}</td>
+<td>ship
+</td></tr>
+<tr>
+<td>orbit_modifier = {..}</td>
+<td>ship
+</td></tr>
+<tr>
+<td>system_modifier = {..}</td>
+<td>galactic_object
+</td></tr>
+<tr>
+<td><b><a href="https://stellaris.paradoxwikis.com/Modifiers#Static_modifiers" class="mw-redirect" title="Modifiers">Static Modifiers</a></b></td>
+<td>(The definition, no special code block)</td>
+<td>(Whichever scope the Static Modifier is applied, usually via <i>add_modifier = {..}</i> effect</td>
+<td>none
+</td></tr>
+<tr>
+<td>Technology</td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>none
+</td></tr>
+<tr>
+<td><a href="/Tradition_modding.html#Dynamic_Modding" title="Tradition modding">Traditions</a></td>
+<td>modifier = {..}</td>
+<td>country</td>
+<td>tradition_swap = { ... modifier = {...} }
+</td></tr>
+<tr>
+<td rowspan="2"><a href="/Traits_modding.html" title="Traits modding">Species Traits</a></td>
+<td>modifier = {..}</td>
+<td>species</td>
+<td rowspan="2">pop
+</td></tr>
+<tr>
+<td>growing_modifier = {..}<br />assembling_modifier = {..}<br />declining_modifier = {..}</td>
+<td>planet
+</td></tr>
+<tr>
+<td rowspan="2"><a href="/Traits_modding.html" title="Traits modding">Leader Traits</a></td>
+<td>modifier = {..}</td>
+<td>ruler: country<br />governor: sector<br />scientist (assigned to research): country (their research category only)<br />scientist (assigned to a ship): ship<br />admiral: fleet<br />general: army</td>
+<td rowspan="2">none
+</td></tr>
+<tr>
+<td>self_modifier = {..}</td>
+<td>leader
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Modifier_Effects">Modifier Effects</span></h3>
+<p>There are three types of modifiers.
+</p>
+<ul><li><i>add</i> modifiers add/substracts a set amount of a resource or attribute to a scope</li>
+<li><i>mult</i> modifiers increase or decrease the amount of a resource or attribute by a percentage</li>
+<li><i>reduction</i> modifiers divide an amount of a resource or attribute by a set amount</li></ul>
+<p>These affect the resource or attribute amounts in different ways.  For example, if the cost, production, or upkeep of a certain resource is <i>x</i>, then the actual amount of that resource will be:
+</p><p><i>((x + (Sum of all </i><b>add</b><i> modifiers)) * (1 + (Sum of all </i><b>mult</b><i> modifiers))) * (1 - </i><b>reduction</b><i>)</i>
+</p><p>Example:
+</p><p><i>planet_buildings_minerals_cost_mult = 1</i> would make all the buildings cost twice as much minerals.  So a <b>Research Lab</b> that normally costs 400 minerals would cost <i>400 * (1 + <b>1</b>) = 400 * 2 = 800</i> minerals.
+</p><p><i>planet_buildings_minerals_cost_add = 1</i> would make all the buildings cost one mineral more.  So a <b>Research Lab</b> that normally costs 400 minerals would cost <i>400 + <b>1</b> = 401</i> minerals
+</p><p><i>pop_growth_speed_reduction = 0.5</i> would make a species grow half as fast.  If a species on planet has a base growth speed of 4, their final growth speed would be: 4 * (-1 * 0.5) = 4 * -0.5 = 2
+</p><p>There can be multiple modifiers effecting a single resource cost, production, or upkeep.  For instance, if the empire has a civic that applies <i>planet_buildings_minerals_cost_mult = -0.1</i>, but the planet has a modifer that applies <i>planet_buildings_minerals_cost_mult = 0.20</i>, then the buildings on that planet will cost 10% more: <i>(400 * (1 + <b>0.20</b> + <b>-0.1</b>) = 400 * (1.1) = 440</i> minerals.
+</p><p><i>Reduction</i> modifiers have a larger effect than <i>mult</i> modifiers.  Let's say a species has a base growth speed of 3.  They have a trait with <i>pop_growth_speed = 0.25</i> increasing growth speed by 25%.  Their habitability on the planet gives them <i>pop_growth_speed = -0.10</i>  The empire has a temporary modifier giving them <i>pop_growth_speed_reduction = 0.25</i>  There final growth speed is: <i>(3 * (1 + 0.25 + -0.1)) * (1 - 0.25) = (3 * 1.15) * 0.75 = 3.45 * 0.75 = 2.5875</i>
+A <i>Reduction</i> modifier of 1 will always result in 0, no matter what <i>add</i> or <i>mult</i> modifers are applied as well.
+</p><p>There could also be other modifiers in the hierarchy.  For instance, if the modifer on the planet was <i>planet_structures_minerals_cost_mult = 0.20</i>, then districts on that planet would cost 20% more <i>(500 * (1 + <b>0.20</b>) = 500 * 1.2 = 600</i> minerals, while the buildings would only be 10% more.  Since <i>planet_structures</i> is the parent of <i>planet_buildings</i>, the buildings would be effected by both modifiers, but <i>planet_districts</i> would only be effected by the <i>planet_structures_xxxx</i> modifier on the planet.  Which modifiers gets applied to a resource depends on where it is in the Economic Category hierarchy, as well as where it is being applied.
+</p>
+<h2><span class="mw-headline" id="Modifiers_list">Modifiers list</span></h2>
+<p>Current list of modifiers (included those modded in using <a href="https://stellaris.paradoxwikis.com/Modifiers#Economic_Categories" class="mw-redirect" title="Modifiers">Economic Categories</a>) can be found in an <i><b>effects.log</b></i> file in your local data folder's script_documentation (defaults to "%USERPROFILE%\Documents\Paradox Interactive\Stellaris\<b>logs\script_documentation\</b>")
+</p>
+<table class="wikitable sortable mw-collapsible">
+<caption style="text-align: left; white-space:nowrap;">Table of Modifiers
+</caption>
+<tbody><tr>
+<th>Modifier name</th>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+<th>In-game effect
+</th></tr>
+<tr>
+<td>admiral_skill_levels</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Adds skill levels to admirals.
+</td></tr>
+<tr>
+<td>all_technology_research_speed</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies research speed for all technologies. (0.10 would be 10 percent faster, etc.)
+</td></tr>
+<tr>
+<td>armies_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, upkeep</td>
+<td></td>
+<td>Modifies the resource cost to recruit/maintain an army.
+</td></tr>
+<tr>
+<td>armies_x_mult</td>
+<td>cost, upkeep</td>
+<td></td>
+<td></td>
+<td>Modifies the energy cost to recruit/maintain an army.
+</td></tr>
+<tr>
+<td>army_x_y_mult</td>
+<td>attack, defense</td>
+<td>damage, health, morale</td>
+<td></td>
+<td>Modifies the health, damage, and morale when attacking/defending.
+</td></tr>
+<tr>
+<td>army_x_mult</td>
+<td>collateral_damage, damage, disengage_chance, experience_gain, morale_damage, starting_experience</td>
+<td></td>
+<td></td>
+<td>Modifies the chance for an army to damage buildings/damage/chance to disengage/experience game/morale damage/starting experience.
+</td></tr>
+<tr>
+<td>army_health</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the health of all of your armies.
+</td></tr>
+<tr>
+<td>army_morale</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the morale of all of your armies.
+</td></tr>
+<tr>
+<td>ascension_perks_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Adds to the number of ascension perks an empire may have.
+</td></tr>
+<tr>
+<td>bio_pop_growth_x</td>
+<td>from_immigration, speed, speed_reduction</td>
+<td></td>
+<td></td>
+<td>Modifies population speed from immigration and growth.
+</td></tr>
+<tr>
+<td>biological_pop_happiness</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies organic pops' happiness (excludes lithoids and machines)
+</td></tr>
+<tr>
+<td>BIOLOGICAL_species_trait_points_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>BIOLOGICAL_species_trait_picks_add
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Increase number of traits total that an organic species can have.
+</td></tr>
+<tr>
+<td>blank_modifier</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>branch_office_value_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>building_x_max</td>
+<td>betharian_power_plant, crystal_mines, gas_extractors, mote_harvesters xeno_zoo</td>
+<td></td>
+<td></td>
+<td>Modifies the amount of limited buildings allowed on a planet.
+</td></tr>
+<tr>
+<td>building_time_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the time required to complete buildings.
+</td></tr>
+<tr>
+<td>campaigns_x_cost_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>Modifies the resource cost required to start a campaign.
+</td></tr>
+<tr>
+<td>campaigns_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the energy cost required to start a campaign.
+</td></tr>
+<tr>
+<td>category_x_research_speed_mult</td>
+<td>biology, computing, field_manipulation, industry, materials, military_theory, new_worlds, particles, propulsion, psionics, statecraft, voidcraft</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>colony_start_num_pops_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Changes the number of the settling population of colony ships that colonies start with.
+</td></tr>
+<tr>
+<td>country_admin_cap_x</td>
+<td>add, mult</td>
+<td></td>
+<td></td>
+<td>(Depreciated as of 3.3, replaced with Unity system) Changes the administration capacity of a country.
+</td></tr>
+<tr>
+<td>country_x_produces_y</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>add, mult</td>
+<td></td>
+<td>Adds/multiplies to the resource production of a country. (Place on planet modifier to only modify the planet itself)
+</td></tr>
+<tr>
+<td>country_base_x_produces_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>Modifies the base resource production of a country.
+</td></tr>
+<tr>
+<td>country_border_friction_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the opinion modifier gained through border friction between countries.
+</td></tr>
+<tr>
+<td>country_edict_fund_add
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Adds to Edict Fund, subtracting from their normal Unity upkeep.
+</td></tr>
+<tr>
+<td>country_x_y</td>
+<td>claim_influence_cost, command_limit, integration_cooldown, naval_cap, pop_enslaved, produces, resettlement_cost, starbase_capacity, enclave_capacity, leader_cap</td>
+<td>add, mult</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>country_government_civic_points_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the number of civics a country can have.
+</td></tr>
+<tr>
+<td>country_insult_efficiency</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Increases or decreases the opinion decrease from insulting an AI empire.
+</td></tr>
+<tr>
+<td>country_leader_pool_size</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the leader pool size (the number of leaders among which you can choose). The default leader pool is 3.
+</td></tr>
+<tr>
+<td>country_megastructure_build_cap_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the number of megastructures that can be built at once.
+</td></tr>
+<tr>
+<td>country_occupation_armies_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Determines the number of occupation armies spawned by a country.
+</td></tr>
+<tr>
+<td>country_organic_trust_cap_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Increases maximum trust of an organic empire towards a machine empire.
+</td></tr>
+<tr>
+<td>country_x_tech_research_speed</td>
+<td>engineering, physics, society</td>
+<td></td>
+<td></td>
+<td>Modifies research speed of engineering/physics/society branch technologies .
+</td></tr>
+<tr>
+<td>country_resource_max_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Determines the maximum stockpiles of all resources.
+</td></tr>
+<tr>
+<td>country_resource_max_x_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>Determines the maximum stockpile of a resource.
+</td></tr>
+<tr>
+<td>country_ship_upgrade_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the resource cost to upgrade ships.
+</td></tr>
+<tr>
+<td>country_starbase_influence_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the influence cost to construct starbases.
+</td></tr>
+<tr>
+<td>country_subject_x_add</td>
+<td>acceptance, integration_speed, trust_cap</td>
+<td></td>
+<td></td>
+<td>Determines the willingness of an empire to become a subject/the speed at which subjects are integrated/the maximum trust of a subject.
+</td></tr>
+<tr>
+<td>country_subject_power_penalty_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies loyalty of an empire to its overlord as it grows in power.
+</td></tr>
+<tr>
+<td>country_subject_technology_sharing_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies research speed for overlord or subject for technologies discovered by other empire.
+</td></tr>
+<tr>
+<td>country_synthetic_trust_cap_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Increases maximum trust of a machine empire towards an organic empire.
+</td></tr>
+<tr>
+<td>country_trade_x</td>
+<td>attractiveness, fee</td>
+<td></td>
+<td></td>
+<td>Modifies an empires willingness to trade with you/the market fee.
+</td></tr>
+<tr>
+<td>country_trust_cap_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Increases the maximum allowed trust above 100.
+</td></tr>
+<tr>
+<td>country_trust_growth</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Increases or decreases trust growth of an AI empire.
+</td></tr>
+<tr>
+<td>country_vassal_naval_capacity_contribution_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the percentage of the vassal naval capacity contribution.
+</td></tr>
+<tr>
+<td>country_war_exhaustion_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the war exhaustion gained over time for a country.
+</td></tr>
+<tr>
+<td>damage_vs_country_type_x_mult</td>
+<td>adversary, ai_empire, ambient, amoeba, awakened_fallen_empire, awakened_marauders, caravaneer_fleet, caravaneer_home, cloud, crystal, cybrex_empire, default, dormant_marauders, drone, enclave, enigmatic_cache, extradimensional, extradimensional_2, extradimensional_3, faction, fallen_empire, feral_prethoryn, feral_prethoryn_infighting, gate_builders, global_event, gray, gray_goo, guardian, guardian_dragon, guardian_dreadnought, guardian_elderly_tiyanki, guardian_fortress, guardian_hatchling, guardian_hiver, guardian_horror, guardian_scavenger_bot, guardian_sphere, guardian_stellarite, guardian_wraith, ldragon_country, marauder_raiders, mechanocalibrator, neutral_faction, nivlacs, nomad, pirate, portal_holder, prikki, primitive, ratlings, rebel, ruined_marauders, sentinels, shroud, shroud_spirits, swarm, tiyanki, vol</td>
+<td></td>
+<td></td>
+<td>Modifies the damage dealt against specific types of countries.
+</td></tr>
+<tr>
+<td>defensive_war_influence_gain_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the influence gain from fighting a defensive war.
+</td></tr>
+<tr>
+<td>deposit_blockers_x_cost_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>deposit_blockers_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the energy cost of removing planetary blockers.
+</td></tr>
+<tr>
+<td>diplomacy_x_upkeep_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>Increases or decreases the influence cost of maintaining a diplomatic relation.
+</td></tr>
+<tr>
+<td>diplomacy_upkeep_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Increases or decreases the influence cost of maintaining a diplomatic relation.
+</td></tr>
+<tr>
+<td>diplo_weight_mult
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies the diplomatic weight.
+</td></tr>
+<tr>
+<td>district_x_max</td>
+<td>farming, generator, mining</td>
+<td></td>
+<td></td>
+<td>Modifies the maximum number of a certain district type on a planet.
+</td></tr>
+<tr>
+<td>district_automated_workforce
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies the number of automated pops
+</td></tr>
+<tr>
+<td>edict_length_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the length of edicts.
+</td></tr>
+<tr>
+<td>edicts_x_cost_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>Modifies the specified resource cost of enabling edicts.
+</td></tr>
+<tr>
+<td>edicts_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the energy cost of enabling edicts.
+</td></tr>
+<tr>
+<td>edicts_x_upkeep_mult
+</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies the specified resource upkeep cost of enabled edicts.
+</td></tr>
+<tr>
+<td>edicts_upkeep_mult
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies the monthly upkeep cost of enabled edicts (All resources).
+</td></tr>
+<tr>
+<td>empire_size_x_mult</td>
+<td>branch_office, colonies, penalty, pops, districts, systems</td>
+<td></td>
+<td></td>
+<td>Modifies the penalty that X has on empire size.
+</td></tr>
+<tr>
+<td>faction_approval</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the approval of a faction.
+</td></tr>
+<tr>
+<td>federation_naval_cap_contribution_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies a country's contributions to their federation's naval cap.
+</td></tr>
+<tr>
+<td>force_disparity_fire_rate_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the fire rate bonus given to smaller fleets during battle.
+</td></tr>
+<tr>
+<td>general_skill_levels</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Adds skill levels to generals.
+</td></tr>
+<tr>
+<td>governor_skill_levels</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Adds skill levels to governors.
+</td></tr>
+<tr>
+<td>intel_x_add
+</td>
+<td>encryption, decryption
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modified empire encryption/ decryption
+</td></tr>
+<tr>
+<td>job_x_add</td>
+<td>administrator, agri_drone, alloy_drone, artisan, artisan_drone, assimilation, bio_trophy, brain_drone, calculator, chemist, chemist_drone, clerk, colonist, coordinator, corrupt_drone, criminal, crisis_purge, crystal_miner, crystal_mining_drone, culture_worker, deviant_drone, dimensional_portal_researcher, dimensional_portal_researcher_gestalt, duelist, enforcer, entertainer, event_purge, executive, extractor, fabricator, farmer, fe_acolyte_artisan, fe_acolyte_farm, fe_acolyte_generator, fe_acolyte_mine, fe_archivist, fe_augur, fe_guardian_bot, fe_hedonist, fe_maintenance_bot, fe_overseer, fe_protector, fe_sky_cardinal, fe_xeno_keeper, fe_xeno_ward, foundry, gas_extraction_drone, head_researcher, healthcare, high_priest, hunter_gatherer, livestock, maintenance_drone, manager, merchant, miner, mining_drone, mote_harvester, mote_harvesting_drone, noble, odd_factory_drone, odd_factory_worker, organic_battery, patrol_drone, peasant, pre_sapient, preacher, priest, primitive_bureaucrat, primitive_farmer, primitive_laborer, primitive_miner, primitive_noble, primitive_priest, primitive_priest_2, primitive_researcher, primitive_researcher_2, primitive_technician, primitive_warrior, primitive_warrior_2, purge, ratling_scavenger, refiner, refiner_drone, replicator, researcher, roboticist, servant, slave_overseer, slave_toiler, soldier, spawning_drone, synapse_drone, technician, technician_drone, telepath, translucer, translucer_drone, underground_contact_drone, underground_trade_worker, warrior_drone</td>
+<td></td>
+<td></td>
+<td>Adds jobs to a planet.
+</td></tr>
+<tr>
+<td>job_x_per_y</td>
+<td>(see: job_x_add)</td>
+<td>crime, pop</td>
+<td></td>
+<td>Adds jobs to a planet based on crime/population; as is done for criminals.
+</td></tr>
+<tr>
+<td>leader_lifespan_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Appears to affect leader lifespan
+</td></tr>
+<tr>
+<td>leader_cost_empire_size_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>leader_skill_levels</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>leader_upkeep_empire_size_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>leaders_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, upkeep</td>
+<td></td>
+<td>Modifies the resource cost/upkeep of leaders.
+</td></tr>
+<tr>
+<td>lith_pop_x</td>
+<td>growth_from_immigration, growth_speed, growth_speed_reduction, happiness</td>
+<td></td>
+<td></td>
+<td>Modifies the population growth and happiness of lithoid pops.
+</td></tr>
+<tr>
+<td>lithoid_pop_happiness</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies lithoid pops' happiness (excludes organics and machines).
+</td></tr>
+<tr>
+<td>LITHOID_species_trait_points_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the species trait points of Lithoid species.
+</td></tr>
+<tr>
+<td>LITHOID_species_trait_picks_add
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifiers the number of trait picks of Lithoid species.
+</td></tr>
+<tr>
+<td>local_trade_protection_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies empire-wide trade protection.
+</td></tr>
+<tr>
+<td>MACHINE_species_trait_points_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the species trait points of Machine species.
+</td></tr>
+<tr>
+<td>MACHINE_species_trait_picks_add
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifiers the number of trait picks of Machine species.
+</td></tr>
+<tr>
+<td>max_x</td>
+<td>embassies, rivalries, trade_piracy_add, trade_piracy_mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>megastructure_build_speed_x</td>
+<td>add, mult</td>
+<td></td>
+<td></td>
+<td>Modifies the build speed of megastructures.
+</td></tr>
+<tr>
+<td>habitability_x_y
+</td>
+<td>floor, ceil
+</td>
+<td>add, mult
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>modify_species_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Reduces the research costs of modifying a species.
+</td></tr>
+<tr>
+<td>num_tech_alternatives_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the number of research alternatives (default 3).
+</td></tr>
+<tr>
+<td>OTHER_species_trait_points_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pc_x_habitability</td>
+<td>a_star, ai, alpine, arctic, arid, asteroid, b_star, barren, barren_cold, black_hole, broken, city, continental, crystal_asteroid, cybrex, desert, egg_cracked, f_star, frozen, g_star, gaia, gas_giant, gray_goo, habitat, habitat_shielded, hive, ice_asteroid, infested, k_star, m_giant_star, m_star, machine, molten, neutron_star, nuked, ocean, pulsar, rare_crystal_asteroid, relic, ringworld_habitable, ringworld_habitable_damaged, ringworld_seam, ringworld_seam_damaged, ringworld_shielded, ringworld_tech, ringworld_tech_damaged, savannah, shattered, shielded, shrouded, t_star, toxic, tropical, tundra</td>
+<td></td>
+<td></td>
+<td>Modifies the habitability of a certain planet type.
+</td></tr>
+<tr>
+<td>piracy_x_mult</td>
+<td>growth, suppression</td>
+<td></td>
+<td></td>
+<td>Modifies the growth/suppression of piracy.
+</td></tr>
+<tr>
+<td>planet_amenities_x</td>
+<td>add, mult</td>
+<td></td>
+<td></td>
+<td>Modifies the amenities of a planet.
+</td></tr>
+<tr>
+<td>planet_army_build_x_mult</td>
+<td>speed, time</td>
+<td></td>
+<td></td>
+<td>Modifies the army recruitment time.
+</td></tr>
+<tr>
+<td>planet_x_y_produces_z</td>
+<td>see: job_x_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>add, mult</td>
+<td>Modifies the resource production of a certain job.
+</td></tr>
+<tr>
+<td>planet_branch_offices_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, produces</td>
+<td></td>
+<td>Modifies the resource production of branch offices.
+</td></tr>
+<tr>
+<td>planet_branch_offices_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_building_build_speed_mult
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies the build speed of all buildings.
+</td></tr>
+<tr>
+<td>planet_building_capacity_add
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies the capacity to construct multiple buildings.
+</td></tr>
+<tr>
+<td>planet_building_x_build_speed_mult</td>
+<td>affluence_center, akx_worm_3, alpha_hub, amusement_megaplex, ancient_control_center, ancient_cryo_chamber, ancient_palace, artist_patron, autochthon_monument, autocurating_vault, betharian_power_plant, bio_reactor, bio_reprocessing_facilities, bureaucratic_complex, capital, chemical_plant, citadel_of_faith, class_4_singularity, clinic, clone_vats, colony_shelter, commercial_forum, commercial_megaplex, commercial_zone, communal_housing, corporate_forum, corporate_monument, corporate_site, corporate_vault, crude_huts, crystal_mines, crystal_plant, crystal_plant_2, deployment_post, dimensional_fabricator, drone_megastorage, drone_storage, empyrean_shrine, energy_grid, energy_nexus, executive_retreat, expanded_warren, factory_1, factory_2, factory_3, fe_dome, fe_stronghold, fe_xeno_zoo, food_conglomerate, food_processing_facility, fortress, foundry_1, foundry_2, foundry_3, galactic_stock_exchange, gas_extractors, great_pyramid, hab_capital, hab_major_capital, hall_judgment, heritage_site, hive_capital, hive_cluster, hive_confluence, hive_major_capital, hive_node, hive_warren, holo_theatres, holotemple, hospital, hydroponics_farm, hyper_entertainment_forum, hypercomms_forum, illicit_research_labs, institute, junkheap, luxury_residence, machine_assembly_plant, machine_capital, machine_major_capital, machine_system_capital, maintenance_depot, major_capital, master_archive, military_academy, mineral_purification_hub, mineral_purification_plant, ministry_production, mote_harvesters, nanite_transmuter, nano_forge, network_junction, noble_estates, nourishment_center, nuumismatic_shrine, organic_paradise, organic_sanctuary, overseer_homes, paradise_dome, pirate_haven, planetary_shield_generator, precinct_house, primitive_capital, primitive_dwellings, primitive_factory, primitive_farm, primitive_mine, primitive_power_plant, private_mining_consortium, private_research_initiative, private_shipyards, processing_center, production_center, psi_corps, public_relations_office, refinery, research_lab_1, research_lab_2, research_lab_3, resort_capital, resort_major_capital, resource_silo, robot_assembly_plant, sacred_nexus, sentinel_posts, slave_capital, slave_huts, slave_major_capital, slave_processing, smuggling_rings, spawning_pool, stone_palace, stronghold, supercomputer, syndicate_outreach_office, system_capital, system_conflux, temple, temple_of_prosperity, underground_chemists, underground_clubs, uplink_node, urban_dwellings, virtual_entertainment_studios, waste_reprocessing_center, wildcat_miners, wrecking_yards, xeno_tourism_agency, xeno_zoo</td>
+<td></td>
+<td></td>
+<td>Modifies the build speed of a certain building.
+</td></tr>
+<tr>
+<td>planet_buildings_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, upkeep</td>
+<td></td>
+<td>Modifies the cost/upkeep of buildings.
+</td></tr>
+<tr>
+<td>planet_buildings_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the base cost of buildings.
+</td></tr>
+<tr>
+<td>planet_buildings_strongholds_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, upkeep</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_x_y_upkeep_mult</td>
+<td>see: job_x_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td>Modifies the resource upkeep of a certain job.
+</td></tr>
+<tr>
+<td>planet_chemists_upkeep_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_clear_blocker_time_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_colony_development_speed_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the speed at which colonies are developed and established.
+</td></tr>
+<tr>
+<td>planet_x_produces_mult</td>
+<td>see: job_x_add</td>
+<td></td>
+<td></td>
+<td>Modifies the base resource production of a certain job.
+</td></tr>
+<tr>
+<td>planet_decision_enact_speed_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_district_x_build_speed_mult</td>
+<td>arcology_arms_industry, arcology_civilian_industry, arcology_housing, arcology_leisure, city, farming, farming_uncapped, generator, generator_uncapped, hab_commercial, hab_cultural, hab_energy, hab_housing, hab_mining, hab_science, hive, mining, mining_uncapped, nexus, rw_city, rw_commercial, rw_farming_build, rw_generator, rw_hive, rw_nexus, rw_science</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_districts_x_y_cost_mult</td>
+<td>cities, hab_energy, hab_leisure, hab_mining, hab_research hab_trade</td>
+<td>unity, time, sr_zro, sr_living_metal, sr_dark_matter, society_research, rare_crystals, physics_research, nanites, minor_artifacts, minerals, influence, produces, exotic_gases, engineering_research, energy, consumer_goods, alloys, volatile_motes</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_districts_x_cost_mult</td>
+<td>see: planet_districts_x_y_cost_mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_districts_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_districts_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, upkeep</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_hyperlane_range_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the hyperlane visibility range of planets.
+</td></tr>
+<tr>
+<td>planet_jobs_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>produces, upkeep</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_x_y_produces_mult</td>
+<td>see: job_x_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>produces, upkeep</td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_x_produces_mult</td>
+<td>see: job_x_add</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_produces_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies resources from jobs
+</td></tr>
+<tr>
+<td>planet_jobs_robotic_x_produces_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_robotic_produces_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_specialist_x_produces_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_specialist_produces_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_upkeep_mult
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>modifies resource upkeep of jobs
+</td></tr>
+<tr>
+<td>planet_jobs_worker_x_produces_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_jobs_worker_produces_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_livestock_x_produces_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_livestock_produces_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_max_buildings_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Adds specified number of building slots allowed on a planet.
+</td></tr>
+<tr>
+<td>planet_max_districts_x
+</td>
+<td>add, mult
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Adds/Multiplies districts of a colony/planet.
+</td></tr>
+<tr>
+<td>planet_non_artificial_max_districts_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_orbital_bombardment_damage</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Adds to the amount of damage done to a planet by orbital bombardment (this includes garrison damage, building damage, and killing pops).
+</td></tr>
+<tr>
+<td>planet_pop_assemblers_x_upkeep_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_pop_assemblers_upkeep_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_pop_assembly_x</td>
+<td>add, mult, reduction</td>
+<td></td>
+<td></td>
+<td>Modifies the speed at which machine/robot pops are built.
+</td></tr>
+<tr>
+<td>planet_pop_assembly_organic_x</td>
+<td>add, mult, reduction</td>
+<td></td>
+<td></td>
+<td>Modifies the speed at which organic pops are built.
+</td></tr>
+<tr>
+<td>planet_pops_x_upkeep_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_pops_x_y_upkeep_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>organics, robotics</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_pops_x_upkeep_mult</td>
+<td>organics, robotics</td>
+<td></td>
+<td></td>
+<td>Modifies the base upkeep of organic/robotic pops.
+</td></tr>
+<tr>
+<td>planet_pops_unemployed_x_upkeep_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_x_upkeep_mult</td>
+<td>pops, refiners, researchers</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_refiners_x_upkeep_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_researchers_x_produces_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_x_y</td>
+<td>amenities, amenities_no_happiness, building_cost, crime, crime_no_happiness, emigration_push, housing, immigration_pull, sensor_range</td>
+<td>add, mult</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_sensor_range_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the range of a planet's ship sensor.
+</td></tr>
+<tr>
+<td>planet_stability_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies a planet's stability.
+</td></tr>
+<tr>
+<td>planet_structures_x_y_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, upkeep</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>planet_structures_x_mult</td>
+<td>cost, upkeep</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>point_defence_speed_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>point_defence_weapon_x_mult</td>
+<td>damage, fire_rate</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_amenities_usage_x</td>
+<td>add, base, mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_amenities_usage_no_happiness_x</td>
+<td>add, base, mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_assembly_speed</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_assimilation_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_x_y</td>
+<td>see: job_x_add</td>
+<td>happiness, political_power</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_precursor_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_robot_servant_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_ruler_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_slave_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_specialist_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_worker_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_cat_xeno_ward_x</td>
+<td>happiness, political_power</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_category_slave_x_upkeep_mult</td>
+<td>see: resources</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_category_slave_upkeep_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_citizen_happiness</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies pops' happiness, excluding pops without <a href="/Species_rights.html" title="Species rights">full citizenship</a>
+</td></tr>
+<tr>
+<td>pop_decline_speed</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_defense_armies_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Removed as of version 4.0.2
+</td></tr>
+<tr>
+<td>pop_demotion_time_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the time it takes for a pop to lower in stratum.
+</td></tr>
+<tr>
+<td>pop_environment_tolerance</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies habitability of a pop, 1.0 = 100% habitability
+</td></tr>
+<tr>
+<td>pop_ethic_x_attraction_mult</td>
+<td>authoritarian, egalitarian, fanatic_authoritarian, fanatic_materialist, fanatic_militarist, fanatic_pacifist, fanatic_spiritualist, fanatic_xenophile, fanatic_xenophobe, gestalt_consciousness, materialist, militarist, pacifist, spiritualist, xenophile, xenophobe</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_ethics_shift_speed_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_factions_x_produces_y</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>add, mult</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_factions_produces_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_government_ethic_attraction</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_growth_x</td>
+<td>from_immigration, speed, speed_reduction</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_happiness</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies all pops' happiness
+</td></tr>
+<tr>
+<td>pop_housing_usage_x</td>
+<td>add, base, mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_political_power</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>pop_resettlement_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>PRESAPIENT_species_trait_points_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ROBOT_species_trait_points_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the species trait points of Robot species.
+</td></tr>
+<tr>
+<td>ROBOT_species_trait_picks_add
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies the number of trait picks of a Robot species.
+</td></tr>
+<tr>
+<td>ruler_skill_levels</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>science_ship_survey_speed</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>scientist_skill_levels</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_accuracy_x</td>
+<td>add, mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_anomaly_fail_risk</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_anomaly_x_mult</td>
+<td>generation_chance, research_speed</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_archaeological_site_excavation_speed_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_archeaological_site_clues_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_x_add</td>
+<td>armor, evasion, hull, hull_damage, hyperlane_range, piracy_suppression, sensor_range, shield, starting_experience, tracking</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_x_mult</td>
+<td>armor_damage, armor, armor_penetration, base_speed, evasion, experience_gain, fire_rate, emergency_ftl, ftl_jumpdrive_range, home_territory_fire_rate, hull, hull_damage, interstellar_speed, landing_time, orbit_upkeep, orbital_bombardment, piracy_suppression, shield, shield_damage, shield_penetration, tracking, weapon_range, winddown, windup</td>
+<td></td>
+<td></td>
+<td>Modifies the attributes of a ship. (windup/down determine start/stop animation speeds).
+</td></tr>
+<tr>
+<td>ship_armor_reduction</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_armor_regen_add_x</td>
+<td>perc, static</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_x_y_cost_mult</td>
+<td>battleship, colonizer, corvette, cruiser, destroyer, military_station, science</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_x_cost_mult</td>
+<td>see: ship_x_y_cost_mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_disengage_chance_x</td>
+<td>mult, reduction</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_emergency_ftl_min_days_x</td>
+<td>add, mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_hull_regen_add_x</td>
+<td>perc, static</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_shield_reduction</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_shield_regen_add_x</td>
+<td>perc, static</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_speed_x</td>
+<td>mult, reduction</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ship_weapon_damage</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>shipclass_x_y_mult</td>
+<td>colonizer, constructor, military, military_special, military_station, mining_station, observation_station, research_station, science_ship, starbase, transport</td>
+<td>build_cost, build_speed, damage, disengage, evasion, hull</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ships_x_upkeep_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>ships_upkeep_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>shipsize_x_build_speed_mult</td>
+<td>abandoned_ship, alien_racing_ship, ancient_corvette, ancient_destroyer, ancient_drone_station, ancient_mining_drone, ark, asteroid, battleship, blue_core_ai, blue_military_station_large_ai, blue_military_station_small_ai, caravaneer_cargoship_01, caravaneer_cruiser_01, caravaneer_destroyer_01, caravaneer_station_01, civilian_freighter, civilian_tanker, colonizer, colony_ship, colony_ship_ai, colossus, construction_ship_ai, construction_ship_ed, construction_ship_swarm, constructor, core_ai, corrupted_avatar, corvette, cruiser, crystal_ship_large_blue, crystal_ship_large_blue, crystal_ship_large_green_elite, crystal_ship_large_green, crystal_ship_large_red_elite, crystal_ship_large_red, crystal_ship_large_yellow_elite, crystal_ship_medium_blue, crystal_ship_medium_blue_elite, crystal_ship_medium_green, crystal_ship_medium_green_elite, crystal_ship_medium_red, crystal_ship_medium_red_elite, crystal_ship_medium_yellow, crystal_ship_medium_yellow_elite, crystal_ship_small_blue, crystal_ship_small_blue_elite, crystal_ship_small_green, crystal_ship_small_green_elite, crystal_ship_small_red, crystal_ship_small_red_elite, crystal_ship_small_yellow, crystal_ship_small_yellow_elite, crystal_station_large, destroyer, dimensional_horror, dimensional_portal_ed, enclave_station, enigmatic_cache, eventship_[01-07], final_core_ai, galleon, graygoo_factory, graygoo_interdictor, graygoo_mothership, hive_asteroid, homebase, ion_cannon, large_ship_ai, large_ship_carrier_swarm, large_ship_ed, large_ship_fallen_empire, large_ship_swarm, leviathan_01_elder_tiyanki, leviathan_01_scavenger_bot, leviathan_01_voidspawn, leviathan_01_voidspawn, marauder_corvette, marauder_cruiser, marauder_destroyer, marauder_galleon, marauder_station, marauder_void_dwelling, massive_ship_fallen_empire, medium_ship_ed, military_station_large_ai, military_station_large_fallen_empire, military_station_large, military_station_medium, military_station_small_ai, military_station_small, military_station_small_fallen_empire, military_station_small, mining_station, nanite_space_dragon_baby, nomad_destroyer, npc_warship_01, observation_station, passenger_liner, pirate_corvette, pirate_cruiser, pirate_destroyer, pirate_station, primitive_space_station, probe, psionic_avatar, queen_swarm, research_station, science, sensor_station_01, sentinel_station, shroud_manifestation, small_ship_ai, small_ship_ed, small_ship_fallen_empire, small_ship_swarm, space_amoeba, space_amoeba_mother, space_cloud, space_dragon_baby, space_dragon_blue, space_dragon_red, space_whale_[1-4], sphere, sponsored_colonizer, starbase_ai, starbase_caravaneer, starbase_citadel, starbase_exd, starbase_fe_outpost,starbase_gatebuilders, starbase_marauder, starbase_outpost, starbase_starfortres, starbase_starhold, starbase_starport, starbase_swarm, station_generic_01, station_1, station_m, station_s, station_xl, station_xs, stellarite, titan, transport, transport_ship_ai, transport_ship_swarm, warped_consciousness, wraith_01_blue, wraith_01_red, wraith_01_yellow</td>
+<td></td>
+<td></td>
+<td>Modifies the build speed of a certain size of ships.
+</td></tr>
+<tr>
+<td>slave_market_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Modifies the cost of pops on the slave market.
+</td></tr>
+<tr>
+<td>species_empire_size_mult
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies how much empire size a pop of a species gives.
+</td></tr>
+<tr>
+<td>species_leader_exp_gain</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_building_build_x_mult</td>
+<td>speed, time</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_building_capacity_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_buildings_x_cost_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_buildings_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_defense_platform_capacity_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_defensive_war_ship_build_speed_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_module_build_x_mult</td>
+<td>cost, speed, time</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_module_capacity_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_modules_x_cost_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_outpost_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_outpost_x_cost_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_shipyard_build_x_mult</td>
+<td>speed, time</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_shipyard_build_x_cost_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_shipyard_capacity_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_trade_protection_add</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_trade_x_range_add</td>
+<td>protection, collection</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbase_upgrade_x_mult</td>
+<td>cost, speed, time</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbases_upkeep_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>starbases_x_motes_upkeep_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>station_x_produces_mult
+</td>
+<td>researchers, gatherers
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>Modifies output of research/gathering stations
+</td></tr>
+<tr>
+<td>station_x_y_z_mult</td>
+<td>researchers, gatherers</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td>cost, produces, upkeep</td>
+<td>
+</td></tr>
+<tr>
+<td>stations_x_produces_mult</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>Does not do anything since 3.11.2
+</td></tr>
+<tr>
+<td>subject_integration_influence_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>subject_tribute_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Does not do anything as of patch 2.7.1
+</td></tr>
+<tr>
+<td>tech_cost_empire_size_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>terraform_speed_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>terraforming_cost_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>trade_value_x</td>
+<td>add, mult</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>tradition_cost_empire_size_mult</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>unemployment_resources_x_upkeep_add</td>
+<td>alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, nanites, physics_research, produces, rare_crystals, society_research, sr_dark_matter, sr_living_metal, sr_zro, time, unity, volatile_motes</td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>x_research_speed_mult</td>
+<td>[1-9]_cat, AST_CLUSTER_CAT, AST_CRATER_CAT, AST_DEBRIS_FIELD_1_CAT, ast_debris_field_1_cat_2, AST_GEAR_CAT, AST_ILLICIT_DARK_CAT, AST_MINING_CAT, AST_SHRINE_1_CAT, AST_WAVELENGTHS_1_CAT, asteroid_uninhabitable_category, ATM_ANOMALY_CAT, atomic_clock_cat, BAR_COLONY_CAT, BARR_BASE_CAT, battle_uninhabitable_category, beacon_uninhabitable_category, cargo_gasgiant_category, COLD_RESEARCH_CAT, collision_asteroid_category, CON_BIOLOGY_CAT, CONT_SIGNS_CAT, corrupt_data_cat, crashed_ship_asteroid_category, CRYSTAL_MANUFACTORY_CAT, cybrex_1_cat, cybrex_2_cat, cybrex_3_cat, cybrex_4_cat, cybrex_5_cat, cybrex_6_cat, cybrex_7_cat, cybrex_8_cat, cybrex_9_cat, cybrex_10_cat, cybrex_11_cat, debris_asteroid_category, debris_gasgiant_category, debris_gasgiant_category_temp, DES_BURIED_CAT, DES_PLANET_CAT, DIMENSIONAL_POCKET_CAT, diplomacy_volatile_motes_upkeep_mult, disco_alien_machine_cat, disco_breathing_rift_cat, disco_gray_cat, disco_impossible_organism_cat, disco_molluscoid_miners_cat, disco_speed_demon_cat, disco_stranded_scientist_cat, disco_trojan_asteroid_cat, DISTAR_BRAINSLUG_CAT, DISTAR_CLONE_CAT, DISTAR_COLLAPSE_CAT, DISTAR_DEAD_GOD_CAT, DISTAR_DIAMOND_CAT, DISTAR_ELECTRO_CAT, DISTAR_EXO_CAT, DISTAR_FLARE_CAT, DISTAR_FLOW_CAT, DISTAR_FLYTRAP_CAT, DISTAR_FOES_CAT, DISTAR_GEODE_CAT, DISTAR_HOLO_CAT, DISTAR_ICE_CAT, DISTAR_LIVING_CAT, DISTAR_LOST_CAT, DISTAR_MED_CAT, DISTAR_MEDGAS_CAT, DISTAR_MERCURY_CAT, DISTAR_METAL_CAT, DISTAR_MOLTEN_CAT, DISTAR_NANO_CAT, DISTAR_NANOCITY_CAT, DISTAR_NANOSAND_CAT, DISTAR_OCEAN_CAT, DISTAR_PHASE_CAT, DISTAR_POD_CAT, DISTAR_PUZZLE_CAT, DISTAR_RAINBOW_CAT, DISTAR_RAT_CAT, DISTAR_ROBO_CAT, DISTAR_RUM_CAT, DISTAR_SIGNAL_CAT, DISTAR_SOOTHE_CAT, DISTAR_SOOTHE_GC_CAT, DISTAR_SOY_CAT, DISTAR_THIRSTY_CAT, DISTAR_TIME_CAT, DISTAR_WARFORM_CAT, DISTAR_WRECK_CAT, DISTAR_ZONE_CAT, emissions_asteroid_category, energy_uninhabitable_category, FEN_HABBANIS, FRBR_GRIMACING_CAT, FROZ_BASE2_CAT, FROZ_BASE_CAT, FROZ_BOX_CAT, FROZ_ILLUMINATED_CAT, GAEA_CHECKERED_CAT, GAIA_MOVE_CAT, gaia_planet_cat, GAIA_RECORD_CAT, GAS_CLOUDY_CAT, GAS_ZRO_ICE_CAT, GEN_ABANDONED_SHIP_CAT, GEN_DERELICT_SHIP_CAT, GEN_DESERT_CAT, GEN_LOST_CARGO_CAT, GEN_MYSTICAL_CAT, GEN_OLD_WAR_CAT, GEN_PLAYGROUND_CAT, HAB_CORN_CAT, HAB_MAT_CAT, hatch_asteroid_category, HBL_LUSH_PLANET_1_CAT, HBL_MUSIC_1_CAT, HOLE_RADIATION_CAT, impact_uninhabitable_category, inhabited_toxic_category, IRASSIA, irassian_1_cat, irassian_2_cat, irassian_3_cat, irassian_4_cat, irassian_5_cat, irassian_6_cat, irassian_7_cat, irassian_8_cat, irassian_9_cat, irassian_10_cat, irassian_11_cat, irregular_energy_cat, league_1_cat, league_2_cat, league_3_cat, league_4_cat, league_5_cat, league_6_cat, league_7_cat, league_8_cat, league_9_cat, league_10_cat, league_11_cat, league_12_cat, league_13_cat, league_14_cat, LEVELED_CAT, life_asteroid_category, life_barren_category, life_frozen_category, life_gasgiant_category, life_toxic_category, living_metal_category, MOLTEN_BASE_CAT, moon_cat, moon_gasgiant_category, mountain_uninhabitable_category, NUKE_PLANET_CAT, object_gasgiant_category, object_uninhabitable_category, origin_asteroid_category, peculiar_patterns_cat, PROJ_MOON_CAT, SEA_CAT, ship_gasgiant_category, shipyard_uninhabitable_category, signal_gasgiant_category, signal_uninhabitable_category, sol_wasteland_category, solar_uninhabitable_category, star_lifting_category, station_asteroid_category station_uninhabitable_category, stolen_ship_cat, storms_gasgiant_category, SUN_RAYS_CAT SUN_TEAPOT_CAT terminal_gasgiant_category_cat terraforming_candidate_category_cat time_loop_world_cat, tomb_world_cat, TOX_MAT_CAT, TOX_PLANET_CAT, TOX_PURPLE_RAIN_CAT, TOX_STRUCTURES_CAT, transmitter_cat, TROP_BIOLOGY_CAT TROP_CONDITIONS_CAT, TROP_PETS_CAT, TROP_WOODS_CAT, TUTORIAL_CAT UHB_ANCIENT_CAT, UHB_ANCIENT_RUINS_1_CAT, UHB_BUOY_CAT, UPLIFT_ARCTIC_CAT, UPLIFT_ARID_CAT, UPLIFT_CAT_CAT, UPLIFT_CONTINENTAL_CAT, UPLIFT_DESERT_CAT, UPLIFT_GENERIC_CAT, UPLIFT_OCEAN_CAT, UPLIFT_ROACHOID_CAT, UPLIFT_SNAKEOID_CAT, UPLIFT_TROPICAL_CAT, UPLIFT_TUNDRA_CAT, vultaum_[1-11], VULTAUMAR, WAT_PLANET_CAT, writing_uninhabitable_category, yuht, YUHTAAN</td>
+<td></td>
+<td></td>
+<td>Modifies the research speed of a specific category's technologies.
+</td></tr>
+<tr>
+<td>x_y_mult
+</td>
+<td>small, medium, large, extra_large, torpedo
+</td>
+<td>speed, weapon_damage, weapon_fire_rate
+</td>
+<td>
+</td>
+<td><i><b>Removed on version 2.6 onwards</b></i>
+</td></tr>
+<tr>
+<td>weapon_role_x_y_mult</td>
+<td>point_defense, artillery, anti_shield, anti_hull, anti_armor</td>
+<td>speed, damage, fire_rate</td>
+<td></td>
+<td>Modifies the speed/damage/fire rate of a specific type of weapon based on their role.
+</td></tr>
+<tr>
+<td>weapon_type_x_weapon_y_mult</td>
+<td>strike_craft, point_defense, kinetic_weapon, explosive, energy</td>
+<td>speed, damage, fire_rate</td>
+<td></td>
+<td>Modifies the speed/damage/fire rate of a specific type of weapon based on their type.
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Auto-Generated_modifiers">Auto-Generated modifiers</span></h2>
+<p>The game auto-generates modifiers for the following elements:
+</p><p>1. species_archetypes
+</p>
+<pre>&lt;archetype name&gt;_species_trait_points_add - country scope
+</pre>
+<p>2. ethics
+</p>
+<pre>pop_ethic_[fanatic_]&lt;ethic name&gt;_attraction_mult - country scope, even ethics without attraction generate attraction modifiers
+</pre>
+<p>3. tech_categories
+</p>
+<pre>category_&lt;category name&gt;_research_speed_mult - country scope
+</pre>
+<p>4. ship_sizes
+</p>
+<pre>shipsize_&lt;shipsize name&gt;_build_speed_mult - country scope
+shipsize_&lt;shipsize name&gt;_build_cost_mult - country scope
+shipsize_&lt;shipsize name&gt;_hull_mult - country scope
+shipsize_&lt;shipsize name&gt;_hull_add - country scope
+</pre>
+<p>5. ship_classes - only buildable ships have classes
+</p>
+<pre>shipclass_&lt;class name&gt;_build_cost_mult - country scope
+shipclass_&lt;class name&gt;_build_speed_mult - country scope
+shipclass_&lt;class name&gt;_hull_mult - country scope
+shipclass_&lt;class name&gt;_damage_mult - country scope
+shipclass_&lt;class name&gt;_evasion_add - country scope
+shipclass_&lt;class name&gt;_disengage_mult - country scope
+</pre>
+<p>6. building_tags - build_speed_mult type modifier doesn't have any effect in game except being displayed (obviously not fully implemented.)
+</p>
+<pre>&lt;building name&gt;_construction_speed_mult - planet/country/sector scopes/leader (i believe)
+&lt;building name&gt;_build_cost_mult - planet/country/sector scopes/leader (i believe)
+</pre>
+<p>7. component_tags - each component tag auto generates three modifiers. Only those that are defined for weapon type actually have an effect, but the game auto generates modifiers for all component tags.
+</p>
+<pre>&lt;component name&gt;_weapon_damage_mult - modifier/ship modifier on ship sizes and ship modifier applied through events
+&lt;component name&gt;_weapon_fire_rate_mult - modifier/ship modifier on ship sizes and ship modifier applied through events
+&lt;component name&gt;_speed_mult - modifier/ship modifier on ship sizes and ship modifier applied through events
+</pre>
+<p>8. special_projects - country/leader scope
+</p>
+<pre>&lt;project name&gt;_1_cat_research_speed_mult
+&lt;project name&gt;_2_cat_research_speed_mult
+&lt;project name&gt;_3_cat_research_speed_mult
+...
+</pre>
+<p>9. planet_classes habitability - pop/trait/planet scopes - do not require GFX.
+</p>
+<pre>pc_&lt;class name&gt;_habitability
+</pre>
+<p>Other modifiers are generated basec on Economic Categories.
+</p>
+<h2><span class="mw-headline" id="Economic_Categories">Economic Categories</span></h2>
+<p>Modifiers effecting resource costs, production and upkeeps are created using Economic Categories.  Economic Categories are defined in "common\economic_categories".  Every <i>resource = { ... }</i> block in the script is assigned one of these categories.  For each category, modifiers can be created that multiply or add to the resource cost, upkeep or production of game objects.
+</p>
+<h3><span class="mw-headline" id="Hierarchy">Hierarchy</span></h3>
+<p>Most Economic Categories are assigned a <i>parent</i>.  This forms a hierarchical tree out of the modifiers.  Any modifier created for that category or any of its parent categories will then effect the resource cost/production/upkeep of any resources in that block.  For instance, <i>planetary buildings</i> are usually assigned to the resource category <i>planet_buildings</i>, which is a child of <i>planet_structures</i> &gt; <i>planets</i> &gt; <i>country</i>.  So any modifier that starts with <i>planet_buildings_xxxx</i>, <i>planet_structures_xxxx</i>, <i>planets_xxx</i>, or <i>country_xxxx</i> will effect that building.  
+</p>
+<h3><span class="mw-headline" id="Economic_Type">Economic Type</span></h3>
+<p>Each category can effect the <i>cost</i>, <i>production</i>, and <i>upkeep</i> of a resource.
+</p><p><b>Cost</b> is the initial cost for that object.  The cost to build a building, the cost to start the terraforming, etc.  
+</p><p><b>Production</b> is the monthly resource production of the object.  The monthly production of the pop job, the monthly production of the building, etc.
+</p><p><b>Upkeep</b> is the monthly upkeep cost for that object.  The monthly upkeep cost of the pop job, the monthly upkeep cost of the building, etc.
+</p>
+<h3><span class="mw-headline" id="Resource_Type">Resource Type</span></h3>
+<p>A single modifier will either effect a single type of resource, or will apply to all of the resources of that Economic Type.  <i>planet_buildings_cost_mult</i> will effect all the resource costs of buildings, while <i>planet_buildings_minerals_cost_mult</i> will only effect the mineral costs of buildings.  So, if a building cost 400 minerals and 100 food to build, <i>planet_buildings_cost_mult</i> would effect the cost of both the minerals and food, while <i>planet_buildings_minerals_cost_mult</i> would only effect the minerals cost, leaving the food cost at 100.
+</p>
+<h3><span class="mw-headline" id="Modifier_Type">Modifier Type</span></h3>
+<p>There are two types of modifiers created: <i>mult</i> and <i>add</i>.
+</p>
+<h3><span class="mw-headline" id="Triggered_Economic_Units">Triggered Economic Units</span></h3>
+<p>Sometimes you'll want more specific modifiers without actually creating a child category.  For instance, <i>planet_jobs</i> breaks jobs into smaller categories, such as planet_farmers.  So farmer jobs will assign <i>planet_farmers</i> as their category in their resource block.  Now any <i>planet_jobs_xxxx</i> as well as any <i>planet_farmers_xxxx</i> modifiers will effect the farmers.  But sometimes you want modifiers to only effect a job if some condition is met, or you might want a job to have more than one parent that effects it.  These are both accomplished with <i>triggered economic units</i>
+</p><p>What if you want a modifier that specifically only effects the resource production when a slave is working the job?  Then you use <i>triggered_produces_modifier</i> blocks to trigger that modifier only when the trigger conditions are met.
+</p>
+<pre> planet_jobs = {
+ 	parent = planets
+ 
+ 	triggered_produces_modifier = {
+ 		key = planet_jobs_slave
+ 		modifier_types = {
+ 			mult
+ 		}
+ 		trigger = {
+ 			is_pop_category = slave
+ 		}
+ 	}
+ }
+
+</pre>
+<p>What if you want a modifier that acts as if it is effected by more than one parent?  For instance, Vanilla defines <i>planet_districts_hab_industrial</i> and <i>planet_districts_industrial</i>.  You decide you want to create a civic that makes all industrial districts 10% cheaper, so you have <i>planet_districts_industrial</i> generate <i>mult</i> modifiers for <i>produces</i>, and in the civic use <i>planet_districts_industrial_costs_mult = -0.10</i>.   But, Habitat industrial districts are assigned to <i>planet_districts_hab_industrial</i> instead, so they aren't affected.  Change their parent to <i>planet_districts_industrial</i> instead of <i>planet_districts</i>, and the modifier now applies to them.  But now you want to make the Voidborne Ascension Perk make all Habitat districts 10% cheaper.  You could make a new Economic Category <i>planet_districts_hab</i> and assign all the <i>planet_districts_hab_xxxx</i> categories to it, but you already have assigned <i>planet_districts_hab_industrial</i> to <i>planet_districts_industrial</i>.  What you can do instead, is make <i>planet_districts_hab</i> a triggered econmic unit of <i>planet_districts</i>, and <i>planet_districts_hab_costs_mult = -0.10</i> will now make all the districts on Habitats 10% cheaper, while maintaining the hierarchy of your habitat industrial districts.
+</p>
+<pre> planet_districts = {
+ 	parent = planet_structures
+ 
+ 	triggered_cost_modifier = {
+ 		key = planet_districts_hab
+ 		modifier_types = {
+ 			mult
+ 		}
+ 		trigger = {
+ 			uses_district_set = habitat
+ 		}
+ 	}
+ }
+
+</pre>
+<h3><span class="mw-headline" id="Localisation_and_Icons">Localisation and Icons</span></h3>
+<p>Each new modifier you have generated and is used requires localisation and most also require an icon (stored in gfx/interface/icons/modifiers) with an identical key. But not all modifiers require an icon - and those that do require an icon require it only if they are used in code somewhere that applies them as a planet or country modifier (example: on buildings, a planet_class, an ethic etc.).  The key for generated modifiers is <i>mod_</i> appended to the front of the modifier.  So for our new <i>planet_districts_hab</i>, you'd need to define the localisation for <i>mod_planet_districts_hab_costs_mult: "Habitat District Cost"</i> and create the icon in "gfx\interface\icons\modifiers\mod_planet_districts_hab_costs_mult.dds".
+</p>
+<h3><span class="mw-headline" id="Data_Structure">Data Structure</span></h3>
+<ul><li><b>&lt;key&gt; = {...}</b> - The name of this category that will be used in the <i>category</i> entry of a <i>resources = {...}</i> block.</li></ul>
+<dl><dd><ul><li><b>parent = &lt;key&gt;</b> - The parent category of this category.  Most Economic Categories have the ultimate parent of <i>country</i></li>
+<li><b>hidden = yes</b> - Use parent category for display. Resources used by this category are merged into parent category in tooltips</li>
+<li><b>generate_mult_modifiers = {...}</b> - Specify <i>produces</i>, <i>upkeep</i>, and/or <i>cost</i> to create <i>&lt;key&gt;(_&lt;resource&gt;)_produces_mult</i>, <i>&lt;key&gt;(_&lt;resource&gt;)_upkeep_mult</i> and/or <i>&lt;key&gt;(_&lt;resource&gt;)_cost_mult</i> modifiers</li>
+<li><b>generate_add_modifiers = {...}</b> - Specify <i>produces</i>, <i>upkeep</i>, and/or <i>cost</i> to create <i>&lt;key&gt;(_&lt;resource&gt;)_produces_add</i>, <i>&lt;key&gt;(_&lt;resource&gt;)_upkeep_add</i> and/or <i>&lt;key&gt;(_&lt;resource&gt;)_cost_add</i> modifiers</li>
+<li><b>use_for_ai_budget = yes</b> - This category has it's own entry in "common\ai_budget\" files</li>
+<li><b>ai_use_parent_for_resources_upkeep = {...}</b> - Specify resource(s) that the AI uses the parent to manage upkeep for in the parent category in <i>common\ai_budget\</i>.  For instance, <i>ships</i> alloy upkeep is managed directly (<i>alloys_upkeep_ships</i> in "ai_budget\00_alloys_budget.txt"), but <i>ships</i> energy upkeep is managed via <i>ships</i> parent <i>country</i> (<i>energy_upkeep_country</i> in "ai_budget\00_energy_budget.txt"), as <i>ships</i> economic category has <i>ai_use_parent_for_resources_upkeep = { energy }</i></li>
+<li><b>triggered_(cost/produces/upkeep)_modifier = {...}</b> - Generate a <i>cost</i>, <i>produces</i> or <i>upkeep</i> modifier that only applies to a subset of this category.</li></ul>
+<dl><dd><ul><li><b>key = &lt;key&gt;</b> - The &lt;key&gt; for this generated modifier category</li>
+<li><b>use_parent_icon = yes</b> - This triggered modifier won't have it's own icon set, so use the category's icon for it</li>
+<li>'<i>modifyer_types</i> - <i>mult</i> and/or <i>add</i>, depending on which you want generated</li>
+<li><b>trigger = {...}</b> - The trigger conditions to form this subset.  The scope depends on the resource block it is assigned to.</li></ul></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="Static_modifiers">Static modifiers</span></h2>
+<p>Static modifiers are game objects defined at "common/static_modifiers/xxx.txt".
+</p><p>Static modifiers consist of modifier statements and additional fields.
+</p>
+<ul><li><b>icon</b> - A direct reference to a "xxx.dds" file. planetary static modifiers and some empire static modifiers have this field. If not specified the static modifier icon will be displayed as the icon of the first modifier statement of this static modifier.</li>
+<li><b>icon_frame = 1/2/3</b> - Applies a green/yellow/red circle frame for the icon of this static modifier. Usually used by planetary static modifiers.</li>
+<li><b>custom_tooltip = &lt;localisation key&gt;</b> - A tooltip in addition to the generated modifier tooltip.</li>
+<li><b>show_only_custom_tooltip = yes/no</b> - If custom tooltip is specified, setting this to no will hide the generated modifier tooltip.</li>
+<li><b>apply_modifier_to_other_planets = &lt;static modifier key&gt;</b> - If this Static Modifier is added to a planet, the later Static Modifier will apply to each planet you own without the former. Resort Colony and Penal Colony use this to apply a non-duplicatable empire bonus.</li></ul>
+<p>Despite of some static modifiers being exclusively added to specific scopes, static modifiers themselves do not rely on scopes. They can be added to almost any scope: country, planet, pop, ship, federation...
+</p><p>Some static modifiers are hard-coded to be called by the engine. Removing them causes unexpected issues.
+</p>
+<h3><span class="mw-headline" id="Static_modifier_integration">Static modifier integration</span></h3>
+<p>Any modifier block can call a static modifier. The engine will find that static modifier and integrate its modifier statements into this block.
+</p><p>Given the following static modifier:
+</p>
+<pre>example_sm = {
+	planet_stability_add = 10
+}
+</pre>
+<p>Then anything that require Modifiers can use <code>example_sm = &lt;float&gt;</code> as a Modifier entry. For example, <code>example_sm = 1.5</code> is technically equivalent to <code>planet_stability_add = 15</code>.
+</p><p>Only modifier statements will be integrated. Custom tooltips and anything else will be ignored.
+</p><p>Unlike <a href="/Dynamic_modding.html" title="Dynamic modding">scripted triggers and scripted effects</a>, static modifiers can't integrate other static modifiers.
+</p>
+<h3><span class="mw-headline" id="Notification_modifiers">Notification modifiers</span></h3>
+<p>A special variation of static modifiers, except all they have is an icon. They are assigned to country scopes. Use notification modifiers instead of static modifiers if your modifier do not have any modifiers anyway, because modifier updating is performance intensive.
+</p><p>They are defined at "common/notification_modifiers/xxx.txt".
+</p>
+<h3><span id="How_to_change_vanilla_static_modifiers.3F"></span><span class="mw-headline" id="How_to_change_vanilla_static_modifiers?">How to change vanilla static modifiers?</span></h3>
+<p>Place a changed static modifier from any of the core files in "common/static_modifiers" in a new file that comes <i>before</i> asciibetically.
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">This is a limited field that only accepts a few special modifiers.  See <a href="/Ship_modding.html#Data_Structure_5" title="Ship modding">Ship Modding</a> for more information</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">This is a limited field that only accepts a few special modifiers.  See <a href="/Ship_modding.html#Data_Structure" title="Ship modding">Ship Modding</a> for more information</span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181509
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.098 seconds
+Real time usage: 0.103 seconds
+Preprocessor visited node count: 272/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1173/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   16.832      1 -total
+ 30.16%    5.076      1 Template:ModdingNavbox
+ 16.75%    2.820      1 Template:Version
+ 12.00%    2.020      1 Template:Navbox
+  7.97%    1.342      1 Template:Infobox
+  3.93%    0.662     14 Template:Navboxgroup
+  2.49%    0.419      1 Template:Nowrap
+  2.22%    0.373      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1585-0!canonical and timestamp 20260707181509 and revision id 117424.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

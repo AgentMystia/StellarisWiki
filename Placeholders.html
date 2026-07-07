@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Placeholders - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Placeholders</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><p><b>Placeholders</b> are for compatibility with other mods, are bits of code that are designed to be ignored by the game until they are overwritten by another mod. This allows to reduce the amount of errors in the logs.
+Not all entries are capable of having placeholders without breaking the code, either because they are subject to the DUPL bug, too complex to handle, or don't allow them.
+The file naming must respect the load order to be loaded first, for more details, see <a href="/Modding.html#Overwriting_specific_elements" title="Modding">Overwriting specific elements</a>.
+</p><p><b>Since v3.14</b>, <a href="https://stellaris.paradoxwikis.com/Inline_scripts" class="mw-redirect" title="Inline scripts">inline scripts</a> have been established as good practices, which can replace the old global flags and trigger placeholder concept (if they can be used at the specific points; initiated by modder TTFTCUTS (Gigastructures)<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> and RoAdd independently), in combination with global <a href="/Dynamic_modding.html#Scripted_variables" title="Dynamic modding">scripted variables</a>. This has the advance of increased performance and loading time, and reduces even the error logs to zero. So instead of checking a condition every time the evaluation is performed, this happens once when the game is loaded, depending on whether a mod is missing (placeholder value 0 when merging) or present (value 1 provided by the mod).
+No extra scripted effect or triggers are necessary anymore, just the global scripted "<b>placeholder variable</b>" for the specific mod and if needed the standardized inline script (e.g. <code>merger_of_rules/toggled_code</code> from "The Merger of Rules" mod).
+</p><p>
+If you just want other mods to be compatible with your mod, all you need to do is declare a specific scripted mod variable. For example: </p><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="nd">@has_planetary_diversity</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+<p>If you want your mod to be compatible with other mods, you must replace the previous mod condition (if present) and insert the related code in the inline_script parameter.
+For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span>    <span class="n">inline_script</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">script</span> <span class="o">=</span> <span class="n">merger_of_rules</span><span class="o">/</span><span class="n">toggled_code</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;</span>
+            <span class="n">custom_tooltip</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">fail_text</span> <span class="o">=</span> <span class="n">legendary_leader_planet_no_terraform</span>
+                <span class="n">this</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="n">NOT</span> <span class="o">=</span> <span class="p">{</span> <span class="n">has_planet_flag</span> <span class="o">=</span> <span class="n">legendary_leader_planet</span> <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="s2">&quot;</span>
+        <span class="n">toggle</span> <span class="o">=</span> <span class="nd">@has_planetary_diversity</span>
+    <span class="p">}</span>
+</pre></div>
+<p>If several other mods support the specific code, you can add all the mod variables to the <code>toggle</code> parameter.
+For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span>        <span class="c1"># Ethics and Civics Alternative - FunEFork / Ethics &amp; Civics: Bug Branch</span>
+        <span class="n">inline_script</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">script</span> <span class="o">=</span> <span class="n">merger_of_rules</span><span class="o">/</span><span class="n">toggled_code</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;</span>
+                <span class="n">has_valid_civic</span> <span class="o">=</span> <span class="n">civic_slaving_despots</span>
+                <span class="n">has_valid_civic</span> <span class="o">=</span> <span class="n">civic_slaving_despots_corpo</span>
+            <span class="s2">&quot;</span>
+            <span class="n">toggle</span> <span class="o">=</span> <span class="o">@</span><span class="p">[</span> <span class="n">has_eca_funefork</span> <span class="o">+</span> <span class="n">has_bug_branch</span> <span class="p">]</span> <span class="c1"># This is an OR toggle</span>
+        <span class="p">}</span>
+</pre></div>
+<dl><dt>Note</dt>
+<dd></dd>
+<dd>Scripted variables are FIOS, e.g. The merger of Rules uses <code>~~~~z_check_variables.txt</code> for all mod IDs.</dd>
+<dd>Reference spreadsheet with list of mod IDs: <a rel="nofollow" class="external text" href="https://docs.google.com/spreadsheets/d/1wbKhAVczL0By2F2D9dDy5WC-do3XqguNuj-dms9vzIo/edit">Compatibility Scripted Variables (hosted by Inny)</a>.</dd></dl>
+<table class="wikitable">
+<caption>
+</caption>
+<tbody><tr>
+<th colspan="3"><b>Possible placeholders</b>
+</th></tr>
+<tr>
+<td><b>ascension_perks</b>
+</td>
+<td>LIOS
+</td>
+<td><code>ap_expactriate_service = { potential = { always = no } possible = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>authorities</b>
+</td>
+<td><span style="color:red">FIOS</span>
+</td>
+<td><code>auth_direct_democratic = { playable = { always = no } possible = { always = no } ruler_council_position = councilor_ruler_democratic }</code>
+</td></tr>
+<tr>
+<td><b>bombardment_stances</b>
+</td>
+<td>LIOS
+</td>
+<td><code>death = { trigger = { always = no } default = no stop_when_armies_dead = no abduct_pops = no planet_damage = 0 army_damage = 0 kill_pop_chance = { base = 0 } min_pops_to_kill_pop = 0 ai_weight = { weight = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>buildings</b>
+</td>
+<td>LIOS
+</td>
+<td><code>building_dimensional_instrument = { potential = { always = no } allow = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>casus_belli</b>
+</td>
+<td>LIOS
+</td>
+<td><code>cb_shadowrift_attacked = { show_in_diplomacy = no show_notification = no potential = { always = no } is_valid = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>citizenship_type</b>
+</td>
+<td>LIOS
+</td>
+<td><code>citizenship_caste_system = { potential = { always = no } allow = { always = no } ai_will_do = { factor = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>civics</b>
+</td>
+<td>LIOS
+</td>
+<td><code>civic_anarchy_ideals = { potential = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>colony_types</b>
+</td>
+<td>LIOS
+</td>
+<td><code>col_habitat_nsc_freebooter_factory = { icon = GFX_colony_type_generator potential = { always = no } weight_modifier = { base = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>component_templates</b>
+</td>
+<td><span style="color:red">FIOS</span>
+</td>
+<td><code>utility_component_template = { key = "SHROUD_DRIVE" size = small icon = "GFX_ship_part_hyper_drive_1" icon_frame = 1 power = 0 component_set = "ftl_components" ai_weight = { base = 0 } class_restriction = { shipclass_habitat_station } }</code>
+</td></tr>
+<tr>
+<td><b>country_types</b>
+</td>
+<td>LIOS
+</td>
+<td><code>abyssal_host_invaders_type = { ai = { enabled = no } }</code>
+</td></tr>
+<tr>
+<td><b>districts</b>
+</td>
+<td>LIOS
+</td>
+<td><code>district_mf_alloy = { base_buildtime = 1 icon = district_city desc = district_city_desc is_capped_by_modifier = no show_on_uncolonized = { always = no } potential = { always = no } resources = { category = planet_districts_cities upkeep = { energy = 1 } } }</code>
+</td></tr>
+<tr>
+<td><b>events</b>
+</td>
+<td><span style="color:red">FIOS</span>
+</td>
+<td><code>planet_event = { id = arknights_KWYATA.2 hide_window = yes is_triggered_only = yes immediate = { } }</code>
+</td></tr>
+<tr>
+<td><b>governments</b>
+</td>
+<td>LIOS
+</td>
+<td><code>gov_eternal_continuum = { possible = { always = no } weight = { base = 0 } ruler_title = RT_EMPEROR ruler_title_female = RT_EMPRESS }</code>
+</td></tr>
+<tr>
+<td><b>megastructures</b>
+</td>
+<td>LIOS
+</td>
+<td><code>ringworld_behemoth_0 = { entity = "" potential = { always = no } possible = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>origins</b>
+</td>
+<td>LIOS
+</td>
+<td><code>origin_chosen_of_the_shroud = { is_origin = yes potential = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>personalities</b>
+</td>
+<td>LIOS
+</td>
+<td><code>fallen_empire_pouchkinn = { behaviour = { } allow = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>planet_classes</b>
+</td>
+<td><span style="color:red">DUPL</span>
+</td>
+<td><span style="color:red">Planet classes can't be made as placeholders due to the DUPL bug.</span>
+</td></tr>
+<tr>
+<td><b>pop_jobs</b>
+</td>
+<td>LIOS
+</td>
+<td><code>acot_researcher = { category = worker resources = {} possible = { always = no } weight = { weight = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>relics</b>
+</td>
+<td>LIOS
+</td>
+<td><code>r_darhmod_infernal = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }</code>
+</td></tr>
+<tr>
+<td><b>resolutions</b>
+</td>
+<td>LIOS
+</td>
+<td><code>resolution_sleeper_sanctions = { icon = "GFX_resolution_mutual_defense" resources = { category = resolutions cost = { influence = 0 } } target = no effect = {} fail_effects = {} potential = { always = no } allow = { always = no } active = { always = no } ai_weight = { weight = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>scripted_effects</b>
+</td>
+<td>LIOS
+</td>
+<td><code>gpm_roll_planetary_features = {}</code>
+</td></tr>
+<tr>
+<td><b>scripted_triggers</b>
+</td>
+<td>LIOS
+</td>
+<td><code>eutab_has_research_building = { always = no }</code>
+</td></tr>
+<tr>
+<td><b>ship_of_size_limits</b>
+</td>
+<td>LIOS
+</td>
+<td><code>Flagship_ship_limit = { ship_types = { placeholder_ship } base = 0 max = 0 show = { } }</code>
+</td></tr>
+<tr>
+<td><b>ship_sizes</b>
+</td>
+<td>LIOS
+</td>
+<td><code>placeholder_ship = { resources = { category = starbase_stations } potential_construction = { always = no } possible_construction = { always = no } is_designable = no enable_default_design = yes prerequisites = { } class = shipclass_starbase icon_frame = 1 icon = ship_size_military_station }</code>
+</td></tr>
+<tr>
+<td><b>slavery_types</b>
+</td>
+<td>LIOS
+</td>
+<td><code>slavery_s_test_subjects = { pop_modifier = {} potential = { always = no } allow = { always = no } ai_will_do = { factor = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>species_archetypes</b>
+</td>
+<td>LIOS
+</td>
+<td><code>KANSEN = { uses_modifiers = no }</code>
+</td></tr>
+<tr>
+<td><b>species_classes</b>
+</td>
+<td>LIOS
+</td>
+<td><span style="color:red">Not working – AI will pick them up regardless of the settings.</span>
+</td></tr>
+<tr>
+<td><b>star_classes</b>
+</td>
+<td>LIOS
+</td>
+<td><code>sc_g_super = { class = g_star spawn_odds = 0 }</code>
+</td></tr>
+<tr>
+<td><b>starbase_buildings</b>
+</td>
+<td>LIOS
+</td>
+<td><code>AL_AntiFTL = { icon = "GFX_starbase_shipyard" potential = { always = no } resources = { category = starbase_buildings } ai_weight = { weight = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>starbase_modules</b>
+</td>
+<td>LIOS
+</td>
+<td><code>cruel_pain_ship_labor_module = { icon = "GFX_starbase_shipyard" section = "HANGAR_STARBASE_SECTION" construction_days = 0 potential = { always = no } resources = { category = starbase_modules } ai_weight = { weight = 0 } }</code>
+</td></tr>
+<tr>
+<td><b>static_modifiers</b>
+</td>
+<td><span style="color:red">FIOS</span>
+</td>
+<td><code>apocalypse = {}</code>
+</td></tr>
+<tr>
+<td><b>technology</b>
+</td>
+<td>LIOS
+</td>
+<td><code>tech_pdhabitat_2 = { cost = 0 area = engineering category = { voidcraft } tier = 2 potential = { has_pd_planetary_habitats = yes } }</code>
+</td></tr>
+<tr>
+<td><b>traits</b>
+</td>
+<td><span style="color:red">DUPL</span>
+</td>
+<td><span style="color:red">Traits can't be made as placeholders due to the DUPL bug.</span>
+</td></tr></tbody></table>
+<dl><dt>Known issues</dt>
+<dd>Authorities are loaded in a random order since v3.12.</dd>
+<dd>District and megastructures order is dependant of load/declaration order.</dd>
+<dd>Technologies will inherit the <code>potential</code> part of the code if the overwriting tech doesn't have one, thus the use of an <a href="/Mod_detection.html" title="Mod detection">ID Trigger</a>: a scripted trigger that the mod author sets to <code>always = yes</code> while the mod checking it uses a placeholder one.</dd></dl>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https:github.com/Inny78/Merger-of-Rules/pull/2">Implementation of a Toggled Code Inline by TTFTCUTS</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181710
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.019 seconds
+Real time usage: 0.599 seconds
+Preprocessor visited node count: 34/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3253/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:11491-0!canonical and timestamp 20260707181710 and revision id 101854.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

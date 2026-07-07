@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Save-game editing - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Save-game editing</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">This article is <a href="/Category_Timeless.html" title="Category:Timeless">timeless</a> and should be accurate for any version of the game.</div>
+</div>
+</div>
+<p>This article details Stellaris save game format and how to edit them. As a reminder, always make a backup copy of your save file before editing!
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Location_(Steam_Version)"><span class="tocnumber">1</span> <span class="toctext">Location (Steam Version)</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Location_(GOG)"><span class="tocnumber">2</span> <span class="toctext">Location (GOG)</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Location_(Paradox_Launcher_Version)"><span class="tocnumber">3</span> <span class="toctext">Location (Paradox Launcher Version)</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Location_(GamePass_Launcher_Version)"><span class="tocnumber">4</span> <span class="toctext">Location (GamePass Launcher Version)</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Format"><span class="tocnumber">5</span> <span class="toctext">Format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Compression_on_Windows"><span class="tocnumber">5.1</span> <span class="toctext">Compression on Windows</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Compression_on_macOS"><span class="tocnumber">5.2</span> <span class="toctext">Compression on macOS</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Compression_on_Linux"><span class="tocnumber">5.3</span> <span class="toctext">Compression on Linux</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Save_Attributes"><span class="tocnumber">6</span> <span class="toctext">Save Attributes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#gamestate_File_Details"><span class="tocnumber">6.1</span> <span class="toctext"><i>gamestate</i> File Details</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span id="Location_.28Steam_Version.29"></span><span class="mw-headline" id="Location_(Steam_Version)">Location (Steam Version)</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>OS</th>
+<th>Location
+</th></tr>
+<tr>
+<td>Windows custom saves</td>
+<td><code>%USERPROFILE%\Documents\Paradox Interactive\Stellaris\save games\$EMPIRENAME+ID\</code>
+</td></tr>
+<tr>
+<td>Mac</td>
+<td><code>$HOME/Documents/Paradox Interactive/Stellaris/save games/$EMPIRENAME+ID</code>
+</td></tr>
+<tr>
+<td>Linux</td>
+<td><code>$HOME/.local/share/Paradox Interactive/Stellaris/save games/$EMPIRENAME+ID</code> (<code>$XDG_DATA_HOME</code> is ignored!)
+</td></tr></tbody></table>
+<p>Cloud saves can be edited.
+</p><p>Here are the cloud saves locations:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>OS</th>
+<th>Location
+</th></tr>
+<tr>
+<td>Mac</td>
+<td>~/Library/Application Support/Steam/userdata/&lt;YOUR STEAM ID&gt;/281990/remote/save games/​
+</td></tr>
+<tr>
+<td>Linux
+</td>
+<td><code>$STEAMFOLDER/userdata/$STEAMID/281990/remote/save games/$EMPIRENAME+ID</code>
+</td></tr>
+<tr>
+<td>Windows
+</td>
+<td><code>\Steam\userdata\%STEAMUSERID%\281990\remote\save games\$EMPIRENAME+ID\</code>
+</td></tr></tbody></table>
+<h2><span id="Location_.28GOG.29"></span><span class="mw-headline" id="Location_(GOG)">Location (GOG)</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>OS
+</th>
+<th>Location
+</th></tr>
+<tr>
+<td>Windows local saves
+</td>
+<td><code>%USERPROFILE%\Documents\Paradox Interactive\Stellaris\save games\$EMPIRENAME+ID\</code>
+</td></tr>
+<tr>
+<td>Windows cloud saves 1
+</td>
+<td><code>%USERPROFILE%\Documents\Paradox Interactive\pdx_sdk_filestorage\save games\$EMPIRENAME+ID\</code>
+</td></tr>
+<tr>
+<td>Windows cloud saves 2
+</td>
+<td><code>%USERPROFILE%\Documents\Paradox Interactive\pops_filestorage\save games\$EMPIRENAME+ID\</code>
+</td></tr></tbody></table>
+<h2><span id="Location_.28Paradox_Launcher_Version.29"></span><span class="mw-headline" id="Location_(Paradox_Launcher_Version)">Location (Paradox Launcher Version)</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>OS</th>
+<th>Location
+</th></tr>
+<tr>
+<td>Windows</td>
+<td><code>%USERPROFILE%\Documents\Paradox Interactive\Stellaris Plaza\save games\$EMPIRENAME+ID\</code>
+</td></tr>
+<tr>
+<td>Mac</td>
+<td><code>$HOME/.local/share/Paradox Interactive/Stellaris/save games/$EMPIRENAME+ID(Maybe?)</code>
+</td></tr>
+<tr>
+<td>Linux</td>
+<td><code>$HOME/.local/share/Paradox Interactive/Stellaris Plaza/save games/$EMPIRENAME+ID</code> (<code>$XDG_DATA_HOME</code> is ignored!)
+</td></tr></tbody></table>
+<h2><span id="Location_.28GamePass_Launcher_Version.29"></span><span class="mw-headline" id="Location_(GamePass_Launcher_Version)">Location (GamePass Launcher Version)</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>OS</th>
+<th>Location
+</th></tr>
+<tr>
+<td>Windows</td>
+<td><code>%USERPROFILE%\Documents\Paradox Interactive\Stellaris GamePass\save games\$EMPIRENAME+ID\</code>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Format">Format</span></h2>
+<p>Each .sav file is a ZIP archive containing two text files: <code>gamestate</code> and <code>meta</code>. They include all the game state data and the meta-information that is shown on the load game screen.
+</p><p>The game seems to be unusually picky about the format when loading:
+</p>
+<ul><li>The files within the ZIP archive must use UNIX-style <a href="http://en.wikipedia.org/wiki/Newline" class="extiw" title="wp:Newline">newlines</a>. Windows Notepad will not save the newlines correctly, so another editor such as <a href="http://en.wikipedia.org/wiki/Notepad%2B%2B" class="extiw" title="wp:Notepad++">Notepad++</a> must be used.</li>
+<li>The files within the ZIP archive must have correct timestamps. See OS-specific instructions below.</li>
+<li>When zipping the files, <b>you should select the two text files and create a new .sav archive from those files</b>. If you try to zip the folder containing the edited files, you will get a broken save error when trying to load the game. Move the new .sav into the main save folder</li></ul>
+<h3><span class="mw-headline" id="Compression_on_Windows">Compression on Windows</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3A7zip_options.png" class="image"><img alt="" src="images/7zip_options.png" decoding="async" loading="lazy" width="300" height="277" class="thumbimage" data-file-width="849" data-file-height="785" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3A7zip_options.png" class="internal" title="Enlarge"></a></div>Options for 7-Zip</div></div></div>
+<p>Use <a href="http://en.wikipedia.org/wiki/7-Zip" class="extiw" title="wp:7-Zip">7-Zip</a> with the following options:
+</p>
+<ul><li>Archive format: zip</li>
+<li>Compression level: Normal</li>
+<li>Compression method: Deflate</li>
+<li>Do not include NTFS timestamps (<code>tc=off</code> parameters in bottom left of 7-Zip, or use a version equal to 9.12 beta or earlier)</li></ul>
+<p>Do not use WinRAR as it messes compressed lines.
+</p><p>By using the edit function in the 7zip file manager (the editor needs to be chosen by going to tools then options then editor and putting a link to editor of chice) the file can be edited and then once the file is closed 7zip will automatically re-compress the file to ensure no issues 
+</p>
+<h3><span class="mw-headline" id="Compression_on_macOS">Compression on macOS</span></h3>
+<p>On Mac, use Apple's <b>Archive Utility</b> app to unzip the .sav game file. To do that:
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AChoose_Application_dialog.png" class="image"><img alt="" src="images/Choose_Application_dialog.png" decoding="async" loading="lazy" width="300" height="238" class="thumbimage" data-file-width="708" data-file-height="561" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AChoose_Application_dialog.png" class="internal" title="Enlarge"></a></div>Navigate and select Archive Utility app</div></div></div>
+<ol><li>Right-click the .sav file and click <b>Open With &gt; Other...</b></li>
+<li>Navigate to: <code>&lt;computer_name&gt;/System/Library/ CoreServices/Applications</code></li>
+<li>In the <b>Choose Application</b> dialog change <b>Enable</b> option to <b>All Applications</b></li>
+<li>Select the <b>Archive Utility</b>, then click <b>Open</b></li></ol>
+<p>A folder appears with the same name as the .sav file containing the <i>gamestate</i> and <i>meta</i> files. Edit using any text editor able to save in Unix LF format.
+</p><p>An easier way to compress the saves is to highlight the two files, left click and click "Compress 2 Items". A .zip file named Archive.zip will appear: left click on this and click "Get Info". Under the "Name &amp; Extension" section, click the box containing Archive.sav and change <b>.zip</b> to <b>.sav</b>. You will be prompted for confirmation on changing the extension.
+</p>
+<h3><span class="mw-headline" id="Compression_on_Linux">Compression on Linux</span></h3>
+<p>On Linux, use your distribution's archive program (e.g. GNOME's Archive Manager) to unpack it (you may need to tell it to list all files instead of only "archives", since .sav isn't a recognized archive file extension). Alternatively, run the following command line in the directory you want the <i>gamestate</i> and <i>meta</i> files to appear in:
+</p>
+<pre>   unzip input.sav
+</pre>
+<p>Put the save back together using:
+</p>
+<pre>   zip -X output.sav gamestate meta
+</pre>
+<p>The -X flag is needed to "eXclude eXtra file attributes".
+</p><p>Alternatively, run <a rel="nofollow" class="external text" href="http://pastebin.com/nyX1B4rH">this Python script</a> from the directory containing the gamestate and meta files.
+</p>
+<h2><span class="mw-headline" id="Save_Attributes">Save Attributes</span></h2>
+<h3><span class="mw-headline" id="gamestate_File_Details"><i>gamestate</i> File Details</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.1.</div></td>
+</tr>
+</tbody></table>
+<p>Nearly any information about a given playthrough can be modified via editing the <i>gamestate</i> file. This includes current energy, mineral, food and unity stores, as well as planet tiles and pop traits. The following is an example of a populated tile on a Fallen Empire's planet, containing a dark matter power plant.
+</p><p><code>0={
+active=yes
+pop=127
+resources={
+minerals={1.000 1.000 0.000} } building={ type="building_dark_matter_power_plant" modifier=yes
+}
+deposit="d_mineral_deposit" )</code>
+</p><p><br />
+Most of the game events described as <b>event_name=date_number</b> for example
+</p><p><code>game_started=62808000
+</code></p><p><code>gray_goo_crisis_set=62808000
+</code></p><p><code>galactic_community_founded=63818880
+</code></p><p><code>war_in_heaven_started=65007816
+</code>
+</p><p>where <b>event_name</b> is event name in game, lists of events can be found in .txt files in Stellaris\events\ folder
+</p><p>and <b>date_number</b> is number of hours in 360-day year starting with <b>62808000</b> being <b>2200-01-01</b> - start of the game, also describes all events that happened on game generation step.
+</p><p>Example of calculating <b>war_in_heaven_started</b> date:
+</p><p><code>
+65007816-62808000 = 2199816 hours
+</code></p><p><code>2199816/24 = 91659 total days
+</code></p><p><code>91659//360 = 254 years
+</code></p><p><code>91659%360 = 219 days after start of the year
+</code></p><p><code>219//30 = 7 months
+</code></p><p><code>219%30 = 9 days after start of the month
+</code></p><p><code>2200-01-01+(254years)+(7months)+(9days)=2454-08-10
+</code>
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a class="mw-selflink selflink">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182002
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.042 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 326/1000000
+Post‐expand include size: 20700/2097152 bytes
+Template argument size: 8596/2097152 bytes
+Highest expansion depth: 11/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   13.656      1 -total
+ 39.55%    5.401      1 Template:SVersion
+ 39.00%    5.326      1 Template:ModdingNavbox
+ 20.12%    2.747      1 Template:Version
+ 16.71%    2.282      1 Template:Navbox
+ 15.46%    2.111      1 Template:Ambox
+ 10.11%    1.381      1 Template:Infobox
+  9.78%    1.336      1 Template:Ambox/core
+  5.26%    0.718     14 Template:Navboxgroup
+  3.06%    0.418      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1548-0!canonical and timestamp 20260707182002 and revision id 116275.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

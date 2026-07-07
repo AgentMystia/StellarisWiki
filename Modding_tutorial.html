@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modding tutorial - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Modding tutorial</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="thumb tright"><div class="thumbinner" style="width:422px;"><video src="https://stellaris.paradoxwikis.com/images/4/42/2021-04-04_01-44-43.mp4" width="420" height="746" class="thumbimage" style="max-width: 100%; max-height: 100%; width: 420px; height: 746px;" controls=""><a href="https://stellaris.paradoxwikis.com/File:2021-04-04_01-44-43.mp4">https://stellaris.paradoxwikis.com/File:2021-04-04_01-44-43.mp4</a></video>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3A2021-04-04_01-44-43.mp4" class="internal" title="Enlarge"></a></div>Tutorial civic presentation.</div></div></div>
+<p>This is an introductory <b><a href="/Modding.html" title="Modding">modding</a> tutorial</b> for <a href="/Stellaris.html" title="Stellaris">Stellaris</a>. It covers steps necessary to create a basic <a href="/Mods.html" title="Mods">mod</a>.
+</p><p>Unless stated otherwise, every step assumes working on MS Windows.
+</p><p>Note: If you have a mod both as a local and as a workshop subscription game will refuse to load it.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Generate_blank_mod"><span class="tocnumber">1</span> <span class="toctext">Generate blank mod</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Launcher"><span class="tocnumber">1.1</span> <span class="toctext">Launcher</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Manually"><span class="tocnumber">1.2</span> <span class="toctext">Manually</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Modding_tools"><span class="tocnumber">2</span> <span class="toctext">Modding tools</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Tools_checklist"><span class="tocnumber">2.1</span> <span class="toctext">Tools checklist</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Setting_up_CWTools"><span class="tocnumber">2.2</span> <span class="toctext">Setting up CWTools</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#First_steps"><span class="tocnumber">3</span> <span class="toctext">First steps</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Preamble"><span class="tocnumber">3.1</span> <span class="toctext">Preamble</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Sources_at_hand"><span class="tocnumber">3.2</span> <span class="toctext">Sources at hand</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Mod_content"><span class="tocnumber">3.3</span> <span class="toctext">Mod content</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Game_structure"><span class="tocnumber">3.4</span> <span class="toctext">Game structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Writing_a_first_mod"><span class="tocnumber">4</span> <span class="toctext">Writing a first mod</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#\common\governments\civics"><span class="tocnumber">4.1</span> <span class="toctext">\common\governments\civics</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#Example_civic"><span class="tocnumber">4.1.1</span> <span class="toctext">Example civic</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Custom_civic"><span class="tocnumber">4.1.2</span> <span class="toctext">Custom civic</span></a>
+<ul>
+<li class="toclevel-4 tocsection-16"><a href="#Code_formatting"><span class="tocnumber">4.1.2.1</span> <span class="toctext">Code formatting</span></a></li>
+<li class="toclevel-4 tocsection-17"><a href="#Adding_content"><span class="tocnumber">4.1.2.2</span> <span class="toctext">Adding content</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Localisations"><span class="tocnumber">4.2</span> <span class="toctext">Localisations</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#Localisation_files"><span class="tocnumber">4.2.1</span> <span class="toctext">Localisation files</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Custom_tooltips"><span class="tocnumber">4.2.2</span> <span class="toctext">Custom tooltips</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Logs_&amp;_Debugging"><span class="tocnumber">4.3</span> <span class="toctext">Logs &amp; Debugging</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#EXE_parameters"><span class="tocnumber">4.3.1</span> <span class="toctext">EXE parameters</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#log_effect"><span class="tocnumber">4.3.2</span> <span class="toctext">log effect</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#game.log_&amp;_error.log"><span class="tocnumber">4.3.3</span> <span class="toctext">game.log &amp; error.log</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-25"><a href="#Events"><span class="tocnumber">4.4</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="#fire_only_once"><span class="tocnumber">4.4.1</span> <span class="toctext">fire_only_once</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#is_triggered_only"><span class="tocnumber">4.4.2</span> <span class="toctext">is_triggered_only</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-28"><a href="#Scopes"><span class="tocnumber">4.5</span> <span class="toctext">Scopes</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Common"><span class="tocnumber">4.6</span> <span class="toctext">Common</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#on_actions"><span class="tocnumber">4.6.1</span> <span class="toctext">on_actions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-31"><a href="#GFX"><span class="tocnumber">4.7</span> <span class="toctext">GFX</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#Testing_a_mod"><span class="tocnumber">5</span> <span class="toctext">Testing a mod</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="#Git_repository"><span class="tocnumber">6</span> <span class="toctext">Git repository</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1 tocsection-35"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Generate_blank_mod">Generate blank mod</span></h2>
+<p>You can get started creating a blank mod using either the Launcher to generate the starting files and directory, or doing so manually. Use the images below as a guide to creating a new mod with the Launcher, or skip down to the Manual section for instructions on creating the files yourself.
+</p>
+<h3><span class="mw-headline" id="Launcher">Launcher</span></h3>
+<ul class="gallery mw-gallery-slideshow" style="margin-top:0" data-showthumbnails="">
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_paradox_launcher_modding_1.png" class="image" title="Open Mod Tools Paradox Launcher has a tab dedicated to mod management. Open it and select Mod Tools."><img alt="Open Mod Tools Paradox Launcher has a tab dedicated to mod management. Open it and select Mod Tools." src="images/Stellaris_paradox_launcher_modding_1.png" decoding="async" loading="lazy" width="81" height="120" data-file-width="475" data-file-height="700" /></a></div></div>
+			<div class="gallerytext">
+<p><b>Open Mod Tools</b><br />Paradox Launcher has a tab dedicated to mod management. Open it and select Mod Tools.
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_paradox_launcher_modding_2.png" class="image" title="Select Create a Mod All properly installed local mods can be found in the drop-down list. Select Create a Mod."><img alt="Select Create a Mod All properly installed local mods can be found in the drop-down list. Select Create a Mod." src="images/Stellaris_paradox_launcher_modding_2.png" decoding="async" loading="lazy" width="81" height="120" data-file-width="475" data-file-height="700" /></a></div></div>
+			<div class="gallerytext">
+<p><b>Select Create a Mod</b><br />All properly installed local mods can be found in the drop-down list. Select Create a Mod.
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_paradox_launcher_modding_3.png" class="image" title="Fill in descriptor data Every mod has a descriptor file which stores basic metadata about the mod, such as full name, version (just for modder&#39;s reference), local installation path, and tags. It is useful to use a mod folder name which reflects mod&#39;s arbitrary but unique prefix."><img alt="Fill in descriptor data Every mod has a descriptor file which stores basic metadata about the mod, such as full name, version (just for modder&#39;s reference), local installation path, and tags. It is useful to use a mod folder name which reflects mod&#39;s arbitrary but unique prefix." src="images/Stellaris_paradox_launcher_modding_3.png" decoding="async" loading="lazy" width="81" height="120" data-file-width="475" data-file-height="700" /></a></div></div>
+			<div class="gallerytext">
+<p><b>Fill in descriptor data</b><br />Every mod has a descriptor file which stores basic metadata about the mod, such as full name, version (just for modder's reference), local installation path, and tags. It is useful to use a mod folder name which reflects mod's arbitrary but unique prefix.
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_paradox_launcher_modding_4.png" class="image" title="Done Launcher will notify if mod has been created successfully. Any errors might indicate lack of space on a drive (usually partition C:) or insufficient write/read permissions (antivirus, file system permissions)."><img alt="Done Launcher will notify if mod has been created successfully. Any errors might indicate lack of space on a drive (usually partition C:) or insufficient write/read permissions (antivirus, file system permissions)." src="images/Stellaris_paradox_launcher_modding_4.png" decoding="async" loading="lazy" width="81" height="120" data-file-width="475" data-file-height="700" /></a></div></div>
+			<div class="gallerytext">
+<p><b>Done</b><br />Launcher will notify if mod has been created successfully. Any errors might indicate lack of space on a drive (usually partition C:) or insufficient write/read permissions (antivirus, file system permissions).
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_paradox_launcher_modding_5.png" class="image" title="Ready for edits and upload Newly created mod is displayed in the window upon selection in the drop-down list. This is where first mod uploads and updates are uploaded. Contents of Description window will be visible on the mod store page after upload. Note: Description and Thumbnail inputs in this window are not stored locally and can be lost. It is highly recommended to store description text file and thumbnail in mod root folder."><img alt="Ready for edits and upload Newly created mod is displayed in the window upon selection in the drop-down list. This is where first mod uploads and updates are uploaded. Contents of Description window will be visible on the mod store page after upload. Note: Description and Thumbnail inputs in this window are not stored locally and can be lost. It is highly recommended to store description text file and thumbnail in mod root folder." src="images/Stellaris_paradox_launcher_modding_5.png" decoding="async" loading="lazy" width="81" height="120" data-file-width="475" data-file-height="700" /></a></div></div>
+			<div class="gallerytext">
+<p><b>Ready for edits and upload</b><br />Newly created mod is displayed in the window upon selection in the drop-down list. This is where first mod uploads and updates are uploaded. Contents of Description window will be visible on the mod store page after upload. Note: Description and Thumbnail inputs in this window <b>are not</b> stored locally and can be lost. It is highly recommended to store description text file and thumbnail in mod root folder.
+</p>
+			</div>
+		</div></li>
+</ul>
+<h3><span class="mw-headline" id="Manually">Manually</span></h3>
+<p>The above effect can be achieved without using Paradox Launcher. Every mod requires two descriptor files, each one in a proper directory.
+</p>
+<ol><li>First mod descriptor contains <b>metadata</b> and <b>local path</b> where the game (Paradox Launcher) should look for the mod. It must be placed in <b>%USERPROFILE%</b>\Documents\Paradox Interactive\Stellaris\<b>mod</b>\
+<ol><li><b>%USERPROFILE%</b> is your system user profile folder (by default this point to the same location as C:\Users\%USERNAME%),</li>
+<li><b>mod</b> is a Stellaris folder for <b>local</b> mods (as opposed to Steam Workshop mods), Other Stellaris folders are <b>logs</b>, <b>save games</b>, <b>screenshots</b> etc.</li></ol></li>
+<li>Second mod descriptor contains just <b>metadata</b> and is stored in <b>root (main) mod folder</b>, which in the example would be <b>%USERPROFILE%</b>\Documents\Paradox Interactive\Stellaris\<b>mod</b>\<b>tutmod</b>\
+<ol><li>If Paradox Launcher was not used to create a mod, one must create root mod folder manually.</li>
+<li>Root mod folder descriptor must be named <b>descriptor.mod</b>,</li>
+<li>Paradox Launcher uses a second descriptor when it imports a mod from mod store (Paradox Mods, Steam Workshop). When a mod is downloaded for a mod store, this descriptor file is copied from the <b>mod root folder</b> to the Stellaris <b>mod</b> folder and a local path is added.</li></ol></li></ol>
+<p>Tip: You can paste <code>%USERPROFILE%\Documents\Paradox Interactive\Stellaris\mod\</code> directly into the file explorer address bar without specifying username.
+</p><p>Properly created mod has the following file structure on start:
+</p>
+<ol><li>%USERPROFILE%\Documents\Paradox Interactive\Stellaris\mod\<b>tutmod.mod</b></li>
+<li>%USERPROFILE%\Documents\Paradox Interactive\Stellaris\mod\<b>tutmod\descriptor.mod</b></li></ol>
+<p>Example descriptor contents below.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>\mod\tutmod.mod</th>
+<th>\mod\tutmod\descriptor.mod
+</th></tr>
+<tr>
+<td><pre>version="0.1"
+tags={
+	"Gameplay"
+}
+name="Tutorial Mod"
+supported_version="v3.13.*"
+path="C:/Users/OldEnt/Documents/Paradox Interactive/Stellaris/mod/tutmod"</pre></td>
+<td><pre>version="0.1"
+tags={
+	"Gameplay"
+}
+name="Tutorial Mod"
+supported_version="v3.13.*"</pre>
+</td></tr></tbody></table>
+<p>Tip: You can use masks (<a href="http://en.wikipedia.org/wiki/Wildcard_character" class="extiw" title="wikipedia:Wildcard character">wildmarks</a>) in the version string for descriptor files. Instead of writing: supported_version="v3.13.0" you can use: supported_version="v3.13.*"
+</p><p>Note how the only difference between two descriptor files is the <b>path</b> line.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>\mod\tutmod.mod</th>
+<th>\mod\tutmod\descriptor.mod
+</th></tr>
+<tr>
+<td>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_mod_folder_structure_1a.png" class="image"><img alt="" src="images/Stellaris_mod_folder_structure_1a.png" decoding="async" loading="lazy" width="300" height="178" class="thumbimage" data-file-width="478" data-file-height="284" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_mod_folder_structure_1a.png" class="internal" title="Enlarge"></a></div>New tutmod folder with its first descriptor as visible in local mod directory. Note other local mods with friendly names and descriptors for Steam Workshop mods with an ugc_ prefix.</div></div></div>
+</td>
+<td>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_mod_folder_structure_1c.png" class="image"><img alt="" src="images/Stellaris_mod_folder_structure_1c.png" decoding="async" loading="lazy" width="300" height="178" class="thumbimage" data-file-width="478" data-file-height="284" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_mod_folder_structure_1c.png" class="internal" title="Enlarge"></a></div>Second descriptor inside of root (main) tutmod folder. Unlike the first one, this one does not contain a local path to the root mod folder.</div></div></div>
+</td></tr></tbody></table>
+<p>Launcher will recognize mods as up to date even when a minor Stellaris patch is released. This has no effect on mod loading and the code, <b><code>supported_version</code></b> is merely a visual indicator.
+Trivia: Some low level mods (like music or graphic) use also a wildmark for the second number (expanded support), which the launcher accepts (but throws an accusation entry in the error.log).
+</p>
+<h2><span class="mw-headline" id="Modding_tools">Modding tools</span></h2>
+<h3><span class="mw-headline" id="Tools_checklist">Tools checklist</span></h3>
+<div style="margin:1.4px 1.6em;"><i>See also: <a href="/Modding.html#Tools_%26_utilities" title="Modding">Modding#Tools &amp; utilities</a></i></div>
+<p>There are many valuable tools available for free, including free and open source. This tutorial recommends installing the minimum:
+</p>
+<ul><li><a href="http://en.wikipedia.org/wiki/Notepad%2B%2B" class="extiw" title="wikipedia:Notepad++">Notepad++</a> – Powerful and fast free and open source <b>text editor</b>, with tabs and split-window function.</li>
+<li><a href="http://en.wikipedia.org/wiki/Sublime_Text" class="extiw" title="wikipedia:Sublime Text">Sublime Text</a> – Powerful, moddable, hackable <b>text editor</b>. Install packages as your needs evolve.</li>
+<li><a href="http://en.wikipedia.org/wiki/Visual_Studio_Code" class="extiw" title="wikipedia:Visual Studio Code">Visual Studio Code (VSC)</a> – Professional-grade freeware <b>code editor</b>. Do not confuse with Visual Studio.
+<ul><li><a rel="nofollow" class="external text" href="https://marketplace.visualstudio.com/items?itemName=tboby.cwtools-vscode">CWTools</a> – Paradox Games Language syntax database, freeware and open source, can be installed from within Visual Studio Code. Enables automatic checking if written code is valid.</li>
+<li><a rel="nofollow" class="external text" href="https://marketplace.visualstudio.com/items?itemName=tboby.paradox-syntax">Paradox Syntax Highlighting</a> – Colourful syntax highlight, makes code much more readable.</li></ul></li>
+<li><a href="http://en.wikipedia.org/wiki/WinMerge" class="extiw" title="wikipedia:WinMerge">WinMerge</a> – Differencing and <b>merging tool</b>, free and open source. Contrasts the difference between two text files or folders.</li>
+<li><a href="http://en.wikipedia.org/wiki/7-Zip" class="extiw" title="wikipedia:7-Zip">7-Zip</a> – Free and open source file <b>archive manager</b>.</li>
+<li><a rel="nofollow" class="external text" href="https://www.gimp.org/">GIMP</a> – Professional-grade free and open source <b>image editor</b>.</li>
+<li><a rel="nofollow" class="external text" href="https://www.getpaint.net/">Paint.net</a> – Freeware software for digital <b>image editing</b>. GUI reminiscent of classic MS Paint.</li>
+<li><a rel="nofollow" class="external text" href="https://github.com/">GitHub</a> – Freeware <b>code management</b> and collaboration tools and services.</li>
+<li><a rel="nofollow" class="external text" href="https://discord.com/">Discord</a> – Freeware <b>instant messaging</b> and VoIP platform, useful for connecting with other modders on <a rel="nofollow" class="external text" href="https://discord.gg/bHVez2C">Stellaris Modding Den</a>.</li>
+<li><a rel="nofollow" class="external text" href="https://bcssov.github.io/IronyModManager/">Irony Mod Manager</a> – Launcher and <b>mod manager</b> with conflict solver for Paradox Games. More versatile and faster than Paradox Launcher. Free and open source.</li>
+<li><a href="http://en.wikipedia.org/wiki/File_Commander" class="extiw" title="wikipedia:File Commander">File Commander</a> / <a href="http://en.wikipedia.org/wiki/Total_Commander" class="extiw" title="wikipedia:Total Commander">Total Commander</a> (Windows) – Powerful, moddable, hackable <b>file manager</b>.</li></ul>
+<p>All of the above is available for free on Windows, Linux, and macOS (except Paint.net, Notepad++ and GitHub, which have viable alternatives).
+</p>
+<h3><span class="mw-headline" id="Setting_up_CWTools">Setting up CWTools</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_extensions_installation.png" class="image"><img alt="" src="images/VSCode_extensions_installation.png" decoding="async" loading="lazy" width="300" height="211" class="thumbimage" data-file-width="540" data-file-height="380" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_extensions_installation.png" class="internal" title="Enlarge"></a></div>Visual Studio Code extension installation panel (File &gt; Preferences &gt; Extensions). Four installed extensions are visible, including CWTools and Paradox Syntax Highlighting.</div></div></div>
+<p>CWTools is an extension which works with Visual Studio Code (VSC) and checks Paradox syntax on the go (as you write). It works with most games written for <a href="http://en.wikipedia.org/wiki/Clausewitz_Engine" class="extiw" title="wikipedia:Clausewitz Engine">Clausewitz Engine</a> (Stellaris being one of them).
+Some of the most useful features include:
+</p>
+<ul><li>Highlighting of errors with tooltip on what is possibly wrong.</li>
+<li>Auto-completion of code, just press TAB when suggestion pops up while writing.</li>
+<li>Generating full list of missing localisation keys.</li>
+<li>Easy commenting and uncommenting of multiple lines. Right click &gt; Command Palette &gt; Toggle Line Comment.</li>
+<li>Auto-formatting of whole file: Right click &gt; Format Document.</li></ul>
+<p>Installation steps:
+</p>
+<ul><li>Download and install <a rel="nofollow" class="external text" href="https://code.visualstudio.com/">Visual Studio Code (VSC)</a></li>
+<li>When opened select File &gt; Preferences &gt; Extensions</li>
+<li>Click on "Search Extensions in Marketplace" search bar and type in "CWTools". Select "CWTools – Paradox Language Services" and click install in the right window.</li>
+<li>Repeat search for "Paradox Syntax Highlighting" and install it as well.</li>
+<li>Restart Visual Studio Code.</li></ul>
+<h2><span class="mw-headline" id="First_steps">First steps</span></h2>
+<h3><span class="mw-headline" id="Preamble">Preamble</span></h3>
+<p>While usually the best way to learn modding is to dissect a mod similar to what we want to achieve, this tutorial focuses on creating a mod from scratch.
+</p><p>We use Visual Studio Code as the primary code editor due to the powerful syntax checking function which CWTools extension grants.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:1282px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_CWTools_Stellaris_mod_code_window.png" class="image"><img alt="" src="images/VSCode_CWTools_Stellaris_mod_code_window.png" decoding="async" loading="lazy" width="1280" height="720" class="thumbimage" data-file-width="1920" data-file-height="1080" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_CWTools_Stellaris_mod_code_window.png" class="internal" title="Enlarge"></a></div># RED: Open editors (open files) # YELLOW: Open root mod folder (testmod) # GREEN: Outline of individual sections inside open file. # TEAL: Errors and problems highlight. # PINK: Right-click menu. # ORANGE: Scrollbar with preview.</div></div></div></div>
+<h3><span class="mw-headline" id="Sources_at_hand">Sources at hand</span></h3>
+<p>Following sources are invaluable to have at hand:
+</p>
+<ul><li><a href="/Modding.html" title="Modding">Modding</a> section of <a href="/Stellaris_Wiki.html" title="Stellaris Wiki">Stellaris Wiki</a></li>
+<li>List of Stellaris <a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">triggers</a>, <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a> and <a href="/Effects.html" title="Effects">effects</a>, see <a rel="nofollow" class="external text" href="https://github.com/OldEnt/stellaris-triggers-modifiers-effects-list">GitHub page</a> for comprehensive all-in-one list.</li>
+<li><a rel="nofollow" class="external text" href="https://discord.gg/WpeXm2h">Stellaris Modding Den</a> Discord Server access for live help.</li></ul>
+<h3><span class="mw-headline" id="Mod_content">Mod content</span></h3>
+<p>Story-focused mods differ from mods introducing new gameplay mechanics or graphics components, but overlap almost always exists. This tutorial tries to touch as wide array of subjects as possible without delving into intricacies.
+</p>
+<h3><span class="mw-headline" id="Game_structure">Game structure</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_Steam_installation_directory.png" class="image"><img alt="" src="images/Stellaris_Steam_installation_directory.png" decoding="async" loading="lazy" width="300" height="250" class="thumbimage" data-file-width="665" data-file-height="555" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AStellaris_Steam_installation_directory.png" class="internal" title="Enlarge"></a></div>Stellaris installation folder within Steam Library folder.</div></div></div>
+<dl><dd><i>For full file structure <a href="/Modding.html#Game_data" title="Modding">refer to Modding page</a>.</i></dd></dl>
+<p>Stellaris stores most of the content in uncompressed folders easily accessible in its installation directory (<code>SteamLibrary\steamapps\common\Stellaris\</code> for Steam installation). Modding the game requires overwriting the game files, part of game files, or adding new files next to existing ones, following folder structure and file naming the game uses (rules vary). Directly editing and adding files to game installation folder is highly discouraged. Use mod folder to overwrite or add content.
+</p><p>The most commonly changed contents are in:
+</p>
+<ol><li>/common/ - bulk of game data and rules,</li>
+<li>/events/ - dictate when and how the game changes based on defined conditions,</li>
+<li>/localisation/ and /localisation_synced/ - text readable to player,</li>
+<li>/gfx/ - graphical components of the game,</li>
+<li>/interface/ - rules for use of graphical components and user interface design.</li></ol>
+<p>Every mod has to mirror structure of the installation folder. Mod containing localisation has to put all its language files on /localisation/, just as the game would.
+</p>
+<h2><span class="mw-headline" id="Writing_a_first_mod">Writing a first mod</span></h2>
+<h3><span id=".5Ccommon.5Cgovernments.5Ccivics"></span><span class="mw-headline" id="\common\governments\civics">\common\governments\civics</span></h3>
+<h4><span class="mw-headline" id="Example_civic">Example civic</span></h4>
+<div style="margin:1.4px 1.6em;"><i>See also: <a href="/Government_modding.html" title="Government modding">Government modding</a></i></div>
+<p>We will begin by creating a new civic. Civics and origins are stored in <code>\common\governments\civics\</code>. Origins are civics with a few changes.
+</p><p>An example civic code (<code>\common\governments\civics\00_civics.txt</code>):
+</p><p>(Though use a naming scheme like "00_MODNAME_civics.txt" as using 00_civics.txt would override the vanilla civics.)
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">civic_beacon_of_liberty</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">potential</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">ethics</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">NOT</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ethic_gestalt_consciousness</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">authority</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">NOT</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">auth_corporate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">possible</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">authority</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">value</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">auth_democratic</span><span class="w"></span>
+<span class="w"> 		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">ethics</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 			</span><span class="kt">OR</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">text</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">civic_tooltip_egalitarian</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">value</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ethic_egalitarian</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">value</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ethic_fanatic_egalitarian</span><span class="w"></span>
+<span class="w"> 			</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 			</span><span class="kt">NOR</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">text</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">civic_tooltip_not_xenophobe</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">value</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ethic_xenophobe</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">value</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ethic_fanatic_xenophobe</span><span class="w"></span>
+<span class="w"> 			</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">random_weight</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">modifier</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">country_unity_produces_mult</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mf">0.15</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>Let us breakdown the civic:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<td>civic_beacon_of_liberty</td>
+<td>civic key, used to reference it in the code, including localisations
+</td></tr>
+<tr>
+<td>potential</td>
+<td>conditions for civic to be available for choice
+</td></tr>
+<tr>
+<td>possible</td>
+<td>conditions for civic to be a valid choice
+</td></tr>
+<tr>
+<td>random_weight</td>
+<td>determines likelihood of appearing for a randomly generated empire. If two civics exist and both have a weight of 5 then chances are 50:50.
+</td></tr>
+<tr>
+<td>modifier</td>
+<td>direct effects of a civic on an empire. More complex way is to use events checking for a civic and executing effects.
+</td></tr></tbody></table>
+<p>This specific civic has localisation key <b>civic_beacon_of_liberty</b>, is a <b>potential</b> choice only for empires which a) ethics are <b>NOT</b> gestalt and b) do <b>NOT</b> have authority corporate.
+</p><p>Any empire which meets the above criteria will have the civic as a choice, but it is <b>possible</b> to take the civic only if a) authority <b>EQUALS</b> democratic and b) ethics are <b>EQUAL</b> to egalitarian OR <b>EQUAL</b> to fanatic egalitarian, and <b>NEITHER</b> are equal to xenophobe or fanatic xenophobe.
+</p><p>Note how <b>text =</b> function is used to invoke a custom tooltip instead of automatically generated one. This is usually not needed but can be useful.
+</p><p>This civic has an absolute <b>weight of 5</b> for the purpose of galaxy generation. If there are two other civics of weight 45 and 50, then the civic in question would have only 5% chance of appearing on a randomly generated empire, in principle (45 + 50 = 95 vs 5).
+</p><p>The civic gives the country a <b>modifier</b> of +15% Unity production.
+</p><p>Civic definitions <a href="/Government_modding.html" title="Government modding">do not support complex conditions</a> but it is worth to familiarise yourself with <a href="/Conditions.html" title="Conditions">how logical operators work</a>.
+</p>
+<h4><span class="mw-headline" id="Custom_civic">Custom civic</span></h4>
+<table class="wikitable" style="margin:auto">
+
+<tbody><tr>
+<th>Folder</th>
+<th>File</th>
+<th>Content
+</th></tr>
+<tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_1.png" class="image"><img alt="" src="images/VSCode_new_mod_1.png" decoding="async" loading="lazy" width="300" height="157" class="thumbimage" data-file-width="460" data-file-height="240" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_1.png" class="internal" title="Enlarge"></a></div>Open VSCode, File &gt; Open root folder of our tutorial mod (will contain descriptor.mod) and create a folder for common, governments, and then civic folder. Folder structure has to match that of a Stellaris installation: \common\governments\civics\ .</div></div></div></td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_2.png" class="image"><img alt="" src="images/VSCode_new_mod_2.png" decoding="async" loading="lazy" width="300" height="157" class="thumbimage" data-file-width="460" data-file-height="240" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_2.png" class="internal" title="Enlarge"></a></div>Create a new civics file named tutmod_civics.txt .</div></div></div></td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_3.png" class="image"><img alt="" src="images/VSCode_new_mod_3.png" decoding="async" loading="lazy" width="300" height="145" class="thumbimage" data-file-width="580" data-file-height="280" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_3.png" class="internal" title="Enlarge"></a></div>Write the first line containing key name of the new civic: tutmod_civic = {} . If CWTools work you should see an error tooltip indicating lack of localisation for that key (will be fixed later).</div></div></div>
+</td></tr></tbody></table>
+<table class="wikitable" style="margin:auto">
+
+<tbody><tr>
+<th>CWTools suggestion</th>
+<th>TAB</th>
+<th>Repeat
+</th></tr>
+<tr>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_4.png" class="image"><img alt="" src="images/VSCode_new_mod_4.png" decoding="async" loading="lazy" width="300" height="94" class="thumbimage" data-file-width="890" data-file-height="280" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_4.png" class="internal" title="Enlarge"></a></div>Click between two <b>{}</b> brackets and start writing content of the block. Start a new line by pressing enter and try to write <b>potential</b>. Correctly installed CWTools will give you suggestions you can shuffle with arrow keys. Press TAB or click with mouse when you find <b>potential</b>.</div></div></div></td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_5.png" class="image"><img alt="" src="images/VSCode_new_mod_5.png" decoding="async" loading="lazy" width="300" height="94" class="thumbimage" data-file-width="890" data-file-height="280" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_5.png" class="internal" title="Enlarge"></a></div>CWTools will fill and format selected suggestion for you.</div></div></div></td>
+<td><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_6.png" class="image"><img alt="" src="images/VSCode_new_mod_6.png" decoding="async" loading="lazy" width="300" height="94" class="thumbimage" data-file-width="890" data-file-height="280" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_new_mod_6.png" class="internal" title="Enlarge"></a></div>Start a new condition inside <b>potential</b> named <b>ethics</b>. Use CWTools suggestions as often as possible. It will save you a lot of time.</div></div></div>
+</td></tr></tbody></table>
+<p>Let us write a code of the new civic using <kbd>civic_beacon_of_liberty</kbd> as a reference.
+</p>
+<div class="center"><div class="floatnone"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_CWTools_writing.gif" class="image"><img alt="VSCode CWTools writing.gif" src="images/VSCode_CWTools_writing.gif" decoding="async" loading="lazy" width="960" height="1040" data-file-width="960" data-file-height="1040" /></a></div></div>
+<h5><span class="mw-headline" id="Code_formatting">Code formatting</span></h5>
+<p>Note how you can comment out a part of code using <b>#</b> sign. Anything after <b>#</b> in a specific line will not be read by the game.
+</p><p>We will now make our own code by swapping out parts we do not like and inject our own.
+</p><p>First, let us remove <code>auth_corporate</code> exclusion and add a comment on <code>ethic_gestalt_consciousness</code> exclusion.
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># civic_beacon_of_liberty = {</span>
+ <span class="n">tutmod_civic</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">potential</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">ethics</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">NOT</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_gestalt_consciousness</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 		<span class="c1"># authority = {</span>
+ 		<span class="c1"># 	NOT = {</span>
+ 		<span class="c1"># 		value = auth_corporate</span>
+ 		<span class="c1"># 	}</span>
+ 		<span class="c1"># }</span>
+ 	<span class="p">}</span>
+ 	<span class="n">possible</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">authority</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">value</span> <span class="o">=</span> <span class="n">auth_democratic</span>
+ 		<span class="p">}</span>
+ 		<span class="n">ethics</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">OR</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_egalitarian</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_egalitarian</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_egalitarian</span>
+ 			<span class="p">}</span>
+ 			<span class="n">NOR</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_not_xenophobe</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_xenophobe</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_xenophobe</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="n">random_weight</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">base</span> <span class="o">=</span> <span class="mi">5</span>
+ 	<span class="p">}</span>
+ 	<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">country_unity_produces_mult</span> <span class="o">=</span> <span class="mf">0.15</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<div class="center"><div class="floatnone"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_CWTools_formatting.gif" class="image" title="Formatting with VSCode and CWTools."><img alt="Formatting with VSCode and CWTools." src="images/VSCode_CWTools_formatting.gif" decoding="async" loading="lazy" width="960" height="1040" data-file-width="960" data-file-height="1040" /></a></div></div>
+<h5><span class="mw-headline" id="Adding_content">Adding content</span></h5>
+<p>We are adding an additional condition for ethics.
+</p>
+<pre>OR = {
+	text = civic_tooltip_materialist
+	value = ethic_materialist
+	value = ethic_fanatic_materialist
+}
+</pre>
+<p>The code should now look like below:
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># civic_beacon_of_liberty = {</span>
+ <span class="n">tutmod_civic</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">potential</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">ethics</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="no">NOT</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_gestalt_consciousness</span> <span class="c1"># No gestalt.</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 		<span class="c1"># authority = {</span>
+ 		<span class="c1"># 	NOT = {</span>
+ 		<span class="c1"># 		value = auth_corporate</span>
+ 		<span class="c1"># 	}</span>
+ 		<span class="c1"># }</span>
+ 	<span class="p">}</span>
+ 	<span class="n">possible</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">authority</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">value</span> <span class="o">=</span> <span class="n">auth_democratic</span>
+ 		<span class="p">}</span>
+ 		<span class="n">ethics</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="no">OR</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_materialist</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_materialist</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_materialist</span>
+ 			<span class="p">}</span>
+ 			<span class="no">OR</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_egalitarian</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_egalitarian</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_egalitarian</span>
+ 			<span class="p">}</span>
+ 			<span class="no">NOR</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_not_xenophobe</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_xenophobe</span>
+ 				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_xenophobe</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="n">random_weight</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">base</span> <span class="o">=</span> <span class="mi">5</span>
+ 	<span class="p">}</span>
+ 	<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">country_unity_produces_mult</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">15</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>To be a valid choice an empire has to be to some degree materialist, to some degree egalitarian, and neither xenophobe nor fanatic xenophobe. We did not have to worry about creating <code>civic_tooltip_materialist</code> localisation because it already exists in the game files.
+</p>
+<h3><span class="mw-headline" id="Localisations">Localisations</span></h3>
+<h4><span class="mw-headline" id="Localisation_files">Localisation files</span></h4>
+<div class="floatright"><a href="https://stellaris.paradoxwikis.com/File%3AVSCode_CWTools_localisations.gif" class="image" title="Generating missing localisation keys with CWTools."><img alt="Generating missing localisation keys with CWTools." src="images/VSCode_CWTools_localisations.gif" decoding="async" loading="lazy" width="909" height="665" data-file-width="909" data-file-height="665" /></a></div>
+<div style="margin:1.4px 1.6em;"><i>Main article: <a href="/Localisation_modding.html" title="Localisation modding">Localisation modding</a></i></div>
+<p>Useful console commands:
+</p>
+<pre>reload text – reloads localisation table.
+switchlanguage english – switches used language and reloads localisation table.
+toggle_string_id - displays StringIDinstead of localisation.
+</pre>
+<p>CWTools highlights keys which are missing localisations, you can see full list of potential issues at the bottom of VSCode window:
+</p>
+<pre>Localisation key tutmod_civic is not defined for English
+Localisation key tutmod_civic_desc is not defined for English
+</pre>
+<p>We need to create a localisation folder structure. Create <code>\localisation\english\</code> folders inside root mod folder first, and then create <code>tutmod_l_english.yml</code>. VSCode will automatically encode file in UTF8 with BOM which Stellaris localisation files need. Both VSCode and Notepad++ are able to easily change file encoding if needed.
+</p><p>Localisation files require language declaration in the first line. Simply write:
+</p>
+<pre>l_english:
+</pre>
+<p>Supported language declarations are:
+</p>
+<pre>braz_por
+english
+french
+german
+japanese
+korean
+polish
+russian
+simp_chinese
+spanish
+</pre>
+<p>We have file prepared. Switch back to <code>tutmod_civics.txt</code> tab, <b>right mouse click &gt; Command Palette &gt; Generate missing loc for all files</b>. Copy generated strings into loc file.
+</p><p>We will fill the placeholders with the following information:
+</p>
+<div class="mw-highlight mw-highlight-lang-yaml mw-content-ltr" dir="ltr"><pre><span></span><span class="nt">l_english</span><span class="p">:</span><span class="w"></span>
+<span class="w"> </span><span class="nt">tutmod_civic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Semper</span><span class="nv"> </span><span class="s">Exploro&quot;</span><span class="w"></span>
+<span class="w"> </span><span class="nt">tutmod_civic_desc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;This</span><span class="nv"> </span><span class="s">society</span><span class="nv"> </span><span class="s">prioritised</span><span class="nv"> </span><span class="s">scientific</span><span class="nv"> </span><span class="s">exploration</span><span class="nv"> </span><span class="s">over</span><span class="nv"> </span><span class="s">military</span><span class="nv"> </span><span class="s">expansion</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">early</span><span class="nv"> </span><span class="s">space</span><span class="nv"> </span><span class="s">age.&quot;</span><span class="w"></span>
+<span class="w"> </span><span class="nt">tutmod_civic_effects</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Start</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">$science$</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">assigned</span><span class="nv"> </span><span class="s">$scientist$</span><span class="nv"> </span><span class="s">instead</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">$OUTLINER_FLEETS$.&quot;</span><span class="w"></span>
+</pre></div>
+<p>Note the <b>$</b> signs which can be used to refer to other localisation key, be it existing in game or modded one. You can view vanilla keys directly in <code>SteamLibrary\steamapps\common\Stellaris\localisation\english\</code> .
+</p><p>Due to the way Stellaris localisations work, there is no way to set up a fallback localisation for other languages to use. If you generate localisations for English only, users playing the game in other language will see a raw key name, ie. <code>tutmod_civic</code>. We have to copy the localisation file <code>\localisation\english\tutmod_l_english.yml</code> to the corresponding language folders, change file name, and adjust language declaration at the beginning of the file:
+</p>
+<pre>\localisation\english\tutmod_l_braz_por.yml
+\localisation\english\tutmod_l_english.yml
+\localisation\english\tutmod_l_french.yml
+\localisation\english\tutmod_l_german.yml
+\localisation\english\tutmod_l_japanese.yml
+\localisation\english\tutmod_l_korean.yml
+\localisation\english\tutmod_l_polish.yml
+\localisation\english\tutmod_l_russian.yml
+\localisation\english\tutmod_l_simp_chinese.yml
+\localisation\english\tutmod_l_spanish.yml
+</pre>
+<p>With an example tutmod_l_braz_por.yml containing:
+</p>
+<pre>l_braz_por:
+
+ tutmod_civic:0 "Semper Exploro"
+ tutmod_civic_desc:0 "This society prioritised scientific exploration over military expansion in the early space age."
+ tutmod_civic_effects:0 "Start with a $science$ and assigned $scientist$ instead of $OUTLINER_FLEETS$."</pre>
+<p>Advantage of using <b>$</b> signs to reference other keys is that we do not have to translate string multiple times, game will automatically pull the content for the language user plays on. This might not always result in a grammatically correct sentence, it usually works best with the key being used in nominative case.
+</p>
+<h4><span class="mw-headline" id="Custom_tooltips">Custom tooltips</span></h4>
+<p>Game automatically generates localisations for things like tooltips based on effects in the game. For civics it means we do not have to write what effect civic has, as the game will pull all modifiers we wrote and generate sentences, ie. having below in civic definition:
+</p>
+<pre>modifier = {
+ 	country_unity_produces_mult = 0.15
+}</pre>
+<p>will result in the following in the effects tooltip:
+</p>
+<pre>Monthly Unity: +15%
+</pre>
+<p>Sometimes we want to add a text for more effects. We will reference <code>tutmod_civic_effects</code> in the <code>tutmod_civics.txt</code> file for <code>tutmod_civic</code> and swap modifier while we are at it.
+</p>
+<pre># modifier = {
+# 	country_unity_produces_mult = 0.15
+# }
+description = "tutmod_civic_effects"
+modifier = {
+	ship_science_cost_mult = -0.25
+}</pre>
+<p>Tutorial civics file should now look as below:
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3ATutmod_civic_tooltip_no_gfx.png" class="image"><img alt="" src="images/Tutmod_civic_tooltip_no_gfx.png" decoding="async" loading="lazy" width="300" height="375" class="thumbimage" data-file-width="400" data-file-height="500" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3ATutmod_civic_tooltip_no_gfx.png" class="internal" title="Enlarge"></a></div>Tutorial civic tooltip without icon.</div></div></div>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># civic_beacon_of_liberty = {</span>
+<span class="n">tutmod_civic</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">potential</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">ethics</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="no">NOT</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_gestalt_consciousness</span> <span class="c1"># No gestalt.</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="c1"># authority = {</span>
+		<span class="c1"># 	NOT = {</span>
+		<span class="c1"># 		value = auth_corporate</span>
+		<span class="c1"># 	}</span>
+		<span class="c1"># }</span>
+	<span class="p">}</span>
+	<span class="n">possible</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">authority</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="n">value</span> <span class="o">=</span> <span class="n">auth_democratic</span>
+		<span class="p">}</span>
+		<span class="n">ethics</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="no">OR</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_materialist</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_materialist</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_materialist</span>
+			<span class="p">}</span>
+			<span class="no">OR</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_egalitarian</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_egalitarian</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_egalitarian</span>
+			<span class="p">}</span>
+			<span class="no">NOR</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">text</span> <span class="o">=</span> <span class="n">civic_tooltip_not_xenophobe</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_xenophobe</span>
+				<span class="n">value</span> <span class="o">=</span> <span class="n">ethic_fanatic_xenophobe</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="n">random_weight</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">base</span> <span class="o">=</span> <span class="mi">5</span>
+	<span class="p">}</span>
+	<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;tutmod_civic_effects&quot;</span>
+	<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">shipclass_science_ship_build_cost_mult</span> <span class="o">=</span> <span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="mi">25</span>
+	<span class="p">}</span>
+	<span class="c1"># modifier = {</span>
+	<span class="c1"># 	country_unity_produces_mult = 0.15</span>
+	<span class="c1"># }</span>
+<span class="p">}</span>
+</pre></div>
+<h3><span id="Logs_.26_Debugging"></span><span class="mw-headline" id="Logs_&amp;_Debugging">Logs &amp; Debugging</span></h3>
+<p>Logs are found in the locations shown in the table below.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>OS</th>
+<th>Path
+</th></tr>
+<tr>
+<td>Linux</td>
+<td><code>~/.local/share/Paradox Interactive/Stellaris/logs</code>
+</td></tr>
+<tr>
+<td>Windows</td>
+<td><code>…\Documents\Paradox Interactive\Stellaris\logs</code>
+</td></tr>
+<tr>
+<td>Mac OS</td>
+<td><code>~/Documents/Paradox Interactive/Stellaris/logs</code>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="EXE_parameters">EXE parameters</span></h4>
+<p>There are some special <a href="http://en.wikipedia.org/wiki/Command-line_interface#SwitChar" class="extiw" title="wikipedia:Command-line interface">options</a> for the <kbd>stellaris.exe</kbd> you can input to improve your logging/debugging:
+</p>
+<div class="mw-highlight mw-highlight-lang-apache mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="err">-</span><span class="nb">script_debug</span><span class="w">	</span>-<span class="w"> </span>(Can<span class="w"> </span>ignore)<span class="w"></span>
+<span class="w"> </span><span class="err">-</span><span class="nb">debug_mode</span><span class="w">	</span>-<span class="w"> </span>Extra<span class="w"> </span>logging<span class="w"></span>
+<span class="w"> </span><span class="err">-</span><span class="nb">debugtooltip</span><span class="w">	</span>-<span class="w"> </span>Starts<span class="w"> </span>first<span class="w"> </span>game<span class="w"> </span>you<span class="w"> </span>enter<span class="w"> </span>with<span class="w"> </span>debugtooltip<span class="w"></span>
+<span class="w"> </span><span class="err">-</span><span class="nb">logprefix</span><span class="w">		</span>-<span class="w"> </span>Modifies<span class="w"> </span>each<span class="w"> </span>log<span class="w"> </span>file<span class="w"> </span>name<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>set<span class="w"> </span>prefix<span class="w"></span>
+<span class="w"> </span><span class="err">-</span><span class="nb">logpostfix</span><span class="w">	</span>-<span class="w"> </span>Modifies<span class="w"> </span>each<span class="w"> </span>log<span class="w"> </span>file<span class="w"> </span>name<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>set<span class="w"> </span>postfix<span class="w"></span>
+<span class="w"> </span><span class="err">-</span><span class="nb">logall</span><span class="w">		</span>-<span class="w"> </span>Logs<span class="w"> </span>no<span class="w"> </span>longer<span class="w"> </span>fail<span class="w"> </span>to<span class="w"> </span>log<span class="w"> </span>duplicate<span class="w"> </span>string<span class="w"> </span>values<span class="w"></span>
+</pre></div>
+<h4><span class="mw-headline" id="log_effect">log effect</span></h4>
+<p>We can use the following effect to output any string into the game.log:
+</p>
+<pre>log - Prints a message to game.log for debugging purposes
+log = &lt;string&gt;
+Supported Scopes: all</pre>
+<p>This is how most modders output data if they want to check how their mod works, it is especially useful for debugging event scripts. 
+</p><p><b>Note:</b> By default, Stellaris will only output the first occurrence of identical log messages. For example, if you use <code>log</code> in a loop and there's no change in the string, you will only see the text outputted once. To avoid this, either make sure the text is different each time (by incorporating an incrementing <a href="/Variables.html" title="Variables">Variable</a>) or pass the <code>-logall</code> argument (see above) to Stellaris when starting the game. 
+</p>
+<h4><span id="game.log_.26_error.log"></span><span class="mw-headline" id="game.log_&amp;_error.log">game.log &amp; error.log</span></h4>
+<p>Modders mostly use <code>error.log</code> and <code>game.log</code> to debug the game. Start the game with the tutmod loaded and open <code>error.log</code>. You will find one line that references "tutmod" (search for the mod prefix <code>tutmod_</code> to quickly find it):
+</p>
+<div class="mw-highlight mw-highlight-lang-yaml mw-content-ltr" dir="ltr"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">18</span><span class="p p-Indicator">:</span><span class="nv">22</span><span class="p p-Indicator">:</span><span class="nv">15</span><span class="p p-Indicator">][</span><span class="nv">government_civic_type.cpp</span><span class="p p-Indicator">:</span><span class="nv">185</span><span class="p p-Indicator">]:</span><span class="w"> </span><span class="nt">Did not find an icon for civic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tutmod_civic</span><span class="w"></span>
+</pre></div>
+<p>For now, all we need to know that there is an icon missing for <kbd>tutmod_civic</kbd>.
+</p><p><b>Note:</b> The `<tt>error.log</tt>` is handled through exception catching, so most of the time (about 90%+) of <b>crashes</b> (CTD) it won’t contain anything related to the actual crash. For the remaining cases (~10%-), the crash is caused by the same issue that was momentarily logged elsewhere, still making the log unhelpful for the specific crash event. <i>Crash-related data</i> is instead stored in the <code>Stellaris\crashes\</code> directory, but this information is primarily useful only to the <i>Stellaris developers</i>.
+</p><p>See <a href="https://stellaris.paradoxwikis.com/Error.log" class="new" title="Error.log (page does not exist)">Error.log</a> for a list of common errors and their possible causes.
+</p>
+<h3><span class="mw-headline" id="Events">Events</span></h3>
+<h4><span class="mw-headline" id="fire_only_once">fire_only_once</span></h4>
+<dl><dd><i>See also: <a href="/Event_modding.html" title="Event modding">Event modding</a>, <a rel="nofollow" class="external text" href="https://github.com/OldEnt/stellaris-triggers-modifiers-effects-list">List of Stellaris triggers, modifiers and effects</a></i></dd></dl>
+<p><a href="/Events.html" title="Events">Event</a> is a script which changes state of the game by using <a href="/Effects.html" title="Effects">effects</a>, provided <a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">triggers</a> are met and event was called.
+</p><p>Create a new <code>\events\tutmod_events.txt</code> file.
+Every events file has to have at least one namespace declared at the beginning. We use:
+</p>
+<pre>namespace = tutmod
+</pre>
+<p>It is a good practice for any mod which affects gameplay (changes <a href="https://stellaris.paradoxwikis.com/Checksum" class="mw-redirect" title="Checksum">checksum</a>) to notify its presence to other mods. The commonly accepted way is to set up a <kbd>global_flag</kbd> other mods can check if it exists via effect:
+</p>
+<pre>set_global_flag - Sets an arbitrarily-named global flag
+set_global_flag = &lt;key&gt;
+Supported Scopes: all</pre>
+<p>Example file would look like the following:
+</p>
+<pre>namespace = tutmod
+country_event = {
+	id = tutmod.1
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = {
+			has_global_flag = tutmod_installed
+		}
+	}
+	immediate = {
+		set_global_flag = tutmod_installed
+	}
+}</pre>
+<ul><li><b><code>namespace = tutmod</code></b> – declares namespace</li>
+<li><b><code>country_event = {}</code></b> – declares event of country <a href="/Scopes.html" title="Scopes">scope</a>, it is also name of an effect used to call an event.</li>
+<li><b><code>id = tutmod.1</code></b> – declares unique id of the event. Consists of namespace and number, separated by a stop.</li>
+<li><b><code>hide_window = yes</code></b> – a popup window for player will not be created. This is how most events in the game work.</li>
+<li><b><code>fire_only_once = yes</code></b> – successfully fired event (called and met trigger <a href="/Conditions.html" title="Conditions">conditions</a>) will be added to blocklist and will never be used again in current game.</li>
+<li><b><code>trigger = {}</code></b> – contains list of conditions (<a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">triggers</a>) which have to be met in order for called event to fire. Default this/root scope is defined by name of event scope (country_event here).</li>
+<li><b><code>immediate = {}</code></b> – contains list of <a href="/Effects.html" title="Effects">effects</a> which change the state of the game when event fires.</li></ul>
+<p>This event does not contain the <code>is_triggered_only = yes</code> declaration. This means event will be checked DAILY for EVERY country. If the event was of different scope, ie. pop_event, it would check for EVERY pop in the game DAILY. With a galaxy of 5000 pops it would mean 5000 checks every day. It is a very resource intensive way of scripting and therefore you should always add <code>is_triggered_only = yes</code>, unless there is a good reason not to. <code>is_triggered_only = yes</code> blocks event from checking itself and will require it to be called from elsewhere (more on that below).
+</p><p>We can limit checking of the event by using the aforementioned <code>fire_only_once = yes</code>. Event still checks daily for every country, but as soon as the first country fires the event it will be blocklisted and no longer checked. Since the conditions of the event are simple (<code>NOT = { has_global_flag = tutmod_installed }</code>) event will fire as soon as game starts.
+</p><p>Specific trigger used in trigger section is:
+</p>
+<pre>has_global_flag - Checks if a Global Flag has been set
+has_global_flag = &lt;flag&gt;
+Supported Scopes: all</pre>
+<p>Immediate section is self-explanatory. It contains a single effect:
+</p>
+<pre>set_global_flag - Sets an arbitrarily-named global flag
+set_global_flag = &lt;key&gt;
+Supported Scopes: all</pre>
+<p>This country event is read as the following by the game:
+<b>Every country must check daily conditions of tutmod.1 event which are "global_flag tutmod_installed has NOT been set". If true set_global_flag = tutmod_installed, then add event to blocklist.</b>
+<b></b>
+</p>
+<h4><span class="mw-headline" id="is_triggered_only">is_triggered_only</span></h4>
+<p>As a general rule every event should have <code>is_triggered_only = yes</code> declared. This makes game not checking the event until it is specifically called by an effect or on_action. Below is a code for the second tutmod event (should be written in <code>\events\tutmod_events.txt</code>):
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># Removes military fleets, grants science ship and scientist.</span>
+<span class="c1"># Scopes:</span>
+<span class="c1"># Scope: root: country this: country</span>
+<span class="n">country_event</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="nb">id</span> <span class="o">=</span> <span class="n">tutmod</span><span class="mf">.2</span>
+	<span class="n">hide_window</span> <span class="o">=</span> <span class="n">yes</span>
+	<span class="n">is_triggered_only</span> <span class="o">=</span> <span class="n">yes</span>	<span class="c1"># Fire only when called from elsewhere.</span>
+	<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">has_civic</span> <span class="o">=</span> <span class="n">tutmod_civic</span>		<span class="c1"># Must have tutmod_civic civic.</span>
+	<span class="p">}</span>
+	<span class="n">immediate</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">every_owned_fleet</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># Iterate through every owned fleet of THIS country.</span>
+			<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">is_ship_class</span> <span class="o">=</span> <span class="n">shipclass_military</span> <span class="c1"># only fleets meeting shipclass_military criteria</span>
+			<span class="p">}</span>
+			<span class="n">delete_fleet</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">target</span> <span class="o">=</span> <span class="n">this</span>				<span class="c1"># Delete THIS fleet.</span>
+				<span class="n">kill_leader</span> <span class="o">=</span> <span class="n">no</span>			<span class="c1"># Do not delete leader of THIS fleet (unassigns).</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="n">create_leader</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># Create leader for THIS country.</span>
+			<span class="k">class</span> <span class="err">= </span><span class="nc">scientist</span> <span class="c1"># Specified scientist class.</span>
+			<span class="n">species</span> <span class="o">=</span> <span class="n">this</span> <span class="c1"># Where THIS is the scope of where effect was written in (country, therefore species will be main country species).</span>
+		<span class="p">}</span>
+		<span class="n">create_fleet</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># Create fleet for THIS country.</span>
+			<span class="n">effect</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="c1"># Execute list of effects for THIS fleet.</span>
+				<span class="n">set_owner</span> <span class="o">=</span> <span class="n">prev</span> <span class="c1"># Set owner of THIS fleet to PREV (PREV/previous scope being country we in previous brackets refered to as THIS).</span>
+				<span class="n">create_ship</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="c1"># Create ship for THIS fleet.</span>
+					<span class="n">random_existing_design</span> <span class="o">=</span> <span class="n">science</span> <span class="c1"># of random design which is science ship.</span>
+					<span class="n">graphical_culture</span> <span class="o">=</span> <span class="n">owner</span> <span class="c1"># Visual style of the ship is the same as OWNER of the fleet (can use PREV here).</span>
+				<span class="p">}</span>
+				<span class="n">set_location</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">target</span> <span class="o">=</span> <span class="n">owner</span><span class="o">.</span><span class="n">capital_scope</span><span class="o">.</span><span class="n">solar_system</span><span class="o">.</span><span class="n">starbase</span> <span class="c1"># Set location of the fleet to owner&#39;s capital_scope&#39;s solar_system&#39;s starbase.</span>
+					<span class="c1"># distance = 0</span>
+					<span class="c1"># angle = random</span>
+					<span class="c1"># direction = out_system</span>
+				<span class="p">}</span>
+				<span class="n">assign_leader</span> <span class="o">=</span> <span class="n">last_created_leader</span> <span class="c1"># Assigns last created leader to the fleet.</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Code is more readable in VSCode.
+</p><p>This event has only one trigger which checks if the country <code>has_civic = tutmod_civic</code>.
+</p><p>There are several effects in the immediate section. Most of them are self-explanatory. All of them are listed on <a rel="nofollow" class="external text" href="https://github.com/OldEnt/stellaris-triggers-modifiers-effects-list">the effects list</a> and it is worth reviewing them.
+</p>
+<h3><span class="mw-headline" id="Scopes">Scopes</span></h3>
+<div style="margin:1.4px 1.6em;"><i>Main article: <a href="/Scopes.html" title="Scopes">Scopes</a></i></div>
+<p>Let us analyse scope operators used.
+</p>
+<pre>create_fleet = {
+	effect = {
+		set_owner = prev
+		create_ship = {
+			random_existing_design = science
+			graphical_culture = owner
+		}
+		set_location = {
+			target = owner.capital_scope.solar_system.starbase
+		}
+		assign_leader = last_created_leader
+	}
+}</pre>
+<p>In the code <code>create_fleet</code> is called directly in <code>country_event = { immediate = {</code>. This means <code>THIS</code> scope of the effect will refer to the country event was fired for.
+</p>
+<pre>root = country
+this = country
+</pre>
+<p>Inside <code>create_fleet</code> effect we call a series of effects using <b><code>effect block</code></b>. Now, inside effect block, <code>THIS</code> scope operator will refer to this fleet (because it was called inside THIS fleet).
+</p>
+<pre>root = country
+this = fleet
+prev = country
+</pre>
+<p>Note how we can switch back to previous scope by using <code>PREV</code> scope operator.
+</p>
+<pre>effect = {
+	set_owner = prev</pre>
+<p>Effect <code>set_owner</code> is called inside <code>THIS</code> fleet and targets <code>PREV</code>, which is country.
+</p>
+<h3><span class="mw-headline" id="Common">Common</span></h3>
+<h4><span class="mw-headline" id="on_actions">on_actions</span></h4>
+<div style="margin:1.4px 1.6em;"><i>See also: <a href="/Event_modding.html#On_Actions" title="Event modding">Event modding#On Actions</a></i></div>
+<p>We mentioned how events can be called from effects and on_actions. We can call events on_game_start to assure proper set up for the empire with <code>tutmod_civic</code>. Simply create <code>\common\on_actions\tutmod_on_actions.txt</code> file and declare events which should fire.
+</p>
+<pre>on_game_start_country = {
+	events = {
+		tutmod.1
+		tutmod.2
+	}
+}</pre>
+<h3><span class="mw-headline" id="GFX">GFX</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3ATutmod_civic_tooltip_with_gfx.png" class="image"><img alt="" src="images/Tutmod_civic_tooltip_with_gfx.png" decoding="async" loading="lazy" width="300" height="183" class="thumbimage" data-file-width="410" data-file-height="250" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3ATutmod_civic_tooltip_with_gfx.png" class="internal" title="Enlarge"></a></div>Tutorial civic tooltip with blank icon. Source: <a rel="nofollow" class="external text" href="https://discord.gg/WpeXm2h">Stellaris Modding Den Discord Server</a>, #shared-art channel.</div></div></div>
+<p>All graphical assets are stored inside <kbd>/gfx/</kbd> folder. Civics icons should be placed specifically in <code>\gfx\interface\icons\governments\civics\</code> .
+</p><p>We need to create a <code>tutmod_civic.dds</code> which is 28x28 (resolution for civics icon). For the purpose of this tutorial we will use a blank template gratuitously donated to and available on <a rel="nofollow" class="external text" href="https://discord.gg/WpeXm2h">Stellaris Modding Den Discord Server</a> in the #shared-art channel.
+</p>
+<pre>\gfx\interface\icons\governments\civics\tutmod_civic.dds
+</pre>
+<p><a rel="nofollow" class="external text" href="https://www.gimp.org/">GIMP</a> and <a rel="nofollow" class="external text" href="https://www.getpaint.net/">Paint.net</a> are two very good tools commonly used to create Stellaris assets.
+</p>
+<h2><span class="mw-headline" id="Testing_a_mod">Testing a mod</span></h2>
+<p>Any trigger, effect or event can be tested from the console while in game. Console will accept any valid script input, as long as it is proceeded by the declaration of what it is (trigger, effect or event).
+</p><p>Console executes script on a scope which is currently selected (planet, fleet). To select empire scope open government menu. Scoping to unclickable objects might require additional scope operators in script.
+</p><p>We can check if an empire has a <b>tutmod_civic</b> by clicking on the empire flag and executing the following trigger script:
+</p>
+<pre>trigger OR = { has_civic = tutmod_civic has_valid_civic = tutmod_civic }</pre>
+<ul><li><b>has_civic</b> checks if the current country has the specified civic,</li>
+<li><b>has_valid_civic</b> checks if the current country has a certain civic and if its validated (performs additional check if country fulfils criteria of a given civic).</li></ul>
+<p>In practice we check only against one of the above triggers as <b>has_civic</b> makes <b>has_valid_civic</b> redundant when used.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:752px;"><a href="https://stellaris.paradoxwikis.com/File%3ATutmod_civic_trigger_test.png" class="image"><img alt="" src="images/Tutmod_civic_trigger_test.png" decoding="async" loading="lazy" width="750" height="700" class="thumbimage" data-file-width="750" data-file-height="700" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3ATutmod_civic_trigger_test.png" class="internal" title="Enlarge"></a></div>Triggers are not always localised or reuse localisation keys. In the above example both <b>tutmod_civic</b> and <b>has_valid_civic</b> triggers use the same localisation key which can be confusing at first. This is a rare occurrence but is something to be mindful of.</div></div></div></div>
+<p>We can also execute effects in the same way. Let us count ships of an empire and store value in a selected object, ie. planet. Click on a <b>homeworld planet</b> and execute the following:
+</p><p><code>effect owner = { every_owned_ship = { prevprev = { change_variable = { which = tutmod_var_num_ships value = 1 } } }</code>
+</p><p>where:
+</p>
+<ul><li><b><code>owner = {}</code></b> – scope operator, jumps from selected scope to the owner of selected scope (in the example from planet to a planet owner),</li>
+<li><b><code>every_owned_ship = {}</code></b> – iterates through each ship in the fleet or owned by the country and executes effects. We have omitted limit triggers because we want to iterate through all,</li>
+<li><b><code>prevprev = {}</code></b> – scope operator, while executed inside <b><code>every_owned_ship</code></b> effects it will jump back (prev) two times (prevprev), from <b><code>every_owned_ship</code></b> to <b><code>owner</code></b> and from <b><code>owner</code></b> to a scoped <b>homeworld planet</b> where effect was executed on.</li>
+<li><b><code>change_variable</code></b> – change the named variable by a given amount in a given scope.</li></ul>
+<p>To view a value we can either open up a save or use <b><code>debugtooltip</code></b> command and hover over an object to display flags and variables stored in it.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:270px;"><a href="https://stellaris.paradoxwikis.com/File%3ATutmod_effect_debugtooltip_test.png" class="image"><img alt="" src="images/Tutmod_effect_debugtooltip_test.png" decoding="async" loading="lazy" width="268" height="238" class="thumbimage" data-file-width="268" data-file-height="238" /></a>  <div class="thumbcaption">Starbases, mining stations and civilian ships count as ships. If we wanted to count all military ships we would iterate through <b>every_owned_fleet</b> which <b>is_ship_class = shipclass_military</b> and count <b>every_owned_ship</b> inside those fleets.</div></div></div></div>
+<p><b>Note:</b>
+</p>
+<dl><dd>The console accepts pasted in input, even if it contains multiple lines. It does not show it properly but it does execute it.</dd>
+<dd>For testing performance issues you can use the <b><code>script_profiler</code></b> command (once to start profiling, and again to finish and print the results).<sup>(since v.3.5)</sup></dd></dl>
+<h2><span class="mw-headline" id="Git_repository">Git repository</span></h2>
+<p><a href="http://en.wikipedia.org/wiki/Git" class="extiw" title="wikipedia:Git">Git</a> is a version control system, it is used primarily in software development. It tracks changes to files and helps in collaboration. With Git repository set up you can:
+</p>
+<ul><li>Track and revert changes to your mod to any point prior.</li>
+<li>Share code, including links to specific lines with ease.</li>
+<li>Generate release packages from specific repository revisions, for the ease of download.</li>
+<li>Allow others to propose tweaks to your code with ease, which you can accept and merge in with a press of a button.</li></ul>
+<p>For the purpose of this tutorial we use popular <a rel="nofollow" class="external text" href="https://github.com/">GitHub</a> which offers free hosting service:
+</p>
+<ul><li>Create a folder specifically for GitHub repositories, ie. <code>G:\GitHub\</code></li>
+<li>Clone your mod folder to the above GitHub repositories folder. Rename cloned folder to something recognisable online if you want, in the example we rename <code>G:\GitHub\tutmod\</code> to <code>G:\GitHub\tutorial-mod-stellaris\</code>.</li>
+<li>Create GitHub account on <a rel="nofollow" class="external text" href="https://github.com/">GitHub homepage</a>.</li>
+<li>Download and install GitHub desktop client (available for Windows and Mac, Linux has distro-specific clients you can look into).</li>
+<li>Open GitHub desktop client and login to your account (File &gt; Options &gt; Accounts). This is not strictly necessary but will allow you to push code to online repository. Further steps assume this is the case.</li>
+<li>File &gt; New Repository.</li></ul>
+<table style="margin:auto;width:100%;">
+<tbody><tr>
+<th>Create</th>
+<th>Preview initial commit</th>
+<th>Publish</th>
+<th>Available online
+</th></tr>
+<tr style="vertical-align:top;">
+<td>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod.png" class="image"><img alt="" src="images/GitHub_create_repository_Stellaris_mod.png" decoding="async" loading="lazy" width="300" height="344" class="thumbimage" data-file-width="400" data-file-height="458" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod.png" class="internal" title="Enlarge"></a></div>Make sure name matches mod folder name in the GitHub repositories folder, this will allow GitHub to include your files in the initial commit. Initialise this repository with README (can be edited later). Fill in description and leave other options unchanged.</div></div></div></div>
+</td>
+<td>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod_2.png" class="image"><img alt="" src="images/GitHub_create_repository_Stellaris_mod_2.png" decoding="async" loading="lazy" width="300" height="130" class="thumbimage" data-file-width="880" data-file-height="380" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod_2.png" class="internal" title="Enlarge"></a></div>Check if all changes are desired (green lines means added, red removed). You can edit files in repository folder at any time and changes will be immediately seen in this window. Press Publish repository (after initial upload this button is used to push changes).</div></div></div></div>
+</td>
+<td>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:232px;"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod_3.png" class="image"><img alt="" src="images/GitHub_create_repository_Stellaris_mod_3.png" decoding="async" loading="lazy" width="230" height="164" class="thumbimage" data-file-width="450" data-file-height="320" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod_3.png" class="internal" title="Enlarge"></a></div>Selected name will be a part of repository's URL. You can deselect private option if you wish repository to be immediately visible to the public. This can be changed at any time.</div></div></div></div>
+</td>
+<td>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:232px;"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod_web.png" class="image"><img alt="" src="images/GitHub_create_repository_Stellaris_mod_web.png" decoding="async" loading="lazy" width="230" height="184" class="thumbimage" data-file-width="1000" data-file-height="800" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AGitHub_create_repository_Stellaris_mod_web.png" class="internal" title="Enlarge"></a></div>Repository is now available online. Pictured example can be accessed at <a rel="nofollow" class="external free" href="https://github.com/OldEnt/tutorial-mod-stellaris">https://github.com/OldEnt/tutorial-mod-stellaris</a> .</div></div></div></div>
+</td></tr></tbody></table>
+<p>Any changes to the repository simply require adding, removing or changing files in the repository folder. GitHub program monitors folder for any changes and will allow for update push if those are detected. Change of the code state is called a commit.
+</p>
+<h2><span class="mw-headline" id="External_links">External links</span></h2>
+<ul><li><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1416409" class="extiw" title="forum:1416409">Stellaris Dev Diary #182: The Perils of Scripting and How to Avoid Them</a> – written by Caligula, Stellaris Content Designer</li></ul>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a class="mw-selflink selflink">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181507
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.107 seconds
+Real time usage: 1.475 seconds
+Preprocessor visited node count: 455/1000000
+Post‐expand include size: 17965/2097152 bytes
+Template argument size: 8144/2097152 bytes
+Highest expansion depth: 6/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 31805/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1353.487      1 -total
+  1.03%   13.959      1 Template:ModdingNavbox
+  0.74%    9.984      1 Template:Navbox
+  0.33%    4.524      3 Template:See_also
+  0.24%    3.241     14 Template:Navboxgroup
+  0.21%    2.846      1 Template:Clear
+  0.06%    0.873      2 Template:Main
+  0.06%    0.767      5 Template:Hatnote
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:8521-0!canonical and timestamp 20260707181506 and revision id 111486.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

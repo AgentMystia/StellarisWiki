@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Trait/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Trait/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_Trait.html" title="Template:Trait">Template:Trait</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p>Template used for <a href="https://stellaris.paradoxwikis.com/Leader_traits" class="mw-redirect" title="Leader traits">leader traits</a>. See <a href="/Category_Leader_trait_icons.html" title="Category:Leader trait icons">Category:Leader trait icons</a> for the trait images and <a href="/Category_Leader_trait_icon_elements.html" title="Category:Leader trait icon elements">Category:Leader trait icon elements</a> for the trait background and overlay images.
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Parameter
+</th>
+<th>Description
+</th>
+<th>Required
+</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Image file name, not including "Leader_trait_" or "png"</td>
+<td><b>required</b></td>
+<td>—
+</td></tr>
+<tr>
+<td>2</td>
+<td>Name of the icon, unnecessary if it matches 1</td>
+<td>optional</td>
+<td>[1]
+</td></tr>
+<tr>
+<td>w</td>
+<td>Size of the icon<br />Cannot use x24px format</td>
+<td>optional</td>
+<td>34px
+</td></tr>
+<tr>
+<td>bg</td>
+<td>Icon background, uses basic trait background by default:
+<ul><li>eng / engineering = engineering <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_engineering.png" class="image"><img alt="Leader trait bg engineering.png" src="images/Leader_trait_bg_engineering.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li>
+<li>soc / society = society <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_society.png" class="image"><img alt="Leader trait bg society.png" src="images/Leader_trait_bg_society.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li>
+<li>phy / physics = physics <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_physics.png" class="image"><img alt="Leader trait bg physics.png" src="images/Leader_trait_bg_physics.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li>
+<li>psi / psionic = psionic <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_psionic.png" class="image"><img alt="Leader trait bg psionics.png" src="images/Leader_trait_bg_psionic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li>
+<li>spec / specialist = specialist <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_specialist.png" class="image"><img alt="Leader trait bg specialist.png" src="images/Leader_trait_bg_specialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li>
+<li>neg / negative = negative <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_negative.png" class="image"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li>
+<li>adv / advanced = advanced <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_advanced.png" class="image"><img alt="Leader trait bg advanced.png" src="images/Leader_trait_bg_advanced.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> <small>(unused in-game)</small></li></ul>
+</td>
+<td>optional</td>
+<td>basic <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_basic.png" class="image"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a>
+</td></tr>
+<tr>
+<td>rarity</td>
+<td>Trait rarity, used to determine trait frame and overlay.
+<ul><li>veteran <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_overlay_veteran.png" class="image"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li>
+<li>destiny <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_overlay_destiny.png" class="image"><img alt="Leader trait overlay destiny.png" src="images/Leader_trait_overlay_destiny.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></li></ul>
+<div><code>veteran=yes</code> or <code>destiny=yes</code> can also be used instead.</div>
+</td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>tier</td>
+<td>Used to indicate trait tier/level
+<ul><li>1 <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_basic.png" class="image"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a><span style="margin-left:-24px;"><a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_tier_1.png" class="image"><img alt="Leader trait tier 1.png" src="images/Leader_trait_tier_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></li>
+<li>2 <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_basic.png" class="image"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a><span style="margin-left:-24px;"><a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_tier_2.png" class="image"><img alt="Leader trait tier 2.png" src="images/Leader_trait_tier_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span> - automatically adds "II" to trait name in hover text</li>
+<li>3 <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_basic.png" class="image"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a><span style="margin-left:-24px;"><a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_tier_3.png" class="image"><img alt="Leader trait tier 3.png" src="images/Leader_trait_tier_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span> - automatically adds "III" to trait name in hover text</li></ul>
+</td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>council</td>
+<td>Adds the councilor overlay <a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_bg_basic.png" class="image"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a><span style="margin-left:-24px;"><a href="https://stellaris.paradoxwikis.com/File%3ALeader_trait_overlay_councilor.png" class="image"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></a></span></td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>class</td>
+<td>Sets which leader class the trait belongs to, used to determine which page is linked by default
+<ul><li>official = <a href="/Official_traits.html" title="Official traits">Official traits</a></li>
+<li>scientist = <a href="/Scientist_traits.html" title="Scientist traits">Scientist traits</a></li>
+<li>commander = <a href="/Commander_traits.html" title="Commander traits">Commander traits</a></li>
+<li>default = <a href="/Common_leader_traits.html" title="Common leader traits">Common leader traits</a></li></ul>
+</td>
+<td>optional</td>
+<td><a href="/Common_leader_traits.html" title="Common leader traits">Common leader traits</a>
+</td></tr>
+<tr>
+<td>link</td>
+<td>Sets a custom link</td>
+<td>optional</td>
+<td>[class] traits#[3]
+</td></tr>
+<tr>
+<td>hover</td>
+<td>Sets a custom hover text, overrides tier number.</td>
+<td>optional</td>
+<td>[3]
+</td></tr>
+<tr>
+<td>image</td>
+<td>Sets an alternate image for trait icon</td>
+<td>optional</td>
+<td>Leader trait [1].png
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Wikitext</th>
+<th>Icon
+</th></tr>
+<tr>
+<td><code>{{trait|Architectural Sense|class=official|rarity=veteran|council=yes}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait architectural sense.png" src="images/Leader_trait_architectural_sense.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="34" height="36" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Official_traits.html#Architectural_Sense" title="Architectural Sense"><img alt="Architectural Sense" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a></span></span>
+</td></tr>
+<tr>
+<td><code>{{trait|space miner|Geology Expert|w=34px|veteran=yes|tier=3}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait space miner.png" src="images/Leader_trait_space_miner.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 3.png" src="images/Leader_trait_tier_3.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Common_leader_traits.html#Geology_Expert" title="Geology Expert III"><img alt="Geology Expert III" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a></span></span>
+</td></tr>
+<tr>
+<td><code>{{trait|Scholarium Explorer|bg=spec|class=scientist}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg specialist.png" src="images/Leader_trait_bg_specialist.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait scholarium explorer.png" src="images/Leader_trait_scholarium_explorer.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Scientist_traits.html#Scholarium_Explorer" title="Scholarium Explorer"><img alt="Scholarium Explorer" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a></span></span>
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Cached time: 20260707182733
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.042 seconds
+Real time usage: 0.094 seconds
+Preprocessor visited node count: 303/1000000
+Post‐expand include size: 2758/2097152 bytes
+Template argument size: 220/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 186/5000000 bytes
+Lua time usage: 0.020/7 seconds
+Lua virtual size: 4907008/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   59.637      1 -total
+ 91.98%   54.856      3 Template:Trait
+  7.38%    4.401      1 Template:Template_doc_page_viewed_directly
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:13296-0!canonical and timestamp 20260707182733 and revision id 101485.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

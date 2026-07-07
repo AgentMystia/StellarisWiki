@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Pm-box/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Pm-box/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_Pm-box.html" title="Template:Pm-box">Template:Pm-box</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p>This template creates an infobox around the information about planet modifiers.
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Status</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>name of the planet modifier and identifier of the icon</td>
+<td><b>required</b></td>
+<td>empty
+</td></tr>
+<tr>
+<td>2</td>
+<td>ingame description of the planet modifier</td>
+<td><b>optional</b></td>
+<td>empty
+</td></tr>
+<tr>
+<td>modifiers</td>
+<td>effects of the planet modifier</td>
+<td><b>required</b></td>
+<td>empty
+</td></tr>
+<tr>
+<td>file</td>
+<td>alternative file name</td>
+<td><b>optional</b></td>
+<td>{{{1}}}
+</td></tr>
+<tr>
+<td>image</td>
+<td>alternative image or <code><a href="/Template_Planet_modifier.html" title="Template:Planet modifier">{{planet modifier}}</a></code></td>
+<td><b>optional</b></td>
+<td>[[File:{{{1}}}.png|{{{1}}} icon]]
+</td></tr>
+<tr>
+<td>indent</td>
+<td>indent by a number of standard indents (1.6em)</td>
+<td><b>optional</b></td>
+<td>empty
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Example">Example</span></h2>
+<p>The following code:
+</p>
+<pre>{{pm-box
+|Luxuries Distributed
+|The provision of amenities to the populace is being bolstered by way of a special distribution program, delivering luxury and consumer goods.
+|image={{planet modifier|pm_luxuries|1}}
+|modifiers=
+* {{icon|amenities mult}} {{green|+25%}} amenities
+* {{icon|immigration pull mult}} {{green|+25%}} immigration pull
+}}</pre>
+<p>will display:
+</p>
+<div class="stellaris-outliner" style="float:none; clear:none; width:330px;">
+<div class="stellaris-outliner-header" style="color:#1dc57c; text-transform: none;">
+<p><span style="white-space:nowrap">Luxuries Distributed
+</span>
+</p>
+</div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="display:flex; align-items:center;"><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_luxuries.png" class="image"><img alt="Pm luxuries.png" src="images/Pm_luxuries.png" decoding="async" loading="lazy" width="60" height="60" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><img alt="Pm frame green.png" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="60" height="60" data-file-width="60" data-file-height="60" /></span></span><div style="margin-left: 5px;"><div class="plainlist">
+<ul><li><a href="https://stellaris.paradoxwikis.com/Amenities" title="Amenities"><img alt="Mod planet amenities mult.png" src="images/Mod_planet_amenities_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+25%</span> amenities</li>
+<li><a href="https://stellaris.paradoxwikis.com/Migration" title="Immigration pull"><img alt="Immigration pull" src="images/Mod_planet_immigration_pull_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+25%</span> immigration pull</li></ul>
+</div></div></div><div style="font-size: 80%; font-style: italic;">The provision of amenities to the populace is being bolstered by way of a special distribution program, delivering luxury and consumer goods.
+</div>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182649
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.029 seconds
+Real time usage: 0.044 seconds
+Preprocessor visited node count: 281/1000000
+Post‐expand include size: 3808/2097152 bytes
+Template argument size: 1650/2097152 bytes
+Highest expansion depth: 14/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 360/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   26.561      1 -total
+ 77.07%   20.471      1 Template:Pm-box
+ 57.93%   15.386      1 Template:Plainlist
+ 29.52%    7.840      2 Template:Icon
+ 19.36%    5.141      1 Template:Icon/i
+ 19.11%    5.076      2 Template:Green
+ 12.87%    3.418      1 Template:Template_doc_page_viewed_directly
+ 10.16%    2.700      2 Template:Symbolfirst
+  9.16%    2.433      1 Template:Template
+  9.16%    2.432      1 Template:Planet_modifier
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:10197-0!canonical and timestamp 20260707182649 and revision id 64481.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

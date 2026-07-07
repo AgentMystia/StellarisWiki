@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Option - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Option</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>{{{option_text}}}</b></div></div>
+<ul><li>None</li></ul>
+<div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Option/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Option/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_Option/doc.html" title="Template:Option/doc">Template:Option/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Option/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Option/doc&amp;action=history">history</a>)</small></div>
+<p><br />
+<b>Option</b> can be used to diplay the options of events in <code><a href="/Template_Event.html" title="Template:Event">{{event}}</a></code> infoboxes.
+</p>
+<h2><span class="mw-headline" id="Parameter">Parameter</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Parameter
+</th>
+<th>Description
+</th>
+<th>Default
+</th>
+<th>Status
+</th></tr>
+<tr>
+<td>option_text
+</td>
+<td>The text of the option.
+</td>
+<td>empty
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>effect
+</td>
+<td>Effects of the option.
+</td>
+<td>
+<ul><li>None</li></ul>
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>trigger
+</td>
+<td>Conditions - if applicable - of the option.<br />
+<p>If set to ‘always’ then it displays “<img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/thumb/3/35/Event_trigger.png/16px-Event_trigger.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="18" data-file-height="18" />&#8201;<b>Always enabled:</b>” else “<img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/thumb/3/35/Event_trigger.png/16px-Event_trigger.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="18" data-file-height="18" />&#8201;<b>Enabled if:</b>” followed by the specified trigger.
+</p>
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>exclusive_trigger
+</td>
+<td>Exclusive conditions - if applicable - of the option.<br />
+<p>Displays “<img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/thumb/3/35/Event_trigger.png/16px-Event_trigger.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="18" data-file-height="18" />&#8201;<b>Enabled and disables other options if:</b>” followed by the specified exclusive trigger.
+</p>
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>1
+</td>
+<td>If set to 'end' the horizontal rule at the end of a conditional option is disabled.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<pre>{{Option
+|option_text = 
+|effect = 
+}}
+</pre>
+<p>For events with conditional options:
+</p>
+<pre>{{Option
+|trigger = &lt;!-- required --&gt;
+|option_text =
+|effect =
+}}
+</pre></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20260707182643
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.019 seconds
+Real time usage: 0.030 seconds
+Preprocessor visited node count: 81/1000000
+Post‐expand include size: 7665/2097152 bytes
+Template argument size: 1733/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 139/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.371      1 Template:Template_doc
+100.00%   12.371      1 -total
+ 75.13%    9.294      1 Template:Template_doc_inline
+ 50.98%    6.306      1 Template:Option/doc
+ 17.27%    2.136      1 Template:Template_doc_page_transcluded
+ 16.93%    2.095      1 Template:Template
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1662-0!canonical and timestamp 20260707182643 and revision id 101019.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

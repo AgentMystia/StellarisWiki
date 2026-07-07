@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>District modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">District modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about modding Zones (District specializations) and zone slots. These are new modding features from the Phoenix 4.0 update and do not apply to earlier versions.
+</p><p>Please note the contents of this page can become outdated as new patches and fixes are applied to the 4.x series of Stellaris updates.
+</p><p>This document may be incomplete, if you are a modder and have something to add, feel free to contribute.
+</p><p>From an in-game perspective, a planet's main district can have two specializations (zones) and secondary districts can have one.
+</p><p>From a modding perspective, Districts have zone slots in which one zone per slot can be built.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Zone_slots"><span class="tocnumber">1</span> <span class="toctext">Zone slots</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Data_Structure"><span class="tocnumber">1.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Zones_(District_Specializations)"><span class="tocnumber">2</span> <span class="toctext">Zones (District Specializations)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#District_planet_modifier"><span class="tocnumber">2.1</span> <span class="toctext">District planet modifier</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Data_Structure_2"><span class="tocnumber">2.2</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Using_zones_to_swap_districts"><span class="tocnumber">2.3</span> <span class="toctext">Using zones to swap districts</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Triggered_zone_names"><span class="tocnumber">2.4</span> <span class="toctext">Triggered zone names</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Zone_slots">Zone slots</span></h2>
+<p>The code for districts references zone slots. Zone slots specify what zones (<a href="https://stellaris.paradoxwikis.com/Districts#District_specialization" class="extiw" title="stella:Districts">specializations</a>) can be built on a district. 
+</p><p>For example in the base "City" district (<code>district_city</code>) the <code>slot_city_government</code> slot permits the <code>zone_default</code> zone, which provides 6 buildings and allows some variety of buildings to be built in it.
+Highlights:
+</p><p>Highlights:
+</p><p><b>Every zone slot is required to specify at least one zone (specialization)</b>
+</p>
+<ul><li>Zone slot localizations are not shown in the planet UI, so you can skip writing descriptions for them</li>
+<li>Zone slots can specify zone sets, using <code>included_zone_sets</code> which is a shortcut to permit any zone to be built in that slot as long as it corresponds to the associated sets.</li></ul><p>
+In the below example, <code>slot_nexus</code>, the code permits any zone to be built that is part of the <code>nexus</code> set.</p><pre>slot_nexus = {
+	included_zone_sets = {
+		nexus
+	}
+	unlock = { # planet scope
+		uses_district_set = machine_world
+	}
+}
+</pre>
+<h4><span class="mw-headline" id="Data_Structure">Data Structure</span></h4>
+<table class="wikitable">
+<caption>
+</caption>
+<tbody><tr>
+<th>Property
+</th>
+<th>Explanation
+</th>
+<th>Example usage
+</th></tr>
+<tr>
+<td>start = &lt;zone_identifier&gt;
+</td>
+<td>This is used mainly when defining a planet's primary district, to specify what zone should the slot start with.
+<p>It's how the game shows the 6-slot government zone in the City district, for example, without players having to build it.
+</p><p><i>Optional</i>
+</p>
+</td>
+<td>start = zone_default
+</td></tr>
+<tr>
+<td>include = { zone_identifier }
+</td>
+<td>A list of zones that may be built in this zone slot
+<p><i>Required</i>
+</p>
+</td>
+<td>include = {
+<p>zone_unity
+</p><p>}
+</p>
+</td></tr>
+<tr>
+<td>exclude = { zone_identifier }
+</td>
+<td>A list of one or more zones that may <b>not</b> be built in this zone slot
+<p><i>Optional</i>
+</p>
+</td>
+<td>exclude = {
+<p>zone_minerals
+</p><p>}
+</p>
+</td></tr>
+<tr>
+<td>included_zone_sets = { zone_set_identifier }
+</td>
+<td>A shortcut to say what zones are allowed to be built in the slot, by referencing the zone_set property of a zone.
+<p>The example usage says "any zone belonging to the <b>energy</b> zone set can be built here"
+Note that zone sets are arbitrarily defined. The names for zone sets are created simply by using them.
+You can use the zone set identifiers from the base game alongside ones that you make up.
+</p><p><i>Optional</i>
+</p>
+</td>
+<td>included_zone_sets = {
+<p>energy
+</p><p>}
+</p>
+</td></tr>
+<tr>
+<td>excluded_zone_sets = { zone_set_identifier }
+</td>
+<td>A shortcut to say what zone sets are not allowed to be built in this zone slot.
+<p><i>Optional</i>
+</p>
+</td>
+<td>excluded_zone_sets = {
+<p>minerals
+</p><p>}
+</p>
+</td></tr>
+<tr>
+<td>unlock = { &lt;conditions&gt; }
+</td>
+<td>A set of conditions, in the planet scope, specifying when can the player click on the slot in-game to add a zone
+</td>
+<td>unlock = {
+<p>&#160; &#160; &#160;&#160; always = yes
+</p><p>&#160;&#160; }
+</p>
+</td></tr>
+<tr>
+<td>potential = { &lt;condition&gt; }
+</td>
+<td>A set of conditions, in the planet scope, specifying whether the zone slot shows up at all.
+</td>
+<td>potential = {
+<p>always = yes
+</p><p>}
+</p>
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr></tbody></table>
+<p>Some notes on the above:
+</p>
+<ul><li>Zone_set_identifiers: Recommended to prefix your zone set names with <code>zone_set_</code> so that it is much easier to find them and change them in your mod. Using a common word like "energy" is going to make it difficult to identify them properly.</li></ul>
+<h2><span id="Zones_.28District_Specializations.29"></span><span class="mw-headline" id="Zones_(District_Specializations)">Zones (District Specializations)</span></h2>
+<p>Zones (shown in-game and referred to generally as <a href="https://stellaris.paradoxwikis.com/Districts#District_specialization" class="extiw" title="stella:Districts">District Specializations</a>) 
+</p><p>The idea with zones is that they make districts quite flexible in what they produce. Previously, districts conceptually mainly produced one resource, with some secondary resources occasionally. 
+In Phoenix 4.0 the idea is that the production of a district is mainly decided by the zone, which adds jobs of a certain category/theme, further augmented by buildings in that zone. 
+You can change the production (jobs provided) of a district to be whatever you like, by modding the zone, or creating several different zones. 
+</p><p>Note that districts can still produce their own resources, or add jobs as they were in 3.x.
+</p><p>Highlights
+</p>
+<ul><li>Zones have their own resources block</li>
+<li>they provide building slots (up to 3 in the base game)</li>
+<li>they can apply modifiers that are multiplied by the number of districts it's built on</li>
+<li>can apply planet modifiers and country modifiers</li></ul>
+<h4><span class="mw-headline" id="District_planet_modifier">District planet modifier</span></h4>
+<p>Zones have a modifier, <code>district_planet_modifier</code> which will apply the modifier, multiplied <i>for every district that is built</i>.
+</p><p>Unlike <code>planet_modifier</code>, which is applied to the planet only once, <code>district_planet_modifier</code> is applied multiple times.
+</p><p>
+Using an example from <code>zone_urban</code>, for every Urban district built, a static amount of housing will be added.</p><pre>triggered_district_planet_modifier = {
+	planet_housing_add = @zone_urban_housing_positive
+}
+</pre>
+<h4><span class="mw-headline" id="Data_Structure_2">Data Structure</span></h4>
+<table class="wikitable">
+<caption>
+</caption>
+<tbody><tr>
+<th>Property
+</th>
+<th>Explanation
+</th>
+<th>Example usage
+</th></tr>
+<tr>
+<td>icon
+</td>
+<td>A reference to a SpriteType definition that shows an icon in the planet UI when choosing zones,
+<p>or after it's built
+<i>Required</i>
+</p>
+</td>
+<td>icon = GFX_diplomatic_weight_large
+</td></tr>
+<tr>
+<td>base_buildtime = &lt;int&gt;
+</td>
+<td>Time to build the zone
+<p><i>Required</i>
+</p>
+</td>
+<td>base_buildtime = @zone_buildtime
+</td></tr>
+<tr>
+<td>planet_limit = &lt;int&gt;
+</td>
+<td>How many of these zones are allowed on the planet
+<p><i>Optional</i>
+</p>
+</td>
+<td>planet_limit = 2
+</td></tr>
+<tr>
+<td>max_buildings = &lt;int&gt;
+</td>
+<td>How many buildings does this zone provide.
+<p>For primary districts, this value will generally be 6
+For secondary districts, this value will generally be 3
+<i>Required</i>
+</p>
+</td>
+<td>max_buildings = 6
+</td></tr>
+<tr>
+<td>empire_limit
+</td>
+<td>How many are allowed in the country
+<p><i>Optional</i>
+</p>
+</td>
+<td>empire_limit = 12
+</td></tr>
+<tr>
+<td>potential = &lt;condition&gt;
+</td>
+<td>A set of conditions to determine if this zone can be <b>seen</b> by players in the planet UI, as buildable
+<p>Optional, if excluded, defaults to always = yes
+</p>
+</td>
+<td>potential = {
+<p>always = yes
+}
+</p>
+</td></tr>
+<tr>
+<td>unlock = &lt;condition&gt;
+</td>
+<td>A set of conditions to determine if the zone can be <b>built</b> by players
+<p><i>Required</i>
+</p>
+</td>
+<td>potential = {
+<p>exists = owner
+owner = { is_individual_machine = yes }
+}
+</p>
+</td></tr>
+<tr>
+<td>zone_sets = { &lt;zone_set_identifier&gt; }
+</td>
+<td>A list of zone sets that this zone belongs to.
+<p>The zone set can be referenced in a zone slot's included_zone_sets and excluded_zone_sets properties
+<i>Required</i>
+</p>
+</td>
+<td>zone_sets = {
+<p>urban
+habitat_urban
+resort
+}
+</p>
+</td></tr>
+<tr>
+<td>include = { &lt;building_identifier&gt; }
+</td>
+<td>A list of buildings allowed to be built in the zone
+<p><i>Optional</i>
+</p>
+</td>
+<td>include = {
+<p>building_military_academy
+}
+</p>
+</td></tr>
+<tr>
+<td>exclude = { &lt;building_identifier&gt; }
+</td>
+<td>A list of buildings <b>not allowed</b> to be built in the zone
+<p><i>Optional</i>
+</p>
+</td>
+<td>exclude = {
+<p>building_autochthon_monument
+}
+</p>
+</td></tr>
+<tr>
+<td>included_building_sets = { &lt;building_set_identifier&gt; }
+</td>
+<td>Which buildings from specific building sets can be built
+<p><i>Optional</i>
+</p>
+</td>
+<td>included_building_sets = {
+<p>urban
+origin
+}
+</p>
+</td></tr>
+<tr>
+<td>excluded_building_sets = { &lt;building_set_identifier&gt; }
+</td>
+<td>Which buildings from specific building sets can not be built
+<p><i>Optional</i>
+</p>
+</td>
+<td>excluded_building_sets = {
+<p>generator
+mining
+farming
+}
+</p>
+</td></tr>
+<tr>
+<td>resources = { &lt;economy_unit&gt; }
+</td>
+<td>An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the category, construction cost, resource upkeep, and production of this zone
+<p><i>Optional</i>
+</p>
+</td>
+<td>resources = {
+<p>category = planet_zones
+cost = {
+minerals = @zone_cost
+}
+}
+</p>
+</td></tr>
+<tr>
+<td>swap_type = { &lt;district_identifier&gt; }
+</td>
+<td>The base district will be changed to this district identifier, when this zone is built
+<p><i>Optional</i>
+</p>
+</td>
+<td>swap_type = district_arcology_mixed_industry
+</td></tr>
+<tr>
+<td>swap_type_weight = &lt;int&gt;
+</td>
+<td>(TBD)
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>country_modifier = { &lt;modifiers&gt; }
+</td>
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire. Only one country_modifier per zone.
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>triggered_country_modifier = { &lt;modifiers&gt; }
+</td>
+<td>Similar to the above, except it only applies if the <code>potential</code> property evaluates true. Multiple allowed.
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>district_country_modifier = { &lt;modifiers&gt; }
+</td>
+<td>A block of Modifiers to be applied to the empire, multiplied by the number of districts the zone is built on (district level)
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>triggered_district_country_modifier = { }
+</td>
+<td>Conditional district country modifiers to be applied, multiplied by the number of districts the zone is built on (district level). Multiple are allowed
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>district_planet_modifier = { }
+</td>
+<td>Modifiers to be applied to the planet, multiplied by the number of districts the zone is built on (district level). One district_planet_modifier per zone
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>triggered_district_planet_modifier = { }
+</td>
+<td>Conditional modifiers to be applied to the planet, multiplied by the number of districts the zone is built on (district level). Multiple are allowed
+<p>In the example here, the triggered modifier will increase housing for each district built that has this zone
+<i>Optional</i>
+</p>
+</td>
+<td>triggered_district_planet_modifier = {
+<p>planet_housing_add = @zone_urban_housing_positive
+</p><p>}
+</p>
+</td></tr>
+<tr>
+<td>planet_modifier = { }
+</td>
+<td>Modifiers to be applied to the planet. One planet_modifier per zone
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>triggered_planet_modifier = { }
+</td>
+<td>Conditional modifiers to be applied to the planet. One planet_modifier per zone
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>triggered_planet_pop_group_modifier_for_all = { }
+</td>
+<td>see common/buildings/00_example.txt
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>triggered_planet_pop_group_modifier_for_species = { }
+</td>
+<td>see common/buildings/00_example.txt
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>triggered_desc = {
+<p>trigger = &lt;conditions&gt;
+text = "localisation_key"
+} 
+</p>
+</td>
+<td>This property adds additional tooltips for this zone.  Multiple allowed.
+<ul><li>trigger: (Optional, default true) A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if this text should be in the tooltip. (Planet scope)</li>
+<li>text: A localisation key. Job descriptions are generally in the format "job_&lt;job_key&gt;_effect_desc", e.g. job_culture_worker_effect_desc.</li></ul>
+<p><i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>ai_priority
+</td>
+<td>from common/zones/99_HOW_TO_ZONE.txt:
+<p>&gt; the higher this value, the more the AI and planet automation will want to use this zone to build buildings
+<i>Optional</i>
+</p>
+</td>
+<td>
+</td></tr></tbody></table>
+<p>Notes on the above:
+</p>
+<ul><li>It is recommended to prepend your building set identifiers with <code>building_set_</code> so they are easier to find and organize</li></ul>
+<h4><span class="mw-headline" id="Using_zones_to_swap_districts">Using zones to swap districts</span></h4>
+<p>Zones can be used to change the district type using the <code>swap_type</code> key.
+</p><p>Take the below zone code, for example. The <code>swap_type</code> key points to <code>district_nexus_factory</code>. If this zone is built, the district will get changed to that type.
+</p><p>
+Also, as an example of zone_set usage, the <code>zone_factory_nexus</code> zone can be built in any zone slot that has the <code>nexus</code> set (see above zone_slot example)</p><pre>zone_factory_nexus = {
+	inline_script = {
+		script = zones/shared_industrial_factory_zone
+		AMOUNT = @doubled_scaling_district_1_job
+	}
+	swap_type = district_nexus_factory
+	swap_type_weight = 5
+
+	zone_sets = { nexus }
+
+	inline_script = {
+		script = zones/shared_arcology_zone_modifiers
+	}
+}
+</pre><p>In the target district, <code>district_nexus_factory</code>, the <code>potential</code> block should be <code>potential = { always = no}</code>. 
+</p><p>This will prevent the target district from appearing on the planet in the UI in unexpected situations.
+</p>
+<h3><span class="mw-headline" id="Triggered_zone_names">Triggered zone names</span></h3>
+<p>A district may have some flavor text in the planet UI just underneath the district's name.
+</p><p>This is accomplished by setting up a <code>triggered_name = { }</code> block in the district.
+</p><p>Triggered names resolve in order, so whichever trigger qualifies first will be the one that appears.
+</p><p>Example from the urban district:
+</p>
+<pre>triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_research_unity
+			value &gt; 0
+		}
+		num_zones = {
+			type = zone_industrial
+			value &gt; 0
+		}
+		exists = owner
+		owner = {
+			num_owned_planets = 1
+		}
+	}
+	text = city_space_age_industry_1
+}
+
+triggered_name = {
+	text = district_city
+}
+</pre>
+<p>In the above, if there is a specific zone built, and there is also an industrial zone built, then change the flavor text to show the space age industry text.
+</p><p>If the first triggered_name block does not resolve, then by default the <code>district_city</code> localisation text will be shown.
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a class="mw-selflink selflink">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20260707181139
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.032 seconds
+Real time usage: 0.037 seconds
+Preprocessor visited node count: 203/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 850/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    7.011      1 -total
+ 71.55%    5.016      1 Template:ModdingNavbox
+ 30.27%    2.122      1 Template:Navbox
+ 23.48%    1.646      1 Template:Version
+ 15.65%    1.097      1 Template:Infobox
+ 10.60%    0.743     14 Template:Navboxgroup
+  4.68%    0.328      1 Template:Clear
+  4.25%    0.298      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:17107-0!canonical and timestamp 20260707181139 and revision id 107882.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

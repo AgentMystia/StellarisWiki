@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leader events - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Leader events</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This is the list of events found in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/events/leader_events_1.txt</span>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Combat_victory_random_events"><span class="tocnumber">1</span> <span class="toctext">Combat victory random events</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Promising_Officer"><span class="tocnumber">1.1</span> <span class="toctext">Promising Officer</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait"><span class="tocnumber">1.2</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_2"><span class="tocnumber">1.3</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_3"><span class="tocnumber">1.4</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_4"><span class="tocnumber">1.5</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Loses_Trait"><span class="tocnumber">1.6</span> <span class="toctext">Admiral Loses Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Loses_Trait_2"><span class="tocnumber">1.7</span> <span class="toctext">Admiral Loses Trait</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-2"><a href="#Emergency_FTL_random_events"><span class="tocnumber">2</span> <span class="toctext">Emergency FTL random events</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_5"><span class="tocnumber">2.1</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_6"><span class="tocnumber">2.2</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_7"><span class="tocnumber">2.3</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_8"><span class="tocnumber">2.4</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_9"><span class="tocnumber">2.5</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Other_admiral_events"><span class="tocnumber">3</span> <span class="toctext">Other admiral events</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_10"><span class="tocnumber">3.1</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_Gains_Trait_11"><span class="tocnumber">3.2</span> <span class="toctext">Admiral Gains Trait</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Level_up_events"><span class="tocnumber">4</span> <span class="toctext">Level up events</span></a>
+<ul>
+<li class="toclevel-2"><a href="#(Hidden_level-up_trait_gatekeeper)"><span class="tocnumber">4.1</span> <span class="toctext">(Hidden level-up trait gatekeeper)</span></a></li>
+<li class="toclevel-2"><a href="#Scientist_-_Gained_Trait"><span class="tocnumber">4.2</span> <span class="toctext">Scientist - Gained Trait</span></a></li>
+<li class="toclevel-2"><a href="#Admiral_-_Gained_Trait"><span class="tocnumber">4.3</span> <span class="toctext">Admiral - Gained Trait</span></a></li>
+<li class="toclevel-2"><a href="#Governor_-_Gained_Trait"><span class="tocnumber">4.4</span> <span class="toctext">Governor - Gained Trait</span></a></li>
+<li class="toclevel-2"><a href="#General_-_Gained_Trait"><span class="tocnumber">4.5</span> <span class="toctext">General - Gained Trait</span></a></li>
+<li class="toclevel-2"><a href="#Ruler_-_Gained_Trait"><span class="tocnumber">4.6</span> <span class="toctext">Ruler - Gained Trait</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Scientist_events"><span class="tocnumber">5</span> <span class="toctext">Scientist events</span></a>
+<ul>
+<li class="toclevel-2"><a href="#AI_Assistants_Removed"><span class="tocnumber">5.1</span> <span class="toctext">AI Assistants Removed</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Galactic_Paragons_DLC_events"><span class="tocnumber">6</span> <span class="toctext">Galactic Paragons DLC events</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Dysfunctional_Council"><span class="tocnumber">6.1</span> <span class="toctext">Dysfunctional Council</span></a></li>
+<li class="toclevel-2"><a href="#Inspired_by_Cosmic_Phenomenon"><span class="tocnumber">6.2</span> <span class="toctext">Inspired by Cosmic Phenomenon</span></a></li>
+<li class="toclevel-2"><a href="#Confiscated_Contraband"><span class="tocnumber">6.3</span> <span class="toctext">Confiscated Contraband</span></a></li>
+<li class="toclevel-2"><a href="#Unified_Council"><span class="tocnumber">6.4</span> <span class="toctext">Unified Council</span></a></li>
+<li class="toclevel-2"><a href="#Personal_Development"><span class="tocnumber">6.5</span> <span class="toctext">Personal Development</span></a></li>
+<li class="toclevel-2"><a href="#Scientific_Progress"><span class="tocnumber">6.6</span> <span class="toctext">Scientific Progress</span></a></li>
+<li class="toclevel-2"><a href="#Leaked_Information"><span class="tocnumber">6.7</span> <span class="toctext">Leaked Information</span></a></li>
+<li class="toclevel-2"><a href="#Trendsetter"><span class="tocnumber">6.8</span> <span class="toctext">Trendsetter</span></a></li>
+<li class="toclevel-2"><a href="#Echo_in_Eternity"><span class="tocnumber">6.9</span> <span class="toctext">Echo in Eternity</span></a></li>
+<li class="toclevel-2"><a href="#Idiosyncratic_Tendencies"><span class="tocnumber">6.10</span> <span class="toctext">Idiosyncratic Tendencies</span></a></li>
+<li class="toclevel-2"><a href="#Empire-Wide_Scandal"><span class="tocnumber">6.11</span> <span class="toctext">Empire-Wide Scandal</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Combat_victory_random_events">Combat victory random events</span></h2>
+<p>These random events can be triggered by the <code>on_fleet_destroyed_perp</code> <code>on_action</code>, which occurs when a fleet defeats another in combat. All seven of these events have a weight of 2, and no event triggering has a weight of 300. This gives each event a chance of
+2/314 to 2/302, or approximately 0.64% to 0.66%.
+</p>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;">
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.1"></span></span></div><h3><span class="mw-headline" id="Promising_Officer">Promising Officer</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Captain [officer.GetName], the commanding officer of the [ship.GetName], served with distinction during the recent engagement that took place in the [system.GetName] system. The Admiralty on [Root.Capital.GetName], recognizing the qualities of a promising flag officer, has decided to promote the Captain to the rank of full admiral.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet winning a space battle (0.65% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+</td></tr>
+<tr>
+<td colspan="2"><span class="subheading">Immediate effects:</span>
+<p><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Creates a level 2 main species Admiral with one of the following trait pairs:
+</p>
+<ul><li>25% chance: <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait gale speed.png" src="images/Leader_trait_gale_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Gale-Speed" title="Gale-Speed"><img alt="Gale-Speed" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait aggressive.png" src="images/Leader_trait_aggressive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Aggressive" title="Aggressive"><img alt="Aggressive" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Gale Speed and Aggressive</li>
+<li>25% chance: <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait aggressive.png" src="images/Leader_trait_aggressive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Aggressive" title="Aggressive"><img alt="Aggressive" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait engineer.png" src="images/Leader_trait_engineer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Engineer" title="Engineer"><img alt="Engineer" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Aggressive and Engineer</li>
+<li>25% chance: <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait fleet logistician.png" src="images/Leader_trait_fleet_logistician.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Fleet_Logistician" title="Fleet Logistician"><img alt="Fleet Logistician" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait cautious.png" src="images/Leader_trait_cautious.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Cautious" title="Cautious"><img alt="Cautious" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Logistician and Cautious</li>
+<li>25% chance: <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait scout.png" src="images/Leader_trait_scout.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Common_leader_traits.html#Scout" title="Scout"><img alt="Scout" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait trickster.png" src="images/Leader_trait_trickster.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Trickster" title="Trickster"><img alt="Trickster" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Scout and Trickster</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.5"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">After the recent victory in the [system.GetName] system, Admiral [officer.GetName] appears to have developed a new interest in naval theory. [officer.GetSheHeCap] [officer.GetHasHave] begun experimenting with some radically new strategies and tactics.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait trickster.png" src="images/Leader_trait_trickster.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Trickster" title="Trickster"><img alt="Trickster" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait unyielding.png" src="images/Leader_trait_unyielding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Unyielding" title="Unyielding"><img alt="Unyielding" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Trickster or Unyielding</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet winning a space battle (0.65% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait trickster.png" src="images/Leader_trait_trickster.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Trickster" title="Trickster"><img alt="Trickster" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Trickster trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.6"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_2">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">The recent victory in the [system.GetName] system seems to have awakened the hunter in Admiral [officer.GetName], who has now become a much more aggressive commander.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait cautious.png" src="images/Leader_trait_cautious.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Cautious" title="Cautious"><img alt="Cautious" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait aggressive.png" src="images/Leader_trait_aggressive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Aggressive" title="Aggressive"><img alt="Aggressive" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Cautious or Aggressive</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet winning a space battle (0.65% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait aggressive.png" src="images/Leader_trait_aggressive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Aggressive" title="Aggressive"><img alt="Aggressive" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Aggressive trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.7"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_3">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Having led [From.From.GetName] to victory in the [system.GetName] system, Admiral [officer.GetName] has grown increasingly confident and now refuses to even contemplate the very notion of retreating from future engagements.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait trickster.png" src="images/Leader_trait_trickster.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Trickster" title="Trickster"><img alt="Trickster" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait unyielding.png" src="images/Leader_trait_unyielding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Unyielding" title="Unyielding"><img alt="Unyielding" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Trickster or Unyielding</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet winning a space battle (0.65% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait unyielding.png" src="images/Leader_trait_unyielding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Unyielding" title="Unyielding"><img alt="Unyielding" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Unyielding trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.8"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_4">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">After [officer.GetHerHis] recent victory in the [system.GetName] system, Admiral [officer.GetName] has started emphasizing the importance of speed and rapid maneuvers in [officer.GetHerHis] fleet briefings. [officer.GetSheHe] [officer.GetIsAre] experimenting with new formations and patters to get the most agility out of the starships under [officer.GetHerHis] command.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait lethargic.png" src="images/Leader_trait_lethargic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Lethargic" title="Lethargic"><img alt="Lethargic" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait gale speed.png" src="images/Leader_trait_gale_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Gale-Speed" title="Gale-Speed"><img alt="Gale-Speed" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Lethargic or Gale Speed</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet winning a space battle (0.65% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait gale speed.png" src="images/Leader_trait_gale_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Gale-Speed" title="Gale-Speed"><img alt="Gale-Speed" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Gale Speed trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.9"></span></span></div><h3><span class="mw-headline" id="Admiral_Loses_Trait">Admiral Loses Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">After the recent victory of [From.From.GetName] in the [system.GetName] system, Admiral [officer.GetName] is displaying a lot more energy and initiative than before. [officer.GetHerHisCap] performance has improved significantly.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Fleet is commanded by a Leader<sup id="cite_ref-leader_not_admiral_1-0" class="reference"><a href="#cite_note-leader_not_admiral-1">&#91;1&#93;</a></sup> who:
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait lethargic.png" src="images/Leader_trait_lethargic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Lethargic" title="Lethargic"><img alt="Lethargic" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Has the Lethargic trait</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet winning a space battle (0.65% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait lethargic.png" src="images/Leader_trait_lethargic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Lethargic" title="Lethargic"><img alt="Lethargic" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Leader loses the Lethargic trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.17"></span></span></div><h3><span class="mw-headline" id="Admiral_Loses_Trait_2">Admiral Loses Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">After leading [From.From.GetName] to victory in the [system.GetName] system, Admiral [officer.GetName] seems to have regained [officer.GetHerHis] confidence. [officer.GetSheHe] [officer.GetIsAre] now capable of dealing with the administrative workload that comes with commanding a large fleet.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Fleet commanded by a Leader<sup id="cite_ref-leader_not_admiral_1-1" class="reference"><a href="#cite_note-leader_not_admiral-1">&#91;1&#93;</a></sup> who:
+<ul><li>Has <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait nervous.png" src="images/Leader_trait_nervous.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Nervous" title="Nervous"><img alt="Nervous" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Nervous or <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait nervous.png" src="images/Leader_trait_nervous.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Common_leader_traits.html#Unstable_Code_Base" title="Unstable Code Base"><img alt="Unstable Code Base" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Unstable Code Base</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet winning a space battle (0.65% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;If not&#32;Machine Intelligence:
+<ul><li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait nervous.png" src="images/Leader_trait_nervous.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Nervous" title="Nervous"><img alt="Nervous" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Leader loses the Nervous trait</li></ul></li>
+<li><a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;If&#32;Machine Intelligence:
+<ul><li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait nervous.png" src="images/Leader_trait_nervous.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Common_leader_traits.html#Unstable_Code_Base" title="Unstable Code Base"><img alt="Unstable Code Base" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Leader loses the Unstable Code Base trait</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+<h2><span class="mw-headline" id="Emergency_FTL_random_events">Emergency FTL random events</span></h2>
+<p>These random events can be triggered by the <code>on_emergency_ftl</code> <code>on_action</code>, which occurs when a fleet uses emergency FTL to escape combat. All five of these events have a weight of 10, and no event triggering has a weight of 310. This gives each event a chance of 10/360 to 10/320, or approximately 2.78% to 3.125%.
+</p>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;">
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.10"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_5">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Admiral [officer.GetName] seems to have developed something of a cautious streak after the recent defeat in the [system.GetName] system. The Admiral is now much more careful and meticulous in the deployment of the fleet assets under [officer.GetHerHis] command.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait cautious.png" src="images/Leader_trait_cautious.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Cautious" title="Cautious"><img alt="Cautious" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait aggressive.png" src="images/Leader_trait_aggressive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Aggressive" title="Aggressive"><img alt="Aggressive" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Cautious or Aggressive</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet using emergency FTL to escape combat</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait cautious.png" src="images/Leader_trait_cautious.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Cautious" title="Cautious"><img alt="Cautious" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Cautious trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.11"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_6">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">After the recent defeat in the [system.GetName] system, Admiral [officer.GetName] seems to have become more skittish and self-doubting. It has become clear that the Admiral is no longer capable of commanding as large formations as before.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="/Society_research.html#Doctrine%3A_Reactive_Formations" title="Doctrine: Reactive Formations"><img alt="Doctrine: Reactive Formations" src="images/Tech_doctrine_fleet_size_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Doctrine: Reactive Formations technology</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait fleet organizer.png" src="images/Leader_trait_fleet_organizer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Fleet_Organizer" title="Fleet Organizer"><img alt="Fleet Organizer" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait unyielding.png" src="images/Leader_trait_unyielding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Unyielding" title="Unyielding"><img alt="Unyielding" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait nervous.png" src="images/Leader_trait_nervous.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Nervous" title="Nervous"><img alt="Nervous" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Fleet Organizer<sup id="cite_ref-fleet_organizer_2-0" class="reference"><a href="#cite_note-fleet_organizer-2">&#91;2&#93;</a></sup>, Unyielding, or Nervous</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet using emergency FTL to escape combat</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Unfortunate.</b></div></div>
+<ul><li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;If not&#32;Machine Intelligence:
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait nervous.png" src="images/Leader_trait_nervous.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Nervous" title="Nervous"><img alt="Nervous" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Nervous trait</li></ul></li>
+<li><a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;If&#32;Machine Intelligence:
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait nervous.png" src="images/Leader_trait_nervous.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Common_leader_traits.html#Unstable_Code_Base" title="Unstable Code Base"><img alt="Unstable Code Base" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Unstable Code Base trait</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.12"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_7">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">The retreat of [Root.GetName] from the recent battle in the [system.GetName] system seems to have hit Admiral [officer.GetName] hard. [officer.GetName] has resolved never to quit the field again, being intent instead to fight to the last in [officer.GetHerHis] next engagement.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait unyielding.png" src="images/Leader_trait_unyielding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Unyielding" title="Unyielding"><img alt="Unyielding" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Unyielding</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet using emergency FTL to escape combat</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait unyielding.png" src="images/Leader_trait_unyielding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Unyielding" title="Unyielding"><img alt="Unyielding" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Unyielding trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.13"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_8">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Admiral [officer.GetName] ran the engines of [officer.GetHerHis] ships to their limits when [Root.GetName] disengaged from the recent battle in the [system.GetName] system. [officer.GetSheHeCap] [officer.GetHasHave] learned to squeeze extra speed out of any ships under [officer.GetHerHis] command.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>owner = { is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait lethargic.png" src="images/Leader_trait_lethargic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Lethargic" title="Lethargic"><img alt="Lethargic" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait gale speed.png" src="images/Leader_trait_gale_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Gale-Speed" title="Gale-Speed"><img alt="Gale-Speed" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Lethargic or Gale Speed</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet using emergency FTL to escape combat</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait gale speed.png" src="images/Leader_trait_gale_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Gale-Speed" title="Gale-Speed"><img alt="Gale-Speed" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Gale Speed trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.14"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_9">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Admiral [officer.GetName] appears to have grown distant and depressed since [officer.GetHerHis] defeat in the recent battle that took place in the [system.GetName] system. The officers under [officer.GetHerHis] command report that the Admiral no longer performs [officer.GetHerHis] duties with the same gusto as before.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait gale speed.png" src="images/Leader_trait_gale_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Gale-Speed" title="Gale-Speed"><img alt="Gale-Speed" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait lethargic.png" src="images/Leader_trait_lethargic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Lethargic" title="Lethargic"><img alt="Lethargic" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Gale Speed or Lethargic</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A fleet using emergency FTL to escape combat</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Unfortunate.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait lethargic.png" src="images/Leader_trait_lethargic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Lethargic" title="Lethargic"><img alt="Lethargic" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Lethargic trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+<h2><span class="mw-headline" id="Other_admiral_events">Other admiral events</span></h2>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;">
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.15"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_10">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Admiral [officer.GetName] has gained invaluable technical skills while supervising the repairs of [Root.GetName]. The damage control teams under the Admiral's command are now capable of repairing ships in the field.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><a href="/Society_research.html#Doctrine%3A_Interstellar_Warfare" title="Doctrine: Interstellar Warfare"><img alt="Doctrine: Interstellar Warfare" src="images/Tech_doctrine_fleet_size_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Doctrine: Interstellar Warfare technology</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Not&#32;Gestalt Consciousness</li>
+<li>Fleet is being repaired</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait engineer.png" src="images/Leader_trait_engineer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Engineer" title="Engineer"><img alt="Engineer" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;engineer trait Doesn't have Engineer</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> * <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 240 months
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait engineer.png" src="images/Leader_trait_engineer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Engineer" title="Engineer"><img alt="Engineer" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Engineer trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<p><br />
+</p>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.19"></span></span></div><h3><span class="mw-headline" id="Admiral_Gains_Trait_11">Admiral Gains Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_federation_fleet.png" class="image"><img alt="Evt federation fleet.png" src="images/Evt_federation_fleet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Following [officer.GetHerHis] recent sensor sweep of the [system.GetName] system, Admiral [officer.GetName] has learned how to deploy [officer.GetHerHis] units to maximize their sensor range. Few fleet commanders possess the skill to carry out such complex maneuvers.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>is_country_type = default</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Not&#32;Gestalt Consciousness</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Fleet is commanded by an Admiral who:
+<ul><li>Has less than 3 traits</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait scout.png" src="images/Leader_trait_scout.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Common_leader_traits.html#Scout" title="Scout"><img alt="Scout" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Doesn't have Scout</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Being the first ship from this empire to enter this system (10/210 or 4.8% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait scout.png" src="images/Leader_trait_scout.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Common_leader_traits.html#Scout" title="Scout"><img alt="Scout" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fleet Admiral gains the Scout trait</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+<h2><span class="mw-headline" id="Level_up_events">Level up events</span></h2>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;">
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.20"></span></span></div><h3><span id=".28Hidden_level-up_trait_gatekeeper.29"></span><span class="mw-headline" id="(Hidden_level-up_trait_gatekeeper)">(Hidden level-up trait gatekeeper)</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>None</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Leader_experience_gain" title="Leader experience gain"><img alt="Mod leader species exp gain.png" src="images/Mod_leader_species_exp_gain.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> When a leader gains a skill level</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+</td></tr>
+<tr>
+<td colspan="2"><span class="subheading">Immediate effects:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Scientist" title="Scientist"><img alt="Scientist.png" src="images/Scientist.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="52" data-file-height="46" /></a><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> If leader is a Scientist or Admiral, they gain a random trait if:
+<ul><li>They have less than 3 traits</li>
+<li>They haven't gained a trait from gaining a level yet</li>
+<li>10% chance (10/100) if level 1 or 2</li>
+<li>~14.3% chance (15/105) if level 3</li>
+<li>~21.7% chance (25/115) if level 4</li>
+<li>~35.7% chance (50/140) if level 5+</li></ul></li>
+<li><a href="https://stellaris.paradoxwikis.com/Governor" title="Governor"><img alt="Governor.png" src="images/Official.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="52" data-file-height="46" /></a><a href="https://stellaris.paradoxwikis.com/General" title="General"><img alt="Subclass commander general medium.png" src="images/Subclass_commander_general_medium.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="28" data-file-height="29" /></a> If leader is a Governor or General, they gain a random trait if:
+<ul><li>They have less than 3 traits</li>
+<li>They haven't gained a trait from gaining a level yet</li>
+<li>20% chance (20/100) if level 1 or 2</li>
+<li>~27.3% chance (30/110) if level 3</li>
+<li>~38.5% chance (50/130) if level 4</li>
+<li>~55.6% chance (100/180) if level 5+</li></ul></li>
+<li><a href="https://stellaris.paradoxwikis.com/Ruler" title="Ruler"><img alt="Ruler.png" src="images/Icon_councilor_ruler.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> If leader is a Ruler, they gain a random trait if:
+<ul><li>They have less than 3 traits</li>
+<li>They haven't gained a trait from gaining a level yet</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Not&#32;Gestalt Consciousness</li>
+<li>20% chance (20/100) if level 1 or 2</li>
+<li>~27.3% chance (30/110) if level 3</li>
+<li>~38.5% chance (50/130) if level 4</li>
+<li>~55.6% chance (100/180) if level 5+</li></ul></li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<p>{{{options}}}
+</p>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.21"></span></span></div><h3><span class="mw-headline" id="Scientist_-_Gained_Trait">Scientist - Gained Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_society_research.png" class="image"><img alt="Evt society research.png" src="images/Evt_society_research.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Through hard work and experience, §H[From.From.GetTitle] [From.From.GetName]§! has developed new skills.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>None</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A Scientist gaining trait</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>OK</b></div></div>
+<ul><li>(Tooltip shows trait gained)</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.22"></span></span></div><h3><span class="mw-headline" id="Admiral_-_Gained_Trait">Admiral - Gained Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_star_chart.png" class="image"><img alt="Evt star chart.png" src="images/Evt_star_chart.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Through hard work and experience, §H[From.From.GetTitle] [From.From.GetName]§! has developed new skills.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>None</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>An Admiral gaining trait</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>OK</b></div></div>
+<ul><li>(Tooltip shows trait gained)</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.23"></span></span></div><h3><span class="mw-headline" id="Governor_-_Gained_Trait">Governor - Gained Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_arguing_senate.png" class="image"><img alt="Evt arguing senate.png" src="images/Evt_arguing_senate.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Through hard work and experience, §H[From.From.GetTitle] [From.From.GetName]§! has developed new skills.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>None</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A Governor gaining trait</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>OK</b></div></div>
+<ul><li>(Tooltip shows trait gained)</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.24"></span></span></div><h3><span class="mw-headline" id="General_-_Gained_Trait">General - Gained Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_star_chart.png" class="image"><img alt="Evt star chart.png" src="images/Evt_star_chart.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Through hard work and experience, §H[From.From.GetTitle] [From.From.GetName]§! has developed new skills.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>None</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A General gaining trait</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>OK</b></div></div>
+<ul><li>(Tooltip shows trait gained)</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.25"></span></span></div><h3><span class="mw-headline" id="Ruler_-_Gained_Trait">Ruler - Gained Trait</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_throne_room.png" class="image"><img alt="Evt throne room.png" src="images/Evt_throne_room.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" /> <b>The below description is one of several available for this event.</b><br />
+</p>
+<div style="font-style:italic;">Through hard work and experience, §H[From.From.GetTitle] [From.From.GetName]§! has developed new skills.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>exists = capital_scope</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>A Ruler gaining trait</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>OK</b></div></div>
+<ul><li>(Tooltip shows trait gained)</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+<h2><span class="mw-headline" id="Scientist_events">Scientist events</span></h2>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="leader.30"></span></span></div><h3><span class="mw-headline" id="AI_Assistants_Removed">AI Assistants Removed</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_throne_room.png" class="image"><img alt="Evt throne room.png" src="images/Evt_throne_room.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">As per our recent policy change outlawing artificial intelligence, any [Root.GetAdj] Scientists in possession of <span class="effect-yellow" style="font-weight:bold;">Sapient AI Assistants</span> have been forced to relinquish them for recycling.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li><a href="/Policies.html#Artificial_Intelligence" title="Artificial Intelligence"><img alt="Artificial Intelligence" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Artificial Intelligence policy was changed to Outlawed</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait sapient ai assistant.png" src="images/Leader_trait_sapient_AI_assistant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Scientist_traits.html#Sapient_AI_Assistant" title="Sapient AI Assistant"><img alt="Sapient AI Assistant" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Any owned leader has the Sapient AI Assistant trait</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Changing a policy</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good.</b></div></div>
+<ul><li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait sapient ai assistant.png" src="images/Leader_trait_sapient_AI_assistant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Scientist_traits.html#Sapient_AI_Assistant" title="Sapient AI Assistant"><img alt="Sapient AI Assistant" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Removes the Sapient AI Assistant trait from all leaders who have it</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<h2><span class="mw-headline" id="Galactic_Paragons_DLC_events">Galactic Paragons DLC events</span></h2>
+<p>This is the list of events found in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/events/paragon_events.txt</span>.
+</p><p>Every decade there is a roll on a table for potentially triggering one of these events. For non-gestalt empires, the outcomes are:
+</p>
+<ul><li>15% chance: <a href="#Dysfunctional_Council">Dysfunctional Council</a></li>
+<li>5% chance: <a href="#Inspired_by_Cosmic_Phenomenon">Inspired by Cosmic Phenomenon</a></li>
+<li>10% chance: <a href="#Confiscated_Contraband">Confiscated Contraband</a></li>
+<li>10% chance: <a href="#Unified_Council">Unified Council</a></li>
+<li>5% chance: <a href="#Personal_Development">Personal Development</a></li>
+<li>5% chance: <a href="#Scientific_Progress">Scientific Progress</a></li>
+<li>10% chance: <a href="#Leaked_Information">Leaked Information</a></li>
+<li>10% chance: <a href="#Trendsetter">Trendsetter</a></li>
+<li>20% chance: <a href="#Echo_in_Eternity">Echo in Eternity</a></li>
+<li>10% chance: <a href="#Empire-Wide_Scandal">Empire-Wide Scandal</a></li></ul>
+<p>For Gestalt Consciousness empires, there is a 10% chance to trigger <a href="#Idiosyncratic_Tendencies">Idiosyncratic Tendencies</a> for machine/robot leaders.
+</p>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;">
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1000"></span></span></div><h3><span class="mw-headline" id="Dysfunctional_Council">Dysfunctional Council</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_board_meeting.png" class="image"><img alt="Evt board meeting.png" src="images/Evt_board_meeting.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">What began as minor bickering has now devolved into quarrelsome gridlock on practically every issue brought before the Council, damaging its ability to function.\n\n§Y[root.GetName]§! has proven to be the most contentious and disruptive member of the Council. Many others are calling for [root.GetHisHer] removal so that order and efficiency can be restored.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Empire is not <a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" class="mw-redirect" title="Gestalt Consciousness">Gestalt Consciousness</a></li>
+<li>Empire has at least 3 <a href="/Council.html#Councilors" title="Council">Councilors</a></li>
+<li><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Councilor (who is not the ruler) has:
+<ul><li>A warlike/aggressive trait (Aggressive, Bellicose, or Warlike)</li>
+<li>OR at least 1 negative trait</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (15% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Dismiss the troublemaker.</b></div></div>
+<ul><li>Councilor is dismissed (killed)</li>
+<li>Empire gains the <b>Efficient Council</b> modifier for 10 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+10%</span> Council Agenda Progress Speed</li></ul></li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>They must learn to work together.</b></div></div>
+<ul><li>Empire gains the <b>Dysfunctional Council</b> modifier for 10 years:
+<ul><li><span class="effect-red" style="font-weight:bold;">−20%</span> Council Agenda Progress Speed</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1005"></span></span></div><h3><span class="mw-headline" id="Inspired_by_Cosmic_Phenomenon">Inspired by Cosmic Phenomenon</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_atmospheric_entry.png" class="image"><img alt="Evt atmospheric entry.png" src="images/Evt_atmospheric_entry.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">The majesty of a rarely seen cosmic phenomenon has spurred §Y[root.GetName]§! to new heights. Brimming with excitement and new ideas, the only question is what branch of science they should focus on.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Scientist" title="Scientist"><img alt="Scientist.png" src="images/Scientist.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="52" data-file-height="46" /></a> Leader is a Scientist</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (5% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Apply physics observations to physics.</b></div></div>
+<ul><li>Empire gains the <b>Applied Physics</b> modifier for 5 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+10%</span> Physics Research from Jobs</li></ul></li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Focus on societal research.</b></div></div>
+<ul><li>Empire gains the <b>Applied Society</b> modifier for 5 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+10%</span> Society Research from Jobs</li></ul></li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Our engineers know exactly what to do with this.</b></div></div>
+<ul><li>Empire gains the <b>Applied Engineering</b> modifier for 5 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+10%</span> Engineering Research from Jobs</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1010"></span></span></div><h3><span class="mw-headline" id="Confiscated_Contraband">Confiscated Contraband</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_black_market.png" class="image"><img alt="Evt black market.png" src="images/Evt_black_market.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Under the audacious regime of §Y[root.GetName]§!, we have accumulated a huge cache of seized contraband. The operation was a long time in the making, and its successful conclusion has crippled the organized crime syndicates that had taken root within our borders.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Leader is an Official</li>
+<li>Leader does not have the Corrupt or Embezzler trait</li>
+<li>Leader is not <a href="https://stellaris.paradoxwikis.com/Pacifist" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Pacifist</li>
+<li>Assigned to a colony with:
+<ul><li>Planet Crime is at least 20</li>
+<li>Does not have a <i>Crime Lord Deal</i> active</li></ul></li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (10% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Justice never sleeps.</b></div></div>
+<ul><li>Gain <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Energy Credits: 400 × years passed</li>
+<li>Colony gains the <b>Confiscated Contraband</b> modifier for 20 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">−10%</span> Planet Crime</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1015"></span></span></div><h3><span class="mw-headline" id="Unified_Council">Unified Council</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_board_meeting.png" class="image"><img alt="Evt board meeting.png" src="images/Evt_board_meeting.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">§Y[event_target:leader_event_target.GetName]§! has demonstrated incredible leadership by uniting the council and ensuring the efficient administration of our society. Making use of statistics, tradition, and diplomacy, [event_target:leader_event_target.GetName] has managed to appease not only the other council members, but also our society's numerous factions.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Councilor leader (who is not the ruler)</li>
+<li>Councilor has a renowned or legendary councilor trait</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (10% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>We are stronger when we work together.</b></div></div>
+<ul><li>Empire gains the <b>Unified Council</b> modifier for 10 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+15%</span> Council Agenda Progress Speed</li>
+<li><span class="effect-green" style="font-weight:bold;">+20</span> Monthly Unity</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1020"></span></span></div><h3><span class="mw-headline" id="Personal_Development">Personal Development</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_star_chart.png" class="image"><img alt="Evt star chart.png" src="images/Evt_star_chart.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">§Y[event_target:leader_event_target.GetName]§! has embarked on a journey of self-discovery and personal development. [event_target:leader_event_target.GetHisHerCap] mental capabilities have reached new heights as a result of [event_target:leader_event_target.GetHisHer] focused study, hard work and introspection. Now, [event_target:leader_event_target.GetName] is determined to push the boundaries of what is possible and inspire others to reach for the stars.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Leader skill level is between 3 and 6</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (5% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>An inspiring work ethic.</b></div></div>
+<ul><li>Leader gains <span class="effect-green" style="font-weight:bold;">5000</span> Experience</li>
+<li>Leader removes all negative traits</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1025"></span></span></div><h3><span class="mw-headline" id="Scientific_Progress">Scientific Progress</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_tradedeal.png" class="image"><img alt="Evt tradedeal.png" src="images/Evt_tradedeal.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">As a direct result of §Y[event_target:leader_event_target.GetName]§!'s astounding scientific discoveries, the rate at which we conduct research has accelerated. [event_target:leader_event_target.GetHisHerCap] findings are a hot topic in the scientific community, which now recognizes [event_target:leader_event_target.GetName] as a thought leader.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Scientist" title="Scientist"><img alt="Scientist.png" src="images/Scientist.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="52" data-file-height="46" /></a> Leader is a Scientist</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (5% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>These developments will benefit all.</b></div></div>
+<ul><li>Scientist gains <span class="effect-green" style="font-weight:bold;">1000</span> Experience</li>
+<li>Gain a lump sum of Physics, Society, and Engineering research points (5× monthly income)</li>
+<li>Empire gains the <b>Scientific Progress</b> modifier for 10 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+10%</span> Research Speed</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1030"></span></span></div><h3><span class="mw-headline" id="Leaked_Information">Leaked Information</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_news_room.png" class="image"><img alt="Evt news room.png" src="images/Evt_news_room.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">A significant data leak has occurred, exposing sensitive information and crucial security details to the public. The files include schematics of military installations, details of neural interface experiments, and proof of surveillance of several prominent figures in the opposition.\n\n§Y[root.GetName]§! has been identified as the one responsible for this disaster.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Leader is not the ruler</li>
+<li>Leader has at least 1 negative trait</li>
+<li>Empire is not <a href="https://stellaris.paradoxwikis.com/Pacifist" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Pacifist or <a href="https://stellaris.paradoxwikis.com/Xenophile" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile</li>
+<li>Leader death events are not blocked</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (10% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Mistakes happen.</b></div></div>
+<ul><li>Empire gains the <b>Data Leak</b> modifier for 5 years:
+<ul><li><span class="effect-red" style="font-weight:bold;">−10%</span> Pop Happiness</li>
+<li><span class="effect-red" style="font-weight:bold;">−50%</span> Militarist Ethic Attraction</li>
+<li><span class="effect-red" style="font-weight:bold;">−25%</span> Intel Encryption</li></ul></li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>They must be held accountable.</b></div></div>
+<ul><li>Leader is dismissed (killed)</li>
+<li>Empire gains the <b>Data Leak Punished</b> modifier for 10 years:
+<ul><li><span class="effect-red" style="font-weight:bold;">−25%</span> Intel Encryption</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1035"></span></span></div><h3><span class="mw-headline" id="Trendsetter">Trendsetter</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_galactic_community.png" class="image"><img alt="Evt galactic community.png" src="images/Evt_galactic_community.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">§Y[event_target:leader_event_target.GetName]§! has become a trendsetter among the general population. Everything from [event_target:leader_event_target.GetHisHer] style to [event_target:leader_event_target.GetHisHer] method of speech has attracted a sizable following. [event_target:leader_event_target.GetHisHerCap] reach extends across all socioeconomic strata, but [event_target:leader_event_target.GetSheHe] has proven particularly popular among the youth.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Leader's species is not machine, mechanical, or robot</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (10% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>We have no reason not to support this.</b></div></div>
+<ul><li>Empire gains the <b>Stylish Trends</b> modifier for 5 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+10</span> Monthly Unity</li>
+<li><span class="effect-green" style="font-weight:bold;">+15%</span> Pop Amenities from Jobs</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1040"></span></span></div><h3><span class="mw-headline" id="Echo_in_Eternity">Echo in Eternity</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_grand_speech.png" class="image"><img alt="Evt grand speech.png" src="images/Evt_grand_speech.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">The public have been swept up into a patriotic frenzy following a passionate speech delivered by §Y[event_target:leader_event_target.GetName]§!. [event_target:leader_event_target.GetHisHerCap] unbridled passion has heightened the sense of responsibility and nationalistic zeal that is now being felt throughout our territories.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Empire is at war</li>
+<li><a href="https://stellaris.paradoxwikis.com/Admiral" title="Admiral"><img alt="Subclass commander admiral medium.png" src="images/Subclass_commander_admiral_medium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Commander leader assigned to a fleet or planet</li>
+<li>Commander has a speaker-related or veteran trait (Great Speaker, Army Veteran, or Retired Fleet Officer)</li>
+<li>Leader is not a machine or robot</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (20% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Nothing can stop us now.</b></div></div>
+<ul><li>Empire gains the <b>Inspired Rhetoric</b> modifier for 5 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">−10%</span> War Exhaustion Gain</li>
+<li><span class="effect-green" style="font-weight:bold;">+5%</span> Ship Fire Rate</li>
+<li><span class="effect-green" style="font-weight:bold;">+20%</span> Army Morale</li>
+<li><span class="effect-green" style="font-weight:bold;">−10%</span> Army Cost</li>
+<li><span class="effect-green" style="font-weight:bold;">+10%</span> Military Ship Build Speed</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1045"></span></span></div><h3><span class="mw-headline" id="Idiosyncratic_Tendencies">Idiosyncratic Tendencies</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_circuitry_modification.png" class="image"><img alt="Evt circuitry modification.png" src="images/Evt_circuitry_modification.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Statistical analysis has confirmed that §Y[event_target:leader_event_target.GetName]§! has developed cognitive and behavioral idiosyncrasies of a magnitude that verge on the individual.\n\nThe risks and potential benefits of independent thought are beyond our ability to accurately predict. A decision has to be made: will [event_target:leader_event_target.GetName] be kept in this state, or should we force a correctional routine?</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Leader is not the ruler</li>
+<li>Leader is default tier (not renowned or legendary)</li>
+<li>Leader is not currently exploring an astral rift</li>
+<li>Leader is a machine or robot species</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (10% chance for Gestalts)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Harness this emergent individuality.</b></div></div>
+<ul><li>Empire gains the <b>Individualistic Tendency Approved</b> modifier for 10 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+5%</span> Society Research from Jobs</li>
+<li><span class="effect-red" style="font-weight:bold;">−25%</span> Council Agenda Progress Speed</li></ul></li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Expel and discard.</b></div></div>
+<ul><li>Leader is dismissed (killed)</li>
+<li>Empire gains the <b>Individualistic Tendency Discarded</b> modifier for 10 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+50%</span> Council Agenda Progress Speed</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="paragon.1050"></span></span></div><h3><span class="mw-headline" id="Empire-Wide_Scandal">Empire-Wide Scandal</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_board_meeting.png" class="image"><img alt="Evt board meeting.png" src="images/Evt_board_meeting.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">§Y[root.GetName]§! is at the center of a major scandal reverberating throughout the empire. There are numerous reports of aberrant behavior, embezzlement, and cover-ups. This has led many to question the competence of those in authority.\n\nThe effects on the public mood will undoubtedly be felt for years to come. Many believe that the only way to restore faith in the system is for [root.GetName] to step down and face prosecution.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Councilor leader (who is not the ruler)</li>
+<li>Councilor has a negative trait (Fallible, Substance Abuser, Embezzler, Slothful, Lawless, Corrupt, Sadistic, or Insider Trading)</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>Decade pulse (10% chance)</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>An unfortunate accusation.</b></div></div>
+<ul><li>Empire gains the <b>Empire-Wide Scandal</b> modifier for 10 years:
+<ul><li><span class="effect-red" style="font-weight:bold;">−5%</span> Pop Happiness</li>
+<li><span class="effect-red" style="font-weight:bold;">−10%</span> Council Agenda Progress Speed</li></ul></li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Dismiss this leader.</b></div></div>
+<ul><li>Councilor is dismissed (killed)</li>
+<li>Empire gains the <b>Empire-Wide Scandal Averted</b> modifier for 10 years:
+<ul><li><span class="effect-green" style="font-weight:bold;">+15%</span> Pop Happiness</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-leader_not_admiral-1"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-leader_not_admiral_1-0">1.0</a></sup> <sup><a href="#cite_ref-leader_not_admiral_1-1">1.1</a></sup></span> <span class="reference-text">The fleet Leader isn't required to be an Admiral for these events to trigger, although in normal gameplay only Admirals can win space battles. <a href="/Modding.html" title="Modding">Modding</a> science ships to have weapons could result in this event triggering for Scientists, for example.</span>
+</li>
+<li id="cite_note-fleet_organizer-2"><span class="mw-cite-backlink"><a href="#cite_ref-fleet_organizer_2-0">↑</a></span> <span class="reference-text"><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait fleet organizer.png" src="images/Leader_trait_fleet_organizer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Fleet_Organizer" title="Fleet Organizer"><img alt="Fleet Organizer" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Fleet Organizer is a Ruler trait, not an Admiral trait.</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181420
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.608 seconds
+Real time usage: 1.005 seconds
+Preprocessor visited node count: 26205/1000000
+Post‐expand include size: 505881/2097152 bytes
+Template argument size: 202420/2097152 bytes
+Highest expansion depth: 17/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 2334/5000000 bytes
+Lua time usage: 0.120/7 seconds
+Lua virtual size: 5439488/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  593.266      1 -total
+ 97.60%  579.031     32 Template:Event
+ 97.06%  575.842     33 Template:Infobox
+ 73.38%  435.345    113 Template:Icon
+ 53.37%  316.614     49 Template:Trait
+ 22.73%  134.853     37 Template:Option
+ 14.75%   87.492     11 Template:Icon/g
+ 13.58%   80.553     20 Template:Icon/a
+  8.83%   52.366      9 Template:Icon/u
+  7.34%   43.546     16 Template:Iconify
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:2826-0!canonical and timestamp 20260707181419 and revision id 116316.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:File icon/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">File icon/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_File_icon.html" title="Template:File icon">Template:File icon</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p>Generates icons from <a href="/Category_Icons.html" title="Category:Icons">image files</a> and links to an appropriate page with an anchor link. Unlike the <code><a href="/Template_Icon.html" title="Template:Icon">{{icon}}</a></code> template icons, these icons do not need to be manually defined.
+</p>
+<h2><span class="mw-headline" id="Paramaters">Paramaters</span></h2>
+<p>The icon uses the <code>[[File:{pre}_{2}.png|{w}|link={page}#{3}|{3}]]</code> format.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required?</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Defines the default file prefix and linked page.</td>
+<td><b>required</b></td>
+<td>—
+</td></tr>
+<tr>
+<td>2</td>
+<td>Icon name</td>
+<td><b>required</b></td>
+<td>—
+</td></tr>
+<tr>
+<td>3</td>
+<td>Display name and anchor link; optional if it matches parameter 2</td>
+<td>optional</td>
+<td>[2]
+</td></tr>
+<tr>
+<td>w</td>
+<td>Icon size</td>
+<td>optional</td>
+<td>24px
+</td></tr>
+<tr>
+<td>pre</td>
+<td>Defines the file prefix</td>
+<td>optional</td>
+<td>depends on file type
+</td></tr>
+<tr>
+<td>page</td>
+<td>Defines the linked page</td>
+<td>optional</td>
+<td>depends on file type
+</td></tr>
+<tr>
+<td>type</td>
+<td>Modifies part of the default link</td>
+<td>optional</td>
+<td>depends on file type
+</td></tr>
+<tr>
+<td>iconify</td>
+<td>Appends the text of parameter 3</td>
+<td>optional</td>
+<td>—
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Example">Example</span></h2>
+<p><code>{{file icon|trait|presapient|Serviles|iconify=yes}}</code> results in: <a href="/Biological_traits.html#Serviles" title="Serviles"><img alt="Serviles" src="images/Trait_presapient.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Serviles
+</p><p><code>{{file icon|trait robot|Domestic Protocols|iconify=yes}}</code> results in: <a href="/Machine_traits.html#Domestic_Protocols" title="Domestic Protocols"><img alt="Domestic Protocols" src="images/Trait_robot_domestic_protocols.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Domestic Protocols
+</p>
+<h2><span class="mw-headline" id="Icon_types">Icon types</span></h2>
+<p>Icon type, defined by the first parameter, defines the default file prefix, and which page is linked by the icon.
+</p>
+<table class="wikitable">
+<caption>Default values
+</caption>
+<tbody><tr>
+<th>Paramater 1
+</th>
+<th>Image prefix<br />(<code>pre</code>)
+</th>
+<th>Linked page<br />(<code>page</code>)
+</th>
+<th>Images
+</th></tr>
+<tr>
+<td>auth / authority</td>
+<td><code>auth</code></td>
+<td rowspan="4"><a href="/Government.html" title="Government">Government</a></td>
+<td rowspan="4"><a href="/Category_Authority_icons.html" title="Category:Authority icons">Category:Authority icons</a>
+</td></tr>
+<tr>
+<td>auth cyber</td>
+<td><code>auth cyber</code>
+</td></tr>
+<tr>
+<td>auth synth</td>
+<td><code>auth synth</code>
+</td></tr>
+<tr>
+<td>auth bio</td>
+<td><code>auth bio</code>
+</td></tr>
+<tr>
+<td>civic</td>
+<td><code>civic</code></td>
+<td rowspan="4"><a href="/Civics.html" title="Civics">Civics</a></td>
+<td rowspan="4"><a href="/Category_Civics_icons.html" title="Category:Civics icons">Category:Civics icons</a>
+</td></tr>
+<tr>
+<td>civic hive</td>
+<td><code>civic hive</code>
+</td></tr>
+<tr>
+<td>civic machine</td>
+<td><code>civic machine</code>
+</td></tr>
+<tr>
+<td>civic corporate</td>
+<td><code>civic corporate</code>
+</td></tr>
+<tr>
+<td>tech</td>
+<td><code>tech</code></td>
+<td><a href="/Society_research.html" title="Society research">Society research</a> if <code>type=society</code><br /><a href="/Physics_research.html" title="Physics research">Physics research</a> if <code>type=physics</code><br /><a href="/Engineering_research.html" title="Engineering research">Engineering research</a> if <code>type=engineering</code></td>
+<td><a href="/Category_Technology_icons.html" title="Category:Technology icons">Category:Technology icons</a>
+</td></tr>
+<tr>
+<td>trait</td>
+<td><code>trait</code></td>
+<td><a href="/Biological_traits.html" title="Biological traits">Biological traits</a><br /><a href="/Machine_traits.html" title="Machine traits">Machine traits</a> if <code>type=machine</code></td>
+<td rowspan="2"><a href="/Category_Trait_icons.html" title="Category:Trait icons">Category:Trait icons</a>
+</td></tr>
+<tr>
+<td>trait robot</td>
+<td><code>trait robot</code></td>
+<td><a href="/Machine_traits.html" title="Machine traits">Machine traits</a>
+</td></tr>
+<tr>
+<td>deposit<br />planet feature</td>
+<td><code>d</code></td>
+<td><a href="/Planetary_features.html" title="Planetary features">Planetary features</a></td>
+<td><a href="/Category_Planet_feature_icons.html" title="Category:Planet feature icons">Category:Planet feature icons</a>
+</td></tr>
+<tr>
+<td>decision</td>
+<td><code>decision</code></td>
+<td><a href="https://stellaris.paradoxwikis.com/Decision" class="mw-redirect" title="Decision">Decision</a></td>
+<td><a href="/Category_Decision_icons.html" title="Category:Decision icons">Category:Decision icons</a>
+</td></tr>
+<tr>
+<td>job</td>
+<td><code>job</code></td>
+<td><a href="/Jobs.html" title="Jobs">Jobs</a></td>
+<td><a href="/Category_Job_icons.html" title="Category:Job icons">Category:Job icons</a>
+</td></tr>
+<tr>
+<td>ascension perk / ap</td>
+<td><code>ap</code></td>
+<td><a href="/Ascension_perks.html" title="Ascension perks">Ascension perks</a></td>
+<td><a href="/Category_Ascension_perk_icons.html" title="Category:Ascension perk icons">Category:Ascension perk icons</a>
+</td></tr>
+<tr>
+<td>relic</td>
+<td><code>r</code></td>
+<td><a href="/Relics.html" title="Relics">Relics</a></td>
+<td><a href="/Category_Relic_icons.html" title="Category:Relic icons">Category:Relic icons</a>
+</td></tr>
+<tr>
+<td>resolution</td>
+<td><code>resolution</code></td>
+<td><a href="https://stellaris.paradoxwikis.com/Resolution" class="mw-redirect" title="Resolution">Resolution</a></td>
+<td><a href="/Category_Resolution_images.html" title="Category:Resolution images">Category:Resolution images</a>
+</td></tr>
+<tr>
+<td>agenda</td>
+<td><code>agenda</code></td>
+<td><a href="https://stellaris.paradoxwikis.com/Agenda" class="mw-redirect" title="Agenda">Agenda</a></td>
+<td><a href="/Category_Agenda_icons.html" title="Category:Agenda icons">Category:Agenda icons</a>
+</td></tr>
+<tr>
+<td>specimen</td>
+<td><code>specimen</code></td>
+<td><a href="https://stellaris.paradoxwikis.com/Specimen" class="mw-redirect" title="Specimen">Specimen</a></td>
+<td><a href="/Category_Specimen_icons.html" title="Category:Specimen icons">Category:Specimen icons</a>
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Cached time: 20260707182513
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.018 seconds
+Real time usage: 0.023 seconds
+Preprocessor visited node count: 137/1000000
+Post‐expand include size: 1100/2097152 bytes
+Template argument size: 136/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 157/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.911      1 -total
+ 64.95%    3.190      1 Template:Template_doc_page_viewed_directly
+ 20.14%    0.989      2 Template:File_icon
+ 10.02%    0.492      1 Template:Template
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:15972-0!canonical and timestamp 20260707182513 and revision id 109709.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

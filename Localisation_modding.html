@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Localisation modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Localisation modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.1.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>Localisation refers to the actual text presented to the player in events, menus, weaponry, stories, and any other string of text in any window in the game. Localisation files are saved as <a href="http://en.wikipedia.org/wiki/.yml" class="extiw" title="wikipedia:.yml">.yml</a> in the localisation/ folder and should be encoded with <a href="http://en.wikipedia.org/wiki/UTF-8-BOM" class="extiw" title="wikipedia:UTF-8-BOM">UTF-8 with BOM</a>. The naming convention for .yml files is <b>&lt;file&gt;_l_&lt;language&gt;.yml</b> where &lt;file&gt; is the name given for this group of localisations, and &lt;language&gt; is the language the localisation is for. Supported languages currently include Portuguese (<i>braz_por</i>) English (<i>english</i>), French (<i>french</i>), German (<i>german</i>), Polish (<i>polish</i>), Russian (<i>russian</i>), Spanish (<i>spanish</i>), simplified Chinese (<i>simp_chinese</i>), Japanese (<i>japanese</i>) and Korean (<i>korean</i>).
+</p><p>Useful commands:
+</p>
+<pre>reload text – reloads localisation table.
+switchlanguage l_english – switches used language and reloads localisation table.
+toggle_string_id – displays StringIDinstead of localisation
+</pre>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Creating_Localisation_Files"><span class="tocnumber">1</span> <span class="toctext">Creating Localisation Files</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#File_Encoding"><span class="tocnumber">2</span> <span class="toctext">File Encoding</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Localisation_Keys"><span class="tocnumber">3</span> <span class="toctext">Localisation Keys</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Overwriting_Vanilla_Text"><span class="tocnumber">4</span> <span class="toctext">Overwriting Vanilla Text</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Bracket_Commands"><span class="tocnumber">5</span> <span class="toctext">Bracket Commands</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Primary_Scopes"><span class="tocnumber">5.1</span> <span class="toctext">Primary Scopes</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Secondary_Scopes"><span class="tocnumber">5.2</span> <span class="toctext">Secondary Scopes</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Text_Retrieval"><span class="tocnumber">5.3</span> <span class="toctext">Text Retrieval</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Color_Codes"><span class="tocnumber">6</span> <span class="toctext">Color Codes</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#$_Codes"><span class="tocnumber">7</span> <span class="toctext">$ Codes</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Number_Formatting"><span class="tocnumber">8</span> <span class="toctext">Number Formatting</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#£_Codes"><span class="tocnumber">9</span> <span class="toctext">£ Codes</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#£_Custom_Icons"><span class="tocnumber">10</span> <span class="toctext">£ Custom Icons</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Slash-Based_Codes"><span class="tocnumber">11</span> <span class="toctext">Slash-Based Codes</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Style_Guide"><span class="tocnumber">12</span> <span class="toctext">Style Guide</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#References"><span class="tocnumber">13</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Creating_Localisation_Files">Creating Localisation Files</span></h3>
+<ul><li>In the root mod folder (not in common), create a folder named "<i>localisation</i>" spelled with an s. Note, some other paradox titles may use the Americanized "<i>localization</i>" with a z.</li>
+<li>Optionally, create language subfolders within the "<i>localisation</i>" folder. This is organizationally helpful but not required.</li>
+<li>Stellaris’s localisation files are encoded as UTF-8-BOM. They <b>must be</b> encoded in UTF-8-BOM, as even UTF-8 will fail to be parsed by Stellaris, and will not work.</li>
+<li>The easiest way to get the correct encoding is to copy an existing Stellaris .yml file and modify it.</li>
+<li>Alternatively, simply create a standard text file and save it as .yml with UTF-8 with BOM encoding. Various text editors, such as <a href="http://en.wikipedia.org/wiki/Notepad%2B%2B" class="extiw" title="wikipedia:Notepad++">Notepad++</a> and <a href="http://en.wikipedia.org/wiki/Visual_Studio_Code" class="extiw" title="wikipedia:Visual Studio Code">Visual Studio Code</a>, will allow you to manually save with encoding UTF-8 with BOM</li>
+<li>The file name must end in "<i>_l_&lt;language&gt;</i>", otherwise it will not be read.</li>
+<li>The first line of any localisation file must be <code>l_&lt;language&gt;:</code>, otherwise it will not be read.</li>
+<li>Example file name: <code>mod_buildings_l_english.yml</code></li></ul>
+<p>Naming a YML file the same as a vanilla YML file will overwrite vanilla. Doing this is not recommended, unless you are trying to change (almost) all of the entries in the file. Localisation entries can be overwritten individually, by saving them in the "Replace" folder. See <a href="#Overwriting_Vanilla_Text">overwrite section</a>.
+</p><p>Unfortunately there is no mod-friendly fallback language feature, so if localisation keys are missing, these keys are simply displayed as text. Therefore, it is practice to simply duplicate the English files for all other languages (changed with appropriate header).
+</p>
+<h3><span class="mw-headline" id="File_Encoding">File Encoding</span></h3>
+<ul><li>Open the YML file using a text editor. Editors such as <a rel="nofollow" class="external text" href="https://www.notepad-plus-plus.org/">Notepad++</a> and <a rel="nofollow" class="external text" href="https://code.visualstudio.com/">Visual Studio Code</a> are recommended, however, if those aren't available, even standard Notepad will work.</li>
+<li>Convert the file to UTF-8 with BOM</li>
+<li>If using Notepad++, go to menu bar, open the <i>Encoding</i> menu.</li>
+<li>If using VSC, go to the bottom right corner and click on the encoding (<code>UTF-8</code> by default), then click Save with Encoding. Alternatively, it is possible to modify the settings so YML files created using VSC have <i>UTF-8 with BOM</i> encoding by default.</li>
+<li>If using Notepad, go to <i>Save As…</i>, then change the encoding and save the file.
+<ul><li>If the options listed are <i>UTF-8</i> and <i>UTF-8 with BOM</i> (or similar), use <i>UTF-8 with BOM</i>.</li>
+<li>If the options listed are <i>UTF-8 without BOM</i> and <i>UTF-8</i> (or similar), use <i>UTF-8</i>.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Localisation_Keys">Localisation Keys</span></h3>
+<div class="mw-highlight mw-highlight-lang-yaml mw-content-ltr" dir="ltr"><pre><span></span><span class="nt">l_&lt;language&gt;</span><span class="p">:</span><span class="w"></span>
+<span class="w"> </span><span class="nt">localisation_key_1</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Text</span><span class="nv"> </span><span class="s">String</span><span class="nv"> </span><span class="s">1&quot;</span><span class="w"></span>
+<span class="w"> </span><span class="nt">localisation_key_2</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Text</span><span class="nv"> </span><span class="s">String</span><span class="nv"> </span><span class="s">2&quot;</span><span class="w"></span>
+</pre></div>
+<p>Individual localisation entries are called keys and are placed before the colon. Keys are the actual code that points to the localised text. The text itself itself is called a string. The key is to the left of the colon. The string of text that will display in game is to the right of the colon, listed within two quotation marks (" "). The colon is the separator.
+</p>
+<ul><li>The number seen in vanilla files right after the colon can be omitted, as it is only useful for Paradox’s internal translation tracking.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup></li>
+<li>The file must contain <code>l_english:</code> (or equivalent for other languages) before any localization keys.</li>
+<li>Every entry after <code>l_english:</code> (or equivalent) must begin with whitespace (a space or a tab works).</li>
+<li>Each string to be displayed in game is encased in quotation marks. To display quotation marks in game, input a backslash before each quotation mark (for example: <code>text \"name\"</code>)</li>
+<li>Note that the following unicode characters are invalid inside the localisation file and will generate a "?" instead: <code>„ “ ‚ ‘ – ” ’ … —</code></li></ul>
+<h2><span class="mw-headline" id="Overwriting_Vanilla_Text">Overwriting Vanilla Text</span></h2>
+<p>To overwrite vanilla localisation keys (or keys from other mods), create a folder named "replace" inside your "localisation" folder. Localisation files in this folder will load after all other localisation files, and overwrite any duplicate keys. In this way it is not necessary to overwrite entire localisation files, as individual key entries will be overwritten by the last loaded file, LIOS (Last in, only served). It is possible to overwrite localisation without a "replace" folder, however this is not a reliable method.
+</p>
+<h2><span class="mw-headline" id="Bracket_Commands">Bracket Commands</span></h2>
+<p>Bracket commands (scoped localization statements) are enclosed in square brackets (<code>[ ]</code>), start with a primary scope, end with a text retrieval, and can have one or more secondary scopes in between. The fields are separated by periods (.). Text retrievals can be predefined (as per examples below), can mention <a href="/Variables.html" title="Variables">Variables</a> defined in the scope, or can be a scripted_loc (see common/scripted_loc/ files for examples). When writing "<i>scripted_loc</i>" entries, it’s important to note that these entries cannot themselves use bracket commands (i.e., a scripted_loc that includes <code>[Root.GetName]</code> will literally print <code>[Root.GetName]</code>).
+</p><p>Note: if you want to use loc commands e.g. <code>log = [This.GetName]</code> in a <a href="https://stellaris.paradoxwikis.com/Scripted_effect" class="mw-redirect" title="Scripted effect">scripted effect</a> or <a href="https://stellaris.paradoxwikis.com/Scripted_trigger" class="mw-redirect" title="Scripted trigger">trigger</a>, you have to write it <code>\\[This.GetName]</code> or it will bug out (at the latest the second time you use one in the effect).
+</p><p>In most cases, it is also possible to get the value of variables with <code>'[Scope.my_variable]'</code> and saved dates with <code>'[Scope.my_date_flag]'</code>.<sup>(<a href="/Patch_3.1.html" title="Patch 3.1"><i>since 3.1</i></a>)</sup>
+</p><p>Two consecutive opening square brackets <code>'[['</code> will escape it, making a single square bracket show up in text instead, i.e. <code>'[[example]'</code> in loc will display as '[example]' in-game.
+</p><p>There are also several unscoped commands: <code>GetDate, GetMidGameDate, GetLateGameDate, GetYear, LastKilledCountryName</code>.
+</p><p>Following list is only a part of hardcoded scoped localization commands (it also does not include any scripted locs). A more complete list of commands can be found at <code>Stellaris\logs\script_documentation\localizations.log</code>.
+</p>
+<h4><span class="mw-headline" id="Primary_Scopes">Primary Scopes</span></h4>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Command</th>
+<th>Example usage</th>
+<th>Comments
+</th></tr>
+<tr>
+<td>Root</td>
+<td>[Root.GetName]</td>
+<td>The event’s root scope
+</td></tr>
+<tr>
+<td>This</td>
+<td>[This.GetName]</td>
+<td>The current scope
+</td></tr>
+<tr>
+<td>From</td>
+<td>[From.From.GetName]</td>
+<td>The calling event’s root scope. For events further back in the call stack, From can also be used as a secondary scope
+</td></tr>
+<tr>
+<td>Prev</td>
+<td>[Prev.From.GetName]</td>
+<td>The previous scope. It is not obvious to me what Prev.From points to, but some project descriptions use it
+</td></tr>
+<tr>
+<td>&lt;event target tag&gt;</td>
+<td>[mytarget.GetName]</td>
+<td><a href="https://stellaris.paradoxwikis.com/Event_target" class="mw-redirect" title="Event target">Event target</a> tags are used without preceding them with <code>event_target:</code> in localisation
+</td></tr>
+<tr>
+<th colspan="3" style="font-size:small">Diplomatic Promotions
+</th></tr>
+<tr>
+<td>Actor</td>
+<td>[Actor.GetAllianceName]</td>
+<td>Used in diplomatic response messages. The faction initiating an action
+</td></tr>
+<tr>
+<td>Recipient</td>
+<td>[Recipient.GetName]</td>
+<td>Used in diplomatic response messages. The faction targeted by the action
+</td></tr>
+<tr>
+<td>Third_party</td>
+<td>[Third_party.GetName]</td>
+<td>Used in diplomatic response messages. A third party involved in the action
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Secondary_Scopes">Secondary Scopes</span></h4>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Command</th>
+<th>Example usage</th>
+<th>Comments
+</th></tr>
+<tr>
+<th colspan="3" style="font-size:small">Country Promotions: Capital Ruler Heir Species Federation
+</th></tr>
+<tr>
+<td>Capital</td>
+<td>[Root.Capital.GetName]</td>
+<td>The capital of the current country or sector
+</td></tr>
+<tr>
+<td>Leader</td>
+<td>[Root.Leader.GetName]</td>
+<td>The leader of the current scope (<small>fleet, country, federation, pop faction, first contact, espionage operation, spy network, sector</small>)
+</td></tr>
+<tr>
+<th colspan="3" style="font-size:small">War Promotions
+</th></tr>
+<tr>
+<td>MainAttacker</td>
+<td>[This.MainAttacker.GetAllianceName]</td>
+<td>The main attacker of the current scope (must be used in a war scope), used in war name formats
+</td></tr>
+<tr>
+<td>MainDefender</td>
+<td>[This.MainDefender.GetSpeciesName]</td>
+<td>The main defender of the current scope (must be a war scope), used in war name formats
+</td></tr>
+<tr>
+<th colspan="3" style="font-size:small">Planet Promotions: Owner System MoonOf Sector
+</th></tr>
+<tr>
+<td>Owner</td>
+<td>[Root.Owner.GetName]</td>
+<td>The current scope’s owner
+</td></tr>
+<tr>
+<td>System</td>
+<td>[Root.System.GetName]</td>
+<td>The system where the primary scope is located
+</td></tr>
+<tr>
+<td>Planet</td>
+<td>[Root.Planet.GetName]</td>
+<td>The planet where the current scope is located (<small>pop, army, archaeological site, deposit, megastructure</small>)
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Text_Retrieval">Text Retrieval</span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Command</th>
+<th>Example usage</th>
+<th>Comments
+</th></tr>
+<tr>
+<td>GetAAnPlanetClass</td>
+<td>[Root.GetAAnPlanetClass]</td>
+<td>"a" or "an", depending on which the letter the scoped planet’s class starts with
+</td></tr>
+<tr>
+<td>GetAAnSpeciesClass</td>
+<td>[Root.owner_species.GetAAnSpeciesClass]</td>
+<td>"a" or "an", depending on which the letter the scoped species’ class starts with
+</td></tr>
+<tr>
+<td>GetAdj</td>
+<td>[Root.GetAdj]</td>
+<td>The adjective associated with the current scope
+</td></tr>
+<tr>
+<td>GetAdjective</td>
+<td>[Root.GetAdjective]</td>
+<td>The adjective associated with the current scope
+</td></tr>
+<tr>
+<td>GetAllianceName</td>
+<td>[This.MainAttacker.GetAllianceName]</td>
+<td>The name of the alliance the current scope belongs to
+</td></tr>
+<tr>
+<td>GetControllerName</td>
+<td>[Root.GetControllerName]</td>
+<td>Name of the current controller (known to work on planets)
+</td></tr>
+<tr>
+<td>GetClassName</td>
+<td>[Root.GetClassName]</td>
+<td>Name of the current planet class
+</td></tr>
+<tr>
+<td>GetEngineer</td>
+<td>[Owner.GetEngineer]</td>
+<td>"engineer", "engineering drone", or "engineering unit", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetEngineerPlural</td>
+<td>[Owner.GetEngineerPlural]</td>
+<td>"engineers", "engineering drones", or "engineering units", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetFleetName</td>
+<td>[Root.GetFleetName]</td>
+<td>The name of the fleet associated with the current scope
+</td></tr>
+<tr>
+<td>GetHasHave</td>
+<td>[Root.GetHasHave]</td>
+<td>Either "has" or "have", depending on the gender (or lack thereof) of the scoped leader
+</td></tr>
+<tr>
+<td>GetHeirName</td>
+<td>[Root.GetHeirName]</td>
+<td>The name of the current heir
+</td></tr>
+<tr>
+<td>GetHeirTitle</td>
+<td>[Root.GetHeirTitle]</td>
+<td>The title of the current heir
+</td></tr>
+<tr>
+<td>GetHomeWorldName</td>
+<td>[Root.GetHomeWorldName]</td>
+<td>The name of the home world of the current scope
+</td></tr>
+<tr>
+<td>GetLeaderName</td>
+<td>[Root.GetLeaderName]</td>
+<td>The name of the leader associated with the current scope
+</td></tr>
+<tr>
+<td>GetLinguists</td>
+<td>[Owner.GetLinguists]</td>
+<td>"linguists", "language drones", or "linguistic algorithms", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetName</td>
+<td>[Root.GetName]</td>
+<td>The name associated with the current scope
+</td></tr>
+<tr>
+<td>GetRealName</td>
+<td>[Root.GetRealName]</td>
+<td>Same as GetName, but doesn't care about identification. aka. "unidentified"
+</td></tr>
+<tr>
+<td>GetFirstName</td>
+<td>[Root.GetFirstName]</td>
+<td>The name first associated with the current scoped leader
+</td></tr>
+<tr>
+<td>GetSecondName</td>
+<td>[Root.GetSecondName]</td>
+<td>The second name associated with the current scoped leader
+</td></tr>
+<tr>
+<td>GetAge</td>
+<td>[Root.GetAge]</td>
+<td>The age of the scoped leader
+</td></tr>
+<tr>
+<td>GetNamePlural</td>
+<td>[Root.GetNamePlural]</td>
+<td>The plural name associated with the current scope (must be a species)
+</td></tr>
+<tr>
+<td>GetNebula</td>
+<td>[Root.GetNebula]</td>
+<td>(unknown)
+</td></tr>
+<tr>
+<td>GetOwnerName</td>
+<td>[Root.GetOwnerName]</td>
+<td>Name of the current owner
+</td></tr>
+<tr>
+<td>GetPersonalityName</td>
+<td>[Root.GetPersonalityName]</td>
+<td>Get the name of the current AI personality
+</td></tr>
+<tr>
+<td>GetPlanetHabitat</td>
+<td>[Root.GetPlanetHabitat]</td>
+<td>"planet", "moon", or "habitat" depending on whether the current scope is a planet, moon, or habitat
+</td></tr>
+<tr>
+<td>GetPlanetMoon</td>
+<td>[Root.GetPlanetMoon]</td>
+<td>"planet" or "moon" depending on whether the current scope is a planet or moon
+</td></tr>
+<tr>
+<td>GetPlanetMoonCap</td>
+<td>[Root.GetPlanetMoonCap]</td>
+<td>"Planet" or "Moon" depending on whether the current scope is a planet or moon
+</td></tr>
+<tr>
+<td>GetPopFactionName</td>
+<td>[Root.GetPopFactionName]</td>
+<td>The name of the currently scoped pop’s faction
+</td></tr>
+<tr>
+<td>GetRandomSpeciesSound</td>
+<td>[Root.GetRandomSpeciesSound]</td>
+<td>A sound chosen randomly from a list of sounds associated with current scope’s species
+</td></tr>
+<tr>
+<td>GetRegnalName</td>
+<td>[Root.GetRegnalName]</td>
+<td>The regnal name of the current scope
+</td></tr>
+<tr>
+<td>GetResearchers</td>
+<td>[Owner.GetResearchers]</td>
+<td>"researchers", "research drones", or "research subroutines", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetRulerName</td>
+<td>[Root.GetRulerName]</td>
+<td>The name of the ruler associated with the current scope
+</td></tr>
+<tr>
+<td>GetRulerTitle</td>
+<td>[Root.GetRulerTitle]</td>
+<td>The title of the ruler associated with the current scope
+</td></tr>
+<tr>
+<td>GetScientist</td>
+<td>[Owner.GetScientist]</td>
+<td>"scientist", "science drone", or "science unit", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetScientistPlural</td>
+<td>[Owner.GetScientistPlural]</td>
+<td>"scientists", "science drones", or "science units", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetSpeciesAdj</td>
+<td>[Root.GetSpeciesAdj]</td>
+<td>The adjective for the species of the current scope
+</td></tr>
+<tr>
+<td>GetSpeciesClass</td>
+<td>[Root.GetSpeciesClass]</td>
+<td>The class to which the species of the current scope belongs
+</td></tr>
+<tr>
+<td>GetSpeciesClassPlural</td>
+<td>[Root.GetSpeciesClassPlural]</td>
+<td>The plural of the current scope’s species’ clas
+</td></tr>
+<tr>
+<td>GetSpeciesMouthName</td>
+<td>[Root.GetSpeciesMouthName]</td>
+<td>The word for the current scope’s species’ mouth
+</td></tr>
+<tr>
+<td>GetSpeciesName</td>
+<td>[Root.GetSpeciesName]</td>
+<td>The name of the current scope’s species
+</td></tr>
+<tr>
+<td>GetSpeciesNameCompliment</td>
+<td>[From.GetSpeciesNameCompliment]</td>
+<td>A compliment using the current scope’s species
+</td></tr>
+<tr>
+<td>GetSpeciesNameInsult</td>
+<td>[From.From.GetSpeciesNameInsult]</td>
+<td>An insult using the current scope’s species
+</td></tr>
+<tr>
+<td>GetSpeciesNamePlural</td>
+<td>[This.GetSpeciesNamePlural]</td>
+<td>The plural of current scope’s species’ name
+</td></tr>
+<tr>
+<td>GetSpeciesNamePluralCompliment</td>
+<td>[Root.GetSpeciesNamePluralCompliment]</td>
+<td>A compliment using the plural of the current scope’s species’ name
+</td></tr>
+<tr>
+<td>GetSpeciesNamePluralInsult</td>
+<td>[From.GetSpeciesNamePluralInsult]</td>
+<td>An insult using the plural of the current scope’s species’ name
+</td></tr>
+<tr>
+<td>GetSpeciesHandName</td>
+<td>[From.GetSpeciesHandName]</td>
+<td>The word for the current scope’s species’ hand
+</td></tr>
+<tr>
+<td>GetSpeciesMouthName</td>
+<td>[From.GetSpeciesMouthName]</td>
+<td>The word for the current scope’s species’ mouth
+</td></tr>
+<tr>
+<td>GetSpeciesOrganName</td>
+<td>[From.GetSpeciesOrganName]</td>
+<td>The word for the current scope’s species’ internal organ
+</td></tr>
+<tr>
+<td>GetSpeciesSpawnName</td>
+<td>[Root.GetSpeciesSpawnName</td>
+<td>The word for the children of the current scope’s species
+</td></tr>
+<tr>
+<td>GetSpeciesSpawnNamePlural</td>
+<td>[Root.GetSpeciesSpawnNamePlural</td>
+<td>The plural word for the children of the current scope’s species
+</td></tr>
+<tr>
+<td>GetStarName</td>
+<td>[Root.Capital.GetStarName]</td>
+<td>The name of the star where the current scope is located
+</td></tr>
+<tr>
+<td>GetIsAre</td>
+<td>[Root.Leader.GetIsAre]</td>
+<td>Either "is" or "are", depending on the gender (or lack thereof) of the scoped leader
+</td></tr>
+<tr>
+<td>GetHerHim</td>
+<td>[admiral.GetHerHim]</td>
+<td>Prints 'her' or 'him' based on the character’s gender.
+</td></tr>
+<tr>
+<td>GetSheHe</td>
+<td>[abducted_leader.GetSheHe]</td>
+<td>Prints 'she' or 'he' based on the character’s gender.
+</td></tr>
+<tr>
+<td>GetSheHeCap</td>
+<td>[abducted_leader.GetSheHeCap]</td>
+<td>Prints 'She' or 'He' based on the character’s gender.
+</td></tr>
+<tr>
+<td>GetHomeWorldName</td>
+<td>[Root.GetHomeWorldName]</td>
+<td>The home world name of the selected country
+</td></tr>
+<tr>
+<td>GetHerHis</td>
+<td>[admiral.GetHerHis]</td>
+<td>Prints 'her' or 'his’ based on the character’s gender.
+</td></tr>
+<tr>
+<td>GetHerHisCap</td>
+<td>[admiral.GetHerHisCap]</td>
+<td>Prints 'Her' or 'His’ based on the character’s gender.
+</td></tr>
+<tr>
+<td>LastKilledCountryName</td>
+<td>[LastKilledCountryName]</td>
+<td>Prints the name of the last killed country.
+</td></tr>
+<tr>
+<td>GetTerraformer</td>
+<td>[Owner.GetTerraformer]</td>
+<td>"terraforming specialist", "terraforming drone", or "terraforming unit", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetTerraformerPlural</td>
+<td>[Owner.GetTerraformerPlural]</td>
+<td>"terraforming specialists", "terraforming drones", or "terraforming units", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+</td></tr>
+<tr>
+<td>GetWasWere</td>
+<td>[Root.Leader.GetWasWere]</td>
+<td>Either "was" or "were", depending on the gender (or lack thereof) of the scoped leader
+</td></tr></tbody></table>
+<dl><dt>Added localization commands with <a href="/Patch_3.1.html" title="Patch 3.1">Patch 3.1</a>.</dt></dl>
+<pre>GetSpeciesFossilName
+GetSpeciesFossilNamePlural
+GetSpeciesRemnantName
+GetSpeciesRemnantNamePlural
+Species
+GetFossilName
+GetFossilNamePlural
+GetRemnantName
+GetRemnantNamePlural
+</pre>
+<h2><span class="mw-headline" id="Color_Codes">Color Codes</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://stellaris.paradoxwikis.com/File%3AColor_codes_in-game.png" class="image"><img alt="" src="images/Color_codes_in-game.png" decoding="async" loading="lazy" width="300" height="373" class="thumbimage" data-file-width="506" data-file-height="629" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AColor_codes_in-game.png" class="internal" title="Enlarge"></a></div>Color codes in-game</div></div></div>
+<p>Color codes start with <code>§</code> (Windows users Keypad shortcut: <kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">ALT+0167</kbd>), which is followed by a single character specifying the color to be used until another color code is detected, or the end of the string: <code>§!</code>. Within a <b><code>$</code></b> command, the color for a displayed variable (not string definition, s. below <i><a href="#$_Codes">$ Codes</a></i>) may also be specified by preceding the closing <b><code>$</code></b> with <b><code>|</code></b> and the color code character: <code>$AGE|Y$</code>
+</p><p>It is also possible to change the text color in game by adding a DC1 UTF-8 character to a color code letter. Please note that doing so may unintentionally color subsequent text if the color is not changed to default at the end.
+<code>§RR§Sa§Hi§Yn§Gb§Bo§Mw§!</code>  will be displayed as:<span style="color:#D2483B">R</span><span style="color:#B07921">a</span><span style="color:#D69123">i</span><span style="color:#D2D62C">n</span><span style="color:#23BF20">b</span><span style="color:#2B8ED9">o</span><span style="color:#8B2DCB">w</span>
+</p>
+<table class="wikitable sortable">
+<tbody><tr>
+<th>Code</th>
+<th>Color</th>
+<th>Vanilla Use
+</th></tr>
+<tr>
+<td>W</td>
+<td style="background:black;font-weight:bold;color:#ffffff">⬛ White</td>
+<td>Diplomatic Attitudes
+</td></tr>
+<tr>
+<td>T</td>
+<td style="background:black;font-weight:bold;color:#eeeeee">⬛ Light Grey</td>
+<td>Standard color of all text
+</td></tr>
+<tr>
+<td>g</td>
+<td style="background:black;font-weight:bold;color:#808080">⬛ Dark Grey</td>
+<td>Disabled / inactive
+</td></tr>
+<tr>
+<td>L</td>
+<td style="background:black;font-weight:bold;color:#c3b091">⬛ Brown / Kaki</td>
+<td>Lore, back story, role playing elements
+</td></tr>
+<tr>
+<td>P</td>
+<td style="background:black;font-weight:bold;color:#e16e6e">⬛ Light Dirty Pink</td>
+<td>Highlighting of Aggressive text in descriptions and event text
+</td></tr>
+<tr>
+<td>R</td>
+<td style="background:black;font-weight:bold;color:#fc5646">⬛ Red</td>
+<td>Negative modifiers
+</td></tr>
+<tr>
+<td>S</td>
+<td style="background:black;font-weight:bold;color:#e49c2a">⬛ Dark Orange</td>
+<td>Subtle highlighted text
+</td></tr>
+<tr>
+<td>H / K</td>
+<td style="background:black;font-weight:bold;color:#fbaa29">⬛ Mango / Orange</td>
+<td>Highlighted text
+</td></tr>
+<tr>
+<td>Y / I</td>
+<td style="background:black;font-weight:bold;color:#f7fc34">⬛ Yellow</td>
+<td>Sub-optimal or Neutral modifiers
+</td></tr>
+<tr>
+<td>G</td>
+<td style="background:black;font-weight:bold;color:#29e126">⬛ Green</td>
+<td>Positive modifiers
+</td></tr>
+<tr>
+<td>V</td>
+<td style="background:black;font-weight:bold;color:#4c8a71">⬛ Dark Green</td>
+<td>Event text
+</td></tr>
+<tr>
+<td>E</td>
+<td style="background:black;font-weight:bold;color:#87ffcf">⬛ Teal</td>
+<td>Large chunks of text
+</td></tr>
+<tr>
+<td>C</td>
+<td style="background:black;font-weight:bold;color:#21e8d0">⬛ Cyan</td>
+<td>Concept text that generates another tooltip
+</td></tr>
+<tr>
+<td>B</td>
+<td style="background:black;font-weight:bold;color:#33a7ff">⬛ Cyan-Blue</td>
+<td>Event effects that affect pops
+</td></tr>
+<tr>
+<td>M</td>
+<td style="background:black;font-weight:bold;color:#a335ee">⬛ Purple</td>
+<td>Rare technologies
+</td></tr>
+<tr>
+<td>_</td>
+<td style="background:black;font-weight:bold;color:#F0F">⬛ Magenta</td>
+<td>Placeholders
+</td></tr>
+<tr>
+<td>c</td>
+<td style="background:black;font-weight:bold;color:#3cd092">⬛ Blue-Green</td>
+<td>Leader trait
+</td></tr>
+<tr>
+<td>v</td>
+<td style="background:black;font-weight:bold;color:#8baea2">⬛ Faded Green</td>
+<td>Veteran leader trait
+</td></tr>
+<tr>
+<td>d</td>
+<td style="background:black;font-weight:bold;color:#ffdd7a">⬛ Tan</td>
+<td>Destiny trait
+</td></tr>
+<tr>
+<td>r</td>
+<td style="background:black;font-weight:bold;color:#a382ff">⬛ Light Purple</td>
+<td>Renowned
+</td></tr>
+<tr>
+<td>l</td>
+<td style="background:black;font-weight:bold;color:#b2ec68">⬛ Light Green</td>
+<td>Legendary
+</td></tr>
+<tr>
+<td>!</td>
+<td>Default</td>
+<td>Return to color before last color change
+</td></tr></tbody></table>
+<p><sup>(<i>Defined in file:</i> <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/interface/fonts.gfx</span>)</sup>
+</p>
+<h2><span id=".24_Codes"></span><span class="mw-headline" id="$_Codes">$ Codes</span></h2>
+<p><b>$</b> is used to delimit strings (or variables) defined elsewhere to be expanded in the current string, or system statistics in GUI elements.
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="nd">@cyborg_energy_upkeep</span><span class="o">=</span> <span class="mi">5</span>
+ <span class="s2">&quot;Upkeep by +$@cyborg_energy_upkeep$&quot;</span>
+</pre></div>
+<h2><span class="mw-headline" id="Number_Formatting">Number Formatting</span></h2>
+<p>The <b><code>|</code></b> character can also be used to format numbers. <code>$VALUE|*x$</code> will format <code>VALUE</code> to <code>x</code> decimal places.
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># EXAMPLE = 100</span>
+<span class="s2">&quot;$EXAMPLE|*0$&quot;</span> <span class="c1"># 10044</span>
+<span class="s2">&quot;$EXAMPLE|*1$&quot;</span> <span class="c1"># 100.0</span>
+</pre></div>
+<h2><span id=".C2.A3_Codes"></span><span class="mw-headline" id="£_Codes">£ Codes</span></h2>
+<p>£ codes are used for the names of various system stats, including energy, minerals, influence, and the three research categories (engineering, physics and society.) More exist than those listed here, such as <code>£ship_stats_hitpoints\armor\shield£</code>, <code>£fleet_template_size£</code>, and <code>£trigger_yes\no£</code> among others. Search the '£' character using something like Notepad++'s Find in Files feature to find something specific. Remember that £ codes must surround the tag you're inserting, i.e. <code><b>£</b>energy<b>£</b></code>. (Windows users without the pound symbol on their keyboards can use <code>Alt + 0163</code>.)
+</p><p>It also supports the multiple frames (if the source sprite has them), i.e.: <code>£leader_skill|3£</code> will render an icon of chosen skill level.
+</p>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Code</th>
+<th>Picture
+</th></tr>
+<tr>
+<td>£energy£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AEnergy.png" class="image"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="32" data-file-height="32" /></a>
+</td></tr>
+<tr>
+<td>£minerals£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMinerals.png" class="image"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="32" data-file-height="32" /></a>
+</td></tr>
+<tr>
+<td>£food£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AFood.png" class="image"><img alt="Food.png" src="images/Food.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="32" data-file-height="32" /></a>
+</td></tr>
+<tr>
+<td>£influence£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AInfluence.png" class="image"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="24" data-file-height="24" /></a>
+</td></tr>
+<tr>
+<td>£stability£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AStability.png" class="image"><img alt="Stability.png" src="images/Stability.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="27" data-file-height="27" /></a>
+</td></tr>
+<tr>
+<td>£unity£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AUnity.png" class="image"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="32" data-file-height="32" /></a>
+</td></tr>
+<tr>
+<td>£alloys£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AAlloys.png" class="image"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="32" data-file-height="32" /></a>
+</td></tr>
+<tr>
+<td>£trade_value£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrade.png" class="image"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="32" data-file-height="32" /></a>
+</td></tr>
+<tr>
+<td>£physics£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APhysics_research.png" class="image"><img alt="Physics Research.png" src="images/Physics_research.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="24" data-file-height="24" /></a>
+</td></tr>
+<tr>
+<td>£society£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ASociety_research.png" class="image"><img alt="Society Research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="24" data-file-height="24" /></a>
+</td></tr>
+<tr>
+<td>£engineering£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AEngineering_research.png" class="image"><img alt="Engineering Research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="24" data-file-height="24" /></a>
+</td></tr>
+<tr>
+<td>£pops£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APop.png" class="image"><img alt="Pop.png" src="images/Pop.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="26" data-file-height="26" /></a>
+</td></tr>
+<tr>
+<td>£happiness£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AHappiness.png" class="image"><img alt="Happiness.png" src="images/Happiness.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="24" data-file-height="24" /></a>
+</td></tr>
+<tr>
+<td>£opinion£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ADiplomacy_opinion.png" class="image"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="40" height="36" data-file-width="27" data-file-height="24" /></a>
+</td></tr>
+<tr>
+<td>£empire£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AEmpire_Modifier.png" class="image"><img alt="Empire Modifier.png" src="images/Empire_Modifier.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="18" data-file-height="18" /></a>
+</td></tr>
+<tr>
+<td>£military_ship£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMilitary_Ship_%28icon%29.png" class="image"><img alt="Military Ship (icon).png" src="images/Military_Ship_%28icon%29.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="16" data-file-height="16" /></a>
+</td></tr>
+<tr>
+<td>£military_power£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AOffensive_value.png" class="image"><img alt="Offensive value.png" src="images/Offensive_value.png" decoding="async" loading="lazy" width="40" height="43" data-file-width="15" data-file-height="16" /></a>
+</td></tr>
+<tr>
+<td>£blocker£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATile_Blocker.png" class="image"><img alt="Tile Blocker.png" src="images/Tile_Blocker.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="18" data-file-height="18" /></a>
+</td></tr>
+<tr>
+<td>£time£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATime.png" class="image"><img alt="Time.png" src="images/Time.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="40" data-file-height="40" /></a>
+</td></tr>
+<tr>
+<td>£planetsize£</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_Size.png" class="image"><img alt="Planet Size.png" src="images/Planet_Size.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="32" data-file-height="32" /></a>
+</td></tr></tbody></table>
+<h2><span id=".C2.A3_Custom_Icons"></span><span class="mw-headline" id="£_Custom_Icons">£ Custom Icons</span></h2>
+<p>You can create custom text icons to appear in game exactly like those above, by saving an icon in <i>&lt;root&gt;/gfx/interface/icons/text_icons</i>. Standard text icons are 16x16 pixel .dds files. In order to reference your icon in text, you will need to define it in the same way you define <a href="/Event_pictures.html" title="Event pictures">event pictures</a>. Save a text file as .gfx in <i>&lt;root&gt;/interface/</i> Define any custom modifiers as shown below:
+</p>
+<pre>spriteTypes = {
+   spriteType = {
+        name = "GFX_text_worker_produces_mult"
+        texturefile = "gfx/interface/icons/text_icons/mod_planet_jobs_worker_produces_mult.dds"
+    }
+</pre>
+<p>You can link multiple icons by making separate <code>spriteType =</code> blocks. All of these should be within one larger <code>spriteTypes =</code> (with an s) block.
+</p><p>The name must be prefixed <code>GFX_text_</code>. However, to reference this custom icon in localisation, use <code>£worker_produces_mult£</code> (without the prefix) and it will appear alongside in game text.
+</p>
+<h2><span class="mw-headline" id="Slash-Based_Codes">Slash-Based Codes</span></h2>
+<p>The two slash-based codes available are <code>\n</code> and <code>\t</code>.<br />
+<code>\n</code> is the equivalent of pressing the Enter key and starting a new line, unless it is inside one of the above codes.<br />
+<code>\t</code> places a tab.<br /><br />
+Backslashes can also be used to treat special characters as text characters, for example <code>\"</code> will make the string contain a quotation mark, instead of closing it off.
+</p>
+<h2><span class="mw-headline" id="Style_Guide">Style Guide</span></h2>
+<p>Vanilla events, modifiers and all other type of localization follows punctuation and capitalization guidelines. The following table highlights some of the rules employed in the vanilla English localization, allowing custom content to blend in more seamlessly. The table is by no means comprehensive, but instead should serve as a quick cheat-sheet for the most common type of strings.
+The number given for Character Limit is not a hard limit. Depending on the location, exceeding the limit might cause the text to be cut off, completely break the UI, or just look ugly and out of place.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Location</th>
+<th>Capitalization</th>
+<th>Punctuation</th>
+<th>Character Limit</th>
+<th>Example
+</th></tr>
+<tr>
+<td>Event Names</td>
+<td>Title Case</td>
+<td>None</td>
+<td>50</td>
+<td>"Exotic Woodwind"
+</td></tr>
+<tr>
+<td>Event Descriptions</td>
+<td>Sentence case</td>
+<td>Standard</td>
+<td>2000</td>
+<td>"Music has taken many forms among the beings we have encountered since leaving [Root.GetHomeWorldName], and the methods and preferences continue to baffle us. Sometimes alien […] Whatever this instrument is, it’s unlike any of our own."
+</td></tr>
+<tr>
+<td>Event Options</td>
+<td>Sentence case</td>
+<td>Terminal punctuation</td>
+<td>70</td>
+<td>"An excellent time to learn more about their culture.", "Let us be careful and study this instrument.", "The colony is part of our future. It stays."
+</td></tr>
+<tr>
+<td>Names for Traits/Modifiers/Buildings/Ethics/etc.</td>
+<td>Title Case</td>
+<td>None</td>
+<td>30</td>
+<td>"Building Cost", "Massive Crater", "Very Strong"
+</td></tr>
+<tr>
+<td>Description for Traits/Modifiers/Buildings/Ethics/etc.</td>
+<td>Sentence case</td>
+<td>Standard</td>
+<td>200</td>
+<td>"The impact site of the meteorite which brought Lithoids to this planet.", "Members of this species possess a strength that almost defies the laws of physics."
+</td></tr>
+<tr>
+<td>UI Buttons</td>
+<td>Sentence case / Title Case</td>
+<td>None</td>
+<td>Depends on UI</td>
+<td>"Withdraw"
+</td></tr>
+<tr>
+<td>UI Alerts</td>
+<td>Title Case</td>
+<td>None</td>
+<td>Depends on UI</td>
+<td>"Relic Activation Available"
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://twitter.com/Martin_Anward/status/1039175213773144066">https://twitter.com/Martin_Anward/status/1039175213773144066</a></span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a class="mw-selflink selflink">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181428
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.074 seconds
+Real time usage: 0.550 seconds
+Preprocessor visited node count: 326/1000000
+Post‐expand include size: 19183/2097152 bytes
+Template argument size: 8234/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 2122/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  485.165      1 -total
+  2.05%    9.950      1 Template:Version
+  1.24%    5.998      1 Template:Infobox
+  1.18%    5.708      1 Template:ModdingNavbox
+  0.98%    4.753      1 Template:Path
+  0.73%    3.556      1 Template:Key_press
+  0.56%    2.696      1 Template:Navbox
+  0.53%    2.570      1 Template:Nowrap
+  0.19%    0.923     14 Template:Navboxgroup
+  0.08%    0.402      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:3056-0!canonical and timestamp 20260707181428 and revision id 92220.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

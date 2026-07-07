@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Iconbox - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Iconbox</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Iconbox/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Iconbox/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_Iconbox/doc.html" title="Template:Iconbox/doc">Template:Iconbox/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Iconbox/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Iconbox/doc&amp;action=history">history</a>)</small></div>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>One item in a list of icons (achievements, disasters, etc.). The box name is set as a referenceable anchor on the page, so you don't need to also use id="" to link to it.
+</p>
+<dl><dd><code>{{iconbox|name|description}}</code></dd>
+<dd><code>{{iconbox|name|description|image=file}}</code></dd></dl>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Box name and hovertext</td>
+<td><b>required</b></td>
+<td>none
+</td></tr>
+<tr>
+<td>2 / desc</td>
+<td>Description</td>
+<td>optional</td>
+<td>none
+</td></tr>
+<tr>
+<td>image</td>
+<td>Image file, ".png" not required
+</td>
+<td>optional</td>
+<td>parameter 1
+</td></tr>
+<tr>
+<td>extension</td>
+<td>Changes image extension</td>
+<td>optional</td>
+<td>png
+</td></tr>
+<tr>
+<td>w</td>
+<td>Image width, in pixels<br />Prefixing the number with an x will cause it to set image height instead
+</td>
+<td>optional</td>
+<td>default image size
+</td></tr>
+<tr>
+<td>template</td>
+<td>Uses an assembled template in place of an image</td>
+<td>optional</td>
+<td>image
+</td></tr>
+<tr>
+<td>title_font</td>
+<td>Sets css font/style for title text<br />set to null for plain text</td>
+<td>optional</td>
+<td>font-size:larger; font-weight:bold;
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<p><code>{{iconbox|unknown}}</code>
+</p>
+<div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3AUnknown.png" class="image" title="unknown"><img alt="unknown" src="images/Unknown.png" decoding="async" loading="lazy" width="44" height="44" data-file-width="44" data-file-height="44" /></a></div><div id="unknown" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">unknown</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;"></div></div></div>
+<p><code>{{iconbox|Brave New World|Colonize a planet.}}</code>
+</p>
+<div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3ABrave_New_World.png" class="image" title="Brave New World"><img alt="Brave New World" src="images/Brave_New_World.png" decoding="async" loading="lazy" width="64" height="64" data-file-width="64" data-file-height="64" /></a></div><div id="Brave_New_World" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Brave New World</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">Colonize a planet.</div></div></div>
+<p><code>{{iconbox|Break On Through...|Research a Rare technology.}}</code>
+</p>
+<div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3ABreak_On_Through....png" class="image" title="Break On Through..."><img alt="Break On Through..." src="images/Break_On_Through....png" decoding="async" loading="lazy" width="64" height="64" data-file-width="64" data-file-height="64" /></a></div><div id="Break_On_Through..." style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Break On Through...</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">Research a Rare technology.</div></div></div>
+<p><code>{{iconbox|Shipyard|A Shipyard may build one ship at a time, in parallel with other Shipyards.|image=sb shipyard.png}}</code>
+</p>
+<div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3ASb_shipyard.png" class="image" title="Shipyard"><img alt="Shipyard" src="images/Sb_shipyard.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></div><div id="Shipyard" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Shipyard</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">A Shipyard may build one ship at a time, in parallel with other Shipyards.</div></div></div>
+<p><code>{{iconbox|Lush|Life thrives here, the fauna is plentiful and the flora grows rapidly.|template={{planet modifier|lush|green|Lush}}}}</code>
+</p>
+<div style="display:flex; align-items:center; gap:5px"><div><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_lush.png" class="image"><img alt="Pm lush.png" src="images/Pm_lush.png" decoding="async" loading="lazy" width="60" height="60" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="/Planet_modifiers.html#Lush" title="Lush"><img alt="Lush" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="60" height="60" data-file-width="60" data-file-height="60" /></a></span></span></div><div id="Lush" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Lush</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">Life thrives here, the fauna is plentiful and the flora grows rapidly.</div></div></div>
+<p><code>{{iconbox|Unknown|w=24px|title_font=}}</code>
+</p>
+<div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3AUnknown.png" class="image" title="Unknown"><img alt="Unknown" src="images/Unknown.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a></div><div id="Unknown" style="text-align:left;"><div style="line-height:1.2em;">Unknown</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;"></div></div></div></div>
+
+<!-- 
+NewPP limit report
+Cached time: 20260707182617
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.025 seconds
+Real time usage: 0.038 seconds
+Preprocessor visited node count: 289/1000000
+Post‐expand include size: 18274/2097152 bytes
+Template argument size: 5088/2097152 bytes
+Highest expansion depth: 13/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 478/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   14.812      1 Template:Template_doc
+100.00%   14.812      1 -total
+ 79.46%   11.770      1 Template:Template_doc_inline
+ 58.30%    8.635      1 Template:Iconbox/doc
+ 24.53%    3.633      6 Template:Iconbox
+ 17.39%    2.576      1 Template:Planet_modifier
+ 17.33%    2.567      1 Template:Template_doc_page_transcluded
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1257-0!canonical and timestamp 20260707182617 and revision id 112531.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

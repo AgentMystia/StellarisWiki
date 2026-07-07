@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pop Faction modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Pop Faction modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.4.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about how to modify existing and how to create new <a href="/Factions.html" title="Factions">Factions</a>.
+</p><p>Factions are defined at "common/pop_faction_types/xxx.txt".
+</p>
+<h2><span class="mw-headline" id="Data_Structure">Data Structure</span></h2>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="80%">Description
+</th></tr>
+<tr>
+<td><b>election_header = &lt;GFX entry key&gt;</b>
+</td>
+<td>Determines the header texture to be attached to the leader entry in democratic election window.
+<p><a href="/Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Democratic governments will use at least the current ruler and the leader of each faction as election candidates and faction leaders will use this header texture and have their faction names written on it. Leaders without any factions will use a fallback header texture that reads "Independent".
+</p>
+</td></tr>
+<tr>
+<td><b>guiding_ethic = &lt;ethic key&gt;</b>
+</td>
+<td>Determines the guiding ethic of this faction.
+<p>By default, only pops with of this ethic can join the faction.
+</p>
+</td></tr>
+<tr>
+<td><b>use_guiding_ethic_as_pop_filter = &lt;yes/no&gt;</b>
+</td>
+<td>If no, pops without the guiding ethic can join the faction.
+</td></tr>
+<tr>
+<td><b>unique = &lt;yes/no&gt;</b>
+</td>
+<td>If yes, only one instance of this faction can exist in an Empire. Vanilla factions always have "yes".
+</td></tr>
+<tr>
+<td><b>support_multiplier = &lt;float&gt;</b>
+</td>
+<td><a href="/Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Democratic election candidates from this faction have their support multiplied by this number.
+</td></tr>
+<tr>
+<td><b>resources</b>
+</td>
+<td>An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the resource production of this faction. The production is mulitplied by faction support rate and faction approval.
+<p>Vanilla factions always have economy category <code>pop_factions</code>. 
+</p>
+</td></tr>
+<tr>
+<td><b>is_potential</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should an Empire have this faction.
+<p>Vanilla factions always exclude <a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness and require 10 years have been passed since start of the game and have once encountered another species.
+</p>
+</td></tr>
+<tr>
+<td><b>parameters</b>
+</td>
+<td>Pre-defined parameters to be called by Faction Actions.
+<p>Vanilla always define it like this, making <code>parameter:empire</code> usable in Faction Actions to scope to the Empire this faction is in.
+</p>
+<pre>parameters = {
+	empire = {
+		type = country
+		valid_objects = {
+			is_same_value = root
+		}
+	}
+}
+</pre>
+</td></tr>
+<tr>
+<td><b>can_join_pre_triggers</b>
+</td>
+<td>A block of Pseudo-Conditions to determine can a Pop join this faction. Only the following yes-or-no questions are allowed. Vanilla always have <code>is_enslaved = no</code> and <code>is_being_purged = no</code>. Without the pre-triggers, the whole set of conditions will be evaluated once for each of the thousands of Pops in the galaxy, which can be performance intensive.
+<ul><li>has_owner</li>
+<li>is_enslaved</li>
+<li>is_being_purged</li>
+<li>is_being_assimilated</li>
+<li>has_planet</li>
+<li>is_sapient</li></ul>
+</td></tr>
+<tr>
+<td><b>can_join_faction</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine can a Pop join this faction. (Pop scope)
+</td></tr>
+<tr>
+<td><b>attraction</b>
+</td>
+<td>Determines the attraction to Pops of this faction.
+<p>Vanilla factions always have 100 base attraction, x1.25 attraction to Pops with citizenship rights, x1.25 if faction leader is the current ruler, and x0.75 if faction has no leaders. However, a Pop can only meet the requirements of up to one faction at a time while faction leader is chosen randomly and cannot be unassigned and will be randomly chosen again if current leader is fired or diseased, making this field entirely irrelevant.
+</p>
+</td></tr>
+<tr>
+<td><b>leader</b>
+</td>
+<td>Determines how likely a leader will be randomly chosen as the leader of this faction. Vanilla always have 100 base weight and x0 for event leaders. Supermacist factions will exclude alien leaders as well, or an alien talking about human superiority can be immersion breaking. If no leaders have a weight greater than 0, the faction will still be created but remain leaderless for the rest of the game.
+</td></tr>
+<tr>
+<td><b>demand</b>
+</td>
+<td>An entry of a faction issue. Multiple allowed.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>title = &lt;localisation key&gt;</b></li>
+<li><b>unfulfilled_title = &lt;localisation key&gt;</b></li>
+<li><b>desc = &lt;localisation key&gt;</b></li></ul>
+</td>
+<td>The flavor text part of this issue. The title can change based on if it's fulfilled or not.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>fulfilled_effect = &lt;float&gt;</b></li>
+<li><b>unfulfilled_effect = &lt;float&gt;</b></li></ul>
+</td>
+<td>The faction approval impact of this issue.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>potential</b></li>
+<li><b>trigger</b></li></ul>
+</td>
+<td>The former block of <a href="/Conditions.html" title="Conditions">Conditions</a> determines should this faction have this issue, and if yes, the later block of Conditions determines is this issue fulfilled. (Faction scope, use <code>owner</code> to scope to the Empire)
+</td></tr>
+<tr>
+<td><b>on_create</b>
+</td>
+<td>A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed to the faction when this faction is created. Vanilla always have <code>pop_faction_event = { id = factions.1 }</code>, which calls the event to tell the player "a faction named [Faction] led by a leader [Leader] is created". (Faction scope)
+</td></tr>
+<tr>
+<td><b>on_destroy</b>
+</td>
+<td>A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed to the Empire when this faction is dissolved. Vanilla always remove the "Ethic Promoted" and "Ethic Supressed" static modifiers for the Empire. (Country scope)
+</td></tr>
+<tr>
+<td><b>actions</b>
+</td>
+<td>A list of entries to define actions an Empire can take to this faction.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>title = &lt;localisation key&gt;</b></li>
+<li><b>description = &lt;localisation key&gt;</b></li></ul>
+</td>
+<td>The flavor text part of this faction action.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>cost = { &lt;resource key&gt; = &lt;int&gt; }</b></li></ul>
+</td>
+<td>The cost of this action.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>potential</b></li>
+<li>valid</li></ul>
+</td>
+<td>The former block of <a href="/Conditions.html" title="Conditions">Conditions</a> determines should this faction have this action listed, and if yes, the later block of Conditions determines can this action be performed. (Faction scope)
+</td></tr>
+<tr>
+<td>
+<ul><li><b>effect</b></li></ul>
+</td>
+<td>A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when this action is taken. (Faction scope)
+</td></tr>
+<tr>
+<td>
+<ul><li><b>ai_weight</b></li></ul>
+</td>
+<td>How likely the AI will use this action.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Faction_Example">Faction Example</span></h2>
+<h3><span class="mw-headline" id="Imperialist_Faction">Imperialist Faction</span></h3>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>imperialist = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_militarist #only pops of this ethic can join the faction
+
+	unique = yes
+	support_multiplier = 1
+
+	resources = {
+		category = pop_factions
+		produces = {
+			unity = 0.5
+		}
+	}
+
+	is_potential = {
+		is_faction_allowed = yes
+		if = {
+			limit = {
+				has_faction = imperialist
+				any_pop_faction = {
+					is_pop_faction_type = imperialist
+					num_pops &gt;= 5
+				}
+			}
+		}
+		else = {
+			count_owned_pop = {
+				count &gt;= 5
+				limit = {
+					has_ethic = ethic_militarist
+				}
+			}
+		}
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+	}
+
+	can_join_faction = {
+		is_shackled_robot = no
+		can_think = yes
+	}
+
+	attraction = {
+		base = 100
+
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { leader_class = ruler }
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+
+		modifier = {
+			factor = 1.25
+			has_citizenship_rights = yes
+		}
+	}
+
+	leader = {
+		base = 100
+
+		modifier = {
+			factor = 0.0
+			is_event_leader = yes
+		}
+	}
+
+	demand = {
+		title = "FACTION_OUTRAGED_GC"
+		unfulfilled_title = "FACTION_OUTRAGED_GC"
+		desc = "FACTION_OUTRAGED_GC_DESC"
+
+		fulfilled_effect = -20
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = faction_militarist_outraged_gc
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = faction_militarist_outraged_gc
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_PHILOSOPHY"
+		unfulfilled_title = "IMPERIALIST_NO_PHILOSOPHY"
+		desc = "IMPERIALIST_PHILOSOPHY_DESC"
+
+		unfulfilled_effect = -30
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				any_relation = {
+					has_communications = root.owner
+					is_country_type = default
+					NOT = { exists = overlord }
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_policy_flag = unrestricted_wars
+					has_policy_flag = liberation_wars
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_CONQUEST"
+		unfulfilled_title = "IMPERIALIST_NO_CONQUEST"
+		desc = "IMPERIALIST_CONQUEST_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				any_relation = {
+					has_communications = root.owner
+					is_country_type = default
+					NOT = { exists = overlord }
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = imperialist_conquest_timed_flag
+			}
+		}
+	}
+
+	demand = {
+		title = "SUPREMACIST_FANATIC_PURIFIERS"
+		unfulfilled_title = "SUPREMACIST_NOT_FANATIC_PURIFIERS"
+		desc = "SUPREMACIST_FANATIC_PURIFIERS_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_fanatic_purifiers
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_valid_civic = civic_fanatic_purifiers
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_RIVALS1"
+		unfulfilled_title = "IMPERIALIST_FEW_RIVALS1"
+		desc = "IMPERIALIST_RIVALS_DESC1"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				num_communications &gt; 2
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				num_rivals &lt; 2
+			}
+		}
+
+		trigger = {
+			owner = {
+				num_rivals &gt; 0
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_RIVALS2"
+		unfulfilled_title = "IMPERIALIST_FEW_RIVALS2"
+		desc = "IMPERIALIST_RIVALS_DESC2"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				num_communications &gt; 2
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				num_rivals = 2
+			}
+		}
+
+		trigger = {
+			owner = {
+				num_rivals &gt; 1
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_RIVALS3"
+		unfulfilled_title = "IMPERIALIST_FEW_RIVALS3"
+		desc = "IMPERIALIST_RIVALS_DESC3"
+
+		fulfilled_effect = 15
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				num_communications &gt; 2
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				num_rivals &gt; 2
+			}
+		}
+
+		trigger = {
+			owner = {
+				num_rivals &gt; 2
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_OVERLORD" #Imperial Hegemony
+		unfulfilled_title = "IMPERIALIST_NOT_OVERLORD"
+		desc = "IMPERIALIST_OVERLORD_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				num_communications &gt; 2
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+			}
+		}
+
+		trigger = {
+			OR = {
+				owner = {
+					is_overlord = yes
+				}
+				owner = {
+					has_federation = yes
+					federation = {
+						has_federation_type = hegemony_federation
+					}
+					is_federation_leader = yes
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_UNDERLING"
+		unfulfilled_title = "IMPERIALIST_NOT_UNDERLING"
+		desc = "IMPERIALIST_UNDERLING_DESC"
+
+		unfulfilled_effect = -25
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_overlord_dlc = no
+				is_subject = yes
+			}
+		}
+
+		trigger = {
+			owner = {
+				is_subject = no
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_BULWARK"
+		unfulfilled_title = "IMPERIALIST_NOT_BULWARK"
+		desc = "IMPERIALIST_BULWARK_DESC"
+
+		unfulfilled_effect = -25
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_overlord_dlc = yes
+				is_subject = yes
+				is_specialist_subject_type = { TYPE = bulwark }
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					is_subject = no
+					is_specialist_subject_type = { TYPE = bulwark }
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_SLAYER"
+		unfulfilled_title = "IMPRERIALIST_NOT_SLAYER"
+		desc = "IMPERIALIST_SLAYER_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				host_has_dlc = "Leviathans Story Pack"
+				OR = {
+					has_country_flag = killed_guardian
+					any_country = {
+						is_guardian_country = yes
+						has_communications = prev
+					}
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = killed_guardian
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_MILITARY_APPLICATIONS"
+		unfulfilled_title = "IMPERIALIST_NO_MILITARY_APPLICATIONS"
+		desc = "IMPERIALIST_MILITARY_APPLICATIONS_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				host_has_dlc = "Ancient Relics Story Pack"
+				has_technology = tech_arcane_deciphering
+				OR = {
+					has_modifier = artifact_find_military_application_army
+					has_modifier = artifact_find_military_application_shield_damage
+					has_modifier = artifact_find_military_application_armor_damage
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_modifier = artifact_find_military_application_army
+					has_modifier = artifact_find_military_application_shield_damage
+					has_modifier = artifact_find_military_application_armor_damage
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_PEACEFUL_APPLICATIONS"
+		unfulfilled_title = "IMPERIALIST_NO_PEACEFUL_APPLICATIONS"
+		desc = "IMPERIALIST_PEACEFUL_APPLICATIONS_DESC"
+
+		unfulfilled_effect = -5
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				host_has_dlc = "Ancient Relics Story Pack"
+				has_technology = tech_arcane_deciphering
+				OR = {
+					has_modifier = artifact_find_peaceful_application_happy_bios
+					has_modifier = artifact_find_peaceful_application_consumer_goods
+					has_modifier = artifact_find_peaceful_application_amenities
+					has_modifier = artifact_find_peaceful_application_leader_improvement
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOR = {
+					has_modifier = artifact_find_peaceful_application_happy_bios
+					has_modifier = artifact_find_peaceful_application_consumer_goods
+					has_modifier = artifact_find_peaceful_application_amenities
+					has_modifier = artifact_find_peaceful_application_leader_improvement
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "STRONG_DIPLO_STANCE"
+		unfulfilled_title = "STRONG_DIPLO_STANCE"
+		desc = "STRONG_DIPLO_STANCE_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				is_homicidal = no
+				is_country_type = default
+				OR = {
+					has_policy_flag = diplo_stance_belligerent
+					has_policy_flag = diplo_stance_supremacist
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_policy_flag = diplo_stance_belligerent
+					has_policy_flag = diplo_stance_supremacist
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "WEAK_DIPLO_STANCE"
+		unfulfilled_title = "WEAK_DIPLO_STANCE"
+		desc = "WEAK_DIPLO_STANCE_DESC"
+
+		fulfilled_effect = 0.01
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				is_homicidal = no
+				is_country_type = default
+				has_policy_flag = diplo_stance_cooperative
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_policy_flag = diplo_stance_cooperative }
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_BENEVOLENT_SUBJUGATION_POLICY"
+		unfulfilled_title = "IMPERIALIST_NO_BENEVOLENT_SUBJUGATION_POLICY"
+		desc = "IMPERIALIST_BENEVOLENT_SUBJUGATION_POLICY_DESC"
+
+		unfulfilled_effect = -5
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				is_subject = no
+				has_policy_flag = benevolent_terms
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_policy_flag = benevolent_terms }
+			}
+		}
+	}
+
+	demand = {
+		title = "IMPERIALIST_OPPRESSIVE_SUBJUGATION_POLICY"
+		unfulfilled_title = "IMPERIALIST_ADOPT_OPPRESSIVE_SUBJUGATION_POLICY"
+		desc = "IMPERIALIST_OPPRESSIVE_SUBJUGATION_POLICY_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				is_subject = no
+				NOT = { has_policy_flag = benevolent_terms }
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = oppressive_terms
+			}
+		}
+	}
+
+	on_create = {
+		pop_faction_event = { id = factions.1 }
+	}
+
+	on_destroy = {
+		if = {
+			limit = {
+				has_modifier = promoted_militarist
+			}
+			remove_modifier = promoted_militarist
+		}
+		if = {
+			limit = {
+				has_modifier = suppressed_militarist
+			}
+			remove_modifier = suppressed_militarist
+		}
+	}
+
+	actions = {
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+
+			cost = {
+				unity = 5000
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					}
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support &gt; 0.20
+				parameter:empire = {
+					NOT = { has_ethic = "ethic_fanatic_militarist" }
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				parameter:empire = {
+					shift_ethic = ethic_militarist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					parameter:empire = {
+						every_relation = {
+							limit = {
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level &gt;= 1
+								}
+							}
+							country_event = { id = factions.2000 }
+						}
+					}
+				}
+			}
+
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support &lt; 0.50
+					owner = {
+						has_ethic = ethic_militarist
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_valid_civic = civic_fanatic_purifiers }
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						owner = {
+							exists = ruler
+							ruler = {
+								leader_of_faction = imperialist
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count &lt; 4
+						}
+					}
+				}
+			}
+		}
+		promote_faction = {
+			title = "PROMOTE_FACTION"
+			description = "PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = suppressed_militarist
+						has_modifier = promoted_militarist
+					}
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					add_modifier = { modifier = promoted_militarist days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_promote_faction = {
+			title = "CANCEL_PROMOTE_FACTION"
+			description = "CANCEL_PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = { has_modifier = promoted_militarist }
+			}
+
+			effect = {
+				parameter:empire = {
+					remove_modifier = promoted_militarist
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		suppress_faction = {
+			title = "SUPPRESS_FACTION"
+			description = "SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = suppressed_militarist
+						has_modifier = promoted_militarist
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = suppressed_faction days = -1 }
+				parameter:empire = {
+					add_modifier = { modifier = suppressed_militarist days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_suppress_faction = {
+			title = "CANCEL_SUPPRESS_FACTION"
+			description = "CANCEL_SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = { has_modifier = suppressed_militarist }
+			}
+
+			effect = {
+				remove_modifier = suppressed_faction
+				parameter:empire = {
+					remove_modifier = suppressed_militarist
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+	}
+}
+</pre>
+<p>The AI will only embrace a faction if current ruler is the faction leader. Also, <a href="/Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers will never embrace factions.
+</p>
+Some issues will increase faction approval by <span class="effect-green" style="font-weight:bold;">+0.001</span> if fulfilled, or decrease approval by <span class="effect-red" style="font-weight:bold;">−0.001</span> if unfulfilled. This is to mark the issue <span class="effect-green" style="font-weight:bold;">green</span> or <span class="effect-red" style="font-weight:bold;">red</span>. If an issue currently has no effect, it will be marked <span class="effect-yellow" style="font-weight:bold;">yellow</span>, which can be confusing.</div></div></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a class="mw-selflink selflink">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181738
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.044 seconds
+Real time usage: 0.059 seconds
+Preprocessor visited node count: 688/1000000
+Post‐expand include size: 21895/2097152 bytes
+Template argument size: 9376/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 13945/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   22.147      1 -total
+ 40.02%    8.863      4 Template:Iconify
+ 33.44%    7.407      4 Template:Icon
+ 29.52%    6.538      1 Template:ModdingNavbox
+ 25.11%    5.561      1 Template:Collapse_list
+ 14.97%    3.315      1 Template:Navbox
+ 11.99%    2.656      1 Template:Version
+ 10.95%    2.424      2 Template:Icon/d
+  9.16%    2.028      1 Template:Icon/g
+  7.24%    1.604      1 Template:Icon/f
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7556-0!canonical and timestamp 20260707181737 and revision id 71756.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

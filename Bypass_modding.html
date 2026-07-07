@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bypass modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Bypass modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about modding <a href="https://stellaris.paradoxwikis.com/FTL#Bypasses" class="mw-redirect" title="FTL">Bypasses</a>, namely Wormholes and Gateways only as traveling methods.
+</p><p>Before reading, you must understand that:
+</p>
+<ul><li><span class="effect-blue" style="font-weight:bold;">Bypasses</span> are traveling methods, not <span class="effect-yellow" style="font-weight:bold;">Natural Wormholes</span> or <span class="effect-yellow" style="font-weight:bold;">Gateways</span>.</li>
+<li><span class="effect-yellow" style="font-weight:bold;">Natural Wormholes</span> and <span class="effect-yellow" style="font-weight:bold;">Gateways</span> are containers of <span class="effect-blue" style="font-weight:bold;">bypasses</span>, not bypasses themselves.</li>
+<li>In this article, words that refer to <span class="effect-blue" style="font-weight:bold;">bypasses</span> are marked <span class="effect-blue" style="font-weight:bold;">blue</span> and words that refer to <span class="effect-yellow" style="font-weight:bold;">bypass-containers</span> are marked <span class="effect-yellow" style="font-weight:bold;">yellow</span>.</li></ul>
+<p>They are defined at "common/bypass/xxx.txt".
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Data_Structure"><span class="tocnumber">1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#How_to_install_a_bypass_in_the_galaxy"><span class="tocnumber">2</span> <span class="toctext">How to install a bypass in the galaxy</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Natural_Wormholes"><span class="tocnumber">2.1</span> <span class="toctext">Natural Wormholes</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Megastructures"><span class="tocnumber">2.2</span> <span class="toctext">Megastructures</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Data_Structure">Data Structure</span></h2>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="40%">Property
+</th>
+<th width="30%">Paired Bypass Type
+</th>
+<th width="30%">One-to-All Bypass Type
+</th></tr>
+<tr>
+<td><b>name = &lt;localisation key&gt;</b>
+</td>
+<td colspan="2">The name of this type of bypass.
+</td></tr>
+<tr>
+<td><b>is_pathfind = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2">If yes, this bypass allows the pathfinder to use it. Vanilla always have "yes".
+</td></tr>
+<tr>
+<td><b>uses_action = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2">Actual functionality is unclear. Vanilla always have "no".
+</td></tr>
+<tr>
+<td><b>windup_time = &lt;int&gt;</b><br /><b>winddown_time = &lt;int&gt;</b>
+</td>
+<td colspan="2">Time spent to prepare / cooldown for fleets when using this bypass. Vanilla always have "0" for both.
+</td></tr>
+<tr>
+<td><b>ftl_multiplier = &lt;float&gt;</b>
+</td>
+<td colspan="2">Multiplies the time spent in FTL travel. If 0, the travel is finished in an instant. Vanilla always have "0".
+</td></tr>
+<tr>
+<td><b>icon_frame = &lt;int&gt;</b><br /><b>galactic_map_tooltip_header = &lt;localisation key&gt;</b><br /><b>galactic_map_tooltip_desc = &lt;localisation key&gt;</b>
+</td>
+<td colspan="2">Determines the icon and tooltip of the icon of this bypass type in the galaxy view.
+</td></tr>
+<tr>
+<td><b>ftl_ship_effect = &lt;entity key&gt;</b><br /><b>ftl_bypass_effect = &lt;entity key&gt;</b>
+</td>
+<td colspan="2">Determines the animation effect to be displayed for this bypass type.
+</td></tr>
+<tr>
+<td><b>animation_time = &lt;int&gt;</b>
+</td>
+<td colspan="2">Days to wait for the jump animation to be played.
+</td></tr>
+<tr>
+<td><b>always_active = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2">If yes, this <span class="effect-blue" style="font-weight:bold;">bypass type</span> can't be used without activating or upgrading something. In addition, an inactive instance of this <span class="effect-blue" style="font-weight:bold;">bypass type</span> triggers a red icon in the galaxy view.
+</td></tr>
+<tr>
+<td rowspan="2"><b>remember_instances = &lt;yes/no&gt;</b><br /><b>requires_exploration = &lt;yes/no&gt;</b>
+</td>
+<td>
+<table class="wikitable" width="100%" style="text-align: center;">
+
+<tbody><tr>
+<td colspan="2" rowspan="2"><span class="effect-blue" style="font-weight:bold;">Wormhole</span> Properties
+</td>
+<td colspan="2"><code>requires_exploration</code>
+</td></tr>
+<tr>
+<td>yes
+</td>
+<td>no
+</td></tr>
+<tr>
+<td rowspan="2"><code>remember_instances</code>
+</td>
+<td>yes
+</td>
+<td colspan="2"><span class="effect-green" style="font-weight:bold;">Each pair must be explored</span>
+</td></tr>
+<tr>
+<td>no
+</td>
+<td colspan="2"><span class="effect-red" style="font-weight:bold;">No need to explore</span>
+</td></tr></tbody></table>
+</td>
+<td>
+<table class="wikitable" width="100%" style="text-align: center;">
+
+<tbody><tr>
+<td colspan="2" rowspan="2"><span class="effect-blue" style="font-weight:bold;">Gateway</span> Properties
+</td>
+<td colspan="2"><code>requires_exploration</code>
+</td></tr>
+<tr>
+<td>yes
+</td>
+<td>no
+</td></tr>
+<tr>
+<td rowspan="2"><code>remember_instances</code>
+</td>
+<td>yes
+</td>
+<td colspan="2"><span class="effect-red" style="font-weight:bold;">Each instance must be explored</span>
+</td></tr>
+<tr>
+<td>no
+</td>
+<td colspan="2"><span class="effect-green" style="font-weight:bold;">No need to explore</span>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td colspan="2">As we can see, the <code>requires_exploration</code> property actually does nothing.
+</td></tr>
+<tr>
+<td><b>extends_sensors = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2">Determines should ship sensors see through this <span class="effect-blue" style="font-weight:bold;">bypass</span>.
+</td></tr>
+<tr>
+<td><b>prerequisites = { tech_xxx }</b>
+</td>
+<td colspan="2">Technologies to be researched before this bypass can be used for an Empire.
+</td></tr>
+<tr>
+<td><b>connection_type</b>
+</td>
+<td>
+<ul><li><code>one_to_one</code></li></ul>
+</td>
+<td>
+<ul><li><code>any_other</code> (<span class="effect-blue" style="font-weight:bold;">Gateway</span>)</li>
+<li><code>scripted_connection</code> (<span class="effect-blue" style="font-weight:bold;">L-Gate</span>)</li></ul>
+</td></tr>
+<tr>
+<td><b>scripted_connection</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Vanilla use this for the <span class="effect-blue" style="font-weight:bold;">L-Gate</span> bypass type.
+<pre>scripted_connection = {
+	node = {
+		has_star_flag = lgate
+	}
+	nexus = {
+		has_star_flag = lcluster1
+	}
+}
+</pre>
+<p>Vanilla comments claim that:
+</p>
+<ul><li><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> node to nexus</li>
+<li><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> nexus to node</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /> node to node</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /> nexus to nexus</li></ul>
+</td></tr>
+<tr>
+<td><b>on_action</b>
+</td>
+<td colspan="2">An On-Action to be fired when a fleet uses this bypass. See <a href="/Event_modding.html" title="Event modding">Event modding</a> for details.
+</td></tr>
+<tr>
+<td><b>on_pre_explore</b>
+</td>
+<td colspan="2">Vanilla comments claim that this is a block of <a href="/Effects.html" title="Effects">Effects</a> to be executed after this bypass have been explored. The only usage of this property is the <span class="effect-blue" style="font-weight:bold;">gateway</span> bypass type, bu it actually doesn't need to be explored, making this property irrelevant.
+</td></tr>
+<tr>
+<td><b>potential</b>
+</td>
+<td colspan="2">Vanilla comments unmentioned. Presumably some sort of <a href="/Conditions.html" title="Conditions">Conditions</a> to be checked. The only usage of this property is the <span class="effect-blue" style="font-weight:bold;">wormhole</span> bypass type, but it has <code>always = yes</code>, making this property irrelevant. Actual functionality is unclear.
+</td></tr>
+<tr>
+<td><b>country_can_use</b>
+</td>
+<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check can an Empire use this bypass. (Country scope, FROM = owner of target system)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="How_to_install_a_bypass_in_the_galaxy">How to install a bypass in the galaxy</span></h2>
+<h3><span class="mw-headline" id="Natural_Wormholes">Natural Wormholes</span></h3>
+<p>Use the Effect <code>spawn_natural_wormhole</code> to spawn a <span class="effect-yellow" style="font-weight:bold;">natural wormhole</span>.
+</p>
+<pre>spawn_natural_wormhole = {
+	bypass_type = &lt;bypass type key, e.g. wormhole / gateway&gt;
+	orbit_distance = &lt;int&gt;
+	orbit_angle = &lt;int, 0-360&gt;
+	random_pos = &lt;yes/no&gt;
+}
+</pre>
+<p>Use the Effect <code>link_wormholes</code> under the solar system scope to link it to another. The effect takes another solar system scope as a parameter.
+</p>
+<ul><li>The <span class="effect-blue" style="font-weight:bold;">bypass type</span> can be one-to-all. In this case, this wormhole doesn't need to be linked, but the <span class="effect-blue" style="font-weight:bold;">bypass type</span> must have <code>remember_instances = no</code>, or each instance must be explored and only explored instances can be used to travel between each other.</li>
+<li>The <span class="effect-blue" style="font-weight:bold;">bypass type</span> must have <code>always_active = yes</code>, or this <span class="effect-yellow" style="font-weight:bold;">natural wormhole</span> can't be used by any mean, because there are no Effects to activate a <span class="effect-yellow" style="font-weight:bold;">natural wormhole</span>.</li></ul>
+<h3><span class="mw-headline" id="Megastructures">Megastructures</span></h3>
+<p>Megastructures have a property called <code>bypass_type</code> to specify a <span class="effect-blue" style="font-weight:bold;">bypass type</span>. See <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructure modding</a> for details.
+</p><p>Use the effect <code>activate_gateway = yes</code> under Megastructure scope to activate it.
+</p>
+<ul><li>The <span class="effect-blue" style="font-weight:bold;">bypass type</span> must NOT be paired, because there are no Effects to link a <span class="effect-yellow" style="font-weight:bold;">megastructure</span> to another.</li>
+<li>The <span class="effect-blue" style="font-weight:bold;">bypass type</span> must have <code>remember_instances = no</code>, or each instance must be explored and only explored instances can be used to travel between each other, including those you built. By the way, there are no Effects to mark an instance of a <span class="effect-blue" style="font-weight:bold;">bypass type</span> as explored by a country.</li>
+<li>The <span class="effect-blue" style="font-weight:bold;">bypass type</span> should have <code>always_active = no</code>.
+<ul><li>If it had <code>always_active = yes</code>, <span class="effect-yellow" style="font-weight:bold;">Dormant Gateways</span> will become usable before it to be reactivated. <span class="effect-yellow" style="font-weight:bold;">Gateway Construction Sites</span> still can't be used, because it doesn't have any associated <span class="effect-blue" style="font-weight:bold;">bypass type</span>. This is also why don't Gateway Construction Sites trigger the red galaxy view icon.</li></ul></li></ul>
+<p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a class="mw-selflink selflink">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181004
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.042 seconds
+Real time usage: 0.048 seconds
+Preprocessor visited node count: 1579/1000000
+Post‐expand include size: 23549/2097152 bytes
+Template argument size: 9632/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 315/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   19.361      1 -total
+ 32.34%    6.262     23 Template:Blue
+ 23.18%    4.488      1 Template:ModdingNavbox
+ 20.62%    3.992     39 Template:Symbolfirst
+ 11.70%    2.266      5 Template:Icon
+ 10.83%    2.097     12 Template:Yellow
+  8.56%    1.658      1 Template:Navbox
+  6.99%    1.354      1 Template:Version
+  5.58%    1.080      3 Template:Icon/n
+  4.61%    0.893      1 Template:Infobox
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7565-0!canonical and timestamp 20260707181004 and revision id 65698.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

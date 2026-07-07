@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Option/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Option/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_Option.html" title="Template:Option">Template:Option</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p><br />
+<b>Option</b> can be used to diplay the options of events in <code><a href="/Template_Event.html" title="Template:Event">{{event}}</a></code> infoboxes.
+</p>
+<h2><span class="mw-headline" id="Parameter">Parameter</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Parameter
+</th>
+<th>Description
+</th>
+<th>Default
+</th>
+<th>Status
+</th></tr>
+<tr>
+<td>option_text
+</td>
+<td>The text of the option.
+</td>
+<td>empty
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>effect
+</td>
+<td>Effects of the option.
+</td>
+<td>
+<ul><li>None</li></ul>
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>trigger
+</td>
+<td>Conditions - if applicable - of the option.<br />
+<p>If set to ‘always’ then it displays “<img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/thumb/3/35/Event_trigger.png/16px-Event_trigger.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="18" data-file-height="18" />&#8201;<b>Always enabled:</b>” else “<img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/thumb/3/35/Event_trigger.png/16px-Event_trigger.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="18" data-file-height="18" />&#8201;<b>Enabled if:</b>” followed by the specified trigger.
+</p>
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>exclusive_trigger
+</td>
+<td>Exclusive conditions - if applicable - of the option.<br />
+<p>Displays “<img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/thumb/3/35/Event_trigger.png/16px-Event_trigger.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="18" data-file-height="18" />&#8201;<b>Enabled and disables other options if:</b>” followed by the specified exclusive trigger.
+</p>
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>1
+</td>
+<td>If set to 'end' the horizontal rule at the end of a conditional option is disabled.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<pre>{{Option
+|option_text = 
+|effect = 
+}}
+</pre>
+<p>For events with conditional options:
+</p>
+<pre>{{Option
+|trigger = &lt;!-- required --&gt;
+|option_text =
+|effect =
+}}
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20260707182643
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.012 seconds
+Real time usage: 0.017 seconds
+Preprocessor visited node count: 48/1000000
+Post‐expand include size: 625/2097152 bytes
+Template argument size: 10/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 139/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.956      1 -total
+ 89.48%    3.540      1 Template:Template_doc_page_viewed_directly
+  9.10%    0.360      1 Template:Template
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1663-0!canonical and timestamp 20260707182643 and revision id 65796.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

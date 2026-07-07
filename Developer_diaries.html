@@ -1,0 +1,3581 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer diaries - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Developer diaries</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">This article is <a href="/Category_Timeless.html" title="Category:Timeless">timeless</a> and should be accurate for any version of the game.</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:right; clear:right; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap"><a href="/Patches.html" title="Patches">Version history</a></span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Nomads.html" title="Nomads"><img alt="Nomads.png" src="images/Nomads.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Nomads </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.4.html" title="Patch 4.4">4.4</a> • <a href="/Patch_4.4.X.html#4.4.2" title="Patch 4.4.X">4.4.2</a> • <a href="/Patch_4.4.X.html#4.4.3" title="Patch 4.4.X">4.4.3</a> • <a href="/Patch_4.4.X.html#4.4.4" title="Patch 4.4.X">4.4.4</a> • <a href="/Patch_4.4.X.html#4.4.5" title="Patch 4.4.X">4.4.5</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Shadows of the Shroud </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.3.X.html#4.3.4" title="Patch 4.3.X">4.3.4</a> • <a href="/Patch_4.3.X.html#4.3.5" title="Patch 4.3.X">4.3.5</a> • <a href="/Patch_4.3.X.html#4.3.6" title="Patch 4.3.X">4.3.6</a> • <a href="/Patch_4.3.X.html#4.3.7" title="Patch 4.3.X">4.3.7</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.3.html" title="Patch 4.3">4.3</a> • <a href="/Patch_4.3.X.html#4.3.1" title="Patch 4.3.X">4.3.1</a> • <a href="/Patch_4.3.X.html#4.3.2" title="Patch 4.3.X">4.3.2</a> • <a href="/Patch_4.3.X.html#4.3.3" title="Patch 4.3.X">4.3.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><span style="margin-left:-20px;"><a href="https://stellaris.paradoxwikis.com/Infernals" title="Infernals"><img alt="Infernals.png" src="images/Infernals.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="45" data-file-height="45" /></a></span>  <a href="/Patch_4.2.html" title="Patch 4.2">4.2</a> • <a href="/Patch_4.2.X.html#4.2.2" title="Patch 4.2.X">4.2.2</a> • <a href="/Patch_4.2.X.html#4.2.3" title="Patch 4.2.X">4.2.3</a> • <a href="/Patch_4.2.X.html#4.2.4" title="Patch 4.2.X">4.2.4</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.1.html" title="Patch 4.1">4.1</a> • <a href="/Patch_4.1.X.html#4.1.1" title="Patch 4.1.X">4.1.1</a> • <a href="/Patch_4.1.X.html#4.1.3" title="Patch 4.1.X">4.1.3</a> • <a href="/Patch_4.1.X.html#4.1.5" title="Patch 4.1.X">4.1.5</a> • <a href="/Patch_4.1.X.html#4.1.6" title="Patch 4.1.X">4.1.6</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/BioGenesis.html" title="BioGenesis"><img alt="BioGenesis.png" src="images/BioGenesis.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> BioGenesis </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.0.X.html#4.0.19" title="Patch 4.0.X">4.0.19</a> • <a href="/Patch_4.0.X.html#4.0.20" title="Patch 4.0.X">4.0.20</a> • <a href="/Patch_4.0.X.html#4.0.21" title="Patch 4.0.X">4.0.21</a> • <a href="/Patch_4.0.X.html#4.0.22" title="Patch 4.0.X">4.0.22</a> • <a href="/Patch_4.0.X.html#4.0.23" title="Patch 4.0.X">4.0.23</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.0.X.html#4.0.13" title="Patch 4.0.X">4.0.13</a> • <a href="/Patch_4.0.X.html#4.0.14" title="Patch 4.0.X">4.0.14</a> • <a href="/Patch_4.0.X.html#4.0.15" title="Patch 4.0.X">4.0.15</a> • <a href="/Patch_4.0.X.html#4.0.16" title="Patch 4.0.X">4.0.16</a> • <a href="/Patch_4.0.X.html#4.0.17" title="Patch 4.0.X">4.0.17</a> • <a href="/Patch_4.0.X.html#4.0.18" title="Patch 4.0.X">4.0.18</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.0.X.html#4.0.7" title="Patch 4.0.X">4.0.7</a> • <a href="/Patch_4.0.X.html#4.0.8" title="Patch 4.0.X">4.0.8</a> • <a href="/Patch_4.0.X.html#4.0.9" title="Patch 4.0.X">4.0.9</a> • <a href="/Patch_4.0.X.html#4.0.10" title="Patch 4.0.X">4.0.10</a> • <a href="/Patch_4.0.X.html#4.0.11" title="Patch 4.0.X">4.0.11</a> • <a href="/Patch_4.0.X.html#4.0.12" title="Patch 4.0.X">4.0.12</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_4.0.html" title="Patch 4.0">4.0</a> • <a href="/Patch_4.0.X.html#4.0.2" title="Patch 4.0.X">4.0.2</a> • <a href="/Patch_4.0.X.html#4.0.3" title="Patch 4.0.X">4.0.3</a> • <a href="/Patch_4.0.X.html#4.0.4" title="Patch 4.0.X">4.0.4</a> • <a href="/Patch_4.0.X.html#4.0.5" title="Patch 4.0.X">4.0.5</a> • <a href="/Patch_4.0.X.html#4.0.6" title="Patch 4.0.X">4.0.6</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Grand_Archive_(DLC).html" title="Grand Archive (DLC)"><img alt="Grand Archive.png" src="images/Grand_Archive.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Grand Archive </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.14.html" title="Patch 3.14">3.14</a> • <a href="/Patch_3.14.X.html#3.14.15" title="Patch 3.14.X">3.14.15</a> • <a href="/Patch_3.14.X.html#3.14.159" title="Patch 3.14.X">3.14.159</a> • <a href="/Patch_3.14.X.html#3.14.1592" title="Patch 3.14.X">3.14.1592</a> • <a href="/Patch_3.14.X.html#3.14.15926" title="Patch 3.14.X">3.14.15926</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="https://stellaris.paradoxwikis.com/Cosmic_Storms" title="Cosmic Storms"><img alt="Cosmic Storms.png" src="images/Cosmic_Storms.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Cosmic Storms </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.13.html" title="Patch 3.13">3.13</a> • <a href="/Patch_3.13.X.html#3.13.1" title="Patch 3.13.X">3.13.1</a> • <a href="/Patch_3.13.X.html#3.13.2" title="Patch 3.13.X">3.13.2</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> The Machine Age </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.12.html" title="Patch 3.12">3.12</a> • <a href="/Patch_3.12.X.html#3.12.2" title="Patch 3.12.X">3.12.2</a> • <a href="/Patch_3.12.X.html#3.12.3" title="Patch 3.12.X">3.12.3</a> • <a href="/Patch_3.12.X.html#3.12.4" title="Patch 3.12.X">3.12.4</a> • <a href="/Patch_3.12.X.html#3.12.5" title="Patch 3.12.X">3.12.5</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Astral_Planes.html" title="Astral Planes"><img alt="Astral Planes.png" src="images/Astral_Planes.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Astral Planes </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.11.html" title="Patch 3.11">3.11</a> • <a href="/Patch_3.11.X.html#3.11.2" title="Patch 3.11.X">3.11.2</a> • <a href="/Patch_3.11.X.html#3.11.3" title="Patch 3.11.X">3.11.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.10.html" title="Patch 3.10">3.10</a> • <a href="/Patch_3.10.X.html#3.10.1" title="Patch 3.10.X">3.10.1</a> • <a href="/Patch_3.10.X.html#3.10.2" title="Patch 3.10.X">3.10.2</a> • <a href="/Patch_3.10.X.html#3.10.3" title="Patch 3.10.X">3.10.3</a> • <a href="/Patch_3.10.X.html#3.10.4" title="Patch 3.10.X">3.10.4</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Galactic_Paragons.html" title="Galactic Paragons"><img alt="Galactic Paragons.png" src="images/Galactic_Paragons.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Galactic Paragons </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.9.html" title="Patch 3.9">3.9</a> • <a href="/Patch_3.9.X.html#3.9.2" title="Patch 3.9.X">3.9.2</a> • <a href="/Patch_3.9.X.html#3.9.3" title="Patch 3.9.X">3.9.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.8.html" title="Patch 3.8">3.8</a> • <a href="/Patch_3.8.X.html#3.8.2" title="Patch 3.8.X">3.8.2</a> • <a href="/Patch_3.8.X.html#3.8.3" title="Patch 3.8.X">3.8.3</a> • <a href="/Patch_3.8.X.html#3.8.4" title="Patch 3.8.X">3.8.4</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/First_Contact_(DLC).html" title="First Contact (DLC)"><img alt="First Contact.png" src="images/First_Contact.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> First Contact </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.7.html" title="Patch 3.7">3.7</a> • <a href="/Patch_3.7.X.html#3.7.3" title="Patch 3.7.X">3.7.3</a> • <a href="/Patch_3.7.X.html#3.7.4" title="Patch 3.7.X">3.7.4</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Overlord_(DLC).html" title="Overlord (DLC)"><img alt="Overlord.png" src="images/Overlord.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Overlord </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.6.html" title="Patch 3.6">3.6</a> • <a href="/Patch_3.6.X.html#3.6.1" title="Patch 3.6.X">3.6.1</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><span style="margin-left:-20px;"><a href="https://stellaris.paradoxwikis.com/Toxoids" title="Toxoids"><img alt="Toxoids.png" src="images/Toxoids.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="45" data-file-height="45" /></a></span>  <a href="/Patch_3.5.html" title="Patch 3.5">3.5</a> • <a href="/Patch_3.5.X.html#3.5.2" title="Patch 3.5.X">3.5.2</a> • <a href="/Patch_3.5.X.html#3.5.3" title="Patch 3.5.X">3.5.3</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.4.html" title="Patch 3.4">3.4</a> • <a href="/Patch_3.4.X.html#3.4.3" title="Patch 3.4.X">3.4.3</a> • <a href="/Patch_3.4.X.html#3.4.4" title="Patch 3.4.X">3.4.4</a> • <a href="/Patch_3.4.X.html#3.4.5" title="Patch 3.4.X">3.4.5</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Nemesis.html" title="Nemesis"><img alt="Nemesis.png" src="images/Nemesis.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Nemesis </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.3.html" title="Patch 3.3">3.3</a> • <a href="/Patch_3.3.X.html#3.3.2" title="Patch 3.3.X">3.3.2</a> • <a href="/Patch_3.3.X.html#3.3.3" title="Patch 3.3.X">3.3.3</a> • <a href="/Patch_3.3.X.html#3.3.4" title="Patch 3.3.X">3.3.4</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><span style="margin-left:-20px;"><a href="https://stellaris.paradoxwikis.com/Aquatics" title="Aquatics"><img alt="Aquatics.png" src="images/Aquatics.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="45" data-file-height="45" /></a></span>  <a href="/Patch_3.2.html" title="Patch 3.2">3.2</a> • <a href="/Patch_3.2.X.html#3.2.1" title="Patch 3.2.X">3.2.1</a> • <a href="/Patch_3.2.X.html#3.2.2" title="Patch 3.2.X">3.2.2</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.1.html" title="Patch 3.1">3.1</a> • <a href="/Patch_3.1.X.html#3.1.2" title="Patch 3.1.X">3.1.2</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_3.0.html" title="Patch 3.0">3.0</a> • <a href="/Patch_3.0.X.html#3.0.1" title="Patch 3.0.X">3.0.1</a> • <a href="/Patch_3.0.X.html#3.0.2" title="Patch 3.0.X">3.0.2</a> • <a href="/Patch_3.0.X.html#3.0.3" title="Patch 3.0.X">3.0.3</a> • <a href="/Patch_3.0.X.html#3.0.4" title="Patch 3.0.X">3.0.4</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Federations_(DLC).html" title="Federations (DLC)"><img alt="Federations.png" src="images/Federations.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Federations </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><span style="margin-left:-20px;"><a href="https://stellaris.paradoxwikis.com/Necroids" title="Necroids"><img alt="Necroids.png" src="images/Necroids.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="45" data-file-height="45" /></a></span>  <a href="/Patch_2.8.html" title="Patch 2.8">2.8</a> • <a href="/Patch_2.8.X.html#2.8.1" title="Patch 2.8.X">2.8.1</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.7.html" title="Patch 2.7">2.7</a> • <a href="/Patch_2.7.X.html#2.7.2" title="Patch 2.7.X">2.7.2</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.6.html" title="Patch 2.6">2.6</a> • <a href="/Patch_2.6.X.html#2.6.1" title="Patch 2.6.X">2.6.1</a> • <a href="/Patch_2.6.X.html#2.6.2" title="Patch 2.6.X">2.6.2</a> • <a href="/Patch_2.6.X.html#2.6.3" title="Patch 2.6.X">2.6.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Ancient_Relics.html" title="Ancient Relics"><img alt="Ancient Relics.png" src="images/Ancient_Relics.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Ancient Relics </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><span style="margin-left:-20px;"><a href="https://stellaris.paradoxwikis.com/Lithoids" title="Lithoids"><img alt="Lithoids.png" src="images/Lithoids.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="45" data-file-height="45" /></a></span> <a href="/Patch_2.5.html" title="Patch 2.5">2.5</a> • <a href="/Patch_2.5.X.html#2.5.1" title="Patch 2.5.X">2.5.1</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.4.html" title="Patch 2.4">2.4</a> • <a href="/Patch_2.4.X.html#2.4.1" title="Patch 2.4.X">2.4.1</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.3.html" title="Patch 2.3">2.3</a> • <a href="/Patch_2.3.X.html#2.3.1" title="Patch 2.3.X">2.3.1</a> • <a href="/Patch_2.3.X.html#2.3.2" title="Patch 2.3.X">2.3.2</a> • <a href="/Patch_2.3.X.html#2.3.3" title="Patch 2.3.X">2.3.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> MegaCorp </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.2.X.html#2.2.4" title="Patch 2.2.X">2.2.4</a> • <a href="/Patch_2.2.X.html#2.2.5" title="Patch 2.2.X">2.2.5</a> • <a href="/Patch_2.2.X.html#2.2.6" title="Patch 2.2.X">2.2.6</a> • <a href="/Patch_2.2.X.html#2.2.7" title="Patch 2.2.X">2.2.7</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.2.html" title="Patch 2.2">2.2</a> • <a href="/Patch_2.2.X.html#2.2.1" title="Patch 2.2.X">2.2.1</a> • <a href="/Patch_2.2.X.html#2.2.2" title="Patch 2.2.X">2.2.2</a> • <a href="/Patch_2.2.X.html#2.2.3" title="Patch 2.2.X">2.2.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Distant_Stars.html" title="Distant Stars"><img alt="Distant Stars.png" src="images/Distant_Stars.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Distant Stars </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.1.html" title="Patch 2.1">2.1</a> • <a href="/Patch_2.1.X.html#2.1.1" title="Patch 2.1.X">2.1.1</a> • <a href="/Patch_2.1.X.html#2.1.2" title="Patch 2.1.X">2.1.2</a> • <a href="/Patch_2.1.X.html#2.1.3" title="Patch 2.1.X">2.1.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Apocalypse </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_2.0.html" title="Patch 2.0">2.0</a> • <a href="/Patch_2.0.X.html#2.0.1" title="Patch 2.0.X">2.0.1</a> • <a href="/Patch_2.0.X.html#2.0.2" title="Patch 2.0.X">2.0.2</a> • <a href="/Patch_2.0.X.html#2.0.4" title="Patch 2.0.X">2.0.4</a> • <a href="/Patch_2.0.X.html#2.0.5" title="Patch 2.0.X">2.0.5</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Synthetic_Dawn.html" title="Synthetic Dawn"><img alt="Synthetic Dawn.png" src="images/Synthetic_Dawn.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Synthetic Dawn </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><span style="margin-left:-20px;"><a href="https://stellaris.paradoxwikis.com/Humanoids" title="Humanoids"><img alt="Humanoids.png" src="images/Humanoids.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="45" data-file-height="45" /></a></span> <a href="/Patch_1.9.html" title="Patch 1.9">1.9</a> • <a href="/Patch_1.9.X.html#1.9.1" title="Patch 1.9.X">1.9.1</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_1.8.html" title="Patch 1.8">1.8</a> • <a href="/Patch_1.8.X.html#1.8.2" title="Patch 1.8.X">1.8.2</a> • <a href="/Patch_1.8.X.html#1.8.3" title="Patch 1.8.X">1.8.3</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Utopia.html" title="Utopia"><img alt="Utopia.png" src="images/Utopia.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Utopia </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_1.6.html" title="Patch 1.6">1.6</a> • <a href="/Patch_1.6.X.html#1.6.1" title="Patch 1.6.X">1.6.1</a> • <a href="/Patch_1.6.X.html#1.6.2" title="Patch 1.6.X">1.6.2</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_1.5.html" title="Patch 1.5">1.5</a> • <a href="/Patch_1.5.X.html#1.5.1" title="Patch 1.5.X">1.5.1</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Leviathans.html" title="Leviathans"><img alt="Leviathans.png" src="images/Leviathans.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Leviathans </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_1.4.html" title="Patch 1.4">1.4</a> • <a href="/Patch_1.4.X.html#1.4.1" title="Patch 1.4.X">1.4.1</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_1.3.html" title="Patch 1.3">1.3</a> • <a href="/Patch_1.3.X.html#1.3.1" title="Patch 1.3.X">1.3.1</a> • <a href="/Patch_1.3.X.html#1.3.2" title="Patch 1.3.X">1.3.2</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;"> <a href="/Stellaris.html" title="Stellaris"><img alt="Stellaris.png" src="images/Stellaris.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="45" data-file-height="45" /></a> Base version </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><span style="margin-left:-20px;"><a href="https://stellaris.paradoxwikis.com/Plantoids" title="Plantoids"><img alt="Plantoids.png" src="images/Plantoids.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="45" data-file-height="45" /></a></span> <a href="/Patch_1.2.html" title="Patch 1.2">1.2</a> • <a href="/Patch_1.2.X.html#1.2.1" title="Patch 1.2.X">1.2.1</a> • <a href="/Patch_1.2.X.html#1.2.2" title="Patch 1.2.X">1.2.2</a> • <a href="/Patch_1.2.X.html#1.2.3" title="Patch 1.2.X">1.2.3</a> • <a href="/Patch_1.2.X.html#1.2.4" title="Patch 1.2.X">1.2.4</a> • <a href="/Patch_1.2.X.html#1.2.5" title="Patch 1.2.X">1.2.5</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_1.1.html" title="Patch 1.1">1.1</a> </div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"> <a href="/Patch_1.0.X.html#1.0" title="Patch 1.0.X">1.0</a> • <a href="/Patch_1.0.X.html#1.0.1" title="Patch 1.0.X">1.0.1</a> • <a href="/Patch_1.0.X.html#1.0.2" title="Patch 1.0.X">1.0.2</a> • <a href="/Patch_1.0.X.html#1.0.3" title="Patch 1.0.X">1.0.3</a> </div></div>
+</div>
+</div>
+<p><b>Developer diaries</b> are articles, sometimes accompanied by videos, published by <a href="/Paradox.html" title="Paradox">Paradox</a> to describe the game design in detail.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Nomads"><span class="tocnumber">1</span> <span class="toctext">Nomads</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Infernals"><span class="tocnumber">2</span> <span class="toctext">Infernals</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Shadows_of_the_Shroud"><span class="tocnumber">3</span> <span class="toctext">Shadows of the Shroud</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#BioGenesis"><span class="tocnumber">4</span> <span class="toctext">BioGenesis</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Grand_Archive"><span class="tocnumber">5</span> <span class="toctext">Grand Archive</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Cosmic_Storms"><span class="tocnumber">6</span> <span class="toctext">Cosmic Storms</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#The_Machine_Age"><span class="tocnumber">7</span> <span class="toctext">The Machine Age</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Astral_Planes"><span class="tocnumber">8</span> <span class="toctext">Astral Planes</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Galactic_Paragons"><span class="tocnumber">9</span> <span class="toctext">Galactic Paragons</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#First_Contact"><span class="tocnumber">10</span> <span class="toctext">First Contact</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Toxoids"><span class="tocnumber">11</span> <span class="toctext">Toxoids</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Overlord"><span class="tocnumber">12</span> <span class="toctext">Overlord</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Aquatics"><span class="tocnumber">13</span> <span class="toctext">Aquatics</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Nemesis"><span class="tocnumber">14</span> <span class="toctext">Nemesis</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Necroids"><span class="tocnumber">15</span> <span class="toctext">Necroids</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Federations"><span class="tocnumber">16</span> <span class="toctext">Federations</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Lithoids"><span class="tocnumber">17</span> <span class="toctext">Lithoids</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Ancient_Relics"><span class="tocnumber">18</span> <span class="toctext">Ancient Relics</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#MegaCorp"><span class="tocnumber">19</span> <span class="toctext">MegaCorp</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Distant_Stars"><span class="tocnumber">20</span> <span class="toctext">Distant Stars</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#Apocalypse"><span class="tocnumber">21</span> <span class="toctext">Apocalypse</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#Synthetic_Dawn"><span class="tocnumber">22</span> <span class="toctext">Synthetic Dawn</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#Utopia"><span class="tocnumber">23</span> <span class="toctext">Utopia</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#Leviathans"><span class="tocnumber">24</span> <span class="toctext">Leviathans</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#Post-release_patches"><span class="tocnumber">25</span> <span class="toctext">Post-release patches</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Base_game"><span class="tocnumber">26</span> <span class="toctext">Base game</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Videos"><span class="tocnumber">27</span> <span class="toctext">Videos</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#References"><span class="tocnumber">28</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Nomads">Nomads</span></h2>
+<p>All developer diaries about the <i><a href="/Nomads.html" title="Nomads">Nomads</a></i> expansion and <a href="/Patch_4.4.html" title="Patch 4.4">patch 4.4</a> (aka Pegasus).
+</p>
+<table class="wikitable sortable" style="width:calc(100% - 350px);">
+<caption style="text-align:left;">Patch 4.4 (Pegasus)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>427</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1932666" class="extiw" title="forum:1932666">We've Had One, Yes. But What About Second Open Beta?</a></td>
+<td>4.5 open beta updated</td>
+<td>2026-07-02
+</td></tr>
+<tr>
+<td>426</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1931323" class="extiw" title="forum:1931323">The Art of Stellaris: Nomads - Part 3 of 3</a></td>
+<td>Part 3 of art development in <i>Nomads</i></td>
+<td>2026-06-25
+</td></tr>
+<tr>
+<td>426</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1931321" class="extiw" title="forum:1931321">The Art of Stellaris: Nomads - Part 2 of 3</a></td>
+<td>Part 2 of art development in <i>Nomads</i></td>
+<td>2026-06-25
+</td></tr>
+<tr>
+<td>426</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1930815" class="extiw" title="forum:1930815">The Art of Stellaris: Nomads - Part 1 of 3</a></td>
+<td>Part 1 of art development in <i>Nomads</i></td>
+<td>2026-06-25
+</td></tr>
+<tr>
+<td>425</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1929567" class="extiw" title="forum:1929567">Nomads Roam the Galaxy, What's Next?</a></td>
+<td>Retrospective on 4.4 and <i>Nomads</i> release and first hotfixes</td>
+<td>2026-06-18
+</td></tr>
+<tr>
+<td>424</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1927421" class="extiw" title="forum:1927421">Nomads and 4.4 'Pegasus' Preliminary Release Notes</a></td>
+<td>Overview of patch notes for <i>Nomads</i> and patch 4.4</td>
+<td>2026-06-11
+</td></tr>
+<tr>
+<td>423</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1926410" class="extiw" title="forum:1926410">Stellar Cannon, Civics, and The Hyacinth Found</a></td>
+<td>Stellar Cannon mechanics, overview of all civics from the DLC, settling and embarking, and a new preset empire</td>
+<td>2026-06-04
+</td></tr>
+<tr>
+<td>422</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1925192" class="extiw" title="forum:1925192">Defender of the Galaxy, Champion's Forge LIIIIIVE!, and Heirs of the Khan</a></td>
+<td>Defender of the Galaxy rework, <i>Heirs of the Khan​</i> origin, warfare mechanics for nomads, a new enclave and new paragons​</td>
+<td>2026-05-28
+</td></tr>
+<tr>
+<td>421</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1923728" class="extiw" title="forum:1923728">Contracts, Life on the Arkship, and Forever Cruise</a></td>
+<td>Contract mechanics, arkship colony mechanics, and the <i>Forever Cruiser</i> origin</td>
+<td>2026-05-21
+</td></tr>
+<tr>
+<td>420</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1922264" class="extiw" title="forum:1922264">Scientific Arkships, Waylines, and the Sacred Path</a></td>
+<td>Overview of arkship ship mechanics, waystations and waylines, and the <i>The Sacred Path</i> origin</td>
+<td>2026-05-14
+</td></tr>
+<tr>
+<td>419</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1920747" class="extiw" title="forum:1920747">Happy Decennial!</a></td>
+<td>10th anniversary content and the Voidfarers origin</td>
+<td>2026-05-07
+</td></tr>
+<tr>
+<td>418</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1919110" class="extiw" title="forum:1919110">Announcing Nomads and Stellaris: Season 10</a></td>
+<td>Overview of the Nomads expansion coming in 4.4 and discussion on 4.5 &amp; 4.6</td>
+<td>2026-04-30
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Infernals">Infernals</span></h2>
+<p>All developer diaries about the <i><a href="https://stellaris.paradoxwikis.com/Infernals" class="mw-redirect" title="Infernals">Infernals</a></i> species pack, <a href="/Patch_4.2.html" title="Patch 4.2">patch 4.2</a> (aka Corvus), and <a href="/Patch_4.3.html" title="Patch 4.3">patch 4.3</a> (aka Cetus).
+</p>
+<table class="wikitable sortable" style="width:calc(100% - 350px);">
+<caption style="text-align:left;">Patch 4.3 (Cetus)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>417</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1918530" class="extiw" title="forum:1918530">Situation Log Updated</a></td>
+<td>Look at changes to the situation log in the 4.4 'Pegasus' update</td>
+<td>2026-04-23
+</td></tr>
+<tr>
+<td>416</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1916931" class="extiw" title="forum:1916931">Quality of Life Improvements</a></td>
+<td>Release notes on 4.3.4 and a look at QoL improvements on UI</td>
+<td>2026-04-16
+</td></tr>
+<tr>
+<td>415</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1916168" class="extiw" title="forum:1916168">The Gamma Menace</a></td>
+<td>Mechanics to join or leave existing wars</td>
+<td>2026-04-09
+</td></tr>
+<tr>
+<td>414</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1914928" class="extiw" title="forum:1914928">Spinning a Web of Hope (Warning: Spiders)</a></td>
+<td>Portrait substitution setting</td>
+<td>2026-04-01
+</td></tr>
+<tr>
+<td>413</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1911946" class="extiw" title="forum:1911946">4.3 ‘Cetus’ Has Released, What’s Next?</a></td>
+<td>Discussion of potential future improvements</td>
+<td>2026-03-26
+</td></tr>
+<tr>
+<td>412</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1907742" class="extiw" title="forum:1907742">The 4.3.0 ‘Cetus’ Preliminary Release Notes</a></td>
+<td>Overview of patch notes for patch 4.3</td>
+<td>2026-03-11
+</td></tr>
+<tr>
+<td>411</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1904297" class="extiw" title="forum:1904297">Our Next 4.3 Experiment</a></td>
+<td>4.3 open beta updated</td>
+<td>2026-02-26
+</td></tr>
+<tr>
+<td>410</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1899301" class="extiw" title="forum:1899301">4.3 Performance Comparisons</a></td>
+<td>Performance comparison between 3.14 and 4.3</td>
+<td>2026-02-05
+</td></tr>
+<tr>
+<td>409</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1896112" class="extiw" title="forum:1896112">The 4.3 ‘Cetus’ Open Beta Continues</a></td>
+<td>4.3 open beta updated</td>
+<td>2026-01-22
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 4.2 (Corvus)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>408</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1887046" class="extiw" title="forum:1887046">2025 in Review</a></td>
+<td>Looking back at the highlights in the year 2025</td>
+<td>2025-12-18
+</td></tr>
+<tr>
+<td>407</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1887023" class="extiw" title="forum:1887023">The 4.3 ‘‘Cetus’’ Open Beta</a></td>
+<td>4.2.4 patch notes and release of 4.3 open beta</td>
+<td>2025-12-11
+</td></tr>
+<tr>
+<td>406</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1884109" class="extiw" title="forum:1884109">Infernals is Out, What’s Next?</a></td>
+<td>Discussion of performance and potential future improvements</td>
+<td>2025-12-04
+</td></tr>
+<tr>
+<td>405</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1876884" class="extiw" title="forum:1876884">4.2.0 “Corvus” and Infernals Species Pack Preliminary Release Notes</a></td>
+<td>Overview of patch notes for <i>Infernals</i> and patch 4.2</td>
+<td>2025-11-20
+</td></tr>
+<tr>
+<td>404</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1872508" class="extiw" title="forum:1872508">Red Giant and Galactic Hyperthermia</a></td>
+<td>Overview of <i>Red Giant</i> origin and <i>Galactic Hyperthermia</i> crisis</td>
+<td>2025-11-13
+</td></tr>
+<tr>
+<td>403</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1867457" class="extiw" title="forum:1867457">Cosmic Dawn, Civics, Infernal Shipset</a></td>
+<td>Overview of <i>Cosmic Dawn</i> origin, new civics, and concept art for Infernal shipset</td>
+<td>2025-11-06
+</td></tr>
+<tr>
+<td>402</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1865082" class="extiw" title="forum:1865082">Infernal Pops, Traits, and Volcanic Worlds</a></td>
+<td>Overview of new infernal species type and traits, and new volcanic planet class</td>
+<td>2025-10-30
+</td></tr>
+<tr>
+<td>401</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1863726" class="extiw" title="forum:1863726">Infernals Species Pack</a></td>
+<td>Announcement of <i>Infernals</i> species pack</td>
+<td>2025-10-23
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Shadows_of_the_Shroud">Shadows of the Shroud</span></h2>
+<p>All developer diaries about the <i><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud">Shadows of the Shroud</a></i> expansion and <a href="/Patch_4.1.html" title="Patch 4.1">patch 4.1</a> (aka Lyra).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 4.1 (Lyra)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>400</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1863710" class="extiw" title="forum:1863710">Art of the Shroud</a></td>
+<td>Review of art creation for <i>Shadows of the Shroud</i> portraits and ships</td>
+<td>2025-10-21
+</td></tr>
+<tr>
+<td>399</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1863156" class="extiw" title="forum:1863156">The Ongoing Plan</a></td>
+<td>Discussion of plans for upcoming hotfixes and patches</td>
+<td>2025-10-16
+</td></tr>
+<tr>
+<td>398</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1862299" class="extiw" title="forum:1862299">Ship Experiments</a></td>
+<td>Discussion of experiments with advanced, tiered ship designs</td>
+<td>2025-10-09
+</td></tr>
+<tr>
+<td>397</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1861259" class="extiw" title="forum:1861259">Shadows of the Shroud is Out, What’s Next? (Performance)</a></td>
+<td>Discussion of performance and potential future improvements</td>
+<td>2025-10-02
+</td></tr>
+<tr>
+<td>396</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1859133" class="extiw" title="forum:1859133">4.1 'Lyra' Preliminary Release Notes</a></td>
+<td>Preview of patch notes for <i>Shadows of the Shroud</i> and patch 4.1; overview of new <i>Chosen</i> civics and psionic advanced governments</td>
+<td>2025-09-16
+</td></tr>
+<tr>
+<td>395</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1858752" class="extiw" title="forum:1858752">THE END IS NEAR</a></td>
+<td>Overview of new <i>Endbringers</i> origin, <i>Entropy Drinkers</i> civic set, and proxy wars and <i>Secret Societies</i> civic</td>
+<td>2025-09-16
+</td></tr>
+<tr>
+<td>394</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1857861" class="extiw" title="forum:1857861">Mindwardens and Machines</a></td>
+<td>Overview of new <i>Mindwarden</i> enclave, <i>Shroud-Forged</i> origin, and <i>Tankbound</i> civic</td>
+<td>2025-09-11
+</td></tr>
+<tr>
+<td>393</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1857850" class="extiw" title="forum:1857850">Entities of the Shroud and Psionic Auras</a></td>
+<td>Overview of reworked and new shroud entities and psionic auras, along with the new <i>Experimental Sentencing</i> civic set</td>
+<td>2025-09-09
+</td></tr>
+<tr>
+<td>392</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1857849" class="extiw" title="forum:1857849">Psionic Ascension and Delving into the Shroud</a></td>
+<td>Overview of reworked psionic ascention and new shroud mechanics, along with the new <i>Superstitious Beliefs</i> civic set</td>
+<td>2025-09-04
+</td></tr>
+<tr>
+<td>391</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1857155" class="extiw" title="forum:1857155">Shadows of the Shroud</a></td>
+<td>Preview of features in <i>Shadows of the Shroud</i></td>
+<td>2025-09-02
+</td></tr>
+<tr>
+<td>390</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1857048" class="extiw" title="forum:1857048">4.0.23 Released, Visions of the Shroud</a></td>
+<td>Patch notes for 4.0.23 and teaser for <i>Shadows of the Shroud</i></td>
+<td>2025-08-28
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="BioGenesis">BioGenesis</span></h2>
+<p>All developer diaries about the <i><a href="/BioGenesis.html" title="BioGenesis">BioGenesis</a></i> expansion and <a href="/Patch_4.0.html" title="Patch 4.0">patch 4.0</a> (aka Phoenix).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 4.0 (Phoenix)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>389</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1856029" class="extiw" title="forum:1856029">4.0.22 Released, Upcoming Planet Improvements</a></td>
+<td>4.0.22 patch notes and preview of changes to planet view planned for patch 4.1</td>
+<td>2025-08-21
+</td></tr>
+<tr>
+<td>388</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1855177" class="extiw" title="forum:1855177">The Wilderness and 4.0.22 Preliminary Release Notes</a></td>
+<td>Overview of changes from Wilderness beta and preview of 4.0.22 patch notes</td>
+<td>2025-08-14
+</td></tr>
+<tr>
+<td>387</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1790658" class="extiw" title="forum:1790658">4.0.21 is Out, What's Next?</a></td>
+<td>Review of 4.0 cycle and look ahead to final 4.0 hotfix</td>
+<td>2025-06-19
+</td></tr>
+<tr>
+<td>386</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1775586" class="extiw" title="forum:1775586">Updates and a Wilderness Beta</a></td>
+<td>Announcement of Wilderness beta</td>
+<td>2025-06-12
+</td></tr>
+<tr>
+<td>385</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1756633" class="extiw" title="forum:1756633">AI Benchmarks</a></td>
+<td>4.0.13 patch notes and AI benchmarks</td>
+<td>2025-05-22
+</td></tr>
+<tr>
+<td>384</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1743548" class="extiw" title="forum:1743548">The Art of BioGenesis</a></td>
+<td>Art Team is showing off the work that's gone into event art, portraits, and bioships</td>
+<td>2025-05-15
+</td></tr>
+<tr>
+<td>383</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1742059" class="extiw" title="forum:1742059">4.0 has Released, What's Next?</a></td>
+<td>Discussion on the state of the release as well as patch notes for 4.0.2, 4.0.3, 4.0.4, and partial patch notes for upcoming 4.0.5</td>
+<td>2025-05-07
+</td></tr>
+<tr>
+<td>—</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1739072" class="extiw" title="forum:1739072">Stellaris 4.0 "Phoenix Update" Free Features</a></td>
+<td>Overview of pop groups, workforce, species modding, trade, logistics, MegaCorps, Planet UI, district specialization, and portraits</td>
+<td>2025-05-02
+</td></tr>
+<tr>
+<td>382</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1738361" class="extiw" title="forum:1738361">The Next Step in Evolution</a></td>
+<td>New civics and Behemoth Fury crisis path in <i>BioGenesis</i>; preliminary release notes of patch 4.0</td>
+<td>2025-04-30
+</td></tr>
+<tr>
+<td>381</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1737237" class="extiw" title="forum:1737237">Time to Get Wild</a></td>
+<td>The Hive Fallen Empire and the Wilderness origin</td>
+<td>2025-04-24
+</td></tr>
+<tr>
+<td>380</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1735708" class="extiw" title="forum:1735708">Defenders in the Stars</a></td>
+<td>Deep Space Citadel megastructure and Starlit Citadel origin​</td>
+<td>2025-04-17
+</td></tr>
+<tr>
+<td>379</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1734969" class="extiw" title="forum:1734969">You Are What You Eat</a></td>
+<td>16 new genetic Species Traits, including phenotype based traits, as well as the Evolutionary Predators Origin</td>
+<td>2025-04-10
+</td></tr>
+<tr>
+<td>378</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1734089" class="extiw" title="forum:1734089">Genetic Ascension, Traditions, and Advanced Governments</a></td>
+<td>Biomorphosis, our brand-new Genetic Ascension path, and all the squishy systems that come with it: situations, modular traditions, and genetically-themed Advanced Authorities</td>
+<td>2025-04-03
+</td></tr>
+<tr>
+<td>377</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1733299" class="extiw" title="forum:1733299">MEAT SHIPS MEAT SHIPS MEAT SHIPS</a></td>
+<td>Biological ships and mechanics</td>
+<td>2025-03-27
+</td></tr>
+<tr>
+<td>376</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1732204" class="extiw" title="forum:1732204">Announcing BioGenesis and Stellaris: Season 09</a></td>
+<td>Announcement and overview of <i>BioGenesis</i> DLC and Season 09 expansion pass</td>
+<td>2025-03-24
+</td></tr>
+<tr>
+<td>375</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1732159" class="extiw" title="forum:1732159">Notes on the Open Beta</a></td>
+<td>Reflection on open beta so far and preview of new Mandarin language advisor voice</td>
+<td>2025-03-20
+</td></tr>
+<tr>
+<td>374</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1731059" class="extiw" title="forum:1731059">Announcing the 3.99.0 "Phoenix" Open Beta</a></td>
+<td>Release announcement and overview of open beta for patch 4.0</td>
+<td>2025-03-11
+</td></tr>
+<tr>
+<td>373</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1730353" class="extiw" title="forum:1730353">4.0 Development Progress Update</a></td>
+<td>Progress update and overview of feature status for upcoming open beta</td>
+<td>2025-03-06
+</td></tr>
+<tr>
+<td>372</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1729994" class="extiw" title="forum:1729994">Modding: Pop Groups and Jobs</a></td>
+<td>Overview of modding changes to pops and jobs</td>
+<td>2025-02-27
+</td></tr>
+<tr>
+<td>371</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1729244" class="extiw" title="forum:1729244">4.0 Changes: Part 5</a></td>
+<td>Overview of changes to districts, buildings, and new feature: zones</td>
+<td>2025-02-20
+</td></tr>
+<tr>
+<td>370</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1728047" class="extiw" title="forum:1728047">4.0 Changes: Part 4</a></td>
+<td>Overview of changes to population mechanics</td>
+<td>2025-02-13
+</td></tr>
+<tr>
+<td>369</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1728017" class="extiw" title="forum:1728017">4.0 Changes: Part 3</a></td>
+<td>Overview of changes to trade mechanics and new logistics system as well as new mammalian portraits</td>
+<td>2025-02-06
+</td></tr>
+<tr>
+<td>368</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1727417" class="extiw" title="forum:1727417">4.0 Changes: Part 2</a></td>
+<td>Overview of empire focuses and the timeline, new origin <i>Hard Reset</i> for Synthetic Dawn, and changes to galaxy generation, leader trait selection, achievements, and events and notifications</td>
+<td>2025-01-30
+</td></tr>
+<tr>
+<td>367</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1726735" class="extiw" title="forum:1726735">4.0 Changes: Part 1</a></td>
+<td>Overview of precursor selection, databank, and changes to species modification and ship designer</td>
+<td>2025-01-23
+</td></tr>
+<tr>
+<td>366</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1726042" class="extiw" title="forum:1726042">Announcing Stellaris 4.0</a></td>
+<td>Overview of features in patch 4.0 coming in 2025 Q2</td>
+<td>2025-01-16
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Grand_Archive">Grand Archive</span></h2>
+<p>All developer diaries about the <i><a href="/Grand_Archive_(DLC).html" title="Grand Archive (DLC)">Grand Archive</a></i> story pack and <a href="/Patch_3.14.html" title="Patch 3.14">patch 3.14</a> (aka Circinus).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.14 (Circinus)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>365</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1719716" class="extiw" title="forum:1719716">2024 in Review</a></td>
+<td>Looking back at the highlights in the year 2024</td>
+<td>2024-12-12
+</td></tr>
+<tr>
+<td>364</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1717839" class="extiw" title="forum:1717839">Sights Unseen</a></td>
+<td>3.14.1592 release notes; things that might be explored and come in future versions</td>
+<td>2024-11-28
+</td></tr>
+<tr>
+<td>363</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1716083" class="extiw" title="forum:1716083">A Journey of Exploration</a></td>
+<td>Preview of patch notes for 3.14.1592; reflection on major patches over Stellaris's history and on feedback from diary 361</td>
+<td>2024-11-21
+</td></tr>
+<tr>
+<td>362</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1714596" class="extiw" title="forum:1714596">Overwhelming Forum Power</a></td>
+<td>Repost of hotfix 3.14.159 patch notes and follow-up on feedback to previous diary's questions</td>
+<td>2024-11-14
+</td></tr>
+<tr>
+<td>361</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1712933" class="extiw" title="forum:1712933">The Vision</a></td>
+<td>Reflection on the vision statement of Stellaris and thoughts on its future</td>
+<td>2024-11-07
+</td></tr>
+<tr>
+<td>360</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1712651" class="extiw" title="forum:1712651">The Archive is Open</a></td>
+<td>Reflection on release of 3.14 and <i>Grand Archive</i> plus transcript of recent developer Q&amp;A on Discord</td>
+<td>2024-10-31
+</td></tr>
+<tr>
+<td>359</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1711014" class="extiw" title="forum:1711014">Stellaris 3.14.1 'Circinus' Preliminary Release Notes</a></td>
+<td>Preview of 3.14.1 patch notes</td>
+<td>2024-10-24
+</td></tr>
+<tr>
+<td>358</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1710026" class="extiw" title="forum:1710026">New Life in the Galaxy</a></td>
+<td>2 new forms of Space Fauna - Cutholoids &amp; Voidworms; 2 new origins - Treasure Hunters &amp; Primal Calling</td>
+<td>2024-10-17
+</td></tr>
+<tr>
+<td>357</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1708290" class="extiw" title="forum:1708290">The Care and Feeding of Tiyanki</a></td>
+<td>The capture and domestication of spaceborne fauna, Domestication traditions, and the Beastmaster civics</td>
+<td>2024-10-10
+</td></tr>
+<tr>
+<td>356</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1706729" class="extiw" title="forum:1706729">Building a Grand Archive and Displaying Your Collection</a></td>
+<td>The Grand Archive structure, specimen collection and display mechanics, Archivism tranditions, and the Galactic Curator civics</td>
+<td>2024-10-03
+</td></tr>
+<tr>
+<td>355</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1704387" class="extiw" title="forum:1704387">It Belongs in a Vivarium: Announcing Grand Archive</a></td>
+<td>Overview of features in the <i>Grand Archive</i> story pack</td>
+<td>2024-09-26
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Cosmic_Storms">Cosmic Storms</span></h2>
+<p>All developer diaries about the <i><a href="https://stellaris.paradoxwikis.com/Cosmic_Storms" class="mw-redirect" title="Cosmic Storms">Cosmic Storms</a></i> expansion and <a href="/Patch_3.13.html" title="Patch 3.13">patch 3.13</a> (aka Vela).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.13 (Vela)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>354</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1704016" class="extiw" title="forum:1704016">Stellaris 3.13.1 'Vela' Preliminary Release Notes</a></td>
+<td>Preview of patch notes for 3.13.1</td>
+<td>2024-09-19
+</td></tr>
+<tr>
+<td>353</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1702970" class="extiw" title="forum:1702970">Cosmic Storms Post-Release</a></td>
+<td>Fixes and improvements to cosmic storms</td>
+<td>2024-09-12
+</td></tr>
+<tr>
+<td>352</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1702012" class="extiw" title="forum:1702012">Stellaris 3.13 'Vela' Improvements and Preliminary Release Notes</a></td>
+<td>Patch notes and information about other improvements</td>
+<td>2024-09-05
+</td></tr>
+<tr>
+<td>354</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1701039" class="extiw" title="forum:1701039">Storm Chaser Origin, Civics, and Precursors</a></td>
+<td>Reviewing the Origin and Civics of the <i>Cosmic Storms</i> Mechanical Expansion, and providing some information about the new Precursors</td>
+<td>2024-08-29
+</td></tr>
+<tr>
+<td>352</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1700303" class="extiw" title="forum:1700303">Storms and their Aftermath</a></td>
+<td>Overview of general storm mechanics</td>
+<td>2024-08-22
+</td></tr>
+<tr>
+<td>349</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1699154" class="extiw" title="forum:1699154">A Storm is Brewing: Announcing Cosmic Storms</a></td>
+<td>Overview of features in the <i>Cosmic Storms</i> expansion</td>
+<td>2024-08-15
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="The_Machine_Age">The Machine Age</span></h2>
+<p>All developer diaries about <i><a href="/The_Machine_Age.html" title="The Machine Age">The Machine Age</a></i> expansion and <a href="/Patch_3.12.html" title="Patch 3.12">patch 3.12</a> (aka Andromeda).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.12 (Andromeda)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>348</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1689016" class="extiw" title="forum:1689016">Tips From the Devs for the Stellaris Free Weekend!</a></td>
+<td>Gameplay tips for new players from the game developers</td>
+<td>2024-06-20
+</td></tr>
+<tr>
+<td>347</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1687549" class="extiw" title="forum:1687549">Stellaris 3.12.5 "Andromeda" Preliminary Release Notes</a></td>
+<td>Preview of patch notes for 3.12.5</td>
+<td>2024-06-13
+</td></tr>
+<tr>
+<td>346</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1682509" class="extiw" title="forum:1682509">3.12.3 Released and a Small Peek at the Future</a></td>
+<td>Patch notes for 3.12.3, and teaser of Cosmic Storms feature in 3.13</td>
+<td>2024-05-30
+</td></tr>
+<tr>
+<td>345</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1680653" class="extiw" title="forum:1680653">Upcoming 3.12.3 Improvements</a></td>
+<td>Preview of changes and improvements in patch 3.12.3</td>
+<td>2024-05-23
+</td></tr>
+<tr>
+<td>344</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1676584" class="extiw" title="forum:1676584">The Art of The Machine Age (Part II - Art Blast Edition)</a></td>
+<td>More about the art development in <i>The Machine Age</i></td>
+<td>2024-05-16
+</td></tr>
+<tr>
+<td>343</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1673718" class="extiw" title="forum:1673718">The Machine Age and Stellaris 3.12.1 'Andromeda' Preliminary Release Notes</a></td>
+<td>Patch notes and selected new modding documentation</td>
+<td>2024-05-02
+</td></tr>
+<tr>
+<td>342</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1666149" class="extiw" title="forum:1666149">The Art of the Machine Age (Part I)</a></td>
+<td>Overview of art development in <i>The Machine Age</i></td>
+<td>2024-04-25
+</td></tr>
+<tr>
+<td>341</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1665800" class="extiw" title="forum:1665800">Become the Crisis: Cosmogenesis</a></td>
+<td>Overview of new crisis path: <i>Cosmogenesis</i></td>
+<td>2024-04-18
+</td></tr>
+<tr>
+<td>340</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1662209" class="extiw" title="forum:1662209">A New Crisis, A Release Date, and Announcing the Stellaris: Season 08</a></td>
+<td>Announcement of release date for <i>The Machine Age</i> and <i>Stellaris: Season 08</i> expansion pass; teaser of new endgame crisis in <i>The Machine Age</i></td>
+<td>2024-04-11
+</td></tr>
+<tr>
+<td>339</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1657446" class="extiw" title="forum:1657446">Civics and Structures of The Machine Age, and Auto-Modding</a></td>
+<td>New civics, Kilostructures (Dyson Swarms &amp; Arc Furnace), and species auto-modification</td>
+<td>2024-04-04
+</td></tr>
+<tr>
+<td>338</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1648906" class="extiw" title="forum:1648906">Rick the Cube</a></td>
+<td>Rick the Cube robotic portrait</td>
+<td>2024-04-01
+</td></tr>
+<tr>
+<td>337</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1647802" class="extiw" title="forum:1647802">Individualistic Machines and Machine Gameplay Updates</a></td>
+<td>Overview of changes to Machine species and new individualist Machine empires and machine ascension situations</td>
+<td>2024-03-28
+</td></tr>
+<tr>
+<td>336</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1635464" class="extiw" title="forum:1635464">The Origins and Situations of The Machine Age</a></td>
+<td>Overview of new origins, situations, and advanced authorities in <i>The Machine Age</i></td>
+<td>2024-03-21
+</td></tr>
+<tr>
+<td>335</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1626445" class="extiw" title="forum:1626445">Announcing The Machine Age</a></td>
+<td>Overview of features in <i>The Machine Age</i> expansion</td>
+<td>2024-03-14
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Astral_Planes">Astral Planes</span></h2>
+<p>All developer diaries about the <i><a href="/Astral_Planes.html" title="Astral Planes">Astral Planes</a></i> narrative expansion, <a href="/Patch_3.10.html" title="Patch 3.10">patch 3.10</a> (aka Pyxis) and <a href="/Patch_3.11.html" title="Patch 3.11">patch 3.11</a> (aka Eridanus).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.11 (Eridanus)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>334</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1626112" class="extiw" title="forum:1626112">"Eridanus" Next Steps</a></td>
+<td>Preview of 3.12.2 bugfix, FAQ for expansion subscription, Q&amp;A transcript, and a teaser</td>
+<td>2024-03-07
+</td></tr>
+<tr>
+<td>333</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1625158" class="extiw" title="forum:1625158">3.11.1 "Eridanus" [0a36] Released, Introducing Stellaris Subscription Options</a></td>
+<td>Final patch notes for 3.11 and introduction of subscription options for <i>Stellaris</i> DLC</td>
+<td>2024-02-27
+</td></tr>
+<tr>
+<td>332</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1624797" class="extiw" title="forum:1624797">3.11 "Eridanus" Release Notes</a></td>
+<td>Preliminary patch notes for 3.11</td>
+<td>2024-02-22
+</td></tr>
+<tr>
+<td>331</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1624121" class="extiw" title="forum:1624121">Custodian Fixes in Eridanus</a></td>
+<td>Preview of Custodian team fixes and changes in the 3.11 update</td>
+<td>2024-02-15
+</td></tr>
+<tr>
+<td>330</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1623475" class="extiw" title="forum:1623475">Community Fixes in Eridanus</a></td>
+<td>Community modders who have their bugfixes incorporated into the 3.11 update</td>
+<td>2024-02-08
+</td></tr>
+<tr>
+<td>329</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1622766" class="extiw" title="forum:1622766">Technology Beta Wrapup</a></td>
+<td>Final results from the Technology Open Beta and an update to Resort Worlds</td>
+<td>2024-02-01
+</td></tr>
+<tr>
+<td>328</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1621627" class="extiw" title="forum:1621627">New Year, New Beta</a></td>
+<td>Feedback results and further adjustments to the technology open beta</td>
+<td>2024-01-18
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.10 (Pyxis)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>327</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1617230" class="extiw" title="forum:1617230">2023 in Review</a></td>
+<td>Review on the year 2023, and prospect for patch 3.11 (aka Eridanus)</td>
+<td>2023-12-21
+</td></tr>
+<tr>
+<td>326</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1616931" class="extiw" title="forum:1616931">3.10.4 "Pyxis" Released [e9b6] + Upcoming Holiday Tech Beta</a></td>
+<td>3.10.4 patch notes, and plans for a technology open beta</td>
+<td>2023-12-14
+</td></tr>
+<tr>
+<td>325</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1615735" class="extiw" title="forum:1615735">3.10.3 "Pyxis" Released [d2aa] + Further Beta Plans</a></td>
+<td>Along with 3.10.3 release, the Dev team shares plans for a Holiday Open Beta to collect feedback regarding potential balance changes to ship production, upkeep, and research</td>
+<td>2023-12-07
+</td></tr>
+<tr>
+<td>324</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1613909" class="extiw" title="forum:1613909">3.10.2 "Pyxis" Released [1cff] and December Plans</a></td>
+<td>3.10.2 patch notes, and plans for 3.10.3 &amp; 3.10.4</td>
+<td>2023-11-29
+</td></tr>
+<tr>
+<td>323</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1611945" class="extiw" title="forum:1611945">3.10.1 "Pyxis" Beta and Next Steps</a></td>
+<td>Release of the 3.10.1 beta, which includes a number of bugfixes, as well as hotkeys for the Tabbed Outliner.</td>
+<td>2023-11-21
+</td></tr>
+<tr>
+<td>322</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1608237" class="extiw" title="forum:1608237">3.10.0 "Pyxis" Custodian Features</a></td>
+<td>Custodian features coming in 3.10: leader consolidation and corresponding changes to council legitimacy, civics, traditions and ascension perks; outliner improvements; event chain subtitles; additional content browser</td>
+<td>2023-11-10
+</td></tr>
+<tr>
+<td>321</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1607609" class="extiw" title="forum:1607609">Origins and Civics</a></td>
+<td>1 new origin - Riftworld; 4 new civics - Hyperspace Specialty, Dimensional Worship, Dark Consortium, and Sovereign Guardianship; 2 new pre-scripted empires - The Certeran Covenant &amp; Guardianship of Nyrr</td>
+<td>2023-11-09
+</td></tr>
+<tr>
+<td>320</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1605581" class="extiw" title="forum:1605581">Astral Threads and Actions</a></td>
+<td>Introduction to astral threads &amp; astral actions</td>
+<td>2023-11-02
+</td></tr>
+<tr>
+<td>319</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1603418" class="extiw" title="forum:1603418">Astral Scars and Rifts</a></td>
+<td>Astral Rifts offering more opportunities for exploration into the mid and late game</td>
+<td>2023-10-26
+</td></tr>
+<tr>
+<td>318</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1602454" class="extiw" title="forum:1602454">Announcing Astral Planes</a></td>
+<td>Announcement of a new expansion (<i>Astral Planes</i>)</td>
+<td>2023-10-19
+</td></tr>
+<tr>
+<td>317</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1601522" class="extiw" title="forum:1601522">Ad astra per aspera</a></td>
+<td>Star Trek: Infinite, a new <i>Stellaris</i>-like game project, on which <i>Stellaris</i> players may feel interested</td>
+<td>2023-10-12
+</td></tr>
+<tr>
+<td>316</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1600649" class="extiw" title="forum:1600649">Leader Consolidation</a></td>
+<td>Leader Consolidation - changes to leaders' classes, roles, and traits</td>
+<td>2023-10-05
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Galactic_Paragons">Galactic Paragons</span></h2>
+<p>All developer diaries about the <i><a href="/Galactic_Paragons.html" title="Galactic Paragons">Galactic Paragons</a></i> expansion, <a href="/Patch_3.8.html" title="Patch 3.8">patch 3.8</a> (aka Gemini), and <a href="/Patch_3.9.html" title="Patch 3.9">patch 3.9</a> (aka Caelum).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.9 (Caelum)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>315</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1600119" class="extiw" title="forum:1600119">The Velvet Glove</a></td>
+<td>3.9.2 patch notes, plans about Diplomacy &amp; Trust, and some preliminary changes coming in 3.9.3</td>
+<td>2023-09-28
+</td></tr>
+<tr>
+<td>314</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1599477" class="extiw" title="forum:1599477">Pi in the Sky Ideas</a></td>
+<td>What Custodians have contributed to Stellaris as well as what they're planning for the future</td>
+<td>2023-09-21
+</td></tr>
+<tr>
+<td>313</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1598973" class="extiw" title="forum:1598973">3.9 'Caelum' is Out, What’s Next?</a></td>
+<td>Plans about patches 3.9.2 and 3.9.3</td>
+<td>2023-09-14
+</td></tr>
+<tr>
+<td>312</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1598278" class="extiw" title="forum:1598278">3.9 'Caelum' Patch Notes, and Ask Us Anything!</a></td>
+<td>3.9 patch notes</td>
+<td>2023-09-06
+</td></tr>
+<tr>
+<td>311</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1597477" class="extiw" title="forum:1597477">Chiseling Away</a></td>
+<td>First update to 3.9 open beta, and Steam Strategy Fest</td>
+<td>2023-08-31
+</td></tr>
+<tr>
+<td>310</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1596395" class="extiw" title="forum:1596395">Matters of Life and Death</a></td>
+<td>The Humanoids and Necroids species packs get new contents: a Tradition Tree, Ascension Perk, Traits, and Portraits; Trade gets a rebalance; A new socialist MegaCorp civic; Simplified Automation; More Habitat rework information; Now available 3.9 Open Beta</td>
+<td>2023-08-24
+</td></tr>
+<tr>
+<td>309</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1596199" class="extiw" title="forum:1596199">OK, Bloomer</a></td>
+<td>Improvements to the Environmentalists civic; new trait, new origin, and new portrait of Plantoid species; changes to enclave leaders; UI modding changes; interim leader XP updates</td>
+<td>2023-08-17
+</td></tr>
+<tr>
+<td>308</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1595636" class="extiw" title="forum:1595636">Rock On! (Also an Announcement Regarding Species Pack Pricing)</a></td>
+<td>Custodian changes coming to 3.9 on Lithoid species as well as species packs planned updates and changes in pricing</td>
+<td>2023-08-10
+</td></tr>
+<tr>
+<td>307</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1595085" class="extiw" title="forum:1595085">Leader Experiments</a></td>
+<td>Stellaris Summer Experiments with a focus on class-based leader limits</td>
+<td>2023-08-03
+</td></tr>
+<tr>
+<td>306</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1594678" class="extiw" title="forum:1594678">Habitat Experiments</a></td>
+<td>Some summer experiments relating to the Habitat system</td>
+<td>2023-07-27
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.8 (Gemini)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>305</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1591017" class="extiw" title="forum:1591017">Midsummer Festivities</a></td>
+<td><i>Stellaris</i> Free to Play weekend, <i>Stellaris</i> Nexus, a new Starter Pack, and a preview of coming Lithoid attractions</td>
+<td>2023-06-22
+</td></tr>
+<tr>
+<td>304</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1589870" class="extiw" title="forum:1589870">3.8.4 Released, What's Next?</a></td>
+<td>3.8.4 patch notes, some future plans, and an upcoming Free to Play weekend</td>
+<td>2023-06-15
+</td></tr>
+<tr>
+<td>303</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1587986" class="extiw" title="forum:1587986"> Stellaris with a Twist Community Event!</a></td>
+<td>Changes to ground combat in 3.8.4; 'Stellaris with a Twist' event to celebrate the 7th anniversary</td>
+<td>2023-06-01
+</td></tr>
+<tr>
+<td>302</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1586776" class="extiw" title="forum:1586776">Leaders and 3.8.3 Balance Changes</a></td>
+<td>3.8.3 patch notes; changes to leaders, level caps, and balance​; prioritization of bugs and balance; script improvements for councilors; a solution to the Out of Syncs issue</td>
+<td>2023-05-25
+</td></tr>
+<tr>
+<td>301</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1584568" class="extiw" title="forum:1584568">Galactic Paragons is out, what's next?</a></td>
+<td>Preview of next 3.8.X patch</td>
+<td>2023-05-16
+</td></tr>
+<tr>
+<td>300</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1581297" class="extiw" title="forum:1581297">Happy Anniversary! 3.8 "Gemini" and Galactic Paragons Release Notes</a></td>
+<td>Patch notes for 3.8 and <i>Galactic Paragons</i>, review of the last year of Stellaris</td>
+<td>2023-05-09
+</td></tr>
+<tr>
+<td>299</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1581135" class="extiw" title="forum:1581135">Civics, Origins, and Traditions</a></td>
+<td>Overview of new civics, origin, and traditions coming in Galactic Paragons</td>
+<td>2023-05-04
+</td></tr>
+<tr>
+<td>298</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1580535" class="extiw" title="forum:1580535">Renowned and Legendary Paragons</a></td>
+<td>Overview of the two paragon types – unique, scripted leaders, each with special content</td>
+<td>2023-05-02
+</td></tr>
+<tr>
+<td>297</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1579919" class="extiw" title="forum:1579919">Leaders, The Council, and Agendas</a></td>
+<td>Overview of the council, council agendas, and changes to leaders, with new traits and veteran classes</td>
+<td>2023-04-27
+</td></tr>
+<tr>
+<td>296</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1578898" class="extiw" title="forum:1578898">Announcing Galactic Paragons</a></td>
+<td>Announcement of <i>Galactic Paragons</i> expansion</td>
+<td>2023-04-25
+</td></tr>
+<tr>
+<td>295</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1578373" class="extiw" title="forum:1578373">Armies, Sectors, Messages, and More</a></td>
+<td>Overview of changes to army building, orbital bombardment, and fleet manager; introduction of new science ship automation options, new capital designations, sector editor, side menu reordering, and new toast notifications and message settings</td>
+<td>2023-04-20
+</td></tr>
+<tr>
+<td>294</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1577830" class="extiw" title="forum:1577830">3.8 'Gemini' Coop Open Beta Release Notes</a></td>
+<td>Announcement and preliminary patch notes for 3.8 open beta</td>
+<td>2023-04-13
+</td></tr>
+<tr>
+<td>293</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1577064" class="extiw" title="forum:1577064">Introducing Coop</a></td>
+<td>Two cooperative gameplay modes</td>
+<td>2023-04-06
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="First_Contact">First Contact</span></h2>
+<p>All developer diaries about the <i><a href="/First_Contact_(DLC).html" title="First Contact (DLC)">First Contact</a></i> story pack and <a href="/Patch_3.7.html" title="Patch 3.7">patch 3.7</a> (aka Canis Minor).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.7 (Canis Minor)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>292</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1576269" class="extiw" title="forum:1576269">3.7.4 Released, and Concepts</a></td>
+<td>Patch notes for 3.7.4, and preview of concepts tooltips coming in 3.8</td>
+<td>2023-03-30
+</td></tr>
+<tr>
+<td>291</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1575070" class="extiw" title="forum:1575070">First Contact is Out, What's Next?</a></td>
+<td>Post-launch support for 3.7 and First Contact story pack</td>
+<td>2023-03-23
+</td></tr>
+<tr>
+<td>290</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1572713" class="extiw" title="forum:1572713">We Have Contact (3.7.2 'Canis Minor' Patch Notes)</a></td>
+<td>Preliminary changelog and new achievements for 3.7</td>
+<td>2023-03-09
+</td></tr>
+<tr>
+<td>289</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1571051" class="extiw" title="forum:1571051">Hide and Seek</a></td>
+<td>Cloaking &amp; counter-cloaking systems and new low-tech civics</td>
+<td>2023-03-02
+</td></tr>
+<tr>
+<td>288</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1570096" class="extiw" title="forum:1570096">Payback and Insights</a></td>
+<td>A new origin (Payback) and Insight technologies</td>
+<td>2023-02-23
+</td></tr>
+<tr>
+<td>287</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1568932" class="extiw" title="forum:1568932">The Art of MSI</a></td>
+<td>Art development of MSI (Minamar Specialized Industries) in <i>First Contact</i> story pack</td>
+<td>2023-02-16
+</td></tr>
+<tr>
+<td>286</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1567756" class="extiw" title="forum:1567756">Fear and Archaeotechs in First Contact</a></td>
+<td>A new origin (Fear of the Dark)  and changes to archaeological mechanics</td>
+<td>2023-02-09
+</td></tr>
+<tr>
+<td>285</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1566837" class="extiw" title="forum:1566837">Observation and Awareness</a></td>
+<td>Observation events and interactions with pre-FTL civilizations in <i>First Contact</i> story pack</td>
+<td>2023-02-02
+</td></tr>
+<tr>
+<td>284</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1565984" class="extiw" title="forum:1565984">Broken Shackles</a></td>
+<td>Introducing a new origin (Broken Shackles)</td>
+<td>2023-01-26
+</td></tr>
+<tr>
+<td>283</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1565311" class="extiw" title="forum:1565311">The Vision of First Contact</a></td>
+<td>A summary of some features and why <i>First Contact</i> story pack comes out</td>
+<td>2023-01-19
+</td></tr>
+<tr>
+<td>282</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1564634" class="extiw" title="forum:1564634">Announcing First Contact</a></td>
+<td>Announcement of <i>First Contact</i> story pack</td>
+<td>2023-01-17
+</td></tr>
+<tr>
+<td>281</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1564622" class="extiw" title="forum:1564622">A Message from Minamar Specialized Industries</a></td>
+<td>Teaser for patch and DLC</td>
+<td>2023-01-12
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Toxoids">Toxoids</span></h2>
+<p>All developer diaries about the <a href="/Downloadable_content.html#Toxoids_Species_Pack" title="Downloadable content">Toxoids</a> species pack, <a href="/Patch_3.5.html" title="Patch 3.5">patch 3.5</a> (aka Fornax), and <a href="/Patch_3.6.html" title="Patch 3.6">patch 3.6</a> (aka Orion).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.6 (Orion)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>280</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1561918" class="extiw" title="forum:1561918">A Look Back at 2022</a></td>
+<td>Retrospective on Stellaris development over 2022</td>
+<td>2022-12-15
+</td></tr>
+<tr>
+<td>279</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1561272" class="extiw" title="forum:1561272">3.6.1, Holiday Beta, and More</a></td>
+<td>3.6.1 patch notes, 3.7 open beta, 2022 ModJam</td>
+<td>2022-12-08
+</td></tr>
+<tr>
+<td>278</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1560210" class="extiw" title="forum:1560210">Release the Hounds</a></td>
+<td>Post-launch support for 3.6 "Orion"</td>
+<td>2022-12-01
+</td></tr>
+<tr>
+<td>277</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1558111" class="extiw" title="forum:1558111">The Hunt is On (Stellaris 3.6 'Orion' Patch Notes)</a></td>
+<td>3.6 patch notes</td>
+<td>2022-11-23
+</td></tr>
+<tr>
+<td>276</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1557545" class="extiw" title="forum:1557545">Death is the Beginning</a></td>
+<td>Cordyceptic Drones civic and reanimated leviathans</td>
+<td>2022-11-17
+</td></tr>
+<tr>
+<td>275</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1556263" class="extiw" title="forum:1556263">Bless Thy Soul</a></td>
+<td>Holy Covenant federation type</td>
+<td>2022-11-10
+</td></tr>
+<tr>
+<td>274</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1553442" class="extiw" title="forum:1553442">3.6.0.beta.final.final(1)v2 Copy</a></td>
+<td>November 1st Update to the 3.6 "Orion" Open Beta</td>
+<td>2022-11-01
+</td></tr>
+<tr>
+<td>273</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1551193" class="extiw" title="forum:1551193">A Peek into the Future</a></td>
+<td>New UI elements and a partial list of changes coming in the next update to the 3.6 "Orion" Open beta</td>
+<td>2022-10-27
+</td></tr>
+<tr>
+<td>272</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1549045" class="extiw" title="forum:1549045">The Pact is Signed and Spoken</a></td>
+<td>Changes to Covenants and Psionic Ascension, more Accessibility Features, and an Open Beta changelog</td>
+<td>2022-10-20
+</td></tr>
+<tr>
+<td>271</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1546912" class="extiw" title="forum:1546912">Ready…? Fight!</a></td>
+<td>Fleet combat rebalance and the 3.6 "Orion" Open Beta</td>
+<td>2022-10-13
+</td></tr>
+<tr>
+<td>270</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1545411" class="extiw" title="forum:1545411">Traditional Results (of Summer Experiments)</a></td>
+<td>Rework of ascension paths: new ascension perks &amp; tradition trees of Psionic, Genetic, Cybernetic and Synthetic Ascension Paths</td>
+<td>2022-10-06
+</td></tr>
+<tr>
+<td>269</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1545181" class="extiw" title="forum:1545181">Digging a Grave, and Galactic Matters</a></td>
+<td>Tiyanki Graveyard and new galaxy shapes coming in 3.6</td>
+<td>2022-09-29
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.5 (Fornax)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>268</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1543734" class="extiw" title="forum:1543734">Toxoids are Among Us, What's Next? (Plus a Transcript!)</a></td>
+<td>3.5.2 hotfix, future plans about 3.6 "Orion", and September 19th Discord Q&amp;A Transcript</td>
+<td>2022-09-22
+</td></tr>
+<tr>
+<td>267</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1542303" class="extiw" title="forum:1542303">3.5 'Fornax' Patch Notes, AI, Performance, and Modding</a></td>
+<td>3.5 Changelog, as well as details on improvements coming to AI, Performance, and Modding in the 3.5 "Fornax" Update</td>
+<td>2022-09-15
+</td></tr>
+<tr>
+<td>266</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1541892" class="extiw" title="forum:1541892">Rise a Knight!</a></td>
+<td>Overview of the other new origin (Knights of the Toxic God)</td>
+<td>2022-09-13
+</td></tr>
+<tr>
+<td>265</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1541053" class="extiw" title="forum:1541053">The Art of Toxoid Clothing</a></td>
+<td>Toxoid portraits designs, especially their clothing designs</td>
+<td>2022-09-08
+</td></tr>
+<tr>
+<td>264</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1540846" class="extiw" title="forum:1540846">Damn the Consequences</a></td>
+<td>Overview of Overtuned origin, new species traits, new civics, and new Detox ascension perk</td>
+<td>2022-09-06
+</td></tr>
+<tr>
+<td>263</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1540104" class="extiw" title="forum:1540104">Announcing Toxoids</a></td>
+<td>Announcement of Toxoids species pack</td>
+<td>2022-09-01
+</td></tr>
+<tr>
+<td>262</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1539348" class="extiw" title="forum:1539348">Ringworlds, Reliquaries, Relics, and More</a></td>
+<td>Preview of outliner section for megastructures, accessibility improvements, changes to Caravaneer reliquary purchases, more species pack achievements, further relic balance changes</td>
+<td>2022-08-25
+</td></tr>
+<tr>
+<td>261</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1538708" class="extiw" title="forum:1538708">Challenge Accepted</a></td>
+<td>New difficulty settings, species pack achievements</td>
+<td>2022-08-18
+</td></tr>
+<tr>
+<td>260</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1536047" class="extiw" title="forum:1536047">Summer Culture</a></td>
+<td>Rework of culture workers</td>
+<td>2022-07-21
+</td></tr>
+<tr>
+<td>259</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1534749" class="extiw" title="forum:1534749">It Belongs in a Mega-Art Installation!</a></td>
+<td>Relic balance changes</td>
+<td>2022-07-07
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Overlord">Overlord</span></h2>
+<p>All developer diaries about the <i><a href="/Overlord_(DLC).html" title="Overlord (DLC)">Overlord</a></i> expansion, and <a href="/Patch_3.4.html" title="Patch 3.4">patch 3.4</a> (aka Cepheus).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.4 (Cepheus)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>258</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1531115" class="extiw" title="forum:1531115">3.4.4 'Cepheus' Information</a></td>
+<td>Patch notes for 3.4.4</td>
+<td>2022-06-16
+</td></tr>
+<tr>
+<td>257</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1530184" class="extiw" title="forum:1530184">Summer is Coming...</a></td>
+<td>Overview of various developers' summer experiments</td>
+<td>2022-06-09
+</td></tr>
+<tr>
+<td>256</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1529138" class="extiw" title="forum:1529138">Making a Station</a></td>
+<td>Overview of art development with Salvagers enclave station as example</td>
+<td>2022-06-02
+</td></tr>
+<tr>
+<td>255</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1527771" class="extiw" title="forum:1527771">Overlord Q&amp;A</a></td>
+<td>May 5th Discord Q&amp;A transcript</td>
+<td>2022-05-26
+</td></tr>
+<tr>
+<td>254</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1526372" class="extiw" title="forum:1526372">3.4.3 'Cepheus' Patch Released (Checksum 9d15)... What's Next?</a></td>
+<td>2022-05-19
+</td></tr>
+<tr>
+<td>253</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1523352" class="extiw" title="forum:1523352">Three in One 3.4 'Cepheus' Patch Notes and more!</a></td>
+<td>Patch notes, modability changes, and the Progenitor Hive Origin reveal.</td>
+<td>2022-05-05
+</td></tr>
+<tr>
+<td>252</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1521980" class="extiw" title="forum:1521980">Artificial and Automated Intelligence</a></td>
+<td>Update on the AI refinements and Sector automation from the Custodian team to 3.4 and the Subterranean Origin reveal.</td>
+<td>2022-04-28
+</td></tr>
+<tr>
+<td>251</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1521209" class="extiw" title="forum:1521209">All Roads Lead to Deneb IIb</a></td>
+<td>Discussion on the Hyper Relays and their function as well as potential benefit to creating a network of them. Reveal of achievement icons, new flag background colors, symbols, and patterns.</td>
+<td>2022-04-21
+</td></tr>
+<tr>
+<td>250</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1520106" class="extiw" title="forum:1520106">Elevating Civilization</a></td>
+<td>Walk through of Orbital Rings and their new starbase buildings, Quantum Catapult megastructure, the Scholarium specialist vassal empire, more specialist holdings, and new Galactic Community resolutions</td>
+<td>2022-04-14
+</td></tr>
+<tr>
+<td>249</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1518971" class="extiw" title="forum:1518971">New Friends</a></td>
+<td>Reveal of three new enclaves (Salvagers, Shroudwalkers, and Mercenary), the Bulwark specialist vassal empire, more Overlord holdings, the Imperial Fiefdom civic</td>
+<td>2022-04-07
+</td></tr>
+<tr>
+<td>248</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1517982" class="extiw" title="forum:1517982">Special Prospects</a></td>
+<td>A look at the Prospectorium​ specialist vassal empire and a glance at new origin icons with their names</td>
+<td>2022-03-31
+</td></tr>
+<tr>
+<td>247</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1516799" class="extiw" title="forum:1516799">New Ways to Rule</a></td>
+<td>Review of negotiation of terms for vassals, spending vassal loyalty, and a glance at Overlord holdings</td>
+<td>2022-03-24
+</td></tr>
+<tr>
+<td>246</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1515008" class="extiw" title="forum:1515008">Announcing Overlord</a></td>
+<td>Announcement of the <i>Overlord</i> expansion pack and vassalization mechanic overhaul</td>
+<td>2022-03-17
+</td></tr>
+<tr>
+<td>245</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1514701" class="extiw" title="forum:1514701">We have a Situation</a></td>
+<td>Explanation and walk-through of the upcoming Situations system and its scope</td>
+<td>2022-03-10
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Aquatics">Aquatics</span></h2>
+<p>All developer diaries about the <a href="/Downloadable_content.html#Aquatics_Species_Pack" title="Downloadable content">Aquatics</a> species pack, <a href="/Patch_3.2.html" title="Patch 3.2">patch 3.2</a> (aka Herbert), and <a href="/Patch_3.3.html" title="Patch 3.3">patch 3.3</a> (aka Libra).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.3 (Libra)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>244</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1513786" class="extiw" title="forum:1513786">A Time for Change</a></td>
+<td>Announcement of the change of game director from Daniel Moregard to Stephen Muray</td>
+<td>2022-03-03
+</td></tr>
+<tr>
+<td>243</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1512662" class="extiw" title="forum:1512662">3.3 'Libra' is out, now what?</a></td>
+<td>Patch notes for 3.3.2, and some planned goals for influence, espionage and Idyllic Bloom in 3.4</td>
+<td>2022-02-24
+</td></tr>
+<tr>
+<td>242</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1511705" class="extiw" title="forum:1511705">3.3 'Libra' Patch Notes and Release Date Announcement</a></td>
+<td>Patch notes for 3.3.1</td>
+<td>2022-02-17
+</td></tr>
+<tr>
+<td>241</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1509928" class="extiw" title="forum:1509928">Unity Open Beta and the Dev Clash</a></td>
+<td>Unity Open Beta changelogs, and the Dev Clash Season 3</td>
+<td>2022-02-10
+</td></tr>
+<tr>
+<td>240</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1508908" class="extiw" title="forum:1508908">Scripting Improvements in 3.3</a></td>
+<td>Scripting changes &amp; improvements</td>
+<td>2022-02-03
+</td></tr>
+<tr>
+<td>239</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1508186" class="extiw" title="forum:1508186">AI++</a></td>
+<td>Further improvements to AI performance in 3.3</td>
+<td>2022-01-27
+</td></tr>
+<tr>
+<td>238</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1507174" class="extiw" title="forum:1507174">Ascensions, Betas, and More</a></td>
+<td>Quick overview of the new Planetary Ascension tiers, unity generation, and Permanent Employment megacorp civic. Dev Clash announced, and 3.3 Beta release.</td>
+<td>2022-01-20
+</td></tr>
+<tr>
+<td>237</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1506491" class="extiw" title="forum:1506491">Reworking Unity, Part One</a></td>
+<td>Planned changes to unity generation and administrative capacity in 3.3</td>
+<td>2022-01-13
+</td></tr>
+<tr>
+<td>236</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1502586" class="extiw" title="forum:1502586">Happy Holidays and thanks for all the fish</a></td>
+<td>Review of 2021 Stellaris releases. Holiday hiatus announced until January 13th 2022.</td>
+<td>2021-12-09
+</td></tr>
+<tr>
+<td>235</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1501330" class="extiw" title="forum:1501330">AI feedback and future plans</a></td>
+<td>Planned goals for AI updates in 3.3</td>
+<td>2021-12-02
+</td></tr>
+<tr>
+<td>234</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1499640" class="extiw" title="forum:1499640">Aquatics and 3.2 are out, now what?</a></td>
+<td>Update on Custodian priorities post patch</td>
+<td>2021-11-25
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.2 (Herbert)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>233</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1498294" class="extiw" title="forum:1498294">Aquatics &amp; 3.2 'Herbert' Patch Notes</a></td>
+<td>Patch notes for the 3.2 update</td>
+<td>2021-11-18
+</td></tr>
+<tr>
+<td>232</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1497227" class="extiw" title="forum:1497227">3.2 Balance Changes and Performance Improvements</a></td>
+<td>Improvements to balance and performance</td>
+<td>2021-11-11
+</td></tr>
+<tr>
+<td>231</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1496549" class="extiw" title="forum:1496549">Aquatics Portraits and Art</a></td>
+<td>Preview and design process of the Aquatic Species Pack portraits and animations</td>
+<td>2021-11-04
+</td></tr>
+<tr>
+<td>230</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1495959" class="extiw" title="forum:1495959">The Art of Aquatics Ships &amp; the Drake</a></td>
+<td>A look at how the Aquatics Species Pack ships and the Aquatic Dragon were developed</td>
+<td>2021-10-28
+</td></tr>
+<tr>
+<td>229</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1495333" class="extiw" title="forum:1495333">Aquatics Species Pack</a></td>
+<td>Announcement of the new species pack - Aquatics Species Pack</td>
+<td>2021-10-21
+</td></tr>
+<tr>
+<td>228</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1494598" class="extiw" title="forum:1494598">New Content &amp; Features in 3.2</a></td>
+<td>New Pompous Purists civic, new options for anomalies, events for terraformation and a fix for AI terraforming</td>
+<td>2021-10-14
+</td></tr>
+<tr>
+<td>227</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1493900" class="extiw" title="forum:1493900">Looking after the AI</a></td>
+<td>Improvements to AI economic script</td>
+<td>2021-10-07
+</td></tr>
+<tr>
+<td>226</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1493021" class="extiw" title="forum:1493021">Custodians &amp; Next Steps</a></td>
+<td>Update on the future patches: 3.2 planned for November and 3.3 for February</td>
+<td>2021-09-30
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Nemesis">Nemesis</span></h2>
+<p>All developer diaries about the <i><a href="/Nemesis.html" title="Nemesis">Nemesis</a></i> expansion, <a href="/Patch_3.0.html" title="Patch 3.0">patch 3.0</a> (aka Dick) and <a href="/Patch_3.1.html" title="Patch 3.1">patch 3.1</a> (aka Lem).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.1 (Lem)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>225</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1492090" class="extiw" title="forum:1492090">3.1.2 "Lem" Patch Update</a></td>
+<td>Patch notes for the 3.1.2 update</td>
+<td>2021-09-23
+</td></tr>
+<tr>
+<td>224</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1491139" class="extiw" title="forum:1491139">Lem is out, what now?</a></td>
+<td>Transcript of the Q&amp;A with developers and new wallpapers</td>
+<td>2021-09-16
+</td></tr>
+<tr>
+<td>223</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1489290" class="extiw" title="forum:1489290">Release Date and Patch Notes for the 3.1 Lem Update</a></td>
+<td>Patch notes for the 3.1 Lem update and announcement of release date on September 14 2021</td>
+<td>2021-09-09
+</td></tr>
+<tr>
+<td>222</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1489225" class="extiw" title="forum:1489225">Moddability Updates in Lem</a></td>
+<td>An in depth dev diary on new changes to modding including variable changes, sprite sheets, randomness being actually random, and modder early access request</td>
+<td>2021-09-02
+</td></tr>
+<tr>
+<td>221</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1488586" class="extiw" title="forum:1488586">Balance and Quality of Life Improvements</a></td>
+<td>Balance notes on changes to Void Dwellers and Shattered Rings; QoL notes on Ecumenopolises and other assorted items; additional information on Civic balance changes</td>
+<td>2021-08-26
+</td></tr>
+<tr>
+<td>220</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1487837" class="extiw" title="forum:1487837">Additions to Humanoids Species Pack</a></td>
+<td>Dev diary provided new information on the three new civics (masterful crafters, pleasure seekers, and clone army) added to the Humanoids species pack</td>
+<td>2021-08-19
+</td></tr>
+<tr>
+<td>219</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1485675" class="extiw" title="forum:1485675">Selectable Traditions</a></td>
+<td>Select-able traditions discussion as well as an overview of changes to existing traditions and three new traditions coming in the Lem update</td>
+<td>2021-08-12
+</td></tr>
+<tr>
+<td>218</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1484906" class="extiw" title="forum:1484906">Plantoids Gameplay</a></td>
+<td>Post break review of three new traits and two new civics for plantoids in the Lem update</td>
+<td>2021-08-05
+</td></tr>
+<tr>
+<td>217</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1481456" class="extiw" title="forum:1481456">Custodians Feedback and Q&amp;A Transcript</a></td>
+<td>Solicited feedback and Community Feedback review and the Discord Q&amp;A transcript</td>
+<td>2021-07-01
+</td></tr>
+<tr>
+<td>216</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1479851" class="extiw" title="forum:1479851">Changes to Necroids Content in the Lem Update</a></td>
+<td>Discussion of updates that will be found regarding the Necroids, Necroid Hiveminds, Death Cults, and Reanimated Armies</td>
+<td>2021-06-17
+</td></tr>
+<tr>
+<td>215</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1478888" class="extiw" title="forum:1478888">Gameplay themes &amp; Balancing considerations</a></td>
+<td>Broad overview of direction for Species pack gameplay themes, future balancing changes, and Unity &amp; Empire sprawl brainstorming</td>
+<td>2021-06-10
+</td></tr>
+<tr>
+<td>214</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1477655" class="extiw" title="forum:1477655">Announcing "The Custodians" initiative and the free Lem Update</a></td>
+<td>Announcement of the division of the Stellaris team into a maintaining team and an expansions team as well as a look at future update processes</td>
+<td>2021-06-03
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 3.0 (Dick)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>211</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1472418" class="extiw" title="forum:1472418">3.0.3 Beta Updates</a></td>
+<td>Highlighting changes planned in version 3.0.3 and that is currently available in the beta branch</td>
+<td>2021-05-06
+</td></tr>
+<tr>
+<td>210</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1469017" class="extiw" title="forum:1469017">A post-Nemesis address</a></td>
+<td>Addressing issues and complaints with version 3.0 'Dick'</td>
+<td>2021-04-22
+</td></tr>
+<tr>
+<td>209</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1466998" class="extiw" title="forum:1466998">Nemesis - Attack of the Patch Notes</a></td>
+<td>Patch notes for version 3.0.1</td>
+<td>2021-04-14
+</td></tr>
+<tr>
+<td>208</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1466104" class="extiw" title="forum:1466104">Nemesis patch notes</a></td>
+<td>Patch notes for version 3.0</td>
+<td>2021-04-08
+</td></tr>
+<tr>
+<td>207</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1465211" class="extiw" title="forum:1465211">Challenging Origins</a></td>
+<td>April Fools' Day joke</td>
+<td>2021-04-01
+</td></tr>
+<tr>
+<td>206</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1464165" class="extiw" title="forum:1464165">Directing Nemesis</a></td>
+<td>Daniel Moregård discusses the challenges in creating and balancing systems in <i>Nemesis</i></td>
+<td>2021-03-25
+</td></tr>
+<tr>
+<td>205</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1462688" class="extiw" title="forum:1462688">Announcing the 3.0 'Dick' Update</a></td>
+<td>Announcement of the 3.0 (Philip K. Dick patch) version of Stellaris and some changes to announced features</td>
+<td>2021-03-18
+</td></tr>
+<tr>
+<td>204</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1461327" class="extiw" title="forum:1461327">Scripting Language and Moddability Improvements</a></td>
+<td>Changes to the scripting language/modding in 3.0</td>
+<td>2021-03-11
+</td></tr>
+<tr>
+<td>203</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1460183" class="extiw" title="forum:1460183">VFX in Nemesis</a></td>
+<td>A look at the VFX of <i>Nemesis</i></td>
+<td>2021-03-04
+</td></tr>
+<tr>
+<td>202</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1458810" class="extiw" title="forum:1458810">Nemesis Ship Set &amp; Art Direction</a></td>
+<td>Discussion on the ship art and design process</td>
+<td>2021-02-25
+</td></tr>
+<tr>
+<td>201</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1457502" class="extiw" title="forum:1457502">Galactic Imperium</a></td>
+<td>The creation and effects of a Galactic Imperium</td>
+<td>2021-02-18
+</td></tr>
+<tr>
+<td>200</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1456176" class="extiw" title="forum:1456176">The Custodian</a></td>
+<td>Custodian, their diplomatic options and ships</td>
+<td>2021-02-11
+</td></tr>
+<tr>
+<td>199</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1455143" class="extiw" title="forum:1455143">Become the Crisis</a></td>
+<td>Announcement of <i>Nemesis</i> and preview of the player-controlled crisis</td>
+<td>2021-02-04
+</td></tr>
+<tr>
+<td>198</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1454011" class="extiw" title="forum:1454011">Provocations</a></td>
+<td>Discussion on operations of an aggressive nature</td>
+<td>2021-01-28
+</td></tr>
+<tr>
+<td>197</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1453138" class="extiw" title="forum:1453138">Operations and Assets</a></td>
+<td>A look on spy Operations and Assets</td>
+<td>2021-01-21
+</td></tr>
+<tr>
+<td>196</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1452177" class="extiw" title="forum:1452177">[REDACTED]</a></td>
+<td>Introduction to the concepts and basic mechanics of Spy Networks</td>
+<td>2021-01-14
+</td></tr>
+<tr>
+<td>195</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1448591" class="extiw" title="forum:1448591">Happy Holidays &amp; Help Stellaris</a></td>
+<td>Espionage announcement and open job positions</td>
+<td>2020-12-17
+</td></tr>
+<tr>
+<td>194</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1445955" class="extiw" title="forum:1445955">Intel</a></td>
+<td>Introduction to the concepts and basic mechanics of Intel</td>
+<td>2020-12-03
+</td></tr>
+<tr>
+<td>193</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1444592" class="extiw" title="forum:1444592">Signal Discovered</a></td>
+<td>A look at the updated first contact mechanics</td>
+<td>2020-11-26
+</td></tr>
+<tr>
+<td>192</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1443169" class="extiw" title="forum:1443169">Perfectly Balanced, As All Things Should Be...</a></td>
+<td>Rework of population growth, changes to buildings and districts due to this as well as updates from the two previous Development diaries</td>
+<td>2020-11-19
+</td></tr>
+<tr>
+<td>191</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1441846" class="extiw" title="forum:1441846">And Yet It Moves</a></td>
+<td>Discussion on experimental rework of colony automation and pop resettlement</td>
+<td>2020-11-12
+</td></tr>
+<tr>
+<td>190</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1440749" class="extiw" title="forum:1440749">Leading Economic Indicators</a></td>
+<td>A new district and reworked building slots</td>
+<td>2020-11-05
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Necroids">Necroids</span></h2>
+<p>All developer diaries about the <a href="/Downloadable_content.html#Necroids_Species_Pack" title="Downloadable content">Necroids</a> species pack and <a href="/Patch_2.8.html" title="Patch 2.8">patch 2.8</a> (aka Butler).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.8 (Butler)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>189</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1438208" class="extiw" title="forum:1438208">Necroids 2.8 Patch Notes &amp; Update</a></td>
+<td>Patch notes for 2.8</td>
+<td>2020-10-22
+</td></tr>
+<tr>
+<td>188</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1436338" class="extiw" title="forum:1436338">Necroid Characters &amp; the Art process</a></td>
+<td>A look at how the Necroids species pack characters/portraits were developed</td>
+<td>2020-10-15
+</td></tr>
+<tr>
+<td>187</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1433614" class="extiw" title="forum:1433614">Post-mortem</a></td>
+<td>A reveal of the Necrophage origin and mechanics as well as additional details on Reanimated Armies</td>
+<td>2020-10-08
+</td></tr>
+<tr>
+<td>186</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1429333" class="extiw" title="forum:1429333">Necroid Ships &amp; the Art Process</a></td>
+<td>A walkthrough of the design process for a species ship set focusing on Necroids</td>
+<td>2020-10-01
+</td></tr>
+<tr>
+<td>185</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1426928" class="extiw" title="forum:1426928">Announcing Necroids</a></td>
+<td>Announcement of the Necroids species pack</td>
+<td>2020-09-24
+</td></tr>
+<tr>
+<td>184</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1421077" class="extiw" title="forum:1421077">Fwd: Notice of Termination</a></td>
+<td>On the topic of Death Cults and their sacrificial edicts</td>
+<td>2020-09-17
+</td></tr>
+<tr>
+<td>183</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1420989" class="extiw" title="forum:1420989">Memory Allocation</a></td>
+<td>Here, a new civic to remember us by</td>
+<td>2020-09-10
+</td></tr>
+<tr>
+<td>182</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1416409" class="extiw" title="forum:1416409">The Perils of Scripting and How to Avoid Them</a></td>
+<td>How to write scripts to interact with the game; the best practices for mod creators</td>
+<td>2020-09-03
+</td></tr>
+<tr>
+<td>181</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1413671" class="extiw" title="forum:1413671">Threading and Loading Times</a></td>
+<td>Discussion on threading in <i>Stellaris</i> and startup time improvements</td>
+<td>2020-08-27
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Federations">Federations</span></h2>
+<p>All developer diaries about the <i><a href="/Federations_(DLC).html" title="Federations (DLC)">Federations</a></i> expansion, <a href="/Patch_2.6.html" title="Patch 2.6">patch 2.6</a> (aka Verne) and <a href="/Patch_2.7.html" title="Patch 2.7">patch 2.7</a> (aka Wells).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.7 (Wells)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>—</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1401998" class="extiw" title="forum:1401998">Dev Diary Summer Hiatus</a></td>
+<td>The Swedish summer downtime is upon us</td>
+<td>2020-06-26
+</td></tr>
+<tr>
+<td>180</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1389972" class="extiw" title="forum:1389972">DLC Visibility Experiment</a></td>
+<td>Experimentation on how DLC is shown in game</td>
+<td>2020-05-14
+</td></tr>
+<tr>
+<td>179</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1388636" class="extiw" title="forum:1388636">4th Anniversary &amp; 2.7 'Wells' Update</a></td>
+<td>A look at the space journey Stellaris had over the past years</td>
+<td>2020-05-07
+</td></tr>
+<tr>
+<td>178</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1387243" class="extiw" title="forum:1387243">Federal improvements (UI and more!)</a></td>
+<td>Improvements to federations for the upcoming free update</td>
+<td>2020-04-30
+</td></tr>
+<tr>
+<td>177</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1384129" class="extiw" title="forum:1384129">Edict Rework</a></td>
+<td>A subject dear to the hearts of many galactic rulers - namely Edicts</td>
+<td>2020-04-23
+</td></tr>
+<tr>
+<td>176</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1374570" class="extiw" title="forum:1374570">Habitat Tiers</a></td>
+<td>Upcoming changes to habitats, their districts, buildings and tech</td>
+<td>2020-04-09
+</td></tr>
+<tr>
+<td>175</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1370464" class="extiw" title="forum:1370464">Space Fauna</a></td>
+<td>Space creatures tweaks and resolutions related to them</td>
+<td>2020-04-03
+</td></tr>
+<tr>
+<td>174</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1365744" class="extiw" title="forum:1365744">Federations is out, now what?</a></td>
+<td>A mention of Tiyanki improvements in the May update</td>
+<td>2020-03-26
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.6 (Verne)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>173</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1354520" class="extiw" title="forum:1354520">Federations is soon upon us! (with patch notes)</a></td>
+<td>Patch notes for 2.6</td>
+<td>2020-03-12
+</td></tr>
+<tr>
+<td>172</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1348837" class="extiw" title="forum:1348837">Reworking the AI</a></td>
+<td>A look at the AI mechanics and plans to improve it.</td>
+<td>2020-03-05
+</td></tr>
+<tr>
+<td>170</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1335134" class="extiw" title="forum:1335134">Performance and other technical issues</a></td>
+<td>Summary of causes of performance issues and a demonstration of the improvement.</td>
+<td>2020-02-20
+</td></tr>
+<tr>
+<td>169</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1328482" class="extiw" title="forum:1328482">Origins Q&amp;A</a></td>
+<td>Q&amp;A related to Origins events, civics and Fallen Empires' Origins</td>
+<td>2020-02-13
+</td></tr>
+<tr>
+<td>168</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1322768" class="extiw" title="forum:1322768">Diplomacy Q&amp;A</a></td>
+<td>Q&amp;A sessions about General Diplomacy, Diplomatic stances, Diplomatic Weight, Diplomatic Relations, and Envoys</td>
+<td>2020-02-06
+</td></tr>
+<tr>
+<td>167</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1316394" class="extiw" title="forum:1316394">Galactic Community Q&amp;A</a></td>
+<td>Q&amp;A sessions about the Galactic Community</td>
+<td>2020-01-30
+</td></tr>
+<tr>
+<td>166</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1313491" class="extiw" title="forum:1313491">Federation Q&amp;A</a></td>
+<td>Q&amp;A sessions about the Federation rework</td>
+<td>2020-01-23
+</td></tr>
+<tr>
+<td>165</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1308644" class="extiw" title="forum:1308644">Ready for 2020!</a></td>
+<td>Polish progress update and information about upcoming Q&amp;A sessions</td>
+<td>2020-01-16
+</td></tr>
+<tr>
+<td>164</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1296343" class="extiw" title="forum:1296343">Summary of the Year 2019</a></td>
+<td>2019 journey retrospective and changes in Stellaris Dev team composition</td>
+<td>2019-12-12
+</td></tr>
+<tr>
+<td>163</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1293657" class="extiw" title="forum:1293657">Juggernaut &amp; Mega Shipyard</a></td>
+<td>New Spaceship and Megastructure</td>
+<td>2019-12-05
+</td></tr>
+<tr>
+<td>162</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1290338" class="extiw" title="forum:1290338">New Diplomatic Features</a></td>
+<td>Envoys, Diplomacy interface, Diplomatic Stances and Favors</td>
+<td>2019-11-28
+</td></tr>
+<tr>
+<td>161</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1285424" class="extiw" title="forum:1285424">Development Update</a></td>
+<td>An update on performance and AI development and a tentative release window for Federation</td>
+<td>2019-11-21
+</td></tr>
+<tr>
+<td>160</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1279766" class="extiw" title="forum:1279766">Origins Full Reveal</a></td>
+<td>A list of all 18 Origins that will be present at the release</td>
+<td>2019-11-14
+</td></tr>
+<tr>
+<td>159</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1275057" class="extiw" title="forum:1275057">Galactic Community</a></td>
+<td>A look to its creation, Resolutions, Diplomatic weight, Favors, Galactic Council and Focus</td>
+<td>2019-11-07
+</td></tr>
+<tr>
+<td>158</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1270552" class="extiw" title="forum:1270552">Federation rework</a></td>
+<td>Types, Perks, Laws and Internal mechanics of Federations</td>
+<td>2019-10-31
+</td></tr>
+<tr>
+<td>155</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1250456" class="extiw" title="forum:1250456">Origins</a></td>
+<td>New dedicated background stories for your empire, derived from Civics</td>
+<td>2019-09-26
+</td></tr>
+<tr>
+<td>153</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1238199" class="extiw" title="forum:1238199">Empire Sprawl &amp; Administrative Capacity</a></td>
+<td>Changes that aim to give a more important role to Empire Sprawl</td>
+<td>2019-08-29
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Lithoids">Lithoids</span></h2>
+<p>The developer diary about the <a href="/Downloadable_content.html#Lithoids_Species_Pack" title="Downloadable content">Lithoids</a> species pack and <a href="/Patch_2.5.html" title="Patch 2.5">patch 2.5</a> (aka Shelley).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.5 (Shelley)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>157</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1264500" class="extiw" title="forum:1264500">Things That Rock</a></td>
+<td>Announcement of the Lithoids species pack, preview of Lithoid species portraits and ships, introduction to Lithoid species mechanics, and patch notes for version 2.5.</td>
+<td>2019-10-24
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Ancient_Relics">Ancient Relics</span></h2>
+<p>All developer diaries about the <i><a href="/Ancient_Relics.html" title="Ancient Relics">Ancient Relics</a></i> story pack, <a href="/Patch_2.3.html" title="Patch 2.3">patch 2.3</a> (aka Wolfe), and <a href="/Patch_2.4.html" title="Patch 2.4">patch 2.4</a> (aka Lee).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.4 (Lee)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>156</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1257126" class="extiw" title="forum:1257126">The 2.4 "Lee" patch</a></td>
+<td>The new paradox launcher comes to <i>Stellaris</i></td>
+<td>2019-10-09
+</td></tr>
+<tr>
+<td>154</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1244013" class="extiw" title="forum:1244013">UX Design</a></td>
+<td>Behind-the-scenes of the UI</td>
+<td>2019-09-12
+</td></tr>
+<tr>
+<td>152</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1233044" class="extiw" title="forum:1233044">Summer Experimentation</a></td>
+<td>Useful experimentation that didn't make it</td>
+<td>2019-08-15
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.3 (Wolfe)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>151</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1197872" class="extiw" title="forum:1197872">2.3.3 beta patch</a></td>
+<td>A beta patch for the summer</td>
+<td>2019-07-04
+</td></tr>
+<tr>
+<td>150</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1183870" class="extiw" title="forum:1183870">2.3 "Wolfe" Patch Notes</a></td>
+<td>An early peek at the 2.3 'Wolfe' patch notes</td>
+<td>2019-05-30
+</td></tr>
+<tr>
+<td>149</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1180597" class="extiw" title="forum:1180597">Technical improvements</a></td>
+<td>64 bit, Performance improvement and AI</td>
+<td>2019-05-23
+</td></tr>
+<tr>
+<td>148</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1177865" class="extiw" title="forum:1177865">Relics &amp; Relic Worlds</a></td>
+<td>Relics, Relic Worlds, Relic UI and User Experience</td>
+<td>2019-05-16
+</td></tr>
+<tr>
+<td>147</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1175704" class="extiw" title="forum:1175704">An update on Sectors &amp; Designations</a></td>
+<td>Details of new sector and designation system for planet automation</td>
+<td>2019-05-09
+</td></tr>
+<tr>
+<td>146</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1173457" class="extiw" title="forum:1173457">The Baol and The Zroni</a></td>
+<td>Precursor: changes and new ones</td>
+<td>2019-05-02
+</td></tr>
+<tr>
+<td>145</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1170190" class="extiw" title="forum:1170190">Archaeology</a></td>
+<td>A new dimension to anomalies and express narrative in a more evolving and controlled manner</td>
+<td>2019-04-25
+</td></tr>
+<tr>
+<td>144</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1168096" class="extiw" title="forum:1168096">Megastructures, Habitats and Minor Artifacts</a></td>
+<td>Rework of Habitats, Ringworlds, megastructure construction changes and introducing Minor Artifacts</td>
+<td>2019-04-18
+</td></tr>
+<tr>
+<td>143</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1166479" class="extiw" title="forum:1166479">Changes to megastructures</a></td>
+<td>Rework of Galactic Wonders ascension perk and megastructures now require a research component</td>
+<td>2019-04-11
+</td></tr>
+<tr>
+<td>142</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1163477" class="extiw" title="forum:1163477">Sectors</a></td>
+<td>The future of the sector system</td>
+<td>2019-03-28
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="MegaCorp">MegaCorp</span></h2>
+<p>All developer diaries about the <i><a href="/MegaCorp.html" title="MegaCorp">MegaCorp</a></i> expansion and <a href="/Patch_2.2.html" title="Patch 2.2">patch 2.2</a> (aka Le Guin).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.2 (Le Guin)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>141</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1155962" class="extiw" title="forum:1155962">Exploring the Future</a></td>
+<td>Update on patch 2.2.6 and a discussion on the future direction of the game and tentative features to be added</td>
+<td>2019-02-28
+</td></tr>
+<tr>
+<td>140</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1152783" class="extiw" title="forum:1152783">2.2.x post-launch patch v2</a></td>
+<td>Updates about the final 2.2.x post-launch patch, minor changes to modifiers and interface</td>
+<td>2019-02-14
+</td></tr>
+<tr>
+<td>139</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1147916" class="extiw" title="forum:1147916">2.2.x post-launch patch</a></td>
+<td>A highlight of some of the bigger things that may change in the definitive 2.2.x post-launch support period</td>
+<td>2019-01-24
+</td></tr>
+<tr>
+<td>138</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1146295" class="extiw" title="forum:1146295">Donte's Inferno</a></td>
+<td>The where and how -- the ins-and-outs of the product management team by Bevan aka "Dnote".</td>
+<td>2019-01-17
+</td></tr>
+<tr>
+<td>—</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1144790" class="extiw" title="forum:1144790">We're back</a></td>
+<td>Back from holidays, bugs, and patches.</td>
+<td>2019-01-09
+</td></tr>
+<tr>
+<td>137</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1140472" class="extiw" title="forum:1140472">Updates, holidays, and the future</a></td>
+<td>Changes in leadership, holidays, and beta patch</td>
+<td>2018-12-20
+</td></tr>
+<tr>
+<td>136</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1132161" class="extiw" title="forum:1132161">2.2 'Le Guin' patch notes</a></td>
+<td>An early peek at the 2.2 'Le Guin' patch notes</td>
+<td>2018-11-29
+</td></tr>
+<tr>
+<td>135</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1130525" class="extiw" title="forum:1130525">Script changes and modding in 2.2</a></td>
+<td>Script changes and modding</td>
+<td>2018-11-22
+</td></tr>
+<tr>
+<td>134</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1128640" class="extiw" title="forum:1128640">Slave Market, and more!</a></td>
+<td>Slave market, unity ambitions, and mandates</td>
+<td>2018-11-15
+</td></tr>
+<tr>
+<td>133</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1127291" class="extiw" title="forum:1127291">The Caravaneers</a></td>
+<td>Travelling caravaneers and deals in <i>MegaCorp</i></td>
+<td>2018-11-08
+</td></tr>
+<tr>
+<td>132</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1126335" class="extiw" title="forum:1126335">Ecumenopolis and Megastructures</a></td>
+<td>New megastructures and constructable planet types in <i>MegaCorp</i></td>
+<td>2018-11-01
+</td></tr>
+<tr>
+<td>131</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1125380" class="extiw" title="forum:1125380">MegaCorporations</a></td>
+<td>Titular feature of <i>MegaCorp</i>: MegaCorporations</td>
+<td>2018-10-25
+</td></tr>
+<tr>
+<td>130</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1124355" class="extiw" title="forum:1124355">New and Changed Technologies in Le Guin</a></td>
+<td>Updated economic &amp; planetary building technologies</td>
+<td>2018-10-18
+</td></tr>
+<tr>
+<td>129</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1123421" class="extiw" title="forum:1123421">Tradition Updates</a></td>
+<td>Updated traditions for the new mechanics and tradition type</td>
+<td>2018-10-11
+</td></tr>
+<tr>
+<td>128</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1122352" class="extiw" title="forum:1122352">Decisions and Planetary Bombardment</a></td>
+<td>Rework of planetary edicts into decisions and changes to planetary bombardments</td>
+<td>2018-10-04
+</td></tr>
+<tr>
+<td>127</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1121266" class="extiw" title="forum:1121266">Trade Value and Trade Routes</a></td>
+<td>Introduction of trade value, trade routes and the associated piracy rework</td>
+<td>2018-09-27
+</td></tr>
+<tr>
+<td>126</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1120288" class="extiw" title="forum:1120288">Sectors and Factions</a></td>
+<td>Sector Rework and Faction Happiness Rework</td>
+<td>2018-09-20
+</td></tr>
+<tr>
+<td>125</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1119230" class="extiw" title="forum:1119230">The Galactic Market</a></td>
+<td>Addition of a galactic market, internal markets, and changes to trader enclaves</td>
+<td>2018-09-13
+</td></tr>
+<tr>
+<td>124</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1117775" class="extiw" title="forum:1117775">Planetary Rework (part 4 of 4)</a></td>
+<td>Planetary reworks, relating to gestalt consciousnesses and habitats.</td>
+<td>2018-09-06
+</td></tr>
+<tr>
+<td>123</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1116917" class="extiw" title="forum:1116917">Planetary Rework (part 3 of 4)</a></td>
+<td>Planetary reworks, involving changes to Stability, Happiness and Crime.</td>
+<td>2018-08-30
+</td></tr>
+<tr>
+<td>122</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1115992" class="extiw" title="forum:1115992">Planetary Rework (part 2 of 4)</a></td>
+<td>Planetary reworks, involving changes to jobs, strata and unemployment, housing, growth and migration.</td>
+<td>2018-08-23
+</td></tr>
+<tr>
+<td>121</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1115043" class="extiw" title="forum:1115043">Planetary Rework (part 1 of 4)</a></td>
+<td>Planetary reworks, involving changes to deposits and buildings and the addition of districts.</td>
+<td>2018-08-16
+</td></tr>
+<tr>
+<td>120</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1114048" class="extiw" title="forum:1114048">New Economy System</a></td>
+<td>A new economic back-end implemented for 2.2 -- the birth of economic templates and economic units.</td>
+<td>2018-08-09
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Distant_Stars">Distant Stars</span></h2>
+<p>All developer diaries about the <i><a href="/Distant_Stars.html" title="Distant Stars">Distant Stars</a></i> story pack and <a href="/Patch_2.1.html" title="Patch 2.1">patch 2.1</a> (aka Niven).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.1 (Niven)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>119</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1106720" class="extiw" title="forum:1106720">Niven Post-Launch Support (part 4)</a></td>
+<td>The second rolling beta to start soon with improvements to be tested over the summer</td>
+<td>2018-06-21
+</td></tr>
+<tr>
+<td>118</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1104008" class="extiw" title="forum:1104008">Niven Post-Launch Support (part 3)</a></td>
+<td>Further performance improvement, renaming factions, and extra-pretty screenshots mode.</td>
+<td>2018-06-07
+</td></tr>
+<tr>
+<td>117</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1102457" class="extiw" title="forum:1102457">Niven Post-Launch Support (part 2)</a></td>
+<td>Improving performance and increasing L-cluster variety</td>
+<td>2018-05-31
+</td></tr>
+<tr>
+<td>116</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1100525" class="extiw" title="forum:1100525">Niven Post-Launch Support</a></td>
+<td>Extended period of post-launch support with a rolling beta patch</td>
+<td>2018-05-24
+</td></tr>
+<tr>
+<td>115</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1098533" class="extiw" title="forum:1098533">2.1 Anomaly Modding</a></td>
+<td>A glimpse of some of the under-the-hood-changes coming for modders</td>
+<td>2018-05-17
+</td></tr>
+<tr>
+<td>114</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1096931" class="extiw" title="forum:1096931">Space Creatures, Strategic Resources and Experimental Subspace Navigation</a></td>
+<td>Changes to Space Creatures encounters, Strategic Resource discovery and exploitation, and addition of Experimental Subspace Navigation</td>
+<td>2018-05-10
+</td></tr>
+<tr>
+<td>113</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1095021" class="extiw" title="forum:1095021">New Anomalies, Systems and Leviathans</a></td>
+<td>New event chains to follow on the galactic grand road</td>
+<td>2018-05-03
+</td></tr>
+<tr>
+<td>112</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1092266" class="extiw" title="forum:1092266">The L-Cluster</a></td>
+<td>Heavily modified mysterious gateways leading to an unknown cluster of stars located outside the galaxy</td>
+<td>2018-04-26
+</td></tr>
+<tr>
+<td>111</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1090092" class="extiw" title="forum:1090092">Anomaly Rework &amp; Expanded Exploration</a></td>
+<td>Anomaly research changes, hyperlane clusters, and new types of star-systems</td>
+<td>2018-04-19
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Apocalypse">Apocalypse</span></h2>
+<p>All developer diaries about the <i><a href="/Apocalypse.html" title="Apocalypse">Apocalypse</a></i> expansion and <a href="/Patch_2.0.html" title="Patch 2.0">patch 2.0</a> (aka Cherryh) and <a href="/Patch_1.9.html" title="Patch 1.9">patch 1.9</a> (aka Boulle).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 2.0 (Cherryh) and Patch 1.9 (Boulle)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>110</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1086872" class="extiw" title="forum:1086872">Creation and Beyond</a></td>
+<td>Audio Director Björn Iversen says goodbye</td>
+<td>2018-04-05
+</td></tr>
+<tr>
+<td>109</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1082789" class="extiw" title="forum:1082789">2.0 Post-Release Support (part 2)</a></td>
+<td>Still in full post-release support with more details on the coming 2.0.2 patch</td>
+<td>2018-03-22
+</td></tr>
+<tr>
+<td>108</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1079788" class="extiw" title="forum:1079788">2.0 Post-Release Support (part 1)</a></td>
+<td>Player feedback and changes coming to War Exhaustion and forced Status Quo</td>
+<td>2018-03-15
+</td></tr>
+<tr>
+<td>107</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1076726" class="extiw" title="forum:1076726">The Post-Apocalypse</a></td>
+<td>Revisiting the list of long-term goals for <i>Stellaris</i></td>
+<td>2018-03-08
+</td></tr>
+<tr>
+<td>106</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1074215" class="extiw" title="forum:1074215">2.0.2 patch notes and the Road Ahead for Cherryh</a></td>
+<td>A rolling 2.0.2 beta and larger than normal amount of dev time for post-apocalypse support.</td>
+<td>2018-03-01
+</td></tr>
+<tr>
+<td>105</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1069794" class="extiw" title="forum:1069794">2.0 "Cherryh" patch notes</a></td>
+<td>Ramping up for release: patch notes, achievements and new music</td>
+<td>2018-02-15
+</td></tr>
+<tr>
+<td>104</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1068825" class="extiw" title="forum:1068825">Cherryh Feature Roundup</a></td>
+<td>Quality of Life features and other minor changes in the coming 2.0 'Cherryh' update</td>
+<td>2018-02-08
+</td></tr>
+<tr>
+<td>103</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1067730" class="extiw" title="forum:1067730">Civic/Ascension Perks Changes and Additions</a></td>
+<td>Expanding on changes to Ascension Perks and Civics</td>
+<td>2018-02-01
+</td></tr>
+<tr>
+<td>102</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1066645" class="extiw" title="forum:1066645">Edicts, Campaigns and Unity Ambitions</a></td>
+<td>Expanding on edicts - the addition of campaigns and unity ambitions</td>
+<td>2018-01-25
+</td></tr>
+<tr>
+<td>101</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1065594" class="extiw" title="forum:1065594">Marauders, Pirates and the Horde</a></td>
+<td>Pirate rework in <i>Cherryh</i> and a Horde mid-game crisis in <i>Apocalypse</i></td>
+<td>2018-01-18
+</td></tr>
+<tr>
+<td>100</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1064560" class="extiw" title="forum:1064560">Titans and Planet Destroyers</a></td>
+<td>An announcement of the <i>Apocalypse</i> expansion and reveal of the first features in it</td>
+<td>2018-01-11
+</td></tr>
+<tr>
+<td>99</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1061707" class="extiw" title="forum:1061707">Ground Combat &amp; Army Rework</a></td>
+<td>Ground combat and army rework</td>
+<td>2017-12-21
+</td></tr>
+<tr>
+<td>98</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1060624" class="extiw" title="forum:1060624">Fleet Manager</a></td>
+<td>Adding of a new Fleet Manager interface</td>
+<td>2017-12-14
+</td></tr>
+<tr>
+<td>97</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1059317" class="extiw" title="forum:1059317">Tech Progression in Cherryh</a></td>
+<td>Changes to technology progression in the 2.0 "Cherryh" update; also patch notes for 1.9 and <i>Humanoids</i></td>
+<td>2017-12-07
+</td></tr>
+<tr>
+<td>96</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1058152" class="extiw" title="forum:1058152">Doomstacks and Ship Design</a></td>
+<td>Breaking down the doomstack issue into its component problems, and some upcoming changes to the ship designer</td>
+<td>2017-11-30
+</td></tr>
+<tr>
+<td>95</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1056888" class="extiw" title="forum:1056888">Humanoids Species Pack</a></td>
+<td>A new species pack straight from the artists with additional VIR content</td>
+<td>2017-11-22
+</td></tr>
+<tr>
+<td>94</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1054985" class="extiw" title="forum:1054985">Ascension Perks &amp; Surveying in Cherryh</a></td>
+<td>Adding basic version of ascension perks to the base game. Replacing the existing surveying and star chart system</td>
+<td>2017-11-16
+</td></tr>
+<tr>
+<td>93</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1054054" class="extiw" title="forum:1054054">War, Peace and Claims</a></td>
+<td>Warfare overhaul: casus belli, wargoals, war exhaustion, starbase/system occupation, and peace negotiations</td>
+<td>2017-11-09
+</td></tr>
+<tr>
+<td>92</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1052958" class="extiw" title="forum:1052958">FTL Rework and Galactic Terrain</a></td>
+<td>Consolidating FTL, expanding on them, and using them to "build" a galactic terrain.</td>
+<td>2017-11-02
+</td></tr>
+<tr>
+<td>91</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1052064" class="extiw" title="forum:1052064">Starbases</a></td>
+<td>Major mechanics rework to affect: border growth, space stations and planetary spaceports, ship construction and more</td>
+<td>2017-10-26
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Synthetic_Dawn">Synthetic Dawn</span></h2>
+<p>All developer diaries about the <i><a href="/Synthetic_Dawn.html" title="Synthetic Dawn">Synthetic Dawn</a></i> story pack and <a href="/Patch_1.8.html" title="Patch 1.8">patch 1.8</a> (aka Čapek).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 1.8 (Čapek)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>90</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1051044" class="extiw" title="forum:1051044">Official Sound Track</a></td>
+<td>The Stellaris soundtrack DLC is changed to include <i>all</i> previously released tracks as well as all future track releases</td>
+<td>2017-10-19
+</td></tr>
+<tr>
+<td>88</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1049984" class="extiw" title="forum:1049984">1.8 Post-Release Support (part 2)</a></td>
+<td>Wrapping up of 1.8 soon and moving on to 1.9</td>
+<td>2017-10-12
+</td></tr>
+<tr>
+<td>87</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1048887" class="extiw" title="forum:1048887">1.8 Post-Release Support</a></td>
+<td>Update of the beta branch status and current patch notes of patch 1.8.2</td>
+<td>2017-10-05
+</td></tr>
+<tr>
+<td>86</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1043979" class="extiw" title="forum:1043979">Čapek/Synthetic Dawn Patch Notes</a></td>
+<td>Changelog for the 1.8 "Čapek" update</td>
+<td>2017-09-14
+</td></tr>
+<tr>
+<td>85</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1042779" class="extiw" title="forum:1042779">Decadence and Ascension Changes</a></td>
+<td>Awakened empires will now become decadent with time/power and requested changes to ascension paths</td>
+<td>2017-09-07
+</td></tr>
+<tr>
+<td>84</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1041893" class="extiw" title="forum:1041893">Čapek Feature Roundup (part 2)</a></td>
+<td>A continuation of the feature round-up in the 1.8 Čapek update</td>
+<td>2017-08-31
+</td></tr>
+<tr>
+<td>83</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1040948" class="extiw" title="forum:1040948">Čapek Feature Roundup (part 1)</a></td>
+<td>A round-up of some minor changes and reworks coming in the 1.8 Čapek update</td>
+<td>2017-08-24
+</td></tr>
+<tr>
+<td>82</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1039976" class="extiw" title="forum:1039976">Synthetic Dawn Music</a></td>
+<td>Andreas Waldetoft, the in-house composer, on the new tracks for synths included in the upcoming story pack</td>
+<td>2017-08-17
+</td></tr>
+<tr>
+<td>81</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1039034" class="extiw" title="forum:1039034">Machine Uprisings</a></td>
+<td>Machine Uprisings feature in the Synthetic Dawn story pack</td>
+<td>2017-08-10
+</td></tr>
+<tr>
+<td>80</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1038072" class="extiw" title="forum:1038072">Machine Empires</a></td>
+<td>Synthetic Dawn Story Pack &amp; new kinds of robotic empires</td>
+<td>2017-08-03
+</td></tr>
+<tr>
+<td>79</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1036466" class="extiw" title="forum:1036466">Ship Component &amp; Balance Changes</a></td>
+<td>Changes to ship design and combat behavior rework</td>
+<td>2017-07-27
+</td></tr>
+<tr>
+<td>78</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1036193" class="extiw" title="forum:1036193">Robomodding &amp; Robot Changes</a></td>
+<td>Unique robotic traits, robot template modding and related assortment of robo-changes in the works</td>
+<td>2017-07-20
+</td></tr>
+<tr>
+<td>77</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1035192" class="extiw" title="forum:1035192">Ethics Voice Packs</a></td>
+<td>New voice-over sets for VIR the trusted in-game friendly advisor</td>
+<td>2017-07-13
+</td></tr>
+<tr>
+<td>76</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1034124" class="extiw" title="forum:1034124">Hive Mind &amp; Tradition Improvements</a></td>
+<td>Added flavor improvements for Hive-Minds/Devouring Swarms along with traditions flavor changes</td>
+<td>2017-07-06
+</td></tr>
+<tr>
+<td>75</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1032960" class="extiw" title="forum:1032960">Fallen Machine Empire</a></td>
+<td>Tweaks to fallen empires in 1.8 along with a new synthetic-type fallen empire in the upcoming story pack</td>
+<td>2017-06-29
+</td></tr>
+<tr>
+<td>74</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1031539" class="extiw" title="forum:1031539">Genemodding Templates</a></td>
+<td>Changes coming to genetic modification in the 1.8 Čapek update</td>
+<td>2017-06-22
+</td></tr>
+<tr>
+<td>73</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1029455" class="extiw" title="forum:1029455">The Čapek Update</a></td>
+<td>Changes and improvements to Habitability and Terraforming coming in 1.8</td>
+<td>2017-06-15
+</td></tr>
+<tr>
+<td>72</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1026439" class="extiw" title="forum:1026439">Crises &amp; The Contingency</a></td>
+<td>Improvements done on the crises front with a major revision of the AI uprising crisis</td>
+<td>2017-06-01
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Utopia">Utopia</span></h2>
+<p>All developer diaries about the <i><a href="/Utopia.html" title="Utopia">Utopia</a></i> expansion, <a href="/Patch_1.5.html" title="Patch 1.5">patch 1.5</a> (aka Banks) and <a href="/Patch_1.6.html" title="Patch 1.6">patch 1.6</a> (aka Adams).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 1.6 (Adams)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>71</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1019086" class="extiw" title="forum:1019086">The Adams Update (part 2)</a></td>
+<td>Devouring Swarm civic for Hive Minds, terraforming enhancements, and full patch notes.</td>
+<td>2017-05-04
+</td></tr>
+<tr>
+<td>70</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1017372" class="extiw" title="forum:1017372">The Adams Update (part 1)</a></td>
+<td>Ruined megastructures, split taxes sectors, sector stockpiles and new art assets in 1.6 Adams</td>
+<td>2017-04-27
+</td></tr>
+<tr>
+<td>69</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1015396" class="extiw" title="forum:1015396">Beyond Utopia</a></td>
+<td>Revisiting the old priorities list and the future beyond <i>Utopia</i></td>
+<td>2017-04-20
+</td></tr>
+<tr>
+<td>68</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1012754" class="extiw" title="forum:1012754">Introductions and Farewells</a></td>
+<td>Rikard Åslund (Zoft), master of dad-jokes, passes the project lead torch to newcomer Jamie Wood (Jamor)</td>
+<td>2017-04-13
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 1.5 (Banks)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>67</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1008247" class="extiw" title="forum:1008247">Update 1.5 Banks Patch Notes</a></td>
+<td>Full Patch Notes</td>
+<td>2017-03-30
+</td></tr>
+<tr>
+<td>66</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1007122" class="extiw" title="forum:1007122">Graphics &amp; Interface in Banks</a></td>
+<td>Changes to the map in <i>Banks</i></td>
+<td>2017-03-23
+</td></tr>
+<tr>
+<td>65</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1005704" class="extiw" title="forum:1005704">The Music of Utopia</a></td>
+<td>Andreas Waldetoft composed some new music</td>
+<td>2017-03-16
+</td></tr>
+<tr>
+<td>64</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1004046" class="extiw" title="forum:1004046">Minor Features and Tweaks</a></td>
+<td>Empire-wide Food, Terraforming Candidate anomaly, War Demand cost reducing, UI improvements</td>
+<td>2017-03-09
+</td></tr>
+<tr>
+<td>63</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1002382" class="extiw" title="forum:1002382">Synthetic and Biological Ascension</a></td>
+<td>A closer look at ascension paths</td>
+<td>2017-03-02
+</td></tr>
+<tr>
+<td>62</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1001169" class="extiw" title="forum:1001169">Government, Civics and Hive Minds</a></td>
+<td>Banks focus on internal politics warrants a government rework</td>
+<td>2017-02-23
+</td></tr>
+<tr>
+<td>61</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/999954" class="extiw" title="forum:999954">Indoctrination, Unrest and Faction Interactions</a></td>
+<td>Wiz goes into details on indoctrinating pre-FTL species, new unrest system for factions and ways to interact with them</td>
+<td>2017-02-16
+</td></tr>
+<tr>
+<td>60</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/998827" class="extiw" title="forum:998827">Psionics and The Shroud</a></td>
+<td>Psionic Ascension Path</td>
+<td>2017-02-09
+</td></tr>
+<tr>
+<td>59</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/997705" class="extiw" title="forum:997705">Megastructures</a></td>
+<td>Megastructures: the headline feature of the <i>Utopia</i> expansion</td>
+<td>2017-02-02
+</td></tr>
+<tr>
+<td>58</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/996449" class="extiw" title="forum:996449">Habitats</a></td>
+<td>Your new home above your home</td>
+<td>2017-01-26
+</td></tr>
+<tr>
+<td>57</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/995302" class="extiw" title="forum:995302">Species Rights</a></td>
+<td>Changes to pops: species rights/obligations, new degrees of slavery and purging, refugees, core worlds and more.</td>
+<td>2017-01-19
+</td></tr>
+<tr>
+<td>56</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/994061" class="extiw" title="forum:994061">Ascension Perks</a></td>
+<td>The new Ascension mechanic and its following 'species endgame' paths coming in Banks</td>
+<td>2017-01-12
+</td></tr>
+<tr>
+<td>55</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/988693" class="extiw" title="forum:988693">Unity and Traditions</a></td>
+<td>Banks 1.5 will introduce new mechanics</td>
+<td>2016-12-15
+</td></tr>
+<tr>
+<td>54</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/987286" class="extiw" title="forum:987286">Ethics Rework</a></td>
+<td>Reworked empire and pop ethics, as well as a new outlook on factions</td>
+<td>2016-12-08
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Leviathans">Leviathans</span></h2>
+<p>All developer diaries about the <i><a href="/Leviathans.html" title="Leviathans">Leviathans</a></i> story pack, <a href="/Patch_1.3.html" title="Patch 1.3">patch 1.3</a> (aka Heinlein) and <a href="/Patch_1.4.html" title="Patch 1.4">patch 1.4</a> (aka Kennedy).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 1.4 (Kennedy)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>52</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/980632" class="extiw" title="forum:980632">New Achievements</a></td>
+<td>Kennedy hails with 32 new achievements</td>
+<td>2016-11-10
+</td></tr>
+<tr>
+<td>51</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/979890" class="extiw" title="forum:979890">Extradimensionals and Precursors</a></td>
+<td>Kennedy update news - precursors and extradimensionals</td>
+<td>2016-11-03
+</td></tr>
+<tr>
+<td>50</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/978042" class="extiw" title="forum:978042">The Journey Ahead</a></td>
+<td>Current status and general plan for the future</td>
+<td>2016-10-27
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 1.3 (Heinlein)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>49</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/974104" class="extiw" title="forum:974104">Graphics &amp; Portraits</a></td>
+<td>New graphics and portraits coming in Heinlein and Leviathans</td>
+<td>2016-10-13
+</td></tr>
+<tr>
+<td>48</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/972614" class="extiw" title="forum:972614">Roar! And Boom!</a></td>
+<td>A look at the sound and music of Leviathans</td>
+<td>2016-10-06
+</td></tr>
+<tr>
+<td>47</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/971531" class="extiw" title="forum:971531">The Guardians</a></td>
+<td>The Guardians are the headline feature of Stellaris: Leviathans</td>
+<td>2016-09-29
+</td></tr>
+<tr>
+<td>46</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/969801" class="extiw" title="forum:969801">Enclaves</a></td>
+<td>Enclaves coming in Stellaris: Leviathans</td>
+<td>2016-09-19
+</td></tr>
+<tr>
+<td>45</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/968500" class="extiw" title="forum:968500">Ship Balance</a></td>
+<td>More details on ship roles and weapon re-balance</td>
+<td>2016-09-12
+</td></tr>
+<tr>
+<td>44</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/967310" class="extiw" title="forum:967310">Space Creature Rework</a></td>
+<td>Grounding space creatures to a regional 'nexus' and expansion of space piracy</td>
+<td>2016-09-06
+</td></tr>
+<tr>
+<td>43</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/965642" class="extiw" title="forum:965642">The Fallen</a></td>
+<td>Changes to Fallen Empires in Heinlein, and also "The War in Heaven" events</td>
+<td>2016-08-29
+</td></tr>
+<tr>
+<td>42</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/964098" class="extiw" title="forum:964098">Heinlein Patch (part 3)</a></td>
+<td>Changes to planet habitability and federations/alliances, sector improvements and more galaxy setup options</td>
+<td>2016-08-22
+</td></tr>
+<tr>
+<td>41</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/962953" class="extiw" title="forum:962953">Heinlein Patch (part 2)</a></td>
+<td>Ship roles and weapon re-balance</td>
+<td>2016-08-15
+</td></tr>
+<tr>
+<td>40</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/961848" class="extiw" title="forum:961848">Heinlein Patch (part 1)</a></td>
+<td>Auto-explore, rally points, expansion planner, strategic resource rework</td>
+<td>2016-08-08
+</td></tr>
+<tr>
+<td>39</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/960628" class="extiw" title="forum:960628">Back in Action</a></td>
+<td>Focusing on addressing community feedback in Heinlein</td>
+<td>2016-08-01
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Post-release_patches">Post-release patches</span></h2>
+<p>All developer diaries about the post-release patches, <a href="/Patch_1.1.html" title="Patch 1.1">patch 1.1</a> (aka Clarke) and <a href="/Patch_1.2.html" title="Patch 1.2">patch 1.2</a> (aka Asimov).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 1.2 (Asimov)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>38</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/953121" class="extiw" title="forum:953121">New Skyboxes</a></td>
+<td>Variation added to the universe with the introduction of new Skyboxes</td>
+<td>2016-06-27
+</td></tr>
+<tr>
+<td>37</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/950536" class="extiw" title="forum:950536">Asimov Patch (part 2)</a></td>
+<td>Better looking battles, map modes, nomad fleets, slave factions, new wargoals, diplomatic incidents</td>
+<td>2016-06-20
+</td></tr>
+<tr>
+<td>36</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/947827" class="extiw" title="forum:947827">Asimov Patch (part 1)</a></td>
+<td>Diplomacy improvements, border access, and embassies</td>
+<td>2016-06-14
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Patch 1.1 (Clarke)
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>35</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/939356" class="extiw" title="forum:939356">QA in Space</a></td>
+<td>A little light on QA work</td>
+<td>2016-05-30
+</td></tr>
+<tr>
+<td>34</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/936898" class="extiw" title="forum:936898">Clarke Patch</a></td>
+<td>UI, AI and empire builder improvements, balance changes, bug fixes</td>
+<td>2016-05-24
+</td></tr>
+<tr>
+<td>33</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/932668" class="extiw" title="forum:932668">The Maiden Voyage</a></td>
+<td>Paradox's plans for the next three <i>Stellaris</i> patches</td>
+<td>2016-05-16
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Base_game">Base game</span></h2>
+<p>All developer diaries about <i><a href="/Stellaris.html" title="Stellaris">Stellaris</a></i> (base game).
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>32</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/924762" class="extiw" title="forum:924762">Modding (Art)</a></td>
+<td>About modding art, with a focus on characters and ship modding</td>
+<td>2016-05-02
+</td></tr>
+<tr>
+<td>31</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/923348" class="extiw" title="forum:923348">Modding (Scripting Anomalies)</a></td>
+<td>About modding in general, and scripting anomalies in particular</td>
+<td>2016-04-25
+</td></tr>
+<tr>
+<td>30</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/921629" class="extiw" title="forum:921629">Late Game Crises</a></td>
+<td>About late game crises</td>
+<td>2016-04-18
+</td></tr>
+<tr>
+<td>29</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/919918" class="extiw" title="forum:919918">Pop Factions &amp; Elections</a></td>
+<td>About populations (pops), factions and elections</td>
+<td>2016-04-11
+</td></tr>
+<tr>
+<td>28</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/917698" class="extiw" title="forum:917698">Project Lead speaks</a></td>
+<td>The project lead of Stellaris, Rikard "Zoft" Åslund speaks</td>
+<td>2016-04-04
+</td></tr>
+<tr>
+<td>27</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/916337" class="extiw" title="forum:916337">Music &amp; Sound</a></td>
+<td>The soundtrack and sound design of Stellaris</td>
+<td>2016-03-28
+</td></tr>
+<tr>
+<td>26</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/914917" class="extiw" title="forum:914917">Migration, Slavery &amp; Purges</a></td>
+<td>Policies concerning Migration, Slavery and Purges</td>
+<td>2016-03-21
+</td></tr>
+<tr>
+<td>25</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/913539" class="extiw" title="forum:913539">Reverse Engineering and Unique Technologies</a></td>
+<td>Studying debris</td>
+<td>2016-03-14
+</td></tr>
+<tr>
+<td>24</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/912400" class="extiw" title="forum:912400">AI</a></td>
+<td>Unique personalities, threat assessments, AI budgeting</td>
+<td>2016-03-07
+</td></tr>
+<tr>
+<td>23</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/911175" class="extiw" title="forum:911175">Multiplayer</a></td>
+<td>32-player multiplayer and enhanced stability</td>
+<td>2016-02-29
+</td></tr>
+<tr>
+<td>22</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/909915" class="extiw" title="forum:909915">Alliances and Federations</a></td>
+<td>Multilateral alliances and closely cooperating federations</td>
+<td>2016-02-22
+</td></tr>
+<tr>
+<td>21</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/908587" class="extiw" title="forum:908587">Administrative Sectors</a></td>
+<td>Few directly managed planets, AI-managed sectors</td>
+<td>2016-02-15
+</td></tr>
+<tr>
+<td>20</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/907257" class="extiw" title="forum:907257">War and peace</a></td>
+<td>War goals and war score</td>
+<td>2016-02-08
+</td></tr>
+<tr>
+<td>19</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/905407" class="extiw" title="forum:905407">Diplomacy &amp; Trade</a></td>
+<td>Trade negotiations and subject types</td>
+<td>2016-02-01
+</td></tr>
+<tr>
+<td>18</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/904030" class="extiw" title="forum:904030">Fleet Combat</a></td>
+<td>Weapon/defense types, hands-off combat, and emergency FTL</td>
+<td>2016-01-25
+</td></tr>
+<tr>
+<td>17</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/902967" class="extiw" title="forum:902967">Ship Designer</a></td>
+<td>Choose a design's sections, and fill their weapon and utility slots</td>
+<td>2016-01-18
+</td></tr>
+<tr>
+<td>16</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/901906" class="extiw" title="forum:901906">Colony Events</a></td>
+<td>Events to set your planets apart</td>
+<td>2016-01-11
+</td></tr>
+<tr>
+<td>15</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/900744" class="extiw" title="forum:900744">Fallen Empires</a></td>
+<td>Powerful, isolationist AI empires</td>
+<td>2016-01-04
+</td></tr>
+<tr>
+<td>14</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/898648" class="extiw" title="forum:898648">Uplifting and Subspecies</a></td>
+<td>Uplift and tailor pre-sentients, alter your own people</td>
+<td>2015-12-21
+</td></tr>
+<tr>
+<td>13</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/897491" class="extiw" title="forum:897491">Primitive Civilizations</a></td>
+<td>Study, enlighten, or infiltrate the natives</td>
+<td>2015-12-14
+</td></tr>
+<tr>
+<td>12</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/895923" class="extiw" title="forum:895923">Policies &amp; Edicts</a></td>
+<td>Empire-wide policies, temporary edicts</td>
+<td>2015-12-07
+</td></tr>
+<tr>
+<td>11</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/893377" class="extiw" title="forum:893377">Research &amp; Technology</a></td>
+<td>The hidden, semi-random tech tree</td>
+<td>2015-11-30
+</td></tr>
+<tr>
+<td>10</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/892292" class="extiw" title="forum:892292">The Spaceport and rare resources</a></td>
+<td>Spaceport upgrades and rare resource use</td>
+<td>2015-11-23
+</td></tr>
+<tr>
+<td>9</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/891510" class="extiw" title="forum:891510">Planets &amp; Resources</a></td>
+<td>Planetary differences, resource collection methods</td>
+<td>2015-11-16
+</td></tr>
+<tr>
+<td>8</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/890612" class="extiw" title="forum:890612">The Situation Log and Special Projects</a></td>
+<td>Event journal</td>
+<td>2015-11-09
+</td></tr>
+<tr>
+<td>7</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/889570" class="extiw" title="forum:889570">Science Ships, Surveys and Anomalies</a></td>
+<td>Science ships and events</td>
+<td>2015-11-02
+</td></tr>
+<tr>
+<td>6</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/888500" class="extiw" title="forum:888500">Rulers and Leaders</a></td>
+<td>Role that characters play</td>
+<td>2015-10-26
+</td></tr>
+<tr>
+<td>5</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/887487" class="extiw" title="forum:887487">Empires and Species</a></td>
+<td>What sets species apart</td>
+<td>2015-10-19
+</td></tr>
+<tr>
+<td>4</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/886502" class="extiw" title="forum:886502">Means of Travel</a></td>
+<td>About FTL propulsion</td>
+<td>2015-10-12
+</td></tr>
+<tr>
+<td>3</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/885267" class="extiw" title="forum:885267">Galaxy Generation</a></td>
+<td>How galaxies are generated</td>
+<td>2015-10-05
+</td></tr>
+<tr>
+<td>2</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/884052" class="extiw" title="forum:884052">Art Vision</a></td>
+<td>Artistic choices</td>
+<td>2015-09-28
+</td></tr>
+<tr>
+<td>1</td>
+<td><a href="https://forum.paradoxplaza.com/forum/index.php?threads/882808" class="extiw" title="forum:882808">The Vision</a></td>
+<td>Design goals</td>
+<td>2015-09-21
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Videos">Videos</span></h2>
+<p>Developer video diaries and developer's let's play sessions on the various expansions.
+</p>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Videos
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="70%">Description
+</th>
+<th style="min-width: 75px;">Date
+</th></tr>
+<tr>
+<td>20</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=7u_dBjqTmts">MegaCorp - First Look</a></td>
+<td>Wiz and Blondie, Unveiling Stellaris' 3rd expansion, which focuses on economy, <i>MegaCorp</i>.</td>
+<td>2018-10-24
+</td></tr>
+<tr>
+<td>19</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=MyJ9nYbvev0">Design Corner #03</a></td>
+<td>Martin Anward and Daniel Moregård, Stellaris' game director and game designer, with details and a Q&amp;A section about planetary rework planned coming in patch 2.2 (aka "Le Guin")</td>
+<td>2018-09-06
+</td></tr>
+<tr>
+<td>18</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=6f0cO9Bqu8g">PDXCon 2018 - After the Apocalypse</a></td>
+<td>Martin "Wiz" Anward talks about the future of Stellaris at PDXCON 2018</td>
+<td>2018-05-20
+</td></tr>
+<tr>
+<td>17</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=_jcrKkNJ5do">Distant Stars - Feature Spotlight</a></td>
+<td>Daniel "Grekulf" Moregård with a break-down of the <i>Distant Stars</i> story pack features</td>
+<td>2018-05-19
+</td></tr>
+<tr>
+<td>16</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=3CdUFmGFkBo">Distant Stars - First Look</a></td>
+<td>Wiz and Blondie, with a sneak peek at Stellaris' 3rd story pack <i>Distant Stars</i>.</td>
+<td>2018-04-23
+</td></tr>
+<tr>
+<td>15</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=mBKSqcuy6k0">Apocalypse - Feature Spotlight</a></td>
+<td>Daniel "Grekulf" Moregård details the focus points of the coming Stellaris expansion <i>Apocalypse</i></td>
+<td>2018-02-15
+</td></tr>
+<tr>
+<td>14</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=T3XwpHJPbNg">Apocalypse - Q&amp;A</a></td>
+<td>A Q&amp;A on <i>Apocalypse</i> and the 2.0 <i>Cherryh</i> patch with Wiz and Blondie.</td>
+<td>2018-01-29
+</td></tr>
+<tr>
+<td>13</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=mBKSqcuy6k0">Apocalypse - First Look</a></td>
+<td>Wiz and Blondie, with a first look at Stellaris' 2nd expansion <i>Apocalypse</i>.</td>
+<td>2018-01-11
+</td></tr>
+<tr>
+<td>12</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=ZZqvAqzGpHo">Design Corner #02</a></td>
+<td>Martin Anward and Daniel Moregård, Stellaris' game director and game designer, expand on the latest border and FTL rework as well as detailing what possibilities open up through them.</td>
+<td>2017-11-02
+</td></tr>
+<tr>
+<td>11</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=Jg-hcUcOIi8">Synthetic Dawn - Feature Spotlight</a></td>
+<td>Martin "Wiz" Anward breaks down the feature list of the upcoming "Synthetic Dawn" story pack</td>
+<td>2017-09-06
+</td></tr>
+<tr>
+<td>10</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=NOKmLl1PxZE">Gamescom 2017 - Stellaris Q&amp;A</a></td>
+<td>Daniel "Grekulf" Moregård and Susie respond to users inquires in Gamescom 2017</td>
+<td>2017-08-23
+</td></tr>
+<tr>
+<td>9</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=1w7MyDPhuy8">Design Corner #01</a></td>
+<td>Martin Anward and &amp; Daniel Moregård, Stellaris' game director and game designer, go through some of the design challenges with Stellaris and ideas of what might happen next: FTL, borders, combat, crises and more.</td>
+<td>2017-04-27
+</td></tr>
+<tr>
+<td>8</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=zaIkxK-Ss_c">Tutorial - Colonization</a></td>
+<td>Martin "Wiz" Anward takes the place of your loyal advisor to instruct you on the process of colonization</td>
+<td>2017-04-21
+</td></tr>
+<tr>
+<td>7</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=eoplpnVXnf4">Utopia - 1.6 Adams patch</a></td>
+<td>Wiz and cKnoor on the balance/bug-fix patch in the pipelines for Stellaris</td>
+<td>2017-04-20
+</td></tr>
+<tr>
+<td>6</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=iqGrB0HX6Ok">Utopia - Feature Spotlight</a></td>
+<td>Martin "Wiz" Anward goes over the features in the coming Stellaris expansion <i>Utopia</i></td>
+<td>2017-04-03
+</td></tr>
+<tr>
+<td>5</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=Fq9jiNa7B5I">EGX Rezzed - Alexis Kennedy</a></td>
+<td>Anders "cKnoor" Carlsson sits down with Alexis Kennedy to talk about his work on <i>Horizon Signal</i> for Stellaris</td>
+<td>2017-04-01
+</td></tr>
+<tr>
+<td>4</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=TtcpYTAwaTA">EGX Rezzed - Utopia build ideas</a></td>
+<td>Daniel "Grekulf" Moregård shows some of his favorite builds to use Utopia</td>
+<td>2017-03-30
+</td></tr>
+<tr>
+<td>3</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=BsYjZxX8Xac">Leviathans - Feature Spotlight</a></td>
+<td>Martin "Wiz" Anward, Stellaris' game director, explains the new additions coming to the game in <i>Leviathans</i></td>
+<td>2016-10-17
+</td></tr>
+<tr>
+<td>2</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=2H1P7MRmiSk">Leviathans - 1.3 Heinlein patch</a></td>
+<td>Anders "cKnoor" Carlsson drags Daniel "Grekulf" Moregård and Aziz Faghihinejad to go over the 1.3 (Heinlein) patch</td>
+<td>2016-09-29
+</td></tr>
+<tr>
+<td>1</td>
+<td><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=_Huuacl6oqI">Tour of the Galaxy</a></td>
+<td>Stellaris pre-order trailer recounting the game's features</td>
+<td>2016-04-14
+</td></tr></tbody></table>
+<table class="wikitable sortable" style="width:100%;">
+<caption style="text-align:left;">Let's Plays
+</caption>
+<tbody><tr>
+<th style="min-width: 10px;">No.
+</th>
+<th class="unsortable" width="30%">Title and Link
+</th>
+<th class="unsortable" width="58%">Description
+</th>
+<th style="min-width: 75px;">Start date
+</th>
+<th style="min-width: 75px;">End date
+</th></tr>
+<tr>
+<td>12</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=QdpDKrOUQwI&amp;list=PL_3rLv22kp6STsUlr6iChZmD9ErW6UK7G">Distant Stars</a></td>
+<td>In this new discovery-themed pack, players will uncover new anomalies and storylines, and encounter strange new beings in the uncharted depths of space.</td>
+<td>2018-04-27</td>
+<td>2018-06-21
+</td></tr>
+<tr>
+<td>11</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=bhzYIC0Z-Kk&amp;list=PL_3rLv22kp6QLGzTxQtWoz7wi0LjlDAYG">Orcs vs. Dwarves</a></td>
+<td>Let's deepdive into Stellaris: Apocalypse with an age-old strife.</td>
+<td>2018-01-18</td>
+<td>2018-03-01
+</td></tr>
+<tr>
+<td>10</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=sX6UPpiIras&amp;list=PL_3rLv22kp6TU8pPh2E1LcOB8y4yKnQEI">Stellaris for Beginners</a></td>
+<td>Let's learn how to play Stellaris!</td>
+<td>2017-10-12</td>
+<td>2017-12-14
+</td></tr>
+<tr>
+<td>9</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=JeCInsN1lcM&amp;list=PLqRhPbyFDQWgIu45xcf18QpWIzY_9mNr5">Artificial Alliance</a></td>
+<td>Organics have been inefficient for too long. It's time to integrate them.</td>
+<td>2017-09-28</td>
+<td>2017-11-09
+</td></tr>
+<tr>
+<td>8</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=_MNZO6J45Xc&amp;list=PLqRhPbyFDQWjcHSu3VsMJO-6VdlsCTHrR">RoBLORG</a></td>
+<td>Martin and Susie show off the upcoming Synthetic Dawn story pack by playing as a machine empire!</td>
+<td>2017-08-03</td>
+<td>2017-09-14
+</td></tr>
+<tr>
+<td>7</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=cHp0vSi260g&amp;list=PLqRhPbyFDQWi-ZINBf0WlxT1-x2E_Yhhf">Devouring Flock</a></td>
+<td>Martin teaches Susie (new Stellaris community manager) how to play Stellaris while simultaneously checking out the Devouring Swarm Hivemind!</td>
+<td>2017-06-15</td>
+<td>2017-08-10
+</td></tr>
+<tr>
+<td>6</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=gTImqksOIoM&amp;list=PLqRhPbyFDQWjleLcln8_jsSO8uY1EqWBG">Starcrossed Starfish</a></td>
+<td>Two sub-species, evil and good, vying for supremacy in an extra hot code preview of patch 1.4/<i>Utopia</i></td>
+<td>2017-02-02</td>
+<td>2017-03-23
+</td></tr>
+<tr>
+<td>5</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=pRFperJev5w&amp;list=PLqRhPbyFDQWizqAwvbcjyb0O9Gk4l3Sf_">Cute Co-Op</a></td>
+<td>A new galaxy showcasing patch 1.3 (Heinlein) and the Leviathans story pack</td>
+<td>2016-10-06</td>
+<td>2016-12-08
+</td></tr>
+<tr>
+<td>4</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=2h4U0hBzywI&amp;list=PLqRhPbyFDQWixvvg9P8J-1huLVgmjTbNZ">Community Galaxy - The Rad</a></td>
+<td>A galaxy populated with community created species (and plantoids)</td>
+<td>2016-08-11</td>
+<td>2016-09-22
+</td></tr>
+<tr>
+<td>3</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=xuKdt5cXRa8&amp;list=PLqRhPbyFDQWitDZOApf2vv7dFprkavQDX">Community Galaxy</a></td>
+<td>A new galaxy populated with community created species</td>
+<td>2016-06-09</td>
+<td>2016-08-04
+</td></tr>
+<tr>
+<td>2</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=RjGnYvcQolo&amp;list=PLqRhPbyFDQWiqLURvsxHyAFxchxsFkMkN">Blorg Cinematic Universe</a></td>
+<td>Multiplayer event of Stellaris in London where devs and youtubers fight for dominance</td>
+<td>2016-05-03</td>
+<td>2016-05-04
+</td></tr>
+<tr>
+<td>1</td>
+<td><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=shoiYDp7EEA&amp;list=PLqRhPbyFDQWiWmLRwlEDOgU6B54nEP-os">All hail Blorg, Space Friends</a></td>
+<td>Pre-release LP's of Stellaris by Martin "Wiz" Anward and Anders "cKnoor" Carlsson</td>
+<td>2016-03-17</td>
+<td>2016-05-26
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Stellaris.html" title="Stellaris">Stellaris</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Game
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Features" class="mw-redirect" title="Features">Features</a> • <a href="/Achievements.html" title="Achievements">Achievements</a> • <a href="https://stellaris.paradoxwikis.com/Game_Settings" class="mw-redirect" title="Game Settings">Game Settings</a> • <a href="/Ironman.html" title="Ironman">Ironman</a> • <a href="/Mods.html" title="Mods">Mods</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Guides
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Beginner%27s_guide.html" title="Beginner&#39;s guide">Beginner's guide</a> • <a href="/User_interface.html" title="User interface">User interface</a> • <a href="/Hotkeys.html" title="Hotkeys">Hotkeys</a> • <a href="https://stellaris.paradoxwikis.com/Multiplayer" class="mw-redirect" title="Multiplayer">Multiplayer</a> • <a href="/Console_commands.html" title="Console commands">Console commands</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Development
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Patches.html" title="Patches">Patches</a> • <a href="/Downloadable_content.html" title="Downloadable content">Downloadable content</a> • <a class="mw-selflink selflink">Developer diaries</a> • <a href="/Modding.html" title="Modding">Modding</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Community
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Communities.html" title="Communities">Communities</a> • <a href="/Jargon.html" title="Jargon">Jargon</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181122
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.193 seconds
+Real time usage: 0.227 seconds
+Preprocessor visited node count: 3635/1000000
+Post‐expand include size: 69901/2097152 bytes
+Template argument size: 25983/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   61.417      1 -total
+ 63.18%   38.805      1 Template:Version_column
+ 61.96%   38.053      2 Template:Infobox
+ 49.70%   30.526     63 Template:Infobox/row
+ 27.94%   17.158    157 Template:Patch
+ 22.92%   14.074      1 Template:StellarisNavbox
+ 13.77%    8.454      1 Template:Navbox
+ 12.96%    7.957      1 Template:Version
+  4.20%    2.580      1 Template:Clear
+  4.04%    2.484      4 Template:Navboxgroup
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:164-0!canonical and timestamp 20260707181122 and revision id 117530.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

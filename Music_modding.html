@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Music modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">This article is <a href="/Category_Timeless.html" title="Category:Timeless">timeless</a> and should be accurate for any version of the game.</div>
+</div>
+</div>
+<p>Creating a <a href="/Mods.html" title="Mods">mod</a> that adds music to <a href="/Stellaris.html" title="Stellaris">Stellaris</a> is rather easy. Following this guide, you'll create a mod that is essentially a modular music pack. That is to say, if you create a music pack as described in this guide, then create another, a user could download either or both from the <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a>, install them both concurrently and have all the music that was included in both mods.
+</p><p>Essentially, one music pack does not override the other - you can install multiple over top of one another and so build a whole library of music to listen to in-game.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Getting_Started"><span class="tocnumber">1</span> <span class="toctext">Getting Started</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Stellaris/music/"><span class="tocnumber">1.1</span> <span class="toctext">Stellaris/music/</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Setting_Up"><span class="tocnumber">2</span> <span class="toctext">Setting Up</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Mod_structure"><span class="tocnumber">3</span> <span class="toctext">Mod structure</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Creating_the_List_of_Songs"><span class="tocnumber">4</span> <span class="toctext">Creating the List of Songs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#songlist.asset"><span class="tocnumber">4.1</span> <span class="toctext">songlist.asset</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#songlist.txt"><span class="tocnumber">4.2</span> <span class="toctext">songlist.txt</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Tools_&amp;_utilities"><span class="tocnumber">5</span> <span class="toctext">Tools &amp; utilities</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Getting_Started">Getting Started</span></h2>
+<p>Let's take a look at the required folder structure and files. These are the contents of the base game's music folder:
+</p>
+<h4><span id="Stellaris.2Fmusic.2F"></span><span class="mw-headline" id="Stellaris/music/">Stellaris/music/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th></tr>
+<tr>
+<td>*.ogg
+</td>
+<td>A music file.
+</td></tr>
+<tr>
+<td>songs.asset
+</td>
+<td>Controls the assignment of music to a code name, and sets the volume of playback.
+</td></tr>
+<tr>
+<td>songs.txt
+</td>
+<td>List of the code names mentioned in songs.asset.
+</td></tr></tbody></table>
+<p>We will use this same structure in our mod in order to add foreign music files to the game.
+</p>
+<h2><span class="mw-headline" id="Setting_Up">Setting Up</span></h2>
+<p>First of all, follow the <a href="/Modding.html#Step_by_Step_Guide" title="Modding">step-by-step modding guide</a> to create the folder structure for your mod and enter all the relevant data in the newly created "YOUR-MOD-NAME-HERE.mod" file.
+</p><p>Once you've done that initial set up, it's time to create the folder structure for your music pack mod.
+</p><p>In quick overview, your created mod's folder will by the end of this guide contain this:
+</p>
+<ul><li>a "descriptor.mod" file;</li>
+<li>a "music" folder containing:</li></ul>
+<pre> * music files in .OGG format;
+ * a "YOUR-MUSIC-PACK.asset" file;
+ * a "YOUR-MUSIC-PACK.txt" file.
+</pre>
+<ul><li>and finally a "YOUR-MOD-THUMBNAIL.jpg" image for the Steam Workshop.</li></ul>
+<h2><span class="mw-headline" id="Mod_structure">Mod structure</span></h2>
+<p>So create a folder inside your music pack mod's main folder and call it "music". Add to this folder two files:
+</p>
+<ul><li>a "YOUR-MUSIC-PACK.asset" file;</li>
+<li>a "YOUR-MUSIC-PACK.txt" file.</li></ul>
+<p>Call them whatever you like. 
+</p><p>However, you generally should not call it "songs.asset" and "songs.txt", because this is the name that Stellaris uses for its own files and doing so might overwrite the base game's settings and songlist.
+</p><p>In order to <b>ensure</b> that no other music packs will overwrite your own songlists, call it something unique like I did for my "shrooblord-musicpack.asset".
+</p><p>Next, put music files in Ogg Vorbis format (.OGG) in this same "music" folder. If you have music files in a different file format, convert them to Ogg Vorbis (44.1&#160;kHz) first. A tool you could use for this is <a rel="nofollow" class="external text" href="http://www.audacityteam.org/">Audacity</a>, which is free.
+</p><p>That's all for the main structure of the mod! Now, let's edit those ".asset" and ".txt" files so that Stellaris actually loads our music pack into the game.
+</p>
+<h2><span class="mw-headline" id="Creating_the_List_of_Songs">Creating the List of Songs</span></h2>
+<p>To know which file names should be displayed as what song title in-game, Stellaris uses the syntax described below. Follow this same syntax and your music will show up in-game and be automatically played by the music player!
+</p>
+<h4><span class="mw-headline" id="songlist.asset">songlist.asset</span></h4>
+<p>First, let's build the ".asset" file; we'll call it "songlist.asset" for sake of simplicity.
+</p><p>So say I have placed in my "music" folder two songs I want to add to the game. One is called "LemonDemon-DinosaurchestraPartOne.ogg" and the other is "FoolsGarden-LemonTree.ogg". To get them to show up in-game, I have to put the following in the "songlist.asset" file:
+</p><p><i>songlist.asset</i>
+</p>
+<pre>music = {
+ 	name = "Dinosaurchestra - Part One"
+ 	file = "LemonDemon-DinosaurchestraPartOne.ogg"
+ 	volume = 0.50
+}
+
+music = {
+ 	name = "Lemon Tree"
+ 	file = "FoolsGarden-LemonTree.ogg"
+ 	volume = 0.50
+}
+</pre>
+<p>What are these entries? The first variable "name" is the name that will show up in the Music Player*. The "file" variable is the exact filename of the song as it appears in the "music" folder that's in the mod's main folder you created for this music pack mod. "volume" is a relative volume for the music to play at. With it you can normalize volume for your tracks and avoid one getting louder than another. 0.5 is a standard value for it.
+</p>
+<ul><li>If the music file got a name in his metadate, it's is this name that'll show up in the Music Player. If two song got the same name in metadata, only the first one will appear in game.</li></ul>
+<h4><span class="mw-headline" id="songlist.txt">songlist.txt</span></h4>
+<p>Next, we write the following to the "songlist.txt" file:
+<i>songlist.txt</i>
+</p>
+<pre>song = {
+   name = "Dinosaurchestra - Part One"
+}
+
+song = {
+   name = "Lemon Tree"
+}
+</pre>
+<p>These are simply the same "name" variables as described in the "songlist.asset" file.
+</p><p>In the references I've seen, the order of the songs in both the "songlist.asset" and "songlist.txt" files are identical; I'm not sure if this is crucial, but it's probably best to follow that example.
+</p>
+<h2><span id="Tools_.26_utilities"></span><span class="mw-headline" id="Tools_&amp;_utilities">Tools &amp; utilities</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="http://www.audacityteam.org/">Audacity</a> - Powerful, well-documented and free audio processing program that allows you to, for example, convert between music file types.</li>
+<li><a rel="nofollow" class="external text" href="https://jak-linux.org/projects/dir2ogg/">dir2ogg</a> - For Linux users, a very easy command line tool for converting mp3, m4a, wma, and wav files in bulk into the ogg-vorbis format.</li>
+<li><a rel="nofollow" class="external text" href="http://soundconverter.org/">soundconverter</a> - Also for Linux users, Soundconverter is a no Terminal based bulk converter for the most common formats into the Stellaris needed ones.</li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="/Mods.html" title="Mods">Mods</a></li>
+<li><a href="/Modding.html" title="Modding">Modding</a></li></ul>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a class="mw-selflink selflink">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181512
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.021 seconds
+Real time usage: 0.024 seconds
+Preprocessor visited node count: 185/1000000
+Post‐expand include size: 18325/2097152 bytes
+Template argument size: 8047/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.431      1 -total
+ 54.96%    1.886      1 Template:ModdingNavbox
+ 44.97%    1.543      1 Template:Navbox
+ 38.77%    1.330      1 Template:Version
+ 25.24%    0.866      1 Template:Infobox
+ 15.50%    0.532     14 Template:Navboxgroup
+  7.73%    0.265      1 Template:Nowrap
+  6.73%    0.231      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:4383-0!canonical and timestamp 20260707181511 and revision id 58356.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flag modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Flag modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.2.4.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Editing_empire_flags"><span class="tocnumber">1</span> <span class="toctext">Editing empire flags</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Code_from_00_prescripted_countries.txt"><span class="tocnumber">1.1</span> <span class="toctext">Code from 00_prescripted_countries.txt</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Flag_colors"><span class="tocnumber">1.2</span> <span class="toctext">Flag colors</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Flag_backgrounds_and_emblems"><span class="tocnumber">1.3</span> <span class="toctext">Flag backgrounds and emblems</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Non-Playable_Emblems"><span class="tocnumber">1.4</span> <span class="toctext">Non-Playable Emblems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Creating_your_own_emblems"><span class="tocnumber">2</span> <span class="toctext">Creating your own emblems</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Guide"><span class="tocnumber">2.1</span> <span class="toctext">Guide</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#ImageMagick_Helper_Script"><span class="tocnumber">2.2</span> <span class="toctext">ImageMagick Helper Script</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Editing_empire_flags">Editing empire flags</span></h2>
+<p>In a new game screen, using graphical interface, editing flag of an empire is easy, but to code this flag in .txt files – using default Paradox flag emblems, patterns and colors – you need to know code names for all those elements. This guide should make this task considerably easier.
+</p>
+<h3><span class="mw-headline" id="Code_from_00_prescripted_countries.txt">Code from 00_prescripted_countries.txt</span></h3>
+<div class="mw-highlight mw-highlight-lang-php mw-content-ltr" dir="ltr"><pre><span></span> <span class="nx">empire_flag</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="nx">icon</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="nx">category</span> <span class="o">=</span> <span class="s2">&quot;spherical&quot;</span>
+ 		<span class="nb">file</span> <span class="o">=</span> <span class="s2">&quot;flag_spherical_21.dds&quot;</span>
+ 	<span class="p">}</span>
+ 	<span class="nx">background</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="nx">category</span> <span class="o">=</span> <span class="s2">&quot;backgrounds&quot;</span>
+ 		<span class="nb">file</span> <span class="o">=</span> <span class="s2">&quot;pattern_01.dds&quot;</span>
+ 	<span class="p">}</span>
+ 	<span class="nx">colors</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="s2">&quot;turquoise&quot;</span>
+ 		<span class="s2">&quot;indigo&quot;</span>
+ 		<span class="s2">&quot;null&quot;</span>
+ 		<span class="s2">&quot;null&quot;</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>That’s the question: how are you supposed to know what emblems is <code>"spherical_21"</code> or, if you are like the creator of this guide, how turquoise color looks like? This page lists code for all those things.
+</p><p>Many of the following flag symbols are encoded as <code>"flag_category_number.dds"</code> . Others including Aquatics, Domination, and Imperial emblems are simply coded as <code>"domination_number.dds"</code>. Still others use a mix of filenames.
+</p>
+<h3><span class="mw-headline" id="Flag_colors">Flag colors</span></h3>
+<div class="center"><div class="floatnone"><a href="https://stellaris.paradoxwikis.com/File%3AFlag_colors_reference.png" class="image"><img alt="Flag colors reference.png" src="images/Flag_colors_reference.png" decoding="async" loading="lazy" width="300" height="337" data-file-width="992" data-file-height="1114" /></a></div></div>
+<dl><dd>An actual list of colours can be found at: <code>./flags/colors.txt</code></dd></dl>
+<h3><span class="mw-headline" id="Flag_backgrounds_and_emblems">Flag backgrounds and emblems</span></h3>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:15px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_backgrounds.png" class="image" title="Flag backgrounds"><img alt="Flag backgrounds" src="images/Reference_-_backgrounds.png" decoding="async" loading="lazy" width="29" height="120" data-file-width="430" data-file-height="1785" /></a></div></div>
+			<div class="gallerytext">
+<p>Flag backgrounds
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:53px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AAquatic.png" class="image" title="Emblems - Aquatic category [aquatic_#]"><img alt="Emblems - Aquatic category [aquatic_#]" src="images/Aquatic.png" decoding="async" loading="lazy" width="120" height="44" data-file-width="810" data-file-height="300" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Aquatic category <b>[aquatic_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:30px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_blocky.png" class="image" title="Emblems – Blocky category [flag_blocky_#]"><img alt="Emblems – Blocky category [flag_blocky_#]" src="images/Reference_-_blocky.png" decoding="async" loading="lazy" width="120" height="90" data-file-width="640" data-file-height="480" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Blocky category <b>[flag_blocky_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:54px auto;"><a href="https://stellaris.paradoxwikis.com/File%3ACorporate.png" class="image" title="Emblems - Corporate category [corporate_#]"><img alt="Emblems - Corporate category [corporate_#]" src="images/Corporate.png" decoding="async" loading="lazy" width="120" height="42" data-file-width="800" data-file-height="280" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Corporate category <b>[corporate_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:35.5px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_domination.png" class="image" title="Emblems – Domination category [domination_#]"><img alt="Emblems – Domination category [domination_#]" src="images/Reference_-_domination.png" decoding="async" loading="lazy" width="120" height="79" data-file-width="794" data-file-height="526" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Domination category <b>[domination_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:45px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_human.png" class="image" title="Emblems – Human category [flag_human_#]"><img alt="Emblems – Human category [flag_human_#]" src="images/Reference_-_human.png" decoding="async" loading="lazy" width="120" height="60" data-file-width="806" data-file-height="400" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Human category <b>[flag_human_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:55.5px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Imperial.png" class="image" title="Emblems - Imperial category [imperial_#]"><img alt="Emblems - Imperial category [imperial_#]" src="images/Reference_-_Imperial.png" decoding="async" loading="lazy" width="120" height="39" data-file-width="804" data-file-height="260" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Imperial category <b>[imperial_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:55px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Infernal.png" class="image" title="Emblems - Infernal category [infernal_#]"><img alt="Emblems - Infernal category [infernal_#]" src="images/Reference_-_Infernal.png" decoding="async" loading="lazy" width="120" height="40" data-file-width="804" data-file-height="266" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Infernal category <b>[infernal_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:43px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Legion.png" class="image" title="Emblems – Legion category"><img alt="Emblems – Legion category" src="images/Reference_-_Legion.png" decoding="async" loading="lazy" width="120" height="64" data-file-width="798" data-file-height="426" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Legion category
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:54.5px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Lithoid.png" class="image" title="Emblems – Lithoid category [lithoid_#]"><img alt="Emblems – Lithoid category [lithoid_#]" src="images/Reference_-_Lithoid.png" decoding="async" loading="lazy" width="120" height="41" data-file-width="806" data-file-height="278" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Lithoid category <b>[lithoid_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:55px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Necroid.png" class="image" title="Emblems – Necroid category [necroid_#]"><img alt="Emblems – Necroid category [necroid_#]" src="images/Reference_-_Necroid.png" decoding="async" loading="lazy" width="120" height="40" data-file-width="806" data-file-height="272" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Necroid category <b>[necroid_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:30px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_ornate.png" class="image" title="Emblems – Ornate category [flag_ornate_#]"><img alt="Emblems – Ornate category [flag_ornate_#]" src="images/Reference_-_ornate.png" decoding="async" loading="lazy" width="120" height="90" data-file-width="640" data-file-height="480" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Ornate category <b>[flag_ornate_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:45px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Paradox.png" class="image" title="Emblems - Paradox category"><img alt="Emblems - Paradox category" src="images/Reference_-_Paradox.png" decoding="async" loading="lazy" width="120" height="60" data-file-width="256" data-file-height="128" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Paradox category
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:55.5px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_pirate.png" class="image" title="Emblems – Pirate category [flag_pirate_#]"><img alt="Emblems – Pirate category [flag_pirate_#]" src="images/Reference_-_pirate.png" decoding="async" loading="lazy" width="120" height="39" data-file-width="802" data-file-height="260" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Pirate category <b>[flag_pirate_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:55.5px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Plantoid.png" class="image" title="Emblems – Plantoid category [plantoid_#]"><img alt="Emblems – Plantoid category [plantoid_#]" src="images/Reference_-_Plantoid.png" decoding="async" loading="lazy" width="120" height="39" data-file-width="812" data-file-height="266" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Plantoid category <b>[plantoid_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:30px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_pointy.png" class="image" title="Emblems – Pointy category [flag_pointy_#]"><img alt="Emblems – Pointy category [flag_pointy_#]" src="images/Reference_-_pointy.png" decoding="async" loading="lazy" width="120" height="90" data-file-width="640" data-file-height="480" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Pointy category <b>[flag_pointy_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:30px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_spherical.png" class="image" title="Emblems – Spherical category [flag_spherical_#]"><img alt="Emblems – Spherical category [flag_spherical_#]" src="images/Reference_-_spherical.png" decoding="async" loading="lazy" width="120" height="90" data-file-width="640" data-file-height="480" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Spherical category <b>[flag_spherical_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:55.5px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Toxoid.png" class="image" title="Emblems – Toxoid category [toxoid_#]"><img alt="Emblems – Toxoid category [toxoid_#]" src="images/Reference_-_Toxoid.png" decoding="async" loading="lazy" width="120" height="39" data-file-width="798" data-file-height="262" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Toxoid category <b>[toxoid_#]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:30px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_zoological.png" class="image" title="Emblems – Zoological category [flag_zoological_#]"><img alt="Emblems – Zoological category [flag_zoological_#]" src="images/Reference_-_zoological.png" decoding="async" loading="lazy" width="120" height="90" data-file-width="640" data-file-height="480" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems – Zoological category <b>[flag_zoological_#]</b>
+</p>
+			</div>
+		</div></li>
+</ul>
+<p><i>*Note that in the Human and Pirate categories above, specific emblems omit the "flag" section of the filename. If an emblem has more than just the number, assume it is the entire filename.</i>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Non-Playable_Emblems">Non-Playable Emblems</span></h3>
+<p>The below emblems are not normally available in the empire creation screen. They include enclaves, pre-FTL, and other special emblems. The Special category emblems have various sizes and properties, and may need more investigation to use properly.
+</p>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:55px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Enclaves.png" class="image" title="Emblems - Enclave category [enclaves_flag_*]"><img alt="Emblems - Enclave category [enclaves_flag_*]" src="images/Reference_-_Enclaves.png" decoding="async" loading="lazy" width="120" height="40" data-file-width="384" data-file-height="128" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Enclave category <b>[enclaves_flag_*]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:51px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_PreFTL.png" class="image" title="Emblems - Pre-FTL category [preftl_*]"><img alt="Emblems - Pre-FTL category [preftl_*]" src="images/Reference_-_PreFTL.png" decoding="async" loading="lazy" width="120" height="48" data-file-width="644" data-file-height="256" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Pre-FTL category <b>[preftl_*]</b>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+			<div class="thumb" style="width: 150px;"><div style="margin:25px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AReference_-_Special.png" class="image" title="Emblems - Special category"><img alt="Emblems - Special category" src="images/Reference_-_Special.png" decoding="async" loading="lazy" width="120" height="100" data-file-width="768" data-file-height="640" /></a></div></div>
+			<div class="gallerytext">
+<p>Emblems - Special category
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span class="mw-headline" id="Creating_your_own_emblems">Creating your own emblems</span></h2>
+<p>Emblems are simply squared images that the game sticks on top of a background to create a flag.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>
+</p><p>For each emblem 3 texture files in the <a href="http://en.wikipedia.org/wiki/DirectDraw_Surface" class="extiw" title="wikipedia:DirectDraw Surface">Direct Draw Texture</a> format (.dds) are required: a default, medium-sized one; a big one, usually white and displayed only on the galactic map; and a small one displayed next to units.
+</p><p>It is recommended to add the emblems using mods instead of placing them directly in the game folder to avoid any possible problems. More information on how to create them and where are they can be found are under <a href="/Mods.html" title="Mods">Mods</a>.
+</p><p>The textures should follow these specifications:
+</p>
+<ul><li>All textures must be located in a subfolder of <code>&lt;mod_root&gt;\flags\</code></li>
+<li>All three textures should have the same file name, for example <code>emblem.dds</code></li>
+<li>The default texture should have a size of 128x128 pixels and should be in the folder <code>&lt;mod_root&gt;\flags\&lt;folder&gt;\</code></li>
+<li>The map texture should have a size of 256x256 pixels and should be in the folder <code>&lt;mod_root&gt;\flags\&lt;folder&gt;\map\</code></li>
+<li>The small texture should have a size of 24x24 pixels and should be in the folder <code>&lt;mod_root&gt;\flags\&lt;folder&gt;\small\</code></li></ul>
+<p>There are a myriad of tools that can help you creating the textures for the emblems, among which there is:
+</p>
+<ul><li><a href="http://en.wikipedia.org/wiki/GIMP" class="extiw" title="wikipedia:GIMP">GIMP</a>: useful for editing images, as well as saving them in .dds format.</li>
+<li><a href="http://en.wikipedia.org/wiki/Paint.NET" class="extiw" title="wikipedia:Paint.NET">Paint.NET</a>: simple image editor with .dds format compatibility.</li>
+<li><a href="http://en.wikipedia.org/wiki/Krita" class="extiw" title="wikipedia:Krita">Krita</a>: useful for editing images.</li>
+<li><a href="http://en.wikipedia.org/wiki/Inkscape" class="extiw" title="wikipedia:Inkscape">Inkscape</a>: useful for editing vector images.</li>
+<li><a href="http://en.wikipedia.org/wiki/ImageMagick" class="extiw" title="wikipedia:ImageMagick">ImageMagick</a>: useful for processing and converting images to .dds in batches.</li>
+<li><a href="http://en.wikipedia.org/wiki/Adobe_Photoshop" class="extiw" title="wikipedia:Adobe Photoshop">Adobe Photoshop</a>: useful for editing images, as well as saving them in .dds format (with the NVIDIA plugin).</li>
+<li><a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" class="extiw" title="wikipedia:Microsoft Visual Studio">Microsoft Visual Studio</a>: useful for saving images in .dds.</li></ul>
+<h3><span class="mw-headline" id="Guide">Guide</span></h3>
+<ul><li>Create a mod using the Stellaris Launcher.</li>
+<li>Create a folder named 'flags’ in the root folder, and a subfolder that you can name however you want in it, this folder is where all the textures files will be placed.</li>
+<li>Create 'usage.txt’ in the subfolder with the following contents, it will prevent AI empires from using the emblem in their flags (savegames will still work once you remove the mod):</li></ul>
+<pre>random = no
+show_in_designer = yes
+</pre>
+<ul><li>Create a folder named <code>'localisation'</code> in the root folder. You must place there localisation (.yml) files, otherwise the category you made for the emblem won't have a name! This is an example for the English translation, the name after <code>'FLAG_CATEGORY'</code> must match the name of the new folder you created under flags and make sure to save your localisation file with "UTF-8 with BOM" encoding otherwise it won't work:</li></ul>
+<pre>l_english:
+&#160; FLAG_CATEGORY_new_flags:0 "New Flags!"
+</pre>
+<ul><li>Create your emblem! Remember that it should be a square image and that it is best to create out your image with a transparent backdrop.</li>
+<li>Now you need to generate the 3 texture files out of the image: the medium, large and small ones. Remember that they have to be .dds files and have to have determinate size each one. You can use GIMP with the .dds plugin, Photoshop with the NVIDIA plugin, ImageMagick, Paint.NET with the .dds plugin and others to convert your images to textures.</li>
+<li>Now place the medium texture in the folder you created under <code>flags</code>, create the folders <code>map</code> and <code>small</code> and place the big and small textures in each one, respectively, the folder structure should be like this now:</li></ul>
+<pre>new_mod/
+├─── flags
+│	└─── new_flags
+│		├─── emblem.dds
+│		├─── usage.txt
+│		├─── map
+│		│	└─── emblem.dds
+│		└─── small
+│			└─── emblem.dds
+└─── localisation
+	├─── new_mod_l_braz_por.yml
+	├─── new_mod_l_english.yml
+	├─── new_mod_l_french.yml
+	├─── new_mod_l_german.yml
+	├─── new_mod_l_polish.yml
+	├─── new_mod_l_russian.yml
+	└─── new_mod_l_spanish.yml
+5 directories, 11 files
+</pre>
+<p>Special considerations:
+</p>
+<ul><li>Texture compression: Using <a href="http://en.wikipedia.org/wiki/S3_Texture_Compression" class="extiw" title="wikipedia:S3 Texture Compression">DXT1 or DXT5</a> compression may introduce artifacts in the textures, use uncompressed textures (ARGB 8888) if this happens.</li>
+<li>Remember that the game recolors your image when showing it. Some colors may be distorted when you view your flags from the galaxy map.</li></ul>
+<div class="thumb center">
+<p>{{#evt:
+| service=youtube
+| id=BRIiIRTql6U
+| alignment=center
+| dimensions=400
+| container=frame
+| description=A video tutorial on emblem creation.
+</p>
+}}</div>
+<h3><span class="mw-headline" id="ImageMagick_Helper_Script">ImageMagick Helper Script</span></h3>
+<p>This <a href="http://en.wikipedia.org/wiki/batch_script" class="extiw" title="wikipedia:batch script">batch script</a> (.bat, Windows only) can help you generate the required textures to make emblems, it needs to have ImageMagick installed and its folder the PATH variable (enabled by default during install).
+</p><p>The script expects the images in PNG format under the folder "source", then creates the folder "textures", resizes the images and stores all three types of textures in the correct subfolders. Additionally it also whitens the map textures so you don't have to.
+</p><p>For creating the small emblems, the scripts uses <a rel="nofollow" class="external text" href="http://www.imagemagick.org/Usage/blur/#blur_args">blurring</a> parameters picked for blurring a 512x512 image, pick one according to the size of yours.
+</p>
+<div class="mw-highlight mw-highlight-lang-batch mw-content-ltr" dir="ltr"><pre><span></span>	<span class="k">FOR</span> <span class="se">%%</span>a <span class="k">in</span> <span class="p">(</span>source\*.png<span class="p">)</span> <span class="k">DO</span> <span class="p">(</span>
+		<span class="p">:</span><span class="c1">:default emblems</span>
+		magick convert  <span class="s2">&quot;</span><span class="se">%%</span><span class="s2">a&quot;</span> -resize 128x128 <span class="se">^</span>
+<span class="se">	</span>	-define dds:compression=dxt5 -define dds:cluster-fit=true -define dds:weight-by-alpha=true <span class="s2">&quot;textures\</span><span class="se">%%</span><span class="s2">~na.dds&quot;</span>
+		<span class="p">:</span><span class="c1">:small emblems</span>
+		magick convert <span class="s2">&quot;</span><span class="se">%%</span><span class="s2">a&quot;</span> -fill black -colorize 100<span class="se">%%</span> -background black -alpha background -channel RGBA -blur 32x32 -level 0,97<span class="se">%%</span> <span class="se">^</span>
+<span class="se">	</span>	<span class="s2">&quot;</span><span class="se">%%</span><span class="s2">a&quot;</span> -composite <span class="se">^</span>
+<span class="se">	</span>	-resize 24x24 <span class="se">^</span>
+<span class="se">	</span>	-define dds:compression=none <span class="se">^</span>
+<span class="se">	</span>	<span class="s2">&quot;textures\small\</span><span class="se">%%</span><span class="s2">~na.dds&quot;</span>
+		<span class="p">:</span><span class="c1">:map emblems</span>
+		magick convert  <span class="s2">&quot;</span><span class="se">%%</span><span class="s2">a&quot;</span> -fill white -colorize 100<span class="se">%%</span> <span class="se">^</span>
+<span class="se">	</span>	-resize 256x256 <span class="se">^</span>
+<span class="se">	</span>	-define dds:compression=dxt5 -define dds:cluster-fit=true -define dds:weight-by-alpha=true <span class="se">^</span>
+<span class="se">	</span>	<span class="s2">&quot;textures\map\</span><span class="se">%%</span><span class="s2">~na.dds&quot;</span>
+	<span class="p">)</span>
+</pre></div>
+<ul><li>More complex scripts: <a rel="nofollow" class="external free" href="https://gitlab.com/unduthegun/stellaris-emblem-lab/">https://gitlab.com/unduthegun/stellaris-emblem-lab/</a> (by Pau Ruiz Safont aka Undu)</li>
+<li>Web implementation (of this): <a rel="nofollow" class="external free" href="https://9kenm.github.io/stellaris-emblem-maker/">https://9kenm.github.io/stellaris-emblem-maker/</a> (by MrKen)</li></ul>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://i.imgur.com/OuTdXkN.png">Custom Flag Example</a></span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a class="mw-selflink selflink">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181256
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.070 seconds
+Real time usage: 1.857 seconds
+Preprocessor visited node count: 253/1000000
+Post‐expand include size: 18745/2097152 bytes
+Template argument size: 8188/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 16541/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1748.026      1 -total
+  0.38%    6.650      1 Template:Version
+  0.38%    6.606      1 Template:ModdingNavbox
+  0.16%    2.792      1 Template:Navbox
+  0.09%    1.528      1 Template:Infobox
+  0.05%    0.935     14 Template:Navboxgroup
+  0.02%    0.431      1 Template:Nowrap
+  0.02%    0.421      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1738-0!canonical and timestamp 20260707181254 and revision id 114843.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

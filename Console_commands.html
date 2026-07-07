@@ -1,0 +1,3005 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console commands - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Console commands</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">This article has been verified for the current PC <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> (4.4) of the game.</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:right; clear:right; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Console</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a class="mw-selflink selflink">Commands</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/ID.html" title="ID">IDs</a></div></div>
+</div>
+</div>
+<div class="thumb tright"><div class="thumbinner" style="width:322px;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_menus.png" class="image"><img alt="" src="images/Console_menus.png" decoding="async" loading="lazy" width="320" height="146" class="thumbimage" data-file-width="1447" data-file-height="658" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_menus.png" class="internal" title="Enlarge"></a></div>Console with traits debug view open</div></div></div>
+<p><b>If you want to contribute to this page, which is a work in progress, in the console type "help" to see the list of commands, then to see a description and parameter of a command, type "help [command-name]", and put the corresponding details into the list.</b>
+</p>
+<div style="margin:1.4px 1.6em;"><i>This page deals with commands used in the console. For the <a href="/Modding.html" title="Modding">modding</a> term, see <a href="/Effects.html" title="Effects">effects</a>.</i></div>
+<p>This page lists the codes which may be input into the console window, a special debugging window which may be accessed on non-ironman games by pressing Shift+2, ALT+2+1, Shift+3,<kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">§</kbd>, <kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">~</kbd>, <kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">^</kbd>, <kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">°</kbd>, <kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">²</kbd>, or <kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">`</kbd> (key varies based on keyboard layout). For a QWERTY keyboard, the key is <kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">`</kbd>. Else, try pressing Shift + Alt + C if none of the above worked. Press the up or down arrow keys to traverse through previously executed commands. Many codes can be turned off by repeating the command, but sometimes reloading the save or exiting the game is necessary. The console also comes with menus and buttons for the most common commands. Using any console command will disable achievements.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#IDs"><span class="tocnumber">1</span> <span class="toctext">IDs</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Cheats"><span class="tocnumber">2</span> <span class="toctext">Cheats</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#List_of_major_events"><span class="tocnumber">2.1</span> <span class="toctext">List of major events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#For_changing_the_galaxy"><span class="tocnumber">2.1.1</span> <span class="toctext">For changing the galaxy</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#For_unlocking_ascension_authorities"><span class="tocnumber">2.1.2</span> <span class="toctext">For unlocking ascension authorities</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#For_unlocking_edicts"><span class="tocnumber">2.1.3</span> <span class="toctext">For unlocking edicts</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#For_unlocking_paragons"><span class="tocnumber">2.1.4</span> <span class="toctext">For unlocking paragons</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Modifier_cheats"><span class="tocnumber">2.2</span> <span class="toctext">Modifier cheats</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Testing_commands"><span class="tocnumber">3</span> <span class="toctext">Testing commands</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#TweakerGUI_commands"><span class="tocnumber">4</span> <span class="toctext">TweakerGUI commands</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Changing_galactic_imperium_color"><span class="tocnumber">5</span> <span class="toctext">Changing galactic imperium color</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="IDs">IDs</span></h2>
+<p>Most IDs are predefined and can be found on the <a href="/ID.html" title="ID">ID</a> page. Species, leader, empire and pop IDs however are defined when the game is created and have to be found with the  <code>debugtooltip</code> command.
+</p>
+<ul><li>Species IDs can be read by hovering over a species in the species menu. Unless the starting system or galaxy were modded, the player's species will always be 1 for the founder species and 2 for the syncretic/cyborg/bio-trophy/prepatent species.</li>
+<li>Leader IDs can be read by hovering over a leader in the leaders or empire menus. Unless the starting system or galaxy were modded, the player's starting ruler will always be 0.</li>
+<li>Empire IDs can be read by hovering over an empire's flag in the contacts menu or its borders on the galaxy map. Unless the starting system or galaxy were modded, the player's empire will always be 0.</li>
+<li>Ship IDs can be read by hovering over a ship in the fleet window. Unless the starting system or galaxy were modded, the player's starting science ship will always be 0.</li>
+<li>Pop IDs can be read by hovering over a pop in the population tab. Alternatively using the <code>add_pops</code> command empty will list all pop IDs. Unless the starting system or galaxy were modded, the player's pops will always be 0 to 32.</li></ul>
+<p>Trait IDs can also be found by hovering over the trait in the debug window.
+</p>
+<h2><span class="mw-headline" id="Cheats">Cheats</span></h2>
+<p>Cheats are console commands that can be used to give unfair advantages as opposed to sole testing purposes.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Command
+</th>
+<th style="width:55%">Effect
+</th>
+<th>Parameters
+</th>
+<th>Example
+</th></tr>
+<tr>
+<td>activate_all_traditions</td>
+<td>Activates all traditions<br /><b>NOTE:</b> DLC traditions will be added but most will have no effects without the required DLC</td>
+<td>None</td>
+<td>activate_all_traditions
+</td></tr>
+<tr>
+<td>activate_ascension_perk</td>
+<td>Activates the specified ascension perk, pressing tab reveals all IDs</td>
+<td>[AP id]</td>
+<td>activate_ascension_perk ap_mind_over_matter
+</td></tr>
+<tr>
+<td>activate_gateways</td>
+<td>Activates all gateways in the galaxy</td>
+<td>None</td>
+<td>activate_gateways
+</td></tr>
+<tr>
+<td>activate_relic</td>
+<td>Activates the triumph effect of [relic id]</td>
+<td>[relic id]</td>
+<td>activate_relic r_unbidden_warlock
+</td></tr>
+<tr>
+<td>activate_tradition</td>
+<td>Activates the specified Tradition, pressing tab reveals all IDs including tree adoption</td>
+<td>[tradition id]</td>
+<td>activate_tradition tr_prosperity_sct
+</td></tr>
+<tr>
+<td>add_anomaly</td>
+<td>Adds the specified anomaly to the selected celestial object, pressing tab reveals all IDs</td>
+<td>[anomaly id]</td>
+<td>add_anomaly life_asteroid_category
+</td></tr>
+<tr>
+<td>add_first_contact_clues</td>
+<td>Adds [amount] of insights for the currently opened first contact, default 10</td>
+<td>[amount]</td>
+<td>add_first_contact_clues 5
+</td></tr>
+<tr>
+<td>add_intel</td>
+<td>Adds [amount] of intel towards [target], default 10</td>
+<td>[target] [amount]</td>
+<td>add_intel 1 100
+</td></tr>
+<tr>
+<td>add_loyalty</td>
+<td>Adds [amount] of loyalty from [target], default 10</td>
+<td>[target] [amount]</td>
+<td>add_loyalty 1 50
+</td></tr>
+<tr>
+<td>add_opinion</td>
+<td>Increases the [source] empire's Opinion of the [target] empire by [amount], default 40</td>
+<td>[source] [target] [amount]</td>
+<td>add_opinion 1 0 100
+</td></tr>
+<tr>
+<td>add_pops</td>
+<td>Creates [amount] of pops from [species id] on the selected celestial object, entering without ID reveals all species IDs</td>
+<td>[species id] [amount]</td>
+<td>add_pops 0 5
+</td></tr>
+<tr>
+<td>add_relic</td>
+<td>Grants [relic id], pressing tab reveals all IDs and writing <i>all</i> instead of the ID grants all relics. Same relic can be added multiple times.<br /><b>NOTE:</b> Cybrex War Forge will not work correctly the first time it's activated if added this way</td>
+<td>[relic id]</td>
+<td>add_relic r_unbidden_warlock
+</td></tr>
+<tr>
+<td>add_ship</td>
+<td>Creates a fleet with one ship of [design name], pressing tab reveals the NPC ship names<br /><b>NOTE:</b> Spawned juggernauts will not be able to build, upgrade or repair ships</td>
+<td>[design name]</td>
+<td>add_ship Avatar
+</td></tr>
+<tr>
+<td>add_spynetwork_value</td>
+<td>Adds [amount] of infiltration progress on [target]</td>
+<td>[target] [amount]</td>
+<td>add_spynetwork_value 1 1000
+</td></tr>
+<tr>
+<td>add_time</td>
+<td>Adds [amount] of [unit] time, valid units are days, months and years<br /><span class="effect-red" style="font-weight:bold;">WARNING:</span> Leader age will be affected too, potentially killing them</td>
+<td>[unit] [amount]</td>
+<td>add_time years 10
+</td></tr>
+<tr>
+<td>add_trait_leader</td>
+<td>Adds [trait id] to [leader id], entering only the leader ID reveals all trait IDs for that class, opposite traits cannot be added</td>
+<td>[leader id] [trait id]</td>
+<td>add_trait_leader 1 leader_trait_gale_speed
+</td></tr>
+<tr>
+<td>add_trait_species</td>
+<td>Adds [trait id] to [species id]</td>
+<td>[species id] [trait id]</td>
+<td>add_trait_species 5 intelligent
+</td></tr>
+<tr>
+<td>add_trust</td>
+<td>Increases the [source] empire's Trust of the [target] empire by [amount], default 10</td>
+<td>[source] [target] [amount]</td>
+<td>add_trust 1 0 100
+</td></tr>
+<tr>
+<td>advance_council_agenda</td>
+<td>Adds [amount] of progress to the council agenda, entering without an amount readies the agenda for launch</td>
+<td>[amount]</td>
+<td>advance_council_agenda 1000
+</td></tr>
+<tr>
+<td>ai</td>
+<td>Toggles the AI on or off</td>
+<td>None</td>
+<td>ai
+</td></tr>
+<tr>
+<td>alloys</td>
+<td>Adds [amount] of Alloys, default 5000</td>
+<td>[amount]</td>
+<td>alloys 500
+</td></tr>
+<tr>
+<td>annex</td>
+<td>Takes control of all worlds and starbases of target</td>
+<td>[target]</td>
+<td>[annex] 3
+</td></tr>
+<tr>
+<td>break_fleet_contract</td>
+<td>Returns the selected leased fleet to its original owner</td>
+<td>None</td>
+<td>break_fleet_contract
+</td></tr>
+<tr>
+<td>cash</td>
+<td>Adds [amount] of Energy Credits, defaults 5000</td>
+<td>[amount]</td>
+<td>cash 500
+</td></tr>
+<tr>
+<td>colonize</td>
+<td>Starts the colonization process of the selected celestial object using a copy of the pop with the ID given, uncolonizable celestial objects will not make colonization progress</td>
+<td>[colonizer pop id]</td>
+<td>colonize 1
+</td></tr>
+<tr>
+<td>communications</td>
+<td>Establishes communications with all empires and enclaves and the Shroud</td>
+<td>None</td>
+<td>communications
+</td></tr>
+<tr>
+<td>complete_first_contact</td>
+<td>Completes the selected first contact<br /><span class="effect-red" style="font-weight:bold;">WARNING:</span> Will not receive any rewards if used on space fauna</td>
+<td>None</td>
+<td>complete_first_contact
+</td></tr>
+<tr>
+<td>complete_focus_task</td>
+<td>Completes the empire focus task number [task number]</td>
+<td>[task number]</td>
+<td>complete_focus_task 1
+</td></tr>
+<tr>
+<td>complete_focus_tasks</td>
+<td>Completes all current empire focus tasks</td>
+<td>None</td>
+<td>complete_focus_tasks
+</td></tr>
+<tr>
+<td>contact</td>
+<td>Starts first contact with all empires</td>
+<td>None</td>
+<td>contact
+</td></tr>
+<tr>
+<td>create_megastructure</td>
+<td>Creates a Megastructure in the current system, pressing tab reveals the IDs<br /><b>NOTE:</b> Settled and nomadic empires can't create megastructures exclusive to the other<br /><b>NOTE:</b> Orbital Rings cannot be correctly spawned</td>
+<td>[megastructure id]</td>
+<td>create_megastructure gateway_final
+</td></tr>
+<tr>
+<td>create_navy</td>
+<td>Creates a fleet using your most recent designs that uses [amount] percentage of Naval Capacity, 1 means 100%</td>
+<td>[amount]</td>
+<td>create_navy 0.5
+</td></tr>
+<tr>
+<td>damage</td>
+<td>All ships in the selected fleet take [amount] hull damage</td>
+<td>[amount]</td>
+<td>damage 100
+</td></tr>
+<tr>
+<td>debug_nomen</td>
+<td>Toggles AI empires always refusing player proposals</td>
+<td>None</td>
+<td>debug_nomen
+</td></tr>
+<tr>
+<td>debug_yesmen</td>
+<td>Toggles AI empires always agreeing to player proposals</td>
+<td>None</td>
+<td>debug_yesmen
+</td></tr>
+<tr>
+<td>effect add_awareness =</td>
+<td>Adds [amount] of awareness, must select a pre-FTL civilization in the diplomacy menu to work</td>
+<td>[amount]</td>
+<td>effect add_awareness = 10
+</td></tr>
+<tr>
+<td>effect add_building =</td>
+<td>Adds [building id] to the primary zone of the selected celestial object</td>
+<td>[building id]</td>
+<td>effect add_building = building_fe_dome
+</td></tr>
+<tr>
+<td>effect add_deposit =</td>
+<td>Adds [deposit id] resource deposit or planetary feature to the selected celestial object</td>
+<td>[deposit id]</td>
+<td>effect add_deposit = d_arid_highlands
+</td></tr>
+<tr>
+<td>effect add_planet_devastation =</td>
+<td>Adds [amount] of Devastation to the selected celestial object, negative values lower it</td>
+<td>[amount]</td>
+<td>effect add_planet_devastation = 10
+</td></tr>
+<tr>
+<td>effect add_situation_progress =</td>
+<td>Adds [amount] of progress to the selected situation</td>
+<td>[amount]</td>
+<td>effect add_situation_progress = 20
+</td></tr>
+<tr>
+<td>effect country_add_ethic =</td>
+<td>Adds [ethic id] to the player empire, using more than 3 ethic points will remove lowest attraction ethics</td>
+<td>[ethic id]</td>
+<td>effect country_add_ethic = ethic_spiritualist
+</td></tr>
+<tr>
+<td>effect country_remove_ethic =</td>
+<td>Removes [ethic id] from the player empire</td>
+<td>[ethic id]</td>
+<td>effect country_remove_ethic = ethic_spiritualist
+</td></tr>
+<tr>
+<td>effect create_archaeological_site =</td>
+<td>Adds [archaeological site id] to the selected celestial object, writing <i>random</i> creates a random archeological site</td>
+<td>[archaeological site id]</td>
+<td>effect create_archaeological_site = lithoids_digsite
+</td></tr>
+<tr>
+<td>effect destroy_fleet = this</td>
+<td>Destroys the selected fleet</td>
+<td>None</td>
+<td>effect delete_fleet = this
+</td></tr>
+<tr>
+<td>effect destroy_situation = this</td>
+<td>Ends the selected situation</td>
+<td>None</td>
+<td>effect destroy_situation = this
+</td></tr>
+<tr>
+<td>effect enrage_behemoth</td>
+<td>Selected fleet, starbase or world becomes hostile to everyone for 6 months</td>
+<td>None</td>
+<td>effect enrage_behemoth
+</td></tr>
+<tr>
+<td>effect force_add_civic =</td>
+<td>Adds [civic id] to the player empire, origins can be added too but incompatible civics and origins will remain inactive<br /><b>NOTE:</b> Will not work if something is selected</td>
+<td>[civic id]</td>
+<td>effect force_add_civic = civic_corporate_dominion
+</td></tr>
+<tr>
+<td>effect force_remove_civic =</td>
+<td>Removes [civic id] to the player empire<br /><b>NOTE:</b> Will not work if something is selected</td>
+<td>[civic id]</td>
+<td>effect force_remove_civic = civic_meritocracy
+</td></tr>
+<tr>
+<td>effect remove_ascension_perk =</td>
+<td>Removes [AP id]</td>
+<td>[AP id]</td>
+<td>effect remove_ascension_perk = ap_detox
+</td></tr>
+<tr>
+<td>effect remove_deposit =</td>
+<td>Removes [deposit id] resource deposit or planetary feature to the selected celestial object</td>
+<td>[deposit id]</td>
+<td>effect remove_deposit = d_arid_highlands
+</td></tr>
+<tr>
+<td>effect remove_megastructure = this</td>
+<td>Removes the selected megastructure</td>
+<td>None</td>
+<td>effect remove_megastructure = this
+</td></tr>
+<tr>
+<td>effect remove_modifier =</td>
+<td>Removes [modifier id] from the selected celestial object, or empire if none is selected</td>
+<td>[modifier id]</td>
+<td>effect remove_modifier = holy_planet
+</td></tr>
+<tr>
+<td>effect set_origin =</td>
+<td>Replaces the origin of the player empire with</td>
+<td>[origin id]</td>
+<td>effect set_origin = origin_fallen_empire
+</td></tr>
+<tr>
+<td>effect shift_ethic =</td>
+<td>Shifts the player empire's ethics to [ethic id]<br /><b>NOTE:</b> Will not work if something is selected</td>
+<td>[ethic id]</td>
+<td>effect shift_ethic = ethic_fanatic_spiritualist
+</td></tr>
+<tr>
+<td>effect destroy_colony</td>
+<td>Decolonizes the selected world</td>
+<td>None</td>
+<td>effect destroy_colony
+</td></tr>
+<tr>
+<td>election</td>
+<td>Starts a ruler election</td>
+<td>None</td>
+<td>election
+</td></tr>
+<tr>
+<td>end_senate_session</td>
+<td>Passes/fails the currently voted resolution</td>
+<td>None</td>
+<td>end_senate_session
+</td></tr>
+<tr>
+<td>engineering</td>
+<td>Adds [amount] of Engineering tech points, default 5000</td>
+<td>[amount]</td>
+<td>engineering 500
+</td></tr>
+<tr>
+<td>event</td>
+<td>Triggers [event id], worlds can be selected manually but ships require [target id]</td>
+<td>[event id] [target id]</td>
+<td>event anomaly.1 0
+</td></tr>
+<tr>
+<td>federation_add_experience</td>
+<td>Adds [amount] of Experience to the Federation, default 1000</td>
+<td>[amount]</td>
+<td>federation_add_experience 1200
+</td></tr>
+<tr>
+<td>federation_add_cohesion</td>
+<td>Adds [amount] of Cohesion to the Federation, default 200</td>
+<td>[amount]</td>
+<td>federation_add_cohesion 10
+</td></tr>
+<tr>
+<td>federation_add_cohesion_speed</td>
+<td>Adds [amount] of Monthly Cohesion to the Federation, default 10</td>
+<td>[amount]</td>
+<td>federation_add_cohesion_speed 10
+</td></tr>
+<tr>
+<td>federation_examine_leader</td>
+<td>Triggers a Federation succession</td>
+<td>None</td>
+<td>federation_examine_leader
+</td></tr>
+<tr>
+<td>finish_arc_stage</td>
+<td>Finishes the current chapter of an archaeological site, requires selecting its celestial object and a science ship excavating it</td>
+<td>None</td>
+<td>finish_arc_stage
+</td></tr>
+<tr>
+<td>finish_research</td>
+<td>Finishes all active research and special projects</td>
+<td>None</td>
+<td>finish_research
+</td></tr>
+<tr>
+<td>finish_special_projects</td>
+<td>Finishes all special projects</td>
+<td>None</td>
+<td>finish_special_projects
+</td></tr>
+<tr>
+<td>finish_terraform</td>
+<td>Finishes all terraforming processes</td>
+<td>None</td>
+<td>finish_special_projects
+</td></tr>
+<tr>
+<td>food</td>
+<td>Adds [amount] of Food, default 5000</td>
+<td>[amount]</td>
+<td>food 500
+</td></tr>
+<tr>
+<td>force_integrate</td>
+<td>Integrates [target] empire into the player's empire, will not work if on integration cooldown</td>
+<td>[target]</td>
+<td>force_integrate 2
+</td></tr>
+<tr>
+<td>force_senate_vote</td>
+<td>Ends the current senate recess</td>
+<td>None</td>
+<td>end_senate_session
+</td></tr>
+<tr>
+<td>free_government</td>
+<td>Toggles allowing player to change governments without the time limit and ignores civics restrictions</td>
+<td>None</td>
+<td>free_government
+</td></tr>
+<tr>
+<td>free_policies</td>
+<td>Toggles allowing player to change policies and species rights without restriction, including policies previously disabled</td>
+<td>None</td>
+<td>free_policies
+</td></tr>
+<tr>
+<td>grow_pops</td>
+<td>Runs pop growth/assembly/decline monthly update on selected planet</td>
+<td>None</td>
+<td>grow_pops
+</td></tr>
+<tr>
+<td>hire_all_leaders</td>
+<td>Hires all leaders in the leader pool</td>
+<td>None</td>
+<td>hire_all_leaders
+</td></tr>
+<tr>
+<td>influence</td>
+<td>Adds [amount] of Influence, default 5000</td>
+<td>[amount]</td>
+<td>influence 500
+</td></tr>
+<tr>
+<td>instant_build</td>
+<td>Toggles instantly finishing constructions and upgrades and resource storage becomes unlimited<br /><span class="effect-red" style="font-weight:bold;">WARNING:</span> This also applies to AI empires</td>
+<td>none</td>
+<td>instant_build
+</td></tr>
+<tr>
+<td>instant_specialization_conversion</td>
+<td>Toggles instantly converting specialized subjects</td>
+<td>none</td>
+<td>instant_specialization_conversion
+</td></tr>
+<tr>
+<td>intel</td>
+<td>Gives sight of the entire galaxy</td>
+<td>None</td>
+<td>intel
+</td></tr>
+<tr>
+<td>invincible</td>
+<td>Player ships will not take damage</td>
+<td>None</td>
+<td>invincible
+</td></tr>
+<tr>
+<td>kill_country</td>
+<td>Kills [empire id], if no ID is entered than the player's empire</td>
+<td>[empire id]</td>
+<td>kill_country 2
+</td></tr>
+<tr>
+<td>max_resources</td>
+<td>Fills all resource storages</td>
+<td>None</td>
+<td>max_resources
+</td></tr>
+<tr>
+<td>minerals</td>
+<td>Adds [amount] of Minerals, default 5000</td>
+<td>[amount]</td>
+<td>minerals 500
+</td></tr>
+<tr>
+<td>observe</td>
+<td>Switches to observer mode, use the <i>play</i> command to revert control<br /><span class="effect-red" style="font-weight:bold;">WARNING:</span> If the game is unpaused in observer mode the AI will take control of the player empire</td>
+<td>None</td>
+<td>observe
+</td></tr>
+<tr>
+<td>own</td>
+<td>Take ownership and control of the selected fleet, starbase or planet, or if none is selected takes ownership of the planet ID given as an argument. Uncolonizable celestial objects will be created as colonies but have no construction menu.</td>
+<td>[planet id]</td>
+<td>own
+</td></tr>
+<tr>
+<td>physics</td>
+<td>Adds [amount] of Physics tech points, default 5000</td>
+<td>[amount]</td>
+<td>physics 500
+</td></tr>
+<tr>
+<td>planet_ascension_tier</td>
+<td>Changes the ascension tier of the selected celestial object to [amount], can go above regular values</td>
+<td>[amount]</td>
+<td>planet_ascension_tier 3
+</td></tr>
+<tr>
+<td>planet_class</td>
+<td>Changes the selected celestial object to [celestial object id]<br /><span class="effect-red" style="font-weight:bold;">WARNING:</span> If no celestial object is selected everyting in the galaxy will be terraformed</td>
+<td>[planet class id]</td>
+<td>planet_class pc_arid
+</td></tr>
+<tr>
+<td>planet_happiness</td>
+<td>Adds a modifier with [amount] Happiness to the selected planet, default 100</td>
+<td>[amount]</td>
+<td>planet_happiness 25
+</td></tr>
+<tr>
+<td>planet_size</td>
+<td>Changes the Size of the selected celestial object, can go above regular sizes but above 78 will move the celestial object backwards</td>
+<td>[size]</td>
+<td>planet_size 30
+</td></tr>
+<tr>
+<td>play</td>
+<td>Switches player control to empire [empire ID]</td>
+<td>[empire ID]</td>
+<td>play 2
+</td></tr>
+<tr>
+<td>random_ruler</td>
+<td>Replaces the empire ruler with a new random one</td>
+<td>None</td>
+<td>random_ruler
+</td></tr>
+<tr>
+<td>remove_trait_leader</td>
+<td>Removes [trait id] from [leader id], entering only the leader ID reveals the name for all current traits.</td>
+<td>[leader id] [trait id or index]</td>
+<td>remove_trait_leader 1 leader_trait_gale_speed
+</td></tr>
+<tr>
+<td>remove_trait_species</td>
+<td>Removes [trait id] from [species id]</td>
+<td>[species id] [trait id]</td>
+<td>remove_trait_species 5 intelligent
+</td></tr>
+<tr>
+<td>research_all_technologies</td>
+<td>Instantly researches all non-repeatable technologies. Add 1 for space creatures and crisis techs too. Add a second number for [amount] of repeatable technologies.<br /><b>NOTE:</b> Galactic Archivism technology can only be added after acquiring a specimen<br /><b>NOTE:</b> Space fauna technologies can only be added after encountering space fauna</td>
+<td>[boolean] [amount]</td>
+<td>research_all_technologies 1 5
+</td></tr>
+<tr>
+<td>research_technology</td>
+<td>Instantly research [technology id]<br /><b>NOTE:</b> Space fauna technologies can only be added after encountering space fauna</td>
+<td>[technology id]</td>
+<td>research_technology tech_automated_exploration
+</td></tr>
+<tr>
+<td>resource</td>
+<td>Adds [amount] of [resource], default 5000</td>
+<td>[amount] [resource]</td>
+<td>resource consumer_goods 1000
+</td></tr>
+<tr>
+<td>skills</td>
+<td>Adds [amount] of skill levels to every leader hired by the player, default 1</td>
+<td>[amount]</td>
+<td>skills 9
+</td></tr>
+<tr>
+<td>skip_agreement_cooldowns</td>
+<td>Toggles allowing the change of subject terms of agreement without cooldown</td>
+<td>none</td>
+<td>skip_agreement_cooldowns
+</td></tr>
+<tr>
+<td>skip_federation_cooldowns</td>
+<td>Toggles allowing the change of federation laws without cooldown</td>
+<td>none</td>
+<td>skip_federation_cooldowns
+</td></tr>
+<tr>
+<td>skip_galactic_community_cooldowns</td>
+<td>Toggles allowing the proposition of resolutions from the same group without cooldown</td>
+<td>none</td>
+<td>skip_galactic_community_cooldowns
+</td></tr>
+<tr>
+<td>society</td>
+<td>Adds [amount] of Society tech points, default 5000</td>
+<td>[amount]</td>
+<td>society 500
+</td></tr>
+<tr>
+<td>survey</td>
+<td>Surveys all celestial objects, requires at least one science ship</td>
+<td>None</td>
+<td>survey
+</td></tr>
+<tr>
+<td>techupdate</td>
+<td>Re-rolls the current available tech choices</td>
+<td>None</td>
+<td>techupdate
+</td></tr>
+<tr>
+<td>unity</td>
+<td>Adds [amount] of Unity, default 500</td>
+<td>[amount]</td>
+<td>unity 5000
+</td></tr>
+<tr>
+<td>unlock_edicts</td>
+<td>Unlocks all edicts</td>
+<td>None</td>
+<td>unlock_edicts
+</td></tr>
+<tr>
+<td>update_leader_pool</td>
+<td>Refreshes the leader pool</td>
+<td>None</td>
+<td>update_leader_pool
+</td></tr>
+<tr>
+<td><a href="/MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> branchoffice</td>
+<td>Create or take control of the branch office on the selected world</td>
+<td>None</td>
+<td>branchoffice
+</td></tr>
+<tr>
+<td><a href="/Ancient_Relics.html" title="Ancient Relics"><img alt="Ancient Relics.png" src="images/Ancient_Relics.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> minor_artifacts</td>
+<td>Adds [amount] of Minor Artifacts, default 5000</td>
+<td>[amount]</td>
+<td>minor_artifacts 100
+</td></tr>
+<tr>
+<td><a href="/Nemesis.html" title="Nemesis"><img alt="Nemesis.png" src="images/Nemesis.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> menace</td>
+<td>Adds [amount] of Menace, default 5000</td>
+<td>[amount]</td>
+<td>menace 1000
+</td></tr>
+<tr>
+<td><a href="/Nemesis.html" title="Nemesis"><img alt="Nemesis.png" src="images/Nemesis.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> imperial_authority</td>
+<td>Adds [amount] of Imperial Authority, default 10</td>
+<td>[amount]</td>
+<td>imperial_authority 20
+</td></tr>
+<tr>
+<td><a href="/Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> add_subject_xp</td>
+<td>Adds [amount] of specialized subject experience to [target], default 10</td>
+<td>[target] [amount]</td>
+<td>add_subject_xp 1 1000
+</td></tr>
+<tr>
+<td><a href="/Galactic_Paragons.html" title="Galactic Paragons"><img alt="Galactic Paragons.png" src="images/Galactic_Paragons.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> effect unlock_council_slots = 1</td>
+<td>Unlocks a council slot</td>
+<td>None</td>
+<td>effect unlock_council_slots = 1
+</td></tr>
+<tr>
+<td><a href="/Astral_Planes.html" title="Astral Planes"><img alt="Astral Planes.png" src="images/Astral_Planes.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> astral_threads</td>
+<td>Adds [amount] of Astral Threads, default 5000</td>
+<td>[amount]</td>
+<td>astral_threads 100
+</td></tr>
+<tr>
+<td><a href="/Astral_Planes.html" title="Astral Planes"><img alt="Astral Planes.png" src="images/Astral_Planes.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> finish_rift_stage</td>
+<td>Finishes the current chapter of the selected astral rift</td>
+<td>None</td>
+<td>finish_rift_stage
+</td></tr>
+<tr>
+<td><a href="/Astral_Planes.html" title="Astral Planes"><img alt="Astral Planes.png" src="images/Astral_Planes.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> set_completed_rifts</td>
+<td>Sets the number of completed Astral Rifts to [amount]</td>
+<td>[amount]</td>
+<td>set_completed_rifts 2
+</td></tr>
+<tr>
+<td><a href="/Astral_Planes.html" title="Astral Planes"><img alt="Astral Planes.png" src="images/Astral_Planes.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> spawn_astral_rift</td>
+<td>Spawns [astral rift id] in the current system or a random one if none is entered, pressing tab reveals all IDs<br /><b>None:</b> The Crystal Rift will require using event astral_planes.45 after exploring to continue</td>
+<td>[astral rift id]</td>
+<td>spawn_astral_rift station
+</td></tr>
+<tr>
+<td><a href="/The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> advanced_logic</td>
+<td>Adds [amount] of Advanced Logic, default 5000</td>
+<td>[amount]</td>
+<td>advanced_logic 1000
+</td></tr>
+<tr>
+<td><a href="/Grand_Archive_(DLC).html" title="Grand Archive"><img alt="Grand Archive" src="images/Grand_Archive.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> add_specimen</td>
+<td>Adds a specimen, pressing tab reveals all IDs while writing <i>random</i> adds a random specimen</td>
+<td>[specimen id]</td>
+<td>add_specimen advisor_core
+</td></tr>
+<tr>
+<td><a href="/Grand_Archive_(DLC).html" title="Grand Archive"><img alt="Grand Archive" src="images/Grand_Archive.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> add_to_vivarium</td>
+<td>Adds a copy of the selected space fauna fleet to the Vivarium</td>
+<td>None</td>
+<td>add_to_vivarium
+</td></tr>
+<tr>
+<td><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> add_psionic_aura_intensity</td>
+<td>Changes the system's psionic aura intensity by [amount]</td>
+<td>[amount]</td>
+<td>add_psionic_aura_intensity 100
+</td></tr>
+<tr>
+<td><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> create_patron_relation</td>
+<td>Makes contact with [patron id]</td>
+<td>[patron id]</td>
+<td>create_patron_relation the_eater_of_worlds
+</td></tr>
+<tr>
+<td><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> skip_accord_cooldowns</td>
+<td>Resets the covenant power cooldown</td>
+<td>None</td>
+<td>skip_accord_cooldowns
+</td></tr>
+<tr>
+<td><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> skip_calling_cooldowns</td>
+<td>Resets the calling replace cooldown</td>
+<td>None</td>
+<td>skip_calling_cooldowns
+</td></tr>
+<tr>
+<td><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> skip_delve_cooldown</td>
+<td>Resets the Shroud delve cooldown<br /><b>NOTE:</b> Only works in Shadows of the Shroud, for the base base game use event utopia.3000</td>
+<td>None</td>
+<td>skip_delve_cooldown
+</td></tr>
+<tr>
+<td><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> max_patron_relation</td>
+<td>Forms a covenant with [patron id], if one already exists it gets replaced<br /><b>NOTE:</b> Only works in Shadows of the Shroud, not with the base game alone</td>
+<td>[patron id]</td>
+<td>max_patron_relation the_eater_of_worlds
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="List_of_major_events">List of major events</span></h3>
+<table class="wikitable">
+<tbody><tr>
+<th>ID</th>
+<th>Major event</th>
+<th>Notes</th>
+<th>Required selection
+</th></tr>
+<tr>
+<td>akx.8888</td>
+<td>The Horizon Signal</td>
+<td>Can start the Horizon Signal event, selected ship must have a leader and be in a black hole system</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>anomaly.95</td>
+<td>Voyager 1</td>
+<td>Can start the Solar Coordinates event if the Sol system exists somewhere in the galaxy</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>anomaly.186</td>
+<td>Limbo</td>
+<td>With the right technology and AI policies you can resurrect them as a new colony or as a new empire</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>anomaly.2523</td>
+<td>Gigantic Skeleton</td>
+<td>Gain a Skeletal Giant army</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>anomaly.3085</td>
+<td>The Prince</td>
+<td>Event with small but permanent opinion effects</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>colony_mod.101</td>
+<td>Titanic Life Study: Success</td>
+<td>Allows the recruitment of Titanic Beast armies</td>
+<td>Planet
+</td></tr>
+<tr>
+<td>crisis.50</td>
+<td>Rise of the Sentinels</td>
+<td>Doesn't require the crisis but will add its sound effects</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.71</td>
+<td>Sentinel Fleet Donation</td>
+<td>Doesn't require the crisis or the Sentinels</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.105</td>
+<td>Long live the Queen!</td>
+<td>Spawns the Domesticated Prethoryn Queen</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>crisis.2400</td>
+<td>Cybrex Return</td>
+<td>Doesn't require the crisis</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.4550</td>
+<td>Star-Eater Firing</td>
+<td>The current system is destroyed</td>
+<td>Planet
+</td></tr>
+<tr>
+<td>fallen_empires_tasks.1</td>
+<td>A patronizing or machine Fallen Empire sends a random gift</td>
+<td></td>
+<td>None
+</td></tr>
+<tr>
+<td>namarian.1</td>
+<td>Galactic Nomads</td>
+<td>Will not spawn if a Sentry Array is completed</td>
+<td>None
+</td></tr>
+<tr>
+<td>precursor.98</td>
+<td>Vultraum Home System Located</td>
+<td>Spawns the Vultraum Home System</td>
+<td>None
+</td></tr>
+<tr>
+<td>precursor.598</td>
+<td>Yuht Home System Located</td>
+<td>Spawns the Yuht Home System</td>
+<td>None
+</td></tr>
+<tr>
+<td>precursor.1098</td>
+<td>First League Home System Located</td>
+<td>Spawns the First League Home System</td>
+<td>None
+</td></tr>
+<tr>
+<td>precursor.1598</td>
+<td>Irassian Home System Located</td>
+<td>Spawns the Irassian Home System</td>
+<td>None
+</td></tr>
+<tr>
+<td>precursor.2098</td>
+<td>Cybrex Home System Located</td>
+<td>Spawns the Cybrex Home System</td>
+<td>None
+</td></tr>
+<tr>
+<td>story.107</td>
+<td>Amoebas Pacified</td>
+<td></td>
+<td>None
+</td></tr>
+<tr>
+<td>story.207</td>
+<td>Crystals Pacified</td>
+<td></td>
+<td>None
+</td></tr>
+<tr>
+<td>origin.5605</td>
+<td>Teachers of the Shroud</td>
+<td>Unlocks the Shroud Beacon starbase building and gives bonus opinion with the shroudwalkers</td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3021</td>
+<td>Avatar (army)</td>
+<td></td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3190</td>
+<td>The Chosen One</td>
+<td></td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3304</td>
+<td>Whisperers in the Void</td>
+<td>Option to form a covenant (base game mechanics)</td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3305</td>
+<td>Composer of Strands</td>
+<td>Option to form a covenant (base game mechanics)</td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3306</td>
+<td>Eater of Worlds</td>
+<td>Option to form a covenant (base game mechanics)</td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3307</td>
+<td>Instrument of Desire</td>
+<td>Option to form a covenant (base game mechanics)</td>
+<td>None
+</td></tr>
+<tr>
+<td>syndaw.545</td>
+<td>A Question</td>
+<td>Starts the AI-Related Incidents situation</td>
+<td>Planet
+</td></tr>
+<tr>
+<td>syndaw.1000</td>
+<td>Machine Uprising</td>
+<td>Requires the AI-Related Incidents situation and at least 1 robot pop</td>
+<td>Situation
+</td></tr>
+<tr>
+<td>enclave.220</td>
+<td>Mercenary Garrison</td>
+<td>Option to buy the mercenary Garrison starbase building</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.322</td>
+<td>Patrons with Benefits</td>
+<td>Option to buy the Ministry of Culture building</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.1040</td>
+<td>The Infinity Equation</td>
+<td>Rewards for defeating the Infinity Sphere, with The Machine Age it unlocks the Infinity Sphere trait</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.2101</td>
+<td>Enigmatic Fortress Disabled</td>
+<td>With The Machine Age it unlocks the Enigmatic Fortress trait</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.3102</td>
+<td>Dreadnought Disabled</td>
+<td>Rewards for defeating the Automated Dreadnought, with The Machine Age it unlocks the Ancient Dreadnought trait</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.3103</td>
+<td>Dreadnought Repaired</td>
+<td></td>
+<td>Ship
+</td></tr>
+<tr>
+<td>marauder.85</td>
+<td>Mercenaries Become Available</td>
+<td>Must be triggered multiple times for each Marauder empire</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.137</td>
+<td>The Scavenger's End</td>
+<td>Rewards for defeating the Scavenger Bot, with The Machine Age it unlocks the Scavenger Bot trait</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.172</td>
+<td>Neural Symbiosis</td>
+<td>Option to get the Brain Slug Host trait for some pops and leaders</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>distar.212</td>
+<td>Death of the Matriarch</td>
+<td>Rewards for defeating the Tiyanki Matriarch, with Leviathan Transgenesis it unlocks the Polymelic trait</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>distar.260</td>
+<td>Wild Eukaryotes</td>
+<td>Creates a pre-sapient species with the Docile Livestock trait on the world</td>
+<td>Planet
+</td></tr>
+<tr>
+<td>distar.1001</td>
+<td>Paradise Lost</td>
+<td>Creates a nearby system with a Gaia World and a Stone Age primitive civilization</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.1081</td>
+<td>Azizians</td>
+<td>Option to enable the recruitment of Azizian armies on a random owned world</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.2050</td>
+<td>Alien Entity</td>
+<td>Spawns the Enigmatic Cache in the galaxy</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.3014</td>
+<td>The Nivlac (unfriendly)</td>
+<td>Creates an empire with a permanent -100 opinion modifier</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.3016</td>
+<td>The Nivlac (friendly)</td>
+<td>Creates an empire with a permanent +100 opinion modifier</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.3055</td>
+<td>Alien Box Opened</td>
+<td>Gain one of three free traits</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.5006</td>
+<td>The Voidspawn</td>
+<td>The selected celestial object is turned into a cracked world from where a Voidspawn hatches</td>
+<td>Planet
+</td></tr>
+<tr>
+<td>distar.5012</td>
+<td>Gargantuan Evolution</td>
+<td>Rewards for defeating the Voidspawn, with Leviathan Transgenesis it unlocks the Voidling trait</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>graygoo.400</td>
+<td>A Quiet Stroll</td>
+<td>Encounter Gray</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>ancrel.4000</td>
+<td>Whispers in the Stone</td>
+<td>Creates the Whispers in the Stone archaeology site</td>
+<td>Planet
+</td></tr>
+<tr>
+<td>ancrel.4058</td>
+<td>The Sentinels</td>
+<td>Option to gain Sentinels armies</td>
+<td>Planet
+</td></tr>
+<tr>
+<td>ancrel.6130</td>
+<td>Zarqulan's Chosen</td>
+<td>Allows colonizing Holy Worlds and gives +150 permanent opinion from Holy Guardians</td>
+<td>None
+</td></tr>
+<tr>
+<td>ancrel.10050</td>
+<td>Secrets of the Yuht</td>
+<td>Unlocks the Initiate Yuht Cleansing Process decision</td>
+<td>None
+</td></tr>
+<tr>
+<td>aquatics.105</td>
+<td>Sky Dragon Vanquished</td>
+<td>Rewards for defeating the Sky Dragon, with Leviathan Transgenesis it unlocks the Drake-Scaled trait</td>
+<td>None
+</td></tr>
+<tr>
+<td>aquatics.120</td>
+<td>The Time Has Come</td>
+<td>Option to unlock the Dragon Hatchery starbase building</td>
+<td>None
+</td></tr>
+<tr>
+<td>paragon.241</td>
+<td>The Last Bud</td>
+<td>Unlocks the Contained Ecosphere building</td>
+<td>None
+</td></tr>
+<tr>
+<td>paragon.3001</td>
+<td>Arrival</td>
+<td>Required for the following event to work</td>
+<td>None
+</td></tr>
+<tr>
+<td>paragon.3005</td>
+<td>Skrand Sharpbeak Recruitment</td>
+<td>Requires the previous event to work</td>
+<td>None
+</td></tr>
+<tr>
+<td>astral_planes.45</td>
+<td>Strange Wormhole</td>
+<td>Required after spawning The Crystal Rift with the console to continue</td>
+<td>Fleet
+</td></tr>
+<tr>
+<td>cstorms.195</td>
+<td>Delve into the Secrets of the Inetian Traders</td>
+<td>Unlocks the Hyperlane Detailer starbase building</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>grand_archive.1002</td>
+<td>Primal Calling Stance</td>
+<td>Can unlock multiple stance buildings</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>bio.2030</td>
+<td>BioMechanical Plague</td>
+<td>Unlocks the Warden of the Citadel council position</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.4045</td>
+<td>Whisperers in the Void</td>
+<td>Replace a major Shroud patron with Whisperers in the Void</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.4205</td>
+<td>Mindwarden Enclave</td>
+<td>Can interact with the Mindwardens even if psionic</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.4935</td>
+<td>Creation</td>
+<td>Spawns a new colonized gaia world in the capital system</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.5012</td>
+<td>Secret Societies Emerge</td>
+<td>Can get secret societies factions if the game wasn't started with enough AI empires</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.5310</td>
+<td>Shroudwalker Attunement</td>
+<td>Can choose a major Shroud patron to gain Attunement with</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.6865</td>
+<td>Enclave Capacity</td>
+<td>Can buy increased Enclave capacity</td>
+<td>None
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="For_changing_the_galaxy">For changing the galaxy</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>ID</th>
+<th>Major event</th>
+<th>Notes</th>
+<th>Required selection
+</th></tr>
+<tr>
+<td>galcom.16</td>
+<td>The Birth of the Galactic Community</td>
+<td>Option to instantly create or join the Galactic Community</td>
+<td>None
+</td></tr>
+<tr>
+<td>action.99</td>
+<td>Galactic Market: Established</td>
+<td>Forms the Galactic Market in the capital system</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.199</td>
+<td>Prethoryn Scourge</td>
+<td>Begins Prethoryn crisis</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.1000</td>
+<td>The Unbidden</td>
+<td>Begins Unbidden crisis</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.1100</td>
+<td>The Aberrant</td>
+<td>Doesn't require the Unbidden</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.1200</td>
+<td>The Vehement</td>
+<td>Requires the Unbidden</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.2000</td>
+<td>The Contingency</td>
+<td>Begins Contingency crisis</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.7516</td>
+<td>Cosmogenesis Ending</td>
+<td>Empire becomes a fallen empire and player is forced to switch empires</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.8005</td>
+<td>The Synthetic Queen</td>
+<td>Begins Synthetic Queen crisis</td>
+<td>None
+</td></tr>
+<tr>
+<td>fallen_empires_awakening.1</td>
+<td>Sleepers Awake</td>
+<td>Must select a Fallen Empire with the <i>play</i> command beforehand or YOU will awaken</td>
+<td>None
+</td></tr>
+<tr>
+<td>war_in_heaven.1000</td>
+<td>War in Heaven</td>
+<td>Will awaken two Fallen Empires if none were already awakened</td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3308</td>
+<td>End of the Cycle (base game version)</td>
+<td>Option to form a covenant (base game mechanics)</td>
+<td>None
+</td></tr>
+<tr>
+<td>utopia.3320</td>
+<td>The Reckoning</td>
+<td>Requires accepting the covenant in the previous event to work properly</td>
+<td>None
+</td></tr>
+<tr>
+<td>fallen_machine_empire.1</td>
+<td>Ancient Caretakers Awaken</td>
+<td>Must select the Ancient Caretakers with the <i>play</i> command beforehand or YOU will awaken</td>
+<td>None
+</td></tr>
+<tr>
+<td>marauder.500</td>
+<td>The Drums of War</td>
+<td>Must select a Marauder Empire with the <i>play</i> command beforehand or YOU will become the Horde</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.232</td>
+<td>Junk Ratlings</td>
+<td>Creates the Ketling species if the Junk Ratling systems exist</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.236</td>
+<td>Junk Ratlings</td>
+<td>Creates the Ketling Star Pack empire if the Ketling species exists</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.11000</td>
+<td>Spawn L-Cluster</td>
+<td>Spawns a sealed L-Cluser</td>
+<td>None
+</td></tr>
+<tr>
+<td>distar.13000</td>
+<td>The L-Cluster (L-Drake)</td>
+<td>Doesn't require the L-Cluster but will open every L-Gate as well</td>
+<td>None
+</td></tr>
+<tr>
+<td>graygoo.1</td>
+<td>The L-Cluster (Gray Tempest)</td>
+<td>Requires the L-Cluster to work</td>
+<td>None
+</td></tr>
+<tr>
+<td>graygoo.100</td>
+<td>The L-Cluster (Dessanu Consonance)</td>
+<td>Requires the L-Cluster to work</td>
+<td>None
+</td></tr>
+<tr>
+<td>grand_archive.2300</td>
+<td>Voidworm Plague</td>
+<td>Must select the Voidworms with the <i>play</i> command beforehand or the empire will break</td>
+<td>None
+</td></tr>
+<tr>
+<td>fallen_empires_awakening.10</td>
+<td>Shattered Fragments Awaken</td>
+<td>Must select one of the Shattered Fragments with the <i>play</i> command beforehand or YOU will awaken</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.4135</td>
+<td>End of the Cycle (Shadows of the Shroud)</td>
+<td>Option to form a covenant (Shadows of the Shroud mechanics)</td>
+<td>None
+</td></tr>
+<tr>
+<td>infernals.1055</td>
+<td>Galactic Hyperthermia ending</td>
+<td>All stars become Class-M Red Giants, all habitable planets become Volcanic Worlds, and all non-Thermophile empires are killed</td>
+<td>None
+</td></tr>
+<tr>
+<td>nomads.610</td>
+<td>Vindication</td>
+<td>Option to become The Horde</td>
+<td>None
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="For_unlocking_ascension_authorities">For unlocking ascension authorities</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>ID</th>
+<th>Authority set</th>
+<th>Required selection
+</th></tr>
+<tr>
+<td>cyber.1505</td>
+<td>Cybernetic</td>
+<td>None
+</td></tr>
+<tr>
+<td>synth.1505</td>
+<td>Synthetic</td>
+<td>None
+</td></tr>
+<tr>
+<td>bio.170</td>
+<td>Purity</td>
+<td>None
+</td></tr>
+<tr>
+<td>bio.175</td>
+<td>Cloning</td>
+<td>None
+</td></tr>
+<tr>
+<td>bio.180</td>
+<td>Mutation</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.20</td>
+<td>Psionic</td>
+<td>None
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="For_unlocking_edicts">For unlocking edicts</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>ID</th>
+<th>Edict</th>
+<th>Required selection
+</th></tr>
+<tr>
+<td>anomaly.4051</td>
+<td>Improved Working Environment</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>anomaly.4081</td>
+<td>Extensive Sensor Searches</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>anomaly.4105</td>
+<td>Improved Energy Initiative</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>anomaly.4136</td>
+<td>Grants Master's Teachings: The Greater Good</td>
+<td>None
+</td></tr>
+<tr>
+<td>anomaly.4141</td>
+<td>Grants Master's Teachings: Philosophical Mindset</td>
+<td>None
+</td></tr>
+<tr>
+<td>anomaly.4151</td>
+<td>Grants Master's Teachings: Diplomatic Trust</td>
+<td>None
+</td></tr>
+<tr>
+<td>anomaly.4166</td>
+<td>Grants Master's Teachings: Warring States</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.3200</td>
+<td>Animatus</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.3210</td>
+<td>Will of Temperance</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.3220</td>
+<td>Will of Distraction</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.3230</td>
+<td>Will of Endless</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.3240</td>
+<td>Will of Rebirth</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.3260</td>
+<td>Will of Order</td>
+<td>None
+</td></tr>
+<tr>
+<td>shroud.3270</td>
+<td>Will of Motion</td>
+<td>None
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="For_unlocking_paragons">For unlocking paragons</span></h4>
+<p>Other paragons can be obtained with the paragons debug window.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>ID</th>
+<th>Paragon</th>
+<th>Required selection
+</th></tr>
+<tr>
+<td>galactic_features.303</td>
+<td>Tuborek</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>distar.156</td>
+<td>S875.1 Warform</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>distar.245</td>
+<td>Caretaker AX7-b</td>
+<td>Ship
+</td></tr>
+<tr>
+<td>ancrel.4036</td>
+<td>Oracle</td>
+<td>None
+</td></tr>
+<tr>
+<td>paragon.1</td>
+<td>The Beholder</td>
+<td>None
+</td></tr>
+<tr>
+<td>paragon.228</td>
+<td>Astrocreator Azaryn</td>
+<td>None
+</td></tr>
+<tr>
+<td>paragon.3115</td>
+<td>Keides, Scion of Vagros</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.123</td>
+<td>XuraCorp paragon</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.124</td>
+<td>Riggan paragon</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.125</td>
+<td>Muutagan paragon</td>
+<td>None
+</td></tr>
+<tr>
+<td>leviathans.590</td>
+<td>Curator paragon</td>
+<td>None
+</td></tr>
+<tr>
+<td>enclave.7100</td>
+<td>Shroud-Touched paragon</td>
+<td>None
+</td></tr>
+<tr>
+<td>astral_planes.3100</td>
+<td>zadigal</td>
+<td>None
+</td></tr>
+<tr>
+<td>crisis.21125</td>
+<td>Nameless Apostate</td>
+<td>None
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Modifier_cheats">Modifier cheats</span></h3>
+<p>The following cheats will only work if nothing is selected. The numbers can be replaced to provide smaller bonuses instead of unlimited ones.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Command
+</th>
+<th>Effect
+</th></tr>
+<tr>
+<td>effect add_modifier = { modifier = fotd_triumviri multiplier = 999 }</td>
+<td>Unlimited civic points
+</td></tr>
+<tr>
+<td>effect add_modifier = { modifier = cyber_creed_no_creed_robot_points_modifier multiplier = 999 }</td>
+<td>Unlimited genetic modification points
+</td></tr>
+<tr>
+<td>effect add_modifier = { modifier = synthetic_dawn multiplier = 999 }</td>
+<td>Unlimited machine modification points
+</td></tr>
+<tr>
+<td>effect add_modifier = { modifier = subterranean_expansion multiplier = 999 }</td>
+<td>Unlimited district slots
+</td></tr>
+<tr>
+<td>effect add_modifier = { modifier = the_eater_of_worlds_blessing multiplier = 999 }</td>
+<td>Unlimited command limit
+</td></tr>
+<tr>
+<td>effect add_modifier = { modifier = procedural_space_modifier multiplier = 4 }</td>
+<td>All branch office slots unlocked
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Testing_commands">Testing commands</span></h2>
+<p>Testing commands are used for developer, beta tester or modder testing.
+</p>
+<table class="wikitable sortable" style="font-size:90%; text-align:left">
+
+<tbody><tr>
+<th scope="col" style="width: 275px;">Command
+</th>
+<th scope="col" style="width: 750px;">Description
+</th>
+<th scope="col" style="width: 250px;">Parameters
+</th>
+<th scope="col" style="width: 300px;">Example
+</th></tr>
+<tr>
+<td>3dstats</td>
+<td>Toggles 3D Stats (FPS and render time)</td>
+<td>None</td>
+<td>3dstats
+</td></tr>
+<tr>
+<td>achievement_status</td>
+<td>Print achievement status</td>
+<td>None</td>
+<td>achievement_status
+</td></tr>
+<tr>
+<td>activate_relic</td>
+<td>Activates the triumph effect of [Relic ID]</td>
+<td>[Pop ID] [Ethic Key]</td>
+<td>activate_relic r_unbidden_warlock
+</td></tr>
+<tr>
+<td>add_ethic_pop</td>
+<td>Add ethic to a pop</td>
+<td>[Pop ID] [Ethic Key]</td>
+<td>add_ethic_pop purged ethic_fanatic_authoritarian
+</td></tr>
+<tr>
+<td>advanced_galaxy</td>
+<td>Simulates a game in year 2400 (every default empire gains colonies, technologies and fleets)</td>
+<td>none</td>
+<td>advanced_galaxy
+</td></tr>
+<tr>
+<td>ai_anomalies</td>
+<td>Toggles whether human empires get ai-only anomalies</td>
+<td>None</td>
+<td>ai_anomalies
+</td></tr>
+<tr>
+<td>alienfx</td>
+<td>Attempt to change computer lights with Alien FX</td>
+<td>None</td>
+<td>alienfx
+</td></tr>
+<tr>
+<td>ambient_object</td>
+<td>Spawns an ambient object of the specified type.</td>
+<td>[type]</td>
+<td>ambient_object turbulent_nebula_2
+</td></tr>
+<tr>
+<td>attackallfleets</td>
+<td>Makes all player fleets target all other fleets</td>
+<td>None</td>
+<td>attackallfleets
+</td></tr>
+<tr>
+<td>audio.playeffect</td>
+<td>Play the sound effect with the given name</td>
+<td>None</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>audio.setactivegroup</td>
+<td>Sets the active audio group</td>
+<td>None</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>audio.testeffectweights</td>
+<td>Test the random distribution of the weighs for a sound effect</td>
+<td>None</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>berserk_ai</td>
+<td>AI aggression set to 10</td>
+<td>None</td>
+<td>berserk_ai
+</td></tr>
+<tr>
+<td>blend_post_effect</td>
+<td>Blends to a new post effect setting</td>
+<td>[nSetting] [vTime] [nMode]</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>borders</td>
+<td>Calculates map borders</td>
+<td>None</td>
+<td>borders
+</td></tr>
+<tr>
+<td>casusbelli</td>
+<td>Add a Casus Belli against the given target empire</td>
+<td>[casus belli key] [country id]</td>
+<td>casusbelli cb_subjugation 2
+</td></tr>
+<tr>
+<td>check_save</td>
+<td>Check save and load persistence</td>
+<td>None</td>
+<td>check_save
+</td></tr>
+<tr>
+<td>clear_debug_lines</td>
+<td>Clears any persistent debug lines</td>
+<td>None</td>
+<td>clear_debug_lines
+</td></tr>
+<tr>
+<td>clear_debug_strings</td>
+<td>Clears any persistent debug strings</td>
+<td>None</td>
+<td>clear_debug_strings
+</td></tr>
+<tr>
+<td>clearflag</td>
+<td>Clears an event flag on a specific target</td>
+<td>[type] [flag] [target id]</td>
+<td>clearflag global prethoryn_invasion_happened
+</td></tr>
+<tr>
+<td>collision</td>
+<td>Displays collision boxes and circles</td>
+<td>None</td>
+<td>collision
+</td></tr>
+<tr>
+<td>communications</td>
+<td>Enable/disable communication with the target empire, leave with no arguments for all</td>
+<td>[target country id]</td>
+<td>communications 1
+</td></tr>
+<tr>
+<td>contacts_summary</td>
+<td>Hides who holds casus belli on the contacts screen</td>
+<td>None</td>
+<td>contacts_summary
+</td></tr>
+<tr>
+<td>control</td>
+<td>Used to occupy planets. If there is no war with the owner of [planet id] control will be reverted instantly.</td>
+<td>[planet id]</td>
+<td>control 50
+</td></tr>
+<tr>
+<td>copy_pop</td>
+<td>Copies a pop to the selected planet using the id of a single pop.</td>
+<td>[pop id]</td>
+<td>copy_pop 1247
+</td></tr>
+<tr>
+<td>crash</td>
+<td>Crash the game</td>
+<td>None</td>
+<td>crash
+</td></tr>
+<tr>
+<td>debug_achievements</td>
+<td>Enables popups for achievements to debug them</td>
+<td>None</td>
+<td>debug_achievements
+</td></tr>
+<tr>
+<td>debug_achievements_clear</td>
+<td>Clear all achievements and user stats</td>
+<td>None</td>
+<td>debug_achievements_clear
+</td></tr>
+<tr>
+<td>debug_dumpevents</td>
+<td>Prints fired events</td>
+<td>None</td>
+<td>debug_dumpevents
+</td></tr>
+<tr>
+<td>debug_stats</td>
+<td>Shows game performance stats</td>
+<td>None</td>
+<td>debug_stats
+</td></tr>
+<tr>
+<td>debug_traits_view</td>
+<td>Opens the traits list</td>
+<td>None</td>
+<td>debug_traits_view
+</td></tr>
+<tr>
+<td>debuglines</td>
+<td>Toggles debug lines on/off</td>
+<td>None</td>
+<td>debuglines
+</td></tr>
+<tr>
+<td>debugtexture</td>
+<td>Debug drawer for textures</td>
+<td>[texture name] [transparency] [alpha channel]</td>
+<td>debugtexture name 0,5 alpha
+</td></tr>
+<tr>
+<td>debugtooltip</td>
+<td>Reveals debug info in tooltips such as pop ID for pops, and planet ID for planets.</td>
+<td>None</td>
+<td>tweakergui debugtooltip(pre 1.1) or debugtooltip(1.1)
+</td></tr>
+<tr>
+<td>deltat</td>
+<td>Scales Delta Time with given value</td>
+<td>[delta_t] [scale value]</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>democratic_election</td>
+<td>Start a democratic ruler election</td>
+<td>None</td>
+<td>democratic_election
+</td></tr>
+<tr>
+<td>deposits</td>
+<td>Shows stats for deposits</td>
+<td>None</td>
+<td>deposits
+</td></tr>
+<tr>
+<td>diplo_3rd_party</td>
+<td>Does <a href="/Gameplay_modding.html#Diplomatic_Actions" title="Gameplay modding">diplomacy</a> between two players from 3rd party perspective.</td>
+<td>[diplo] [actor id] [recipient id]</td>
+<td>diplo_3rd_party action_offer_peace 1 4
+</td></tr>
+<tr>
+<td>dump_ai_build_plan</td>
+<td>Prints what the AI intends to construct next</td>
+<td>None</td>
+<td>dump_ai_build_plan
+</td></tr>
+<tr>
+<td>dump_origins</td>
+<td>Prints all origins in the galaxy</td>
+<td>None</td>
+<td>dump_origins
+</td></tr>
+<tr>
+<td>effect</td>
+<td>Executes an <a href="/Effects.html" title="Effects">effect script</a>.</td>
+<td>None</td>
+<td>effect crystal_hit_effect
+</td></tr>
+<tr>
+<td>effect set_planet_flag =</td>
+<td>Sets [flag id] on the selected planet</td>
+<td>[flag id]</td>
+<td>effect set_planet_flag = titanic_life_can_build
+</td></tr>
+<tr>
+<td>error</td>
+<td>Show errors in log</td>
+<td>None</td>
+<td>error
+</td></tr>
+<tr>
+<td>eventscopes</td>
+<td>Prints the scope trees of current events</td>
+<td>None</td>
+<td>&lt;Event open&gt; eventscopes
+</td></tr>
+<tr>
+<td>eventstats</td>
+<td>Show event statistics.</td>
+<td>None</td>
+<td>eventstats
+</td></tr>
+<tr>
+<td>factions.showallfactions</td>
+<td>Prints all factions and information on them.</td>
+<td>None</td>
+<td>factions.showallfactions
+</td></tr>
+<tr>
+<td>factions.showattraction</td>
+<td>Prints attraction levels for every faction.</td>
+<td>None</td>
+<td>factions.showattraction
+</td></tr>
+<tr>
+<td>factions.spawnall</td>
+<td>Spawns all possible factions. They will disappear immediately if 10 years haven't passed.</td>
+<td>None</td>
+<td>factions.spawnall
+</td></tr>
+<tr>
+<td>fast_forward</td>
+<td>Fast forward a set amount of days</td>
+<td>[amount of days] [observer]</td>
+<td>fast_forward 100
+</td></tr>
+<tr>
+<td>filewatcher</td>
+<td>Toggles filewatcher</td>
+<td>None</td>
+<td>filewatcher
+</td></tr>
+<tr>
+<td>ftl</td>
+<td>Enable/Disable unlimited FTL, obsolete</td>
+<td>None</td>
+<td>ftl
+</td></tr>
+<tr>
+<td>fullscreen</td>
+<td>Toggles fullscreen</td>
+<td>None</td>
+<td>fullscreen
+</td></tr>
+<tr>
+<td>give_fleet</td>
+<td>Gives the selected fleet to [player id]</td>
+<td>[player id]</td>
+<td>give_fleet 0
+</td></tr>
+<tr>
+<td>game_over</td>
+<td>Executes the specified type of Game Over</td>
+<td>[victory type index]</td>
+<td>game_over 0
+</td></tr>
+<tr>
+<td>game_paused</td>
+<td>Pauses or resumes the game</td>
+<td>None</td>
+<td>game_paused
+</td></tr>
+<tr>
+<td>game_speed</td>
+<td>Sets the specified game speed</td>
+<td>[speed]</td>
+<td>game_speed 2
+</td></tr>
+<tr>
+<td>gfxculture</td>
+<td>Sets graphical culture for player empire, pressing tab reveals the culture keys</td>
+<td>[culture key]</td>
+<td>gfxculture mammalian_01
+</td></tr>
+<tr>
+<td>goto</td>
+<td>Moves camera to position</td>
+<td>[x] [y]</td>
+<td>goto 10 10
+</td></tr>
+<tr>
+<td>guibounds</td>
+<td>Displays the file location of UI elements hovered over</td>
+<td>None</td>
+<td>guibounds
+</td></tr>
+<tr>
+<td>hdr</td>
+<td>Toggles HDR</td>
+<td>None</td>
+<td>hdr
+</td></tr>
+<tr>
+<td>help</td>
+<td>Prints the help documentation for a command.</td>
+<td>[command name]</td>
+<td>help human_ai
+</td></tr>
+<tr>
+<td>helphelp</td>
+<td>No help for you!</td>
+<td>None</td>
+<td>helphelp
+</td></tr>
+<tr>
+<td>hsv</td>
+<td>Converts RGB to HSV</td>
+<td>None</td>
+<td>hsv 25 25 25
+</td></tr>
+<tr>
+<td>human_ai</td>
+<td>Toggles AI for Human countries</td>
+<td>None</td>
+<td>human_ai
+</td></tr>
+<tr>
+<td>human_anomalies_for_ai</td>
+<td>Allows the AI to get regular anomalies</td>
+<td>None</td>
+<td>human_anomalies_for_ai
+</td></tr>
+<tr>
+<td>info</td>
+<td>Displays rendering info</td>
+<td>None</td>
+<td>info
+</td></tr>
+<tr>
+<td>kill_leader</td>
+<td>Kills specified leader.</td>
+<td>[leader id]</td>
+<td>kill_leader&#160;?
+</td></tr>
+<tr>
+<td>kill_ruler</td>
+<td>Kills current ruler.</td>
+<td>None</td>
+<td>Kills current ruler.
+</td></tr>
+<tr>
+<td>kill_pop</td>
+<td>Kills [Pop ID] pop</td>
+<td>[Pop ID]</td>
+<td>kill_pop 745
+</td></tr>
+<tr>
+<td>lockcamera</td>
+<td>Locks the camera to the current position.</td>
+<td>[debug_lockcamera, lockcamera]</td>
+<td>lockcamera
+</td></tr>
+<tr>
+<td>map_names</td>
+<td>Regenerates map names.</td>
+<td>None</td>
+<td>map_names
+</td></tr>
+<tr>
+<td>mature_galaxy</td>
+<td>Simulates a 100 years old galaxy.</td>
+<td>None</td>
+<td>mature_galaxy
+</td></tr>
+<tr>
+<td>memtest</td>
+<td>Used to test for memory leakage with certain functions.</td>
+<td>[iterations]</td>
+<td>memtest 1
+</td></tr>
+<tr>
+<td>message</td>
+<td>Shows every message type on the top bar.</td>
+<td>None</td>
+<td>message
+</td></tr>
+<tr>
+<td>nogui</td>
+<td>Toggles GUI on/off</td>
+<td>None</td>
+<td>nogui
+</td></tr>
+<tr>
+<td>nomouse</td>
+<td>Toggles mouse scrollwheel on\off</td>
+<td>None</td>
+<td>nomouse
+</td></tr>
+<tr>
+<td>one_year</td>
+<td>Run the game for one year then logs how long it took</td>
+<td>None</td>
+<td>one_year
+</td></tr>
+<tr>
+<td>overnight</td>
+<td>Sets the game up for an overnight session.</td>
+<td>[ticks per turn]</td>
+<td>overnight 2
+</td></tr>
+<tr>
+<td>particle</td>
+<td>Toggles particle debug info.</td>
+<td>None</td>
+<td>particle crystal_hit_effect
+</td></tr>
+<tr>
+<td>particle.miplevels</td>
+<td>TODO</td>
+<td>None</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>particle.useringbuffer</td>
+<td>TODO</td>
+<td>None</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>particle.wireframe</td>
+<td>TODO</td>
+<td>None</td>
+<td>TODO
+</td></tr>
+<tr>
+<td>particle_editor</td>
+<td>Spawns a particle editor.</td>
+<td>None</td>
+<td>particle_editor
+</td></tr>
+<tr>
+<td>path</td>
+<td>Finds path between stars.</td>
+<td>[from index] [to index]</td>
+<td>path 0 1
+</td></tr>
+<tr>
+<td>peace_on_player</td>
+<td>Targeted country offers peace on player.</td>
+<td>[country id]</td>
+<td>peace_on_player 05
+</td></tr>
+<tr>
+<td>planets</td>
+<td>Lists every type of planet and the amount of each.</td>
+<td>None</td>
+<td>planets
+</td></tr>
+<tr>
+<td>players</td>
+<td>Lists every human player in the current game.</td>
+<td>None</td>
+<td>players
+</td></tr>
+<tr>
+<td>populate</td>
+<td>Fills all housing on selected planet with pops<br /><span class="effect-red" style="font-weight:bold;">WARNING:</span> Will hang the game as of version 3.2</td>
+<td>None</td>
+<td>populate
+</td></tr>
+<tr>
+<td>pp</td>
+<td>Gives the player minerals</td>
+<td>[amount]</td>
+<td>pp 1000
+</td></tr>
+<tr>
+<td>production</td>
+<td>Dumps some debug info about production</td>
+<td>None</td>
+<td>production
+</td></tr>
+<tr>
+<td>rebuild_sectors</td>
+<td>Rebuilds sector boundaries</td>
+<td>None</td>
+<td>rebuild_sectors
+</td></tr>
+<tr>
+<td>recalc_fleet_presence</td>
+<td>Recalculates fleet presence cache, useful if loading old saves.</td>
+<td>None</td>
+<td>recalc_fleet_presence
+</td></tr>
+<tr>
+<td>regenerate_border_colors</td>
+<td>Regenerates border colors for empires with the same primary color</td>
+<td>None</td>
+<td>regenerate_border_colors
+</td></tr>
+<tr>
+<td>reload</td>
+<td>Reloads assets</td>
+<td>[file name]</td>
+<td>reload main.gui
+</td></tr>
+<tr>
+<td>reload_galaxy</td>
+<td>Starts a new game</td>
+<td>None</td>
+<td>reload_galaxy
+</td></tr>
+<tr>
+<td>reload_graphical_map</td>
+<td>Reloads the graphical map</td>
+<td>None</td>
+<td>reload_graphical_map
+</td></tr>
+<tr>
+<td>reloadfx</td>
+<td>Reloads the shader</td>
+<td>[arguments: map/mapname/postfx or *.fx filename]</td>
+<td>reloadfx arrow
+</td></tr>
+<tr>
+<td>remove_ethic_pop</td>
+<td>Removes an ethic from a target pop.</td>
+<td>[pop id] [ethic key]</td>
+<td>remove_ethic_pop&#160;? ethic_xenophobe
+</td></tr>
+<tr>
+<td>remove_notification</td>
+<td>Removes all notifications belonging to the player</td>
+<td>[amount]</td>
+<td>remove_notification 1
+</td></tr>
+<tr>
+<td>rendertype</td>
+<td>Prints the current rendering type.</td>
+<td>None</td>
+<td>rendertype
+</td></tr>
+<tr>
+<td>resources</td>
+<td>Show stats for resources</td>
+<td>None</td>
+<td>resources
+</td></tr>
+<tr>
+<td>reverse_diplo</td>
+<td>Sends a <a href="/Gameplay_modding.html#Diplomatic_Actions" title="Gameplay modding">diplomatic command</a> from the target to the player.</td>
+<td>[diplo] [id]</td>
+<td>reverse_diplo action_invite_to_federation 01
+</td></tr>
+<tr>
+<td>run</td>
+<td>Runs the specified file with list of commands. File should be placed in the root Stellaris folder in your My Documents. File must be called '[insert file name here]' without the brackets. The file should be in the INI extension.</td>
+<td>None</td>
+<td>run group_commands.ini
+</td></tr>
+<tr>
+<td>scaling</td>
+<td>Enables/disable scaling of models.</td>
+<td>None</td>
+<td>scaling
+</td></tr>
+<tr>
+<td>script_profiler</td>
+<td>Use once to start profiling, and again to finish and print the results. So you can find out why your mod is causing performance issues.</td>
+<td>None</td>
+<td>script_profiler
+</td></tr>
+<tr>
+<td>smooth</td>
+<td>Toggle framesmoothing</td>
+<td>None</td>
+<td>smooth
+</td></tr>
+<tr>
+<td>spawnentity</td>
+<td>Spawns specified entity at cursor position. The entity names are found in the gfx folder in the .asset files.</td>
+<td>[entity name]</td>
+<td>spawnentity test_object_entity
+</td></tr>
+<tr>
+<td>srgb</td>
+<td>Toggles RBG color mode</td>
+<td>None</td>
+<td>srgb
+</td></tr>
+<tr>
+<td>surrender</td>
+<td>Surrender and gives in to all demands. Using only [country id] parameter lists wars with their appropriate war_ids for given country.</td>
+<td>[country id] [war id]</td>
+<td>List all wars for country with country_id = 5 along with their war_ids: surrender 5.<br /> Force country with country_id = 5 to surrender in war with war_id = 19975: surrender 5 19975.
+</td></tr>
+<tr>
+<td>switchlanguage</td>
+<td>Reload localization files and switches language</td>
+<td>None</td>
+<td>switchlanguage l_english
+</td></tr>
+<tr>
+<td>techweights</td>
+<td>Prints weights for the tech tree of the player</td>
+<td>[tech area]</td>
+<td>techweights phy
+</td></tr>
+<tr>
+<td>test_achievement</td>
+<td>Used to test an achievement trigger</td>
+<td>[achievement]</td>
+<td>test_achievement achievement_colonize
+</td></tr>
+<tr>
+<td>thirty_years</td>
+<td>Run the game for 30 years then logs how long it took <br /> Note: Currently does not work</td>
+<td>None</td>
+<td>thirty_years
+</td></tr>
+<tr>
+<td>threading.taskthreadcount</td>
+<td>Returns the number of CPU threads used</td>
+<td>None</td>
+<td>threading.taskthreadcount
+</td></tr>
+<tr>
+<td>ticks_per_turn</td>
+<td>Controls the number of ticks per turn</td>
+<td>[amount of ticks]</td>
+<td>ticks_per_turn 10
+</td></tr>
+<tr>
+<td>time</td>
+<td>Returns the local system time</td>
+<td>None</td>
+<td>time
+</td></tr>
+<tr>
+<td>trigger</td>
+<td>Tests a trigger script (*.txt) when placed in the \\Paradox Interactive\Stellaris\ folder</td>
+<td>[trigger script]</td>
+<td>trigger test_trigger
+</td></tr>
+<tr>
+<td>trigger_docs</td>
+<td>Prints docs for triggers and effects</td>
+<td>None</td>
+<td>trigger_docs
+</td></tr>
+<tr>
+<td>trigger_file</td>
+<td>Tests the trigger script, and crashes the game</td>
+<td>None</td>
+<td>trigger_file
+</td></tr>
+<tr>
+<td>version</td>
+<td>Copies game version to clipboard</td>
+<td>None</td>
+<td>version
+</td></tr>
+<tr>
+<td>volume</td>
+<td>Modifies music volume</td>
+<td>[volume delta]</td>
+<td>volume 20
+</td></tr>
+<tr>
+<td>war</td>
+<td>The first country declares war on the second with the given wargoal
+<table class="wikitable mw-collapsible mw-collapsed" style="font-size:90%;float:right;margin:0;">
+<tbody><tr>
+<th colspan="2">ID list
+</th></tr>
+<tr>
+<td>Conquer</td>
+<td>wg_conquest
+</td></tr>
+<tr>
+<td>Liberate</td>
+<td>wg_liberation
+</td></tr>
+<tr>
+<td>Vassalize</td>
+<td>wg_subjugation
+</td></tr>
+<tr>
+<td>Make Tributary</td>
+<td>wg_tribute
+</td></tr>
+<tr>
+<td>Humiliate</td>
+<td>wg_humiliation
+</td></tr>
+<tr>
+<td>Impose Ideology</td>
+<td>wg_force_ideology
+</td></tr>
+<tr>
+<td>Humiliate (Fallen Empires)</td>
+<td>wg_fe_humiliation
+</td></tr>
+<tr>
+<td>Stop Atrocities (Fallen Empires)</td>
+<td>wg_fe_stop_atrocities
+</td></tr>
+<tr>
+<td>Cleanse Holy Worlds (Fallen Empires)</td>
+<td>wg_fe_cleanse_holy_worlds
+</td></tr>
+<tr>
+<td>Decontaminate Border Territories (Fallen Empires)</td>
+<td>wg_fe_cleanse_border_worlds
+</td></tr>
+<tr>
+<td>Outlaw AI (Fallen Empires)</td>
+<td>wg_fe_stop_ai
+</td></tr>
+<tr>
+<td>Domination</td>
+<td>wg_ae_domination
+</td></tr>
+<tr>
+<td>End Threat</td>
+<td>wg_end_threat
+</td></tr>
+<tr>
+<td>Cleansing</td>
+<td>wg_cleansing
+</td></tr>
+<tr>
+<td>Assimilation</td>
+<td>wg_assimilation
+</td></tr>
+<tr>
+<td>Absorption</td>
+<td>wg_absorption
+</td></tr>
+<tr>
+<td>War in Heaven</td>
+<td>wg_war_in_heaven
+</td></tr>
+<tr>
+<td>Machine Uprising</td>
+<td>wg_machine_uprising
+</td></tr>
+<tr>
+<td>Independence</td>
+<td>wg_independence
+</td></tr>
+<tr>
+<td>Assert Overlordship</td>
+<td>wg_assert_overlordship
+</td></tr>
+<tr>
+<td>Plunder</td>
+<td>wg_plunder
+</td></tr>
+<tr>
+<td>Total War</td>
+<td>wg_colossus
+</td></tr>
+<tr>
+<td>Stop Colossus</td>
+<td>wg_end_threat_colossus
+</td></tr></tbody></table>
+</td>
+<td>[attacker country id] [defender country id] [war goal]</td>
+<td>war 2 4 wg_independence
+</td></tr>
+<tr>
+<td>warexhaustion</td>
+<td>Adds the given war exhaustion for all of an empire's active wars</td>
+<td>[amount]</td>
+<td>warexhaustion 75
+</td></tr>
+<tr>
+<td>window</td>
+<td>Opens an GUI window element</td>
+<td>[arguments open/close] [window gui name]</td>
+<td>window open advisor_window
+</td></tr>
+<tr>
+<td>wireframe</td>
+<td>Toggles forced wireframe on/off</td>
+<td>None</td>
+<td>wireframe
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="TweakerGUI_commands">TweakerGUI commands</span></h2>
+<ul><li>TweakerGUI commands are a specific sub-set of commands that spawn UI elements for toggling of commands preventing the need for re-opening the console and typing out the command again.</li>
+<li>All commands in this sub-set '<b>must'</b> start with <b>tweakergui</b>.</li></ul>
+<table class="wikitable sortable" style="font-size:90%; text-align:left">
+
+<tbody><tr>
+<th scope="col" style="width: 275px;">Command
+</th>
+<th scope="col" style="width: 750px;">Description
+</th>
+<th scope="col" style="width: 250px;">Parameters
+</th>
+<th scope="col" style="width: 300px;">Example
+</th></tr>
+<tr>
+<td>alerts.showall</td>
+<td>Toggles displaying all UI alerts</td>
+<td>None</td>
+<td>tweakergui alerts.showall
+</td></tr>
+<tr>
+<td>draw.asteroids</td>
+<td>Toggles rendering of asteroid belts.</td>
+<td>None</td>
+<td>tweakergui draw.asteroids
+</td></tr>
+<tr>
+<td>draw.background</td>
+<td>Toggles rendering of the background space texture.</td>
+<td>None</td>
+<td>tweakergui draw.background
+</td></tr>
+<tr>
+<td>draw.borders</td>
+<td>Toggles rendering of border colors and empire icons.</td>
+<td>None</td>
+<td>tweakergui draw.borders
+</td></tr>
+<tr>
+<td>draw.center</td>
+<td>Toggles rendering of the galaxy center glow.</td>
+<td>None</td>
+<td>tweakergui draw.center
+</td></tr>
+<tr>
+<td>draw.clusters</td>
+<td>Toggles rendering of white circles in the galaxy map. Empires seems to be distributed evenly across clusters.</td>
+<td>None</td>
+<td>tweakergui draw.clusters
+</td></tr>
+<tr>
+<td>draw.combatdebuglines</td>
+<td>Toggles rendering of lines during combat showing which target a ship is focusing on. A line also shows where the ship was located before combat.</td>
+<td>None</td>
+<td>tweakergui draw.combatdebuglines
+</td></tr>
+<tr>
+<td>draw.dust</td>
+<td>Toggles rendering of the galaxy dust.</td>
+<td>None</td>
+<td>tweakergui draw.dust
+</td></tr>
+<tr>
+<td>draw.greenscreen</td>
+<td>Toggles rendering a green screen behind the background. Turning of the background (draw.background) will give you a totally greenscreened game that you can use for video purposes. You should also use line draw.navigationarrows and draw.systemlines.</td>
+<td>None</td>
+<td>tweakergui draw.greenscreen
+</td></tr>
+<tr>
+<td>draw.hyperlanes</td>
+<td>Toggles rendering of hyperlanes.</td>
+<td>None</td>
+<td>tweakergui draw.hyperlanes
+</td></tr>
+<tr>
+<td>draw.names</td>
+<td>Toggles rendering of empire and nebula names on the galaxy map.</td>
+<td>None</td>
+<td>tweakergui draw.names
+</td></tr>
+<tr>
+<td>draw.navigationarrows</td>
+<td>Toggles rendering of the arrows and names towards neighbors of a system. (Crashed the game during first test, but might have been coincidence)</td>
+<td>None</td>
+<td>tweakergui draw.navigationarrows
+</td></tr>
+<tr>
+<td>draw.nebula</td>
+<td>Toggles rendering of nebulas on the galaxy map.</td>
+<td>None</td>
+<td>tweakergui draw.nebula
+</td></tr>
+<tr>
+<td>draw.neighbors</td>
+<td>Toggles rendering of cyan and yellow lines in the starmap. Cyan lines are drawn from a system to its neighbouring systems. Yellow lines divides the map into cells with each cell beloning to a single system.</td>
+<td>None</td>
+<td>tweakergui draw.neighbors
+</td></tr>
+<tr>
+<td>draw.objects</td>
+<td>Toggles rendering of stars, ships, stations, planets and arrows towards neighboring systems.</td>
+<td>None</td>
+<td>tweakergui draw.objects
+</td></tr>
+<tr>
+<td>draw.pathtosystem</td>
+<td>Displays a slider with default value -1. When a ship is selected a path will be rendered from the ship's system towards the system corresponding to the ID in the slider. An ETA is displayed for every jump made. ETA says "X Days", but seems to be 10x the amount of ingame days needed. (Possibly game ticks)</td>
+<td>None</td>
+<td>tweakergui draw.pathtosystem
+</td></tr>
+<tr>
+<td>draw.sensor</td>
+<td>Toggles the green dashed circle (i.e. sensor range) around ships and owned systems.</td>
+<td>None</td>
+<td>tweakergui draw.sensor
+</td></tr>
+<tr>
+<td>draw.shipintersection</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui draw.shipintersection
+</td></tr>
+<tr>
+<td>draw.stars</td>
+<td>Toggles rendering of stars and black holes on the galaxy map.</td>
+<td>None</td>
+<td>tweakergui draw.stars
+</td></tr>
+<tr>
+<td>draw.systeminit</td>
+<td>Toggles rendering of the systems initialization template. I.e. a system starts with hostiles, made to suit as colony for nearby empire etc.</td>
+<td>None</td>
+<td>tweakergui draw.systeminit
+</td></tr>
+<tr>
+<td>draw.systemlines</td>
+<td>Toggles rendering of systems planetary orbits, warp bounds and outer bounds.</td>
+<td>None</td>
+<td>tweakergui draw.systemlines
+</td></tr>
+<tr>
+<td>draw.tigrid</td>
+<td>Toggles rendering of yellow grid in galaxy map. Use unknown.</td>
+<td>None</td>
+<td>tweakergui draw.tigrid
+</td></tr>
+<tr>
+<td>draw.trails</td>
+<td>Toggles rendering of ships engine trails.</td>
+<td>None</td>
+<td>tweakergui draw.trails
+</td></tr>
+<tr>
+<td>draw.weaponlocators</td>
+<td>Draws weapon locators.</td>
+<td>None</td>
+<td>tweakergui draw.weaponlocators
+</td></tr>
+<tr>
+<td>enable.ai</td>
+<td>Enables AI.</td>
+<td>None</td>
+<td>tweakergui enable.ai
+</td></tr>
+<tr>
+<td>enable.asserts</td>
+<td>Enables asserts.</td>
+<td>None</td>
+<td>tweakergui enable.asserts
+</td></tr>
+<tr>
+<td>enable.framesmoothing</td>
+<td>Enables frame smoothing.</td>
+<td>None</td>
+<td>tweakergui enable.framesmoothing
+</td></tr>
+<tr>
+<td>endscreen</td>
+<td>Displays the endscreen.</td>
+<td>None</td>
+<td>tweakergui endscreen
+</td></tr>
+<tr>
+<td>entity.names</td>
+<td>Displays entity names.</td>
+<td>None</td>
+<td>tweakergui entity.names
+</td></tr>
+<tr>
+<td>entity.recursiveboundingvolumes</td>
+<td>Displays recursive bounding volumes.</td>
+<td>None</td>
+<td>tweakergui entity.recursiveboundingvolumes
+</td></tr>
+<tr>
+<td>gui.wireframe</td>
+<td>Displays the wireframe of the GUI.</td>
+<td>None</td>
+<td>tweakergui gui.wireframe
+</td></tr>
+<tr>
+<td>ignore_truce</td>
+<td>Wars can be declared during truces</td>
+<td>Toggle on and off.</td>
+<td>tweakergui ignore_truce
+</td></tr>
+<tr>
+<td>instant_anomaly_research</td>
+<td>Anomalies are researched instantly</td>
+<td>Toggle on and off.</td>
+<td>tweakergui instant_anomaly_research
+</td></tr>
+<tr>
+<td>instant_colony</td>
+<td>Colony ships will no longer take time to settle.</td>
+<td>Toggle on and off.</td>
+<td>tweakergui instant_colony
+</td></tr>
+<tr>
+<td>instant_move</td>
+<td>Ships will teleport instantly to right click cursor.</td>
+<td>Toggle on and off.</td>
+<td>tweakergui instant_move
+</td></tr>
+<tr>
+<td>instant_survey</td>
+<td>Planets are surveyed instantly</td>
+<td>Toggle on and off.</td>
+<td>tweakergui instant_survey
+</td></tr>
+<tr>
+<td>maxfps</td>
+<td>Limits the maximum FPS. Defaults to no limit (0).</td>
+<td>None</td>
+<td>tweakergui maxfps
+</td></tr>
+<tr>
+<td>mesh.miplevels</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui mesh.miplevels
+</td></tr>
+<tr>
+<td>mesh.names</td>
+<td></td>
+<td>Displays the names of the .mesh file used for each model.</td>
+<td>tweakergui mesh.names
+</td></tr>
+<tr>
+<td>mesh.texturenames</td>
+<td>Displays the folder/filename of textures used for each model.</td>
+<td>None</td>
+<td>tweakergui mesh.texturenames
+</td></tr>
+<tr>
+<td>mesh.wireframe</td>
+<td>Toggles the wireframe for models.</td>
+<td>None</td>
+<td>tweakergui mesh.wireframe
+</td></tr>
+<tr>
+<td>missilegfx.extratimepertick</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui missilegfx.extratimepertick
+</td></tr>
+<tr>
+<td>missilegfx.slowdownradius</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui missilegfx.slowdownradius
+</td></tr>
+<tr>
+<td>music.fade</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui music.fade
+</td></tr>
+<tr>
+<td>music.next</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui music.next
+</td></tr>
+<tr>
+<td>no_resources</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui no_resources
+</td></tr>
+<tr>
+<td>normals</td>
+<td>Displays normalisation points on each mode.</td>
+<td>None</td>
+<td>tweakergui normals
+</td></tr>
+<tr>
+<td>pathfindcache</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui pathfindcache
+</td></tr>
+<tr>
+<td>pop_happiness</td>
+<td>Forces pop happiness to specific level.</td>
+<td>None</td>
+<td>tweakergui pop_happiness
+</td></tr>
+<tr>
+<td>popfactionlogs</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui popfactionlogs
+</td></tr>
+<tr>
+<td>portraits</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui portraits
+</td></tr>
+<tr>
+<td>portraits.poplevel</td>
+<td>?</td>
+<td>None</td>
+<td>tweakergui portraits.poplevel
+</td></tr>
+<tr>
+<td>terraincognita</td>
+<td>Used to reveal all uncharted space.</td>
+<td>None</td>
+<td>tweakergui terraincognita
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Changing_galactic_imperium_color">Changing galactic imperium color</span></h2>
+<p>The color of the galactic imperium can be changed mid-game while playing as the galactic emperor by copying the following command combination into the console and replacing the color name:
+<code>
+effect = {
+	change_country_flag = {
+		icon = {
+			category = "special"
+			file = "the_empire.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors={
+			"red"
+			"red"
+			"null"
+			"null"
+		}
+	}
+}
+</code>
+</p><p>The word <code>red</code> can be replaced by any color name to give a different color, such as <code>dark_blue</code>
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181044
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.178 seconds
+Real time usage: 0.236 seconds
+Preprocessor visited node count: 2031/1000000
+Post‐expand include size: 26998/2097152 bytes
+Template argument size: 8847/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  113.410      1 -total
+ 65.41%   74.185     19 Template:Icon
+ 28.82%   32.689      6 Template:Icon/s
+ 11.04%   12.519      1 Template:ModdingNavbox
+  8.11%    9.201      5 Template:Icon/a
+  7.87%    8.921      1 Template:Navbox
+  7.55%    8.567      1 Template:Icon/t
+  7.36%    8.344      1 Template:Version
+  6.53%    7.401      2 Template:Infobox
+  5.43%    6.155      1 Template:Icon/m
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1524-0!canonical and timestamp 20260707181044 and revision id 116915.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

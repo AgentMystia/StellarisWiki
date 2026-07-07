@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Tradition namebox/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Tradition namebox/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_Tradition_namebox.html" title="Template:Tradition namebox">Template:Tradition namebox</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p>Template used to generate tradition nameboxes to use on the <a href="/Traditions.html" title="Traditions">Traditions</a> page.
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable plainlist">
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Tradition tree, e.g. "Discovery", used to generate icon</td>
+<td><b>required</b></td>
+<td>—
+</td></tr>
+<tr>
+<td>2</td>
+<td>Tradition name, e.g. "To Boldly Go", used to generate icon</td>
+<td><b>required</b></td>
+<td>—
+</td></tr>
+<tr>
+<td>name</td>
+<td>Displayed tradition name, unnecessary if it matches 2</td>
+<td>optional</td>
+<td>[2]
+</td></tr>
+<tr>
+<td>hive</td>
+<td>Tradition name for hive empires, if applicable. Displays alternate names in a tooltip.</td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>machine</td>
+<td>Tradition name for machine empires, if applicable. Displays alternate names in a tooltip.</td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>inline</td>
+<td>If set to "yes", displays the tradition as an inline block (important for centering it in a cell)</td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>effects</td>
+<td>Lists tradition effects below the namebox.</td>
+<td>optional</td>
+<td>—
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<p><code>{{tradition namebox|Discovery|To Boldly Go}}</code> will generate:
+</p>
+<div style="display:inline-block;"><div style="text-align:left;">
+<div style="display:flex; justify-content:flex-start; align-items:center; gap:4px;"><div style="float:left; position:absolute;"><span style=""><span id="To_Boldly_Go"></span></span></div>
+	<div><a href="https://stellaris.paradoxwikis.com/File%3ATradition_discovery_to_boldly_go.png" class="image" title="To Boldly Go"><img alt="To Boldly Go" src="images/Tradition_discovery_to_boldly_go.png" decoding="async" loading="lazy" width="45" height="45" data-file-width="45" data-file-height="45" /></a></div>
+	<div style="font-weight:bold;">To Boldly Go</div>
+</div>
+<hr />
+</div></div>
+<p><code>{{tradition namebox|Discovery|To Boldly Go|hive=Sensory Tendrils|machine=Exploration Drones}}</code> will generate:
+</p>
+<div style="display:inline-block;"><div style="text-align:left;">
+<div style="display:flex; justify-content:flex-start; align-items:center; gap:4px;"><div style="float:left; position:absolute;"><span style=""><span id="To_Boldly_Go"></span><span id="Sensory_Tendrils"></span><span id="Exploration_Drones"></span></span></div>
+	<div><a href="https://stellaris.paradoxwikis.com/File%3ATradition_discovery_to_boldly_go.png" class="image" title="To Boldly Go"><img alt="To Boldly Go" src="images/Tradition_discovery_to_boldly_go.png" decoding="async" loading="lazy" width="45" height="45" data-file-width="45" data-file-height="45" /></a></div>
+	<div style="font-weight:bold;"><div class="tooltip">To Boldly Go<div class="tooltiptext tooltipBG2" style="text-align:left; background:#FFFFFF; left:28px; top:100%;"><div class="plainlist" style="; display:inline-block; font-family:sans-serif; padding:6px; white-space:nowrap;"><div><a href="https://stellaris.paradoxwikis.com/Hive_Mind" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Sensory Tendrils</div><div><a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Exploration Drones</div></div></div></div></div>
+</div>
+<hr />
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182731
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.037 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 308/1000000
+Post‐expand include size: 3937/2097152 bytes
+Template argument size: 639/2097152 bytes
+Highest expansion depth: 14/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 137/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   26.490      1 -total
+ 87.29%   23.122      2 Template:Tradition_namebox
+ 63.15%   16.729      1 Template:Tooltip
+ 52.59%   13.931      2 Template:Icon
+ 38.82%   10.284      1 Template:Icon/m
+ 12.51%    3.315      2 Template:Anchor
+ 11.81%    3.129      1 Template:Template_doc_page_viewed_directly
+  4.59%    1.217      1 Template:Icon/h
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:15954-0!canonical and timestamp 20260707182731 and revision id 100662.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

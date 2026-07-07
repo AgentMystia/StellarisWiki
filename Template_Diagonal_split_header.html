@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Diagonal split header - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Diagonal split header</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Diagonal_split_header/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Diagonal_split_header/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_Diagonal_split_header/doc.html" title="Template:Diagonal split header/doc">Template:Diagonal split header/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Diagonal_split_header/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Diagonal_split_header/doc&amp;action=history">history</a>)</small></div>
+<p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1"><a href="#Usage"><span class="tocnumber">1</span> <span class="toctext">Usage</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Spanning_columns_and_rows,_and_collapsible_and_sortable_tables"><span class="tocnumber">1.1</span> <span class="toctext">Spanning columns and rows, and collapsible and sortable tables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Template_data"><span class="tocnumber">2</span> <span class="toctext">Template data</span></a></li>
+<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>This template simulates a table header cell split diagonally, a device often used to compactly label headers of rows and columns, as in this example:
+</p>
+<table class="wikitable" style="margin:0 auto;text-align:center;">
+<tbody><tr>
+<th style="background:linear-gradient(to top right,#eaecf0 49.5%,#aaa 49.5%,#aaa 50.5%,#eaecf0 50.5%);line-height:1;"><div style="margin-left:2em;text-align:right;">To</div><div style="margin-right:2em;text-align:left;">From</div></th>
+<th>Solid</th>
+<th>Liquid</th>
+<th>Gas
+</th></tr>
+<tr>
+<th>Solid
+</th>
+<td>Solid-solid transformation</td>
+<td>Melting</td>
+<td>Sublimation
+</td></tr>
+<tr>
+<th>Liquid
+</th>
+<td>Freezing</td>
+<td>&#8212;</td>
+<td>Boiling/evaporation
+</td></tr>
+<tr>
+<th>Gas
+</th>
+<td>Deposition</td>
+<td>Condensation</td>
+<td>&#8212;
+</td></tr></tbody></table>
+<p>To use it, create a header cell using <code>!</code> followed by <code>{{diagonal split header|NATURE-OF-ROW-HEADERS|NATURE-OF-COLUMN-HEADERS}}</code>.
+</p><p>As the effect is achieved by drawing a diagonal line across the cell, the two headers are still part of the same cell and can easily overrun the line. A remedy is to pad the headers with non-breaking spaces (<code>&amp;nbsp;</code>), line breaks (<code>&lt;br /&gt;</code>), and/or CSS (escape <code>=</code> signs as <code>{{=}}</code>), as in the example above. The template user is responsible for checking that it does not overrun on common Web browsers.
+</p>
+<h3><span id="Spanning_columns_and_rows.2C_and_collapsible_and_sortable_tables"></span><span class="mw-headline" id="Spanning_columns_and_rows,_and_collapsible_and_sortable_tables">Spanning columns and rows, and collapsible and sortable tables</span></h3>
+<p>The template is compatible with collapsible tables, and cells using colspan or rowspan, in which case place the colspan/rowspan attribute between <code>!</code> and <code>{{Diagonal split header ...}}</code>. It is not compatible with sortable tables, as the sort arrows are not drawn, but this problem can be resolved by using a second header row:
+</p>
+<table class="wikitable sortable mw-collapsible" style="margin:0 auto;text-align:center;">
+<tbody><tr>
+<th colspan="2" rowspan="2" style="background:linear-gradient(to top right,#eaecf0 49.5%,#aaa 49.5%,#aaa 50.5%,#eaecf0 50.5%);line-height:1;"><div style="margin-left:2em;text-align:right;"><i>n</i></div><div style="margin-right:2em;text-align:left;">&#160; City</div></th>
+<th>2025</th>
+<th colspan="2">2026&#160;
+</th></tr>
+<tr>
+<th>Dec</th>
+<th>Jan</th>
+<th>Feb
+</th></tr>
+<tr>
+<th>Roma</th>
+<th>Rome
+</th>
+<td>8</td>
+<td>1</td>
+<td>6
+</td></tr>
+<tr>
+<th>Venezia</th>
+<th>Venice
+</th>
+<td>3</td>
+<td>5</td>
+<td>7
+</td></tr>
+<tr>
+<th>Firenze</th>
+<th>Florence
+</th>
+<td>4</td>
+<td>9</td>
+<td>2
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Template_data">Template data</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>#
+</th>
+<th>Label
+</th>
+<th>Description
+</th>
+<th>Example
+</th>
+<th>Type
+</th>
+<th>Required
+</th></tr>
+<tr>
+<td>1
+</td>
+<td>Rows
+</td>
+<td>Header of row headers, shown on the bottom left
+</td>
+<td><i>Y-axis</i>
+</td>
+<td>string
+</td>
+<td>true
+</td></tr>
+<tr>
+<td>2
+</td>
+<td>Columns
+</td>
+<td>Header of column headers, shown on the top right
+</td>
+<td><i>X-axis</i>
+</td>
+<td>string
+</td>
+<td>true
+</td></tr>
+<tr>
+<td>3
+</td>
+<td>Background colour
+</td>
+<td>Optional colour of background, use <code>transparent</code> for standard non-header background. Default = #eaecf0
+</td>
+<td>transparent
+</td>
+<td>string
+</td>
+<td>false
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Template:Diagonal_split_header">Template:Diagonal split header on Wikipedia</a></li></ul></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182458
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.020 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 89/1000000
+Post‐expand include size: 13100/2097152 bytes
+Template argument size: 3462/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 106/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   16.571      1 Template:Template_doc
+100.00%   16.571      1 -total
+ 70.45%   11.675      1 Template:Template_doc_inline
+ 31.71%    5.254      1 Template:Diagonal_split_header/doc
+  3.39%    0.562      1 Template:Template_doc_page_transcluded
+  2.25%    0.374      2 Template:Diagonal_split_header
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:12300-0!canonical and timestamp 20260707182458 and revision id 81456.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

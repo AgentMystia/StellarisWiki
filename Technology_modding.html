@@ -1,0 +1,3646 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technology modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Technology modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.1.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>The technology game data can be found in these files/folders:
+</p>
+<ul><li><b><span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/technology</span></b></li></ul>
+<p>It is possible to mod in new technologies, or "erase" old ones.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Technology_File_Overview"><span class="tocnumber">1</span> <span class="toctext">Technology File Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#List_of_standard_techs"><span class="tocnumber">2</span> <span class="toctext">List of standard techs</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Adding_Techs"><span class="tocnumber">3</span> <span class="toctext">Adding Techs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#ID_Name"><span class="tocnumber">3.1</span> <span class="toctext">ID Name</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Cost"><span class="tocnumber">3.2</span> <span class="toctext">Cost</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Weight"><span class="tocnumber">3.3</span> <span class="toctext">Weight</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Tier"><span class="tocnumber">3.4</span> <span class="toctext">Tier</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Area"><span class="tocnumber">3.5</span> <span class="toctext">Area</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Category"><span class="tocnumber">3.6</span> <span class="toctext">Category</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Potential"><span class="tocnumber">3.7</span> <span class="toctext">Potential</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#AI_Update_Type"><span class="tocnumber">3.8</span> <span class="toctext">AI Update Type</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Prerequisites"><span class="tocnumber">3.9</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Tech_tags"><span class="tocnumber">3.10</span> <span class="toctext">Tech tags</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Weight_Modifiers"><span class="tocnumber">3.11</span> <span class="toctext">Weight Modifiers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Weight_Modifier"><span class="tocnumber">3.11.1</span> <span class="toctext">Weight Modifier</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#Add_&amp;_Factor"><span class="tocnumber">3.11.2</span> <span class="toctext">Add &amp; Factor</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Logic_Gates"><span class="tocnumber">3.11.3</span> <span class="toctext">Logic Gates</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Research_Leader"><span class="tocnumber">3.11.4</span> <span class="toctext">Research Leader</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Has_Level"><span class="tocnumber">3.11.5</span> <span class="toctext">Has Level</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Years_Passed"><span class="tocnumber">3.11.6</span> <span class="toctext">Years Passed</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Scopes_and_Triggers"><span class="tocnumber">3.11.7</span> <span class="toctext">Scopes and Triggers</span></a>
+<ul>
+<li class="toclevel-4 tocsection-22"><a href="#Example_#1:_Locking_to_certain_ethics"><span class="tocnumber">3.11.7.1</span> <span class="toctext">Example #1: Locking to certain ethics</span></a></li>
+<li class="toclevel-4 tocsection-23"><a href="#Example_#2:_Traits"><span class="tocnumber">3.11.7.2</span> <span class="toctext">Example #2: Traits</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Advanced_Tech_Modding"><span class="tocnumber">4</span> <span class="toctext">Advanced Tech Modding</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="#Tiers"><span class="tocnumber">4.1</span> <span class="toctext">Tiers</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Categories"><span class="tocnumber">4.2</span> <span class="toctext">Categories</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Tech_tags_2"><span class="tocnumber">4.3</span> <span class="toctext">Tech tags</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#Rare_Technologies"><span class="tocnumber">4.3.1</span> <span class="toctext">Rare Technologies</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Dangerous_Technologies"><span class="tocnumber">4.3.2</span> <span class="toctext">Dangerous Technologies</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Technology_File_Overview">Technology File Overview</span></h2>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># These are simply constants that can be used to assign technologies to right cost for each tier easily. You can add your own as well.</span>
+<span class="vi">@example_cost</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="vi">@tier1cost1</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="vi">@tier1weight1</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">technology_name</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="c1"># Code name of the technology. This is referred to in other files that unlock things via technology, such as 00_spaceport_modules.txt.</span>
+
+	<span class="n">cost</span> <span class="o">=</span> <span class="vi">@tier1cost1</span>
+	<span class="c1"># This sets the cost of the technology in research points.</span>
+	<span class="c1"># Parameters: constant, integer</span>
+
+	<span class="n">area</span> <span class="o">=</span> <span class="n">society</span>
+	<span class="c1"># The area of technology this belongs to.</span>
+	<span class="c1"># Parameters: physics, society, engineering</span>
+
+	<span class="n">tier</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="c1"># Each technology is split into tiers.</span>
+	<span class="c1"># You need to have researched 5 technologies within one tier to see any technologies of the next tier above. There are five tiers.</span>
+	<span class="c1"># Parameters: 0, 1, 2, 3, 4, 5, found in 00_tiers.txt</span>
+
+	<span class="n">category</span> <span class="o">=</span> <span class="p">{</span> <span class="n">biology</span> <span class="p">}</span>
+	<span class="c1"># The category of technology. Scientists with modifiers for this category will research this technology quicker/slower.</span>
+	<span class="c1"># Parameters: category_name found in 00_category.txt</span>
+
+	<span class="n">levels</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+	<span class="c1"># Controls the number of levels this technology has. -1 means it is repeatable.</span>
+	<span class="c1"># Parameters: integer, -1</span>
+
+	<span class="n">cost_per_level</span> <span class="o">=</span> <span class="vi">@repeatableTechLevelCost</span>
+	<span class="c1"># Controls the cost per level of this technology.</span>
+	<span class="c1"># Parameters: constant, integer</span>
+
+	<span class="n">prerequisites</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;prerequisite_technology&quot;</span> <span class="p">}</span>
+	<span class="c1"># This technology requires &quot;tech_eco_simulation&quot; to have been researched before it will appear as an option</span>
+	<span class="c1"># Parameters: technology_name</span>
+
+	<span class="n">weight</span> <span class="o">=</span> <span class="vi">@tier1weight1</span>
+	<span class="c1"># This is the initial weighting of the technology used to determine whether or not the technology should appear as an option.</span>
+	<span class="c1"># Parameters: constant, integer</span>
+
+	<span class="n">gateway</span> <span class="o">=</span> <span class="n">biological</span>
+	<span class="c1"># a flavor-text-only entry that shows what kind of technology is behind this tech.</span>
+
+	<span class="n">ai_update_type</span> <span class="o">=</span> <span class="n">military</span>
+	<span class="c1"># controls AI auto-updating, ai_update_type will make the AI to update existing military ship designs and starbases,</span>
+	<span class="c1"># and if update type is all, civilian ships and stations will also be updated.</span>
+	<span class="c1"># Parameters: military, all</span>
+
+	<span class="n">start_tech</span> <span class="o">=</span> <span class="n">yes</span><span class="o">/</span><span class="n">no</span>
+	<span class="c1"># Defines this technology as a starting technology</span>
+
+	<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span> <span class="p">}</span>
+	<span class="c1"># Contains any modifiers this technology directly changes.</span>
+
+	<span class="n">feature_flags</span> <span class="o">=</span> <span class="p">{</span> <span class="n">my_tech_flag</span> <span class="p">}</span>
+	<span class="c1"># flavor-text-only entries that tells the player what does this tech do.</span>
+	<span class="c1"># the localisation key &quot;my_tech_flag&quot; is used for this and &quot;my_tech_flag_desc&quot; is used for the tooltip.</span>
+	<span class="c1"># All feature_flags are hardcoded, you cannot create new ones.</span>
+
+	<span class="n">prereqfor_desc</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">ship</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;EXAMPLE_TECH_TITLE&quot;</span>
+			<span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;EXAMPLE_TECH_DESC&quot;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="c1"># This is used to add localisation telling the player that this technology is a prerequisite for another important technology</span>
+
+	<span class="n">potential</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="p">}</span>
+	<span class="c1"># If this block is evaluated false, this tech can&#39;t be drawn as an option.</span>
+	<span class="c1"># DLC exclusive techs are hidden this way.</span>
+
+	<span class="n">weight_modifier</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
+			<span class="n">has_ethic</span> <span class="o">=</span> <span class="n">ethic_pacifist</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="c1"># These are the weighting modifier used to determine how likely this technology is drawn as an option.</span>
+	<span class="c1"># If weight is multiplied by 0, this tech can&#39;t be drawn as an option, but can still be given by scripts and console commands.</span>
+
+	<span class="n">ai_weight</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
+		<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="n">factor</span> <span class="o">=</span> <span class="mi">2</span>
+			<span class="n">has_ethic</span> <span class="o">=</span> <span class="n">ethic_pacifist</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="c1"># These are the ai weighting modifiers used to by the AI to determine how likely it will research this technology.</span>
+
+	<span class="n">weight_groups</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">repeatable</span>
+	<span class="p">}</span>
+	<span class="c1"># This is a weight group to be used later</span>
+
+	<span class="n">mod_weight_if_group_picked</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">repeatable</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mo">01</span>
+	<span class="p">}</span>
+	<span class="c1"># Weight of this technology is multiplied by each value if another technology from respective weight group have already been drawn as an option</span>
+	<span class="c1"># In this case, if there is already a repeatable tech drawn as an option, this tech is 0.01 times likely to be drawn.</span>
+<span class="p">}</span>
+</pre></div>
+<h2><span class="mw-headline" id="List_of_standard_techs">List of standard techs</span></h2>
+<p>Here are lists for all standard Techs with key, name and tier: 
+</p>
+<table class="wikitable sortable mw-collapsible mw-collapsed">
+<caption>Tech Engineering
+</caption>
+<tbody><tr>
+<td>Key
+</td>
+<td>Name
+</td>
+<td>Tier
+</td></tr>
+<tr>
+<td>tech_basic_industry
+</td>
+<td>Industrial Base
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_space_construction
+</td>
+<td>Offworld Construction
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_ship_armor_1
+</td>
+<td>Nanocomposite Materials
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_flak_batteries_1
+</td>
+<td>Flak Battery
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_thrusters_1
+</td>
+<td>Chemical Thrusters
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_missiles_1
+</td>
+<td>Nuclear Missiles
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_mass_drivers_1
+</td>
+<td>Mass Drivers
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_starbase_2
+</td>
+<td>Starport
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_corvettes
+</td>
+<td>Corvettes
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_mechanized_mining
+</td>
+<td>Mechanized Mining
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_space_exploration
+</td>
+<td>Space Exploration
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_solar_panel_network
+</td>
+<td>Orbital Energy Conversion
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_starbase_1
+</td>
+<td>Starbase Construction
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_space_defense_station_1
+</td>
+<td>Deep Space Defenses
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_assault_armies
+</td>
+<td>Interplanetary Expeditionary Forces
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_mining_1
+</td>
+<td>Geothermal Fracking
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_mineral_purification_1
+</td>
+<td>Mineral Purification
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_powered_exoskeletons
+</td>
+<td>Powered Exoskeletons
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_robotic_workers
+</td>
+<td>Robotic Workers
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_robomodding
+</td>
+<td>Machine Template System
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_robomodding_m
+</td>
+<td>Machine Template System
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_luxuries_1
+</td>
+<td>Nano-Circuit Assembly
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_alloys_1
+</td>
+<td>Holographic Casts
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_space_mining_1
+</td>
+<td>Zero-G Refineries
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_space_mining_2
+</td>
+<td>Long-Range Mineral Scanners
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_engineering_1
+</td>
+<td>Nanomechanics
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_assembly_pattern
+</td>
+<td>Assembly Patterns
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_ship_armor_2
+</td>
+<td>Ceramo-Metal Materials
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_afterburners_1
+</td>
+<td>Afterburners
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_missiles_2
+</td>
+<td>Fusion Missiles
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_mass_drivers_2
+</td>
+<td>Coilguns
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_strike_craft_1
+</td>
+<td>Carrier Operations
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_corvette_hull_1
+</td>
+<td>Improved Corvette Hulls
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_corvette_build_speed
+</td>
+<td>Standardized Corvette Patterns
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_mining_2
+</td>
+<td>Deep Core Mining
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mineral_purification_2
+</td>
+<td>Advanced Mineral Purification
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_robomodding_points_1
+</td>
+<td>Cross-Model Standardization
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_droid_workers
+</td>
+<td>Droids
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_exotic_gases
+</td>
+<td>Exotic Gas Refining
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_rare_crystals
+</td>
+<td>Rare Crystal Manufacturing
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_space_mining_3
+</td>
+<td>Mineral Cutting Beams
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_space_mining_4
+</td>
+<td>Autonomous Mining Drones
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mine_betharian
+</td>
+<td>Betharian Refining
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mine_exotic_gases
+</td>
+<td>Exotic Gas Extraction
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mine_rare_crystals
+</td>
+<td>Rare Crystal Mining
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_engineering_2
+</td>
+<td>Supersolid Materials
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_housing_1
+</td>
+<td>Weather Control Systems
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_micro_replicators
+</td>
+<td>Micro-Replicators
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_advanced_metallurgy_1
+</td>
+<td>Ceramo-Metal Alloys
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_ship_armor_3
+</td>
+<td>Plasteel Materials
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_thrusters_2
+</td>
+<td>Ion Thrusters
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_missiles_3
+</td>
+<td>Antimatter Missiles
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_swarmer_missiles_1
+</td>
+<td>Swarmer Missiles
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_torpedoes_1
+</td>
+<td>Space Torpedoes
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mass_drivers_3
+</td>
+<td>Railguns
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_autocannons_1
+</td>
+<td>Autocannons
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_strike_craft_2
+</td>
+<td>Improved Strike Craft
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_starbase_3
+</td>
+<td>Starhold
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_defense_platform_hull_1
+</td>
+<td>Improved Structural Integrity
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_modular_engineering
+</td>
+<td>Modular Engineering
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_destroyers
+</td>
+<td>Destroyers
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_destroyer_hull_1
+</td>
+<td>Improved Destroyer Hulls
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_destroyer_build_speed
+</td>
+<td>Standardized Destroyer Patterns
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_corvette_hull_2
+</td>
+<td>Advanced Corvette Hulls
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_nanite_transmutation
+</td>
+<td>Nanite Transmutation
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_repeatable_lcluster_clue
+</td>
+<td>L-Gate Insight
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mining_3
+</td>
+<td>Mineral Isolation
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_binary_motivators
+</td>
+<td>Binary Motivators
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_luxuries_2
+</td>
+<td>Replicator Kiosks
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_alloys_2
+</td>
+<td>Nano-Separators
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_space_mining_5
+</td>
+<td>Nanite Mineral Probes
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_construction_templates
+</td>
+<td>Construction Templates
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_paradise_dome
+</td>
+<td>Idyllic Architecture
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_housing_2
+</td>
+<td>Anti-Gravity Engineering
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_self_assembling_components
+</td>
+<td>Self-Assembling Components
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_ship_armor_4
+</td>
+<td>Durasteel Materials
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_flak_batteries_2
+</td>
+<td>Flak Cannons
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_afterburners_2
+</td>
+<td>Advanced Afterburners
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_thrusters_3
+</td>
+<td>Plasma Thrusters
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_missiles_4
+</td>
+<td>Quantum Missiles
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_torpedoes_2
+</td>
+<td>Armored Torpedoes
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_mass_drivers_4
+</td>
+<td>Advanced Railguns
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_kinetic_artillery_1
+</td>
+<td>Kinetic Battery
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_autocannons_2
+</td>
+<td>Ripper Cannons
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_strike_craft_3
+</td>
+<td>Advanced Strike Craft
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_space_defense_station_improvement
+</td>
+<td>Corps of Engineers
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_orbital_ring_tier_1
+</td>
+<td>Orbital Rings
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_starbase_4
+</td>
+<td>Star Fortress
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_habitat_1
+</td>
+<td>Orbital Habitats
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_destroyer_hull_2
+</td>
+<td>Advanced Destroyer Hulls
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_cruisers
+</td>
+<td>Cruisers
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_cruiser_build_speed
+</td>
+<td>Standardized Cruiser Patterns
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_cruiser_hull_1
+</td>
+<td>Improved Cruiser Hulls
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_robomodding_points_2
+</td>
+<td>Fungible Circuitry
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_synthetic_workers
+</td>
+<td>Synthetics
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_synthetic_leaders
+</td>
+<td>Synthetic Personality Matrix
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_nanite_assemblers
+</td>
+<td>Nanite Assemblers
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_mega_assembly
+</td>
+<td>Mega-Assembly Systems
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_engineering_3
+</td>
+<td>Superfluid Materials
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_advanced_metallurgy_2
+</td>
+<td>Durasteel-Laced Alloys
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_ship_armor_5
+</td>
+<td>Neutronium Materials
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_flak_batteries_3
+</td>
+<td>Flak Artillery
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_thrusters_4
+</td>
+<td>Impulse Thrusters
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_missiles_5
+</td>
+<td>Marauder Missiles
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_swarmer_missiles_2
+</td>
+<td>Whirlwind Missiles
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_torpedoes_3
+</td>
+<td>Devastator Torpedoes
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_kinetic_artillery_2
+</td>
+<td>Kinetic Artillery
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_mass_accelerator_1
+</td>
+<td>Mega Cannon
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_mass_accelerator_2
+</td>
+<td>Giga Cannon
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_mass_drivers_5
+</td>
+<td>Gauss Cannons
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_autocannons_3
+</td>
+<td>Stormfire Cannons
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_starbase_5
+</td>
+<td>Citadel
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_habitat_2
+</td>
+<td>Habitat Expansion
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_habitat_3
+</td>
+<td>Advanced Space Habitation
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_battleships
+</td>
+<td>Battleships
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_battleship_hull_1
+</td>
+<td>Improved Battleship Hulls
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_battleship_build_speed
+</td>
+<td>Standardized Battleship Patterns
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_cruiser_hull_2
+</td>
+<td>Advanced Cruiser Hulls
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_tile_mineral_output
+</td>
+<td>Extraction Patterns
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_mine_living_metal
+</td>
+<td>Living Metal
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_reduced_building_time
+</td>
+<td>Assembly Algorithms
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_armor_output
+</td>
+<td>Matter Compression
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_dark_matter_propulsion
+</td>
+<td>Dark Matter Propulsion
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_explosive_damage
+</td>
+<td>Thermodynamic Yield Control
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_explosive_fire_rate
+</td>
+<td>Miniaturized Pre-Igniters
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_kinetic_damage
+</td>
+<td>High-Density Munitions
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_kinetic_fire_rate
+</td>
+<td>Loader Efficiency
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_strike_craft_fire_damage
+</td>
+<td>Synapse Interceptors
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_strike_craft_fire_rate
+</td>
+<td>Heat Recyclers
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_military_station_health
+</td>
+<td>Fortified Core Layers
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_military_station_damage
+</td>
+<td>Synchronized Firing Patterns
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_battleship_hull_2
+</td>
+<td>Advanced Battleship Hulls
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_titans
+</td>
+<td>Titans
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_titan_hull_1
+</td>
+<td>Improved Titan Hulls
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_titan_hull_2
+</td>
+<td>Advanced Titan Hulls
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_colossus
+</td>
+<td>Colossi
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_pk_shielder
+</td>
+<td>Global Pacification
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_pk_neutron
+</td>
+<td>Neutron Sweeping
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_pk_godray
+</td>
+<td>Divine Stimulus
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_pk_cracker
+</td>
+<td>Core Cracking
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_pk_nanobots
+</td>
+<td>Atmospheric Nanobot Dispersal
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_mega_engineering
+</td>
+<td>Mega-Engineering
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_science_nexus
+</td>
+<td>Science Nexus
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_sentry_array
+</td>
+<td>Sentry Array
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_quantum_catapult
+</td>
+<td>Quantum Catapult
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_strategic_coordination
+</td>
+<td>Strategic Coordination Center
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_mega_shipyard
+</td>
+<td>Mega Shipyard
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_interstellar_assembly
+</td>
+<td>Interstellar Assembly
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_mega_art
+</td>
+<td>Mega Art Installation
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_juggernaut
+</td>
+<td>Juggernaut
+</td>
+<td>5
+</td></tr></tbody></table>
+<table class="wikitable sortable mw-collapsible mw-collapsed">
+<caption>Tech Physics
+</caption>
+<tbody><tr>
+<td>Key
+</td>
+<td>Name
+</td>
+<td>Tier
+</td></tr>
+<tr>
+<td>tech_basic_science_lab_1
+</td>
+<td>Scientific Method
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_power_plant_1
+</td>
+<td>High-Energy Capacitors
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_shields_1
+</td>
+<td>Deflectors
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_lasers_1
+</td>
+<td>Red Lasers
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_fission_power
+</td>
+<td>Fission Power
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_reactor_boosters_1
+</td>
+<td>Reactor Boosters
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_hyper_drive_1
+</td>
+<td>Hyperspace Travel
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_bio_reactor
+</td>
+<td>Bio-Reactor
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_administrative_ai
+</td>
+<td>Administrative AI
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_combat_computers_1
+</td>
+<td>Specialized Combat Computers
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_auxiliary_fire_control
+</td>
+<td>Auxiliary Fire-control
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_cryostasis_1
+</td>
+<td>AI-Controlled Colony Ships
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_basic_science_lab_2
+</td>
+<td>Exotic Materials Labs
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_space_science_1
+</td>
+<td>Zero-G Laboratories
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_space_science_2
+</td>
+<td>Miniature Containment Fields
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_physics_1
+</td>
+<td>Quantum Theory
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_encryption_1
+</td>
+<td>Quantum Firewalls
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_decryption_1
+</td>
+<td>Quantum Hacking
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_power_plant_2
+</td>
+<td>Field Modulation
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_power_hub_1
+</td>
+<td>Global Energy Management
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_shields_2
+</td>
+<td>Improved Deflectors
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_lasers_2
+</td>
+<td>Blue Lasers
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_fusion_power
+</td>
+<td>Fusion Power
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_reactor_boosters_2
+</td>
+<td>Improved Reactor Boosters
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_reactor_boosters_3
+</td>
+<td>Advanced Reactor Boosters
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_automated_exploration
+</td>
+<td>Automated Exploration Protocols
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_consumer_good_refinement_1
+</td>
+<td>Market Analysis Algorithms
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_self_aware_logic
+</td>
+<td>Self-Evolving Logic
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_space_science_3
+</td>
+<td>Quantum Probes
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_space_science_4
+</td>
+<td>Autonomous Station Protocols
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_encryption_2
+</td>
+<td>Simultaneous-Collapse Storage
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_decryption_2
+</td>
+<td>Simulated Social Engineering
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_physics_2
+</td>
+<td>Applied Quantum Physics
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_sensors_2
+</td>
+<td>Gravitic Sensors
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_experimental_subspace_navigation
+</td>
+<td>Speculative Hyperlane Breaching
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_power_plant_3
+</td>
+<td>Quantum Energy States
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_power_hub_2
+</td>
+<td>Planetary Power Grid
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_shields_3
+</td>
+<td>Shields
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_shield_rechargers_1
+</td>
+<td>Shield Capacitors
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_lasers_3
+</td>
+<td>UV Lasers
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_disruptors_1
+</td>
+<td>Disruptors
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_plasma_1
+</td>
+<td>Plasma Throwers
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_cold_fusion_power
+</td>
+<td>Cold Fusion Power
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_hyper_drive_2
+</td>
+<td>Hyperlane Breach Points
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_hyper_relays
+</td>
+<td>Hyper Relays
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_ftl_inhibitor
+</td>
+<td>FTL Inhibition
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_archeology_lab_ancrel
+</td>
+<td>Curator Archaeology Lab
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_archeology_lab
+</td>
+<td>Curator Archaeology Lab
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_curator_lab
+</td>
+<td>Curator Exploration Lab
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mine_volatile_motes
+</td>
+<td>Mote Stabilization
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_volatile_motes
+</td>
+<td>Volatile Material Plants
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_combat_computers_2
+</td>
+<td>Extended Combat Algorithms
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_cryostasis_2
+</td>
+<td>Self-Aware Colony Ships
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_global_research_initiative
+</td>
+<td>Interplanetary Research Initiative
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_basic_science_lab_3
+</td>
+<td>Multi-Dimensional Studies
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_space_science_5
+</td>
+<td>Multi-Dimensional Analysis
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_sensors_3
+</td>
+<td>Subspace Sensors
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_mine_dark_matter
+</td>
+<td>Dark Matter Drawing
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_power_plant_4
+</td>
+<td>Quantum Field Manipulation
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_shields_4
+</td>
+<td>Advanced Shields
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_planetary_shield_generator
+</td>
+<td>Planetary Shields
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_lasers_4
+</td>
+<td>X-Ray Lasers
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_energy_torpedoes_1
+</td>
+<td>Proton Launchers
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_disruptors_2
+</td>
+<td>Ion Disruptors
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_plasma_2
+</td>
+<td>Plasma Accelerators
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_antimatter_power
+</td>
+<td>Antimatter Power
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_hyper_drive_3
+</td>
+<td>Hyperspace Slipstreams
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_wormhole_stabilization
+</td>
+<td>Wormhole Stabilization
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_combat_computers_3
+</td>
+<td>Sapient Combat Simulations
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_combat_computers_autonomous
+</td>
+<td>Autonomous Ship Intellects
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_consumer_good_refinement_2
+</td>
+<td>Predictive Consumerism
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_positronic_implants
+</td>
+<td>Positronic Implants
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_sapient_ai
+</td>
+<td>Positronic AI
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_synchronized_defences
+</td>
+<td>Synchronized Defenses
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_encryption_3
+</td>
+<td>Negative-Time Keys
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_decryption_3
+</td>
+<td>Quasi-Dimensional Reflection
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_physics_3
+</td>
+<td>Space-Time Theory
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_sensors_4
+</td>
+<td>Tachyon Sensors
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_shields_5
+</td>
+<td>Hyper Shields
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_energy_torpedoes_2
+</td>
+<td>Neutron Launchers
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_lasers_5
+</td>
+<td>Gamma Lasers
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_energy_lance_1
+</td>
+<td>Particle Lances
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_energy_lance_2
+</td>
+<td>Tachyon Lances
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_disruptors_3
+</td>
+<td>Phase Disruptors
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_arc_emitter_1
+</td>
+<td>Arc Emitters
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_arc_emitter_2
+</td>
+<td>Focused Arc Emitters
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_plasma_3
+</td>
+<td>Plasma Cannons
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_zero_point_power
+</td>
+<td>Zero Point Power
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_gateway_activation
+</td>
+<td>Gateway Activation
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_repeatable_reduced_building_cost
+</td>
+<td>Gravitational Analysis
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_tile_energy_output
+</td>
+<td>Applied Superconductivity
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_dark_matter_deflector
+</td>
+<td>Dark Matter Deflectors
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_shield_output
+</td>
+<td>Shield Harmonics
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_energy_damage
+</td>
+<td>Focusing Arrays
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_weapon_type_energy_fire_rate
+</td>
+<td>Flash Coolant
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_jump_drive_1
+</td>
+<td>Jump Drive
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_dark_matter_power_core
+</td>
+<td>Dark Matter Power
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_gateway_construction
+</td>
+<td>Gateway Construction
+</td>
+<td>5
+</td></tr></tbody></table>
+<table class="wikitable sortable mw-collapsible mw-collapsed">
+<caption>Tech Society
+</caption>
+<tbody><tr>
+<td>Key
+</td>
+<td>Name
+</td>
+<td>Tier
+</td></tr>
+<tr>
+<td>tech_industrial_farming
+</td>
+<td>Industrial Agriculture
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_planetary_defenses
+</td>
+<td>Planetary Defenses
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_colonization_1
+</td>
+<td>New Worlds Protocol
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_hive_node
+</td>
+<td>Synaptic Structures
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_holo_entertainment
+</td>
+<td>Holo-Entertainment
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_planetary_government
+</td>
+<td>Planetary Government
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_interplanetary_commerce
+</td>
+<td>Interplanetary Commerce
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_cultural_heritage
+</td>
+<td>Sociocultural History
+</td>
+<td>0
+</td></tr>
+<tr>
+<td>tech_eco_simulation
+</td>
+<td>Eco Simulation
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_food_processing_1
+</td>
+<td>Food Processing
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_hydroponics
+</td>
+<td>Hydroponics Farming
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_genome_mapping
+</td>
+<td>Genome Mapping
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_frontier_health
+</td>
+<td>Genetic Healthcare
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_society_1
+</td>
+<td>Biodiversity Studies
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_ground_defense_planning
+</td>
+<td>Ground Defense Planning
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_deep_sinkhole
+</td>
+<td>Subterranean Colonization
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_massive_glacier
+</td>
+<td>Climate Control Network
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_noxious_swamp
+</td>
+<td>Xeno-Hydraulic Mastery
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_dense_jungle
+</td>
+<td>Selective Defoliants
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_quicksand_basin
+</td>
+<td>Soil Remediation
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_toxic_kelp
+</td>
+<td>Ocean Ecology Management
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_hyper_entertainment_forum
+</td>
+<td>Hyper-Entertainment Forum
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_planetary_unification
+</td>
+<td>Planetary Unification
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_adaptive_bureaucracy
+</td>
+<td>Adaptive Bureaucracy
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_space_trading
+</td>
+<td>Offworld Trade Companies
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_heritage_site
+</td>
+<td>Heritage Sites
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_neural_implants
+</td>
+<td>Neural Implants
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_alien_life_studies
+</td>
+<td>Xenology
+</td>
+<td>1
+</td></tr>
+<tr>
+<td>tech_gene_crops
+</td>
+<td>Gene Crops
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_vitality_boosters
+</td>
+<td>Vitality Boosters
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_subdermal_stimulation
+</td>
+<td>Subdermal Stimulation
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_frontier_hospital
+</td>
+<td>Cyto-Revitalization
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_epigenetic_triggers
+</td>
+<td>Epigenetic Triggers
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_cloning
+</td>
+<td>Cloning
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_gene_banks
+</td>
+<td>Gene Banks
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_society_2
+</td>
+<td>Xenobiology
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_arcane_deciphering
+</td>
+<td>Arcane Deciphering
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_global_defense_grid
+</td>
+<td>Global Defense Grid
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_doctrine_fleet_size_1
+</td>
+<td>Doctrine: Space Combat
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_doctrine_fleet_size_2
+</td>
+<td>Doctrine: Reactive Formations
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_centralized_command
+</td>
+<td>Centralized Command
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_doctrine_navy_size_1
+</td>
+<td>Doctrine: Fleet Support
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_adaptive_combat_algorithms
+</td>
+<td>Adaptive Combat Algorithms
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_interstellar_fleet_traditions
+</td>
+<td>Interstellar Fleet Traditions
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_colonization_2
+</td>
+<td>Atmospheric Filtering
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_colonization_3
+</td>
+<td>Hostile Environment Adaptation
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_volcano
+</td>
+<td>Deep Crust Engineering
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_terrestrial_sculpting
+</td>
+<td>Terrestrial Sculpting
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_mountain_range
+</td>
+<td>Planetary Resurfacing
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_dangerous_wildlife
+</td>
+<td>Dangerous Wildlife Removal
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_galactic_ambitions
+</td>
+<td>Stellar Expansion
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_interstellar_campaigns
+</td>
+<td>Interstellar Campaigns
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_hive_cluster
+</td>
+<td>Clustered Synapses
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_colonial_centralization
+</td>
+<td>Colonial Centralization
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_planetary_infrastructure_1
+</td>
+<td>Ceramo-Metal Infrastructure
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_xeno_diplomacy
+</td>
+<td>Xeno Diplomacy
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_autonomous_agents
+</td>
+<td>Autonomous Agents
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_living_state
+</td>
+<td>The Living State
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_colonial_bureaucracy
+</td>
+<td>Colonial Bureaucracy
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_effective_bureaucracy
+</td>
+<td>Effective Bureaucracy
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_capital_productivity_1
+</td>
+<td>Improved Production
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_holographic_rituals
+</td>
+<td>Holographic Rituals
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_slave_colonies
+</td>
+<td>Thrall-Worlds
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_unity_of_purpose
+</td>
+<td>Unity of Purpose
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_artificial_moral_codes
+</td>
+<td>Artificial Moral Codes
+</td>
+<td>2
+</td></tr>
+<tr>
+<td>tech_food_processing_2
+</td>
+<td>Advanced Food Processing
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_nano_vitality_crops
+</td>
+<td>Nano-Vitality Crops
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_selected_lineages
+</td>
+<td>Selected Lineages
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_gene_tailoring
+</td>
+<td>Gene Tailoring
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_glandular_acclimation
+</td>
+<td>Glandular Acclimation
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_gene_expressions
+</td>
+<td>Targeted Gene Expressions
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_doctrine_fleet_size_3
+</td>
+<td>Doctrine: Interstellar Warfare
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_combat_training
+</td>
+<td>Combat Training
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_doctrine_navy_size_2
+</td>
+<td>Doctrine: Support Vessels
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_refit_standards
+</td>
+<td>Refit Standards
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_command_matrix
+</td>
+<td>Command Matrix
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_colonization_4
+</td>
+<td>Foreign Soil Enrichment
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_tomb_world_adaption
+</td>
+<td>Tomb World Adaptation
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_ecological_adaptation
+</td>
+<td>Ecological Adaptation
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_psionic_theory
+</td>
+<td>Psionic Theory
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_telepathy
+</td>
+<td>Telepathy
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_mine_zro
+</td>
+<td>Zro Distillation
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_hive_confluence
+</td>
+<td>Confluence of Thought
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_xeno_relations
+</td>
+<td>Xeno Relations
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_embodied_dynamism
+</td>
+<td>Embodied Dynamism
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_global_production_strategy
+</td>
+<td>Global Production Strategy
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_autocurating_vault
+</td>
+<td>Automated Curation Algorithms
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_galactic_administration
+</td>
+<td>Galactic Administration
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_collective_self
+</td>
+<td>The Collective Self
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_galactic_bureaucracy
+</td>
+<td>Galactic Bureaucracy
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_capital_productivity_2
+</td>
+<td>Efficiencies of Scale
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_interstellar_economics
+</td>
+<td>Interstellar Economics
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_hypercomms_forum
+</td>
+<td>Local Hypercommunication
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_consecration_fields
+</td>
+<td>Consecration Fields
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_resource_processing_algorithms
+</td>
+<td>Resource Processing Algorithms
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_collective_production_methods
+</td>
+<td>Collective Production Methods
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_penal_colonies
+</td>
+<td>Penal Colonies
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_resort_colonies
+</td>
+<td>Resort Worlds
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_synthetic_thought_patterns
+</td>
+<td>Synthetic Thought Patterns
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_xeno_tourism_agency
+</td>
+<td>Xeno Outreach Agencies
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_executive_retreat
+</td>
+<td>Executive Leisure Program
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_housing_agrarian_idyll
+</td>
+<td>Agrarian Utopias
+</td>
+<td>3
+</td></tr>
+<tr>
+<td>tech_nutrient_replication
+</td>
+<td>Nutrient Replication
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_capacity_boosters
+</td>
+<td>Capacity Boosters
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_tracking_implants
+</td>
+<td>Tracking Implants
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_gene_seed_purification
+</td>
+<td>Gene Seed Purification
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_morphogenetic_field_mastery
+</td>
+<td>Morphogenetic Field Mastery
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_society_3
+</td>
+<td>Secrets of Life
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_doctrine_fleet_size_4
+</td>
+<td>Doctrine: Fluid Fleet Templates
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_doctrine_fleet_size_5
+</td>
+<td>Doctrine: Armada Battle Formation
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_doctrine_navy_size_3
+</td>
+<td>Doctrine: Interstellar Logistics
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_doctrine_navy_size_4
+</td>
+<td>Doctrine: Fleet Liasions
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_biomechanics
+</td>
+<td>Biomechanics
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_colonization_5
+</td>
+<td>Eco-Integration Studies
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_climate_restoration
+</td>
+<td>Climate Restoration
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_galactic_campaigns
+</td>
+<td>Galactic Campaigns
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_manifest_destiny
+</td>
+<td>Manifest Destiny
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_precognition_interface
+</td>
+<td>Precognition Interface
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_thought_enforcement
+</td>
+<td>Thought Enforcement
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_planetary_infrastructure_2
+</td>
+<td>Durasteel Infrastructure
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_galactic_markets
+</td>
+<td>Galactic Markets
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_capital_productivity_3
+</td>
+<td>Maximized Productivity
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_transcendent_faith
+</td>
+<td>Metacognitive Faith
+</td>
+<td>4
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_tile_food_output
+</td>
+<td>Transgenic Crops
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_leader_life_span
+</td>
+<td>Cell Revitalization
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_command_limit
+</td>
+<td>Admiralty Support Staff
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_army_damage
+</td>
+<td>Aggressive Conditioning
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_army_health
+</td>
+<td>Nerve Dampeners
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_naval_cap
+</td>
+<td>Fleet Management Procedures
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_starbase_capacity
+</td>
+<td>Interstellar Expansion
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_psi_jump_drive_1
+</td>
+<td>Psi Jump Drive
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_repeatable_improved_core_system_cap
+</td>
+<td>Administrative Efficiency
+</td>
+<td>5
+</td></tr>
+<tr>
+<td>tech_ascension_theory
+</td>
+<td>Ascension Theory
+</td>
+<td>5
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Adding_Techs">Adding Techs</span></h2>
+<p>If you are new to modding Stellaris, the best way to understand how to create new technologies is to use the vanilla techs as examples.
+</p>
+<pre>tech_nutrient_replication = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { biology }
+	prerequisites = { "tech_nano_vitality_crops" }
+	weight = @tier3weight3
+
+	potential = {
+	}
+
+	modifier = {
+		planet_jobs_food_produces_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="ID_Name">ID Name</span></h3>
+<p>The first line, <code>tech_nutrient_replication = {</code> declares the ID Name for the technology. This is not the name that will display in-game, rather, the unique ID that other files, including language files, will reference the tech as. It is best to name it similarly to the technology's planned name, so a tech named "Better Farms" would be <code>tech_better_farms</code>. Of course, this is not required. ID Names do not support spaces, and should be replaced with underscore ( _ )
+</p>
+<h3><span class="mw-headline" id="Cost">Cost</span></h3>
+<p>Here is a list of the variables Stellaris uses for most of its technologies. The cost determines how long it will take to research the technology.<sup id="cite_ref-var_1-0" class="reference"><a href="#cite_note-var-1">&#91;1&#93;</a></sup>
+</p>
+<pre>@tier1cost1 = 2000
+@tier1cost2 = 2500
+@tier1cost3 = 3000
+
+@tier2cost1 = 4000
+@tier2cost2 = 5000
+@tier2cost3 = 6000
+
+@tier3cost1 = 8000
+@tier3cost2 = 10000
+@tier3cost3 = 12000
+
+@tier4cost1 = 16000
+@tier4cost2 = 20000
+@tier4cost3 = 24000
+
+@tier5cost1 = 32000
+@tier5cost2 = 40000
+@tier5cost3 = 48000
+</pre>
+<p>Cost can be set to any number within the 32bit integer limit.
+</p>
+<pre># Using a preset cost
+cost = @tier1cost3 # 3000
+
+# Using a custom cost
+cost = 9000
+</pre>
+<h3><span class="mw-headline" id="Weight">Weight</span></h3>
+<p>Weight controls how likely a tech is to be "drawn", the higher the number, the higher the likelihood of it appearing compared to other techs.
+</p><p>Here is a list of the weights Stellaris uses for most of its techs.<sup id="cite_ref-var_1-1" class="reference"><a href="#cite_note-var-1">&#91;1&#93;</a></sup>
+</p>
+<pre>@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+
+@tier2weight1 = 85
+@tier2weight2 = 75
+@tier2weight3 = 70
+
+@tier3weight1 = 65
+@tier3weight2 = 60
+@tier3weight3 = 50
+
+@tier4weight1 = 45
+@tier4weight2 = 40
+@tier4weight3 = 35
+
+@tier5weight1 = 30
+@tier5weight2 = 25
+@tier5weight3 = 20
+</pre>
+<p>The syntax and usage of a tech's weight is the same as tech cost. A tech with low weight (i.e. 5) will have a much lower chance to be "drawn" than other techs. These are not definitive values however, and are compared to every other valid tech in the game.
+</p>
+<pre># Using a preset weight
+weight = @tier1weight3 # 90
+
+# Using a custom weight
+weight = 15
+</pre>
+<h3><span class="mw-headline" id="Tier">Tier</span></h3>
+<p>The '<kbd>tier</kbd>' of a technology, while not shown ingame,<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup> does determine how many techs of a previous tier have to be researched for the next tier to become unlocked.
+I.e. a Tier 3 technology cannot be "drawn" until the country owns at least six Tier 2 technologies.
+These are also easily moddable via its file, see <i><a href="#Tiers">#Tiers</a></i>.
+</p>
+<pre>Tier 0 is used for starting technologies.
+Tier 1 – 3 are typically unlocked near the earlygame to the midgame
+Tier 4 – 5 typically near to after endgame.
+</pre>
+<h3><span class="mw-headline" id="Area">Area</span></h3>
+<p>This determines the technology's research area, as seen in the research panel.
+</p>
+<pre>area = society
+# Supports: physics, society, engineering
+</pre>
+<h3><span class="mw-headline" id="Category">Category</span></h3>
+<p>This determines the category of a technology, used with the Expertise scientist traits to increase speed in a specific area of research.
+</p>
+<pre># Note the Curly brackets / Braces {}
+category = { biology }
+</pre>
+<p>Despite the curly brackets, this is not an array; as there can only be one category for each tech.
+</p>
+<pre># Physics
+field_manipulation, particles, computing
+
+# Society
+psionics, new_worlds, statecraft, biology, military_theory
+
+# Engineering
+materials, rocketry, voidcraft, industry
+</pre>
+<p>For adding new categories, see <i><a href="#Categories">#Categories</a></i>.
+</p>
+<h3><span class="mw-headline" id="Potential">Potential</span></h3>
+<p>"Potential" determines whether the specific country is allowed to "draw" the technology.
+</p>
+<pre>potential = {
+	has_authority = auth_democratic
+}
+</pre>
+<p>A tech with this potential is accessible only to Democratic countries.
+More logic explanation in the weight section.
+</p>
+<h3><span class="mw-headline" id="AI_Update_Type">AI Update Type</span></h3>
+<pre>ai_update_type = military
+# supports: military, all
+# Remove if not used
+</pre>
+<p>Techs with this variable set will update ship designs upon researching. If this field is all, civilian ships will be upgraded. Used for component-unlocking technologies.
+</p>
+<h3><span class="mw-headline" id="Prerequisites">Prerequisites</span></h3>
+<p>Prerequisites (careful on the spelling) determine required technologies for the tech.
+</p>
+<pre>prerequisites = { "tech_droid_workers" }
+</pre>
+<p>A technology with this prerequisite will require researching Droid Workers first.
+In this case, prerequisites works as an "array", or a list of items, and can have multiple or many required techs.
+</p>
+<pre>prerequisites = { "tech_droid_workers" "tech_colonial_centralization" }
+</pre>
+<p>This will make the tech require "Droids" and "Colonial Centralisation" in order to research.
+</p>
+<h3><span class="mw-headline" id="Tech_tags">Tech tags</span></h3>
+<p>There are a few other tags:
+</p>
+<ul><li><code>is_reverse_engineerable = yes/no</code> – Reverse engineerable tech, allows to reverse engineer from debris – only supports ship component technologies, such as Dark Matter Power or Railguns (etc.), as the game checks against the requirements for said components.</li>
+<li><code>start_tech = yes/no</code> – Starting tech, given at the start of the game – determines whether valid empires start with the technology. Valid empires are determined by a tech's Potential.</li>
+<li><code>is_rare = yes/no</code> – Rare tech, marks as purple – see <i><a href="#Tech_tags_2">Advanced Tech Modding</a></i> for more.</li>
+<li><code>is_dangerous = yes/no</code> – Dangerous Tech, marks as red – see <i><a href="#Tech_tags_2">Advanced Tech Modding</a></i> for more.</li></ul>
+<h3><span class="mw-headline" id="Weight_Modifiers">Weight Modifiers</span></h3>
+<p>Now we enter logic gate territory with Weight Modifiers and add/factor. These change how likely the tech is to appear in any given tech "card draw", after each completed research. An example:
+</p>
+<pre>weight_modifier = {
+	factor = 4 # weight × 4
+	modifier = {
+		factor = 0.75 # weight × 0.75
+		NOR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+		} # Is not pacifist
+	}
+	modifier = {
+		add = 2 # +2 to original weight amount
+		OR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		} # Is militarist
+	}
+}
+</pre>
+<p>This would reduce the weight of a technology if the researcher does not have either pacifist ethics, and increase it if militarist.
+</p>
+<h4><span class="mw-headline" id="Weight_Modifier">Weight Modifier</span></h4>
+<p>This will contain all of the modifiers that would affect the technology's chance to draw.
+</p>
+<pre>weight_modifier = { … }
+</pre>
+<p>Remember to count your braces.
+</p>
+<h4><span id="Add_.26_Factor"></span><span class="mw-headline" id="Add_&amp;_Factor">Add &amp; Factor</span></h4>
+<p>This is how the condition affects the likelihood of the tech appearing. "Factor" means multiply in this case.
+</p>
+<pre>modifier = {
+	factor = 0.75
+	has_ethic = ethic_fanatic_pacifist
+}
+</pre>
+<p>This will multiply the base weight by 0.75 for countries that are fanatic pacifist.
+</p>
+<pre>modifier = {
+	add = 3
+	has_ethic = ethic_fanatic_militarist
+}
+</pre>
+<p>This will increase the base weight by 3 for countries that are fanatic militarist.
+</p>
+<h4><span class="mw-headline" id="Logic_Gates">Logic Gates</span></h4>
+<div style="margin:1.4px 1.6em;"><i>Main article: <a href="/Conditions.html" title="Conditions">Conditions</a></i></div>
+<p>Paradox text files use several <a href="http://en.wikipedia.org/wiki/Logic_gate" class="extiw" title="wikipedia:Logic gate">logic gates</a> that are found in traditional computer programming: AND (all values must be true), OR (any value must be true), NOT (all values must be false, reverses output), and NOR (no values can be true).
+</p>
+<pre>	factor = 0.01
+	OR = {
+		has_ethic = ethic_pacifist
+		has_ethic = ethic_fanatic_pacifist
+	}
+</pre>
+<p>In an OR logic gate at least one value within must return true, else the OR returns false. For this example, empires that are not pacifist are far less likely to draw this technology.
+</p>
+<pre>	factor = 1.5
+	AND = {
+		has_authority = "auth_imperial"
+		has_civic = "civic_imperial_cult"
+	}
+</pre>
+<p>In the AND gate, all values within must return true, else the AND returns false. This example will increase a tech's weight by 50% if the country has the Imperial authority AND has the Imperial Cult civic.
+</p>
+<pre>	factor = 0.01
+	NOT = {
+		has_ethic = "ethic_spiritualist"
+	}
+</pre>
+<pre>	factor = 0.01
+	NOR = {
+		has_ethic = "ethic_spiritualist"
+		has_ethic = "ethic_fanatic_spiritualist"
+	}
+</pre>
+<p>NOT is a reversed logic gate. If the values within a "NOT" return true, then the NOT returns false. It should be noted that "NOT" and "NOR" have similar use.
+</p><p>Logic gates can only be nested limited times;
+</p>
+<pre>	factor = 0
+	OR = {
+		NOT = { is_country_type = default }
+		AND = {
+			has_civic = civic_fanatic_purifiers
+			has_ethic = ethic_spiritualist
+		}
+		AND = {
+			has_civic = civic_death_cult
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+	NOR = {
+		has_ethic = ethic_xenophile
+		has_ethic = ethic_fanatic_xenophile
+	}
+</pre>
+<dl><dd><small>(Note: This block of code does not appear anywhere in Stellaris.)</small></dd></dl>
+<h4><span class="mw-headline" id="Research_Leader">Research Leader</span></h4>
+<p>The weight can be affected by who's in charge of research, and here's how to do it. First, open with <code>research_leader = {</code>. Now, here is where you make your decision. First, area, meaning which department your scientist is in. It really is just a coding convention, since it will only appear in that category anyways. (So I think it's supposed to increase the chance is there is a leader.) Next is "has_trait", which is self-explanatory. It is used to increase or decrease the likelihood of a tech appearing if a certain trait exists or is missing. Here is a list of all traits that can be used with it (for scientists):
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># Adaptable (+25% XP Gain)</span>
+<span class="s2">&quot;leader_trait_adaptable&quot;</span>
+
+<span class="c1"># Stubborn (-25% XP Gain)</span>
+<span class="s2">&quot;leader_trait_stubborn&quot;</span>
+
+<span class="c1"># Resiliant (+25 More Years of Life)</span>
+<span class="s2">&quot;leader_trait_resilient&quot;</span>
+
+<span class="c1"># Substance Abuser (-20 Years of Life)</span>
+<span class="s2">&quot;leader_trait_substance_abuser&quot;</span>
+
+<span class="c1"># Eager (-33% Recruitment Cost)</span>
+<span class="s2">&quot;leader_trait_eager&quot;</span>
+
+<span class="c1"># Arrested Development (No XP Gain)</span>
+<span class="s2">&quot;leader_trait_arrested_development&quot;</span>
+
+<span class="c1"># Careful (-10% Anomaly Fail Risk )</span>
+<span class="s2">&quot;leader_trait_careful&quot;</span>
+
+<span class="c1"># Meticulous (+10% Anomaly Generation Chance)</span>
+<span class="s2">&quot;leader_trait_meticulous&quot;</span>
+
+<span class="c1"># Spark of Genius (+10% Research Speed (All Techs))</span>
+<span class="s2">&quot;leader_trait_spark_of_genius&quot;</span>
+
+<span class="c1"># Carefree (+35% Anomaly Research Speed)</span>
+<span class="s2">&quot;leader_trait_carefree&quot;</span>
+
+<span class="c1"># Roamer (+25% Survey Speed)</span>
+<span class="s2">&quot;leader_trait_roamer&quot;</span>
+
+<span class="c1"># Archaeologist (+50% Precursor Anomaly Research Speed, -25% Precursor Anomaly Fail Chance)</span>
+<span class="s2">&quot;leader_trait_archaeologist&quot;</span>
+
+<span class="c1"># Paranoid (-5% Research Speed (All Techs), -10% Anomaly Research Speed)</span>
+<span class="s2">&quot;leader_trait_paranoid&quot;</span>
+
+<span class="c1"># Maniacal (+5% Research Speed (All Techs))</span>
+<span class="s2">&quot;leader_trait_maniacal&quot;</span>
+
+<span class="c1"># Custom AI Assistant (+5% Research Speed (All Techs), +10% Survey Speed, +15% Anomaly Research Speed)</span>
+<span class="s2">&quot;leader_trait_custom_AI_assistant&quot;</span>
+
+<span class="c1"># Sentient AI Assistant (+10% Research Speed (All Techs), +20% Survey Speed, +30% Anomaly Research Speed)</span>
+<span class="s2">&quot;leader_trait_sentient_AI_assistant&quot;</span>
+
+<span class="c1"># Expertise: Materials (+15% Research Speed (Materials))</span>
+<span class="s2">&quot;leader_trait_expertise_materials&quot;</span>
+
+<span class="c1"># Expertise: Rocketry (+15% Research Speed (Rocketry))</span>
+<span class="s2">&quot;leader_trait_expertise_rocketry&quot;</span>
+
+<span class="c1"># Expertise: Voidcraft (+15% Research Speed (Voidcraft))</span>
+<span class="s2">&quot;leader_trait_expertise_voidcraft&quot;</span>
+
+<span class="c1"># Expertise: Industry (+15% Research Speed (Industry))</span>
+<span class="s2">&quot;leader_trait_expertise_industry&quot;</span>
+
+<span class="c1"># Expertise: Field Manipulation (+15% Research Speed (Field Manipulation))</span>
+<span class="s2">&quot;leader_trait_expertise_field_manipulation&quot;</span>
+
+<span class="c1"># Expertise: Particles (+15% Research Speed (Particles))</span>
+<span class="s2">&quot;leader_trait_expertise_particles&quot;</span>
+
+<span class="c1"># Expertise: Computing (+15% Research Speed (Computing))</span>
+<span class="s2">&quot;leader_trait_expertise_computing&quot;</span>
+
+<span class="c1"># Expertise: Psionics (+15% Research Speed (Psionics))</span>
+<span class="s2">&quot;leader_trait_expertise_psionics&quot;</span>
+
+<span class="c1"># Expertise: New Worlds (+15% Research Speed (New Worlds))</span>
+<span class="s2">&quot;leader_trait_expertise_new_worlds&quot;</span>
+
+<span class="c1"># Expertise: Statecraft (+15% Research Speed (Statecraft))</span>
+<span class="s2">&quot;leader_trait_expertise_statecraft&quot;</span>
+
+<span class="c1"># Expertise: Biology (+15% Research Speed (Biology))</span>
+<span class="s2">&quot;leader_trait_expertise_biology&quot;</span>
+
+<span class="c1"># Expertise: Military Theory (+15% Military Theory)</span>
+<span class="s2">&quot;leader_trait_expertise_military_theory&quot;</span>
+</pre></div>
+<p>Please note, this only includes base game, no DLCs are included.
+</p>
+<h4><span class="mw-headline" id="Has_Level">Has Level</span></h4>
+<p>This tag, "<kbd>has_level</kbd>", uses inequality signs (&lt; and &gt;), to boost or lower the chance based on the level. Currently, it goes up to level 5, and here is an example of its usage in game:
+</p>
+<pre>modifier = {
+	factor = 1.25
+	research_leader = {
+		area = physics
+		has_trait = "leader_trait_expertise_voidcraft"
+		has_level &gt; 2
+	}
+}
+modifier = {
+	factor = 1.50
+	research_leader = {
+		area = physics
+		has_trait = "leader_trait_expertise_voidcraft"
+		has_level &gt; 3
+	}
+}
+</pre>
+<p>Here, the "<kbd>has_level</kbd>" tag is used to check is the leading scientist is higher than level 3, and if so, increase the likelihood of the tech by *1.5.
+</p>
+<h4><span class="mw-headline" id="Years_Passed">Years Passed</span></h4>
+<p>Self-Explanatory. Increases the chance if the years past since the start of the game is greater than or less than a certain year. Like this:
+</p>
+<pre>years_passed &lt; 20
+# '&lt;' Can be replaced by '&gt;', '&gt;=', '&lt;=', or '='
+</pre>
+<h4><span class="mw-headline" id="Scopes_and_Triggers">Scopes and Triggers</span></h4>
+<p>The most important part of weight modifiers. <a href="/Scopes.html" title="Scopes">Scopes</a> are used to determine what the following statements apply to. Please note, only a few scopes matter, such as '<kbd>research_leader</kbd>'. <a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">Triggers</a> are the most important part of the entire weight modifier section. Triggers create the main thing that allows for specific cases where certain factors can affect the chance either positively or negatively.
+</p>
+<h5><span id="Example_.231:_Locking_to_certain_ethics"></span><span class="mw-headline" id="Example_#1:_Locking_to_certain_ethics">Example #1: Locking to certain ethics</span></h5>
+<p>Using triggers, you can create a tech that can only be used by egalitarians or xenophiles, and it is more likely to appear if you are an egalitarian, and less likely to appear if you only have one of the two. It is even less likely to appear if the fanatic one is xenophile.
+</p>
+<pre>weight_modifier = {
+	factor = 0.5   # Sets the base chance of the tech appearing
+	modifier = {
+		factor = 0   # Sets chance to 0 if the empire does not have any of the following ethics.
+		NOR = {
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_fanatic_egalitarian
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+	modifier = {
+		factor = 1.5   # Increases the chance if the empire has both egalitarian and xenophile ethics.
+		AND = {
+			OR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+			OR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+	}
+	modifier = {
+		factor = 1.5   # Increases the chance if the empire is fanatic egalitarian.
+		has_ethic = ethic_fanatic_egalitarian
+	}
+	modifier = {
+		factor = 1.25   # Slightly increases the chance if the empire is fanatic xenophile.
+		has_ethic = ethic_fanatic_xenophile
+	}
+}
+</pre>
+<h5><span id="Example_.232:_Traits"></span><span class="mw-headline" id="Example_#2:_Traits">Example #2: Traits</span></h5>
+<p>In this example, the triggers will use the traits of the leader in research and the ruler of the empire. Namely:
+</p>
+<ul><li>If the leader is maniacal, then the chance should be increased.</li>
+<li>If the leader has an expertise, the chance should be reduced.</li>
+<li>If the leader is spark of genius, increase the chances even more.</li>
+<li>If the leader has a modifier that affects the age of the leader, then decrease the chance. Decrease the chance even more if the age went down.</li>
+<li>If the leader has arrested development, but no expertise, then increase the chance.</li></ul>
+<h2><span class="mw-headline" id="Advanced_Tech_Modding">Advanced Tech Modding</span></h2>
+<p><b>NOTE: All of these can crash your game on launch!</b>
+</p>
+<h3><span class="mw-headline" id="Tiers">Tiers</span></h3>
+<p>It is possible to add and modify tiers in the game, the game requires them to be in order (you cannot go from 5 to 7, etc.) meaning that they are semi-hardcoded and require careful handling. If you load a game with a missing tier; your game will crash on load.
+</p><p>From: <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/technology/tier/00_tiers.txt</span>
+</p>
+<pre>####
+#	Technology tiers
+#
+#	weight_modifier = {
+#		factor = 1
+#		modifier = {
+#			add = 10
+#			OR = {
+#				has_government = "military_dictatorship"
+#				has_government = "martial_empire"
+#			}
+#		}
+#	}
+####
+
+# The previously_unlocked-value decides how many techs in the previous tier has to be researched before the tier is unlocked
+
+0 = { # Tier 0
+}
+
+1 = { # Tier 1
+	previously_unlocked = 0
+	weight_modifier = {
+		base = 1
+		complex_trigger_modifier = {
+			trigger = num_researched_techs_of_tier
+			parameters = {
+				tier = 3
+			}
+			mode = add
+			mult = 0.2
+		}
+	}
+}
+
+2 = { # Tier 2
+	previously_unlocked = 6
+	weight_modifier = {
+		base = 1
+		complex_trigger_modifier = {
+			trigger = num_researched_techs_of_tier
+			parameters = {
+				tier = 4
+			}
+			mode = add
+			mult = 0.2
+		}
+	}
+}
+
+3 = { # Tier 3
+	previously_unlocked = 6
+	weight_modifier = {
+		base = 1
+		complex_trigger_modifier = {
+			trigger = num_researched_techs_of_tier
+			parameters = {
+				tier = 5
+			}
+			mode = add
+			mult = 0.2
+		}
+	}
+}
+
+4 = { # Tier 4
+	previously_unlocked = 6
+	weight_modifier = {
+		base = 1
+		complex_trigger_modifier = {
+			trigger = num_repeatable_techs
+			mode = add
+			mult = 0.2
+		}
+	}
+}
+
+5 = { # Tier 5
+	previously_unlocked = 6
+	#weight multiplier is always 1
+}
+</pre>
+<h3><span class="mw-headline" id="Categories">Categories</span></h3>
+<p>It is possible to modify categories in the game, however as of now it is impossible to add new ones, meaning that only their icon can be edited.
+</p><p>From: <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/technology/category/00_category.txt</span>
+</p>
+<pre>materials = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_materials.dds"
+}
+
+propulsion = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_propulsion.dds"
+}
+
+voidcraft = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_voidcraft.dds"
+}
+
+industry = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_industry.dds"
+}
+
+field_manipulation = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_field_manipulation.dds"
+}
+
+particles = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_particles.dds"
+}
+
+computing = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_computing.dds"
+}
+
+psionics = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_psionics.dds"
+}
+
+new_worlds = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_new_worlds.dds"
+}
+
+statecraft = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_statecraft.dds"
+}
+
+biology = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_biology.dds"
+}
+
+military_theory = {
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_expertise_military_theory.dds"
+}
+</pre>
+<h3><span class="mw-headline" id="Tech_tags_2">Tech tags</span></h3>
+<p>As already mentioned above tech tags <code>is_rare</code> and <code>is_dangerous</code> are only cosmetic and do not effect the game.
+"<kbd>is_rare</kbd>" (changing the tech's graphics to purple) does not inherently reduce the chance of rolling it, nor does "<kbd>is_dangerous</kbd>" (changing the tech's graphics to red) create danger on its own.
+</p>
+<h4><span class="mw-headline" id="Rare_Technologies">Rare Technologies</span></h4>
+<p>To make a rare technology "rare", you will need to add the following lines of code to the weight_modifier.
+</p>
+<pre>modifier = {
+	factor = @ap_technological_ascendancy_rare_tech
+	has_ascension_perk = ap_technological_ascendancy
+}
+</pre>
+<h4><span class="mw-headline" id="Dangerous_Technologies">Dangerous Technologies</span></h4>
+<p>Dangerous technologies are more complicated and require event modding to work.
+For more see <a href="/Event_modding.html" title="Event modding">Event modding</a> or alternatively direct at <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/events/crisis_trigger_events.txt</span>.
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-var-1"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-var_1-0">1.0</a></sup> <sup><a href="#cite_ref-var_1-1">1.1</a></sup></span> <span class="reference-text">If not defined in the file itself there are from: <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/scripted_variables/00_scripted_variables.txt</span></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">If you do not use mods, like "Tech Tiers Revealed".</span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a class="mw-selflink selflink">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182314
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.088 seconds
+Real time usage: 0.464 seconds
+Preprocessor visited node count: 528/1000000
+Post‐expand include size: 19994/2097152 bytes
+Template argument size: 8572/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 20551/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  391.842      1 -total
+  2.87%   11.234      1 Template:ModdingNavbox
+  2.09%    8.174      1 Template:Navbox
+  1.21%    4.736      1 Template:Main
+  0.72%    2.812      5 Template:Path
+  0.67%    2.634     14 Template:Navboxgroup
+  0.60%    2.353      1 Template:Clear
+  0.57%    2.237      1 Template:Hatnote
+  0.53%    2.083      1 Template:Version
+  0.25%    0.960      1 Template:Infobox
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1671-0!canonical and timestamp 20260707182314 and revision id 95220.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

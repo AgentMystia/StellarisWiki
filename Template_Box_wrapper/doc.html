@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Box wrapper/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Box wrapper/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_Box_wrapper.html" title="Template:Box wrapper">Template:Box wrapper</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p>A <b>box wrapper</b> can be used to make a list of boxes (E.G., events, decisions, or missions) flow dynamically with the width of the browser taken into account.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<pre>{{Box wrapper|
+
+{{&lt;Box template&gt;|...}}
+{{&lt;Box template&gt;|...}}
+&lt;!-- You do not need a separator between each box, just open the list before your boxes and close it at the end --&gt;
+
+}}
+</pre>
+<p>Alternative syntax:
+</p>
+<pre>{{Box wrapper}}
+
+{{&lt;Box template&gt;|...}}
+{{&lt;Box template&gt;|...}}
+
+{{End box wrapper}}
+</pre>
+<h2><span class="mw-headline" id="Example">Example</span></h2>
+<pre>{{Box wrapper|
+{{event
+|version = 1.12
+|event_name = Mimar Sinan's Great Constructions
+|event_text = Mimar Sinan planned and oversaw the construction of countless mosques, aqueducts, bathhouses, bridges, palaces, caravanserais and schools during his half-a-century long career. His masterpieces were the Selimiye and Suleymaniye Mosques in Adrianople and Constantinople respectively.
+||trigger = *Event has not yet occurred.
+*The year is between 1519 and 1560.
+*owns Constantinople (151).
+*The advisor ‘Mimar Sinan’ does ''not'' exist.
+|mtth = 1000 months
+|options = {{option
+|option_text = Appoint him royal architect
+|effect = *the modifier “Mimar Sinan” until the death of the current ruler, giving the following effect:
+** {{green|−15.0%}} Build cost
+}}
+{{option
+|option_text = Enlist his services for a short time
+|effect = * {{green|+40}} Administrative power
+}}
+}}
+{{event
+|version = 1.12
+|event_name = Loss of Stability
+|event_text = This strengthening of the privileges of the nobles is severely upsetting the burghers and merchants. This is creating turmoil in our realm, and may prove disastrous in the long run.
+|trigger = *has the idea group: Aristocratic ideas.
+*has a stability of at least 0.
+|triggered only = *five year pulse
+'''Base weight: 1'''
+|options = {{option
+|option_text = Well, they are just peasants.
+|effect = * {{red|–1}} Stability
+}}
+}}
+{{Event
+|version = 1.12
+|event_name=Consulate of the Sea
+|event_text=Our new quasi-judicial body that will administer maritime and commercial law is called the Consulate of the Sea. It gives our merchants the right to settle their commercial disputes without interference from the royal courts and in exchange we, the Crown of Aragon, receives financial support.
+|trigger=*Fires only once
+*Is Aragon
+*The year is before 1500
+*Do NOT have the ruler modifier '''Consulate of the Sea'''
+|mtth=*200 Months
+|options=
+{{option
+|option_text=Good!
+|effect=*Aragon gets '''Consulate of the Sea''' until the death of the current ruler, giving the following effects:
+:*Trade Efficiency: {{green|+20.0%}}
+:*National Trade Income Modifier: {{green|+15.0%}} }}
+}}
+}}
+</pre>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;"><div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span id="Mimar_Sinan.27s_Great_Constructions"></span><span class="mw-headline" id="Mimar_Sinan's_Great_Constructions">Mimar Sinan's Great Constructions</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 1.12.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<p><br />
+</p>
+<div style="font-style:italic;">Mimar Sinan planned and oversaw the construction of countless mosques, aqueducts, bathhouses, bridges, palaces, caravanserais and schools during his half-a-century long career. His masterpieces were the Selimiye and Suleymaniye Mosques in Adrianople and Constantinople respectively.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Event has not yet occurred.</li>
+<li>The year is between 1519 and 1560.</li>
+<li>owns Constantinople (151).</li>
+<li>The advisor ‘Mimar Sinan’ does <i>not</i> exist.</li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 1000 months
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Appoint him royal architect</b></div></div>
+<ul><li>the modifier “Mimar Sinan” until the death of the current ruler, giving the following effect:
+<ul><li><span class="effect-green" style="font-weight:bold;">−15.0%</span> Build cost</li></ul></li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Enlist his services for a short time</b></div></div>
+<ul><li><span class="effect-green" style="font-weight:bold;">+40</span> Administrative power</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Loss_of_Stability">Loss of Stability</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 1.12.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<p><br />
+</p>
+<div style="font-style:italic;">This strengthening of the privileges of the nobles is severely upsetting the burghers and merchants. This is creating turmoil in our realm, and may prove disastrous in the long run.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>has the idea group: Aristocratic ideas.</li>
+<li>has a stability of at least 0.</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>five year pulse</li></ul>
+<p><b>Base weight: 1</b>
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Well, they are just peasants.</b></div></div>
+<ul><li><span class="effect-red" style="font-weight:bold;">−1</span> Stability</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Consulate_of_the_Sea">Consulate of the Sea</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 1.12.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<p><br />
+</p>
+<div style="font-style:italic;">Our new quasi-judicial body that will administer maritime and commercial law is called the Consulate of the Sea. It gives our merchants the right to settle their commercial disputes without interference from the royal courts and in exchange we, the Crown of Aragon, receives financial support.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Fires only once</li>
+<li>Is Aragon</li>
+<li>The year is before 1500</li>
+<li>Do NOT have the ruler modifier <b>Consulate of the Sea</b></li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> *200 Months
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Good!</b></div></div>
+<ul><li>Aragon gets <b>Consulate of the Sea</b> until the death of the current ruler, giving the following effects:</li></ul>
+<dl><dd><ul><li>Trade Efficiency: <span class="effect-green" style="font-weight:bold;">+20.0%</span></li>
+<li>National Trade Income Modifier: <span class="effect-green" style="font-weight:bold;">+15.0%</span></li></ul></dd></dl>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182429
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.044 seconds
+Real time usage: 0.069 seconds
+Preprocessor visited node count: 1098/1000000
+Post‐expand include size: 38574/2097152 bytes
+Template argument size: 23890/2097152 bytes
+Highest expansion depth: 18/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 2465/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   41.595      1 -total
+ 91.89%   38.222      1 Template:Box_wrapper
+ 86.00%   35.772      3 Template:Event
+ 79.55%   33.090      3 Template:Infobox
+ 25.62%   10.656      4 Template:Option
+ 21.26%    8.844      3 Template:SVersion
+ 17.16%    7.137      2 Template:Icon
+ 14.50%    6.031      3 Template:Ambox
+ 13.28%    5.525      4 Template:Green
+ 11.48%    4.773      2 Template:Icon/t
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1724-0!canonical and timestamp 20260707182429 and revision id 6047.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

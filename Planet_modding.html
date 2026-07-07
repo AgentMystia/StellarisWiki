@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planet modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Planet modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.1.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This guide is for adding and modifying <a href="https://stellaris.paradoxwikis.com/Celestial_body" class="mw-redirect" title="Celestial body">Celestial bodies</a> to the game. For guidelines on how to use them in solar systems, including adding modifiers and inhabitants, see <a href="/System_modding.html" title="System modding">System modding</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Planet_variables"><span class="tocnumber">2</span> <span class="toctext">Planet variables</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Planet_rules"><span class="tocnumber">3</span> <span class="toctext">Planet rules</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Examples"><span class="tocnumber">4</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Planet_icons"><span class="tocnumber">5</span> <span class="toctext">Planet icons</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Terraforming"><span class="tocnumber">6</span> <span class="toctext">Terraforming</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>Planet and star classes can be found in <i>common/planet_classes</i>. Note that "stars" and "star classes" are two different things: individual stars are considered the same as planets in the game code, while star classes (found in <i>common/star_classes</i>) refer to the classification of a solar system as a whole and will determine lighting, the system's icon in the <a href="https://stellaris.paradoxwikis.com/Galaxy_map" class="mw-redirect" title="Galaxy map">galaxy map</a>, and number of individual stars in a solar system. Information about modding star classes can be found <a href="/System_modding.html" title="System modding">here</a>.
+</p><p>Creating a new planet class is easy: one simply chooses an internal name (ex: "pc_volcanic") and defines how the planet will work in the context of the game. Is it a colonizable world? A star? An inhabitable megastructure? Etc. The internal name doesn't need to reflect the planet's "real" name; using <a href="/Localisation_modding.html" title="Localisation modding">localisation</a>, the name visible to players can be whatever you want it to be.
+</p>
+<h2><span class="mw-headline" id="Planet_variables">Planet variables</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Variable Name</th>
+<th>Default Value</th>
+<th>Description
+</th></tr>
+<tr>
+<td>@planet_standard_scale</td>
+<td>11</td>
+<td>Ambiguous, determines visual size of planet?
+</td></tr>
+<tr>
+<td>@habitable_planet_max_size</td>
+<td>25</td>
+<td>Maximum tile count for planets
+</td></tr>
+<tr>
+<td>@habitable_planet_min_size</td>
+<td>12</td>
+<td>Minimum tile count for planets
+</td></tr>
+<tr>
+<td>@habitable_moon_max_size</td>
+<td>15</td>
+<td>Maximum tile count for moons
+</td></tr>
+<tr>
+<td>@habitable_moon_min_size</td>
+<td>10</td>
+<td>Minimum tile count for moons
+</td></tr>
+<tr>
+<td>@habitable_min_distance</td>
+<td>60</td>
+<td>Minimum altitude above body (orbit height)
+</td></tr>
+<tr>
+<td>@habitable_max_distance</td>
+<td>100</td>
+<td>Maximum altitude above body (orbit height)
+</td></tr>
+<tr>
+<td>@habitable_spawn_odds</td>
+<td>0.5</td>
+<td>Rational spawn chances (n/1?)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Planet_rules">Planet rules</span></h2>
+<p>The following is a list of the different rules you can apply to a planet. The planet will not randomly spawn if these rules are not met, though they can sometimes be bypassed through <a href="/System_modding.html" title="System modding">system modding</a>. 
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Rule Name</th>
+<th>Description</th>
+<th>Notes
+</th></tr>
+<tr>
+<td>asteroid
+</td>
+<td>Is this an asteroid.
+</td>
+<td>Defaults to <i>no.</i>
+</td></tr>
+<tr>
+<td>atmosphere_color</td>
+<td>The color of your planet's atmosphere.</td>
+<td>In the form <i>hsv { 0.0 0.5 1.0 }</i>; numbers must be between 0.0 and 1.0.
+</td></tr>
+<tr>
+<td>atmosphere_intensity</td>
+<td>The saturation of your planet's atmosphere.</td>
+<td>Between 0.0 and 1.0.
+</td></tr>
+<tr>
+<td>atmosphere_width</td>
+<td>The thickness of your planet's atmosphere.</td>
+<td>Between 0.0 and 1.0.
+</td></tr>
+<tr>
+<td>can_be_moon</td>
+<td>If <i>no</i>, this planet class will never be used for moons orbiting planets.</td>
+<td>Defaults to <i>yes</i>.
+</td></tr>
+<tr>
+<td>carry_cap_per_free_district
+</td>
+<td>Additional carrying capacity per free district slots.
+</td>
+<td>Example: carry_cap_per_free_district: 4
+</td></tr>
+<tr>
+<td>chance_of_ring</td>
+<td>The probability that this planet will spawn with a ring system.</td>
+<td>Between 0.0 and 1.0.
+</td></tr>
+<tr>
+<td>city_color_lut</td>
+<td>A transparent filter that is applied to cities (if habitable) to make it better blend with the background.</td>
+<td>Must specify the location of the filter. Only necessary on habitable worlds with visible cities.
+</td></tr>
+<tr>
+<td>climate</td>
+<td>The planet's climate type.</td>
+<td>Either "dry", "wet", "cold", a modded climate, or none specified.
+</td></tr>
+<tr>
+<td>colonizable</td>
+<td>Can this planet be colonized or otherwise inhabited, by players and the AI?
+</td>
+<td>
+</td></tr>
+<tr>
+<td>colonization_tech
+</td>
+<td>Technology required to colonize.
+</td>
+<td>Defaults to empty. Planet class will still show as colonizable without the tech, and say what tech is required.
+</td></tr>
+<tr>
+<td>default_planet_selection
+</td>
+<td>
+</td>
+<td>Defaults to <i>no</i>.
+</td></tr>
+<tr>
+<td>district_set
+</td>
+<td>String, for use in the uses_district_set trigger for easy compatibility.
+</td>
+<td>
+</td></tr>
+<tr>
+<td>enable_tilt</td>
+<td>If <i>no</i>, disables planet tilt for this planet class.</td>
+<td>Defaults to <i>yes</i>. Planet tilt is defined in <a href="/Defines.html" title="Defines">defines</a>.
+</td></tr>
+<tr>
+<td>entity</td>
+<td>The planet entities your planet will use by default.</td>
+<td>You can <a href="https://stellaris.paradoxwikis.com/Model_modding" class="new" title="Model modding (page does not exist)">create a custom set of entities</a> (such as "volcanic_planet") or use an existing one (such as "arctic_planet").
+</td></tr>
+<tr>
+<td>entity_face_object
+</td>
+<td>If <i>no</i>, disables rotation to face what it orbits.
+</td>
+<td>Defaults to <i>yes.</i>
+</td></tr>
+<tr>
+<td>entity_scale</td>
+<td>The size of this planet model compared to others.</td>
+<td><i>@planet_standard_scale</i> by default.
+</td></tr>
+<tr>
+<td>extra_orbit_size</td>
+<td>If higher than 0, will increase the size of the planet's orbit.</td>
+<td>Gas giants are the only "normal" planet with a value higher than 0 at present.
+</td></tr>
+<tr>
+<td>extra_planet_count</td>
+<td>If higher than 0, will increase the number of planets this planet counts as.</td>
+<td>Gas giants are the only "normal" planet with a value higher than 0 at present.
+</td></tr>
+<tr>
+<td>fixed_city_level</td>
+<td>Permanently applies a fixed amount of infrastructure to this planet's backdrop.</td>
+<td>Example: <i>fixed_city_level = 6</i>
+</td></tr>
+<tr>
+<td>fixed_entity_scale</td>
+<td>If <i>yes</i>, this planet's visible size will always be the same regardless of its actual size.</td>
+<td>Defaults to <i>no</i>.
+</td></tr>
+<tr>
+<td>habitat
+</td>
+<td>Is this a habitat?
+</td>
+<td>Defaults to <i>no.</i>
+</td></tr>
+<tr>
+<td>has_colonization_influence_cost</td>
+<td>If <i>yes</i>, players/AI will have to spend <a href="https://stellaris.paradoxwikis.com/Influence" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;Influence to colonize this planet class.</td>
+<td>Appears to be an obsolete feature as of <a href="/Patch_2.0.html" title="Patch 2.0">Patch 2.0</a>.
+</td></tr>
+<tr>
+<td>icon</td>
+<td>The icon your planet uses.</td>
+<td>See <a href="/Planet_modding.html#Planet_icons" title="Planet modding">Planet icons</a> below.
+</td></tr>
+<tr>
+<td>ideal</td>
+<td>If <i>yes</i>, this planet will always be 100% habitable to all species.</td>
+<td>Defaults to <i>no</i>.
+</td></tr>
+<tr>
+<td>initial
+</td>
+<td>Can this planet be used to spawn for custom species?
+</td>
+<td>Defaults to <i>no.</i>
+</td></tr>
+<tr>
+<td>is_artificial_planet
+</td>
+<td>Will make sure that modifiers for non artificial planets are not added, e.g. max districts.
+</td>
+<td>Defaults to <i>no</i>.
+</td></tr>
+<tr>
+<td>max_distance_from_sun</td>
+<td>The maximum orbital distance at which this planet can randomly spawn.</td>
+<td>Probably the distance from the center of the system, not the sun itself. How this works in binary or trinary systems is still unclear.
+</td></tr>
+<tr>
+<td>min_distance_from_sun</td>
+<td>The minimum orbital distance at which this planet can randomly spawn.</td>
+<td>Probably the distance from the center of the system, not the sun itself. How this works in binary or trinary systems is still unclear.
+</td></tr>
+<tr>
+<td>modifier</td>
+<td>Applies a permanent modifier to this planet, adjusting resource production, pop growth speed, etc.</td>
+<td>modifier = { &lt;effect &gt; }
+</td></tr>
+<tr>
+<td>moon_size</td>
+<td>The range of sizes that this planet will use if it <i>is</i> a moon.</td>
+<td>moon_size = { min = &lt;value&gt; max = &lt;value&gt; }
+</td></tr>
+<tr>
+<td>orbit_lines</td>
+<td>If <i>no</i>, disabled orbit lines for this planet class.</td>
+<td>Defaults to <i>yes</i>.
+</td></tr>
+<tr>
+<td>picture</td>
+<td>Applies an existing planet's backdrop instead of a custom one.</td>
+<td>Example: <i>picture = pc_gaia</i>.
+</td></tr>
+<tr>
+<td>place_entity_on_planet_plane
+</td>
+<td>If <i>no</i>, will be put above the plane planets are in in the solar system.
+</td>
+<td>Defaults to <i>yes</i>.
+</td></tr>
+<tr>
+<td>planet_size</td>
+<td>The range of sizes that this planet will use if it is <i>not</i> a moon.</td>
+<td>planet_size = { min = &lt;value&gt; max = &lt;value&gt; }
+</td></tr>
+<tr>
+<td>preview_entity
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td>production_spawn_chance</td>
+<td>?&#160;?&#160;?
+</td>
+<td>Between 0.0 and 1.0.
+</td></tr>
+<tr>
+<td>ringworld
+</td>
+<td>Is this planet a ringworld?
+</td>
+<td>Defaults to <i>no</i>.
+</td></tr>
+<tr>
+<td>show_city</td>
+<td>If <i>no</i>, any cities on this planet will not be visible in the backdrop.</td>
+<td>Defaults to <i>yes</i>.
+</td></tr>
+<tr>
+<td>space_monster_target
+</td>
+<td>Country types with space monster AI will wander to this planet type if set to yes.
+</td>
+<td>
+</td></tr>
+<tr>
+<td>spawn_odds</td>
+<td>The likelihood that this planet will randomly spawn if all conditions are met.</td>
+<td>
+</td></tr>
+<tr>
+<td>star</td>
+<td>Is this planet class a star?</td>
+<td>Defaults to <i>no</i>.
+</td></tr>
+<tr>
+<td>star_gfx</td>
+<td>Does this star glow brightly?</td>
+<td>Defaults to <i>yes</i> if it is a star.
+</td></tr>
+<tr>
+<td>starting_planet</td>
+<td>Can players/AI start on this planet class?
+</td></tr>
+<tr>
+<td>survey_time_factor
+</td>
+<td>Multiplier on survey time.
+</td>
+<td>Defaults to 1.
+</td></tr>
+<tr>
+<td>tile_set</td>
+<td>Determines the appearance of this planet's tiles.</td>
+<td>Only necessary if using tiles that don't match your planet class's name (ex: using "pc_gaia" for a planet called "pc_volcanic").
+</td></tr>
+<tr>
+<td>uses_alternative_skies_for_moons</td>
+<td>If <i>yes</i>, when it spawns as a moon, it will show a planet in the backdrop, with a ring as appropriate.
+</td>
+<td>
+</td></tr>
+<tr>
+<td>uses_alternative_skies_if_has_orbital_ring
+</td>
+<td>If <i>yes</i>, when it has an orbital ring, it will show it in the backdrop.
+</td>
+<td>Defaults to <i>no</i>.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<p>A desert world:
+</p>
+<pre>pc_desert = {
+	entity = "desert_planet"
+	icon = GFX_planet_type_desert
+
+	climate = "dry"
+	initial = yes
+
+	entity_scale = @planet_standard_scale
+
+	atmosphere_color		= hsv { 0.50 0.2 0.8 }		#DONE
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+
+	min_distance_from_sun = @habitable_min_distance
+	max_distance_from_sun = @habitable_max_distance
+	spawn_odds = @habitable_spawn_odds
+
+	city_color_lut = "gfx/portraits/misc/colorcorrection_desert.dds"
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0.2
+
+	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
+	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+
+	production_spawn_chance = 0.4
+
+	colonizable = yes
+	district_set = standard
+	uses_alternative_skies_for_moons = no
+
+	carry_cap_per_free_district = @carry_cap_normal
+}
+</pre>
+<p>A toxic world:
+</p>
+<pre>pc_toxic = {
+	entity = "toxic_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_toxic
+
+	atmosphere_color		= hsv { 0.19 0.45 0.9 }		#DONE
+	atmosphere_intensity	= 0.1
+	atmosphere_width		= 1.2
+
+	min_distance_from_sun = 60
+	max_distance_from_sun = 110
+
+	spawn_odds = 10
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0.2
+
+	planet_size = { min = 12 max = 25 }
+	moon_size = { min = 6 max = 10 }
+
+	colonizable = no
+	show_city = no
+}
+</pre>
+<p>A habitable ringworld section:
+</p>
+<pre>pc_ringworld_habitable = {
+	ringworld = yes
+	entity = "ringworld_habitable_entity"
+	preview_entity = "ringworld_01_damaged_full_entity"
+	picture = pc_ringworld
+	icon = GFX_planet_type_ringworld
+	entity_scale = 1.0
+	enable_tilt = no
+	fixed_entity_scale = yes
+	atmosphere_color		= hsv { 0.0 0.0 1.0 }		#DONE
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+	show_city = yes
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.0
+	planet_size = 10
+	moon_size = 1
+	colonizable = yes
+	district_set = ring_world
+	ideal = yes
+	starting_planet = no
+	orbit_lines = no
+	has_colonization_influence_cost = no		# applies when within own borders
+
+	is_artificial_planet = yes
+
+	modifier = {
+		planet_max_buildings_add = 12
+	}
+
+	carry_cap_per_free_district = @carry_cap_normal
+}
+</pre>
+<p>A class-F star:
+</p>
+<pre>pc_f_star = {
+	entity = "f_star_class_star_entity"
+	entity_scale = 20.0
+	picture = "pc_f_star"
+	icon = GFX_planet_type_f_g_star
+
+	atmosphere_color		= hsv { 0.6 0.3 0.6 }
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+
+	star = yes
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	spawn_odds = 0
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0
+
+	planet_size = { min = 20 max = 35 }
+
+	colonizable = no
+}
+</pre>
+<h2><span class="mw-headline" id="Planet_icons">Planet icons</span></h2>
+<p>Planet icons can be found in <i>gfx/interface/icons/planet_type_icons.dds</i>, and their sprites are documented in <i>interface/planet.gfx</i>. For reference, here is a list of which values to use for which icon:
+</p>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;">
+<table class="wikitable" style="float:left; margin-right: 50px;">
+<tbody><tr>
+<th>Icon</th>
+<th>#
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_desert
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_arid
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_tundra
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_continental
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_tropical
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_ocean
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_arctic
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_gaia
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren_cold.png" class="image"><img alt="Planet barren cold.png" src="images/Planet_barren_cold.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_barren_cold
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren.png" class="image"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_barren
+</td></tr></tbody></table>
+<table class="wikitable" style="float:left; margin-right: 50px;">
+<tbody><tr>
+<th>Icon</th>
+<th>#
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_toxic.png" class="image"><img alt="Planet toxic.png" src="images/Planet_toxic.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_toxic
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_molten.png" class="image"><img alt="Planet molten.png" src="images/Planet_molten.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_molten
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_frozen.png" class="image"><img alt="Planet frozen.png" src="images/Planet_frozen.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_frozen
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gas_giant.png" class="image"><img alt="Planet gas giant.png" src="images/Planet_gas_giant.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_gas_giant
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ai.png" class="image"><img alt="Planet ai.png" src="images/Planet_ai.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_machine
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_infested.png" class="image"><img alt="Planet infested.png" src="images/Planet_infested.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_hive
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_nuked
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_asteroid.png" class="image"><img alt="Planet asteroid.png" src="images/Planet_asteroid.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_asteroid
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_alpine
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_savannah
+</td></tr></tbody></table>
+<table class="wikitable">
+<tbody><tr>
+<th>Icon</th>
+<th>#
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ringworld.png" class="image"><img alt="Planet ringworld.png" src="images/Planet_ringworld.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_ringworld
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_habitat.png" class="image"><img alt="Planet habitat.png" src="images/Planet_habitat.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_habitat
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_shroud.png" class="image"><img alt="Planet shroud.png" src="images/Planet_shroud.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_shrouded
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_city.png" class="image"><img alt="Planet city.png" src="images/Planet_city.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_city
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_m_star.png" class="image"><img alt="Planet m star.png" src="images/Planet_m_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_m_star
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_f_star.png" class="image"><img alt="Planet f star.png" src="images/Planet_f_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_f_g_star
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_k_star.png" class="image"><img alt="Planet k star.png" src="images/Planet_k_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_k_star
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_b_star.png" class="image"><img alt="Planet b star.png" src="images/Planet_b_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_a_b_star
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_pulsar.png" class="image"><img alt="Planet pulsar.png" src="images/Planet_pulsar.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_pulsar
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_neutron_star.png" class="image"><img alt="Planet neutron star.png" src="images/Planet_neutron_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_neutron_star
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_black_hole.png" class="image"><img alt="Planet black hole.png" src="images/Planet_black_hole.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="38" data-file-height="38" /></a></td>
+<td>GFX_planet_type_black_hole
+</td></tr></tbody></table>
+</div>
+<h2><span class="mw-headline" id="Terraforming">Terraforming</span></h2>
+<p>Terraforming is defined separately from planets in files found in <i>common/terraform</i>. These are relatively straightforward definitions, but do need to be defined for each individual link between two planet types. That means, for example, if a modder wishes to add a new planet type that can be terraformed into anything and have anything terraformed into it they will have to define two links for each existing planet type, one to transform a given type into the new one, and one to transform the new one into each existing type. A basic example of a terraforming link definition can be seen below:
+</p>
+<pre>   terraform_link = {
+       from = "pc_continental"
+       to = "pc_tropical"
+   
+       energy = 2000
+       duration = 1800
+   
+       condition = {
+           has_technology = "tech_terrestrial_sculpting"
+       }
+   
+       ai_weight = {
+           weight = 0
+       }
+   }
+</pre>
+<p>Each link definition starts with the header <code>terraform_link</code> and then is followed by arguments determining the starting and ending planet classes for the terraforming operation. After that it is followed by the cost of the terraforming operation as well as how long the operation will take to complete. Afterwards the link has a <code>condition</code> block. This is used to determine what requirements are needed before a terraforming operation can be performed, and is used to lock certain transformations behind technology or ascension perks. Lastly a terraforming link definition includes an <code>ai_weight</code> entry, which is used to determine whether or not an AI will perform a terraforming.
+</p><p>If desired there are some slightly modifications that can be performed on the basic format. One is to use a <code>potential</code> block. When used this will cause the terraforming option to only appear if the listed requirements are met. For example, this terraforming link definition
+</p>
+<pre>   terraform_link = {
+       from = "pc_barren_cold"
+       to = "pc_arctic"
+       
+       energy = 5000
+       duration = 3600
+       
+       potential = {
+           from = { has_modifier = terraforming_candidate }
+       }
+       condition = {
+           has_technology = "tech_climate_restoration"
+       }
+       
+       effect = {
+           from = { remove_modifier = terraforming_candidate }
+       }
+       
+       ai_weight = {
+           weight = 5
+       }
+   }
+</pre>
+<p>Will only show up in the menu if the pc_barren_cold planet also has the terraforming_candidate modifier, and will not be available otherwise.
+</p><p>A final note is that terraform_link's also support <code>effect</code> blocks as well. These are operations that are performed immediately upon completion of the terraforming operation. For example, adding this block:
+</p>
+<pre>   effect = {
+       from = { remove_modifier = terraforming_candidate }
+   }
+</pre>
+<p>Will cause the "terraforming_candidate" modifier to be removed from the terraformed planet upon completion.
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181715
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.068 seconds
+Real time usage: 0.121 seconds
+Preprocessor visited node count: 288/1000000
+Post‐expand include size: 19103/2097152 bytes
+Template argument size: 8229/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   19.677      1 -total
+ 30.54%    6.009      1 Template:ModdingNavbox
+ 19.17%    3.773      1 Template:Iconify
+ 18.36%    3.613      1 Template:Box_wrapper
+ 16.10%    3.168      1 Template:Version
+ 15.12%    2.975      1 Template:Icon
+ 13.53%    2.662      1 Template:End_box_wrapper
+ 13.29%    2.616      1 Template:Navbox
+  7.43%    1.463      1 Template:Infobox
+  7.24%    1.424      1 Template:Icon/i
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:3325-0!canonical and timestamp 20260707181715 and revision id 69310.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

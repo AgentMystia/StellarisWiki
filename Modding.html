@@ -1,0 +1,3161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">This article is <a href="/Category_Timeless.html" title="Category:Timeless">timeless</a> and should be accurate for any version of the game.</div>
+</div>
+</div>
+<p><b>Modding</b>, or creating <a href="/Mods.html" title="Mods">mods</a>, is the act of modifying the behavior of the base game (often referred to as <i>vanilla</i>), either for personal use, or to release publicly to other players, for instance via the <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a>.
+</p><p>As with all Paradox games, <a href="/Stellaris.html" title="Stellaris">Stellaris</a> is moddable to a great extent. Motivations of modders may vary widely; better translation to native language, more events or decisions, better map, major overhaul, shameless cheating, etc.
+</p><p>This guide is intended to lower the entry barriers to the world of Stellaris modding. However, there is still a learning curve to it, and it cannot replace the need to read some working vanilla code, and do lots of trial and error experimentation!
+</p>
+<div style="float:right;" class="mw-collapsible"><div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a class="mw-selflink selflink">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+</div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Guidelines"><span class="tocnumber">1</span> <span class="toctext">Guidelines</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#A_note_for_programmers"><span class="tocnumber">2</span> <span class="toctext">A note for programmers</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Modding_tutorial"><span class="tocnumber">3</span> <span class="toctext">Modding tutorial</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Mod_management"><span class="tocnumber">4</span> <span class="toctext">Mod management</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Mod_folder_location"><span class="tocnumber">4.1</span> <span class="toctext">Mod folder location</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#File_and_folder_structure"><span class="tocnumber">4.2</span> <span class="toctext">File and folder structure</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Adding_a_thumbnail"><span class="tocnumber">4.3</span> <span class="toctext">Adding a thumbnail</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Creating_a_mod"><span class="tocnumber">4.4</span> <span class="toctext">Creating a mod</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Uploading_and_updating_a_mod"><span class="tocnumber">4.5</span> <span class="toctext">Uploading and updating a mod</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Game_data"><span class="tocnumber">5</span> <span class="toctext">Game data</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Game_structure"><span class="tocnumber">6</span> <span class="toctext">Game structure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Stellaris/common/"><span class="tocnumber">6.1</span> <span class="toctext">Stellaris/common/</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Stellaris/events/"><span class="tocnumber">6.2</span> <span class="toctext">Stellaris/events/</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Stellaris/flags/"><span class="tocnumber">6.3</span> <span class="toctext">Stellaris/flags/</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Stellaris/fonts/"><span class="tocnumber">6.4</span> <span class="toctext">Stellaris/fonts/</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Stellaris/gfx/"><span class="tocnumber">6.5</span> <span class="toctext">Stellaris/gfx/</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Stellaris/interface/"><span class="tocnumber">6.6</span> <span class="toctext">Stellaris/interface/</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Stellaris/localisation/"><span class="tocnumber">6.7</span> <span class="toctext">Stellaris/localisation/</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Stellaris/map/"><span class="tocnumber">6.8</span> <span class="toctext">Stellaris/map/</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Stellaris/music/"><span class="tocnumber">6.9</span> <span class="toctext">Stellaris/music/</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Stellaris/prescripted_countries/"><span class="tocnumber">6.10</span> <span class="toctext">Stellaris/prescripted_countries/</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Stellaris/sound/"><span class="tocnumber">6.11</span> <span class="toctext">Stellaris/sound/</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Overwriting_specific_elements"><span class="tocnumber">7</span> <span class="toctext">Overwriting specific elements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Common_folder"><span class="tocnumber">7.1</span> <span class="toctext">Common folder</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Localisation_folder"><span class="tocnumber">7.2</span> <span class="toctext">Localisation folder</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Events_folder"><span class="tocnumber">7.3</span> <span class="toctext">Events folder</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Interface_folder"><span class="tocnumber">7.4</span> <span class="toctext">Interface folder</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Fonts_folder"><span class="tocnumber">7.5</span> <span class="toctext">Fonts folder</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="#Tools_&amp;_utilities"><span class="tocnumber">8</span> <span class="toctext">Tools &amp; utilities</span></a>
+<ul>
+<li class="toclevel-2 tocsection-30"><a href="#Tools"><span class="tocnumber">8.1</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Help_links"><span class="tocnumber">8.2</span> <span class="toctext">Help links</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="#Advanced_tips"><span class="tocnumber">9</span> <span class="toctext">Advanced tips</span></a>
+<ul>
+<li class="toclevel-2 tocsection-33"><a href="#Testing_Mods"><span class="tocnumber">9.1</span> <span class="toctext">Testing Mods</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#Troubleshooting_mod_installation"><span class="tocnumber">9.2</span> <span class="toctext">Troubleshooting mod installation</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#Purging_all_mods"><span class="tocnumber">9.3</span> <span class="toctext">Purging all mods</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#Mod_load_order"><span class="tocnumber">9.4</span> <span class="toctext">Mod load order</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-37"><a href="#External_links"><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1 tocsection-38"><a href="#See_also"><span class="tocnumber">11</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-39"><a href="#References"><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Guidelines">Guidelines</span></h2>
+<ul><li><b>Follow the <a href="https://forum.paradoxplaza.com/forum/index.php?threads/rules-for-user-made-mods-and-edits-of-pds-games.708039/" class="extiw" title="forum:rules-for-user-made-mods-and-edits-of-pds-games.708039/">Rules for User Made Mods and Edits of PDS games</a> and the <a rel="nofollow" class="external text" href="https:legal.paradoxplaza.com/eula">EULA</a> .</b> Mods that use DLC-exclusive features must lock the features behind the DLC purchase. To determine what DLC-exclusive means, if the feature can be fully used with DLC turned off, then you do not have to require the DLC in your mod. For example, espionage is a base game feature and you can add new operations without requiring any DLC, but if you are modding espionage operations from the Nemesis DLC, you must keep the Nemesis check.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup></li>
+<li><b>Create a mod for your modifications</b>: use a <a href="#Mod_structure">personal mod</a> even for small changes, and never directly modify the game files in the Steam Stellaris folder, as they may be overwritten without warning.</li>
+<li><b>Use a good text editor</b> (recommended: <a rel="nofollow" class="external text" href="https:vscodium.com/">VSCodium</a> or <a rel="nofollow" class="external text" href="https:code.visualstudio.com/">Visual Studio Code</a>) to edit files and search into multiple files. A good text editor can also format the displayed text so that braces can be collapsed if complete, and complete/incomplete pairs are highlighted.</li>
+<li><b>Use the error.log file to get execution errors</b>: The log folder can be found right next to the mod folder. Good Editors usually have the ability to track changes to files from outside the program and prompt for a reload, thus showing you errors with one glance at the file. Note that some modifications need a game to be loaded or even the option to be used on screen/in the back-end before their code will run.</li>
+<li><b>Use CWTools for advanced validation and auto-complete</b>: CWTools is a syntax validator for Stellaris modding, developed as an extension for Visual Studio Code and also available for Sublime. Read the <a href="https://forum.paradoxplaza.com/forum/index.php?threads/1066033" class="extiw" title="forum:1066033">forum post</a> by the developer for more info.</li>
+<li><b>Minimize overwrites of vanilla files</b>, unless that is your main goal or somehow necessary (on_action triggers). Adding separate files and use <a href="#Game_structure">loading from folders</a> whenever possible, to improve mod compatibility and maintenance. Your files can have any name, all files in the folder will be loaded by the game. So choose a prefix no one else will ever use like the name of your mod. Even DLC follows that pattern.</li>
+<li><b>Use a proper merge tool</b> (like <a rel="nofollow" class="external text" href="https:winmerge.org/">WinMerge</a>, or the Visual Studio Code Extension <a rel="nofollow" class="external text" href="https:marketplace.visualstudio.com/items?itemName=L13RARY.l13-diff">L13 Diff</a> ), to <a href="https://stellaris.paradoxwikis.com/Merging_guide" class="new" title="Merging guide (page does not exist)">merge between folders</a>, and update modified vanilla files to a new vanilla patch.</li>
+<li><b>Backup your work</b> to avoid losing everything. Consider using a source control system like <a rel="nofollow" class="external text" href="https:git-scm.com/">Git</a> and a collaborative forge like <a rel="nofollow" class="external text" href="https:github.com/">GitHub</a> to manage team collaboration.
+<ul><li>The <a rel="nofollow" class="external text" href="https:docs.google.com/document/d/1bQdOVMY6FTu-2AKXZblYp6bF2-_W2JMUtXc5a0nZ8Ls">Modding Git Guide</a> is a community made guide for using Git, GitHub/GitLab, and related tools such as KDiff3. It can be a useful stop for questions beyond this wiki, and contains step by step guides for much of what is talked about here. Though the examples are HOI4 based, the principles apply equally well to any Paradox game mod.</li></ul></li>
+<li><b>Use UTF-8 encoding</b> for text and .mod files.</li>
+<li><b>Use UTF-8 with BOM</b> for localization and name list files.</li>
+<li><b>Indent properly</b> and, again, use a good text editor, to easily spot unclosed curly braces. Vanilla uses 1 tab for indentation rather than spaces.</li>
+<li><b>Use comments</b> starting with a # character, to remember your reasons for writing tricky stuff.</li></ul>
+<h2><span class="mw-headline" id="A_note_for_programmers">A note for programmers</span></h2>
+<p>If a new modder has a programming background with languages like C, Java, and Python, they may find the structure of Stellaris script confusing. This is likely for two reasons:
+</p>
+<ul><li>The <a href="http://en.wikipedia.org/wiki/Clausewitz_Engine" class="extiw" title="wikipedia:Clausewitz Engine">Clausewitz Engine’s</a> scripting language doesn't separate basic syntax and keywords from game-specific structures and higher-level structures. For example, <a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">Triggers</a> contains both the <i><code>switch</code></i> flow control structure and a conditional iteration <i><code>any_playable_country</code></i>, which are difficult to distinguish in form. <a href="/Effects.html" title="Effects">Effects</a> has both <i><code>create_rebels</code></i> and the <i><code>while</code></i> flow control.</li>
+<li>The scripting language uses the <code>=</code> operator for <a href="http://en.wikipedia.org/wiki/Boolean_data_type" class="extiw" title="wikipedia:Boolean data type">Boolean</a> operations, assignments, scope changes, and for activating Triggers and Effects.</li></ul>
+<p>The following is a common example of valid structure:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="n">capital_scope</span> <span class="o">=</span> <span class="p">{</span>							<span class="c1"># change to the scope of the country&#39;s capital planet</span>
+	<span class="n">every_deposit</span> <span class="o">=</span> <span class="p">{</span>						<span class="c1"># iterate through every deposit on the planet</span>
+		<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span>							<span class="c1"># check each deposit for these conditions</span>
+			<span class="n">category</span> <span class="o">=</span> <span class="n">deposit_cat_blockers</span>	<span class="c1"># Boolean comparison using check the deposit&#39;s category</span>
+		<span class="p">}</span>
+		<span class="n">remove_deposit</span> <span class="o">=</span> <span class="n">yes</span>				<span class="c1"># activate an Effect to cause a change</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>For this reason, it is recommended that they follow the modding tutorial linked below and read the vanilla game files to better understand how the scripts function.
+</p>
+<h2><span class="mw-headline" id="Modding_tutorial">Modding tutorial</span></h2>
+<p>There is a <a href="/Modding_tutorial.html" title="Modding tutorial">modding tutorial</a> available which covers steps necessary to create a basic mod.
+</p>
+<h2><span class="mw-headline" id="Mod_management">Mod management</span></h2>
+<p>The first steps of modding is getting to know where the mods are located, how they're structured and what to do when uploading your first mod!
+</p>
+<h3><span class="mw-headline" id="Mod_folder_location">Mod folder location</span></h3>
+<table class="wikitable">
+<tbody><tr>
+<th>OS</th>
+<th>Path
+</th></tr>
+<tr>
+<td>Linux</td>
+<td><code>~/.local/share/Paradox Interactive/Stellaris/mod</code>
+</td></tr>
+<tr>
+<td>Windows</td>
+<td><code>…\Documents\Paradox Interactive\Stellaris\mod</code>
+</td></tr>
+<tr>
+<td>Mac OS</td>
+<td><code>~/Documents/Paradox Interactive/Stellaris/mod</code>
+</td></tr></tbody></table>
+<p>Mods from the Steam Workshop will be placed in <code>…\SteamLibrary\SteamApps\workshop\content\281990</code>, named by their Workshop ID.<br />
+Mods from Paradox Mods will be placed in the mod folder location, named <code>PDX_*MOD_ID*</code>.
+</p>
+<h3><span class="mw-headline" id="File_and_folder_structure">File and folder structure</span></h3>
+<p>Getting the structure set up correctly when creating a mod is essential for it to run properly.
+</p><p>This is the required structure inside the main mod folder:
+</p>
+<ul><li><code>modname.mod</code> – Includes the information used by the Stellaris (PDX) launcher</li>
+<li><code>modname</code> – Folder where all the modified files are placed, in the same <a href="#Game_structure">file and folder structure</a> as the game folder
+<ul><li>Mod contents</li>
+<li><code>descriptor.mod</code> – Required for the <a href="/Patch_2.4.html" title="Patch 2.4">new launcher</a> added in patch 2.4. Ignored in the old launcher.</li>
+<li><code>image.ext</code> – PNG and JPEG files are supported. With the new 2.4 launcher, must be a PNG named <code>thumbnail.png</code></li></ul></li></ul>
+<p><code>modname.mod</code> and <code>descriptor.mod</code> both contain the mod information that the launcher uses when displaying the mod and uploading it.<br />
+The 2.4 launcher prefers <code>descriptor.mod</code> and will modify <code>modname.mod</code> to match the information in <code>descriptor.mod</code>, however if the file is not found, it'll use the information in <code>modname.mod</code>. The pre-2.4 launcher ignores it.<br />
+The <code>path="XXX"</code> is not needed in descriptor.mod.<br />
+Note that folder and file names are case-sensitive on Mac OS X and Linux.
+</p><p><b>modname.mod structure</b><br /> This also applies to <code>descriptor.mod</code>.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Name
+</th>
+<th>Required
+</th>
+<th>Description
+</th>
+<th>Example
+</th></tr>
+<tr>
+<td><code>name</code>
+</td>
+<td><b>Yes</b>
+</td>
+<td>Name of your mod.
+</td>
+<td><code>name="My Stellaris Mod"</code>
+</td></tr>
+<tr>
+<td><code>path</code>
+</td>
+<td>modname.mod: <b>Yes</b><br />
+<p>descriptor.mod: <b>No</b> (Ignored)
+</p>
+</td>
+<td>Defines which folder is the mod’s folder. It can be an absolute directory or relative to the <code>…\Documents\Paradox Interactive\Stellaris</code> directory.<br />The Paradox Launcher will automatically correct a relative path to the corresponding absolute path.<br /><b>Note:</b> Stellaris uses <small> (Unix)</small> slash <code>/</code> instead of <small> (Microsoft)</small> backslash <code>&#92;</code> (or <code>&#92;&#92;</code>).
+</td>
+<td><code>path="mod/MyStellarisMod"</code>
+</td></tr>
+<tr>
+<td><code>dependencies</code>
+</td>
+<td>No
+</td>
+<td>Specifies if the mod should be loaded after the listed mod (s), if they exist.<br />Very useful for sub-mods or compatibility patches to make sure they overrule certain mods.
+</td>
+<td>
+<pre>dependencies={
+	"My Other Stellaris Mod"
+	"Not My Stellaris Mod"
+}
+</pre>
+</td></tr>
+<tr>
+<td><code>picture<code>
+</code></code></td>
+<td>No
+</td>
+<td>Specifies the mod thumbnail used on <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a>. With the new 2.4 launcher, this must be an exact fixed name <code>thumbnail.png</code>.
+</td>
+<td><code>picture="thumbnail.png"<code>
+</code></code></td></tr>
+<tr>
+<td><code>tags</code>
+</td>
+<td>No
+</td>
+<td>List of tags for <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a>. Using tags besides the predefined ones may prevent uploading on Paradox Mods.<br /><b>Warning:</b> Maximal 10 are allowed <small> (at least since launcher version 2022.10)</small>. Don't forget quotes for tags that contain spaces.
+</td>
+<td>
+<pre>tags={
+	"Tag1"
+	"Tag2"
+}
+</pre>
+</td></tr>
+<tr>
+<td><code>version </code>
+</td>
+<td>No
+</td>
+<td>Specifies what the launcher will show as the version of the mod.<br /> (Not the version of the game it’s meant for). Any string is accepted.
+</td>
+<td><code>version="v4.5"</code>
+</td></tr>
+<tr>
+<td><code>supported_version</code>
+</td>
+<td>Recommended
+</td>
+<td>Specifies what game version the mod supports.<br />The last number can be replaced with the asterisk (*) symbol to tell the launcher that the mod supports any value, like `v3.12.*`.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup>
+</td>
+<td><code>supported_version="v3.13.1"</code>
+</td></tr>
+<tr>
+<td><code>remote_file_id</code>
+</td>
+<td>No
+</td>
+<td>Property added by the launcher that includes the Steam Workshop ID. Ignore it.
+</td>
+<td><code>remote_file_id="1234567890"</code>
+</td></tr></tbody></table>
+<p>The data structure is similar to the proprietary Valve Data Format.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+</p><p><b>Example modname.mod file <code>SomeMod.mod</code></b>
+</p>
+<pre>name="SomeMod"
+path="mod/SomeMod"
+dependencies={
+	"othermod"
+	"another mod"
+}
+tags={
+	"Graphics"
+	"Economy"
+	"Overhaul"
+}
+picture="thumbnail.png"
+remote_file_id="1234567890"
+supported_version="v3.12.*"
+</pre>
+<h3><span class="mw-headline" id="Adding_a_thumbnail">Adding a thumbnail</span></h3>
+<p>The Steam Workshop allows for a preview thumbnail picture that'll be displayed when searching for mods and as a preview picture if you haven't uploaded any, otherwise it'll be placed to the right of the preview pictures.<br />
+It’s recommended to make the thumbnail 512px × 512px at minimum, which is used by the workshop frontpage.<br />
+Additionally, the thumbnail file should be under <b>1&#160;MB</b> in size, otherwise, it will not be uploaded.<br />
+Both JPEG and PNG are supported, and after 2.4, the image file must be named <b>thumbnail.png</b>.
+</p>
+<ol><li>Make sure the Stellaris launcher is closed, so that it doesn't revert your changes</li>
+<li>Open up <code>modname.mod</code> and <code>descriptor.mod</code> files</li>
+<li>Make sure <code>picture="thumbnail.png"</code> exists, if not, add it</li>
+<li>Add your image file in your mod folder</li>
+<li>Start up the launcher and update your mod</li>
+<li>Thumbnail should now show up at the <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> mod page</li></ol>
+<p>You can always update the thumbnail at any time by updating the mod (unless you are only a co-author).
+</p>
+<h3><span class="mw-headline" id="Creating_a_mod">Creating a mod</span></h3>
+<p>You can use the game launcher to set up a mod structure for you by following these simple steps according to your launcher of choice:
+</p>
+<table style="text-align:center;" class="wikitable">
+<tbody><tr>
+<th>#
+</th>
+<th>Launcher v1 (&lt;=2.3.3)
+</th>
+<th>Launcher v2 (&gt;=2.4.0)
+</th>
+<th>Launcher v⁇⁇
+</th></tr>
+<tr>
+<td>1</td>
+<td colspan="3">Launch the game
+</td></tr>
+<tr>
+<td>2</td>
+<td colspan="3">Navigate to the mods tab
+</td></tr>
+<tr>
+<td>3</td>
+<td colspan="2">Click <b>Mod Tools</b>
+</td>
+<td>Click <b>Upload Mod</b>
+</td></tr>
+<tr>
+<td>4</td>
+<td>Click <b>Create Mod</b>
+</td>
+<td>
+</td>
+<td>Click <b>Create Mod</b>
+</td></tr>
+<tr>
+<td>5</td>
+<td colspan="3">Insert the relevant information and click <b>Create Mod</b> at the bottom
+</td></tr>
+<tr>
+<td>6</td>
+<td colspan="3">Navigate to the <a href="#Mod_folder_location">mod folder</a> and locate your mod folder
+</td></tr>
+<tr>
+<td>7</td>
+<td colspan="3">Start modding!
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Uploading_and_updating_a_mod">Uploading and updating a mod</span></h3>
+<p>Uploading and updating a mod follows the same procedure, depending on your launcher of choice:
+</p>
+<table style="text-align:center;" class="wikitable">
+<tbody><tr>
+<th>#
+</th>
+<th>Launcher v1 (&lt;=2.3.3)
+</th>
+<th>Launcher v2 (&gt;=2.4.0)
+</th></tr>
+<tr>
+<td>1</td>
+<td colspan="2">Launch the game
+</td></tr>
+<tr>
+<td>2</td>
+<td colspan="2">Navigate to the mods tab
+</td></tr>
+<tr>
+<td>3</td>
+<td colspan="2">Click <b>Mod Tools</b>
+</td></tr>
+<tr>
+<td>4</td>
+<td>Click <b>Upload Mod</b></td>
+<td>Click <b>Upload a Mod</b>
+</td></tr>
+<tr>
+<td>5</td>
+<td colspan="2">Select your mod from the list
+</td></tr>
+<tr>
+<td>6</td>
+<td>Click <b>Fetch Info</b> and wait for a response</td>
+<td>Select mod site
+</td></tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>Insert description<sup><b>*</b></sup>
+</td></tr>
+<tr>
+<td>8</td>
+<td>Click <b>Upload</b></td>
+<td>Click <b>Upload Mod</b>
+</td></tr>
+<tr>
+<td>9</td>
+<td colspan="2">The launcher will now upload your changes and inform you when it’s done or if an error occurred.
+</td></tr>
+<tr>
+<td>10</td>
+<td colspan="2">Navigate to the mod service of choice and locate your mod;<br /><b>Steam Workshop</b>, visit the <a rel="nofollow" class="external text" href="https:steamcommunity.com/app/281990/workshop/">Workshop</a> page, and locate the "Files you've posted" button by hovering over "Your Files" on the right<br /><b>Paradox Mods</b>, visit the <a rel="nofollow" class="external text" href="https:mods.paradoxplaza.com/">Mods</a> page, login, and click "My uploaded mods" in the dropdown menu that appears when hovering over your name
+</td></tr>
+</tbody><caption style="caption-side:bottom; font-size:small;">* – The inserted description will replace the current one used on the mod page!
+</caption></table>
+<p>Note that if you subscribe to an uploaded version of your mod while you still have the .mod file of your original mod in the mods folder, the uploaded mod will likely not work.
+</p>
+<h2><span class="mw-headline" id="Game_data">Game data</span></h2>
+<ul><li><a href="/Console_commands.html" title="Console commands">Console commands</a>, useful for debugging mods.</li>
+<li><a href="/Defines.html" title="Defines">Defines</a>, which allows you to influence some hardcoded vanilla behaviors</li>
+<li><a href="/Scopes.html" title="Scopes">Scopes</a>, <a href="/Conditions.html" title="Conditions">Conditions</a>, and <a href="/Commands.html" title="Commands">Commands</a> used for scripting</li>
+<li><a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a>, used to influence calculations made by the game</li>
+<li><a href="/Events.html" title="Events">Events</a>, used to define popups with decisions</li>
+<li><a href="/Map_modding.html" title="Map modding">Map</a>, used for pre-generated galaxy maps</li></ul>
+<h2><span class="mw-headline" id="Game_structure">Game structure</span></h2>
+<p>Below is a list of game files and folders, listed alongside the modding guide for each.
+</p>
+<h4><span id="Stellaris.2Fcommon.2F"></span><span class="mw-headline" id="Stellaris/common/">Stellaris/common/</span></h4>
+<div style="margin:1.4px 1.6em;"><i>Main article: <a href="#Common_folder">#Common folder</a></i></div>
+<table class="wikitable">
+<tbody><tr>
+<th>File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>achievements.txt
+</td>
+<td>Definitions for achievements. Modding this file doesn't make sense, since achievements are disabled for any "common" changing/expanding mods anyway.
+</td>
+<td>
+</td></tr>
+<tr>
+<td>alerts.txt
+</td>
+<td>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Message_modding" class="new" title="Message modding (page does not exist)">Messages</a>
+</td></tr>
+</tbody></table>
+<h4><span id="Stellaris.2Fevents.2F"></span><span class="mw-headline" id="Stellaris/events/">Stellaris/events/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>example_events.txt
+</td>
+<td>Contains the event code for a set of events.
+</td>
+<td><a href="/Event_modding.html" title="Event modding">Events</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Fflags.2F"></span><span class="mw-headline" id="Stellaris/flags/">Stellaris/flags/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>*.dds
+</td>
+<td>A flag image file.
+</td>
+<td><a href="/Flag_modding.html" title="Flag modding">Flags</a>
+</td></tr>
+<tr>
+<td>colors.txt
+</td>
+<td>Sets up the allowed colors for flags and the randomizable combos.
+</td>
+<td><a href="/Flag_modding.html" title="Flag modding">Flags</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Ffonts.2F"></span><span class="mw-headline" id="Stellaris/fonts/">Stellaris/fonts/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>fonts.asset
+</td>
+<td>Sets up the fonts used by the game.
+</td>
+<td><a href="/Font_modding.html" title="Font modding">Fonts</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Fgfx.2F"></span><span class="mw-headline" id="Stellaris/gfx/">Stellaris/gfx/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>advisorwindow
+</td>
+<td>Sets up the 3D view for the advisor
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>arrows
+</td>
+<td>Contains the images used by various arrows ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>cursors
+</td>
+<td>Contains the cursor files/images used ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/Event_Pictures" class="mw-redirect" title="Event Pictures">event_pictures</a>
+</td>
+<td>Contains the pictures used in <b>events</b>.
+</td>
+<td><a href="/Event_modding.html" title="Event modding">Events</a>
+</td></tr>
+<tr>
+<td>fonts
+</td>
+<td>Contains the font files used ingame.
+</td>
+<td><a href="/Font_modding.html" title="Font modding">Fonts</a>
+</td></tr>
+<tr>
+<td>FX
+</td>
+<td>Contains the FX shaders used ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphical_Effect_modding" class="new" title="Graphical Effect modding (page does not exist)">Graphical Effect</a>
+</td></tr>
+<tr>
+<td>interface/
+</td>
+<td>Contains the images used for interfaces ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/anomaly
+</td>
+<td>Contains the images used for the anomaly mechanic
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/buttons
+</td>
+<td>Contains the images used for buttons
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/diplomacy
+</td>
+<td>Contains the images used for the diplomacy interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/elections
+</td>
+<td>Contains the images used for the election interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/event_window
+</td>
+<td>Contains the images used for the event window.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/flags
+</td>
+<td>Contains the image masks used for flags.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/fleet_view
+</td>
+<td>Contains the images used for fleets.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/frontend
+</td>
+<td>Contains the images used for the frontend interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/government_mod_window
+</td>
+<td>Contains the images used for the government modification interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/Interface_Icons" class="mw-redirect" title="Interface Icons">interface/icons</a>
+</td>
+<td>Contains the icons used for everything in the game.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/main
+</td>
+<td>Contains the images used for generic actions.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/old
+</td>
+<td>Contains the images used from EU4
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/outliner
+</td>
+<td>Contains the images used for the outliner interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/planetview
+</td>
+<td>Contains the images used for the planet view interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/progressbars
+</td>
+<td>Contains the images used for progress bars ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/ship_designer
+</td>
+<td>Contains the images used for the ship designer interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/situation_log
+</td>
+<td>Contains the images used for the situation log interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/sliders
+</td>
+<td>Contains the images used for sliders ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/system
+</td>
+<td>Contains the images used for the system view interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/tech_view
+</td>
+<td>Contains the images used for the technology view interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/tiles
+</td>
+<td>Contains the images used for the tile view interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/topbar
+</td>
+<td>Contains the images used for the topbar interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>interface/waroverview
+</td>
+<td>Contains the images used for the war view interface.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>keyicons
+</td>
+<td>Contains the images used for button presses ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>lights
+</td>
+<td>Contains the logic used for the light effects ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphical_Effect_modding" class="new" title="Graphical Effect modding (page does not exist)">Graphical Effect</a>
+</td></tr>
+<tr>
+<td>loadingscreens
+</td>
+<td>Contains the images used for loadscreens.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>models
+</td>
+<td>Contains the model .mesh files and images.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Models_modding" class="new" title="Models modding (page does not exist)">Models</a>
+</td></tr>
+<tr>
+<td>models/portraits
+</td>
+<td>Contains the portrait .mesh files and images.
+</td>
+<td><a href="/Portrait_modding.html" title="Portrait modding">Portraits</a>
+</td></tr>
+<tr>
+<td>particles
+</td>
+<td>Contains the logic and images used for particles.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>pingmap
+</td>
+<td>Contains the logic used for pings.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>portraits
+</td>
+<td>Contains the logic used for portrait images.
+</td>
+<td><a href="/Portrait_modding.html" title="Portrait modding">Portraits</a>
+</td></tr>
+<tr>
+<td>projectiles
+</td>
+<td>Contains the logic used for projectiles.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>shipview
+</td>
+<td>Contains the logic used for ship view.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+<tr>
+<td>worldgfx
+</td>
+<td>Contains the logic and images used for world graphic effects.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics</a>
+</td></tr>
+</tbody></table>
+<h4><span id="Stellaris.2Finterface.2F"></span><span class="mw-headline" id="Stellaris/interface/">Stellaris/interface/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>*.gfx
+</td>
+<td>Controls the assignment of image to interface variable.
+</td>
+<td><a href="/Interface_modding.html#GFX_files" title="Interface modding">Interfaces</a>
+</td></tr>
+<tr>
+<td>*.gui
+</td>
+<td>Controls the visual logic of an interface.
+</td>
+<td><a href="/Interface_modding.html" title="Interface modding">Interfaces</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Flocalisation.2F"></span><span class="mw-headline" id="Stellaris/localisation/">Stellaris/localisation/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>*l_braz_por.yml
+</td>
+<td>Contains Brazilian Portuguese localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_simp_chinese.yml
+</td>
+<td>Contains Chinese localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_english.yml
+</td>
+<td>Contains English localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_french.yml
+</td>
+<td>Contains French localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_german.yml
+</td>
+<td>Contains German localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_korean.yml
+</td>
+<td>Contains Korean localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_polish.yml
+</td>
+<td>Contains Polish localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_russian.yml
+</td>
+<td>Contains Russian localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_spanish.yml
+</td>
+<td>Contains Spanish localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr>
+<tr>
+<td>*l_braz_por.yml
+</td>
+<td>Contains Brazilian/Portuguese localisation
+</td>
+<td><a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Fmap.2F"></span><span class="mw-headline" id="Stellaris/map/">Stellaris/map/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>galaxy
+</td>
+<td>Contains the galaxy options. You cannot add new ones currently.
+</td>
+<td><a href="/Map_modding.html" title="Map modding">Galaxy</a>
+</td></tr>
+<tr>
+<td>setup_scenarios
+</td>
+<td>Controls the logic for different sizes of galaxies.
+</td>
+<td><a href="/Map_modding.html" title="Map modding">Galaxy</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Fmusic.2F"></span><span class="mw-headline" id="Stellaris/music/">Stellaris/music/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>*.ogg
+</td>
+<td>A music file.
+</td>
+<td><a href="/Music_modding.html" title="Music modding">Music</a>
+</td></tr>
+<tr>
+<td>songs.asset
+</td>
+<td>Controls the assignment of music to a code name, and sets the volume of playback.
+</td>
+<td><a href="/Music_modding.html" title="Music modding">Music</a>
+</td></tr>
+<tr>
+<td>songs.txt
+</td>
+<td>
+</td>
+<td><a href="/Music_modding.html" title="Music modding">Music</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Fprescripted_countries.2F"></span><span class="mw-headline" id="Stellaris/prescripted_countries/">Stellaris/prescripted_countries/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>*.txt
+</td>
+<td>Contains a pre-scripted setup for a country. Listed on the side ingame.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Galaxies_modding" class="new" title="Galaxies modding (page does not exist)">Galaxies</a>
+</td></tr>
+<tr>
+<td>setup_scenarios
+</td>
+<td>Controls the logic for different sizes of galaxies.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Galaxies_modding" class="new" title="Galaxies modding (page does not exist)">Galaxies</a>
+</td></tr></tbody></table>
+<h4><span id="Stellaris.2Fsound.2F"></span><span class="mw-headline" id="Stellaris/sound/">Stellaris/sound/</span></h4>
+<table class="wikitable">
+<tbody><tr>
+<th>Folder/File
+</th>
+<th>Summary
+</th>
+<th>Guides
+</th></tr>
+<tr>
+<td>*.asset
+</td>
+<td>Sets up sounds.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Sound_modding" class="new" title="Sound modding (page does not exist)">Sound</a>
+</td></tr>
+<tr>
+<td>*.wav
+</td>
+<td>A sound file.
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Sound_modding" class="new" title="Sound modding (page does not exist)">Sound</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Overwriting_specific_elements">Overwriting specific elements</span></h2>
+<div style="float:left; position:absolute;"><span style=""><span id="Mod_Load_Order"></span><span id="Overwriting_Specific_Elements"></span></span></div><div style="margin:1.4px 1.6em;"><i>See also: <a href="#Mod_load_order">#Mod load order</a></i></div>
+<p>Occasionally, it is possible to overwrite a specific game element without needing to replace the entire vanilla file. In some cases adding an element with a similar identifier (id or key) into another file will duplicate that element for the game. But in other cases, the version that comes first (First In, Only Served; <b>FIOS</b>)/last (Last In, Only Served; <b>LIOS</b>) will be used instead.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup> The order in which files are processed is based on <a href="http://commons.wikimedia.org/wiki/Media:ASCII-Table-wide.svg" class="extiw" title="commons:Media:ASCII-Table-wide.svg">ASCIIbetical order</a> of the filenames. If the names are the same, they'll be processed based on the displayed order in the launcher (or loading template). Before <a href="/Patch_2.5.html" title="Patch 2.5">patch 2.5</a> the load order was the reverse-ASCIIbetical order of the mod display name, with vanilla always being first (if it’s at the <i>top</i> of the mod list, it'll be loaded <i>last</i>). Note that if there are multiple mods with the same display name, only the one whose mod file comes first, will be used.
+</p><p>Note that this feature is not documented and thus might be subject to arbitrary changes between versions.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.5.</div></td>
+</tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Common_folder">Common folder</span></h3>
+<table class="mw-collapsible wikitable sortable" style="float: left; margin-left: -5px; margin-top: -5px">
+
+<tbody><tr>
+<th rowspan="2">Folder</th>
+<th colspan="3">Overwrite</th>
+<th rowspan="2">Contents
+</th></tr>
+<tr>
+<th>Type
+</th>
+<th class="unsortable">Error Log
+</th>
+<th class="unsortable">Notes
+</th></tr>
+<tr>
+<td>achievements
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="achievements"><a href="/Achievements.html" title="Achievements">Achievements</a>
+</td></tr>
+<tr>
+<td>council_agendas<br /><small>renamed v3.7</small>
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>Agendas are given to leader-candidates in Oligarchic government-forms
+</td>
+<td data-sort-value="government leader ruler agendas"><a href="https://stellaris.paradoxwikis.com/Agenda" title="Agenda"><img alt="Agenda" src="images/Agenda.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a><a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> definitions and weights.
+</td></tr>
+<tr>
+<td>agreement_presets<br /><small>since v3.4</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>Functions are limited/restricted by:<br /><small><code>diplomatic_actions</code> and <code>game_rules</code></small>
+</td>
+<td data-sort-value="diplomacy subject agreement presets"><a href="https://stellaris.paradoxwikis.com/Vassal" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="/Subject_empire.html" title="Subject empire">Subject empire</a> type definitions.
+</td></tr>
+<tr>
+<td>agreement_resources<br /><small>since v3.4</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy subject agreement resources">Definitions for subject types.
+</td></tr>
+<tr>
+<td>agreement_term_values<br /><small>since v3.4</small>
+</td>
+<td>FIOS
+</td>
+<td>Object with key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy subject agreement resources">Definitions for subject types.
+</td></tr>
+<tr>
+<td>agreement_terms<br /><small>since v3.4</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy subject agreement terms">Definitions for subject types
+</td></tr>
+<tr>
+<td>ai_budget
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="AI economy budget">What fractions of its resources the <a href="/AI_modding.html" title="AI modding">AI</a> wants to spend on things.
+</td></tr>
+<tr>
+<td>ai_espionage
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="AI diplomacy espionage">None (all content in subfolders)
+</td></tr>
+<tr>
+<td>├───operations
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="AI diplomacy espionage operations">
+</td></tr>
+<tr>
+<td>└───spynetworks
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="AI diplomacy espionage spynetworks">
+</td></tr>
+<tr>
+<td>ambient_objects
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>References used by code to spawn ambient objects.
+</td>
+<td data-sort-value="graphics ambient objects"><a href="https://stellaris.paradoxwikis.com/Model_modding" class="new" title="Model modding (page does not exist)">Graphics objects</a>.
+</td></tr>
+<tr>
+<td>anomalies
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>Events that occur for research ships
+</td>
+<td data-sort-value="event anomalies"><a href="/Anomaly.html" title="Anomaly"><img alt="Message anomaly.png" src="images/Message_anomaly.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="43" data-file-height="43" /></a> <a href="/Anomalies_modding.html" title="Anomalies modding">Anomaly</a> description keys, images, spawn chances and conditions, and event pointers.
+</td></tr>
+<tr>
+<td>archaeological_site_types
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>Definitions for Archaeological Sites to be discovered and delved by Science Ships.
+</td>
+<td data-sort-value="event archaeological site types"><a href="/Archaeological_site.html" title="Archaeological site"><img alt="Archaeology map icon.png" src="images/Archaeology_map_icon.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="38" data-file-height="42" /></a> <a href="/Ancestral_Relics_modding.html" title="Ancestral Relics modding">Ancestral Relics</a> definitions.
+</td></tr>
+<tr>
+<td>armies
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="armies"><a href="https://stellaris.paradoxwikis.com/Assault_army" title="Assault army"><img alt="Army assault.png" src="images/Army_assault.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> <a href="/Army_modding.html" title="Army modding">Army</a> type definitions.
+</td></tr>
+<tr>
+<td>artifact_actions
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government minor artifact actions"><a href="/Minor_artifacts.html" title="Minor artifacts"><img alt="Minor artifacts.png" src="images/Minor_artifacts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Minor Artifact artifact action definitions.
+</td></tr>
+<tr>
+<td>ascension_perks
+</td>
+<td>LIOS
+</td>
+<td>[None]<br /><small>since v3.0</small>
+</td>
+<td>Pre v3.0: [Error log] Object key already exists
+</td>
+<td data-sort-value="ascension perks"><a href="/Ascension_perks.html" title="Ascension perk"><img alt="Ascension perk" src="images/Ap_slot_available.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Ascension Perk definitions.
+</td></tr>
+<tr>
+<td>asteroid_belts
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="graphics asteroid belts"><a href="https://stellaris.paradoxwikis.com/File%3APlanet_asteroid.png" class="image"><img alt="Planet asteroid.png" src="images/Planet_asteroid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Graphics for <a href="https://stellaris.paradoxwikis.com/Asteroid" class="mw-redirect" title="Asteroid">asteroid</a> belts.
+</td></tr>
+<tr>
+<td>attitudes
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="AI attitudes"><a href="https://stellaris.paradoxwikis.com/Opinion" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> <a href="/AI_modding.html" title="AI modding">AI Attitude</a> definitions.
+</td></tr>
+<tr>
+<td>bombardment_stances
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="ship bombardment stances"><a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment Stances</a> definitions.
+</td></tr>
+<tr>
+<td>buildings
+</td>
+<td>LIOS<br /><small>since v3.3</small>
+</td>
+<td>Object key already exists
+</td>
+<td>Pre v3.3: Breaks auto-generated modifiers
+</td>
+<td data-sort-value="planet buildings"><a href="/Buildings.html" title="Buildings"><img alt="Tooltip building.png" src="images/Tooltip_building.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> <a href="/Building_modding.html" title="Building modding">Buildings</a> definitions.
+</td></tr>
+<tr>
+<td>button_effects
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="script effects button">
+</td></tr>
+<tr>
+<td>bypass
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="system bypass">Definitions for <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> (gateway, worm hole and l-gate) type definitions.
+</td></tr>
+<tr>
+<td>casus_belli
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="war casus belli"><a href="https://stellaris.paradoxwikis.com/Casus_belli" title="Casus belli"><img alt="Diplomacy status casus belli holder.png" src="images/Diplomacy_status_casus_belli_holder.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Casus Belli <a href="/War_modding.html" title="War modding">war</a> conditions.
+</td></tr>
+<tr>
+<td>colony_automation
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="planet colony automation">How player colonies controlled by automated sector management determine which districts and buildings to build. Each <a href="/Designation.html" title="Designation">designation</a> has its own script. Not used by AI empires.
+</td></tr>
+<tr>
+<td>colony_automation_categories
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="planet colony automation categories">Lists the categories of planetary automation that you can select in the planet interface
+</td></tr>
+<tr>
+<td>colony_automation_exceptions
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="planet colony automation exceptions"><a href="https://stellaris.paradoxwikis.com/Crime" title="Crime"><img alt="Job criminal.png" src="images/Job_criminal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Conditional overrides to automated sector management.
+</td></tr>
+<tr>
+<td>colony_types
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="planet colony types"><a href="/Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Colony&#32;Designation definitions.
+</td></tr>
+<tr>
+<td>colors
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="graphics colors">RGB country and species color sets.
+</td></tr>
+<tr>
+<td>component_sets
+</td>
+<td>FIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="ship component sets"><a href="/Ship_designer.html" title="Component"><img alt="Component" src="images/Ship_part_hyper_drive_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Ship <a href="https://stellaris.paradoxwikis.com/Component" class="mw-redirect" title="Component">component</a> icon and frame assignment.
+</td></tr>
+<tr>
+<td>component_slot_templates
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="ship component slot templates">Graphics assignments for weapon slot types.
+</td></tr>
+<tr>
+<td>component_tags
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="ship component tags"><a href="/Ship_designer.html" title="Component"><img alt="Component" src="images/Ship_part_hyper_drive_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> List of referenceable tags assignable to ship <a href="https://stellaris.paradoxwikis.com/Component" class="mw-redirect" title="Component">components</a>.
+</td></tr>
+<tr>
+<td>component_templates
+</td>
+<td>FIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="ship component templates"><a href="/Ship_designer.html" title="Component"><img alt="Component" src="images/Ship_part_hyper_drive_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Ship <a href="https://stellaris.paradoxwikis.com/Component" class="mw-redirect" title="Component">component</a> definitions.
+</td></tr>
+<tr>
+<td>country_container
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="country container">
+</td></tr>
+<tr>
+<td>country_customization
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="country customization">Which capital building types and robot portraits empires use.
+</td></tr>
+<tr>
+<td>country_focus<br /><small>since v4.0</small>
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="country focus">Empire Focus cards
+</td></tr>
+<tr>
+<td>country_limits
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="country limits">None (all content in subfolders)
+</td></tr>
+<tr>
+<td>├───ownership_limits
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="country limits ownership">ship_of_size_limits for each country type
+</td></tr>
+<tr>
+<td>└───ship_of_size_limits
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="country limits ships">Number of ships that can be built based on size_multiplier and naval_cap_div
+</td></tr>
+<tr>
+<td>country_types
+</td>
+<td>LIOS
+</td>
+<td>[None]<br /><small>since v3.0</small>
+</td>
+<td>Pre v3.0: [Error log] Object key already exists
+</td>
+<td data-sort-value="country types">Rules for empires, enclaves, and other country types.
+</td></tr>
+<tr>
+<td>crisis_levels
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="ascension perks become the crisis levels"><a href="/Ascension_perks.html#Become_the_Crisis" title="Become the Crisis"><img alt="Become the Crisis" src="images/Ap_become_the_crisis.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Become the Crisis ascension perk crisis level definitions.
+</td></tr>
+<tr>
+<td>crisis_objectives
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="ascension perks become the crisis objectives"><a href="https://stellaris.paradoxwikis.com/Menace" title="Menace"><img alt="Menace.png" src="images/Menace.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Menace rewards for completing <a href="/Ascension_perks.html#Become_the_Crisis" title="Become the Crisis"><img alt="Become the Crisis" src="images/Ap_become_the_crisis.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Become the Crisis objectives.
+</td></tr>
+<tr>
+<td>decisions
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="planet decisions"><a href="https://stellaris.paradoxwikis.com/Decisions" title="Decisions"><img alt="Decision default.png" src="images/Decision_default.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Decision definitions and AI weights.
+</td></tr>
+<tr>
+<td style="max-height: 90px">defines
+</td>
+<td>LIOS
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>The block the define is in must be included as well.
+<dl><dd>E.g.: <small><code>NGameplay = { POLICY_YEARS = 10 }</code></small></dd></dl>
+</td>
+<td data-sort-value="script defines">Global variables and settings.
+</td></tr>
+<tr>
+<td>deposit_categories
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="planet deposit categories">List of <a href="https://stellaris.paradoxwikis.com/Orbital_deposit" class="mw-redirect" title="Orbital deposit">orbital deposit</a> and <a href="https://stellaris.paradoxwikis.com/Planetary_feature" class="mw-redirect" title="Planetary feature">planetary feature</a> categories.
+</td></tr>
+<tr>
+<td>deposits
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="planet deposits"><a href="https://stellaris.paradoxwikis.com/Orbital_deposit" class="mw-redirect" title="Orbital deposit">Orbital deposit</a>, <a href="https://stellaris.paradoxwikis.com/Planetary_feature" class="mw-redirect" title="Planetary feature">planetary feature</a>, and <a href="https://stellaris.paradoxwikis.com/Blocker" class="mw-redirect" title="Blocker">blocker</a> definitions and drop weights.
+</td></tr>
+<tr>
+<td>diplo_phrases
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy phrases"><a href="https://stellaris.paradoxwikis.com/Diplomatic_agreement" title="Diplomatic agreement"><img alt="Diplomacy alliance.png" src="images/Diplomacy_alliance.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Diplomatic phrase keys and conditions for diplomatic actions.
+</td></tr>
+<tr>
+<td>diplomatic_economy
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy economy"><a href="https://stellaris.paradoxwikis.com/Diplomatic_agreement" title="Diplomatic agreement"><img alt="Diplomacy alliance.png" src="images/Diplomacy_alliance.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="https://stellaris.paradoxwikis.com/Diplomatic_agreement" class="mw-redirect" title="Diplomatic agreement">Diplomatic agreement</a> costs.
+</td></tr>
+<tr>
+<td>diplomatic_actions
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy actions"><a href="https://stellaris.paradoxwikis.com/Diplomatic_agreement" title="Diplomatic agreement"><img alt="Diplomacy alliance.png" src="images/Diplomacy_alliance.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="https://stellaris.paradoxwikis.com/Diplomatic_action" class="mw-redirect" title="Diplomatic action">Diplomatic action</a> conditions.
+</td></tr>
+<tr>
+<td style="height: 45px">districts
+</td>
+<td>LIOS<br /><small>since v3.3</small>
+</td>
+<td>Object key already exists
+</td>
+<td>Pre v3.3: Breaks auto-generated modifiers
+</td>
+<td data-sort-value="planet districts"><a href="/Districts.html" title="Districts"><img alt="Tooltip district.png" src="images/Tooltip_district.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;District definitions.
+</td></tr>
+<tr>
+<td>dynamic_text
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="text dynamic">
+</td></tr>
+<tr>
+<td>economic_categories
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="economy categories"><a href="https://stellaris.paradoxwikis.com/Economy" title="Economy"><img alt="Empire economy.png" src="images/Empire_economy.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="24" data-file-height="21" /></a> Definitions and modifier generation for <a href="https://stellaris.paradoxwikis.com/Modifiers#Economic_Categories" class="mw-redirect" title="Modifiers">economic categories</a> used by <a href="/Economy_modding.html#Economy_Units" title="Economy modding">resource blocks</a> and AI budgets.
+<ul><li><a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Includes job categories and subcategories which determine which modifiers apply to which jobs</li></ul>
+</td></tr>
+<tr>
+<td>economic_plans
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="AI economy plans">AI empire resource income goals.
+</td></tr>
+<tr>
+<td>edicts
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government edicts"><a href="/Edicts.html" title="Edicts"><img alt="Menu icon edicts.png" src="images/Menu_icon_edicts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Edict definitions and AI weights.
+</td></tr>
+<tr>
+<td>espionage_assets
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>Entire override&#160;: <i>PASS</i>
+</td>
+<td data-sort-value="diplomacy espionage assets"><a href="https://stellaris.paradoxwikis.com/Infiltration" title="Infiltration"><img alt="Spy network.png" src="images/Spy_network.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="23" data-file-height="26" /></a> <a href="https://stellaris.paradoxwikis.com/Espionage_asset" class="mw-redirect" title="Espionage asset">Espionage asset</a> definitions.
+</td></tr>
+<tr>
+<td>espionage_operation_categories
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy espionage operation categories"><a href="https://stellaris.paradoxwikis.com/Infiltration" title="Infiltration"><img alt="Spy network.png" src="images/Spy_network.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="23" data-file-height="26" /></a> List of espionage operation and intel categories.
+</td></tr>
+<tr>
+<td>espionage_operation_types
+</td>
+<td>LIOS
+</td>
+<td>… already exists, using the one at file: …
+</td>
+<td>Entire override&#160;: <i>PASS</i>
+</td>
+<td data-sort-value="diplomacy espionage operation types"><a href="https://stellaris.paradoxwikis.com/Infiltration" title="Infiltration"><img alt="Spy network.png" src="images/Spy_network.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="23" data-file-height="26" /></a> Espionage operation definitions.
+</td></tr>
+<tr>
+<td style="height: 45px">ethics
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>Might break "selected ethic" graphic if too many Ethics; <b>WARNING:</b> Due to new multiple ethics files, the auto-generated file will randomly break off as some empires have no ethics when randomly generated. So entire overwrite is suggested.
+</td>
+<td data-sort-value="government ethics"><a href="https://stellaris.paradoxwikis.com/File%3AEthic_default.png" class="image"><img alt="Default.png" src="images/Ethic_default.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> <a href="/Ethics.html#Empire_ethics" title="Ethics">Empire ethic</a> definitions and <a href="/Ethics.html#Pop_ethics" title="Ethics">ethic attraction</a> modifiers.
+</td></tr>
+<tr>
+<td>event_chains
+</td>
+<td>FIOS
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>
+</td>
+<td data-sort-value="event chains"><a href="/Events.html" title="Events"><img alt="Message event generic.png" src="images/Message_event_generic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="43" data-file-height="43" /></a> Event chain image assignment and referenceable counters.
+</td></tr>
+<tr>
+<td>fallen_empires
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="system fallen empires"><a href="https://stellaris.paradoxwikis.com/Elder_Race" title="Elder Race"><img alt="Origins elder race.png" src="images/Origins_elder_race.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <a href="/Fallen_empire.html" title="Fallen empire">Fallen empire</a> definitions.
+</td></tr>
+<tr>
+<td>federation_law_categories
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy federation law categories"><a href="/Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="/Federation.html#Federation_laws" title="Federation">Federation law</a> category assignment.
+</td></tr>
+<tr>
+<td>federation_laws
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy federation laws"><a href="/Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="/Federation.html#Federation_laws" title="Federation">Federation law</a> definitions and AI weights.
+</td></tr>
+<tr>
+<td>federation_perks
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy federation perks"><a href="/Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="/Federation.html#Federation_types" title="Federation">Federation perk</a> definitions.
+</td></tr>
+<tr>
+<td>federation_types
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy federation types"><a href="/Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="/Federation.html#Federation_types" title="Federation">Federation type</a> definitions.
+</td></tr>
+<tr>
+<td>first_contact
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy first contact"><a href="https://stellaris.paradoxwikis.com/First_contact" title="First contact"><img alt="Firstcontact map icon.png" src="images/Firstcontact_map_icon.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> First contact progression definitions.
+</td></tr>
+<tr>
+<td>galactic_community_actions
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="galactic community actions"><a href="/Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> Costs to perform special galactic community actions.
+</td></tr>
+<tr>
+<td>galactic_focuses
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="galactic community focuses"><a href="/Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> Galactic focus definitions.
+</td></tr>
+<tr>
+<td>game_concept_categories<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="game concept categories">
+</td></tr>
+<tr>
+<td>game_rules
+</td>
+<td>LIOS
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>
+</td>
+<td data-sort-value="script game rules">Tooltip generating conditions.
+</td></tr>
+<tr>
+<td>gamesetup_settings<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="game setup settings">Settings shown in the game setup UI.
+</td></tr>
+<tr>
+<td>global_ship_designs
+</td>
+<td>FIOS
+</td>
+<td>A ship design already exists
+</td>
+<td>
+</td>
+<td data-sort-value="ship designs"><a href="/Ship_designer.html" title="Ship class"><img alt="Ship class" src="images/Menu_icon_ship_designer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Premade ship designs.
+</td></tr>
+<tr>
+<td>governments
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government"><a href="https://stellaris.paradoxwikis.com/Government_type" class="mw-redirect" title="Government type">Government type</a> conditions, ruler titles, and election candidate weights.
+</td></tr>
+<tr>
+<td>├───authorities
+</td>
+<td>FIOS
+</td>
+<td>Object key already exists
+</td>
+<td>Specific override is impossible. Entries override ONLY.
+</td>
+<td data-sort-value="government authorities"><a href="https://stellaris.paradoxwikis.com/Authority" class="mw-redirect" title="Authority">Authority</a> definitions.
+</td></tr>
+<tr>
+<td>└───civics
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government civics"><a href="https://stellaris.paradoxwikis.com/Civic" class="mw-redirect" title="Civic">Civic</a> and <a href="/Origin.html" title="Origin">origin</a> definitions.
+</td></tr>
+<tr>
+<td>graphical_culture
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="graphics culture">Graphics info for ship skins.
+</td></tr>
+<tr>
+<td>greeting_overlay_sounds
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="sound greeting overlay">
+</td></tr>
+<tr>
+<td>inline_scripts<br /><small>since v3.5</small>
+</td>
+<td>DUPL
+</td>
+<td>❓
+</td>
+<td>Only works when the file is fully replaced in my experience
+</td>
+<td data-sort-value="script inline"><a href="/Dynamic_modding.html#Inline_scripts" title="Dynamic modding">Inline scripts</a>.
+</td></tr>
+<tr>
+<td>intel_categories
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy intel categories"><a href="https://stellaris.paradoxwikis.com/Intel" title="Intel"><img alt="Intel.png" src="images/Intel.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Which information is revealed by specific <a href="/Intelligence.html#Intel_level" title="Intelligence">intel category levels</a>.
+</td></tr>
+<tr>
+<td>intel_levels
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="diplomacy intel levels"><a href="https://stellaris.paradoxwikis.com/Intel" title="Intel"><img alt="Intel.png" src="images/Intel.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Assigns intel category levels to intel level.
+</td></tr>
+<tr>
+<td>job_tags<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="job tags">Job Tags are used to group jobs together
+</td></tr>
+<tr>
+<td>lawsuits
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="lawsuits">Unused
+</td></tr>
+<tr>
+<td>leader_classes
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government leader classes"><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Leader type definitions.
+</td></tr>
+<tr>
+<td>leader_tiers<br /><small>since v4.1</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="leader tiers"><a href="https://stellaris.paradoxwikis.com/Leader" title="Leader"><img alt="Icon leader.png" src="images/Icon_leader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Leader tiers definitions.
+</td></tr>
+<tr>
+<td>mandates
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government leader ruler mandates"><a href="https://stellaris.paradoxwikis.com/Mandate" title="Mandate"><img alt="Faction mandate.png" src="images/Faction_mandate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Mandate definitions.
+</td></tr>
+<tr>
+<td>map_modes
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="map modes">Map mode definitions.
+</td></tr>
+<tr>
+<td>megastructures
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="station megastructures"><a href="https://stellaris.paradoxwikis.com/Megastructure" class="mw-redirect" title="Megastructure">Megastructure</a> definitions.
+</td></tr>
+<tr>
+<td>menace_perks<br /><small>since v3.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="ascension perks become the crisis menace perks">Bonus perk definitions for <a href="/Ascension_perks.html#Become_the_Crisis" title="Become the Crisis"><img alt="Become the Crisis" src="images/Ap_become_the_crisis.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Become the Crisis.
+</td></tr>
+<tr>
+<td>message_types
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="message types"><a href="https://stellaris.paradoxwikis.com/Message_modding" class="new" title="Message modding (page does not exist)">Alert message</a> icon definitions.
+</td></tr>
+<tr>
+<td>missions<br /><small>since v3.13</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="cosmic storms missions"><a href="https://stellaris.paradoxwikis.com/Cosmic_Storms" class="mw-redirect" title="Cosmic Storms">Cosmic Storms</a> missions definitions.
+</td></tr>
+<tr>
+<td>mutations<br /><small>since v3.14</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="space fauna mutations"><a href="/Mutations.html" title="Mutations">Space fauna mutations</a> definitions.
+</td></tr>
+<tr>
+<td>name_lists
+</td>
+<td>DUPL
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="text name lists">Sets of random names for ships, fleets, armies, planets, and leaders.
+</td></tr>
+<tr>
+<td>notification_modifiers
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="message notification modifiers">
+</td></tr>
+<tr>
+<td>observation_station_missions
+</td>
+<td><small>DUPL/LIOS</small>
+</td>
+<td>❓
+</td>
+<td>Entire override ONLY.
+</td>
+<td data-sort-value="station observation missions"><a href="https://stellaris.paradoxwikis.com/Observation_post" class="mw-redirect" title="Observation post">Observation post</a> mission definitions and AI weights.
+</td></tr>
+<tr>
+<td>on_actions
+</td>
+<td>NO/MERGE
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>Cannot modify existing entries; new entries will be merged with the existing entry with the same NAME={}.
+<dl><dd>Load order is top first.</dd></dl>
+</td>
+<td data-sort-value="event on actions"><a href="/Events.html" title="Events"><img alt="Message event generic.png" src="images/Message_event_generic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="43" data-file-height="43" /></a> Assigns <a href="/Events.html" title="Events">events</a> to be triggered when certain game actions happen.
+</td></tr>
+<tr>
+<td>opinion_modifiers
+</td>
+<td><small>DUPL/LIOS</small>
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td><small><code>add_opinion_modifier</code> is LIOS</small>
+</td>
+<td data-sort-value="AI diplomacy opinion modifiers"><a href="https://stellaris.paradoxwikis.com/Opinion" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;Opinion modifiers and conditions.
+</td></tr>
+<tr>
+<td>patrons<br /><small>since v4.1</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="patrons"><a href="https://stellaris.paradoxwikis.com/Psionic_Aura" title="Psionic Aura"><img alt="System psionic aura icon.png" src="images/System_psionic_aura_icon.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Definitions of shroud entities that act as <a href="https://stellaris.paradoxwikis.com/Patrons" class="new" title="Patrons (page does not exist)">Patrons</a>.
+</td></tr>
+<tr>
+<td>personalities
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="AI personalities"><a href="https://stellaris.paradoxwikis.com/AI_Personality" class="mw-redirect" title="AI Personality">AI Personality</a> definitions and weights.
+</td></tr>
+<tr>
+<td>planet_classes
+</td>
+<td>DUPL/LIOS
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>DUPL – breaks habitability modifiers if individually overwritten.
+</td>
+<td data-sort-value="planet classes"><a href="https://stellaris.paradoxwikis.com/Planet" title="Planet"><img alt="Planet.png" src="images/Planet.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <a href="https://stellaris.paradoxwikis.com/Celestial_body" class="mw-redirect" title="Celestial body">Celestial body</a> graphics and definitions.
+</td></tr>
+<tr>
+<td>planet_modifiers
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="planet modifiers"><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_unknown.png" class="image"><img alt="Pm unknown.png" src="images/Pm_unknown.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="/Planet_modifiers.html" title="Planet modifiers"><img alt="Planet modifiers" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Random planet modifier spawn chances.
+</td></tr>
+<tr>
+<td>policies
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>Existing Object key can be override with <small><code>NAME = {}</code></small>
+</td>
+<td data-sort-value="government policies"><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Policy definitions and AI weights.
+</td></tr>
+<tr>
+<td>pop_categories
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="pop categories"><a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <a href="/Population.html#Stratum" title="Population">Pop category type</a> definitions.
+</td></tr>
+<tr>
+<td>pop_faction_types
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government factions"><a href="/Factions.html" title="Factions"><img alt="Navbar icons factions.png" src="images/Navbar_icons_factions.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="31" data-file-height="30" /></a>&#32;Faction demands, join conditions, attraction modifiers, and actions.
+</td></tr>
+<tr>
+<td>pop_jobs
+</td>
+<td>LIOS<br /><small>since v3.3</small>
+</td>
+<td>Object key already exists
+</td>
+<td>Pre v3.3: [Type] NO – Breaks auto-generated modifiers if overwriting a specific job and not the whole file.
+</td>
+<td data-sort-value="planet jobs"><a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a>&#32;Job definitions and auto-assignment weights.
+</td></tr>
+<tr>
+<td>precursor_civilizations
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="event precursor civilizations">List of <a href="https://stellaris.paradoxwikis.com/Precursor" class="mw-redirect" title="Precursor">Precursor</a> civilizations and conditions.
+</td></tr>
+<tr>
+<td>random_names
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="text names random">Components for randomly generated Empire, Federation, Faction, First Contact, and War names.
+</td></tr>
+<tr>
+<td>└───base
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="text names random base">Lists of celestial object names and randomly generated species name affixes.
+</td></tr>
+<tr>
+<td>prescripted flags<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="prescripted flags">Flags for pre-scripted empires
+</td></tr>
+<tr>
+<td>relics
+</td>
+<td>LIOS
+</td>
+<td>Object with key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="relics"><a href="https://stellaris.paradoxwikis.com/Relic" class="mw-redirect" title="Relic">Relic</a> definitions and AI triumph weights.
+</td></tr>
+<tr>
+<td>resolution_categories
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="galactic community resolution categories"><a href="/Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> Defines which category individual resolutions are in and the category icon.
+</td></tr>
+<tr>
+<td>resolution_groups
+</td>
+<td>LIOS
+</td>
+<td>Object with key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="galactic community resolution groups"><a href="/Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> Assigns frames and text colors to resolution categories.
+</td></tr>
+<tr>
+<td>resolutions
+</td>
+<td>LIOS
+</td>
+<td>Object with key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="galactic community resolutions"><a href="/Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <a href="https://stellaris.paradoxwikis.com/Resolution" class="mw-redirect" title="Resolution">Resolution</a> definitions and AI weights.
+</td></tr>
+<tr>
+<td>script_values
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="script values">Dynamically calculated referenceable values.
+</td></tr>
+<tr>
+<td>scripted_effects
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="script effects"><a href="/Dynamic_modding.html#Scripted_effects" title="Dynamic modding">Scripted effects</a>.
+</td></tr>
+<tr>
+<td>scripted_loc
+</td>
+<td>FIOS
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>Existing Object key can be override with <small><code>name = key</code></small>
+</td>
+<td data-sort-value="script loc"><a href="/Localisation_modding.html#Bracket_Commands" title="Localisation modding">Dynamic localization</a>.
+</td></tr>
+<tr>
+<td>scripted_modifiers<br /><small>since v3.4</small>
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="scrip modifiers"><a href="/Dynamic_modding.html#Scripted_modifiers" title="Dynamic modding">Scripted modifiers</a>.
+</td></tr>
+<tr>
+<td>scripted_triggers
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="script triggers"><a href="/Dynamic_modding.html#Scripted_triggers" title="Dynamic modding">Boolean trigger conditions</a>.
+</td></tr>
+<tr>
+<td>scripted_variables
+</td>
+<td>FIOS
+</td>
+<td>Variable name taken
+</td>
+<td>
+</td>
+<td data-sort-value="script variables"><a href="/Dynamic_modding.html#Scripted_variables" title="Dynamic modding">Global variables</a>.
+</td></tr>
+<tr>
+<td>section_templates
+</td>
+<td>NO <small>DUPL/FIOS</small>
+</td>
+<td>Duplicate section template found. Multiple sections are named …
+</td>
+<td><b>Warning</b>: existing can't be overwritten, used ships/starbases will get deleted.
+</td>
+<td data-sort-value="ship section templates"><a href="/Ship_designer.html" title="Ship class"><img alt="Ship class" src="images/Menu_icon_ship_designer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> <a href="/Ship_designer.html#Sections" title="Ship designer">Ship section</a> definitions.
+</td></tr>
+<tr>
+<td>sector_focuses
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="planet colony automation sector focuses">Sector automation construction weights.
+</td></tr>
+<tr>
+<td>sector_types
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="planet colony automation sector types"><a href="https://stellaris.paradoxwikis.com/Sector" class="mw-redirect" title="Sector">Sector</a> definitions.
+</td></tr>
+<tr>
+<td>ship_behaviors
+</td>
+<td>FIOS
+</td>
+<td>Behavior name already exists
+</td>
+<td>
+</td>
+<td data-sort-value="ship behaviors">Ship AI.
+</td></tr>
+<tr>
+<td>ship_categories<br /><small>since v3.14</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="space fauna ship categories"><a href="https://stellaris.paradoxwikis.com/Space_fauna" class="mw-redirect" title="Space fauna">Space fauna</a> entity type (ships) definitions.
+</td></tr>
+<tr>
+<td>ship_sets<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="ship sets">Ship Sets contains lists of gfx cultures.
+</td></tr>
+<tr>
+<td>ship_sizes
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="ship sizes"><a href="/Ship_designer.html" title="Ship class"><img alt="Ship class" src="images/Menu_icon_ship_designer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> <a href="/Ship_designer.html#Types" title="Ship designer">Ship chassis</a> definitions, including <a href="/Starbase.html" title="Starbase"><img alt="Spaceport 1.png" src="images/Spaceport_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="26" data-file-height="26" /></a>&#32;Starbases and <a href="/Spaceborne_aliens.html" title="Spaceborne aliens">spaceborne aliens</a>.
+</td></tr>
+<tr>
+<td>situations
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="event situations"><a href="/Situations.html" title="Situations"><img alt="Navbar icons situation.png" src="images/Navbar_icons_situation.png" decoding="async" loading="lazy" width="40" height="24" data-file-width="50" data-file-height="30" /></a> Situation definitions.
+</td></tr>
+<tr>
+<td>solar_system_initializers
+</td>
+<td>FIOS
+</td>
+<td>Initializer already exists
+</td>
+<td>
+</td>
+<td data-sort-value="system initializers"><a href="/Unique_systems.html" title="Unique systems">Predefined solar systems</a>, some including country, colony, and/or fleet generation.
+</td></tr>
+<tr>
+<td>special_projects
+</td>
+<td>FIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="event special projects"><a href="https://stellaris.paradoxwikis.com/Special_project" title="Special project"><img alt="Point of interest galaxy.png" src="images/Point_of_interest_galaxy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> Special project definitions.
+</td></tr>
+<tr>
+<td>specialist_subject_perks
+</td>
+<td>LIOS<br /><small>since v3.4</small>
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="specialist sperks">
+</td></tr>
+<tr>
+<td>specialist_subject_types
+</td>
+<td>LIOS<br /><small>since v3.4</small>
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="specialist stypes">
+</td></tr>
+<tr>
+<td>species_archetypes
+</td>
+<td>LIOS<br /><small>since v3.3</small>
+</td>
+<td>Object key already exists
+</td>
+<td>Pre v3.3: Breaks auto-generated modifiers.
+</td>
+<td data-sort-value="species archetypes">Assigns <a href="https://stellaris.paradoxwikis.com/Species_trait_points" title="Trait points"><img alt="Trait points" src="images/Menu_icon_species.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="32" data-file-height="30" /></a>&#32;Trait Points and <a href="/Trait.html" title="Trait">Trait</a> sets to <a href="/Species.html" title="Species">Species</a> archetypes.
+</td></tr>
+<tr>
+<td>species_classes
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="species classes">Assigns portraits, species archetype, and graphical culture to <a href="/Species.html#List_of_species_classes" title="Species">species classes</a>.
+</td></tr>
+<tr>
+<td>species_names
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="text names species">Lists for randomly generating species names.
+</td></tr>
+<tr>
+<td>species_rights
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>Effect tooltips are independent of the effects.
+</td>
+<td data-sort-value="species rights"><a href="/Species_rights.html" title="Species rights">Species rights</a> definitions and AI weights.
+</td></tr>
+<tr>
+<td>specimens<br /><small>since v3.14</small>
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="grand archive specimens">Grand Archive – <a href="https://stellaris.paradoxwikis.com/Specimens" class="new" title="Specimens (page does not exist)">Specimens</a> definitions.
+</td></tr>
+<tr>
+<td>star_classes
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="system star classes">Spawn odds and planet generation rules and environmental hazards based on the central star or star set.
+</td></tr>
+<tr>
+<td>starbase_buildings
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="starbase buildings"><a href="/Starbase.html" title="Starbase"><img alt="Spaceport 1.png" src="images/Spaceport_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="26" data-file-height="26" /></a> <a href="/Starbase.html#Buildings" title="Starbase">Starbase building</a> definitions and AI weight modifiers.
+</td></tr>
+<tr>
+<td>starbase_levels
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="starbase levels"><a href="/Starbase.html" title="Starbase"><img alt="Spaceport 1.png" src="images/Spaceport_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="26" data-file-height="26" /></a> <a href="/Starbase.html#Level" title="Starbase">Starbase chassis</a> definitions.
+</td></tr>
+<tr>
+<td>starbase_modules
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="starbase modules"><a href="/Starbase.html" title="Starbase"><img alt="Spaceport 1.png" src="images/Spaceport_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="26" data-file-height="26" /></a> <a href="/Starbase.html#Modules" title="Starbase">Starbase module</a> definitions.
+</td></tr>
+<tr>
+<td>starbase_types
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="starbase types"><a href="/Starbase.html" title="Starbase"><img alt="Spaceport 1.png" src="images/Spaceport_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="26" data-file-height="26" /></a> <a href="/Starbase.html#Types" title="Starbase">Starbase designation</a> conditions, AI ratios, and AI buildings &amp; module weights.
+</td></tr>
+<tr>
+<td>start_screen_messages
+</td>
+<td>FIOS
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>The first valid part for each location will be used and the rest discarded without issue.
+</td>
+<td data-sort-value="message start screen">Localization keys and conditions used to assemble the game start message.
+</td></tr>
+<tr>
+<td>static_modifiers
+</td>
+<td>LIOS
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>
+</td>
+<td data-sort-value="modifier static"><a href="/Modifier.html" title="Modifier">Modifier</a> definitions.
+</td></tr>
+<tr>
+<td>storm_types<br /><small>since v3.13</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="storm types"><a href="https://stellaris.paradoxwikis.com/Cosmic_Storms" class="mw-redirect" title="Cosmic Storms">Cosmic Storms</a> definitions.
+</td></tr>
+<tr>
+<td>strategic_resources
+</td>
+<td>DUPL
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>Must replace the whole file with the same filename or it won't work.
+</td>
+<td data-sort-value="economy resources">All <a href="https://stellaris.paradoxwikis.com/Resource" class="mw-redirect" title="Resource">resource</a> definitions.
+</td></tr>
+<tr>
+<td><del>subjects</del>
+</td>
+<td>LIOS
+</td>
+<td><small class=""><i>[None]</i> – REMOVED in v3.4, s. agreement_presets</small>
+</td>
+<td><s>Functions are limited/restricted by:<br /><small><code>diplomatic_actions</code> and <code>game_rules</code></small></s>
+</td>
+<td data-sort-value="diplomacy subject"><s><a href="https://stellaris.paradoxwikis.com/Vassal" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <a href="/Subject_empire.html" title="Subject empire">Subject empire</a> type definitions.</s>
+</td></tr>
+<tr>
+<td>system_tooltips
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="system tooltip">Tooltips displayed when hovering over a system.
+</td></tr>
+<tr>
+<td>system_types
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="system types">System designation type conditions and weights.
+</td></tr>
+<tr>
+<td>target_types<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="target types">
+</td></tr>
+<tr>
+<td>technology
+</td>
+<td>LIOS*
+</td>
+<td>Duplicate technology: [<i>tech</i>]
+</td>
+<td>LIOS overrides mostly still work despite the DUPL-type error entry. However, if the overwriting tech lacks a "potential" block, it will inherit the "potential" block from the overwritten tech.
+</td>
+<td data-sort-value="technology"><a href="/Technology.html" title="Technology"><img alt="Menu icon technology.png" src="images/Menu_icon_technology.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> Technology definitions, drop weights, and AI weights.
+</td></tr>
+<tr>
+<td>├───category
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="technology category"><a href="/Technology.html" title="Technology"><img alt="Menu icon technology.png" src="images/Menu_icon_technology.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> List of <a href="/Technology.html#Research_areas_%26_fields" title="Technology">research categories</a> and icon assignments.
+</td></tr>
+<tr>
+<td>└───tier
+</td>
+<td>LIOS
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="technology tier"><a href="/Technology.html" title="Technology"><img alt="Menu icon technology.png" src="images/Menu_icon_technology.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> List of technology tiers. Defines number of previous tier tech requirements.
+</td></tr>
+<tr>
+<td>terraform
+</td>
+<td>DUPL
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>
+</td>
+<td data-sort-value="planet terraforming"><a href="https://stellaris.paradoxwikis.com/Terraforming" title="Terraforming"><img alt="Terraform planet 2.png" src="images/Terraform_planet.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a>&#32;Terraforming costs and conditions for every valid planet type pair.
+</td></tr>
+<tr>
+<td>timeline_events<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="timeline events"><a href="https://stellaris.paradoxwikis.com/Timeline_Events" class="new" title="Timeline Events (page does not exist)">Timeline Events</a> Database
+</td></tr>
+<tr>
+<td><del>trade_conversions</del>
+</td>
+<td>LIOS
+</td>
+<td><small class="">Object key already exists – REMOVED in v4.0</small>
+</td>
+<td>
+</td>
+<td data-sort-value="government policies trade conversions"><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Trade Policy definitions.
+</td></tr>
+<tr>
+<td>tradition_categories
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="government tradition categories"><a href="/Traditions.html#Tradition_trees" title="Traditions">Tradition tree</a> definitions and AI weights.
+</td></tr>
+<tr>
+<td>traditions
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>Effect tooltips are independent of the effects.
+</td>
+<td data-sort-value="government traditions">Individual <a href="https://stellaris.paradoxwikis.com/Tradition" class="mw-redirect" title="Tradition">tradition</a> definitions, including adoption and finisher effects.
+</td></tr>
+<tr>
+<td>trait_tags<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="trait tags">Trait Tags are used to group traits together
+</td></tr>
+<tr>
+<td>traits
+</td>
+<td>DUPL/NO
+</td>
+<td><small class=""><i>[none]</i></small>
+</td>
+<td>Entire override ONLY.
+</td>
+<td data-sort-value="species traits"><a href="/Trait.html" title="Trait">Species trait</a> and <a href="https://stellaris.paradoxwikis.com/Leader_trait" class="mw-redirect" title="Leader trait">Leader trait</a> definitions.
+</td></tr>
+<tr>
+<td>war_goals
+</td>
+<td>LIOS
+</td>
+<td>Object key already exists
+</td>
+<td>
+</td>
+<td data-sort-value="war goals"><a href="https://stellaris.paradoxwikis.com/Casus_belli" title="Casus belli"><img alt="Diplomacy status casus belli holder.png" src="images/Diplomacy_status_casus_belli_holder.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <a href="https://stellaris.paradoxwikis.com/War_goal" class="mw-redirect" title="War goal">War goal</a> definitions, conditions, and AI weights.
+</td></tr>
+<tr>
+<td>zone_slots<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="zone slots">Planet District Zone Slots
+</td></tr>
+<tr>
+<td>zones<br /><small>since v4.0</small>
+</td>
+<td>❓
+</td>
+<td>❓
+</td>
+<td>
+</td>
+<td data-sort-value="zones">Planet District Zones
+</td></tr></tbody></table>
+<p>FIOS – First in, only served.
+</p><p>LIOS – Last in, only served
+</p><p>DUPL – Duplicates
+</p><p>NO – Cannot individually overwrite
+</p><p>Please note that not everything could be tested extensively.
+</p>
+<h3><span class="mw-headline" id="Localisation_folder">Localisation folder</span></h3>
+<p>Localisation is likely LIOS
+</p><p>A guide for overwriting localisation can be found <a href="/Localisation_modding.html#Overwriting_Vanilla_Text" title="Localisation modding">here</a>.
+</p>
+<h3><span class="mw-headline" id="Events_folder">Events folder</span></h3>
+<p>Events are usually treated as FIOS (note: The error log will make it look like it is LIOS, but this is not true, it is definitely FIOS)
+</p>
+<h3><span class="mw-headline" id="Interface_folder">Interface folder</span></h3>
+<p>Interface is likely LIOS
+</p>
+<h3><span class="mw-headline" id="Fonts_folder">Fonts folder</span></h3>
+<p>Fonts are LIOS.
+</p>
+<h2><span id="Tools_.26_utilities"></span><span class="mw-headline" id="Tools_&amp;_utilities">Tools &amp; utilities</span></h2>
+<h3><span class="mw-headline" id="Tools">Tools</span></h3>
+<ul><li><a rel="nofollow" class="external text" href="https:notepad-plus-plus.org/">Notepad++</a> – Powerful editor to change files.</li>
+<li><a rel="nofollow" class="external text" href="https:winmerge.org/">WinMerge</a> – Contrasts the difference between two text files. Useful for updating mods.</li>
+<li><a rel="nofollow" class="external text" href="https:vscodium.com/">VSCodium</a> – Powerful, hackable, free open source editor. Use with CWTools extension, powerful syntax checker for Paradox games.</li>
+<li><a rel="nofollow" class="external text" href="https:code.visualstudio.com/">VS Code</a> – Powerful, hackable, free editor from Microsoft (based on open source code). Use with CWTools extension, powerful syntax checker for Paradox games.</li>
+<li>Intellij IDEA – Pwerful and smart IDE. Use with Paradox Language Support, the plugin for Paradox games modding, which is smart, convenient and with more potential. (Intellij IDEA Community version and other JetBrains IDEs are also available).</li>
+<li><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> – Clausewitz Maya Exporter to create your own 3D models.</li>
+<li><a rel="nofollow" class="external text" href="https:github.com/a1studmuffin/SpaceshipGenerator/">Spaceship Generator</a> – A Blender script to procedurally generate 3D spaceships</li>
+<li><a rel="nofollow" class="external text" href="https:www.getpaint.net/">paint.net</a> – Freeware software for digital photo editing</li>
+<li><a rel="nofollow" class="external text" href="https:bcssov.github.io/IronyModManager/">Irony Mod Manager</a> – Mod Manager with conflict solver for Paradox Games</li>
+<li><a rel="nofollow" class="external text" href="https:drive.google.com/file/d/100PWcRh-GOCoM-mIqmu0xjZFuY5Yrn2a/view">Stellaris Galaxy Generator</a> – by <a rel="nofollow" class="external text" href="https:discord.gg/WpeXm2h">BlackPhoenix134</a> (<a rel="nofollow" class="external text" href="https:imgur.com/a/xRYEjg0">preview</a>)</li>
+<li><a href="https://forum.paradoxplaza.com/forum/index.php?threads/951308" class="extiw" title="forum:951308">Static Galaxy Generator</a> – A static galaxy generator and editor for your mods. (<a rel="nofollow" class="external text" href="https:steamcommunity.com/sharedfiles/filedetails/?id=699098812">How to use</a>)</li>
+<li><a rel="nofollow" class="external text" href="https:www.sublimetext.com/">Sublime Text</a> – Powerful, moddable, hackable text editor. Install packages as your needs evolve.</li>
+<li><a rel="nofollow" class="external text" href="https:stellaris.timango.com/">Random Empire Generator</a> – by <a rel="nofollow" class="external text" href="https:www.reddit.com/r/Stellaris/comments/kyjy60/a_random_empire_generator_v28/">u/MarinusWA0</a>.</li>
+<li><a rel="nofollow" class="external text" href="https:github.com/OldEnt/stellaris-triggers-modifiers-effects-list">List of Stellaris triggers, modifiers and effects</a> – for most game versions since launch, includes compare between Stellaris patches GitHub feature.</li>
+<li><a rel="nofollow" class="external text" href="https:github.com/ross-g/io_pdx_mesh">IO PDX Mesh</a> – Blender (2.93+) &amp; Maya (2018+) plugin for "editing of mesh and animation files used in the various Clausewitz Engine games created by Paradox Development Studios"</li>
+<li><a rel="nofollow" class="external text" href="https:sourceforge.net/projects/sagethumbs/">SageThumbs</a> – Showcase thumbnails of .dds files on Windows Explorer.</li></ul>
+<h3><span class="mw-headline" id="Help_links">Help links</span></h3>
+<ul><li><a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> – The place for where you can share your creations with other players.</li>
+<li><a rel="nofollow" class="external text" href="https:discord.gg/WpeXm2h">The Stellaris Modding Den</a> – the central modding discord for Stellaris.</li>
+<li><a rel="nofollow" class="external text" href="https:reddit.com/r/StellarisMods">Stellaris Modding Subreddit</a></li>
+<li><a rel="nofollow" class="external text" href="https:docs.google.com/document/d/17knnrF_RzaVFo_s66360m7rCypSH6yMTymA8B0jpTog/edit">Paradox Graphics – A Comprehensive Guide</a> – In-depth documentation for preparing 3d models for Clausewitz engine games like Stellaris.</li></ul>
+<h2><span class="mw-headline" id="Advanced_tips">Advanced tips</span></h2>
+<ul><li>For the bigger mods using a source control management tool (Git, …), it is handy to create a symbolic link between Stellaris mod folder and the working directory of the local repository, especially if the mod also has sub-mods. Note that you'll still need to copy the .mod file (s) manually, but they rarely change. Run the following command from the parent directory of main git folder, replacing:
+<ul><li>&lt;mod_path_name&gt; by the value of <code>path</code> attribute from .mod file</li>
+<li>&lt;git_mod_folder&gt; by the name of the sub-folder that contain mod data (folders common, decisions, events, etc…)</li></ul></li></ul>
+<pre>mklink /J "%USERPROFILE%\Documents\Paradox Interactive\Stellaris\mod\&lt;mod_path_name&gt;" ".\&lt;git_mod_folder&gt;"
+</pre>
+<h3><span class="mw-headline" id="Testing_Mods">Testing Mods</span></h3>
+<p>Certain, more obscure <a href="/Console_commands.html" title="Console commands">Console commands</a> (that don't show up if you type 'help' in the console) are extremely useful in the process of testing a mod and more specific alterations.
+</p>
+<ul><li><code>observe</code> – switches you to Observer Mode. You will no longer play as any specific character – this will allow the game to run for a long period of time, uninterrupted. It also makes every invisible trait and secret religion visible.</li>
+<li><code>run</code> &lt;filename.txt&gt; – runs script in a txt file located in the in the Documents install directory. It will be executed from the player’s scope. Useful for testing tricky scripts – you can just have the script open in a different window, run it, tweak the script, save it, and run it again – it will be recompiled every time.</li>
+<li><small><s><code>reloadevents</code> – reloads and recompiles every single event (may take a while depending on your hardware). Useful if you want to tweak an entire event or chain of events without rebooting the game every time.</s> not yet implemented</small></li>
+<li><small><s><code>reloadloc</code></s><code>reload text</code></small> – reloads the entire localisation table. Useful if you spot a typo while testing your mod, or if you are trying to fit as much text in an event frame as possible.</li></ul>
+<h3><span class="mw-headline" id="Troubleshooting_mod_installation">Troubleshooting mod installation</span></h3>
+<p>Multiplayer requires same mod list and load order for all players.
+</p><p>Try reload mods button in launcher. All installed mods &gt; Reload installed mods.
+</p><p>Check if non-ASCII characters exist in the address of the mod folder.
+</p><p>Verify integrity of Stellaris installation files (for Steam right click on Stellaris &gt; Properties &gt; Local files &gt; Verify). Warning: Verification tool does not check for any additional files put into the installation folder, and those might still alter the checksum. Check <a href="/Patches.html" title="Patches">patch notes</a> and compare your unmodded game (vanilla) with reference checksum.
+</p><p>Make sure your antivirus is not blocking the launcher. It might do so silently without a warning.
+</p><p>Check if your OneDrive ran out space or is disconnected if you are using it (you might not know that you are).
+</p><p>If you have a mod both as a local and as a workshop subscription game will refuse to load it. Remove or move one, including root <code>Stellaris/mod/*.mod</code> file.
+</p>
+<dl><dd>If the local mod no longer appears in the launcher, a manual solution is to fix the overridden values (<code>dirPath</code> and <code>status</code>) in the <code>launcher-v2.sqlite</code>.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">&#91;5&#93;</a></sup></dd></dl>
+<p>Delete Paradox Launcher database files as they might be corrupted (backup first):
+</p>
+<ol><li>Do the steps on point 5 at <i><a href="#Purging_all_mods">#Purging all mods</a></i>.</li>
+<li>In the Paradox Launcher use Mods &gt; Reload installed mods.</li></ol>
+<p>If you are using Irony Mod Manager do not fire Conflict Solver unless you intend to use it. Conflict Solver creates list of conflicts and generates overwrites for each one based on your load order. So if you change mod composition of a collection or load order you have to rerun conflict solver each time (alternatively delete patch folder in /Stellaris/mod/)
+You can purge Irony settings stored in .roaming/Mario/ if you ever need to.
+</p>
+<h3><span class="mw-headline" id="Purging_all_mods">Purging all mods</span></h3>
+<p>This will reset your mod settings completely (nuclear option!):
+</p>
+<ol><li>Quit Stellaris and Stellaris (Paradox) Launcher</li>
+<li>Unsubscribe from all mods. Stellaris Workshop -&gt; Your files (under your avatar) -&gt; Subscribed items – &gt; Unsubscribe From All .</li>
+<li>Quit Steam</li>
+<li>Go to SteamLibrary\steamapps\workshop\content\281990 and delete everything.</li>
+<li>Go to the Stellaris <a href="#Mod_folder_location">settings folder</a> (one above the mod folder) and delete the following files <small> (some of these might not be present in the actual version)</small>:
+<ul><li>dlc_load.json</li>
+<li>game_data.json	<small> (only pre 2.8 launcher)</small></li>
+<li>mods_registry.json	<small> (only pre 2.8 launcher)</small></li>
+<li>launcher-v2.sqlite	<small> (since v2.8 beta launcher)</small></li>
+<li>in settings.txt everything inside <code>last_mods={ }</code></li></ul></li>
+<li>Restart Steam.</li>
+<li>Open Paradox launcher.</li>
+<li>Close Paradox launcher.</li>
+<li>Resubscribe to your mods.</li>
+<li>WAIT UNTIL ALL DOWNLOADS ARE DONE. DO NOT START PARADOX LAUNCHER UNTIL DOWNLOADS ARE COMPLETE.</li>
+<li>Start Paradox Launcher.</li>
+<li>Close Paradox launcher.</li></ol>
+<h3><span class="mw-headline" id="Mod_load_order">Mod load order</span></h3>
+<p>Ordering mods incorrectly can lead to problems in game. The following section will give general tips on load order and a general load order guide. Ordering mods correctly will reduce problems, but is not guaranteed to fix direct mod incompatibilities.
+</p>
+<dl><dt><i>General Tips</i></dt></dl>
+<ol><li>Mods at the top of the list are loaded first, mods lower down will generally overwrite if they're allowed.</li>
+<li>Stellaris loads mods depending on file naming. Load orders are mostly important in the case of submods, and ui mods, as submods tend to use the same file name as the base mod itself.</li></ol>
+<ol><li>Mods can be ordered in two ways.
+<ul><li>Irony Mod Manager (IMM): In IMM mods can be ordered in the right hand Collection Mods panel. Mods can be moved by clicking and holding the left mouse button while dragging the mod up or down the list. A mod can also be moved by editing their order number, or moved to first/last position or moved up or down by one position using the arrow icons to the left and right of the mod number. Once ordering is done click apply.</li>
+<li>Paradox Launcher: Similar to IMM you can drag a mod up or down, or renumber the mod to change its order.</li></ul></li>
+<li>Mods beginning with <b>~</b> go at the very top of the list.</li>
+<li>Mods beginning with <b>!</b> go towards the bottom.</li>
+<li>Mods that resolve conflicts (patch mods) between 2 or more mods go anywhere below the mods they patch. A section after all your normal mods is probably better for organization and visualization.</li>
+<li>Mods that are submods go below the main mod. For example, Planetary Diversity would be higher in the load order, and the sub modules (such as Planetary Diversity – Exotic Worlds) go below Planetary Diversity main mod.</li></ol>
+<dl><dt><i>General Order</i></dt></dl>
+<ul><li>Mods inside the brackets are just examples of some mods that fit these descriptions, the actual modlist is nonesense.</li>
+<li>The category of mods is highly unlikely to matter outside of this list. A shipset doesn't need to go below or above a technology mod or vice versa.</li></ul>
+<ol><li>Unofficial patches (Ariphaos Unofficial Patch)</li>
+<li>Gameplay mods (Planetary diversity, Extra ship components: next, Gigastructural engineering. Etc.)</li>
+<li>Submods and patches (Planetary Bugversity, Acquisition of technology, Playable Katzenartig Imperium. Etc.)</li>
+<li>UI mods (UI Overhaul Dynamic)</li>
+<li>UI patches (UI Overhaul Dynamic – Extended Topbar, UI Overhaul Dynamic + Ethics and Civics Classic)</li>
+<li>Universal patches (Meger of rules, universal resource patch)</li></ol>
+<dl><dt><i>Mod list example</i></dt></dl>
+<ul><li>Category will be in brackets</li>
+<li>This list shows what a normal load order could look like, rearranging any of the gameplay mods will not change the outcome.</li></ul>
+<ol><li>Ariphaos Unofficial Patch (Unofficial patch)</li>
+<li>Amazing space battles (Gameplay mod)</li>
+<li>Planetary Diversity (Gameplay mod)</li>
+<li>Ethics &amp; Civics: Bug Branch (Gameplay mod)</li>
+<li>Gigastructural Engineering (Gameplay mod)</li>
+<li>Ancient Cache of Technologies (Gameplay mod)</li>
+<li>Acquisition of Technology (Submod)</li>
+<li>ACOT + Bug Branch FE Fix (patch)</li>
+<li>Planetary Bugversity (Submod)</li>
+<li>Ui overhaul dynamic (UI mod)</li>
+<li>UI Overhaul Dynamic + Planetary Diversity (UI submod)</li>
+<li>UI Overhaul Dynamic + Bug Branch (UI submod)</li>
+<li>Meger of rules (Universal patch)</li>
+<li>Universal resource patch (Universal patch)</li></ol>
+<h2><span class="mw-headline" id="External_links">External links</span></h2>
+<ul><li><a href="https://forum.paradoxplaza.com/forum/index.php?threads/923348" class="extiw" title="forum:923348">Stellaris Dev Diary #31: Modding (Scripting Anomalies)</a></li>
+<li><a href="https://forum.paradoxplaza.com/forum/index.php?threads/924762" class="extiw" title="forum:924762">Stellaris Dev Diary #32: Modding art</a></li>
+<li><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1416409" class="extiw" title="forum:1416409">Stellaris Dev Diary #182: The Perils of Scripting and How to Avoid Them</a></li>
+<li><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1461327" class="extiw" title="forum:1461327">Stellaris Dev Diary #204: Scripting Language and Moddability Improvements</a></li>
+<li><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1508908" class="extiw" title="forum:1508908">Stellaris Dev Diary #240: Scripting Improvements in 3.3</a></li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="/Mods.html" title="Mods">Mods</a></li></ul>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https:discord.com/channels/378985949373399040/499742235949006868/1182336397517008968">MrFreake on the Stellaris Modding Den Discord</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">The game supports only the last number, but some mods use this for the second number too, because the launcher supports this.
+Note: before version 3.12 the `number` had no `v` prefixed (except of one branch in 3.11).</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">VDF is an ad-hoc file format designed by Valve to support storage of hierarchical data, which is also used by <a rel="nofollow" class="external text" href="https:developer.valvesoftware.com/wiki/SDK_Installation">Steam</a>. <a rel="nofollow" class="external text" href="https:github.com/rossengeorgiev/vdf-parser/">Open VDF parser</a>:, <a rel="nofollow" class="external text" href="https:github.com/shravan2x/Gameloop.Vdf">for .NET</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><a href="https://forum.paradoxplaza.com/forum/index.php?threads/990537" class="extiw" title="forum:990537">forum:990537</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><a href="http://en.wikipedia.org/wiki/SQLite" class="extiw" title="wikipedia:SQLite">Official SQLite site</a> – <a rel="nofollow" class="external text" href="https:sqlitebrowser.org//">DB Browser for SQLite</a></span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a class="mw-selflink selflink">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181505
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.321 seconds
+Real time usage: 0.575 seconds
+Preprocessor visited node count: 6199/1000000
+Post‐expand include size: 44955/2097152 bytes
+Template argument size: 11338/2097152 bytes
+Highest expansion depth: 11/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3487/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  369.407      1 -total
+ 37.45%  138.345     61 Template:Icon
+ 15.66%   57.847     21 Template:Iconify
+  4.29%   15.852      8 Template:Icon/s
+  3.80%   14.028      6 Template:Icon/p
+  3.68%   13.585      4 Template:Icon/a
+  3.31%   12.234      2 Template:ModdingNavbox
+  3.11%   11.490      6 Template:Icon/c
+  2.62%    9.674      1 Template:Version
+  2.56%    9.443      1 Template:SVersion
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:561-0!canonical and timestamp 20260707181504 and revision id 113844.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Collapse list - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Collapse list</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Collapse_list/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Collapse_list/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_Collapse_list/doc.html" title="Template:Collapse list/doc">Template:Collapse list/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Collapse_list/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Collapse_list/doc&amp;action=history">history</a>)</small></div>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<p>This template builds collapsible lists with titles.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Parameter
+</th>
+<th>Description
+</th>
+<th>Required
+</th></tr>
+<tr>
+<td>1 / head
+</td>
+<td>list name
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>2 / body
+</td>
+<td>list content
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>expand
+</td>
+<td>If set to any value besides 'no', the list is uncollapsed
+</td>
+<td>optional
+</td></tr>
+<tr>
+<td>inline
+</td>
+<td style="max-width:450px;">If set to 'yes', display the list as an inline block
+</td>
+<td>optional
+</td></tr>
+<tr>
+<td>style
+</td>
+<td>Sets the style properties of the lists' &lt;div&gt;.
+</td>
+<td>optional
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th width="55%">Wikitext
+</th>
+<th width="45%">Produces
+</th></tr>
+<tr>
+<td><code>{{collapse list|List|* Item}}</code>
+</td>
+<td>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px">List</span>
+<div class="mw-collapsible-content">
+<ul><li>Item</li></ul></div></div></div>
+</td></tr>
+<tr>
+<td><code>{{collapse list|inline=yes|Inline list|* Item}}</code>
+</td>
+<td>
+<div><div class="mw-collapsible mw-collapsed" style="display:inline-block;"><span style="margin-right:5px">Inline list</span>
+<div class="mw-collapsible-content">
+<ul><li>Item</li></ul></div></div></div>
+</td></tr>
+<tr>
+<td><code>{{collapse list|expand=yes|Expanded list|* Item}}</code>
+</td>
+<td>
+<div><div class="mw-collapsible" style=""><span style="margin-right:5px">Expanded list</span>
+<div class="mw-collapsible-content">
+<ul><li>Item</li></ul></div></div></div>
+</td></tr>
+<tr>
+<td><code>{{collapse list|style=background-color:lightgreen|Green list|* Item}}</code>
+</td>
+<td>
+<div><div class="mw-collapsible mw-collapsed" style="background-color:lightgreen"><span style="margin-right:5px">Green list</span>
+<div class="mw-collapsible-content">
+<ul><li>Item</li></ul></div></div></div>
+</td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182441
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.020 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 155/1000000
+Post‐expand include size: 9201/2097152 bytes
+Template argument size: 2171/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 205/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.156      1 Template:Template_doc
+100.00%   12.156      1 -total
+ 80.56%    9.793      1 Template:Template_doc_inline
+ 53.63%    6.520      1 Template:Collapse_list/doc
+ 22.10%    2.687      1 Template:Template_doc_page_transcluded
+  5.72%    0.695      4 Template:Collapse_list
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1300-0!canonical and timestamp 20260707182441 and revision id 117465.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

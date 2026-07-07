@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">System modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.4.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This guide is for adding and modifying Solar Systems to the game.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Game_Map_and_System_Creation"><span class="tocnumber">1</span> <span class="toctext">Game Map and System Creation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Star_classes"><span class="tocnumber">2</span> <span class="toctext">Star classes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Adding_new_star_classes"><span class="tocnumber">2.1</span> <span class="toctext">Adding new star classes</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Vanilla_star_classes"><span class="tocnumber">2.2</span> <span class="toctext">Vanilla star classes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Solar_system_initializers"><span class="tocnumber">3</span> <span class="toctext">Solar system initializers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Unary_Systems"><span class="tocnumber">3.1</span> <span class="toctext">Unary Systems</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Binary_and_Trinary_Systems"><span class="tocnumber">3.2</span> <span class="toctext">Binary and Trinary Systems</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#P-Type"><span class="tocnumber">3.2.1</span> <span class="toctext">P-Type</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#S-Type"><span class="tocnumber">3.2.2</span> <span class="toctext">S-Type</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Usage"><span class="tocnumber">3.3</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#General_Advice"><span class="tocnumber">3.4</span> <span class="toctext">General Advice</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Game_Map_and_System_Creation">Game Map and System Creation</span></h2>
+<p>Stellaris appears to create the game map first using the \map files to create coordinates for the stars on the galaxy map, and then use the \star_classes file to pick what star class is at each coordinate, and then finalize the system with additional contents (planets, moons, asteroid belts) from the \system initializer files and \planet_classes files.
+</p>
+<h2><span class="mw-headline" id="Star_classes">Star classes</span></h2>
+<p>Star classes can be found in <i>common/star_classes</i>. If you want to create one from scratch, create a new file and place it in that folder.
+</p><p>Note that "stars" and "star classes" are two different things: individual stars are considered the same as <a href="https://stellaris.paradoxwikis.com/Celestial_body" class="mw-redirect" title="Celestial body">planets</a> in the game code, and are found in <i>common/planet_classes</i>, while star classes refer to the classification of a solar system as a whole and will determine lighting, the system's icon in the <a href="https://stellaris.paradoxwikis.com/Galaxy_map" class="mw-redirect" title="Galaxy map">galaxy map</a>, and number of individual stars in a solar system. Information about modding individual stars can be found <a href="/Planet_modding.html" title="Planet modding">here</a>.
+</p>
+<h3><span class="mw-headline" id="Adding_new_star_classes">Adding new star classes</span></h3>
+<p>Making a new star class is easy. Here's an example of a binary system that can be found in <i>00_star_classes</i>:
+</p>
+<pre>sc_binary_1 = { # X-ray Binary Star System: Blue star around a Pulsar
+    class             = a_star
+    icon              = e_binary_star
+    planet            = {
+        key = pc_a_star
+        class = a_star
+    }
+    planet            = {
+        key = pc_pulsar
+        class = pulsar
+    }
+    spawn_odds         = 5
+    num_planets     = { min = 4 max = 10 }
+
+    pc_desert       = { spawn_odds = 0 }
+    pc_tropical     = { spawn_odds = 0 }
+    pc_arid         = { spawn_odds = 0 }
+    pc_continental  = { spawn_odds = 0 }
+    pc_ocean        = { spawn_odds = 0 }
+    pc_tundra       = { spawn_odds = 0 }
+    pc_arctic       = { spawn_odds = 0 }
+    pc_gaia         = { spawn_odds = 0 }
+    pc_alpine       = { spawn_odds = 0 }
+    pc_savannah     = { spawn_odds = 0 }
+
+    is_environmental_hazard = yes
+    modifier = { ship_shield_reduction = 1.0 }
+}
+</pre>
+<ul><li>"sc_binary_1" is the name of the star class used by the code. To assign the name the player will see, see <a href="/Localisation_modding.html" title="Localisation modding">localisation modding</a>.</li>
+<li>"class" is used to determine the system's lighting. You can use an existing one or create your own via <a href="https://stellaris.paradoxwikis.com/Gfx_modding" class="new" title="Gfx modding (page does not exist)">gfx modding</a>.</li>
+<li>"icon" is the icon used by this system type in the galaxy view. By default it'll search for one that matches the star name ("binary_1_star" in this case) in the <i>gfx/map/star_classes</i> folder, but using "icon" lets you overwrite this with whatever icon you want.</li>
+<li>While not included in the example above, you can also use "icon_scale = " to change the size of the icon on the galaxy map. 1 is default, 0.5 is half the size, etc.</li>
+<li>"planet" is the type of star used by this star class by default. If it's a unary system with just one star, you don't need to write "class" again.</li>
+<li>"spawn_odds" is exactly what it sounds like: the likelihood that this star class will spawn if it's used in a random list such as <i>rl_standard_stars</i>. If you don't plan to put it in a list, you can use any number or leave it out entirely.</li>
+<li>"num_planets" is the number of planets that can be found in these systems. The number of planets in the solar system initializer will overwrite this by default, but if a random range is used there it'll use the number from here.</li>
+<li>The planets' spawn odds are for if you want to alter the likelihood that certain planet classes will spawn in these systems. Neutron Stars, for example, have the values set to 0 by default since these systems won't be hospitable for life forms.</li>
+<li>"is_environmental_hazard" marks the system as a hazard, obviously. The "modifier" applies a buff or debuff to ships and stations in the system.</li></ul>
+<h3><span class="mw-headline" id="Vanilla_star_classes">Vanilla star classes</span></h3>
+<p>For reference, the existing star classes are the following:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Icon</th>
+<th>Class</th>
+<th>Star type</th>
+<th>Environmental effects
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AB_Star.png" class="image"><img alt="B Star.png" src="images/B_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_b</td>
+<td>Class B Star</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_Star.png" class="image"><img alt="A Star.png" src="images/A_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_a</td>
+<td>Class A Star</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AF_Star.png" class="image"><img alt="F Star.png" src="images/F_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_f</td>
+<td>Class F Star</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AG_Star.png" class="image"><img alt="G Star.png" src="images/G_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_g</td>
+<td>Class G Star</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AK_Star.png" class="image"><img alt="K Star.png" src="images/K_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_k</td>
+<td>Class K Star</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AM_Star.png" class="image"><img alt="M Star.png" src="images/M_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_m</td>
+<td>Class M Star</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AM_Red_Giant_Star.png" class="image"><img alt="M Red Giant Star.png" src="images/M_Red_Giant_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_m_giant</td>
+<td>Class M Red Giant</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AT_Star.png" class="image"><img alt="T Star.png" src="images/T_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_t</td>
+<td>Class T Brown Dwarf</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ABlack_Hole.png" class="image"><img alt="Black Hole.png" src="images/Black_Hole.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_black_hole</td>
+<td>Black Hole</td>
+<td><a href="https://stellaris.paradoxwikis.com/Ship_disengagement_chance" title="Ship disengagement chance"><img alt="Mod ship disengagement.png" src="images/Mod_ship_disengagement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Disengagement Chance Reduction<br /><a href="https://stellaris.paradoxwikis.com/Ship_speed" title="Ship speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Emergency FTL Jump Cooldown
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ANeutron_Star.png" class="image"><img alt="Neutron Star.png" src="images/Neutron_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_neutron_star</td>
+<td>Neutron Star</td>
+<td><a href="https://stellaris.paradoxwikis.com/Sublight_speed" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Sublight Speed Reduction
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APulsar.png" class="image"><img alt="Pulsar.png" src="images/Pulsar.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="256" data-file-height="256" /></a></td>
+<td>sc_pulsar</td>
+<td>Pulsar</td>
+<td><a href="https://stellaris.paradoxwikis.com/Ship_shield" title="Ship shield"><img alt="Mod ship shield hp mult.png" src="images/Mod_ship_shield_hp_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Shield Nullification
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AE_binary_star.png" class="image"><img alt="E binary star.png" src="images/E_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_1</td>
+<td>Binary Stars (A, Pulsar)</td>
+<td><a href="https://stellaris.paradoxwikis.com/Ship_shield" title="Ship shield"><img alt="Mod ship shield hp mult.png" src="images/Mod_ship_shield_hp_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Shield Nullification
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AE_binary_star.png" class="image"><img alt="E binary star.png" src="images/E_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_2</td>
+<td>Binary Stars (B, Neutron Star)</td>
+<td><a href="https://stellaris.paradoxwikis.com/Sublight_speed" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Sublight Speed Reduction
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AC_binary_star.png" class="image"><img alt="C binary star.png" src="images/C_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_3</td>
+<td>Binary Stars (M Giant, B)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AC_binary_star.png" class="image"><img alt="C binary star.png" src="images/C_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_4</td>
+<td>Binary Stars (M Giant, F)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_binary_star.png" class="image"><img alt="A binary star.png" src="images/A_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_5</td>
+<td>Binary Stars (B, B)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_binary_star.png" class="image"><img alt="D binary star.png" src="images/D_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_6</td>
+<td>Binary Stars (M, G)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_binary_star.png" class="image"><img alt="D binary star.png" src="images/D_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_7</td>
+<td>Binary Stars (K, F)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_binary_star.png" class="image"><img alt="D binary star.png" src="images/D_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_8</td>
+<td>Binary Stars (G, F)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_binary_star.png" class="image"><img alt="A binary star.png" src="images/A_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_9</td>
+<td>Binary Stars (A, F)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_binary_star.png" class="image"><img alt="A binary star.png" src="images/A_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_binary_10</td>
+<td>Binary Stars (A, T)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_trinary_star.png" class="image"><img alt="A trinary star.png" src="images/A_trinary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_trinary_1</td>
+<td>Trinary Stars (G, M, K)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_trinary_star.png" class="image"><img alt="A trinary star.png" src="images/A_trinary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_trinary_2</td>
+<td>Trinary Stars (B, A, F)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_trinary_star.png" class="image"><img alt="A trinary star.png" src="images/A_trinary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_trinary_3</td>
+<td>Trinary Stars (K, F, G)</td>
+<td>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AA_trinary_star.png" class="image"><img alt="A trinary star.png" src="images/A_trinary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
+<td>sc_trinary_4</td>
+<td>Trinary Stars (B, K, T)</td>
+<td>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Solar_system_initializers">Solar system initializers</span></h2>
+<p>Solar systems are found in <i>common/solar_system_initializers</i>. If you want to create one from scratch, create a new file and place it in that folder.
+</p><p>For additional information, see <i>example.txt</i> inside the folder.
+</p>
+<h3><span class="mw-headline" id="Unary_Systems">Unary Systems</span></h3>
+<p>A unary system consists of just one star and a handful of planets and moons. These are the most common types of systems in Stellaris, and we'll start our tutorial by making one.
+</p>
+<pre>@base_moon_distance = 10
+
+my_system_initializer = {
+    name = "My System"
+    class = "rl_standard_stars"
+
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 70
+    }
+
+    planet = {
+        class = star
+        size = { min = 25 max = 30 }
+        orbit_distance = 0
+        orbit_angle = 1
+    }
+
+    change_orbit = 10
+
+    planet = {
+        class = pc_arid
+        orbit_distance = 30
+        orbit_angle = { min = 90 max = 270 }
+
+        init_effect = {
+            prevent_anomaly = yes
+            generate_primitives_on_planet = yes
+        }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 1 }
+            class = pc_molten
+            orbit_distance = 5
+            orbit_angle = { min = 90 max = 270 }
+        }
+    }
+
+    change_orbit = 30
+
+    planet = {
+        count = { min = 1 max = 4 }
+        class = pc_asteroid
+        orbit_distance = 0
+        orbit_angle = { min = 90 max = 270 }
+    }
+
+    planet = {
+        count = { min = 3 max = 6 }
+        orbit_distance = 20
+        orbit_angle = { min = 90 max = 270 }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 1 }
+            orbit_distance = 5
+            orbit_angle = { min = 90 max = 270 }
+        }
+    }
+
+    neighbor_system = {
+        trigger = { num_guaranteed_colonies &gt;= 1 }
+        distance = { min = 10 max = @distance }	
+        initializer = "sol_neighbor_t1_first_colony"
+    }
+}
+</pre>
+<p>As before, let's go over each element one by one.
+</p>
+<pre>@base_moon_distance = 10
+
+my_system_initializer = {
+    name = "My System"
+    class = "rl_standard_stars"
+
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 70
+    }
+</pre>
+<ul><li>"@base_moon_distance" is a variable that can be set in each solar system initializer file. It's not strictly needed, but can be useful if you want to play around with moon orbit distances en masse rather than one at a time. All vanilla solar systems use 10 by default.</li>
+<li>"my_system_initializer" is, again, the name the game code uses to identify this system. No need for localisation this time; the name the player will see is right there below it (in this case, "My System").</li>
+<li>"class" is, of course, the star class. You can use a specific class such as <i>sc_b</i>, or a random list such as <i>rl_standard_stars</i>, which chooses a random one based on the spawn_odds in each star's code.</li>
+<li>"asteroid_belt" adds an asteroid belt at a certain distance from the center of the system -- <i><b>not</b></i> necessarily from the sun! We'll get to that later. The valid types can be found in <i>Stellaris/common/00_asteroid_belts</i>; usually you'll use either <i>rocky</i> or <i>icy</i>. You can also mod new ones in if desired.</li></ul>
+<p>Now for the system's sun. Note that the star is, as I mentioned above, considered a planet by the game engine.
+</p>
+<pre>    planet = {
+        class = star
+        size = { min = 25 max = 30 }
+        orbit_distance = 0
+        orbit_angle = 1
+    }
+</pre>
+<ul><li>"class", in the context of a planet refers to the planet class. Using "class = star" will make it the star class that matches the star type, so if we'd used <i>sc_b</i> above, the star would be <i>pc_b_star</i> -- a Class B Star. You can use <i>pc_b_star</i> anyway if you want, but that can cause complications with star lighting and, in a binary/trinary system, planet naming. More on that below. Anyway, just using "class = star" for the stars is recommended unless you have a good reason not to.</li>
+<li>"size" is the size of the planet. This used to refer to the number of planet tiles, but since tiles are obsolete in general and useless on stars anyway, it just makes the star appear bigger or smaller. A size range of 20-35 is recommended for stars, since smaller than that looks silly and larger can swallow up ships flying overhead.</li>
+<li>"orbit_distance" is the distance from the previous element, or if no such element exists, the system's center. For the lone star in a system, you naturally want this to be 0.</li>
+<li>"orbit_angle" is the orbital angle from the previous planet, so if the previous had an angle of 30, using "orbit_angle = 20" would give it an overall angle of 50. Again, for the central star, this doesn't matter so you can use any old number. Most vanilla stars use 1 for some reason, so that's what I did here.</li></ul>
+<p>Now that the star is done, let's move on to the first planet.
+</p>
+<pre>    change_orbit = 10
+
+    planet = {
+        class = pc_arid
+        orbit_distance = 30
+        orbit_angle = { min = 90 max = 270 }
+
+        init_effect = {
+            prevent_anomaly = yes
+            generate_primitives_on_planet = yes
+        }
+
+</pre>
+<ul><li>"change_orbit" increases the spacing between planets (in the system scope), or between a planet and its first moon (in the planet scope).</li>
+<li>"class = pc_arid", so it will be an <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="25" height="25" data-file-width="38" data-file-height="38" /></a> Arid World.</li>
+<li>"orbit_distance = 30" adds 30 units of space between the planet and the last element (in this case, "change_orbit = 10", so its total distance from the sun is 40 units).</li>
+<li>"orbit_angle = { min = 90 max = 270 )" is pretty straightforward: a random angle, within ninety degrees of the previous element.</li>
+<li>"init_effect" allows you to apply <a href="/Effects.html" title="Effects">effects</a> and <a href="https://stellaris.paradoxwikis.com/Scripted_effect" class="mw-redirect" title="Scripted effect">scripted effects</a> to the planet upon system generation. It can also be used in the system scope if you want to apply an effect to the system as a whole instead of just one planet.
+<ul><li>"prevent_anomaly" is an effect that disables <a href="/Anomaly.html" title="Anomaly">anomalies</a> from appearing on this planet.</li>
+<li>"generate_primitives_on_planet" is a scripted effect that creates a <a href="/Pre-FTL_species.html" title="Pre-FTL species">pre-FTL species</a> on this planet.</li></ul></li></ul>
+<p>Now for a moon.
+</p>
+<pre>        change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 1 }
+            class = pc_molten
+            orbit_distance = 5
+            orbit_angle = { min = 90 max = 270 }
+        }
+    }
+</pre>
+<ul><li>"change_orbit = @base_moon_distance" here adds 10 units of distance between the planet and its moon as indicated in the @ variable.</li>
+<li>"count = { min = 0 max = 1 }" to randomize the number of moons between 0 and 1. You can go as high or as low as you want with this, though usually in vanilla you won't find more than 1 moon unless the planet is a gas giant.</li>
+<li>"class = pc_molten" (for a <a href="https://stellaris.paradoxwikis.com/File%3APlanet_molten.png" class="image"><img alt="Planet molten.png" src="images/Planet_molten.png" decoding="async" loading="lazy" width="25" height="25" data-file-width="38" data-file-height="38" /></a> Molten World).</li>
+<li>"orbit_distance = 5" (for a total of 15, including the "change_orbit" above).</li>
+<li>"orbit_angle = { min = 90 max = 270 }", for the same randomized orbit angles as used in the planet itself.</li></ul>
+<pre>    change_orbit = 30
+
+    planet = {
+        count = { min = 1 max = 4 }
+        class = pc_asteroid
+        orbit_distance = 0
+        orbit_angle = { min = 90 max = 270 }
+    }
+</pre>
+<p>Time to fill out the asteroid belt. We use "@change_orbit" again, this time keeping a close eye on the number used so that the total number of space used matches the 70 defined in the asteroid belt at the top of the file. Now we add the asteroids, making sure that "orbit_distance = 0" for all of them. We want them inside the asteroid belt, after all! "orbit_angle" is a little tricky here: since the asteroids are all in the same orbit, it's possible that they might clip together. You can get away from that by directly choosing their specific orbit angles.
+</p><p>If your asteroid belt is icy rather than rocky, use "pc_ice_asteroid" instead of "pc_asteroid". If it's crystalline, use "pc_crystal_asteroid" or "pc_rare_crystal_asteroid".
+</p>
+<pre>    planet = {
+        count = { min = 3 max = 6 }
+        orbit_distance = 20
+        orbit_angle = { min = 90 max = 270 }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 1 }
+            orbit_distance = 5
+            orbit_angle = { min = 90 max = 270 }
+        }
+    }
+</pre>
+<p>More planets! We'll leave "class = " out for these ones, allowing them to spawn as whatever the game engine wants them to be (based on the criteria spelled out in <i>common/star_classes</i>). The number of planets is also randomized between 3 and 6, each of which has 0 to 1 moons.
+</p>
+<pre>    neighbor_system = {
+        trigger = {
+            num_guaranteed_colonies &gt;= 1
+        }
+        distance = { min = 10 max = @distance }	
+        initializer = "sol_neighbor_t1_first_colony"
+    }
+}
+</pre>
+<ul><li>"neighbor_system" tells the game to spawn another, specific system within a certain distance of this system, and under what criteria. Pretty self-explanatory.</li></ul>
+<h3><span class="mw-headline" id="Binary_and_Trinary_Systems">Binary and Trinary Systems</span></h3>
+<p>Some star systems have two or three suns, respectively. Such systems can be pretty complex in real life (just ask <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Mintaka">Mintaka</a>!) but generally there are two types of binary/trinary systems, classified as "P-Type" and "S-Type".
+</p>
+<h4><span class="mw-headline" id="P-Type">P-Type</span></h4>
+<p>P-Type (or "circumbinary") systems have planets that orbit the barycenter of both (or all three) stars simultaneously. Sirius is an example of this kind of system, as is <a rel="nofollow" class="external text" href="https://starwars.fandom.com/wiki/Tatooine">Tatooine</a> in the Star Wars universe.
+</p><p>P-Types are the easiest to make in Stellaris. Instead of a single star with "orbit_distance = 0", do the following:
+</p>
+<pre>    planet = {
+        class = star
+        size = { min = 30 max = 35 }
+        orbit_distance = 15
+        orbit_angle = { min = 90 max = 270 }
+    }
+    planet = {
+        class = star
+        size = { min = 25 max = 30 }
+        orbit_distance = 10
+        orbit_angle = 180
+    }
+</pre>
+<p>Then just add your planets as normal, change the star class to <i>rl_binary_stars</i> or <i>rl_trinary_stars</i> (or a specific class of either), and you're good to go!
+</p>
+<ul><li>Using "class = star" for both/all three stars will assign their class in accordance with the type of binary/trinary system: with "sc_binary_1", for instance, the first star will be A-class, and the second will be a Pulsar.</li>
+<li>If it's a trinary instead of a binary:
+<ul><li>Add a third star in the same manner.</li>
+<li>Change the second star's orbit angle to 145.</li>
+<li>Give the third star an orbit angle of 70, an orbit distance of 0, and a maximum size of 25.</li></ul></li>
+<li>The orbit distances, orbit angles, and star sizes are entirely up to you; the values given above just look the nicest in my opinion. Feel free to experiment!</li></ul>
+<h4><span class="mw-headline" id="S-Type">S-Type</span></h4>
+<p>In S-Type systems, each star has its own system of planets. Think of them as two or three unary systems that are close enough together that you can travel between them without needing a <a href="https://stellaris.paradoxwikis.com/FTL" class="mw-redirect" title="FTL">hyperdrive</a>. 40 Eridani is an example of such a system, as is <a rel="nofollow" class="external text" href="https://memory-alpha.fandom.com/wiki/Vulcan_(planet)">Vulcan</a> in the Star Trek universe.
+</p><p>To recap, a unary system with one sun has basically this structure:
+</p>
+<pre>    planet = {
+        class = star
+        size = { min = 25 max = 30 }
+        orbit_distance = 0
+        orbit_angle = 1
+    }
+
+    planet = {
+        count = { min = 3 max = 6 }
+        orbit_distance = 20
+        orbit_angle = { min = 90 max = 270 }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 1 }
+            orbit_distance = 5
+            orbit_angle = { min = 90 max = 270 }
+        }
+    }
+</pre>
+<p>The structure of an S-type star and its planets looks more like this:
+</p>
+<pre>    planet = {
+        class = star
+        size = { min = 25 max = 30 }
+        orbit_distance = 0
+        orbit_angle = 1
+        satellite_naming_policy = upper_case_roman_numerals
+
+        planet = {
+            count = { min = 3 max = 6 }
+            orbit_distance = 20
+            orbit_angle = { min = 90 max = 270 }
+            satellite_naming_policy = lower_case_latin_letters
+
+            change_orbit = @base_moon_distance
+
+            moon = {
+                count = { min = 0 max = 1 }
+                orbit_distance = 5
+                orbit_angle = { min = 90 max = 270 }
+            }
+        }
+    }
+</pre>
+<p>See the differences?
+</p>
+<ul><li>In a unary system, the planets are all defined in the system scope. In an S-type binary or trinary system, the planets are defined <i><b>in their specific star's scope</b></i>. This ensures that they will have the correct orbit lines and names.</li>
+<li>"satellite_naming_policy" indicates how this star's planets (or this planet's moons) will be named. A star should use "upper_case_roman_numerals" for its planets; planets should use "lower_case_latin_letters" for their moons.</li></ul>
+<p>A full S-type trinary system would look like this:
+</p>
+<pre>    planet = {
+        class = star
+        size = { min = 30 max = 35 }
+        orbit_distance = 0
+        orbit_angle = 1
+        satellite_naming_policy = upper_case_roman_numerals
+
+        planet = {
+            count = { min = 3 max = 6 }
+            orbit_distance = 20
+            orbit_angle = { min = 90 max = 270 }
+            satellite_naming_policy = lower_case_latin_letters
+
+            change_orbit = @base_moon_distance
+
+            moon = {
+                count = { min = 0 max = 1 }
+                orbit_distance = 5
+                orbit_angle = { min = 90 max = 270 }
+            }
+        }
+    }
+
+    planet = {
+        class = star
+        size = { min = 25 max = 30 }
+        orbit_distance = 230
+        orbit_angle = { min = 90 max = 270 }
+        satellite_naming_policy = upper_case_roman_numerals
+
+        planet = {
+            count = { min = 3 max = 5 }
+            orbit_distance = 20
+            orbit_angle = { min = 90 max = 270 }
+            satellite_naming_policy = lower_case_latin_letters
+
+            change_orbit = @base_moon_distance
+
+            moon = {
+                count = { min = 0 max = 1 }
+                orbit_distance = 5
+                orbit_angle = { min = 90 max = 270 }
+            }
+        }
+    }
+
+    planet = {
+        class = star
+        size = { min = 20 max = 25 }
+        orbit_distance = 0
+        orbit_angle = { min = 90 max = 270 }
+        satellite_naming_policy = upper_case_roman_numerals
+
+        planet = {
+            count = { min = 2 max = 4 }
+            orbit_distance = 20
+            orbit_angle = { min = 90 max = 270 }
+            satellite_naming_policy = lower_case_latin_letters
+
+            change_orbit = @base_moon_distance
+
+            moon = {
+                count = { min = 0 max = 1 }
+                orbit_distance = 5
+                orbit_angle = { min = 90 max = 270 }
+            }
+        }
+    }
+</pre>
+<ul><li>The second star, Star B, orbits 230 units away from the first, Star A. This is because we don't want the two systems to overlap. Star A has up to six planets, each orbiting at a distance of 20, which gives us a maximum system width of 120. Star B has up to five, giving it a maximum width of 100. 120 + 100 = 220, so we use 230 to give them a little extra space.</li>
+<li>The third star, Star C, orbits at the same distance from A as B but at a different angle. This isn't a hard requirement, you can space it out further if you want, but all the vanilla systems do it that way and it just looks nicer in my opinion. We don't want systems to be <i>too</i> big, or it'll take forever to cross them at <a href="/Core_components.html#Sublight_thrusters" title="Core components">sublight</a> speeds.</li></ul>
+<h3><span class="mw-headline" id="Usage">Usage</span></h3>
+<p>One thing I haven't gone over is usage -- how the game knows which system to generate. There are a few ways to do this, applied in the system scope.
+</p>
+<ul><li>"usage = misc_system_init" tells the game to randomly generate this system somewhere in the galaxy, based on the value entered for "usage_odds". You can also use modifiers for these if you want the system to spawn (or not) in a certain area of the galaxy. There's also "max_instances = " to ensure that you don't get more than X instances of these systems. For example:</li></ul>
+<pre>usage = misc_system_init
+usage_odds = {
+    base = 2000000
+    modifier = {
+        factor = 0
+        is_bottleneck_system = yes
+    }
+}
+max_instances = 1
+</pre>
+<ul><li>"usage = empire_init" tells the game that this system is an empire homeworld, which either the player or the AI can end up with if they choose "Random" in the empire creation screen. If you use this, make sure the system has a planet with the following:</li></ul>
+<pre>planet = {
+    home_planet = yes
+    init_effect = {
+        generate_empire_home_planet = yes			
+        prevent_anomaly = yes
+    }
+}
+</pre>
+<ul><li>"usage = custom_empire" is mostly the same as above, except it tells the game that this system is a <i>prescripted</i> empire homeworld which can be chosen in the empire creation screen, like Sol and Deneb. Make sure to give the system a name and description via <a href="/Localisation_modding.html" title="Localisation modding">localisation</a>.</li></ul>
+<ul><li>If no usage value is used, or if "usage_odds = 0", the system will never spawn in the galaxy unless specifically called to by an <a href="https://stellaris.paradoxwikis.com/Event" class="mw-redirect" title="Event">event</a> or another external means.</li></ul>
+<h3><span class="mw-headline" id="General_Advice">General Advice</span></h3>
+<ul><li>Remember when I said that using "class = pc_b_star" is just as good as "class = star" most of the time? That's true in unary systems, but it can lead to problems with planet and star names in binary or trinary systems. If you want to hard-code a specific star class regardless of the system class, use "class = star" and then add "init_effect = { change_pc = pc_b_star }" underneath.</li>
+<li>The same as above goes for giving planets specific names. If you name the third planet in the system "Joe", the fourth planet will use "StarName III" in its place. You can get around this by using "init_effect = { set_name = "Joe" }" instead.</li>
+<li>All planets, ships, etc. in a system will always be lit from the system's center regardless of the location of the star(s). The devs are working on a fix for this but until then we just have to live with it.</li>
+<li>Asteroids and Ringworld sections don't have visible orbital lines by default, but if they're placed in the star's scope (such as in an S-type binary system) they will have lines, which looks kind of messy. Make sure you place them in the system scope whenever possible.</li>
+<li>And speaking of Ringworlds, their individual segments always face the center of the system regardless of which star they orbit.</li>
+<li>Please note that "orbit_distance" does <i><b>not</b></i> default to 0! If you want it to orbit at the same distance as the previous planet or change_orbit, be sure to include "orbit_distance = 0"! Otherwise the orbit distance will be randomized, the range of which is not yet known.</li></ul>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182310
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.063 seconds
+Real time usage: 0.071 seconds
+Preprocessor visited node count: 1887/1000000
+Post‐expand include size: 20813/2097152 bytes
+Template argument size: 8524/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   18.150      1 -total
+ 47.60%    8.639      6 Template:Icon
+ 34.33%    6.230      5 Template:Icon/s
+ 25.88%    4.697      1 Template:ModdingNavbox
+ 12.34%    2.239      1 Template:Version
+ 11.16%    2.026      6 Template:Red
+ 10.76%    1.954      1 Template:Navbox
+  8.20%    1.489      1 Template:Icon/d
+  6.37%    1.157      6 Template:Symbolfirst
+  4.90%    0.890      1 Template:Infobox
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:6527-0!canonical and timestamp 20260707182310 and revision id 75166.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subspace Triangulation - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Subspace Triangulation</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 4.3.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div><div class="stellaris-outliner" style="float:right; clear:right; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Event chains</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Events.html" title="Events">Events</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;">Empire event chains</div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Contact_Report.html" title="Contact Report">Contact Report</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Habitable_Worlds_Survey.html" title="Habitable Worlds Survey">Habitable Worlds Survey</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Comet_Sighted.html" title="Comet Sighted">Comet Sighted</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Fleet_Maneuvers.html" title="Fleet Maneuvers">Fleet Maneuvers</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Fountain_of_Youth.html" title="Fountain of Youth">Fountain of Youth</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Genetic_Crossroads.html" title="Genetic Crossroads">Genetic Crossroads</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Horizon_Signal.html" title="Horizon Signal">Horizon Signal</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Mass_Extinction_Through_the_Ages.html" title="Mass Extinction Through the Ages">Mass Extinction Through the Ages</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Radical_Cult.html" title="Radical Cult">Radical Cult</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Sublight_Exploration_Probes.html" title="Sublight Exploration Probes">Sublight Exploration Probes</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Wanderlust__Rogue_Scientist.html" title="Wanderlust: Rogue Scientist">Wanderlust: Rogue Scientist</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/The_Hunt_for_the_Hyacinth.html" title="The Hunt for the Hyacinth">The Hunt for the Hyacinth</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/The_Bickering_Commanders.html" title="The Bickering Commanders">The Bickering Commanders</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/On_the_Shoulders_of_Giants.html" title="On the Shoulders of Giants">On the Shoulders of Giants</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/First_Contact_(DLC).html" title="First Contact"><img alt="First Contact" src="images/First_Contact.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Homesick.html" title="Homesick">Homesick</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/First_Contact_(DLC).html" title="First Contact"><img alt="First Contact" src="images/First_Contact.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/The_Cost_of_Freedom.html" title="The Cost of Freedom">The Cost of Freedom</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/First_Contact_(DLC).html" title="First Contact"><img alt="First Contact" src="images/First_Contact.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/The_Fear_of_the_Dark.html" title="The Fear of the Dark">The Fear of the Dark</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/First_Contact_(DLC).html" title="First Contact"><img alt="First Contact" src="images/First_Contact.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/The_Guest.html" title="The Guest">The Guest</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Cyber_Security_Breach.html" title="Cyber Security Breach">Cyber Security Breach</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Digital_Refactoring.html" title="Digital Refactoring">Digital Refactoring</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Future_Shock.html" title="Future Shock">Future Shock</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Cosmic_Storms_(DLC).html" title="Cosmic Storms (DLC)"><img alt="Cosmic Storms.png" src="images/Cosmic_Storms.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Storm_Frenzy.html" title="Storm Frenzy">Storm Frenzy</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Georadiation_Terraforming.html" title="Georadiation Terraforming">Georadiation Terraforming</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="https://stellaris.paradoxwikis.com/Infernals" title="Infernals"><img alt="Infernals.png" src="images/Infernals.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Interstellar_Refugia.html" title="Interstellar Refugia">Interstellar Refugia</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="https://stellaris.paradoxwikis.com/Infernals" title="Infernals"><img alt="Infernals.png" src="images/Infernals.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a class="mw-selflink selflink">Subspace Triangulation</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Nomads.html" title="Nomads"><img alt="Nomads.png" src="images/Nomads.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Sacred_Sites.html" title="Sacred Sites">Sacred Sites</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Nomads.html" title="Nomads"><img alt="Nomads.png" src="images/Nomads.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Clues_of_the_Chrysanthemum.html" title="Clues of the Chrysanthemum">Clues of the Chrysanthemum</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;">Anomaly event chains</div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Drifting_Battlefield.html" title="Drifting Battlefield">Drifting Battlefield</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Gas_Giant_Signal.html" title="Gas Giant Signal">Gas Giant Signal</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Impossible_Organism.html" title="Impossible Organism">Impossible Organism</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Limbo.html" title="Limbo">Limbo</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Orbital_Speed_Demon.html" title="Orbital Speed Demon">Orbital Speed Demon</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Rapid_Desertification.html" title="Rapid Desertification">Rapid Desertification</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Shrines_to_the_Old_Gods.html" title="Shrines to the Old Gods">Shrines to the Old Gods</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/The_Ransomeers.html" title="The Ransomeers">The Ransomeers</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Distant_Stars.html" title="Distant Stars"><img alt="Distant Stars.png" src="images/Distant_Stars.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/42_Years_and_3_Days.html" title="42 Years and 3 Days">42 Years and 3 Days</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Distant_Stars.html" title="Distant Stars"><img alt="Distant Stars.png" src="images/Distant_Stars.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Lost_Amoeba.html" title="Lost Amoeba">Lost Amoeba</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;">Colony event chains</div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Abandoned_Terraforming_Equipment.html" title="Abandoned Terraforming Equipment">Abandoned Terraforming Equipment</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Ancient_Drones.html" title="Ancient Drones">Ancient Drones</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Dancing_Plague.html" title="Dancing Plague">Dancing Plague</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Feral_Overload.html" title="Feral Overload">Feral Overload</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Glacial_Crisis.html" title="Glacial Crisis">Glacial Crisis</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Hidden_Vault.html" title="Hidden Vault">Hidden Vault</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Impossible_Corrie.html" title="Impossible Corrie">Impossible Corrie</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Junkyard_Orbit.html" title="Junkyard Orbit">Junkyard Orbit</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Metallic_Puddles.html" title="Metallic Puddles">Metallic Puddles</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Mharin_Kharin.html" title="Mharin Kharin">Mharin Kharin</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Migrating_Forests.html" title="Migrating Forests">Migrating Forests</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Mushroom_Picking.html" title="Mushroom Picking">Mushroom Picking</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Myrmeku_Activity.html" title="Myrmeku Activity">Myrmeku Activity</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Nemma_World.html" title="Nemma World">Nemma World</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Rise_of_the_Manifesti.html" title="Rise of the Manifesti">Rise of the Manifesti</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Stasis_Prison.html" title="Stasis Prison">Stasis Prison</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Strange_Footprints.html" title="Strange Footprints">Strange Footprints</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Stratospheric_Vents.html" title="Stratospheric Vents">Stratospheric Vents</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Subterranean_Civilization.html" title="Subterranean Civilization">Subterranean Civilization</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/The_Doorway.html" title="The Doorway">The Doorway</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Underground_Vault.html" title="Underground Vault">Underground Vault</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Unexpected_Mineral_Seams.html" title="Unexpected Mineral Seams">Unexpected Mineral Seams</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="https://stellaris.paradoxwikis.com/Infernals" title="Infernals"><img alt="Infernals.png" src="images/Infernals.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Imminent_Eruption.html" title="Imminent Eruption">Imminent Eruption</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Nomads.html" title="Nomads"><img alt="Nomads.png" src="images/Nomads.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/An_Old_Container.html" title="An Old Container">An Old Container</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-heading" style="font-weight: bold; border-top: 2px solid #325448;">Primitive civilization event chains</div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Anti-Alien_Task_Force.html" title="Anti-Alien Task Force">Anti-Alien Task Force</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Missing_Scientist.html" title="Missing Scientist">Missing Scientist</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Rogue_Agent.html" title="Rogue Agent">Rogue Agent</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/Shuttle_Crash.html" title="Shuttle Crash">Shuttle Crash</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/First_Contact_(DLC).html" title="First Contact"><img alt="First Contact" src="images/First_Contact.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Is_There_Life_In_There.html" title="Is There Life In There">Is There Life In There</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="/First_Contact_(DLC).html" title="First Contact"><img alt="First Contact" src="images/First_Contact.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="/Propulsion_Proponent_Proclamation.html" title="Propulsion Proponent Proclamation">Propulsion Proponent Proclamation</a></div></div>
+</div>
+</div>
+<table class="metadata plainlinks ambox ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> <div style="margin-right: 4px;">
+  <a href="https://stellaris.paradoxwikis.com/Infernals" title="Infernals"><img alt="Infernals.png" src="images/Infernals.png" decoding="async" loading="lazy" width="42" height="42" data-file-width="45" data-file-height="45" /></a></div></td>
+<td class="mbox-text" style="">Available only with the <a href="https://stellaris.paradoxwikis.com/Infernals" class="mw-redirect" title="Infernals">Infernals</a> DLC enabled.</td>
+</tr>
+</tbody></table>
+<p>Subspace Triangulation is an event chain that will happen to every empire with the <a href="https://stellaris.paradoxwikis.com/Origins#Red_Giant" title="Red Giant"><img alt="Red Giant" src="images/Origin_red_giant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Red Giant origin. The event chain can start as early as 4 months if the approach of the Red Giant Expansion situation is Reassure the Public or as late as 20 months if the approach is Find the Cause. Finishing the event chain replaces the approaches of the Red Giant Expansion situation.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1"><a href="#Stellar_Tunneling"><span class="tocnumber">1</span> <span class="toctext">Stellar Tunneling</span></a></li>
+<li class="toclevel-1"><a href="#Subspace_Scarring"><span class="tocnumber">2</span> <span class="toctext">Subspace Scarring</span></a></li>
+<li class="toclevel-1"><a href="#Alien_Scrap_Metal"><span class="tocnumber">3</span> <span class="toctext">Alien Scrap Metal</span></a></li>
+<li class="toclevel-1"><a href="#Triangulation_Complete"><span class="tocnumber">4</span> <span class="toctext">Triangulation Complete</span></a></li>
+<li class="toclevel-1"><a href="#A_Mysterious_Station"><span class="tocnumber">5</span> <span class="toctext">A Mysterious Station</span></a></li>
+<li class="toclevel-1"><a href="#Alien_Negotiations"><span class="tocnumber">6</span> <span class="toctext">Alien Negotiations</span></a></li>
+<li class="toclevel-1"><a href="#Boarding_Party"><span class="tocnumber">7</span> <span class="toctext">Boarding Party</span></a></li>
+<li class="toclevel-1"><a href="#Aliens_Terminated"><span class="tocnumber">8</span> <span class="toctext">Aliens Terminated</span></a></li>
+<li class="toclevel-1"><a href="#And_End_to_the_Treat"><span class="tocnumber">9</span> <span class="toctext">And End to the Treat</span></a></li>
+<li class="toclevel-1"><a href="#Subspace_Mining_Operation"><span class="tocnumber">10</span> <span class="toctext">Subspace Mining Operation</span></a></li>
+<li class="toclevel-1"><a href="#Prospect_of_Stability"><span class="tocnumber">11</span> <span class="toctext">Prospect of Stability</span></a></li>
+</ul>
+</div>
+
+<div align="center">
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Stellar_Tunneling">Stellar Tunneling</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_inf_subspace_interference.png" class="image"><img alt="Evt inf subspace interference.png" src="images/Evt_inf_subspace_interference.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">The truth about [capital system name] is stranger than we imagined. Ongoing investigations have revealed a twinned pair of subspace tunnels deep within our star.<br /><br />One of these channels hydrogen-rich material directly into the outer shell, accelerating fusion and increasing helium production. This should drive core compression, but the second tunnel actively siphons energy, counteracting the process. The result is the expansion of the star.<br /><br />Initial telemetry from both subspace tunnels suggests they connect to multiple endpoints scattered across the galaxy. Our survival depends on investigating these as soon as possible.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Origins#Red_Giant" title="Red Giant"><img alt="Red Giant" src="images/Origin_red_giant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Red Giant origin</li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 12 months
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>We'll need to investigate three of these locations.</b></div></div>
+<ul><li>Approaches in the Red Giant Expansion situation are replaced with Suppress Unrest and Disrupt Subspace Tunnels</li>
+<li>Creates 8 special projects on gas giants 2-8 hyperlanes away from the empire capital and tracks them in the situation log</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Subspace_Scarring">Subspace Scarring</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_inf_science_ship.png" class="image"><img alt="Evt inf science ship.png" src="images/Evt_inf_science_ship.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Astrometric scans around [special project gas giant] revealed unexplained subspace scarring. While there is currently no exit point at this location, a past tunnel may have opened in orbit around this gas giant. The data has provided physics insights that could be applied in other areas.<br /><br />In the meantime, we will have to look elsewhere to determine the source of the subspace tunnels at work within our star.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Stellar Tunneling</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Completing the first special project
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Keep looking.</b></div></div>
+<ul><li>Physics Research Gained: <a href="/Physics_research.html" title="Physics research"><img alt="Physics research.png" src="images/Physics_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> 350-100000</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Alien_Scrap_Metal">Alien Scrap Metal</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_astral_rift_ancient_battlegrounds.png" class="image"><img alt="Evt astral rift ancient battlegrounds.png" src="images/Evt_astral_rift_ancient_battlegrounds.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">The scans around [special project gas giant] indicate subspace scarring. We have also identified pockets of ancient scrap metal near the planet. These are orbitally locked into position, and may be related to the scarring.<br /><br />Ongoing scans of these subspace fluctuations should help us to optimize the solar arrays around our home star.<br /><br />While this data has been helpful, we need at least one more survey location to lock down the present source of our problems.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Subspace Scarring</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Completing the second special project
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Understood.</b></div></div>
+<ul><li>Capital star's <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Energy deposit is increased by <span class="effect-green" style="font-weight:bold;">+5</span></li>
+<li>Alloys Gained: <a href="https://stellaris.paradoxwikis.com/Alloys" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100-1000</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="/Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Auction off the scrap metal.</b></div></div>
+<ul><li>Capital star's <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Energy deposit is increased by <span class="effect-green" style="font-weight:bold;">+5</span></li>
+<li>Energy Gained: <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100-1000</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Triangulation_Complete">Triangulation Complete</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_black_hole.png" class="image"><img alt="Evt black hole.png" src="images/Evt_black_hole.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">At last, a real breakthrough.<br /><br />Further scarring around [special project gas giant] allowed us to triangulate the origin of our star's disturbance to a previously undetected system with hostile signatures.<br /><br />This investigation may eventually help us to counteract whatever is affecting our star.<br /><br />Once we advance into the <span class="effect-yellow" style="font-weight:bold;">Lusus</span> system, we may be able to change the fate of [capital system name], and of our civilization.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Alien Scrap Metal</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Completing the third special project
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Approach with caution.</b></div></div>
+<ul><li>Reveals a system with an unarmed station guarded by 4 Ancient Mining Drones and 1 Ancient Combat Drone next to the capital system</li>
+<li>Physics Research Gained: <a href="/Physics_research.html" title="Physics research"><img alt="Physics research.png" src="images/Physics_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> 350-100000</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Prepare a show of force.</b></div></div>
+<ul><li>Reveals a system with an unarmed station guarded by 4 Ancient Mining Drones and 1 Ancient Combat Drone next to the capital system</li>
+<li><span class="effect-yellow" style="font-weight:bold;">Show of Force</span> modifier added for 3 months, giving the following effects: <a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Ship Fire Rate</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="https://stellaris.paradoxwikis.com/Spiritualist" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="https://stellaris.paradoxwikis.com/Fanatic_Spiritualist" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span> Perform a blessing before approaching.</b></div></div>
+<ul><li>Reveals a system with an unarmed station guarded by 4 Ancient Mining Drones and 1 Ancient Combat Drone next to the capital system</li>
+<li>Unity Gained: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 150-100000</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="A_Mysterious_Station">A Mysterious Station</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_unknown_ships.png" class="image"><img alt="Evt unknown ships.png" src="images/Evt_unknown_ships.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Upon entering the system, our vessels encountered limited resistance from a group of automated drones. These were swiftly neutralized, allowing for a closer examination of the alien station.<br /><br />The structure remains operational, though its hull bears the marks of extensive patchwork repairs. Attempting to access one of its docking bays, we made contact with a previously unknown alien species. Though linguistic barriers remain, we have confirmed that this installation is the origin of the tunnels affecting [capital system name].<br /><br />Efforts are now underway to establish communications. A diplomatic resolution may be possible. Failing that, we may be forced to consider more direct methods, boarding the facility or destroying it outright. However, without a thorough understanding of its purpose, such actions may carry significant risk to our star.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Triangulation Complete</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Destroying the fleet guarding the system
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Translate their language.</b></div></div>
+<ul><li>Issue Special Project: Boarding the Station</li>
+<li>Issue Special Project: Emergency Xenolinguistics</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Board the station by force.</b></div></div>
+<ul><li>Issue Special Project: Boarding the Station</li>
+<li>Issue Special Project: Emergency Xenolinguistics</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Destroy the station.</b></div></div>
+<ul><li>The station becomes hostile</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<table class="mildtable">
+<tbody><tr>
+<td>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Alien_Negotiations">Alien Negotiations</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_astral_rift_desert_ruins_third_chamber.png" class="image"><img alt="Evt astral rift desert ruins third chamber.png" src="images/Evt_astral_rift_desert_ruins_third_chamber.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">After a lengthy and difficult process, we have a rudimentary translator that can communicate with station inhabitants.<br /><br />The station has been operating for generations, moving from gas giant to gas giant, using the subspace siphon to extract energy from distant stars to power their life support and powerful jump drive.<br /><br />The aliens do not fully understand the systems they are operating and did not realize that their siphoning targeted stars and eventually destroyed them.<br /><br />Despite their confusion, they seem eager to leave the station. They have promised to teach us what they know in exchange for a safe place to live and raise their young.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>A Mysterious Station</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Finishing the <i>Emergency Xenolinguistics</i> special project
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Provide them with sanctuary.</b></div></div>
+<ul><li>Empire capital gains 400 <a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;Pops from a random species</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Give them a ship to find their own path.</b></div></div>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Alloys" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−200</span></li>
+<li>Engineering Research Gained: <a href="/Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> 500-1000000</li>
+<li>Unity Gained: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 250-1000000</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Enslave them.</b></div></div>
+<ul><li>Empire capital gains 400 <a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;Pops from a random species with Slaves citizenship</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Remotely vent the station.</b></div></div>
+<ul><li>If empire is not <a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness the capital gains the <span class="effect-yellow" style="font-weight:bold;">Purged Lusuri</span> modifier for 1 year, giving the following effects: <a href="https://stellaris.paradoxwikis.com/Authoritarian" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> <span class="effect-yellow" style="font-weight:bold;">+30%</span> Authoritarian Ethics Attraction</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="https://stellaris.paradoxwikis.com/Pacifist" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="https://stellaris.paradoxwikis.com/Fanatic_Pacifist" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span> Allow them to make their own judgment of us.</b></div></div>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</td>
+<td>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Boarding_Party">Boarding Party</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_salute.png" class="image"><img alt="Evt salute.png" src="images/Evt_salute.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Our forces have seized control of the station. The inhabitants put up some resistance, but were poorly armed and seemingly untrained in warfare. Upon closer inspection, many appeared to be juveniles. Those who were not killed have been contained.<br /><br />Analysis has begun on how we can control the subspace tunnels, which appear to be some sort of energy-mining siphon. With time, we can address the situation in our home system.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>A Mysterious Station</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Finishing the <i>Boarding the Station</i> special project
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Demolish it.</b></div></div>
+<ul><li>Engineering Research Gained: <a href="/Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> 350-100000</li>
+<li>The Red Giant Expansion situation no longer progresses</li>
+<li>The Red Giant Expansion situation gains 200 Progress if it has less than 0-1290 progress</li>
+<li>The Red Giant Expansion situation gains 100 Progress if it has less than 1290-1390 progress</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Interrogate the survivors.</b></div></div>
+<ul><li>Brings the same options as the Alien Negotiations event</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Enslave them.</b></div></div>
+<ul><li>Empire capital gains 400 <a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;Pops from a random species with Slaves citizenship</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> The survivors are a risk. Eliminate them.</b></div></div>
+<ul><li>If empire is not <a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness the capital gains the <span class="effect-yellow" style="font-weight:bold;">Purged Lusuri</span> modifier for 1 year, giving the following effects: <a href="https://stellaris.paradoxwikis.com/Authoritarian" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> <span class="effect-yellow" style="font-weight:bold;">+30%</span> Authoritarian Ethics Attraction</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="https://stellaris.paradoxwikis.com/Egalitarian" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="https://stellaris.paradoxwikis.com/Fanatic_Egalitarian" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span></span><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="https://stellaris.paradoxwikis.com/Pacifist" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="https://stellaris.paradoxwikis.com/Fanatic_Pacifist" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="https://stellaris.paradoxwikis.com/Xenophile" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="https://stellaris.paradoxwikis.com/Fanatic_Xenophile" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span><a href="/Hive_mind_civics.html#Empath" title="Empath"><img alt="Empath" src="images/Civic_empath.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="/Hive_mind_civics.html#Familiar_Face" title="Familiar Face"><img alt="Familiar Face" src="images/Civic_hive_familiar_face.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="/Machine_intelligence_civics.html#Rogue_Servitor" title="Rogue Servitor"><img alt="Rogue Servitor" src="images/Civic_machine_servitor.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="/Machine_intelligence_civics.html#Exploration_Protocols" title="Exploration Protocols"><img alt="Exploration Protocols" src="images/Civic_machine_exploration_protocol.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="https://stellaris.paradoxwikis.com/Fruitful_Partnership" title="Fruitful Partnership"><img alt="Origins gardeners.png" src="images/Origins_gardeners.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> Speak to the survivors.</b></div></div>
+<ul><li>Brings the same options as the Alien Negotiations event</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="/Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="/Hive_mind_civics.html#Devouring_Swarm" title="Devouring Swarm"><img alt="Devouring Swarm" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="/Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="/Civics.html#Scorched_World_Heralds" title="Scorched World Heralds"><img alt="Scorched World Heralds" src="images/Civic_scorched_earth.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="/Hive_mind_civics.html#Pyromanic_Instinct" title="Pyromanic Instinct"><img alt="Pyromanic Instinct" src="images/Civic_hive_scorched_earth.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Purge the station.</b></div></div>
+<ul><li>Unity Gained: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 150-100000</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="https://stellaris.paradoxwikis.com/Hive_Mind" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a><a href="https://stellaris.paradoxwikis.com/Necrophage_%28origin%29" title="Necrophage"><img alt="Necrophage" src="images/Origins_necrophage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> Eat them.</b></div></div>
+<ul><li>Unity Gained: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 250-1000000</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</td>
+<td>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Aliens_Terminated">Aliens Terminated</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_exploding_ship.png" class="image"><img alt="Evt exploding ship.png" src="images/Evt_exploding_ship.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">The subspace mining station has been destroyed, killing everyone on board.<br /><br />The destruction of the station detonated some unknown energy storage medium. The resulting energy rushed through the collapsing subspace tunnel into [capital system name], substantially worsening the situation back home.<br /><br />That said, the transfer of hydrogen into our star has ceased. As bad as things may be, they will no longer worsen. While we may never know the origins or design of this station, we can at least rest easy knowing that such power will never fall to our rivals.<br /><br />Unfortunately, we have no immediate way to return [capital system name] to its original state. If we want to affect the star's state, we'll need to rely on our recordings to piece together what the station was doing.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>A Mysterious Station</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Destroying the station in Lusus
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Let's clean up this mess.</b></div></div>
+<ul><li>The Red Giant Expansion situation no longer progresses</li>
+<li>The Red Giant Expansion situation gains 200 Progress if it has less than 0-1290 progress</li>
+<li>The Red Giant Expansion situation gains 100 Progress if it has less than 1290-1390 progress</li>
+<li>The Red Giant Expansion situation approaches are replaced by the following: Add Fuel to the Fire, Wait and See, Siphon Stellar Material</li>
+<li>Finishing the Red Giant Expansion situation will not give the option to remove the restrictions of the <a href="/Ascension_perks.html#Galactic_Hyperthermia" title="Galactic Hyperthermia"><img alt="Galactic Hyperthermia" src="images/Ap_galactic_hyperthermia.png" decoding="async" loading="lazy" width="22" height="25" data-file-width="52" data-file-height="60" /></a>&#32;Galactic Hyperthermia ascension perk</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</td></tr></tbody></table>
+<table class="mildtable">
+<tbody><tr>
+<td>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="And_End_to_the_Treat">And End to the Treat</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_ruined_system.png" class="image"><img alt="Evt ruined system.png" src="images/Evt_ruined_system.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Upon learning of our plight, the station's inhabitants expressed alarm and dismay. They believed themselves alone, and were unaware of other species in the galaxy.<br /><br />In a fit of remorse and before we truly grasped what they were doing, they began to dismantle the station, permanently destroying most of its components.<br /><br />As a result, it will be difficult to control the star's expansion. And we must decide what to do with these volatile aliens, and whether to offer them the forgiveness they desire.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Alien Negotiations</li>
+<li>Did not destroy the station in Lusus</li>
+<li><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="https://stellaris.paradoxwikis.com/Pacifist" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="https://stellaris.paradoxwikis.com/Fanatic_Pacifist" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span> Pacifist</li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 30 days
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Take them in and salvage the station.</b></div></div>
+<ul><li>Empire capital gains 400 <a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;Pops from a random species</li>
+<li>Alloys Gained: <a href="https://stellaris.paradoxwikis.com/Alloys" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 350-10000</li>
+<li>Engineering Research Gained: <a href="/Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> 500-1000000</li>
+<li>The Red Giant Expansion situation no longer progresses</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Dispose of them and of the station.</b></div></div>
+<ul><li>Minerals Gained: <a href="https://stellaris.paradoxwikis.com/Minerals" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 350-10000</li>
+<li>Alloys Gained: <a href="https://stellaris.paradoxwikis.com/Alloys" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 250-5000</li>
+<li>The Red Giant Expansion situation no longer progresses</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="/Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Enslave them and destroy the station.</b></div></div>
+<ul><li>Empire capital gains 400 <a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;Pops from a random species with Slaves citizenship</li>
+<li>Minerals Gained: <a href="https://stellaris.paradoxwikis.com/Minerals" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 250-5000</li>
+<li>Alloys Gained: <a href="https://stellaris.paradoxwikis.com/Alloys" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 350-10000</li>
+<li>The Red Giant Expansion situation no longer progresses</li>
+<li>The Red Giant Expansion situation approaches are replaced by the following: Add Fuel to the Fire, Wait and See, Siphon Stellar Material</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</td>
+<td>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Subspace_Mining_Operation">Subspace Mining Operation</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_vortex.png" class="image"><img alt="Evt vortex.png" src="images/Evt_vortex.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">The station siphons hydrogen from a gas giant and channels it through subspace into our star's shell. The resulting helium fusion releases excess energy, which is converted into <span class="effect-yellow" style="font-weight:bold;">Crystallized Entropy</span> to power the station.<br /><br />The inhabitants of the station retain only a warped oral tradition about its operations. They lost contact with their home civilization thousands of years ago, perhaps because that civilization collapsed or was destroyed. A buildup of calibration errors and equipment degradation has led to the increasingly unstable siphoning that now threatens to destroy [capital system name].<br /><br />Working with their ancient technology we can reverse the process, but it will not be easy. Alternatively, forcing our star to go nova could expose countless deposits, transforming our heritage into a trove of exploitable resources.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Alien Negotiations or Boarding Party</li>
+<li>Did not destroy the station in Lusus</li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 30 days
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>It's time to get to work.</b></div></div>
+<ul><li>The Red Giant Expansion situation no longer progresses</li>
+<li>The Red Giant Expansion situation approaches are replaced by the following: Continue Siphoning, Stabilize the Star, Cease Activity, Reverse Inflation</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</td></tr></tbody></table>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><h3><span class="mw-headline" id="Prospect_of_Stability">Prospect of Stability</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_clocks.png" class="image"><img alt="Evt clocks.png" src="images/Evt_clocks.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">After great effort, we now hold full control over the fate of [capital system name]. Left alone, it would follow its natural life cycle at its current size.<br /><br />But the ancient and failing station cannot withstand repeated reconfigurations. Each adjustment strains the facility to its limits. Now, we have only one choice.<br /><br />We can shrink the star back to its former size, or force it to expand, transforming the system into a vast field of easily harvested resources.<br /><br />Our scientists will attempt one last reconfiguration. After that, the only way forward will be rapid disassembly, by external force.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Subspace Mining Operation</li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 24 months
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Fix the star in its current state.</b></div></div>
+<ul><li>The Red Giant Expansion situation approaches are replaced by Stabilize the Star</li>
+<li>If the Red Giant Expansion situation reached stage 2 gain an asteroid with a deposit of <span class="effect-green" style="font-weight:bold;">+5</span> <a href="https://stellaris.paradoxwikis.com/Minerals" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Minerals</li>
+<li>If the Red Giant Expansion situation reached stage 3 gain an asteroid with a deposit of <span class="effect-green" style="font-weight:bold;">+4</span> <a href="/Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;Engineering</li>
+<li>If the Red Giant Expansion situation reached stage 4 gain an asteroid with a deposit of <span class="effect-green" style="font-weight:bold;">+1</span> <a href="https://stellaris.paradoxwikis.com/Rare_crystals" title="Rare crystals"><img alt="Rare crystals.png" src="images/Rare_crystals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Rare Crystals</li>
+<li>If the Red Giant Expansion situation reached stage 5 gain an asteroid with a deposit of <span class="effect-green" style="font-weight:bold;">+2</span> <a href="https://stellaris.paradoxwikis.com/Alloys" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Alloys</li>
+<li>In 30 days ends the Red Giant Expansion situation and adds the Starfire Cannon technology as a permanent research option</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Accelerate the star's expansion..</b></div></div>
+<ul><li>The Red Giant Expansion situation approaches are replaced with Continue Siphoning</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Return the star to normal.</b></div></div>
+<ul><li>The Red Giant Expansion situation approaches are replaced with Reverse Inflation</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182306
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.294 seconds
+Real time usage: 0.407 seconds
+Preprocessor visited node count: 9054/1000000
+Post‐expand include size: 197417/2097152 bytes
+Template argument size: 96950/2097152 bytes
+Highest expansion depth: 22/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  231.891      1 -total
+ 78.03%  180.945     13 Template:Infobox
+ 55.08%  127.723     92 Template:Icon
+ 52.00%  120.586     11 Template:Event
+ 42.50%   98.553     30 Template:Option
+ 27.15%   62.960      1 Template:Eventsnav
+ 24.60%   57.043     72 Template:Infobox/row
+ 15.37%   35.650     16 Template:Iconify
+ 10.91%   25.304      1 Template:Expansion
+  9.65%   22.372      1 Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:17936-0!canonical and timestamp 20260707182305 and revision id 115771.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

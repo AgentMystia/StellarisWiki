@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Building modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about modding <a href="/Buildings.html" title="Buildings">Buildings</a> and <a href="/Districts.html" title="Districts">Districts</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Data_Structure"><span class="tocnumber">2</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Generated_Modifiers"><span class="tocnumber">3</span> <span class="toctext">Generated Modifiers</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Examples"><span class="tocnumber">4</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Cost,_Upkeep,_and_Production"><span class="tocnumber">4.1</span> <span class="toctext">Cost, Upkeep, and Production</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Conditional_Upkeep_and_Production"><span class="tocnumber">4.2</span> <span class="toctext">Conditional Upkeep and Production</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Resources_Production_via_Jobs"><span class="tocnumber">4.3</span> <span class="toctext">Resources Production via Jobs</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Upgrades"><span class="tocnumber">4.4</span> <span class="toctext">Upgrades</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Phoenix_4.0_Districts,_Zone_Slots,_and_Zones"><span class="tocnumber">5</span> <span class="toctext">Phoenix 4.0 Districts, Zone Slots, and Zones</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Migrating_from_3.*_to_4.0.*"><span class="tocnumber">5.1</span> <span class="toctext">Migrating from 3.* to 4.0.*</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>Buildings require at least two files: a text document containing the building definition in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/buildings</span> and a language file in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/localisation</span>. Additionally, a custom icon for the building can be placed in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/interface/icons/buildings</span>. Districts are similar to buildings, except they are stacked together in the planet view. They are defined at <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/districts</span>. This article will focus on building definitions. 
+</p>
+<pre>building_sample_monument = { 
+
+}
+</pre>
+<p>The above is the start of a building definition called sample_monument. To the left of the equal sign is the building's identifier, which will be used to reference this building in other game files. Everything within the curly-brackets sets the behavior of the building, including its cost, upkeep, and prerequisites. The building's actual name and description are not part of this definition, and are instead looked up in the relevant localisation file. The keys for this are determined by the building's ID, as seen below. See <a href="/Localisation_modding.html" title="Localisation modding">Localisation modding</a> for more on how text is displayed in game.
+</p>
+<pre> building_sample_monument: "Sample Building"
+ building_sample_monument_desc: "Description of sample building."
+</pre>
+<p>In order to display the building in the planetary management window, the game will look for an image in the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/interface/icons/buildings</span> folder with a file name matching the building's ID, it will generate an entry in the error log if it's not found. However, it will not use this image unless the icon attribute is actually set within the building definition, and instead use a generic building icon. See <a href="/Icon_modding.html" title="Icon modding">Icon modding</a> for more on changing icons used by the game.
+</p>
+<h2><span class="mw-headline" id="Data_Structure">Data Structure</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="40%">Buildings
+</th>
+<th width="40%">Districts
+</th></tr>
+<tr>
+<td><b>base_buildtime = &lt;int&gt;</b>
+</td>
+<td colspan="2">Determines the number of days it takes to build this Building or District. If Building, this also determines the days it takes for a Building to upgrade into this.
+</td></tr>
+<tr>
+<td><b>icon = &lt;building_key&gt;</b>
+</td>
+<td colspan="2">Optional. The file name (without extension) of the icon to use from <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/interface/icons/buildings</span>. By default, the icon <code>gfx/interface/icons/buildings/(key of building).dds</code> will be used for buildings.
+</td></tr>
+<tr>
+<td><b>category = &lt;category_key&gt;</b>
+</td>
+<td>Determines the building category. It can be used to filter Buildings in the planet construction GUI. Only one of the following nine can fit here, sorted by their in-game order.
+<ul><li>pop_assembly, government, resource, manufacturing,</li>
+<li>research, trade, amenity, unity, army</li></ul>
+</td>
+<td rowspan="11" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>capital = &lt;yes/no&gt;</b>
+</td>
+<td>Default no. Whether this Building is considered a Capital Building. If yes, not even a Fortress with <code>add_to_first_building_slot = yes</code> can be added before this Building.
+</td></tr>
+<tr>
+<td><b>branch_office_building = &lt;yes/no&gt;</b>
+</td>
+<td>Default no. If yes, this Building is considered a Branch Office Building.
+</td></tr>
+<tr>
+<td><b>can_build = &lt;yes/no&gt;</b>
+</td>
+<td>Default yes. If no, this Building can't be built. Capital buildings and upgraded buildings have "no" for this property.
+</td></tr>
+<tr>
+<td><b>can_demolish = &lt;yes/no&gt;</b>
+</td>
+<td>Default yes. If no, this Building can't be demolished. Capital buildings have "no" for this property.
+</td></tr>
+<tr>
+<td><b>can_be_ruined = &lt;yes/no&gt;</b>
+</td>
+<td>Default yes. If no, this Building can't be ruined because of the planet having not enough building slots.
+</td></tr>
+<tr>
+<td><b>can_be_disabled = &lt;yes/no&gt;</b>
+</td>
+<td>Default yes. If no, this Building can't be manually turned off. Capital buildings have "no" for this property.
+</td></tr>
+<tr>
+<td><b>planetary_ftl_inhibitor = &lt;yes/no&gt;</b>
+</td>
+<td>Default no. If yes, this Building will become a planetary FTL inhibitor once relevant technology has been researched. Fortresses use this.
+</td></tr>
+<tr>
+<td><b>position_priority = &lt;int&gt;</b>
+</td>
+<td>Default 200. Determines which building slot this Building will be placed in, with lower values closer to the front and Buildings with the same value placed in the order in which they were built.
+<ul><li>0: Capitals.</li>
+<li>100: Strongholds, Fortresses, Planetary Shield Generators, and certain civic and origin buildings.</li></ul>
+</td></tr>
+<tr>
+<td><b>base_cap_amount = &lt;int&gt;</b>
+</td>
+<td>Default no cap. The max number of Buildings of this type a planet can have.
+</td></tr>
+<tr>
+<td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>empire_limit = {</b></span>
+<div class="mw-collapsible-content">
+<dl><dd><b>base = &lt;int&gt;</b></dd>
+<dd><b>modifier = {</b>
+<dl><dd><b>&lt;add/factor&gt; = &lt;int&gt;</b></dd>
+<dd><b>&lt;trigger&gt;</b></dd></dl></dd>
+<dd><b>}</b></dd></dl>
+<b>}</b></div></div></div>
+</td>
+<td>Default no limit. The total number of Buildings of this type an empire can have.<br />Multiply by a factor of -1 to remove the limit.
+</td></tr>
+<tr>
+<td><b>is_capped_by_modifier = &lt;yes/no&gt;</b>
+</td>
+<td>Default no. If yes, a modifier that increases the max number of this Building will be generated for use. In addition, if this property is yes while the <code>base_cap_amount</code> is unspecified, it will be considered 0.
+</td>
+<td>Default yes. If yes, a modifier that increases the max number of this District will be generated for use.
+</td></tr>
+<tr>
+<td><b>min_for_deposits_on_planet = &lt;int&gt;</b>
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td rowspan="2">Unclear. They seem likely to determine the minimum / maximum number of this District a planet should try to have upon galaxy generation before modifiers, but this is actually not respected. When used in vanilla, min is either 1 or 3 and max is always 15.
+</td></tr>
+<tr>
+<td><b>max_for_deposits_on_planet = &lt;int&gt;</b>
+</td></tr>
+<tr>
+<td><b>prerequisites = { "&lt;key&gt;" }</b>
+</td>
+<td colspan="2">A list of technology keys to determine the technology prerequisites to construct this Building or District.
+</td></tr>
+<tr>
+<td><b>show_tech_unlock_if = { &lt;conditions&gt; }</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a>. If evaluated false, this building is hidden from the tooltips of the technologies listed above.
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>upgrades = { "&lt;building_key&gt;" }</b>
+</td>
+<td>A list of Buildings that allow this to be upgraded into. Multiple allowed.
+</td></tr>
+<tr>
+<td><b>potential = { &lt;conditions&gt; }</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine is this Building buildable on a planet. If evaluated false, it's hidden from the GUI.
+</td>
+<td>Similar to Buildings, except if this property is evaluated false, the District is not only hidden from the GUI, but will also be removed from the planet, or be replaced by a District in <code>convert_to</code>.
+<p>Check the planet type here by <code>uses_district_set</code> rather than <code>is_planet_class</code>.
+</p>
+</td></tr>
+<tr>
+<td><b>show_on_uncolonized = { &lt;conditions&gt; }</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if this District is shown in the GUI while the planet has no owner. For example, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind will see Hive District on an uncolonized planet while a regular Empire will see City District. (Planet scope, use FROM as a potential owner)
+<p>Check the planet type here by <code>uses_district_set</code> rather than <code>is_planet_class</code>.
+</p>
+</td></tr>
+<tr>
+<td><b>allow = { &lt;conditions&gt; }</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine is this Building buildable on a planet. If evaluated false, it's visible from the GUI but is shown disabled. Can also be used in combination with <code>hidden_trigger = { OR = { owner = { is_ai = no } &lt;conditions&gt; } }</code> to set rules specifically for the AI to follow, so it's better at knowing when it should build this Building.
+</td>
+<td>Similar to Buildings, except if this property is evaluated false, the District is not only prevented from building, but will be replaced by a District in <code>convert_to</code>.
+</td></tr>
+<tr>
+<td><b>abort_trigger = { &lt;conditions&gt; }</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a>. If it returns true the Building will be removed the construction queue.
+</td>
+<td rowspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>ruined_trigger = { &lt;conditions&gt; }</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a>. If it returns true the Building will be set to ruined.
+</td></tr>
+<tr>
+<td><b>destroy_trigger = { &lt;conditions&gt; }</b>
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a>. If it returns true the Building will be removed from a planet, or be replaced by a Building in <code>convert_to</code>.
+</td></tr>
+<tr>
+<td><b>conversion_ratio = &lt;float&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>If this District will be converted into another type of District, the number of new Districts it can convert into is multiplied by this. For example, if District A can be converted into District B at a <code>conversion_radio = 0.5</code>, once the <code>potential</code> of District A is evaluated false, a planet with 10 District A will lose all of them and gain 5 District B. The number is rounded down.
+</td></tr>
+<tr>
+<td><b>convert_to = { building_key }</b>
+</td>
+<td>A list of Buildings that can replace this Building if it would have been removed by fulfilling the <code>destroy_trigger</code>.
+</td>
+<td>A list of Districts that can replace this District if it would have been removed by not meeting the <code>potential</code> and <code>allow</code>.
+</td></tr>
+<tr>
+<td><b>planet_modifier = { &lt;modifiers&gt; }</b>
+</td>
+<td colspan="2">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied on the Planet.
+</td></tr>
+<tr>
+<td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>triggered_planet_modifier = {</b></span>
+<div class="mw-collapsible-content">
+<dl><dd><b>potential = { &lt;triggers&gt; }</b></dd>
+<dd><b>&lt;modifiers&gt;</b></dd></dl>
+<b>}</b></div></div></div>
+</td>
+<td colspan="2">Similar to the above, except it only applies if the <code>potential</code> property evaluates true. Multiple allowed. (Planet scope)
+</td></tr>
+<tr>
+<td><b>country_modifier = { &lt;modifiers&gt; }</b>
+</td>
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire. Used by Resource Silos, Embassies, and Branch Office Buildings in vanilla.
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>triggered_country_modifier = {</b></span>
+<div class="mw-collapsible-content">
+<dl><dd><b>potential = { &lt;triggers&gt; }</b></dd>
+<dd><b>&lt;modifiers&gt;</b></dd></dl>
+<b>}</b></div></div></div>
+</td>
+<td>Similar to the above, except it only applies if the <code>potential</code> property evaluates true. Multiple allowed. (Planet scope)
+</td></tr>
+<tr>
+<td><b>resources = { &lt;economy_unit&gt; }</b>
+</td>
+<td colspan="2">An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the category, construction cost, resource upkeep, and production of this Building or District.
+</td></tr>
+<tr>
+<td><b>triggered_desc = {</b>
+<dl><dd><b>trigger = &lt;conditions&gt;</b></dd>
+<dd><b>text = "localisation_key"</b></dd></dl>
+<p><b>}</b>
+</p>
+</td>
+<td colspan="2">This property adds additional tooltips for this Building or District. Vanilla use this to add brief job descriptions summarizing total output if all jobs are filled. Multiple allowed.
+<ul><li>trigger: (Optional, default true) A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if this text should be in the tooltip. (Planet scope)</li>
+<li>text: A localisation key. Job descriptions are generally in the format "job_&lt;job_key&gt;_effect_desc", e.g. job_culture_worker_effect_desc.</li></ul>
+</td></tr>
+<tr>
+<td><b>on_queued = { &lt;effects&gt; }</b>
+</td>
+<td colspan="2">A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when the Building or District is added to the construction queue. Does not apply if added to the construction queue as an upgrade. (Planet scope)
+</td></tr>
+<tr>
+<td><b>on_unqueued = { &lt;effects&gt; }</b>
+</td>
+<td colspan="2">A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when the Building or District is removed from the construction queue. Does not apply if added to the construction queue as an upgrade. (Planet scope)
+</td></tr>
+<tr>
+<td><b>on_built = { &lt;effects&gt; }</b>
+</td>
+<td colspan="2">A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when the Building or District is built. (Planet scope)
+</td></tr>
+<tr>
+<td><b>on_destroy = { &lt;effects&gt; }</b>
+</td>
+<td colspan="2">A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when the Building or District is desroyed or demolished. (Planet scope)
+</td></tr>
+<tr>
+<td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>ai_weight = {</b></span>
+<div class="mw-collapsible-content">
+<dl><dd><b>&lt;factor/weight&gt; = &lt;int&gt;</b></dd>
+<dd><b>modifier = {</b>
+<dl><dd><b>&lt;factor/weight&gt; = &lt;float&gt;</b></dd>
+<dd><b>&lt;conditions&gt;</b></dd></dl></dd>
+<dd><b>}</b></dd></dl>
+<b>}</b></div></div></div>
+</td>
+<td colspan="2">Rules for how likely the AI is to construct this Building or District. Multiple modifiers allowed. Note: As of 2.6, these weights <a rel="nofollow" class="external text" href="https://forum.paradoxplaza.com/forum/index.php?threads/stellaris-dev-diary-172-reworking-the-ai.1348837/#post-26324770%7C">only come into play when the AI has no other economic plans</a>. Only used by Branch Office Buildings in vanilla.
+</td></tr>
+<tr>
+<td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>ai_resource_production = {</b></span>
+<div class="mw-collapsible-content">
+<dl><dd><b>&lt;resource_key&gt; = &lt;int&gt;</b></dd>
+<dd><b>trigger = { &lt;conditions&gt; }</b></dd></dl>
+<b>}</b></div></div></div>
+</td>
+<td colspan="2">Determines what kind of resources the AI should view this Building or District being able to produce. Multiple allowed.
+</td></tr></tbody></table>
+<p>Vanilla Buildings and Districts do not usually produce resources themselves. They provide <a href="/Jobs.html" title="Jobs">Jobs</a>. See <a href="/Pop_Job_modding.html#Jobs" title="Pop Job modding">Pop Job modding</a> for details.
+</p>
+<h2><span class="mw-headline" id="Generated_Modifiers">Generated Modifiers</span></h2>
+<p>The following modifier will be generated for a capped-by-modifier Building / District to be used.
+</p>
+<ul><li><b>&lt;building / district key&gt;_max_add = &lt;int&gt;</b> - Increases the max number of Buildings / Districts of this kind on a planet.</li></ul>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<h4><span id="Cost.2C_Upkeep.2C_and_Production"></span><span class="mw-headline" id="Cost,_Upkeep,_and_Production">Cost, Upkeep, and Production</span></h4>
+<p>Buildings usually have a cost and build time for construction, and often have upkeep that must be paid after completion. The below definition says that "building_sample" is a planet building requiring 100 minerals and 100 energy to build, then take 240 game days to complete. Once completed it will have upkeep of 2 energy per game month as well as providing 2 minerals and 4 food per month. 
+</p><p>Other things that can be used include <i>alloys</i>, <i>consumer goods</i>, <i>influence</i>, <i>minor artifacts</i>, <i>research</i>, <i>strategic resources</i>, and <i>unity</i>. Unlike some modifiers, these must be flat values rather than production multipliers.
+</p>
+<pre>building_sample = { 
+    base_buildtime = 240
+
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+        upkeep = {
+            energy = 2
+        }
+        produces = {
+            food = 4
+            minerals = 2
+        }
+    }
+}
+</pre>
+<h4><span class="mw-headline" id="Conditional_Upkeep_and_Production">Conditional Upkeep and Production</span></h4>
+<p>Production and upkeep brackets also allow for a <a href="/Conditions.html" title="Conditions">triggered condition</a> block that will unlock them when the planet has met a specific condition.
+</p><p>Each triggered production or upkeep will replace the current production or upkeep values for each resource declared. If there is a production or upkeep value previously established (like a base upkeep), these values will not be altered unless the upkeep/production resource is declared in the triggered block. It should be noted that good practice is to establish a base upkeep first with no triggers.
+</p>
+<pre>building_sample = { 
+    base_buildtime = 240
+
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+        upkeep = {
+            energy = 2
+        }
+
+        upkeep = {
+            trigger = {
+                num_districts = {
+                    type = district_farming
+                    value &gt;= 2
+                }
+            }
+            # The new total building upkeep must be updated with each trigger. This overwrites the energy upkeep
+            energy = 4
+            # This is not part of base upkeep, and will be tacked on
+            minerals = 1
+        }
+
+        produces = {
+            food = 4
+            minerals = 2
+        }
+        
+        produces = {
+            trigger = {
+                num_districts = {
+                    type = district_farming
+                    value &gt;= 2
+                }
+            }
+            food = 8
+        }
+    }
+}
+</pre>
+<h4><span class="mw-headline" id="Resources_Production_via_Jobs">Resources Production via Jobs</span></h4>
+<p>Most buildings don't directly provide resources, but instead increase the number of planetary jobs. This can be done unconditionally using the <i>planet_modifier</i> element. However, jobs often differ by country type (normal, hive minds, machine, etc.), so <i>triggered_planet_modifier</i> should be used instead. This modifier is applied to the planet only if the trigger defined in the <i>potential</i> element returns true. Each <i>triggered_planet_modifier</i> will be checked; a <i>break</i> statement cannot be used to prevent later checks. 
+</p><p>The below sample adds two farmer jobs depending on whether the owner country is a hive mind or not.
+</p>
+<pre>building_sample = { 
+    base_buildtime = 240
+
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_regular_empire = yes }
+        }
+        modifier = {
+            job_farmer_add = 2
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+	    exists = owner
+            owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_agri_drone_add = 2
+        }
+    }
+}
+</pre>
+<p>You can also use other modifiers to change the growth speed, ethics attraction and much more. See the <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> for more. If you want to apply a country-wide modifier, use <i>country_modifier</i> or <i>triggered_country_modifier</i> instead.
+</p>
+<h4><span class="mw-headline" id="Upgrades">Upgrades</span></h4>
+<p>Many buildings can be upgraded to an improved version of themself. To support this you must create one or more additional build definitions. Typically, you would duplicate the first building and affix a number to the identifier. You may also want to hide the upgraded building from appearing as a seperate option in the building list by setting <i>can_build = no</i>. 
+</p><p>Once the second building has been created and all necessary improvements made, return to the first building and add an <i>upgrades</i> element. Inside the brackets, add the identifier of the second building which the first building will upgrade to, this is why it's standard to affix a number to the end as it eases the process later if you want further upgrades. The build time and resource cost of the second building become the time and cost to upgrade to that building. 
+</p><p>The below example adds a new building with an improvement to jobs produced and small increase to upkeep. The original building is given an <i>upgrades</i> element and renamed with a `_1` affix for consistency.
+</p>
+<pre>building_sample_1 = { 
+    base_buildtime = 240
+
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+
+    upgrades = {
+        building_sample_2
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_regular_empire = yes }
+        }
+        modifier = {
+            job_farmer_add = 2
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+	    exists = owner
+            owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_agri_drone_add = 2
+        }
+    }
+}
+
+building_sample_2 = { 
+    base_buildtime = 240
+
+    can_build = no	
+
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 100
+            energy = 100
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_regular_empire = yes }
+        }
+        modifier = {
+            job_farmer_add = 3
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+	    exists = owner
+            owner = { is_gestalt = yes }
+        }
+        modifier = {
+            job_agri_drone_add = 3
+        }
+    }
+}
+</pre>
+<p>Though not used in vanilla Stellaris, a building can have multiple upgrade routes. Clicking the yellow upgrade icon on the building opens the upgrade panel where the defined upgraded buildings are listed. Note as well that upgradable buildings should not have the base_cap_amount set. This should only be set on the first upgrable building, and will be carried over.
+</p>
+<h2><span id="Phoenix_4.0_Districts.2C_Zone_Slots.2C_and_Zones"></span><span class="mw-headline" id="Phoenix_4.0_Districts,_Zone_Slots,_and_Zones">Phoenix 4.0 Districts, Zone Slots, and Zones</span></h2>
+<p>The Phoenix 4.0 update brings zone slots and zones (called District Specializations) to districts. It also introduces the concept of a <b>primary</b> district, whereas district sets in 3.14 do not have any such distinction. 
+</p><p>Zone slots specify what zones can be built on a district. For example in the base "City" district (<code>district_city</code>) the <code>slot_city_government</code> slot permits the <code>zone_default</code> zone, which provides 6 buildings and allows some variety of buildings to be built in it.
+</p><p>See <a href="https://stellaris.paradoxwikis.com/Zones_modding" class="mw-redirect" title="Zones modding">Zones modding</a> which covers Zones and Zone Slots.
+</p><p>See <code>common/zones/99_HOW_TO_ZONE.txt</code>
+</p>
+<h3><span id="Migrating_from_3..2A_to_4.0..2A"></span><span class="mw-headline" id="Migrating_from_3.*_to_4.0.*">Migrating from 3.* to 4.0.*</span></h3>
+<p>This part mainly covers if you have custom districts.
+</p><p>- Add <code>default_starting_district = yes</code> to a district to mark it as the primary district of the set, so decide which are the primary districts for your district sets.
+</p><p>- Make sure your custom primary district has 3 slots, either <code>slot_city_government</code>, <code>slot_city_01</code>, <code>slot_city_02</code> or some custom variation that you decide
+</p><p>- Specify a zone slot for <b>every</b> district
+</p><p>- Reduce the number of districts in your district sets from 5 to 4. You will have to get creative. For example, think about how the base game uses the City district as its primary district and now gives alloy production via zones which modify the primary district by providing additional jobs.
+</p><p>- Every building in 4.0 needs to have a building set specified, so organize all your buildings with sets. They can be part of a base game set or your own custom arbitrarily named set.
+</p><p>If you were modding a district in the base game, then consider modding zones and zone slots. Compatibility between mods in this area is currently a known challenge / in development.
+</p><p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a class="mw-selflink selflink">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707180959
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.071 seconds
+Real time usage: 0.085 seconds
+Preprocessor visited node count: 768/1000000
+Post‐expand include size: 22338/2097152 bytes
+Template argument size: 9093/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3534/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   32.560      1 -total
+ 34.38%   11.194      1 Template:ModdingNavbox
+ 30.56%    9.949      8 Template:Icon
+ 25.42%    8.277      1 Template:Navbox
+ 21.45%    6.985      1 Template:Iconify
+ 18.33%    5.967      1 Template:Icon/h
+ 10.62%    3.458      6 Template:Path
+  9.36%    3.046      5 Template:Collapse_list
+  8.52%    2.775     14 Template:Navboxgroup
+  8.50%    2.769      1 Template:Version
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:4953-0!canonical and timestamp 20260707180959 and revision id 107479.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

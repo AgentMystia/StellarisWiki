@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Font modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Font modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">This article is <a href="/Category_Timeless.html" title="Category:Timeless">timeless</a> and should be accurate for any version of the game.</div>
+</div>
+</div>
+<p>Fonts are applied to textual elements in the interface. All fonts are found and should be placed in the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/fonts/</span> folder.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Acquiring_and_Preparing_Fonts"><span class="tocnumber">1</span> <span class="toctext">Acquiring and Preparing Fonts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Fantastic_Fonts_and_Where_to_Find_Them"><span class="tocnumber">1.1</span> <span class="toctext">Fantastic Fonts and Where to Find Them</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Converting_TrueType_Fonts_to_OpenType_Fonts"><span class="tocnumber">1.2</span> <span class="toctext">Converting TrueType Fonts to OpenType Fonts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Creating_a_new_font"><span class="tocnumber">2</span> <span class="toctext">Creating a new font</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Font_settings"><span class="tocnumber">2.1</span> <span class="toctext">Font settings</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Export_options"><span class="tocnumber">2.2</span> <span class="toctext">Export options</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Selecting_font_characters"><span class="tocnumber">2.3</span> <span class="toctext">Selecting font characters</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Saving_the_font"><span class="tocnumber">2.4</span> <span class="toctext">Saving the font</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Quick_check-list"><span class="tocnumber">2.5</span> <span class="toctext">Quick check-list</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Kerning"><span class="tocnumber">3</span> <span class="toctext">Kerning</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Defining_bitmaps"><span class="tocnumber">4</span> <span class="toctext">Defining bitmaps</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Overriding_bitmaps"><span class="tocnumber">4.1</span> <span class="toctext">Overriding bitmaps</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Acquiring_and_Preparing_Fonts">Acquiring and Preparing Fonts</span></h2>
+<p>Finding fonts is no easy task, they need to be readable, thematically fitting and free of charge. But fret not, this section will quickly guide you through the necessary steps to find the perfect font for your mod.
+</p><p>The main fonts used in Stellaris are the following:
+</p>
+<ul><li>Main Mneu: Jura Light Medium</li>
+<li>Body texts: Century Gothic</li>
+<li>Titles: Orbitron</li>
+<li>Headers (for Popups, for example): Malgun Gothic</li></ul>
+<p>You can find most of it on Google Fonts.
+</p>
+<h3><span class="mw-headline" id="Fantastic_Fonts_and_Where_to_Find_Them">Fantastic Fonts and Where to Find Them</span></h3>
+<p>The first step is to find the font itself.<br />
+Be warned that there are many websites that claim to have "free" fonts, which are actually shackled to a license that makes them unusable for our intended purposes. You should always check the license attached to the font and ensure you will be able to meet its legal requirements. If in doubt, search for ones labelled as "<a rel="nofollow" class="external text" href="https:creativecommons.org/share-your-work/public-domain/cc0/">CC0</a>".
+</p><p>Here is a list of websites that offer fonts which you may use in your mods:
+</p>
+<table class="wikitable" width="80%">
+<tbody><tr>
+<th>Website
+</th>
+<th>Notes
+</th></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https:www.fontsquirrel.com/">Font Squirrel</a>
+</td>
+<td>Has a license tab in each font’s page.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https:cooltext.com/Fonts">Cool Text</a>
+</td>
+<td>Most fonts are something akin to public domain, but look up the font name online and find the license just to be sure.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https:vicfieger.com/~font/menu.html">Vic Fieger’s Website</a>
+</td>
+<td>"No license is required" for "free fonts", contact information on the website, if you wish to double-check.
+</td></tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="https:fonts.google.com/">Google Fonts</a>
+</td>
+<td>Every font in this repository is verified to be under Open Font Licence.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Converting_TrueType_Fonts_to_OpenType_Fonts">Converting TrueType Fonts to OpenType Fonts</span></h3>
+<p>Stellaris predominantly uses OpenType fonts <code>.otf</code> instead of the more archaic <code>.ttf</code>, as OpenType fonts are capable of storing more information and have far more complex behaviors.
+</p><p>But how do you convert your old, rusty n' trusty TrueType font to the new and shiny OpenType font format? Well, that’s actually easy!<br />
+OpenType inherited the overall structure of TrueType and, as such, converting one file type to the other is as easy as using one of the many, many online font conversion websites.
+</p>
+<table class="wikitable" width="50%">
+<tbody><tr>
+<td><a rel="nofollow" class="external text" href="https:www.fontconverter.org/">FontConverter</a>
+</td>
+<td><a rel="nofollow" class="external text" href="https:cloudconvert.com/ttf-to-otf">Cloud Convert</a>
+</td>
+<td><a rel="nofollow" class="external text" href="https:convertio.co/ttf-otf/">Convertio</a>
+</td>
+<td><a rel="nofollow" class="external text" href="https:miconv.com/convert-ttf-to-otf/">Miconv</a>
+</td></tr>
+<tr>
+<td colspan="4">In a pinch: renaming the file from <code>myfont.ttf</code> to <code>myfont.otf</code> and praying the engine reads it.
+</td></tr></tbody></table>
+<p>Once your font has been converted to the appropriate format, it is ready to be placed in the game files.
+</p>
+<h2><span class="mw-headline" id="Creating_a_new_font">Creating a new font</span></h2>
+<p>Making a new font requires the program <a rel="nofollow" class="external text" href="https:www.angelcode.com/products/bmfont/">BMFont</a>, which is used to generate the font page and descriptor file from a font.
+</p><p>Once BMFont is installed, open it up and open the options menu then font settings, import your font file, and select the font from the dropdown menu (font files can be found and downloaded at Google Fonts). After that is done, you can begin to configure the font settings.
+</p>
+<h3><span class="mw-headline" id="Font_settings">Font settings</span></h3>
+<p>Having imported your font, it is time to set up how you want the font to look. To do this, open the Font Settings menu again. Below are the fields you need to change:
+</p>
+<ul><li><b>Charset</b>: set this to Unicode.</li>
+<li><b>Size</b>: this is the size of each character in the outputted bitmap, set this to your desired size.
+<ul><li>Note larger sizes will increase the final output’s used space and may split your result between multiple bitmaps. The only way to use multiple bitmaps is through separately defined outputted font files, so keep as much as you can on one bitmap.</li></ul></li>
+<li><b>Match char height</b>: tick this so each character has the same height.</li>
+<li><b>Font smoothing</b>: tick this if your font’s edges look overly sharp in-game.</li>
+<li><b>Outline thickness</b>: if you want your font to have an outline, set the desired thickness here.
+<ul><li>Note, this will increase the character size in the font’s bitmap, thus taking more space.</li></ul></li></ul>
+<p>After this is complete press "OK" to save your changes
+</p>
+<h3><span class="mw-headline" id="Export_options">Export options</span></h3>
+<p>Having set up your font, it is time to set up how you want to export a font bitmap the game can read. To do this, open the Export Options menu. Below are the fields you may want to change:
+</p>
+<ul><li><b>Padding</b>: controls the padding between each character in the font image. Only needed if you intend to manually edit the font file and don't want the characters too close together.</li>
+<li><b>Bit depth</b>: Set this to 32</li>
+<li><b>Spacing</b>: controls the minimum space between characters in the font image. Set this to 1-1; set it higher if you experience characters bleeding into each other.</li>
+<li><b>Width</b> &amp; <b>Height</b>: the size of the exported font bitmap. Adjust this so that all the characters fit on one image.
+<ul><li>Note, increasing WxH drastically increases the file size. The game cannot process a single font graphic above 16&#160;MB, with Paradox using 16,001&#160;KB at max for Chinese fonts. This limit is quickly reached without the heavier compression modes; you can work around this by <a href="#Defining_bitmaps">defining multiple linked font bitmaps to one font</a>, as Paradox does with the 11 linked 14-16MB Chinese font bitmaps.</li></ul></li>
+<li><b>Channels</b>: controls how the characters are composited. Set them all to <b>glyph</b> unless you have specified an outline, in which case set the alpha channel (A) to <b>outline</b>, with the rest as <b>glyph</b>.</li>
+<li><b>Presets</b>: Unnecessary if manually choosing channels above. Pick any that fits your text, but only pick ones with alpha.</li>
+<li><b>Font descriptor</b>: needs to be set to text.</li>
+<li><b>Textures</b>: needs to be set to .dds</li>
+<li><b>Compression</b>: select the form of compression the file uses. For DDS:
+<ul><li>None uses no compression, however, results in enormous file sizes and may prevent the game from processing the bitmap. Use only on smaller font exports.</li>
+<li>DXT1 is the highest compressed, worst quality, 1-or-0 transparency (no fading, opaque, or completely transparent).</li>
+<li>DXT3 is moderately compressed, with higher quality transparency (supports fading).</li>
+<li>DXT5 is lightly compressed, with the highest possible quality and transparency, with the lowest compression (aside from None).</li></ul></li></ul>
+<p>After this is complete press "OK" to save your changes.
+</p>
+<h3><span class="mw-headline" id="Selecting_font_characters">Selecting font characters</span></h3>
+<p>To the right are checkboxes for different types of characters, if a character is used that is not in the font it will show as a question mark in a box. Choose whichever ones fit what you're using the font for. Characters can be manually chosen by clicking the character’s graphic on the left-hand window – this allows fine-tuning of what characters make it into the bitmap.
+</p><p>In every scenario, the 1-3 blank boxes from Latin and Latin-1 Supplement (the latter might not appear) <b>must</b> be chosen so spacing works properly. Otherwise, words will appear without spacing.
+</p>
+<h3><span class="mw-headline" id="Saving_the_font">Saving the font</span></h3>
+<p>Having set the font as you would like it, check that the characters all fit on one page by clicking V on your keyboard. If they don't, and you don't plan on using multiple font bitmaps, you need to increase the size of the font image width and height or decrease the font size.
+</p><p>Save the font by clicking "Save bitmap font as…" (CTRL+S) in the options menu.
+</p><p><b>Both the image and font file must be named the exact same</b> except for the file’s extension. While the *.fnt file provides which image file should be used, the game opts to use the file with the same name before the internally defined one. This can also be seen by the file extension lacking from the <a href="#Defining_bitmaps">bitmapfont definition</a>. The bitmapfont definition does not need the same name as the font files and can be customized.
+</p><p>The font’s location is decided by the <a href="#Defining_bitmaps">bitmapfont definition</a>, so it is not necessary to use the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/fonts/</span> folder, however, the base game keeps all of its fonts there.
+</p>
+<h3><span class="mw-headline" id="Quick_check-list">Quick check-list</span></h3>
+<ul><li>Open BMFont and select a font.</li>
+<li>Set the font settings appropriately and save changes.</li>
+<li>Export the font with proper settings and necessary character sets.</li>
+<li><b>Remove _0 from the end of the name of the resulting .dds file</b> to make it have the same name as the file defining the font.</li>
+<li>Add <a href="#Kerning">kerning</a> to the font if necessary.</li>
+<li><i>If adding a new font rather than editing an existing one</i>, add a <a href="#Defining_bitmaps">bitmapfont = { … } definition</a>.</li></ul>
+<h2><span class="mw-headline" id="Kerning">Kerning</span></h2>
+<p>While many do, some fonts will not be exported with kerning information included in the font file. You can confirm this by opening the *.fnt file, and checking for lines starting with <code>kerning first=</code>. This can lead to character overlaps in-game which can be unsightly. To fix this, you need to add kerning information to your font file.
+</p><p>To do this, open your font file and add a new line following this format for each kerning pair:
+</p>
+<pre>kerning first=&lt;symbol position&gt; second=&lt;symbol position&gt; amount=&lt;pixel width&gt;
+</pre>
+<p>A character’s position within a font can be seen in BMFont by looking at the lower-right status bar when hovering over a character in the font canvas. The pixel amount is the space between the first and second character. Manually creating each kerning pair is not very feasible. Using a programming language (such as Python) to generate the kerning lines for you is much faster. Below is an example script you can use in Python 3.6 or above:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span>    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;kerning.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span> <span class="p">)</span>
+    <span class="c1"># Add the symbol positions of the blank symbol slots here.</span>
+    <span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span> <span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span>
+                <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="mi">141</span><span class="p">,</span> <span class="mi">143</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">181</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">255</span> <span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">y</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+                    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kerning first=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">  second=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">  amount=1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+<h2><span class="mw-headline" id="Defining_bitmaps">Defining bitmaps</span></h2>
+<p>To link a new font in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/fonts/</span>, an entry must be created in a <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/interface/*.gfx</span> file. If editing an already existing font, this entry already exists and does not need to be modified. An example entry looks like the following:
+</p>
+<pre>bitmapfonts = {
+    bitmapfont = {
+        name = "my_font"
+        fontfiles = {
+            "gfx/fonts/font_bitmap_1"
+            "gfx/fonts/font_bitmap_2"
+        }
+        color = 0xffffffff
+        textcolors = {
+            G = { 86 172 91 }
+        }
+    }
+}
+</pre>
+<ul><li><code>name</code> specifies the name of the font. This gets used for <a href="/Interface_modding.html" title="Interface modding">interface elements that use text</a> to signify which font file gets used. This is everything that fonts are used for, except for the map font. To find where a base game’s bitmapfont is used, it is best to <a href="/Modding.html#Search_in_files" title="Modding">search every *.gui file in the interface folder using a text editor</a> and check the search results for a complete list.</li>
+<li><code>fontfiles</code> provides the location of all bitmaps used in the font, which is the path to the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/fonts/*.fnt</span> file without the .fnt extension. The files should have no overlapping characters defined. If a font uses one font file in total, <code>path = "gfx/fonts/my_font"</code> can be used instead.</li>
+<li><code>color</code> defines the colour of the font in hex code of the ARGB format. The first 2 characters after the <code>0x</code> define the transparency of the font, <code>00</code> meaning full transparency and <code>FF</code> meaning full opacity. The latter 6 characters provide the RGB hex code, each colour defined on the scale from <code>00</code> to <code>FF</code>.</li>
+<li><code>textcolors</code> provides an override of <a href="https://stellaris.paradoxwikis.com/Localisation#Formatting_characters" class="mw-redirect" title="Localisation">text colours</a>, allowing to change a particular text colour to give a different colour when used on this font compared to the default value.</li></ul>
+<h3><span class="mw-headline" id="Overriding_bitmaps">Overriding bitmaps</span></h3>
+<p>Additionally, it is possible to override a bitmapfont when the game is set to use a specific language. Primarily, fonts are overwritten for languages that don't use the Latin alphabet, and thus can't be small enough to fit into a 16&#160;MB file (i.e. Simplified Chinese).
+</p><p>The aforementioned overwrite entries in a <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/interface/*.gfx</span> file looks like the following example:
+</p>
+<pre>bitmapfonts = {
+    bitmapfont_override = {
+        name = "my_font"
+        fontfiles = {
+            "gfx/fonts/font_bitmap_1"
+            "gfx/fonts/font_bitmap_2"
+        }
+        languages = { "l_russian" "l_polish" }
+    }
+}
+</pre>
+<ul><li><code>path = "gfx/fonts/my_font"</code> may again be used instead of <code>fontfiles =</code> should you only use one bitmap.</li>
+<li><code>languages =</code> must equate to one of the supported languages. All accepted languages have folders in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/localisation</span>.</li></ul>
+<p>The work involved in generating multiple bitmaps is the only downside. However, using multiple bitmaps is an effective way to organize fonts between different alphabets. Should a mod use custom fonts in entirety, it also provides more space to use larger/higher quality characters and font designs without aliasing.
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a class="mw-selflink selflink">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181302
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.044 seconds
+Real time usage: 0.243 seconds
+Preprocessor visited node count: 331/1000000
+Post‐expand include size: 19570/2097152 bytes
+Template argument size: 8221/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 4588/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  208.357      1 -total
+  4.88%   10.170      1 Template:Version
+  2.83%    5.889      1 Template:Infobox
+  2.26%    4.715      1 Template:ModdingNavbox
+  1.64%    3.427      7 Template:Path
+  1.24%    2.589      1 Template:Nowrap
+  0.84%    1.754      1 Template:Navbox
+  0.26%    0.548     14 Template:Navboxgroup
+  0.13%    0.272      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:15521-0!canonical and timestamp 20260707181302 and revision id 96227.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">AI modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#AI_attitudes"><span class="tocnumber">2</span> <span class="toctext">AI attitudes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Structure"><span class="tocnumber">2.1</span> <span class="toctext">Structure</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Warnings"><span class="tocnumber">2.2</span> <span class="toctext">Warnings</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#AI_personalities"><span class="tocnumber">3</span> <span class="toctext">AI personalities</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Personality_archetypes"><span class="tocnumber">3.1</span> <span class="toctext">Personality archetypes</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Behaviours"><span class="tocnumber">3.2</span> <span class="toctext">Behaviours</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Modifiers:"><span class="tocnumber">3.3</span> <span class="toctext">Modifiers:</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Requirements_and_weighting"><span class="tocnumber">3.4</span> <span class="toctext">Requirements and weighting</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Examples"><span class="tocnumber">3.5</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#Honorbound_warriors"><span class="tocnumber">3.5.1</span> <span class="toctext">Honorbound warriors</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#AI_Weights"><span class="tocnumber">4</span> <span class="toctext">AI Weights</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Modifying_ai_weight"><span class="tocnumber">4.1</span> <span class="toctext">Modifying ai_weight</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Forbidding_an_AI_from_an_action"><span class="tocnumber">4.2</span> <span class="toctext">Forbidding an AI from an action</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Summary">Summary</span></h2>
+<p>Stellaris AI behaviour is determined by <b>attitudes</b>, <b>behaviours</b> and <b>weights</b>. Attitudes describe which actions an AI empire can pursue according to its current opinion level towards another empire, while behaviours describe the AI empire's behaviour in general.  Weights are defined for most objects to help the AI determine what to do or build.
+</p>
+<h2><span class="mw-headline" id="AI_attitudes">AI attitudes</span></h2>
+<p>AI attitudes describe how an AI empire would react at certain opinion levels towards another empire, and what actions it may take. Attitude entries consist of a type and a list of allowed behaviours. The type of attitude is normally set to be the same as the name of the entry itself.
+</p>
+<h3><span class="mw-headline" id="Structure">Structure</span></h3>
+<p>Example:
+</p>
+<pre>   neutral = {
+       type = neutral
+       behaviour = {
+           trade = yes
+       }
+   }
+</pre>
+<p>Any number of behaviours may be attached to the behaviour list on each attitude entry. If a behaviour is not listed inside the attitude's behaviour list, it will assume the value of 'no'. Available behaviours are listed in the table below.
+</p>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Behaviour name</th>
+<th>Data type</th>
+<th>Default value</th>
+<th>! Example</th>
+<th>Description
+</th></tr>
+<tr>
+<td>trade</td>
+<td>Boolean (yes/no)</td>
+<td>no</td>
+<td>trade = yes</td>
+<td>An attitude with trade set to yes will permit an empire to be traded with.
+</td></tr>
+<tr>
+<td>weaken</td>
+<td>Boolean (yes/no)</td>
+<td>no</td>
+<td>weaken = yes</td>
+<td>An attitude with weaken set to yes will cause an empire to try and weaken another. This does not mean that they will fight.
+</td></tr>
+<tr>
+<td>attack</td>
+<td>Boolean (yes/no)</td>
+<td>no</td>
+<td>attack = yes</td>
+<td>An attitude with attack set to yes will cause an empire to actively attack another, provided that war goals can be achieved.
+</td></tr>
+<tr>
+<td>vassalize</td>
+<td>Boolean (yes/no)</td>
+<td>no</td>
+<td>vassalize = yes</td>
+<td>An attitude with vassalize set to yes will cause an empire to attempt vassalization on another. This does not necessarily involve war.
+</td></tr>
+<tr>
+<td>coexist</td>
+<td>Boolean (yes/no)</td>
+<td>no</td>
+<td>coexist = yes</td>
+<td>An attitude with coexist set to yes will cause the empire to be more accepting of non-aggression pacts.
+</td></tr>
+<tr>
+<td>alliance</td>
+<td>Boolean (yes/no)</td>
+<td>no</td>
+<td>alliance = yes</td>
+<td>An attitude with alliance set to yes will cause the empire to try and seek an alliance, or accept an alliance offer if it comes their way.
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Warnings">Warnings</span></h3>
+<p>Removing attitude entries from attitudes.txt can cause the game to crash to desktop. It is likely that these are accessed in a hard-coded manner by the game.
+</p>
+<h2><span class="mw-headline" id="AI_personalities">AI personalities</span></h2>
+<p>Personalities describe how an AI empire will react to other empires around them. Each personality consists of a behaviour archetype which describes the empire's goal, a list of behaviours which describe the likely actions taken against other empires and pops, and several modifiers which alter other features which require numeric values as inputs.
+</p>
+<h3><span class="mw-headline" id="Personality_archetypes">Personality archetypes</span></h3>
+<p>Personality archetypes describe the overall goal of the AI nation. If a personality archetype is not set, then the AI will pursue a balanced goal with no distinct focus.
+</p>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Personality name</th>
+<th>Description
+</th></tr>
+<tr>
+<td>honorbound</td>
+<td>Cares about honor and martial prowess above all else.
+</td></tr>
+<tr>
+<td>capitalist</td>
+<td>Cares about trade and material profit above all else.
+</td></tr>
+<tr>
+<td>hegemon</td>
+<td>Cares about the superiority of their own empire above all else.
+</td></tr>
+<tr>
+<td>ideologue</td>
+<td>Cares about combating opposing ethics above all else.
+</td></tr>
+<tr>
+<td>isolationist</td>
+<td>Cares about maintaining their isolation from other empires above all else.
+</td></tr>
+<tr>
+<td>federation builder</td>
+<td>Cares about bringing different species together in a federation above all else.
+</td></tr>
+<tr>
+<td>propagator</td>
+<td>Cares about the propagation of its species above all else.
+</td></tr>
+<tr>
+<td>purifier</td>
+<td>Cares about purifying the galaxy of other species above all else.
+</td></tr>
+<tr>
+<td>explorer</td>
+<td>Cares about exploring the galaxy and making scientific or spiritual discoveries above all else.
+</td></tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Behaviours">Behaviours</span></h3>
+<p>Behaviours determine the type of actions that an AI empire may take against other empires. These are set either to yes or no only; there is no current way to weight the AI's emphasis on certain aspects of their interactions. Currently, it is unknown what behaviour the AI will assume for each type of action if it remains unset. These behaviours are listed in the table below:
+</p>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Behaviour name</th>
+<th>Description
+</th></tr>
+<tr>
+<td>conqueror</td>
+<td>Will they conquer planets from other empires?
+</td></tr>
+<tr>
+<td>subjugator</td>
+<td>Will they vassalise other empires?
+</td></tr>
+<tr>
+<td>liberator</td>
+<td>Will they liberate conquered empires?
+</td></tr>
+<tr>
+<td>opportunist</td>
+<td>Are they more likely to attack someone already embroiled in war?
+</td></tr>
+<tr>
+<td>uplifter</td>
+<td>Will they uplift and enlighten other species?
+</td></tr>
+<tr>
+<td>infiltrator</td>
+<td>Will they infiltrate primitives?
+</td></tr>
+<tr>
+<td>dominator</td>
+<td>Will they invade primitives?
+</td></tr>
+<tr>
+<td>slaver</td>
+<td>Will they enslave pops?
+</td></tr>
+<tr>
+<td>purger</td>
+<td>Will they purge alien pops?
+</td></tr>
+<tr>
+<td>robot_exploiter</td>
+<td>Will they use robots for menial labor?
+</td></tr>
+<tr>
+<td>robot_liberator</td>
+<td>Will they give rights to robots?
+</td></tr>
+<tr>
+<td>propagator</td>
+<td>Will they only get aggressive once boxed in?
+</td></tr>
+<tr>
+<td>multispecies</td>
+<td>Will they give rights to aliens?
+</td></tr>
+<tr>
+<td>crisis_leader</td>
+<td>Will they fight the crisis and invite others to do so (Fallen Empires special behviour. Emperor/Custodian will behave the same way regardless of this flag.)
+</td></tr>
+<tr>
+<td>crisis_fighter</td>
+<td>Will they consider fighting the crisis? (If 'no' they will only care about themselves.)
+</td></tr>
+<tr>
+<td>holy_planets</td>
+<td>special for spiritualist FE
+</td></tr>
+<tr>
+<td>isolationist</td>
+<td>always keep borders closed
+</td></tr>
+<tr>
+<td>demands_clear_borders</td>
+<td>used by xenophobe FE , AI will hate anyone who link up with their territory.
+</td></tr>
+<tr>
+<td>enigmatic</td>
+<td>used by machine fallen empires.you never know what is this AI thinking,for example&#160;: our relationship.
+</td></tr>
+<tr>
+<td>custodian</td>
+<td>special for awakened machine fallen empires, prevents colonization &amp; locks attitude
+</td></tr>
+<tr>
+<td>berserker</td>
+<td>used by awakened berserk machine fallen empires, prevents colonization &amp; locks attitude
+</td></tr>
+<tr>
+<td>limited</td>
+<td>prevents certain AI behaviours . I don't know what behaviours limited , anyone can decode the AI files&#160;?
+</td></tr>
+<tr>
+<td>migrator</td>
+<td>(NOT FOUND in 3.x , maybe not working)Will they want to migrate to other empires?
+</td></tr>
+</tbody></table>
+<p>Example:
+</p>
+<pre>   behaviour = {
+       conqueror = no
+       subjugator = no
+       liberator = no
+       opportunist = yes
+       slaver = no
+       uplifter = no
+       purger = no
+       dominator = no
+       infiltrator = no
+       robot_exploiter = yes
+       robot_liberator = no
+       migrator = no
+   }
+</pre>
+<h3><span class="mw-headline" id="Modifiers:">Modifiers:</span></h3>
+<p>Modifiers affect specific aspects of interactions that an AI empire may take against other empires. Unlike behaviours, these are numeric and allow for fine-tuning of the AI personality. All modifier values are assumed to be floating-point numbers. These modifiers are listed in the table below:
+</p>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Modifier name</th>
+<th>Description
+</th></tr>
+<tr>
+<td>aggressiveness</td>
+<td>Chance of declaring wars. Multiplier; set this to 1.0 for default AI behaviour. Values between 0 and 1 will result in a less aggressive AI. Values greater than 1 will result in a more aggressive AI. Must be greater than or equal to zero.
+</td></tr>
+<tr>
+<td>trade_willingness</td>
+<td>Willingness to pursue trade. At 0.0, trade will not be considered; at 1.0, trades will attempt to achieve a total value which is approximately equal for both sides. Greater values will weight the trade towards the other party. Must be greater than or equal to zero.
+</td></tr>
+<tr>
+<td>bravery</td>
+<td>Affects the chance that they will pick rivals and war targets of similar strength, instead of picking on the weak. Values between 0 and 1 will result in an AI which prefers to target weakened enemies. Values greater than 1 will result in an AI that may declare war against an equal or stronger enemy. Must be greater than or equal to zero.
+</td></tr>
+<tr>
+<td>military_spending</td>
+<td>Affects mineral and energy budget that goes to navies and armies. Values between 0 and 1 will result in an AI which spends less than normal on its military. Values greater than 1 will result in an AI that spends more than normal on its military. Must be greater than or equal to zero.
+</td></tr>
+<tr>
+<td>colony_spending</td>
+<td>Affects mineral and energy budget that goes to new colonies. Values between 0 and 1 will result in an AI which spends less than normal on colonising new worlds. Values greater than 1 will result in an AI that spends more than normal on colonising new worlds. Must be greater than or equal to zero.
+</td></tr>
+<tr>
+<td>threat_modifier</td>
+<td>Affects the severity of opinion modifiers generated by wars near an AI nation, or against the AI nation. Values between 0 and 1 will result in an AI that doesn't care too much about threat. Values higher than 1 will cause threat to be generated faster than normal.
+</td></tr>
+<tr>
+<td>threat_others_modifier</td>
+<td>Afffects how much threat is generated for other empires when this empire is conquered.
+</td></tr>
+<tr>
+<td>friction_modifier</td>
+<td>Affects the severity of opinion modifiers generated by colonies or frontier outposts near an AI nation's borders. Values between 0 and 1 will result in an AI that cares less about contested borders and territorial pressure. Values higher than 1 will result in an AI that cares more about contested borders and territorial pressure.
+</td></tr>
+<tr>
+<td>claims_modifier</td>
+<td>Affects opinion penalty from claims
+</td></tr>
+<tr>
+<td>federation_acceptance</td>
+<td>Affects the likelihood of an AI accepting federation offers from other nations. Value is additive to the base reluctance values.
+</td></tr>
+<tr>
+<td>nap_acceptance</td>
+<td>Added directly to chance of accepting to form a non-aggression pact
+</td></tr>
+<tr>
+<td>commercial_pact_acceptance</td>
+<td>Added directly to chance of accepting to form a commercial pact
+</td></tr>
+<tr>
+<td>research_agreement_acceptance</td>
+<td>Added directly to chance of accepting to form a research agreement
+</td></tr>
+<tr>
+<td>migration_pact_acceptance</td>
+<td>Added directly to chance of accepting to form a migration pact
+</td></tr>
+<tr>
+<td>defensive_pact_acceptance</td>
+<td>Added directly to chance of accepting to form a defensive pact
+</td></tr>
+<tr>
+<td>alliance_acceptance</td>
+<td>(NOT FOUND in 3.X ,maybe been replace by other things)Affects the likelihood of an AI accepting alliance offers from other nations. Value is additive to the base reluctance values.
+</td></tr>
+</tbody></table>
+<p>Example:
+</p>
+<pre>   aggressiveness = 0.5
+   trade_willingness = 0.5
+   bravery = 0.75
+   military_spending = 1.2
+   colony_spending = 1.0
+   alliance_acceptance = -50
+   federation_acceptance = -50
+   threat_modifier = 0.75
+   friction_modifier = 2.0
+</pre>
+<h3><span class="mw-headline" id="Requirements_and_weighting">Requirements and weighting</span></h3>
+<p>Personality types for randomly-generated AI nations can be restricted by adding additional conditions. Standard <a href="/Conditions.html" title="Conditions">conditions</a> may be inserted to restrict personalities from being attached to certain empire types, or to weight personalities more heavily on others.
+</p><p>To allow a personality to be attached, every condition in the field 'allow' must evaluate to true.
+</p><p>Example:
+</p>
+<pre>   allow = {
+        NOT { is_country_type = fallen_empire }         ## Does not permit this personality to be attached to a fallen empire.
+        NOT { has_ethic = ethic_pacifist }              ## Does not permit this personality to be attached to a pacifist empire.
+   }
+</pre>
+<p>Weighting is described in a similar manner. The field 'weight_modifier' must contain a numeric weight value greater than zero, and a list of weight modifiers containing a modifying factor and a list of conditions which must all evaluate to true for the modifying factor to apply.
+</p><p>Example:
+</p>
+<pre>   weight_modifier = {
+       weight = 10	
+       modifier = {
+           factor = -2
+           NOT = {
+               has_ethic = "ethic_pacifist"
+               has_ethic = "ethic_fanatic_pacifist"		
+           }
+       }
+   }
+</pre>
+<h3><span class="mw-headline" id="Examples">Examples</span></h3>
+<p>Below are examples of complete AI personalities taken from the base game files, with comments to illustrate the effects that each line has.
+</p>
+<h4><span class="mw-headline" id="Honorbound_warriors">Honorbound warriors</span></h4>
+<pre>    honorbound_warriors = {
+	aggressiveness = 1.75
+	trade_willingness = 0.7
+	bravery = 1.5
+	combat_bravery = 2.0	# rarely ever retreat in battle
+
+	military_spending = 1.2
+	colony_spending = 0.9
+
+	federation_acceptance = -10
+	nap_acceptance = -50
+	defensive_pact_acceptance = 20
+	migration_pact_acceptance = 0
+
+	advanced_start_chance = 75
+
+	weapon_preferences = weapon_type_strike_craft
+	armor_ratio = 0.4
+	shields_ratio = 0.4
+	hull_ratio = 0.2
+
+	threat_modifier = 0.75
+	threat_others_modifier = 0.5
+	friction_modifier = 1.0
+	claims_modifier = 2.0
+
+	behaviour = {
+		conqueror = yes
+		subjugator = yes
+		liberator = no
+		opportunist = no
+		slaver = no
+		caste_system = no
+		uplifter = no
+		purger = no
+		displacer = no
+		infiltrator = no
+		dominator = yes
+		robot_exploiter = no
+		robot_liberator = no
+		propagator = no
+		multispecies = yes
+		crisis_fighter = yes
+	}
+
+	allow = {
+		is_country_type = default
+		OR = {
+			AND = {
+				has_ethic = "ethic_fanatic_militarist"
+				OR = {
+					has_ethic = "ethic_spiritualist"
+					has_ethic = "ethic_egalitarian"
+					has_ethic = "ethic_xenophile"
+				}			
+			}
+			AND = {
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_militarist"
+			}
+		}
+
+	}
+
+	weight_modifier = {
+		weight = 50
+	}
+ }
+</pre>
+<h2><span class="mw-headline" id="AI_Weights">AI Weights</span></h2>
+<p>As seen above, most objects or actions scripted into the game support an <code>ai_weight = { }</code> section to help the AI determine the best course of action.  Most AI improvement mods change these AI weights so the AI will make different choices than they do in vanilla.  Many modders will neglect to write these sections into their mods, leaving the AI unable to use the new content effectively.  In general, the AI will choose what to do based on attitudes and behaviors, but will decide the specific one from AI weights.
+</p><p>For example, the AI will choose to develop a planet.  They must decide which district or building it is going to build.  It will evaluate all the <code>ai_weight</code> sections in each available building and district, modify these weights based on their attitudes and behaviors, then build whichever has the highest weight, with some variability and randomization built-in to reduce determinism.  The more thorough and effective the <code>ai_weight</code> sections are written, the better the AI performs and makes intelligent decisions in game.
+</p><p>For example, if you mod in new traits that will affect the performance of a particular job, it won't be used effectively unless the job's <code>weight</code> section is updated to include a <code>modifier = { factor = x has_trait = my_new_trait }</code> for the new trait.  Without this, a pop with a new trait that increases mineral output, for example, may end up as a farmer, while a pop with no bonus to mineral production works as a miner.  Your new building may never be built by the AI!
+</p><p>The AI will only make good decisions if we give it the information to make good decisions.
+</p>
+<h3><span class="mw-headline" id="Modifying_ai_weight">Modifying ai_weight</span></h3>
+<p>The main way to modify the ai_weight section is through use of a base <code>weight</code> flag and subsequent <code>modifier</code> blocks containing <code>factor</code> and <code>add</code> flags. The simplest way to start is with simply a single base weight, such as in the following example:
+</p>
+<pre>   ai_weight = {
+       weight = 1.5
+   }
+</pre>
+<p>In this example the entry that this is attached to would have a weight of 1.5. Depending on where exactly this is this weight can then be processed in a number of different ways, from highest value is chosen to a weighted randomized selection.
+</p><p>Now to make this example more complex we can add some <code>modifier</code> blocks to it, for example:
+</p>
+<pre>   ai_weight = {
+       weight = 1.5
+       modifier = {
+           add = 1.5
+           has_ethic = ethic_authoritarian
+       }
+       modifier = {
+           factor = 2
+           OR = {
+               has_policy_flag = slavery_allowed
+               has_ethic = ethic_fanatic_authoritarian
+           }
+       }
+   }
+</pre>
+<p>In order to determine what a final weight is the game engine starts at the top of the <code>ai_weight</code> entry, retrieves the starting weight, and then checks each of the <code>modifier</code> blocks <i>in order</i>. So for example if an empire is an authoritarian with slavery enabled, then in the above example they begin with the starting weight of 1.5, add 1.5 to that for a weight of 3, and then multiply that value by a factor of 2 for a final value of 6. Be aware that stacking factors can lead to numbers quickly growing in size; a starting value of 5 that has a <code>factor = 2</code> applied a half dozen times can reach all of the way up to a value of 5 x 2 ^ 6 = 320, with each successive doubling increasing by drastically more than the previous! Also be aware that there is no requirement for numbers to remain positive; both <code>factor</code> and <code>add</code> will accept negative numbers and multiply or add them as expected.
+</p><p>Like most other cases, multiple factors present in a single <code>modifier</code> block will default to an AND requirement, where all must be true in order to apply the factor. If an OR is desired then it will need to be added as in the example above.
+</p><p>This can, however, allow for us to command AI's to not perform a certain decision in certain cases. For example, consider the example below:
+</p>
+<pre>   ai_weight = {
+       weight = 1.5
+       modifier = {
+           add = 1.5
+           has_ethic = ethic_authoritarian
+       }
+       modifier = {
+           factor = 2
+           OR = {
+               has_policy_flag = slavery_allowed
+               has_ethic = ethic_fanatic_authoritarian
+           }
+       }
+       modifier = {
+           factor = 0
+           has_ethic = ethic_fanatic_egalitarian
+       }
+   }
+</pre>
+<p>In this example we add a factor of 0 in the event that the AI is a fanatic egalitarian. Because 0 multiplied by any value is still 0, this means that an AI that meets that requirement will never perform the given action, no matter what other factors might apply. NOTE: Because <code>modifier</code> blocks are checked in order, if you multiply the weight by 0 and then later add to it is will result in a non-zero weight! Make sure that if you have any <code>add</code> modifiers in place that any 0 factors come after them in the code entries!
+</p>
+<h3><span class="mw-headline" id="Forbidding_an_AI_from_an_action">Forbidding an AI from an action</span></h3>
+<p>A common use case that shows up in many mods is to prevent AI players from performing an action at all, limiting it only to human players. In that case one simply needs to add the following block to the action to prevent the AI from ever performing it:
+</p>
+<pre>   ai_weight = {
+       weight = 0
+   }
+</pre>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a class="mw-selflink selflink">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707180858
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.031 seconds
+Real time usage: 0.043 seconds
+Preprocessor visited node count: 205/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1258/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   20.057      1 -total
+ 55.57%   11.145      1 Template:ModdingNavbox
+ 42.01%    8.425      1 Template:Version
+ 38.82%    7.787      1 Template:Navbox
+ 25.65%    5.145      1 Template:Infobox
+ 11.51%    2.308     14 Template:Navboxgroup
+ 10.40%    2.086      1 Template:Nowrap
+ 10.28%    2.062      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1768-0!canonical and timestamp 20260707180858 and revision id 59583.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

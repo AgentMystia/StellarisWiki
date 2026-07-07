@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ship modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Ship modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about modding of <a href="https://stellaris.paradoxwikis.com/Ships" class="mw-redirect" title="Ships">Ships</a>, <a href="/Ship_designer.html" title="Ship designer">Sections and Components</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Basics"><span class="tocnumber">1</span> <span class="toctext">Basics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Graphics"><span class="tocnumber">1.1</span> <span class="toctext">Graphics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Ship_Sizes"><span class="tocnumber">2</span> <span class="toctext">Ship Sizes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Data_Structure"><span class="tocnumber">2.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Examples"><span class="tocnumber">2.2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Corvette"><span class="tocnumber">2.2.1</span> <span class="toctext">Corvette</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Colossus"><span class="tocnumber">2.2.2</span> <span class="toctext">Colossus</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Juggernaut"><span class="tocnumber">2.2.3</span> <span class="toctext">Juggernaut</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Ship_Sections"><span class="tocnumber">3</span> <span class="toctext">Ship Sections</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Data_Structure_2"><span class="tocnumber">3.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Default_list_of_locator_names"><span class="tocnumber">3.2</span> <span class="toctext">Default list of locator names</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Examples_2"><span class="tocnumber">3.3</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Battleship_XL_Bow"><span class="tocnumber">3.3.1</span> <span class="toctext">Battleship XL Bow</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Starbase_Missile_Defense_Module"><span class="tocnumber">3.3.2</span> <span class="toctext">Starbase Missile Defense Module</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Component_Slot_Templates"><span class="tocnumber">4</span> <span class="toctext">Component Slot Templates</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Data_Structure_3"><span class="tocnumber">4.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Examples_3"><span class="tocnumber">4.2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Point_Defense_Turret"><span class="tocnumber">4.2.1</span> <span class="toctext">Point Defense Turret</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Invisible_Extra_Large_&quot;Turret&quot;"><span class="tocnumber">4.2.2</span> <span class="toctext">Invisible Extra Large "Turret"</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Component_Sets"><span class="tocnumber">5</span> <span class="toctext">Component Sets</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Data_Structure_4"><span class="tocnumber">5.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Examples_4"><span class="tocnumber">5.2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-23"><a href="#Core_Component_Set:_&quot;Combat_Computers&quot;"><span class="tocnumber">5.2.1</span> <span class="toctext">Core Component Set: "Combat Computers"</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#Designer_Component_Set:_&quot;Red_Lasers&quot;"><span class="tocnumber">5.2.2</span> <span class="toctext">Designer Component Set: "Red Lasers"</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Components"><span class="tocnumber">6</span> <span class="toctext">Components</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#Data_Structure_5"><span class="tocnumber">6.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Weapon_Stats_CSV"><span class="tocnumber">6.2</span> <span class="toctext">Weapon Stats CSV</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Component_Tags"><span class="tocnumber">6.3</span> <span class="toctext">Component Tags</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Examples_5"><span class="tocnumber">6.4</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#Small_Red_Laser"><span class="tocnumber">6.4.1</span> <span class="toctext">Small Red Laser</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#Tier_3_Strike_Crafts"><span class="tocnumber">6.4.2</span> <span class="toctext">Tier 3 Strike Crafts</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#Small_Tier_3_Shield"><span class="tocnumber">6.4.3</span> <span class="toctext">Small Tier 3 Shield</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#PD_Nullification_Juggernaut_Aura"><span class="tocnumber">6.4.4</span> <span class="toctext">PD Nullification Juggernaut Aura</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#Bombardment_Juggernaut_Aura"><span class="tocnumber">6.4.5</span> <span class="toctext">Bombardment Juggernaut Aura</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="#How_does_Colossus_Weapons_Work?"><span class="tocnumber">6.5</span> <span class="toctext">How does Colossus Weapons Work?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#Ship_Behavior"><span class="tocnumber">7</span> <span class="toctext">Ship Behavior</span></a>
+<ul>
+<li class="toclevel-2 tocsection-37"><a href="#Data_Structure_6"><span class="tocnumber">7.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-38"><a href="#Global_Ship_Designs"><span class="tocnumber">8</span> <span class="toctext">Global Ship Designs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-39"><a href="#Data_Structure_7"><span class="tocnumber">8.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-40"><a href="#Create_a_special_event_ship"><span class="tocnumber">9</span> <span class="toctext">Create a special event ship</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Basics">Basics</span></h2>
+<p>Ships consists of three basic components:
+</p>
+<ol><li><code>ship_size</code> – <i><a href="#Ship_Sizes">#Ship Sizes</a></i></li>
+<li><code>section_template</code> – <i><a href="#Ship_Sections">#Ship Sections</a></i></li>
+<li><code>component_template</code> – <i><a href="#Components">#Components</a></i></li></ol>
+<p>These three things are then used by a <code>ship_design</code> to formulate a complete ship. – <i><a href="#Global_Ship_Designs">#Global Ship Designs</a></i>
+</p><p>A <code>ship_size</code> has a list of slots that can have sections attached to them.
+Each slot has a name and specify a locator where the section will be attached graphically.
+</p>
+<div class="mw-collapsible mw-collapsed" style="width:600px"><b>Example: </b><div class="mw-collapsible-content"><div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span>	<span class="n">section_slots</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;north&quot;</span>	<span class="o">=</span> <span class="p">{</span> <span class="n">locator</span> <span class="o">=</span> <span class="s2">&quot;part1&quot;</span> <span class="p">}</span>
+		<span class="s2">&quot;west&quot;</span>	<span class="o">=</span> <span class="p">{</span> <span class="n">locator</span> <span class="o">=</span> <span class="s2">&quot;part2&quot;</span> <span class="p">}</span>
+		<span class="s2">&quot;east&quot;</span>	<span class="o">=</span> <span class="p">{</span> <span class="n">locator</span> <span class="o">=</span> <span class="s2">&quot;part3&quot;</span> <span class="p">}</span>
+		<span class="s2">&quot;south&quot;</span>	<span class="o">=</span> <span class="p">{</span> <span class="n">locator</span> <span class="o">=</span> <span class="s2">&quot;part4&quot;</span> <span class="p">}</span>
+	<span class="p">}</span>
+</pre></div></div></div>
+<p>A <code>section_template</code> then specify what <code>ship_sizes</code> they are compatible with and which slots they fit on.
+</p>
+<div class="mw-collapsible mw-collapsed" style="width:600px"><b>Example: </b><div class="mw-collapsible-content"><div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span>	<span class="n">ship_size</span> <span class="o">=</span> <span class="n">name_of_a_shipsize</span>
+	<span class="n">ship_size</span> <span class="o">=</span> <span class="n">name_of_another_shipsize</span>
+	<span class="n">fits_on_slot</span> <span class="o">=</span> <span class="s2">&quot;north&quot;</span>
+	<span class="n">fits_on_slot</span> <span class="o">=</span> <span class="s2">&quot;a_slot_in_some_other_shipsize&quot;</span>
+</pre></div></div></div>
+<p>Sections also specify slots for components. – <i><a href="#Component_Slot_Templates">#Component Slot Templates</a></i>
+</p>
+<div class="mw-collapsible mw-collapsed" style="width:600px"><b>Example: </b><div class="mw-collapsible-content"><div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> 	<span class="n">component_slot</span> <span class="o">=</span> <span class="p">{</span>
+ 	    <span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;LARGE_GUN_01&quot;</span>
+ 	    <span class="n">slot_size</span> <span class="o">=</span> <span class="n">large</span>
+ 	    <span class="n">slot_type</span> <span class="o">=</span> <span class="n">weapon</span>
+ 	    <span class="n">locatorname</span> <span class="o">=</span> <span class="s2">&quot;large_gun_01&quot;</span>
+ 	<span class="p">}</span>
+ 	<span class="n">small_utility_slots</span>	<span class="o">=</span> <span class="mi">1</span>
+ 	<span class="n">medium_utility_slots</span> <span class="o">=</span> <span class="mi">2</span>
+ 	<span class="n">large_utility_slots</span>	<span class="o">=</span> <span class="mi">3</span>
+</pre></div></div></div>
+<p>Components are placed by the <code>ship_design</code> in a way that sizes match and weapon components go on <code>slot_type = weapon</code> and vice versa.
+</p>
+<h3><span class="mw-headline" id="Graphics">Graphics</span></h3>
+<p>Graphically the ship is structured the same way as above. A core entity is selected based on <code>gfx_culture</code> and <code>ship_size</code>.
+The name of the entity should be: <code>&lt;gfx_culture&gt;_&lt;ship_size&gt;_entity</code>
+</p>
+<div class="mw-collapsible mw-collapsed" style="width:600px"><b>Example: </b><div class="mw-collapsible-content"><code>mammalian_01_corvette_entity</code>
+<dl><dd><i>NOTE:</i> If you don't want to use graphical cultures simply leave that part out of your entity name! E.g. <code>corvette_entity</code> will be used if the current graphical culture (or its fallback) fail to find an entity with their name as a prefix.</dd></dl>
+</div></div>
+<p>For ships with multiple sections this entity is usually invisible (exception is military stations) but holds the skeleton. Animations are usually done on the core entity. This core entity should have the "part1", "part2" etc. locators referenced by the <code>ship_size</code> slots.
+</p><p>Each <code>section_template</code> specify a name for their entity directly in their script files <small>(<code>common/section_templates/</code>)</small>. The game then prepends the name of the <code>gfx_culture</code> to that name when getting an actual entity.
+</p>
+<div class="mw-collapsible mw-collapsed" style="width:600px"><b>Example: </b><div class="mw-collapsible-content"><small>(<code>common/component_templates/</code>)</small>:
+<div class="mw-highlight mw-highlight-lang-lisp mw-content-ltr" dir="ltr"><pre><span></span>			<span class="nv">section_template</span> <span class="nb">=</span> <span class="nv">{</span>
+					<span class="o">...</span>
+					<span class="nv">entity</span> <span class="nb">=</span> <span class="s">&quot;some_entity&quot;</span>
+			<span class="nv">}</span>
+</pre></div></div></div>
+<dl><dd>The game will look for <code>mammalian_01_some_entity</code> if the current <code>gfx_culture</code> is <code>mammalian_01</code>, the section entity is then attached to a locator on the core entity specified by the slot (like "part1").</dd></dl>
+<p>Weapon entities are similar to section entities, with the differences being that they attach to the locator specified in the <code>section_template</code> and <code>component_slot</code> scripts.
+The name would be <code>&lt;gfx_culture&gt;_&lt;entity found in component_template&gt;_entity</code>.
+Weapon component entities should also have a locator named <code>turret_muzzle_01</code> <small>(this is specified in defines.lua as <code>NGraphics::SHIP_TURRET_PROJECTILE_SPAWN_LOCATOR</code>)</small>.
+</p>
+<h2><span class="mw-headline" id="Ship_Sizes">Ship Sizes</span></h2>
+<p>By ship sizes the game classifies all ships and stations. Ship sizes are defined at <code>common/ship_sizes/xyz.txt</code>.
+</p>
+<h3><span class="mw-headline" id="Data_Structure">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="16%">Military Ships
+</th>
+<th width="16%">Civilian Ships
+</th>
+<th width="16%">Starbases
+</th>
+<th width="16%">Defense Platforms
+</th>
+<th width="16%">Civilian Stations
+</th></tr>
+<tr>
+<td><b>graphical_culture = { mammalian_01 … }</b>
+</td>
+<td colspan="5">A list of <a href="/Species_modding.html" title="Species modding">Graphical Cultures</a> this ship size is valid to have. Can also specify as <code>graphical_culture = no</code> to indicate that this ship size doesn't need Graphical Cultures.
+</td></tr>
+<tr>
+<td><b>entity = some_entity</b>
+</td>
+<td colspan="5">Defines the graphical entity used, replacing the default SHIPSIZE_entity (or GFX_CULTURE_SHIPSIZE_entity) lookup.
+</td></tr>
+<tr>
+<td><b>max_hitpoints = &lt;int&gt;</b>
+</td>
+<td colspan="5">Defines the base Hull Points of this ship size.
+</td></tr>
+<tr>
+<td><b>combat_disengage_chance = &lt;float&gt;</b>
+</td>
+<td colspan="2">This property multiplies the chance this ship disengages in battle.
+</td>
+<td colspan="3">Vanilla always have 0 or leave this property undefined.
+</td></tr>
+<tr>
+<td><b>max_speed = &lt;int&gt;</b>
+</td>
+<td colspan="2" rowspan="3">Defines the base speed, acceleration and rotation speed of this ship size.
+</td>
+<td rowspan="3">Vanilla Starbases usually have 0 for these properties, except for the Juggernaut.
+</td>
+<td rowspan="3">Defense Platforms also need these properties because they need to move from the Starbase to their defense position.
+</td>
+<td rowspan="3">Vanilla Civilian Stations always have 0 for these properties.
+</td></tr>
+<tr>
+<td><b>acceleration = &lt;float&gt;</b>
+</td></tr>
+<tr>
+<td><b>rotation_speed = &lt;float&gt;</b>
+</td></tr>
+<tr>
+<td><b>formation_priority = &lt;int&gt;</b>
+</td>
+<td>Ships with higher formation priority trends to go ahead of the rest of the fleet.
+</td>
+<td style="text-align: center;" rowspan="2" colspan="4"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>collision_radius = &lt;int&gt;</b>
+</td>
+<td>The radius other ships will try to avoid colliding with.
+</td></tr>
+<tr>
+<td><b>modifier</b>
+</td>
+<td colspan="5">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be added to the ships of this size. These modifiers will come to effect even before the actual ships are built, you can see these in the Ship Designer. Only the following modifiers are allowed here.
+<ul><li>ship_evasion_(add/mult)</li>
+<li>ship_speed_mult &amp; ship_base_speed_mult</li>
+<li>ship_(hull/armor/shield)_(add/mult) &amp; ship_(hull/armor/shield)_regen_add_(static/perc)</li>
+<li>ship_weapon_damage &amp; &lt;weapon slot size&gt;_weapon_damage_mult</li>
+<li>ships_upkeep_mult &amp; ships_&lt;resource type&gt;_upkeep_mult</li>
+<li>ship_piracy_suppression_add</li></ul>
+<p>Starbases can also use the following modifiers here.
+</p>
+<ul><li>starbase_(module/building/defense_platform/shipyard)_capacity_add</li>
+<li>starbase_(trade_collection_range/protection_range/protection)_add</li></ul>
+</td></tr>
+<tr>
+<td><b>ship_modifier</b>
+</td>
+<td colspan="5">Another block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be added to the ships of this size. Modifiers like <code>ship_fire_rate_mult</code> and <code>ship_weapon_range_mult</code> go here.
+</td></tr>
+<tr>
+<td rowspan="2"><b>size_multiplier</b>
+</td>
+<td colspan="5">How large should the fleet battle AI consider this ship of. Determines location of ship within the shipyard build window
+</td></tr>
+<tr>
+<td>This also determines the number of Command Points needed to add this Ship Design to a Fleet.
+</td>
+<td>Vanilla Civilian Ships always have 1 for this property.
+</td>
+<td>Vanilla Starbases always have 4 for this property.
+</td>
+<td>This also determines the number of Defense Platform Capacities this Defense Platform will take up from a Starbase.
+</td>
+<td>Vanilla Civilian Stations always have 1 for this property.
+</td></tr>
+<tr>
+<td><b>combat_size_multiplier</b>
+</td>
+<td colspan="5">How large should the fleet battle AI consider this ship of, overwriting the <code>size_multiplier</code>.
+</td></tr>
+<tr>
+<td><b>fleet_slot_size</b>
+</td>
+<td>This determines the order this ship size appears in a fleet, with Corvettes having 1 up to Titans having 8.
+</td>
+<td colspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>num_target_locators</b>
+</td>
+<td colspan="5">⁇
+</td></tr>
+<tr>
+<td><b>is_civilian = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Vanilla always have <code>is_civilian = yes</code>. Other ship sizes have either <code>is_civilian = no</code> or just have this property undefined, except for the Observation Station being <code>yes</code>.
+</td>
+<td colspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>valid_target_aggressive_stance = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines should this ship be ignored by a Military Fleet in aggressive stance. Among vanilla ship sizes, only Civilian Ships and Civilian Stations have <code>valid_target_aggressive_stance = no</code>. This will be ignored if any civilian ship has weapons and engages in combat.
+</td></tr>
+<tr>
+<td><b>build_block_radius = &lt;int&gt;</b>
+</td>
+<td colspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Since Military Stations have been reworked, it’s still unclear what’s the use of this property for now.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>is_space_station = &lt;yes/no&gt;</b>
+</td>
+<td colspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td colspan="2">Vanilla always have <code>is_space_station = yes</code>. Other ship sizes have either <code>is_space_station = no</code> or just have this property undefined.
+</td></tr>
+<tr>
+<td><b>is_space_object = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines should this ship size have trailers when the ships move in the Space. Space monsters usually have <code>is_space_object = yes</code>.
+</td></tr>
+<tr>
+<td><b>can_be_inspected = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines should Designs of this ship size can be inspected by the player. Some space monsters have <code>can_be_inspected = no</code>.
+</td></tr>
+<tr>
+<td><b>icon_frame = &lt;int&gt;</b>
+</td>
+<td>Determines the index of the icon of this ship size in a shared icon file.
+</td>
+<td colspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>is_designable = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines should this ship size be designable in the Ship Designer.<br />Among vanilla ship sizes, buildable Military Ships, the Juggernaut and buildable Defense Platforms have <code>is_designable = yes</code>.
+</td></tr>
+<tr>
+<td><b>enable_default_design = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines should an Empire start with an auto-generated design of this ship size.<br />All buildable ship sizes have <code>enable_default_design = yes</code>, regardless of they are designable or not, or the AI will not be able to build this.
+</td></tr>
+<tr>
+<td><b>can_have_federation_design = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines if this ship can have a federation design.<br />Among vanilla ship sizes, only buildable Military Ships and the Juggernaut have <code>can_have_federation_design = yes</code>, except for the Colossus being without it.
+</td></tr>
+<tr>
+<td><b>components_add_to_cost = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines should the Ship Construction Cost and the ship upkeep take Ship Components and Ship Sections into account.<br />Among vanilla ship sizes, only undesignable but buildable ship sizes have <code>components_add_to_cost = no</code>.
+</td></tr>
+<tr>
+<td><b>auto_upgrade = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2">Determines should the design of this ship size automatically upgrade based on the recent technologies. Existing ships will also be upgraded.<br />Among vanilla ship sizes, only Civilian Ships and Civilian Stations have <code>auto_upgrade = yes</code>, except for the Observation Station being without it.
+</td>
+<th><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</th>
+<td colspan="2">Determines should the design of this ship size automatically upgrade based on the recent technologies. Existing ships will also be upgraded.<br />Among vanilla ship sizes, only Civilian Ships and Civilian Stations have <code>auto_upgrade = yes</code>, except for the Observation Station being without it.
+</td></tr>
+<tr>
+<td><b>can_disable = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines should this ship be disabled rather than be destroyed if at low health.<br />Among vanilla ship sizes, only buildable Starbases except for the Juggernaut have <code>can_disable = yes</code>.
+</td></tr>
+<tr>
+<td><b>flip_control_on_disable = &lt;yes/no&gt;</b>
+</td>
+<td colspan="5">Determines can this ship be captured after it’s disabled.<br />Among vanilla ship sizes, only buildable Starbases except for the Juggernaut have <code>flip_control_on_disable = yes</code>.
+</td></tr>
+<tr>
+<td><b>default_behavior = &lt;ship behavior&gt;</b>
+</td>
+<td>Determines the default ship behavior the auto generated designs should try to pick when choosing the combat computer component.
+</td>
+<td colspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>section_slots = { &lt;section_slot_name&gt; = { locator = &lt;locator name&gt; } }</b>
+</td>
+<td colspan="5">Determines the <a href="#Ship_Sections">Sections</a> needed for this ship size. The locators are pointers on the ship entity, see <a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics modding</a> for details.
+</td></tr>
+<tr>
+<td><b>base_buildtime = &lt;int&gt;</b>
+</td>
+<td colspan="4">Days it takes to build this ship / station or upgrade into this starbase.
+</td>
+<td>Vanilla civilian stations have this property undefined.
+</td></tr>
+<tr>
+<td><b>prerequisites = { tech_xxx }</b>
+</td>
+<td colspan="5">A list of Technologies required to design and build this ship size or upgrade existing Starbases into this level.
+</td></tr>
+<tr>
+<td><b>class</b>
+</td>
+<td>
+<ul><li><code>shipclass_military</code></li>
+<li><code>shipclass_military_special</code> (Colossus &amp; Star Eater)</li></ul>
+</td>
+<td>
+<ul><li><code>shipclass_constructor</code></li>
+<li><code>shipclass_colonizer</code></li>
+<li><code>shipclass_science_ship</code></li>
+<li><code>shipclass_transport</code></li></ul>
+</td>
+<td>
+<ul><li><code>shipclass_starbase</code></li></ul>
+</td>
+<td>
+<ul><li><code>shipclass_military_station</code></li></ul>
+</td>
+<td>
+<ul><li><code>shipclass_mining_station</code></li></ul>
+<ul><li><code>shipclass_orbital_station</code></li>
+<li><code>shipclass_research_station</code></li>
+<li><code>shipclass_observation_station</code></li></ul>
+</td></tr>
+<tr>
+<td><b>construction_type</b>
+</td>
+<td colspan="2"><code>starbase_shipyard</code>
+</td>
+<td>Starbases usually have this field undefined, except the Juggernaut has <code>starbase_shipyard</code>.
+</td>
+<td><code>starbase_defenses</code>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>potential_construction</b>
+</td>
+<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check should this ship size appear in the construction list of a Starbase or Megastructure. (Starbase or Megastructure scope, use <code>is_scope_type</code> to check scope type; FROM is the builder empire)
+</td>
+<td rowspan="2">Starbases usually have this field undefined, except for the Juggernaut.
+</td>
+<td>The same. Vanilla Defense Platforms only allow Starbases to build them.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>possible_construction</b>
+</td>
+<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check can this ship size be built by a Starbase or Megastructure. If evaluated false, the construction option is still visible but grayed out with a tooltip. (Starbase or Megastructure scope, use <code>is_scope_type</code> to check scope type; FROM is the builder empire)
+</td>
+<td>The same. Among vanilla Defense Platforms, the Ion Cannon can only be built by Citadel-level Starbases.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>resources</b>
+</td>
+<td colspan="5">An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this ship. This is the final cost if this ship size has <code>components_add_to_cost = no</code>. Although vanilla unused, resource productions is also allowed here.
+</td></tr>
+<tr>
+<td><b>min_upgrade_cost = { &lt;resource key&gt; = &lt;int&gt; }</b>
+</td>
+<td>The minimal cost required to upgrade this ship. Used to prevent zero-cost upgrades by shifting from a Component to another of exactly same cost.
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>The same.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>empire_limit = { base = &lt;int&gt; (max = &lt;int&gt; naval_cap_div = &lt;int&gt;) }</b>
+</td>
+<td colspan="5">Determines the max number of ships of this size an empire can have at the same time. The number is <code>base</code> plus empire naval capacity divided by <code>naval_cap_div</code>, rounded down, at most <code>max</code>. This value is now defined in the 00_ship_of_size_limits.txt.
+</td></tr>
+<tr>
+<td><b>required_component_set = &lt;component set key&gt;"</b>
+</td>
+<td colspan="5">Requires a core component with a <a href="#Component_Sets">Component Set</a>. Multiple allowed. While designing by the Ship Designer, these will be displayed on the right.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Examples">Examples</span></h3>
+<h4><span class="mw-headline" id="Corvette">Corvette</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>corvette = {
+	formation_priority = @corvette_formation_priority
+	max_speed = @speed_very_fast
+	acceleration = 0.35
+	rotation_speed = 0.1
+	collision_radius = @corvette_collision_radius
+	max_hitpoints = @corvette_hp
+	modifier = {
+		ship_evasion_add = @corvette_evasion
+		ship_piracy_suppression_add = 10
+	}
+	size_multiplier = 1
+	fleet_slot_size = 1
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 2
+	is_space_station = no
+	icon_frame = 2
+	base_buildtime = @corvette_build_time
+	can_have_federation_design = yes
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+
+	default_behavior = swarm
+
+	prerequisites = { "tech_corvettes" }
+
+	combat_disengage_chance = 1.00
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+
+	resources = {
+		category = ships
+		upkeep = {
+			energy = @corvette_upkeep_energy
+			alloys = @corvette_upkeep_alloys
+		}
+	}
+
+	min_upgrade_cost = {
+		alloys = 1
+	}
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="Colossus">Colossus</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>colossus = {
+	formation_priority = @colossus_formation_priority
+	max_speed = @speed_very_slow
+	acceleration = 0.2
+	rotation_speed = 0.15
+	collision_radius = @colossus_collision_radius
+	max_hitpoints = @colossus_hp
+	modifier = {
+		ship_evasion_add = @colossus_evasion
+	}
+	size_multiplier = 32
+	fleet_slot_size = 32
+	section_slots = { "ship" = { locator = "frame_ship" } }
+	num_target_locators = 4
+	is_space_station = no
+	icon_frame = 7
+	base_buildtime = @colossus_build_time
+	can_have_federation_design = no
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+
+	prerequisites = { "tech_colossus" }
+
+	class = shipclass_military_special
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "combat_computers"
+
+	potential_construction = {
+		OR = {
+			is_scope_type = starbase
+			AND = {
+				is_scope_type = megastructure
+				OR = {
+					is_megastructure_type = mega_shipyard_3
+					is_megastructure_type = mega_shipyard_restored
+				}
+			}
+		}
+	}
+
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = starbase_citadel_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_size &gt;= starbase_citadel
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_colossal_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = colossus_yards
+				}
+			}
+		}
+	}
+
+	empire_limit = {
+		base = 1
+	}
+
+	resources = {
+		category = ships
+		cost = {
+			alloys = 10000
+		}
+		upkeep = {
+			energy = @colossus_upkeep_energy
+			alloys = @colossus_upkeep_alloys
+		}
+	}
+
+	min_upgrade_cost = {
+		alloys = 10
+	}
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="Juggernaut">Juggernaut</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>juggernaut = {
+	formation_priority = @juggernaut_formation_priority
+	max_speed = @speed_very_slow
+	acceleration = 0.2
+	rotation_speed = 0.15
+	collision_radius = @juggernaut_collision_radius
+	max_hitpoints = @juggernaut_hp
+	modifier = {
+		ship_evasion_add = @juggernaut_evasion
+		starbase_shipyard_capacity_add = 2
+	}
+
+	base_buildtime = @juggernaut_build_time
+	resources = {
+		category = ships
+		upkeep = {
+			energy = @juggernaut_upkeep_energy
+			alloys = @juggernaut_upkeep_alloys
+		}
+	}
+
+	combat_size_multiplier = 5
+	size_multiplier = 32
+	fleet_slot_size = 32
+	section_slots = {
+		"core" = { locator = "part1" }
+	}
+
+	potential_construction = {
+		OR = {
+			AND = {
+				is_scope_type = starbase
+				NOT = { has_starbase_size = juggernaut }
+			}
+			AND = {
+				is_scope_type = megastructure
+				OR = {
+					is_megastructure_type = mega_shipyard_3
+					is_megastructure_type = mega_shipyard_restored
+				}
+			}
+		}
+	}
+
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = starbase_citadel_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_size &gt;= starbase_citadel
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_colossal_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = colossus_yards
+				}
+			}
+		}
+	}
+
+	empire_limit = {
+		base = 1
+	}
+
+	num_target_locators = 0
+	can_have_federation_design = yes
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	can_disable = no
+	icon_frame = 7
+	ship_class_icon_frame = 35
+
+	default_behavior = carrier
+
+	prerequisites = { "tech_juggernaut" }
+	class = shipclass_starbase
+	construction_type = starbase_shipyard
+
+	required_component_set = "power_core"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "ship_aura_components"
+
+	min_upgrade_cost = {
+		alloys = 50
+	}
+}
+</pre></div></div></div>
+<h2><span class="mw-headline" id="Ship_Sections">Ship Sections</span></h2>
+<p>Ships consist of Ship Sections. They are defined at <code>common/section_templates/xyz.txt</code>.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_2">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="80%">Description
+</th></tr>
+<tr>
+<td><b>key = &lt;localisation key&gt;</b>
+</td>
+<td>Identification key of this section.
+</td></tr>
+<tr>
+<td><b>ship_size = &lt;ship size key&gt;</b>
+</td>
+<td>Specifies the compatible <a href="#Ship_Sizes">ship size</a>. Multiple allowed.
+</td></tr>
+<tr>
+<td><b>fits_on_slot = &lt;section_slot_name&gt;</b>
+</td>
+<td>Specifies the compatible section slot name. Multiple allowed.
+</td></tr>
+<tr>
+<td><b>should_draw_components = &lt;yes/no&gt;</b>
+</td>
+<td>No longer working since 2.3.3. Setting this to "no" used to disable entities (visible turrets) for all weapons on this section.
+</td></tr>
+<tr>
+<td><b>entity = &lt;entity key&gt;</b>
+</td>
+<td>Specifies the entity of this section.
+</td></tr>
+<tr>
+<td><b>icon = &lt;GFX entry&gt;</b>
+</td>
+<td>Although most of the vanilla sections specified this as "GFX_ship_part_core_mid", there is no where for this to be seen.
+</td></tr>
+<tr>
+<td><b>component_slot</b>
+</td>
+<td>A weapon slot. Multiple allowed. They appear in the Ship Designer in the order they are defined here.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>name = &lt;something&gt;</b></li></ul>
+</td>
+<td>Identification of this weapon slot. No duplications allowed.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>template = &lt;component slot template&gt;</b></li></ul>
+</td>
+<td>The <a href="#Component_Slot_Templates">Component Slot Template</a> used for this weapon slot. This determines the weapon type (regular weapon or strike craft), weapon size (small, medium or large), and turret entity.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>locatorname = &lt;locator name&gt;</b></li></ul>
+</td>
+<td>The locators are pointers on the Ship Section entity and indicates where should the turret be, see <a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">Graphics modding</a> for details.
+</td></tr>
+<tr>
+<td><b>small_utility_slots = &lt;int&gt;</b><br /><b>medium_utility_slots = &lt;int&gt;</b><br /><b>large_utility_slots = &lt;int&gt;</b><br /><b>aux_utility_slots = &lt;int&gt;</b>
+</td>
+<td>The number of utility slots of each size of this Ship Section. Multiple allowed. They appear in the Ship Designer in the reversed order they are defined here.
+</td></tr>
+<tr>
+<td><b>resources</b>
+</td>
+<td>An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this Ship Section.
+</td></tr>
+<tr>
+<td><b>ai_weight</b>
+</td>
+<td>Determines how likely the AI and auto-designer will choose this Ship Section. (Country scope)
+</td></tr>
+<tr>
+<td><b>prerequisites = { tech_xxx }</b>
+</td>
+<td>A list of Technologies. Unlike other game objects, Ship Sections only require ONE of the prerequisites, not all.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Default_list_of_locator_names">Default list of locator names</span></h3>
+<p>Playable "graphical cultures" sharing the same locator names for each section, this are:
+</p>
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+<p><b>Vanilla locator names</b>
+</p>
+<div class="mw-collapsible-content"><div class="mw-highlight mw-highlight-lang-lisp mw-content-ltr" dir="ltr"><pre><span></span><span class="err">#</span> <span class="nv">CORVETTE</span>
+<span class="s">&quot;CORVETTE_MID_M1S1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;CORVETTE_MID_M1S1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;CORVETTE_MID_S3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;CORVETTE_MID_S3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;CORVETTE_MID_S3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_03&quot;</span>
+<span class="s">&quot;CORVETTE_MID_S2PD1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;CORVETTE_MID_S2PD1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;CORVETTE_MID_S2PD1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_03&quot;</span>
+
+<span class="err">#</span> <span class="nv">DESTROYER</span>
+<span class="s">&quot;DESTROYER_BOW_M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;DESTROYER_BOW_M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;DESTROYER_BOW_M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;DESTROYER_BOW_S3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;DESTROYER_BOW_S3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;DESTROYER_BOW_S3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_03&quot;</span>
+<span class="s">&quot;DESTROYER_BOW_L1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+
+<span class="err">#</span> <span class="nv">CRUISER</span>
+<span class="s">&quot;CRUISER_BOW_L1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_BOW_M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_BOW_M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_BOW_M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;CRUISER_BOW_M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_BOW_M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_02&quot;</span>
+<span class="s">&quot;CRUISER_MID_S2HB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_MID_S2HB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;CRUISER_MID_L1M1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_MID_L1M1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_MID_M3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_MID_M3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_02&quot;</span>
+<span class="s">&quot;CRUISER_MID_M3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_03&quot;</span>
+<span class="s">&quot;CRUISER_MID_M2S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_MID_M2S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_02&quot;</span>
+<span class="s">&quot;CRUISER_MID_M2S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_MID_M2S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;CRUISER_STERN_M1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_STERN_S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;CRUISER_STERN_S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+
+<span class="err">#</span> <span class="nv">BATTLESHIP</span>
+<span class="s">&quot;BATTLESHIP_BOW_L1M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_L1M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_L1M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_L1M1S2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_L2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_L2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_M1S2SHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_M1S2SHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_BOW_M1S2SHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_L2M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_L2M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_L2M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_L2M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_L3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_L3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_L3&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_03&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_M4SHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_M4SHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_M4SHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_03&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_M4SHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_04&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_S4LHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_S4LHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_02&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_S4LHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_03&quot;</span>
+<span class="s">&quot;BATTLESHIP_MID_S4LHB&quot;</span> <span class="nv">locator</span> <span class="s">&quot;small_gun_04&quot;</span>
+<span class="s">&quot;BATTLESHIP_STERN_L1&quot;</span> <span class="nv">locator</span> <span class="s">&quot;large_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_STERN_M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_01&quot;</span>
+<span class="s">&quot;BATTLESHIP_STERN_M2&quot;</span> <span class="nv">locator</span> <span class="s">&quot;medium_gun_02&quot;</span>
+</pre></div></div></div>
+<h3><span class="mw-headline" id="Examples_2">Examples</span></h3>
+<h4><span class="mw-headline" id="Battleship_XL_Bow">Battleship XL Bow</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>ship_section_template = {
+	key = "BATTLESHIP_BOW_M2S4"
+	ship_size = battleship
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "battleship_bow_XL1_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_energy_lance_1 tech_energy_lance_2 tech_arc_emitter_1 tech_arc_emitter_2 tech_mass_accelerator_1 tech_mass_accelerator_2 }
+
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_explosive
+		}
+	}
+
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+
+	large_utility_slots = 3
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="Starbase_Missile_Defense_Module">Starbase Missile Defense Module</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>ship_section_template = {
+	key = "MISSILE_STARBASE_SECTION"
+	entity = "starbase_turret_section_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	ship_size = starbase_outpost
+	ship_size = starbase_starport
+	ship_size = starbase_starhold
+	ship_size = starbase_starfortress
+	ship_size = starbase_citadel
+
+	fits_on_slot = "1"
+	fits_on_slot = "2"
+	fits_on_slot = "3"
+	fits_on_slot = "4"
+	fits_on_slot = "5"
+	fits_on_slot = "6"
+
+	should_draw_components = yes
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+}
+</pre></div></div></div>
+<h2><span class="mw-headline" id="Component_Slot_Templates">Component Slot Templates</span></h2>
+<p>Component Slot Templates are containers of actual Weapon Components attached to Section Templates, or to say "turrets". They are defined at <code>common/component_slot_templates/xyz.txt</code>.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_3">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="40%">Weapon Component Slots
+</th>
+<th width="40%">Strike Craft Slots
+</th></tr>
+<tr>
+<td><b>component</b>
+</td>
+<td>Only one is allowed.
+<ul><li><code>component = weapon</code></li></ul>
+</td>
+<td>Only one is allowed.
+<ul><li><code>component = strike_craft</code></li></ul>
+</td></tr>
+<tr>
+<td><b>size</b>
+</td>
+<td>One of the following is allowed.
+<ul><li><a href="/Ship_designer.html#Sections" title="Point defense"><img alt="Point defense" src="images/Slot_Point.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = point_defence</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Guided"><img alt="Guided" src="images/Slot_Guided.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = torpedo</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Extra large"><img alt="Extra large" src="images/Slot_XL.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = extra_large</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Titan"><img alt="Titan" src="images/Slot_Titan.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = titanic</code></li>
+<li><a href="/Ship_designer.html#Sections" title="World destroyer"><img alt="World destroyer" src="images/Slot_WD.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = planet_killer</code></li></ul>
+</td>
+<td>NOTE: Only large is currently in use.
+<p>small and medium can be added in component_slot_templates.
+</p>
+<ul><li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li></ul>
+</td></tr>
+<tr>
+<td><b>entities</b>
+</td>
+<td>Determines the Turret Entities of this Component Slot Template. Define with pairs of <a href="#Component_Tags">component tags</a> and entities.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>is_fixed = &lt;yes/no&gt;</b>
+</td>
+<td>Default no. If yes, this "turret" cannot rotate and the entire ship will rotate to have this "turret" face the target.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Examples_3">Examples</span></h3>
+<h4><span class="mw-headline" id="Point_Defense_Turret">Point Defense Turret</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>point_defence_turret = {
+	size = point_defence
+	component = weapon
+	entities = {
+		weapon_type_kinetic = "small_kinetic_gun_entity"
+		weapon_type_energy = "turret_point_defence_entity"
+	}
+}
+</pre></div></div></div>
+<h4><span id="Invisible_Extra_Large_.22Turret.22"></span><span class="mw-headline" id="Invisible_Extra_Large_&quot;Turret&quot;">Invisible Extra Large "Turret"</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>invisible_extra_large_fixed = {
+	size = extra_large
+	component = weapon
+	is_fixed = yes
+}
+</pre></div></div></div>
+<h2><span class="mw-headline" id="Component_Sets">Component Sets</span></h2>
+<p>Component Sets are groups of Components. They are defined at <code>common/component_sets/xyz.txt</code>.
+</p><p>There are two type of Component Sets.
+</p>
+<ul><li>One is used to group weapon and utility components together to be used by Ship Designers that are usually the same type of Components of different sizes unlocked by a same Technology;</li>
+<li>Another is used to group all components that fix a <a href="/Ship_designer.html#Sections" title="Core"><img alt="Core" src="images/Slot_Common.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a> Core Component Slot which can be unlocked by different technologies.</li></ul>
+<p>Core Components can be weapons and strike crafts, but such a weapon cannot fire and it doesn't have a turret entity. If it was a Planet Killer weapon, it can still be used but has no graphics.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_4">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="40%">Designer Component Sets
+</th>
+<th width="40%">Core Component Sets
+</th></tr>
+<tr>
+<td><b>key = &lt;localisation key&gt;</b>
+</td>
+<td colspan="2">Identification key of this Component Set.
+</td></tr>
+<tr>
+<td><b>required_component_set = &lt;yes/no&gt;</b>
+</td>
+<td>Must be <code>required_component_set = no</code> or leave this undefined.
+</td>
+<td>Must be <code>required_component_set = yes</code>. ship_size must have atleast 1 thing from component_templates can be use, or this ship are unable to be build and break auto-generated.
+</td></tr>
+<tr>
+<td><b>icon = &lt;GFX entry&gt;</b>
+</td>
+<td>Determines the icon of this component slot.
+</td>
+<td rowspan="2">Vanilla always define these but these is always overwritten by individual Core Components.
+</td></tr>
+<tr>
+<td><b>icon_frame = &lt;int&gt;</b>
+</td>
+<td>Vanilla always have <code>icon_frame = 1</code>. Actual usage is unclear.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Examples_4">Examples</span></h3>
+<h4><span id="Core_Component_Set:_.22Combat_Computers.22"></span><span class="mw-headline" id="Core_Component_Set:_&quot;Combat_Computers&quot;">Core Component Set: "Combat Computers"</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>component_set = {
+	key = "combat_computers"
+
+	required_component_set = yes
+	icon = "GFX_ship_part_computer"
+	icon_frame = 1
+}
+</pre></div></div></div>
+<h4><span id="Designer_Component_Set:_.22Red_Lasers.22"></span><span class="mw-headline" id="Designer_Component_Set:_&quot;Red_Lasers&quot;">Designer Component Set: "Red Lasers"</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>component_set = {
+	key = "RED_LASER"
+
+	icon = "GFX_ship_part_laser_1"
+	icon_frame = 1
+}
+</pre></div></div></div>
+<h2><span class="mw-headline" id="Components">Components</span></h2>
+<p>Components are attachments to ships for a weapon or a functional extension. They are defined at <code>common/component_templates/xyz.txt</code>.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_5">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="27%">Weapon Components
+</th>
+<th width="27%">Strike Craft Components
+</th>
+<th width="26%">Utility Components
+</th></tr>
+<tr>
+<td><b>key = &lt;localisation key&gt;</b>
+</td>
+<td colspan="3">Identification key of this Component.
+</td></tr>
+<tr>
+<td><b>icon = &lt;GFX entry&gt;</b>
+</td>
+<td colspan="3">Determines the icon of this Component, overwriting that of the Component Set.
+</td></tr>
+<tr>
+<td><b>icon_frame = &lt;int&gt;</b>
+</td>
+<td colspan="3">Vanilla always have <code>icon_frame = 1</code>. For sprite sheet icons.
+</td></tr>
+<tr>
+<td><b>size</b>
+</td>
+<td>One of the following is allowed.
+<ul><li><a href="/Ship_designer.html#Sections" title="Point defense"><img alt="Point defense" src="images/Slot_Point.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = point_defence</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Guided"><img alt="Guided" src="images/Slot_Guided.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = torpedo</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Extra large"><img alt="Extra large" src="images/Slot_XL.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = extra_large</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Titan"><img alt="Titan" src="images/Slot_Titan.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = titanic</code></li>
+<li><a href="/Ship_designer.html#Sections" title="World destroyer"><img alt="World destroyer" src="images/Slot_WD.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = planet_killer</code></li></ul>
+<p>Without the <a href="/Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>&#32;Apocalypse DLC, ship designs with a Titanic or Planet Killer weapon cannot be saved as well as the weapons cannot be picked by a generated design.
+</p>
+</td>
+<td>Only one is allowed.
+<ul><li><a href="/Ship_designer.html#Sections" title="Hangar"><img alt="Hangar" src="images/Slot_Hangar.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li></ul>
+</td>
+<td>One of the following is allowed.
+<ul><li><a href="/Ship_designer.html#Sections" title="Small"><img alt="Small" src="images/Slot_Small.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = small</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Medium"><img alt="Medium" src="images/Slot_Medium.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = medium</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Large"><img alt="Large" src="images/Slot_Large.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = large</code></li>
+<li><a href="/Ship_designer.html#Sections" title="Auxiliary"><img alt="Auxiliary" src="images/Slot_Auxiliary.png" decoding="async" loading="lazy" width="25" height="22" data-file-width="25" data-file-height="22" /></a>: <code>size = aux</code></li></ul>
+</td></tr>
+<tr>
+<td><b>type</b>
+</td>
+<td>One of the following is allowed.
+<ul><li><code>type = instant</code></li>
+<li><code>type = point_defence</code></li>
+<li><code>type = missile</code></li>
+<li><code>type = planet_killer</code></li></ul>
+<p>Kinetic and Energy weapons are "instant". Though their graphics might look like that their projectiles need time to reach the target, the actual damage is done in an instant.
+</p><p>Point defenses is a stronger variant that it can target missiles and strike crafts.
+</p><p>Missiles have additional properties to specify missile stats, like speed, retarget range, missile hitpoints, and missile evasion.
+</p><p>Planet killers are no regular weapons. They can't be used in fleet battles, but can be used on planets by Colossi to trigger events.
+</p><p>Without the <a href="/Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>&#32;Apocalypse DLC, the fleet command to invoke the Planet Killer weapon can't be used.
+</p>
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>weapon_type</b>
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>One of the following is allowed.
+<ul><li><code>type = instant</code></li>
+<li><code>type = point_defence</code></li></ul>
+</td>
+<td rowspan="6" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>entity = &lt;entity key&gt;</b>
+</td>
+<td>Determines what should the Strike Crafts be look like.
+</td></tr>
+<tr>
+<td><b>projectile_gfx = &lt;projectile graphic key&gt;</b>
+</td>
+<td colspan="2">Specifies the projectile graphic of this Component.
+</td></tr>
+<tr>
+<td><b>prio_projectile = &lt;yes/no&gt;</b>
+</td>
+<td>If yes, the projectile graphic of this Component will be preferentially displayed if there are too many graphics to be displayed and some of them must be ignored.
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>planet_destruction_gfx = &lt;GFX entry&gt;</b>
+</td>
+<td>Only relevant to Planet Killer weapons. Specifies the projectile graphic.
+</td></tr>
+<tr>
+<td><b>tags = { component_tags … }</b>
+</td>
+<td colspan="2">Specifies the list of Component Tags. This determines what kind of modifiers can affect this weapon. For example, if a weapon has both the kinetic tag and the energy tag, repeatable technologies that affect either will both affect this weapon.
+</td></tr>
+<tr>
+<td><b>ai_tags = { component_tags … }</b>
+</td>
+<td>What role should the AI consider this weapon to be playing.
+</td>
+<td colspan="2" rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>ai_tag_weight = &lt;float&gt;</b>
+</td>
+<td>Multiplies the AI weight gained through the <code>ai_tags</code>. Vanilla use this for Missile components for unknown reason.
+</td></tr>
+<tr>
+<td><b>prerequisites = { tech_xxx }</b>
+</td>
+<td colspan="3">Technology prerequisites of this Component.
+</td></tr>
+<tr>
+<td><b>power = &lt;int&gt;</b>
+</td>
+<td colspan="3">If this value is positive, this Component will generate that much power. If this value is negative, this Component will consume that much power.
+</td></tr>
+<tr>
+<td><b>resources</b>
+</td>
+<td colspan="3">An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the construction cost and upkeep of this Component.
+</td></tr>
+<tr>
+<td><b>modifier</b>
+</td>
+<td colspan="3">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be added to the ship. These modifiers will come to effect even before the actual ships are built, you can see these in the Ship Designer. Only the following modifiers are allowed here.
+<ul><li>ship_evasion_(add/mult)</li>
+<li>ship_speed_mult &amp; ship_base_speed_mult</li>
+<li>ship_(hull/armor/shield)_(add/mult) &amp; ship_(hull/armor/shield)_regen_add_(static/perc)</li>
+<li>ship_weapon_damage &amp; &lt;weapon slot size&gt;_weapon_damage_mult</li>
+<li>ships_upkeep_mult &amp; ships_&lt;resource type&gt;_upkeep_mult</li>
+<li>ship_piracy_suppression_add</li></ul>
+<p>Starbases can also use the following modifiers here.
+</p>
+<ul><li>starbase_(module/building/defense_platform/shipyard)_capacity_add</li>
+<li>starbase_(trade_collection_range/protection_range/protection)_add</li></ul>
+<p>It’s not recommended to give Weapon Components and Strike Craft Components with modifiers, because the tooltips might go wild and confusing.
+</p>
+</td></tr>
+<tr>
+<td><b>ship_modifier</b>
+</td>
+<td colspan="3">Another block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be added to the ship. Modifiers like <code>ship_fire_rate_mult</code> and <code>ship_weapon_range_mult</code> go here.
+<p>It’s not recommended to give Weapon Components and Strike Craft Components with modifiers, because the tooltips might go wild and confusing.
+</p>
+</td></tr>
+<tr>
+<td><b>ship_behavior = &lt;ship behavior&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Determines the behavior pattern of the Strike Crafts.
+</td>
+<td>Determines the behavior pattern of this ship.
+</td></tr>
+<tr>
+<td><b>component_set = &lt;component set key&gt;</b>
+</td>
+<td colspan="3">Specifies the <a href="#Component_Sets">Component Set</a> of this Component.
+</td></tr>
+<tr>
+<td><b>upgrades_to = &lt;component key&gt;</b>
+</td>
+<td colspan="3">Specifies the direct upgrade of this Component. When the direct upgrade has been unlocked, this Component will be considered obsolete and will be hidden from Ship Designer unless manually toggled off the "Hide Obsolete" option, and will be automatically replaced by the advanced variant for all existing Ship Designs that is set to auto-upgrade components.
+<p>For ship sizes that are set to <code>auto_upgrade = yes</code>, existing ships will instantly be upgraded for free. Starbases will redesign themselves and might pick different kind of Weapons.
+</p>
+</td></tr>
+<tr>
+<td><b>class_restriction = { shipclass_military … }</b>
+</td>
+<td colspan="3">Only ships of Ship Classes listed here can equip this Component.
+<p>Note that Colossi is <code>shipclass_military_special</code> and the Juggernaut and Starbases are <code>shipclass_starbase</code>.
+</p>
+</td></tr>
+<tr>
+<td><b>size_restriction = { &lt;ship size keys&gt; }</b>
+</td>
+<td colspan="3">Only ships of ship sizes listed here can equip this component.
+</td></tr>
+<tr>
+<td><b>slot_restriction = { &lt;slot template keys&gt; }</b>
+</td>
+<td colspan="2">Implemented since Stellaris v2.7.1. Only Slot Templates listed here can hold this Component.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>hidden = &lt;yes/no&gt;</b>
+</td>
+<td colspan="3">Optional, default no. If yes, this Component is hidden from the Ship Designer and Generated designs and the AI will also be unable to pick this. Only global ship designs can have this component.
+</td></tr>
+<tr>
+<td><b>valid_for_country</b>
+</td>
+<td colspan="3">Define it like this.
+<pre>valid_for_country = {
+    conditions...
+}
+</pre>
+<p>If all conditions are true, it's valid.
+</p><p><s>To be confirmed: <span class="effect-red" style="font-weight:bold;">Generated designs and the AI don't respect this.</span></s> Functions as a component potential block and accepts boolean.
+</p><p>It was used for Stellaris v1.8 to prevent the Player from using Sapient Combat Computer, while setting the AI policy to outlawed. It’s currently used for deluge planet killer colossus weapon.
+</p>
+</td></tr>
+<tr>
+<td><b>friendly_aura</b><br /><b>hostile_aura</b>
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Aura definitions. Head to the examples for details.
+<p>With <code>system_wide = yes</code>, the aura affects all friendly or enemy ships in the same system.
+</p><p>With <code>system_wide = no</code> or undefined, the aura affects all friendly ships in the same fleet or all enemy ships that are in battle with the aura bearer.
+</p><p>The aura range property does nothing. The aura graphic property seemingly does nothing as well.
+</p>
+</td></tr>
+<tr>
+<td><b>should_ai_use = &lt;yes/no&gt;</b>
+</td>
+<td colspan="3">If no, AI cannot use this. Among vanilla Components, only empty FTL driver use this.
+</td></tr>
+<tr>
+<td><b>ftl = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2" rowspan="3" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>If yes, this ship can use the hyperlane and go FTL.
+</td></tr>
+<tr>
+<td><b>jumpdrive = &lt;yes/no&gt;</b>
+</td>
+<td>If yes, this ship can use the jumpdrive command.
+</td></tr>
+<tr>
+<td><b>ftl_inhibitor = &lt;yes/no&gt;</b>
+</td>
+<td>If yes, this ship can be FTL inhibitor.
+</td></tr>
+<tr>
+<td><b>damage = { min = &lt;float&gt; max = &lt;float&gt; }</b>
+</td>
+<td colspan="2">Determines the damage.
+</td>
+<td rowspan="11" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>windup = { min = &lt;int&gt; max = &lt;int&gt; }</b>
+</td>
+<td colspan="2">The ticks it takes for this Weapon to get ready to fire. (1 day = 10 ticks)
+</td></tr>
+<tr>
+<td><b>total_fire_time = &lt;int&gt;</b>
+</td>
+<td>The ticks it takes for this Weapon to cooldown before it’s next fire. (1 day = 10 ticks)
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>cooldown = &lt;int&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>The ticks it takes for this Weapon to cooldown before it’s next fire. (1 day = 10 ticks)
+</td></tr>
+<tr>
+<td><b>hull_damage = &lt;float&gt;</b><br /><b>shield_damage = &lt;float&gt;</b><br /><b>shield_penetration = &lt;float&gt;</b><br /><b>armor_damage = &lt;float&gt;</b><br /><b>armor_penetration = &lt;float&gt;</b>
+</td>
+<td colspan="2">Determines the damage efficiencies and penetration rates.
+</td></tr>
+<tr>
+<td><b>range = &lt;int&gt;</b><br /><b>accuracy = &lt;float&gt;</b><br /><b>tracking = &lt;float&gt;</b>
+</td>
+<td colspan="2">Determines the range, accuracy and tracking.
+</td></tr>
+<tr>
+<td><b>missile_speed = &lt;int&gt;</b><br /><b>missile_evasion = &lt;float&gt;</b><br /><b>missile_shield = &lt;int&gt;</b><br /><b>missile_armor = &lt;int&gt;</b><br /><b>missile_health = &lt;int&gt;</b><br /><b>missile_retarget_range = &lt;int&gt;</b>
+</td>
+<td>Missile stats.
+</td>
+<td rowspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>firing_arc = &lt;float&gt;</b>
+</td>
+<td>Limits the arc this Weapon can fire in.
+</td></tr>
+<tr>
+<td><b>min_range = &lt;float&gt;</b>
+</td>
+<td>Limits the minimal range this Weapon can fire.
+</td></tr>
+<tr>
+<td><b>use_ship_kill_target = &lt;yes/no&gt;</b>
+</td>
+<td>Unclear.
+</td></tr>
+<tr>
+<td><b>count = &lt;int&gt;</b><br /><b>regeneration_per_day = &lt;float&gt;</b><br /><b>launch_time = &lt;int&gt;</b><br /><b>speed = &lt;int&gt;</b><br /><b>rotation_speed = &lt;float&gt;</b><br /><b>acceleration = &lt;float&gt;</b><br /><b>evasion = &lt;float&gt;</b><br /><b>shield = &lt;int&gt;</b><br /><b>armor = &lt;int&gt;</b><br /><b>health = &lt;int&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Strike Craft stats.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Weapon_Stats_CSV">Weapon Stats CSV</span></h3>
+<p>Most stats of vanilla Weapon Components are defined at "common/component_templates/weapon_components.csv". This file has higher priority than individual Weapon Components.
+</p>
+<table class="wikitable mw-collapsible mw-collapsed">
+
+<tbody><tr>
+<th width="20%">Key
+</th>
+<th width="60%">Regular Weapons
+</th>
+<th width="20%">Planet Killers
+</th></tr>
+<tr>
+<td>key
+</td>
+<td colspan="2">The identification of the Weapon Component.
+</td></tr>
+<tr>
+<td>cost
+</td>
+<td colspan="2">The <a href="https://stellaris.paradoxwikis.com/Minerals" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Minerals cost of this Weapon Component. This field is deprecated after the economy rework.
+</td></tr>
+<tr>
+<td>power
+</td>
+<td colspan="2">The power impact of this Weapon Component.
+</td></tr>
+<tr>
+<td>min_damage<br />max_damage
+</td>
+<td>Determines the damage.<br />The equivalent Weapon Component Property is <code>damage = { min = &lt;float&gt; max = &lt;float&gt; }</code>.
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td>hull_damage<br />shield_damage<br />shield_penetration<br />armor_damage<br />armor_penetration
+</td>
+<td>Determines the damage efficiencies and penetration rates.
+</td></tr>
+<tr>
+<td>min_windup<br />max_windup
+</td>
+<td>The ticks it takes for this Weapon to get ready to fire. (1 day = 10 ticks)<br />The equivalent Weapon Component Property is <code>windup = { min = &lt;int&gt; max = &lt;int&gt; }</code>.
+</td>
+<td>World Destroyer weapons have 90 min windup and 0 max windup.
+</td></tr>
+<tr>
+<td>cooldown
+</td>
+<td>The ticks it takes for this Weapon to cooldown before it’s next fire. (1 day = 10 ticks)<br />The equivalent Weapon Component Property is <code>total_fire_time = &lt;int&gt;</code>.
+</td>
+<td>World Destroyer weapons have 30 cooldown.
+</td></tr>
+<tr>
+<td>range<br />accuracy<br />tracking
+</td>
+<td>Determines the range, accuracy and tracking.
+</td>
+<td>World Destroyer weapons have 1 accuracy, 0 range and 0 tracking.
+</td></tr>
+<tr>
+<td>missile_speed<br />missile_evasion<br />missile_shield<br />missile_armor<br />missile_health<br />missile_retarget_range
+</td>
+<td>Missile stats.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Component_Tags">Component Tags</span></h3>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px">Component Tags can be given to Components to make them affected by certain modifiers. Most of the vanilla Component Tags are hard-codely required. They are defined at <code>common/component_tags/xyz.txt</code>.</span>
+<div class="mw-collapsible-content">
+<pre>weapon_type_energy
+weapon_type_kinetic
+weapon_type_explosive
+weapon_type_strike_craft
+weapon_type_point_defense
+weapon_role_anti_armor
+weapon_role_anti_shield
+weapon_role_artillery
+weapon_role_anti_hull
+weapon_role_point_defense
+</pre></div></div></div>
+<h3><span class="mw-headline" id="Examples_5">Examples</span></h3>
+<h4><span class="mw-headline" id="Small_Red_Laser">Small Red Laser</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>weapon_component_template = {
+	key = "SMALL_RED_LASER"
+	size = small
+	type = instant
+	icon = "GFX_ship_part_laser_1"
+	icon_frame = 1
+	prerequisites = { "tech_lasers_1" }
+	component_set = "RED_LASER"
+	projectile_gfx = "infrared_laser_s"
+	tags = { weapon_type_energy }
+	upgrades_to = "SMALL_BLUE_LASER"
+	ai_tags = { weapon_role_anti_armor }	#tags must be pre-registered in common/weapon_tags
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t1_cost
+		}
+		upkeep = {
+			energy = @s_t1_upkeep_energy
+			alloys = @s_t1_upkeep_alloys
+		}
+	}
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="Tier_3_Strike_Crafts">Tier 3 Strike Crafts</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>strike_craft_component_template = {
+	key = "STRIKE_CRAFT_HANGAR_3"
+	size = LARGE
+	entity = "bomber_entity"
+
+	weapon_type = point_defence
+	projectile_gfx = "strike_craft_laser_3"
+
+	power = @power4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t5_cost
+		}
+		upkeep = {
+			energy = @l_t5_upkeep_energy
+			alloys = @l_t5_upkeep_alloys
+		}
+	}
+
+	count = @count
+	regeneration_per_day = @regen
+	launch_time = @launch_time
+
+	damage = { min = 6 max = 17 }
+	cooldown = 2.3
+	range = @attack_range
+	engagement_range = @engagement_range
+	accuracy = 1.00
+	tracking = 1.00
+
+	health = 45
+	armor = 0
+	shield = 30
+	evasion = 0.80
+
+	speed = @speed4
+	rotation_speed = 0.8
+	acceleration = 1
+
+	shield_penetration = 1.0
+	armor_damage = 1.5
+
+	ship_behavior = "fighters_behavior"
+
+	icon = "GFX_ship_part_strike_craft_fighter_3"
+	icon_frame = 1
+	component_set = "STRIKE_CRAFT_HANGAR_3"
+	prerequisites = { "tech_strike_craft_3" }
+
+	tags = { weapon_type_strike_craft }
+	ai_tags = { weapon_role_point_defense }
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="Small_Tier_3_Shield">Small Tier 3 Shield</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>utility_component_template = {
+	key = "SMALL_SHIELD_3"
+	size = small
+	icon = "GFX_ship_part_shield_3"
+	icon_frame = 1
+	power = @power_S3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @shield_s_t3_cost
+		}
+		upkeep = {
+			energy = @shield_s_t3_upkeep_energy
+			alloys = @shield_s_t3_upkeep_alloys
+		}
+	}
+	modifier = {
+		ship_shield_add = @shield_S3
+		ship_shield_regen_add_static = @regen_S3 #Regeneration per day
+	}
+	prerequisites = { "tech_shields_3" }
+	component_set = "SHIELD_3"
+	upgrades_to = "SMALL_SHIELD_4"
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="PD_Nullification_Juggernaut_Aura">PD Nullification Juggernaut Aura</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>utility_component_template = {
+	key = "SHIP_AURA_PD_PENETRATION"
+	size = medium
+	icon = "GFX_ship_part_aura_pd_penetration"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { juggernaut }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "aura_pd_penetration"
+		system_wide = yes
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_pd_penetration
+			priority = 1
+		}
+
+		modifier = {
+			weapon_type_point_defense_weapon_damage_mult = -0.3
+			weapon_type_point_defense_weapon_fire_rate_mult = -0.3
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			is_ai = yes
+			is_preferred_weapons = weapon_type_energy
+		}
+	}
+}
+</pre></div></div></div>
+<h4><span class="mw-headline" id="Bombardment_Juggernaut_Aura">Bombardment Juggernaut Aura</span></h4>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"></span>
+<div class="mw-collapsible-content">
+<pre>utility_component_template = {
+	key = "SHIP_AURA_BOMBARDMENT"
+	size = medium
+	icon = "GFX_ship_part_aura_bombardment"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { juggernaut }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "aura_bombardment"
+		system_wide = yes
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_bombardment
+			priority = 1
+		}
+
+		modifier = {
+			ship_orbital_bombardment_mult = 0.3
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			is_ai = yes
+			is_preferred_weapons = weapon_type_energy
+		}
+	}
+}
+</pre></div></div></div>
+<h3><span id="How_does_Colossus_Weapons_Work.3F"></span><span class="mw-headline" id="How_does_Colossus_Weapons_Work?">How does Colossus Weapons Work?</span></h3>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px">Colossus Weapons are invoked through a fleet command of the Colossus.</span>
+<div class="mw-collapsible-content">
+<p>Before you can fire, a scripted-trigger called <code>can_destroy_planet_with_&lt;colossus weapon component key&gt;</code> is checked. Read the vanilla file "common/scripted_triggers/01_scripted_triggers_planet_killers.txt" and <a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> for details.
+</p><p>When the weapon is fired, an on-action called <code>on_destroy_planet_with_&lt;colossus weapon component key&gt;</code> is fired. Read the vanilla file "common/on_actions/01_planet_destruction.txt" and <a href="/Event_modding.html" title="Event modding">Event modding</a> for details.
+</p><p>There are also relevant localisation keys to the Colossus Weapons, more than just the component name and description.
+</p>
+<pre>FLEETORDER_DESTROY_PLANET_WITH_&lt;component key&gt;:0 "Preparing to crack $PLANET|Y$"
+MESSAGE_DESC_FOR_&lt;component key&gt;:0 "was utterly destroyed by"
+&lt;component key&gt;_ACTION:0 "Crack World"
+</pre></div></div></div>
+<h2><span class="mw-headline" id="Ship_Behavior">Ship Behavior</span></h2>
+<p>Ship Behaviors are patterns ships follow during battle. They are called by Combat Computer Components and Strike Craft Components. They are defined at <code>common/ship_behaviors/xyz.txt</code>.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_6">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="80%">Description
+</th></tr>
+<tr>
+<td><b>name = &lt;localisation key&gt;</b>
+</td>
+<td>Identification key of this ship behavior.
+</td></tr>
+<tr>
+<td><b>preferred_attack_range = &lt;min/median/max/int&gt;</b>
+</td>
+<td>The distance from target the ship wants to keep when using 'attack_movement_pattern'.
+</td></tr>
+<tr>
+<td><b>formation_distance = &lt;min/median/max/int&gt;</b>
+</td>
+<td>The ship will switch to 'attack_movement_pattern' when it crosses inside this distance from a target. The ship will also try to stay at this distance while using 'passive_movement_pattern'.
+</td></tr>
+<tr>
+<td><b>return_to_formation_distance = &lt;min/median/max/int&gt;</b>
+</td>
+<td>The ship will switch to 'passive_move_pattern' when it crosses outside this distance from a target.
+</td></tr>
+<tr>
+<td><b>attack_move_pattern</b><br /><b>passive_move_pattern</b>
+</td>
+<td>Each can be one of the following.
+<ul><li>charge</li>
+<li>orbit</li>
+<li>stay_at_range</li>
+<li>flee</li>
+<li>follow</li>
+<li>stationary</li>
+<li>none</li></ul>
+</td></tr>
+<tr>
+<td><b>ignore_combat_movement = &lt;yes/no&gt;</b>
+</td>
+<td>If yes, this ship will totally ignore auto movement patterns. If it is the fleet’s leader, you retain control to move to any point you direct while the rest of the fleet follows their movement patterns. If the ship goes through a hyperlane, the whole fleet will warp out.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Global_Ship_Designs">Global Ship Designs</span></h2>
+<p>Global Ship Designs are pre-scripted designs to be used by events with <a href="/Effects.html" title="Effects">Effects</a> such as <code>create_ship</code>. They are defined at <code>common/global_ship_designs/xyz.txt</code>.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_7">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="80%">Description
+</th></tr>
+<tr>
+<td><b>name = &lt;localisation key&gt;</b>
+</td>
+<td>Identification key of this Global Ship Design.
+</td></tr>
+<tr>
+<td><b>ship_size = &lt;ship size key&gt;</b>
+</td>
+<td>Marks the ship size of this ship.
+</td></tr>
+<tr>
+<td><b>is_event_design = &lt;yes/no&gt;</b>
+</td>
+<td>Marks this design an Event Design that should be blocked by the Fleet Manager.
+</td></tr>
+<tr>
+<td><b>hide_size = &lt;yes/no&gt;</b>
+</td>
+<td>Hide the ship size of this ship, so you won't see something like "Amoeba-class Amoeba".
+</td></tr>
+<tr>
+<td><b>section</b>
+<ul><li><b>template = &lt;ship section key&gt;</b></li>
+<li><b>slot = &lt;section_slot_name&gt;</b></li></ul>
+</td>
+<td>Specifies the Sections. Multiple allowed. Each of them can also specify components.
+</td></tr>
+<tr>
+<td>
+<ul><li><b>component</b>
+<ul><li><b>slot = &lt;component slot name&gt;</b></li>
+<li><b>template = &lt;component key&gt;</b></li></ul></li></ul>
+</td>
+<td>Specifies the Component. Multiple allowed.
+<p>The component slot name of Weapon Component Slots are the slot names defined there.
+</p><p>The names of Utility Component Slots are <code>(SMALL|MEDIUM|LARGE|AUX)_UTILITY_&lt;int&gt;</code>. The index starts from 1.
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Create_a_special_event_ship">Create a special event ship</span></h2>
+<p>Sometimes you want ships that can't be designed by players or be compatible with all graphical cultures.
+To create a ship like the space cloud you need to do the following:
+</p>
+<ol><li>Find a suitable <code>ship_size</code> in <code>common/ship_sizes/</code> or create a new one.
+<dl><dd><div class="mw-collapsible mw-collapsed"> If you create a new <code>ship_size</code>: <div class="mw-collapsible-content"><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span>		<span class="n">is_designable</span> <span class="o">=</span> <span class="n">yes</span><span class="o">/</span><span class="n">no</span> 			<span class="c1"># should this ship_size be selectable in the ship designer?</span>
+		<span class="n">is_space_object</span> <span class="o">=</span> <span class="n">yes</span><span class="o">/</span><span class="n">no</span>		<span class="c1"># space objects will not leave engine trails</span>
+		<span class="n">gfx_culture</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;pirate_01&quot;</span> <span class="p">}</span> 	<span class="c1"># override which gfx_cultures this size is valid for. By default a ship_size is valid for all gfx_cultures (meaning there should be one entity for each culture)</span>
+		<span class="n">graphical_culture</span> <span class="o">/</span><span class="n">no</span> 			<span class="c1"># overrides the need of a specific gfx_culture</span>
+</pre></div> If you want to use the same entity regardless of owner's graphical culture leave out the culture part in the entity name. E.g. <code>my_ship_size_entity</code> instead of <code>mammalian_01_my_ship_size_entity</code>.</div></div></dd></dl></li>
+<li>Add section_templates to <code>common/section_templates/</code>.
+<dl><dd>Again, if you want to use the same entity regardless of owner's graphical culture leave out the culture part in the entity name.</dd></dl></li>
+<li>If you want unique weapon for your ship add weapon_component_templates to <code>common/component_templates/</code></li>
+<li>Make a design for your ship in <code>common/global_ship_designs/</code></li></ol>
+<p>You need to have entities for both the <code>ship_size</code> and <code>section_templates</code>. Only one of them has to be visible though.
+For single-section ships it is recommended to make the entity that belongs to the section the visible part since that will make the <code>ship_size</code> reusable.
+If your ship has weapons then each <code>weapon_component_template</code> also needs to have an entity, and that entity needs to have a locator called <code>turret_muzzle_01</code>.
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a class="mw-selflink selflink">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182016
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.206 seconds
+Real time usage: 1.387 seconds
+Preprocessor visited node count: 5512/1000000
+Post‐expand include size: 34474/2097152 bytes
+Template argument size: 10582/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 25093/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1154.970      1 -total
+ 13.88%  160.256      1 Template:Spoiler
+  4.08%   47.139     61 Template:Icon
+  2.08%   24.014     25 Template:Icon/s
+  0.82%    9.517      1 Template:Version
+  0.64%    7.430      3 Template:Iconify
+  0.60%    6.956     33 Template:Icon/n
+  0.53%    6.139      1 Template:Infobox
+  0.42%    4.908     16 Template:Collapse_list
+  0.32%    3.648      2 Template:Icon/a
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:2216-0!canonical and timestamp 20260707182014 and revision id 86238.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tradition modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Tradition modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p><a href="/Traditions.html" title="Traditions">Traditions</a> and <a href="https://stellaris.paradoxwikis.com/Ascension_Perks" class="mw-redirect" title="Ascension Perks">Ascension Perks</a> are mechanics in Stellaris.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Tradition_Groups"><span class="tocnumber">1</span> <span class="toctext">Tradition Groups</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Data_Structure"><span class="tocnumber">1.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Localisation_Keys"><span class="tocnumber">1.2</span> <span class="toctext">Localisation Keys</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Tradition_Group_Example"><span class="tocnumber">1.3</span> <span class="toctext">Tradition Group Example</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Dynamic_Modding"><span class="tocnumber">1.4</span> <span class="toctext">Dynamic Modding</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Traditions"><span class="tocnumber">2</span> <span class="toctext">Traditions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Data_Structure_2"><span class="tocnumber">2.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Localisation_Keys_2"><span class="tocnumber">2.2</span> <span class="toctext">Localisation Keys</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Icon_Defination"><span class="tocnumber">2.3</span> <span class="toctext">Icon Defination</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Relevant_Dynamic_Modding_Statements"><span class="tocnumber">2.4</span> <span class="toctext">Relevant Dynamic Modding Statements</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Tradition_Example"><span class="tocnumber">2.5</span> <span class="toctext">Tradition Example</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Tradition_Group_Adoption_Effects"><span class="tocnumber">2.6</span> <span class="toctext">Tradition Group Adoption Effects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Adoption_Effect_Example"><span class="tocnumber">2.6.1</span> <span class="toctext">Adoption Effect Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Tradition_Group_Finisher_Effects"><span class="tocnumber">2.7</span> <span class="toctext">Tradition Group Finisher Effects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Finisher_Effect_Example"><span class="tocnumber">2.7.1</span> <span class="toctext">Finisher Effect Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Ascension_Perks"><span class="tocnumber">3</span> <span class="toctext">Ascension Perks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Data_Structure_3"><span class="tocnumber">3.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Localisation_Keys_3"><span class="tocnumber">3.2</span> <span class="toctext">Localisation Keys</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Icon_Defination_2"><span class="tocnumber">3.3</span> <span class="toctext">Icon Defination</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#AP_Example"><span class="tocnumber">3.4</span> <span class="toctext">AP Example</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Relevant_Dynamic_Modding_Statements_2"><span class="tocnumber">3.5</span> <span class="toctext">Relevant Dynamic Modding Statements</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#User_Interface"><span class="tocnumber">4</span> <span class="toctext">User Interface</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Tradition_Groups">Tradition Groups</span></h2>
+<p>Tradition Groups are defined at "common/tradition_categories/xxx.txt".
+</p>
+<h3><span class="mw-headline" id="Data_Structure">Data Structure</span></h3>
+<ul><li><b>tree_template</b> - The used template for which the traditions will be placed upon. These are defined in ".gui" files in the "interface" folder (outside common) all vanilla tree_templates are defined in "interface\topbar_traditions_view.gui".</li>
+<li><b>adoption_bonus</b> - A tradition to be activated when the empire adopted this tradition group.</li>
+<li><b>finish_bonus</b> - A tradition to be activated when the empire finished this tradition group. It should give an Ascension Perk slot.</li>
+<li><b>traditions</b> - A set of traditions to be included in this tradition group.</li>
+<li><b>tradition_swap</b> - Definition of tradition swaps. <i>- This is no longer used on tradition categories, but on the traditions themselves.</i>
+<ul><li><b>name</b> - Alternative localisation key used for this Tradition Group if this swap applies.</li>
+<li><b>trigger</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this swap apply. (Country scope)</li>
+<li><b>weight</b> - If multiple swaps are valid to an empire, one with the highest weight wins.</li></ul></li>
+<li>There is no "ai_weight" for Tradition Groups. AI choose Tradition Groups based on the "ai_weight" of <a href="/Tradition_modding.html#Tradition_Group_Adoption_Effects" title="Tradition modding">Tradition Group Adoption Effects</a>.</li></ul>
+<h3><span class="mw-headline" id="Localisation_Keys">Localisation Keys</span></h3>
+<ul><li>tradition_example:0 "Example"</li>
+<li>tradition_example_desc:0 "Let me show you an example."</li>
+<li>tradition_example_swap:0 "Example Swapped"</li>
+<li>tradition_example_swap_desc:0 "Let me show you a swapped example."</li></ul>
+<h3><span class="mw-headline" id="Tradition_Group_Example">Tradition Group Example</span></h3>
+<p>This example is the Diplomacy tradition group.
+</p>
+<pre>tradition_diplomacy = {
+	tree_template = "tree_11_12"
+	adoption_bonus = "tr_diplomacy_adopt"
+	finish_bonus = "tr_diplomacy_finish"
+	traditions = {
+		"tr_diplomacy_secure_shipping"
+		"tr_diplomacy_insider_trading"
+		"tr_diplomacy_the_federation"
+		"tr_diplomacy_entente_coordination"
+		"tr_diplomacy_open_markets"
+	}
+
+	potential = {
+		NOR = {
+			has_valid_civic = civic_inwards_perfection
+			has_valid_civic = civic_hive_devouring_swarm
+		}
+	}
+
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 10
+			has_federation = yes
+		}
+		modifier = {
+			factor = 4
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 6
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				is_xenophobe = yes
+				is_homicidal = yes
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_gestalt = yes
+		}
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Dynamic_Modding">Dynamic Modding</span></h3>
+<p>Sometimes a Tradition Group have different name to different empires, but the game texts will show "Diplomacy Tradition" anyway. There is a scripted_loc named "GetDiplomacyTraditionName" to handle this issue. See <a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> for details.
+</p>
+<h2><span class="mw-headline" id="Traditions">Traditions</span></h2>
+<p>Traditions are defined at "common/traditions/xxx.txt".
+</p><p>Can't stress this enough, traditions should be named in lower case.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_2">Data Structure</span></h3>
+<ul><li><b>possible</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to be checked if this empire can adopt this tradition. Frequently used to check if all previous traditions in the group are adopted.</li>
+<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the empire adopted this tradition. Unlike all other game objects these modifiers will NOT generate a tooltip for this tradition.</li>
+<li><b>on_enabled</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when this tradition becomes adopted.</li>
+<li><b>tradition_swap</b> - Like Tradition Groups, Traditions also have swap types.
+<ul><li><b>name</b> - Alternative key used for this Tradition if this swap applies.</li>
+<li><b>inherit_effects</b> - (yes/no) If set to no, this Tradition will have an alternative effect description localisation key if this swap applies. Also, the primary <b>modifier</b> block will be neglected.</li>
+<li><b>inherit_icon</b> - (yes/no) If set to no, this Tradition will have an alternative icon if this swap applies.</li>
+<li><b>inherit_name</b> - (yes/no) If set to no, this Tradition will use alternative localisation keys for name and description if this swap applies.</li>
+<li><b>trigger</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this swap apply. (Country scope)</li>
+<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to take the place of the primary <b>modifier</b> block if this swap applies.</li>
+<li><b>weight</b> - If multiple swaps are valid to an empire, one with the highest weight wins.</li></ul></li>
+<li><b>ai_weight</b> - Determines how likely the AI will adopt this Tradition.</li></ul>
+<h3><span class="mw-headline" id="Localisation_Keys_2">Localisation Keys</span></h3>
+<ul><li>tr_example_the_example:0 "The Example"</li>
+<li>tr_example_the_example_desc:0 "Effect description of this tradition."</li>
+<li>tr_example_the_example_delayed:0 "Flavor text of this tradition."</li>
+<li>tr_example_the_example_swapped:0 "The Swapped Example"</li>
+<li>tr_example_the_example_swapped_desc:0 "Effect description of this swapped tradition."</li>
+<li>tr_example_the_example_swapped_delayed:0 "Flavor text of this swapped tradition."</li></ul>
+<h3><span class="mw-headline" id="Icon_Defination">Icon Defination</span></h3>
+<ul><li>New gfx type must be defined by the following format and put into a file of "interface/xxx.gfx", or this tradition has NO icon.</li>
+<li>"xxx.dds" file can be anywhere. Putting it into "gfx/interface/icons/traditions/" is recommended.</li></ul>
+<pre>spriteTypes = {
+	spriteType = {
+		name = "GFX_tr_example_the_example"
+		textureFile = "gfx/interface/icons/traditions/tr_example_the_example.dds"
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Relevant_Dynamic_Modding_Statements">Relevant Dynamic Modding Statements</span></h3>
+<ul><li><b>has_tradition = &lt;key&gt;</b> - (Condition) Checks if this empire has this tradition, regardless of its swapped or not. Check only "base traditions" this way.</li>
+<li><b>has_active_tradition = &lt;key&gt;</b> - (Condition) Checks if this empire has this exact tradition, and will return false if it is not the specific key. This can check "base" or "swapped traditions", as long as the correct key is used.</li>
+<li><b>has_non_swapped_tradition = &lt;key&gt;</b> - (Condition) Checks if this empire has this tradition and it's not swapped to another. Check only "base traditions" this way. <i>- This is no longer used and has been amalgamated into has_active_tradition.</i></li>
+<li><b>has_swapped_tradition = &lt;key&gt;</b> - (Condition) Checks if this empire has this tradition and if it's swapped into a specific type. Check only "swapped traditions" this way. <i>- This is no longer used and has been amalgamated into has_active_tradition.</i></li>
+<li><b>add_tradition = &lt;key&gt;</b> - (Effect) Gives the empire a specific tradition. Give "base traditions" only.</li></ul>
+<h3><span class="mw-headline" id="Tradition_Example">Tradition Example</span></h3>
+<p>This example is the Diplomacy tradition "The Federation".
+</p>
+<pre>tr_diplomacy_the_federation = {
+	
+	#unlocks federation mechanic
+	modifier = {
+		envoys_add = 1
+	}
+	
+	tradition_swap = {
+		name = tr_adaptability_dietary_enrichment
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_inwards_perfection
+				has_valid_civic = civic_hive_devouring_swarm
+	
+				# Barbaric Despoilers can create Martial Alliances and Hegemonies if they have the Federations DLC
+				AND = {
+					has_valid_civic = civic_barbaric_despoilers
+					has_federations_dlc = no
+				}
+			}
+			is_lithoid_empire = no
+		}
+		modifier = {
+			country_food_produces_mult = 0.10
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_adaptability_recycling
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_inwards_perfection
+				has_valid_civic = civic_hive_devouring_swarm
+	
+				# Barbaric Despoilers can create Martial Alliances and Hegemonies if they have the Federations DLC
+				AND = {
+					has_valid_civic = civic_barbaric_despoilers
+					has_federations_dlc = no
+				}
+	
+			}
+			is_lithoid_empire = yes
+		}
+		modifier = {
+			planet_building_refund_mult = 0.15
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_versatility_universal_compatibility
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			country_synthetic_trust_cap_add = 50
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Tradition_Group_Adoption_Effects">Tradition Group Adoption Effects</span></h3>
+<p>Tradition Group Adoption Effects are Traditions too, except they need no icons as well as they have different format of localisation keys.
+</p>
+<ul><li>tr_example_adopt:0 "Example Traditions"</li>
+<li>tr_example_adopt_desc:0 "$tradition_example_desc$\n\n$tr_example_adopt_effect$\n\n$tr_example_finish_effect$"</li>
+<li>tr_example_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\nDescription of Adoption Effects of this Tradition Group."</li></ul>
+<p>The localisation key "tr_???_adopt_desc" is a tooltip to show the player what are the adoption effects and finisher effects while the player hover their mouse over the Tradition Group. It should look like this in game.
+</p>
+<pre>Let me show you an example.
+
+Adoption Effect
+Description of Adoption Effects of this Tradition Group.
+
+Finisher Effect
+Adopting all Example Traditions will do something. In addition, we will unlock 1 Ascension Perk Slot.
+</pre>
+<h4><span class="mw-headline" id="Adoption_Effect_Example">Adoption Effect Example</span></h4>
+<p>This example is the Adoption Effect of the Diplomacy Tradition.
+</p>
+<pre>tr_diplomacy_adopt = {
+	modifier = {
+		diplomacy_upkeep_mult = -0.5
+		pop_growth_from_immigration = 0.10
+	}
+	
+	tradition_swap = {
+		name = tr_adaptability_adopt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_inwards_perfection
+				is_hive_empire = yes
+				has_valid_civic = civic_barbaric_despoilers
+			}
+		}
+		modifier = {
+			pop_housing_usage_mult = -0.10
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_versatility_adopt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			planet_pop_assemblers_upkeep_mult = -0.10
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 5
+			has_federation = yes
+		}
+		...
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Tradition_Group_Finisher_Effects">Tradition Group Finisher Effects</span></h3>
+<p>Tradition Group Finisher Effects are, similarly, Traditions, except they furtherly need no <b>ai_weight</b>. In principle, a Finisher Effect must have a modifier of "ascension_perks_add = 1".
+</p>
+<ul><li>tr_example_finish:0 "Example Tradition Finished"</li>
+<li>tr_example_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_example_adopt$ will do something."
+<ul><li>No need to describe about the Ascension Perk slot unlocked by this Finisher Effect, because the localisation key "TRADITIONS_FINISH_AP" is hard-coded to be appended to the finisher effect description.</li></ul></li></ul>
+<h4><span class="mw-headline" id="Finisher_Effect_Example">Finisher Effect Example</span></h4>
+<p>This example is the Finisher Effect of the Diplomacy Tradition.
+</p>
+<pre>tr_diplomacy_finish = {
+	modifier = {
+		ascension_perks_add = 1
+		country_trust_cap_add = 50
+		country_trust_growth = 0.33
+	}
+	
+	tradition_swap = {
+		name = tr_adaptability_finish
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_inwards_perfection
+				is_hive_empire = yes
+				has_valid_civic = civic_barbaric_despoilers
+			}
+		}
+		modifier = {
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_versatility_finish
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			planet_building_refund_mult = 0.5
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+}
+</pre>
+<h2><span class="mw-headline" id="Ascension_Perks">Ascension Perks</span></h2>
+<p>Ascension Perks are defined at "common/ascension_perks/xxx.txt".
+</p>
+<h3><span class="mw-headline" id="Data_Structure_3">Data Structure</span></h3>
+<ul><li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this AP appear in the AP selection menu. Also used to hide DLC perks. All APs should exclude itself with potential. (Country scope)</li>
+<li><b>possible</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine is this AP available to an empire. (Country scope)</li>
+<li><b>on_enabled</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when the empire adopted this AP. (Country scope)</li>
+<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a>. Easy understanding.</li>
+<li><b>ai_weight</b> - The higher the weight is, the more likely the AI will pick this perk.</li></ul>
+<h3><span class="mw-headline" id="Localisation_Keys_3">Localisation Keys</span></h3>
+<ul><li>ap_example:0 "Example"</li>
+<li>ap_example_desc:0 "When I shine, the darkness fades."</li></ul>
+<h3><span class="mw-headline" id="Icon_Defination_2">Icon Defination</span></h3>
+<ul><li>Like Traditions, APs do also have a somewhat cumbering icon definition style. A new gfx definition is required.</li>
+<li>"xxx.dds" file can be anywhere. Putting it into "gfx/interface/icons/ascension_perks/" is recommended.</li></ul>
+<pre>spriteTypes = {
+	spriteType = {
+		name = "GFX_ap_example"
+		textureFile = "gfx/interface/icons/ascension_perks/ap_example.dds"
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="AP_Example">AP Example</span></h3>
+<p>This example is the Ascension Perk "Xeno Compatibility".
+</p>
+<pre>ap_xeno_compatibility = {
+	potential = {
+		host_has_dlc = "Megacorp"
+		NOT = {
+			has_ascension_perk = ap_xeno_compatibility
+		}
+		is_regular_empire = yes
+	}
+
+	modifier = {
+		planet_immigration_pull_mult = 0.33
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "civic_tooltip_xenophile"
+			is_xenophile = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_xeno_species"
+			any_owned_pop = {
+				NOR = {
+					is_same_species = root.owner
+					has_trait = trait_mechanical
+					has_trait = trait_machine_unit
+					has_trait = trait_hive_mind
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_gene_tailoring"
+			has_technology = tech_gene_tailoring
+		}
+	}
+
+	on_enabled = {
+		custom_tooltip = "allow_crossbreeding"
+	}
+
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Relevant_Dynamic_Modding_Statements_2">Relevant Dynamic Modding Statements</span></h3>
+<ul><li><b>has_ascension_perk = &lt;key&gt;</b> - (Condition) Checks if this empire has this Ascension Perk.</li></ul>
+<h2><span class="mw-headline" id="User_Interface">User Interface</span></h2>
+<p>The Tradition UI file is "interface/topbar_traditions_view.gui". It's shared with <a href="/Ancestral_Relics_modding.html" title="Ancestral Relics modding">Relics and Artifact Actions</a>. This file defined where should the Tradition Groups be and where should the Traditions be in their group. Arrows to indicate Tradition requirements are also defined here. Without modding this file, new Tradition Groups as well as new Traditions can't be made visible in the UI.
+</p><p>The Ascension Perk selection menu UI file is "ascension_perks_view.gui".
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a class="mw-selflink selflink">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182337
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.034 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 232/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.769      1 -total
+ 69.97%    8.934      1 Template:ModdingNavbox
+ 37.30%    4.763      1 Template:Navbox
+ 28.27%    3.610      1 Template:Version
+ 15.02%    1.918      1 Template:Infobox
+ 11.96%    1.527      1 Template:Clear
+  8.10%    1.034     14 Template:Navboxgroup
+  3.49%    0.446      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7492-0!canonical and timestamp 20260707182337 and revision id 99869.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

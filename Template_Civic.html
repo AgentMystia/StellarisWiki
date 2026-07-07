@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Civic - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Civic</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Civic/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Civic/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_Civic/doc.html" title="Template:Civic/doc">Template:Civic/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Civic/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Civic/doc&amp;action=history">history</a>)</small></div>
+<p>Template to generate civic icons.
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable plainlist">
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Civic icon, uses <code>File:Civic [1].png</code> format</td>
+<td><b>required</b></td>
+<td>—
+</td></tr>
+<tr>
+<td>2</td>
+<td>Civic name, used to set links and hover text</td>
+<td>optional</td>
+<td>[1]
+</td></tr>
+<tr>
+<td>w</td>
+<td>Icon size, max size for civics is either 58px or 29px.</td>
+<td>optional</td>
+<td>24px
+</td></tr>
+<tr>
+<td>link</td>
+<td>Icon link.<br />If not used, links to the <a href="/Civics.html" title="Civics">Civics</a> page, with parameter 2 as anchor link</td>
+<td>optional</td>
+<td>Civics#[2]
+</td></tr>
+<tr>
+<td>council</td>
+<td style="max-width:450px">If set to yes, the icon links to the <a href="/Council.html" title="Council">Council</a> page instead, with parameter 2 as the council position name.</td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>iconify</td>
+<td>If set to yes, appends the text of parameter 2 to the icon.</td>
+<td>optional</td>
+<td>—
+</td></tr>
+<tr>
+<td>page</td>
+<td>Input key determines which page is linked to; keys:
+<ul><li>standard &gt; <a href="/Civics.html" title="Civics">Civics</a></li>
+<li>mi/machine/machine intelligence &gt; <a href="/Machine_intelligence_civics.html" title="Machine intelligence civics">Machine intelligence civics</a></li>
+<li>hm/hive/hive mind &gt; <a href="/Hive_mind_civics.html" title="Hive mind civics">Hive mind civics</a></li>
+<li>corp/corporate &gt; <a href="/Corporate_civics.html" title="Corporate civics">Corporate civics</a></li>
+<li>council &gt; <a href="/Council.html" title="Council">Council</a></li></ul>
+</td>
+<td>optional</td>
+<td>standard
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<p><code>{{Civic|Parliamentary System}}</code> will generate:<br /><a href="/Civics.html#Parliamentary_System" title="Parliamentary System"><img alt="Parliamentary System" src="images/Civic_parliamentary_system.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>
+</p><p><code>{{Civic|Parliamentary System|iconify=yes}}</code> will generate:<br /><a href="/Civics.html#Parliamentary_System" title="Parliamentary System"><img alt="Parliamentary System" src="images/Civic_parliamentary_system.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Parliamentary System
+</p><p><code>{{Civic|parliamentary system|Speaker of Parliament|page=council|iconify=yes}}</code> will generate:<br /><a href="/Council.html#Speaker_of_Parliament" title="Speaker of Parliament"><img alt="Speaker of Parliament" src="images/Civic_parliamentary_system.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Speaker of Parliament
+</p>
+<code>{{Civic|Franchising|page=corp|iconify=yes}}</code> will generate:<br /><a href="/Corporate_civics.html#Franchising" title="Franchising"><img alt="Franchising" src="images/Civic_franchising.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Franchising</div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182438
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.030 seconds
+Real time usage: 0.062 seconds
+Preprocessor visited node count: 201/1000000
+Post‐expand include size: 9905/2097152 bytes
+Template argument size: 2593/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 192/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   35.248      1 Template:Template_doc
+100.00%   35.248      1 -total
+ 36.09%   12.720      1 Template:Template_doc_inline
+ 24.59%    8.669      1 Template:Civic/doc
+  9.86%    3.475      1 Template:Template_doc_page_transcluded
+  4.88%    1.720      4 Template:Civic
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:14489-0!canonical and timestamp 20260707182437 and revision id 111294.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

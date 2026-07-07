@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Fleet modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.8.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This is a quick reference for the different aspects of scripting some fleet events, triggers etc.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Fleet_Orders"><span class="tocnumber">1</span> <span class="toctext">Fleet Orders</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Fleet_Locking"><span class="tocnumber">2</span> <span class="toctext">Fleet Locking</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Code_examples"><span class="tocnumber">3</span> <span class="toctext">Code examples</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Fleet_Orders">Fleet Orders</span></h2>
+<p>The list of known fleet orders, used to define the current fleet action (i.e. <i>has_fleet_order</i>, used in <a href="/Conditions.html" title="Conditions">Conditions</a>).<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>
+</p>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Order</th>
+<th>Description
+</th></tr>
+<tr>
+<td>aggressive_stance_fleet_order</td>
+<td>Fleet stance is aggressive
+</td></tr>
+<tr>
+<td><i>analyze_ftl_trail_order</i></td>
+<td>
+</td></tr>
+<tr>
+<td>assist_research_order</td>
+<td>Ship/fleet is going to assist research on planet
+</td></tr>
+<tr>
+<td>auto_explore_order</td>
+<td>Ship/fleet is going to automatically explore space
+</td></tr>
+<tr>
+<td>build_orbital_station_order</td>
+<td>Ship/fleet is going to construct any orbital, mining or research station
+</td></tr>
+<tr>
+<td>build_space_station_order</td>
+<td>Ship/fleet is going to construct a military station
+</td></tr>
+<tr>
+<td>collect_data_fleet_order</td>
+<td>Fleet is going to collect data from debris or ambient object
+</td></tr>
+<tr>
+<td>colonize_planet_order</td>
+<td>Ship is going to colonize a planet
+</td></tr>
+<tr>
+<td><i>combat_order</i></td>
+<td>
+</td></tr>
+<tr>
+<td><i>evade_hostiles_order</i></td>
+<td>
+</td></tr>
+<tr>
+<td>follow_order</td>
+<td>Ship/fleet is following the ship/fleet
+</td></tr>
+<tr>
+<td>merge_fleet_order</td>
+<td>Fleet is going to be merged
+</td></tr>
+<tr>
+<td>move_to_system_point_order</td>
+<td>Ship/fleet is moving to a point
+</td></tr>
+<tr>
+<td>land_armies_order</td>
+<td>Ship/fleet is going to land troops on planet
+</td></tr>
+<tr>
+<td>orbit_planet_order</td>
+<td>Ship/fleet is going to enter orbit of planet
+</td></tr>
+<tr>
+<td>rally_point_fleet_order</td>
+<td>Fleet is rallying to a point
+</td></tr>
+<tr>
+<td>research_anomaly_order</td>
+<td>Ship is going to research anomaly
+</td></tr>
+<tr>
+<td>return_fleet_order</td>
+<td>Fleet is returning
+</td></tr>
+<tr>
+<td>survey_planet_order</td>
+<td>Ship is going to survey planet
+</td></tr>
+<tr>
+<td>upgrade_design_fleet_order</td>
+<td>Ship/fleet is going to be upgraded
+</td></tr>
+<tr>
+<td>research_discovery_order</td>
+<td>
+</td></tr>
+<tr>
+<td>upgrade_design_at_starbase_fleet_order</td>
+<td>
+</td></tr>
+<tr>
+<td>upgrade_design_at_orbitable_fleet_order</td>
+<td>
+</td></tr>
+<tr>
+<td>repair_fleet_order</td>
+<td>Ship/fleet is going to be repaired
+</td></tr>
+<tr>
+<td><s><i>repair_ship_fleet_order</i></s></td>
+<td><i>Ship/fleet is going to be repaired</i>
+</td></tr>
+<tr>
+<td>build_megastructure_fleet_order</td>
+<td>Fleet is going to construct a megastructure
+</td></tr>
+<tr>
+<td>destroy_planet_order</td>
+<td>Ship/fleet is going to destroy a planet
+</td></tr>
+<tr>
+<td>planet_killer_weapon_windup_order</td>
+<td>
+</td></tr>
+<tr>
+<td>planet_killer_weapon_fire_order</td>
+<td>
+</td></tr>
+<tr>
+<td>explore_bypass_order</td>
+<td>
+</td></tr>
+<tr>
+<td>use_bypass_order</td>
+<td>
+</td></tr>
+<tr>
+<td>jumpdrive_order</td>
+<td>
+</td></tr>
+<tr>
+<td>jumpdrive_windup</td>
+<td>
+</td></tr>
+<tr>
+<td>experimental_subspace_navigation_fleet_order</td>
+<td>
+</td></tr>
+<tr>
+<td>excavate_archaeological_site_fleet_order</td>
+<td>
+</td></tr></tbody></table>
+<ul><li><i>italics orders</i> - orders which are not studied or probably not working</li></ul>
+<h2><span class="mw-headline" id="Fleet_Locking">Fleet Locking</span></h2>
+<p>Fleet could be locked by <code>set_event_locked = yes</code> effect.<br />
+This will prevent any orders to this fleet. Don't forget to unlock it later.
+</p>
+<h2><span class="mw-headline" id="Code_examples">Code examples</span></h2>
+<dl><dt>Merge fleets</dt></dl>
+<pre>solar_system = {
+	random_fleet_in_system = {
+		limit = {
+			is_ship_class = shipclass_military
+			NOT = { is_same_value = root }
+			owner = { is_same_empire = root.owner }
+			fleet_power &gt; 0
+		}
+		save_event_target_as = EXAMPLE_merge_fleet
+	}
+}
+queue_actions = {
+	find_random_fleet = {
+		found_fleet = {
+			merge_fleet = {
+				target = event_target:EXAMPLE_merge_fleet
+				allow_ftl = no
+			}
+		}
+	}
+}
+</pre>
+<ul><li>Note: Vanilla doesn't use this (plain) command at all. Mods using this are e.q. "Aggressive Crisis Engine" and "A Deadly Tempest".</li></ul>
+<dl><dt>Change fleet leader on army/transport fleets.</dt></dl>
+<p>As simple leader assign to transport fleets is not working (as to military fleets) and furthermore the documented scope from ships to army unexpectedly is not working (possible bug), there is a workaround to solve this supposed scope problem.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup>
+</p>
+<pre># Just find the right army to the fleet to assign a leader to the appropriate army.
+random_fleet_in_system = {
+	limit = {
+		exists = owner
+		owner = { is_same_empire = event_target:EXAMPLE_empire }
+		is_ship_class = shipclass_transport
+		# NOT = { exists = leader }
+	}
+	owner = {
+		random_owned_army = {
+			limit = {
+				exists = fleet
+				fleet = { is_same_value = PREVPREVPREV }
+				# NOT = { exists = leader }
+			}
+			assign_leader = event_target:EXAMPLE_leader
+		}
+	}
+}
+</pre>
+<ul><li>Note: Vanilla doesn't use this (plain) at all, e.q. mod using this is "Decentralized Empires (Regentmaker)".</li></ul>
+<dl><dt>"Jump" fleet to the scope</dt></dl>
+<p>Transfers fleet to the selected scope.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+</p>
+<pre># Jumps to the capital scope.
+fleet_event = {
+    id = acemod_fleet.600
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        set_location = {
+            target = owner.capital_scope
+            distance = 5
+            angle = random
+            direction = in_system
+        }
+        clear_orders = yes
+        clear_fleet_actions = this
+    }
+}
+</pre>
+<dl><dt>Order colossus to fire on a planet in the same system<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup></dt></dl>
+<pre>solar_system = {
+	random_system_planet = {
+		limit = {
+			has_planet_flag = shroud_target
+		}
+		save_event_target_as = killtarget
+	}
+}
+queue_actions = {
+	if = {
+		limit = {
+			exists = event_target:killtarget
+			}
+		clear_orders = yes
+		clear_fleet_actions = THIS # Colossus fleet scope	
+		find_closest_planet = {
+			trigger = {
+				id = schroud_target_1
+				is_same_value = event_target:killtarget
+			}
+			found_planet = {
+				move_to = this
+				orbit_planet = this
+				destroy_planet = this
+			}
+		}
+	}
+}
+</pre>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Some samples of orders usage: <a rel="nofollow" class="external free" href="https://gitlab.com/stellaris/irm/snippets/29660">https://gitlab.com/stellaris/irm/snippets/29660</a></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><i>An example from FirePrince.</i></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><i>An example from OldEnt.</i></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><i>An example from OldEnt.</i></span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181259
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.034 seconds
+Real time usage: 0.037 seconds
+Preprocessor visited node count: 229/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3003/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.350      1 -total
+ 46.55%    5.749      1 Template:ModdingNavbox
+ 20.46%    2.527      1 Template:Version
+ 20.09%    2.481      1 Template:Navbox
+ 15.13%    1.869      1 Template:Infobox
+  6.35%    0.784     14 Template:Navboxgroup
+  3.72%    0.459      1 Template:Nowrap
+  3.35%    0.414      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:3232-0!canonical and timestamp 20260707181259 and revision id 59616.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

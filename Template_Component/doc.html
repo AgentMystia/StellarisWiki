@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Component/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Component/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_Component.html" title="Template:Component">Template:Component</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p>This template can be used to generate icons for ship components and weapons. Use <code><a href="/Template_Mutation.html" title="Template:Mutation">{{Mutation}}</a></code> for Space Fauna components.
+</p><p>Component images can be found here: <a href="/Category_Ship_part_icons.html" title="Category:Ship part icons">Category:Ship part icons</a>
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Ship part icon name, minus "ship part"</td>
+<td><b>required</b></td>
+<td><i>none</i>
+</td></tr>
+<tr>
+<td>2</td>
+<td>Localized name, if different</td>
+<td><i>optional</i></td>
+<td><i>none</i>
+</td></tr>
+<tr>
+<td>type
+</td>
+<td>Component type, one of:
+<ul><li>weapon</li>
+<li>utility</li>
+<li>core</li></ul>
+<p>Also functions as page link selector
+</p>
+</td>
+<td><i>optional</i></td>
+<td><i>core</i>
+</td></tr>
+<tr>
+<td>slot
+</td>
+<td>Component size, for weapon or utility components, any of:<div style="columns:50px 5; column-gap: 10px;-webkit-columns:50px 5; -webkit-column-gap: 10px;-moz-columns:50px 5; -moz-column-gap: 10px;">
+<ul><li>a</li>
+<li>g</li>
+<li>h</li>
+<li>l ('ell')</li>
+<li>m</li>
+<li>p</li>
+<li>s</li>
+<li>t</li>
+<li>w</li>
+<li>x</li></ul></div>
+</td>
+<td><i>optional</i>
+</td>
+<td><i>a</i> for utility <code>type</code>
+<p><i>s</i> for weapon <code>type</code>
+</p>
+</td></tr>
+<tr>
+<td>w</td>
+<td>Sets icon size</td>
+<td><i>optional</i></td>
+<td><i>58px</i>
+</td></tr>
+<tr>
+<td>iconify</td>
+<td>if set to "yes", appends text of parameter 2 or 1</td>
+<td><i>optional</i></td>
+<td><i>none</i>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Wikitext
+</th>
+<th>Procudes
+</th></tr>
+<tr>
+<td><code>{{Component|Subspace Drive}}</code><br /></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_subspace_drive.png" class="image"><img alt="Ship part subspace drive.png" src="images/Ship_part_subspace_drive.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Core_components.html#Subspace_Drive" title="Subspace Drive"><img alt="Subspace Drive" src="images/Slot_frame_none.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span></span>
+</td></tr>
+<tr>
+<td><code>{{Component|Subspace Drive|iconify=yes|w=24px}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_subspace_drive.png" class="image"><img alt="Ship part subspace drive.png" src="images/Ship_part_subspace_drive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Core_components.html#Subspace_Drive" title="Subspace Drive"><img alt="Subspace Drive" src="images/Slot_frame_none.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span>&#32;Subspace Drive
+</td></tr>
+<tr>
+<td><code>{{Component|laser 1|Red Laser|type=weapon}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_laser_1.png" class="image"><img alt="Ship part laser 1.png" src="images/Ship_part_laser_1.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Weapon_components.html#Red_Laser" title="Red Laser"><img alt="Red Laser" src="images/Slot_frame_weapon_s.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span></span>
+</td></tr>
+<tr>
+<td><code>{{Component|afterburners 2|Advanced Afterburners|type=utility|iconify=yes|w=24px}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_afterburners_2.png" class="image"><img alt="Ship part afterburners 2.png" src="images/Ship_part_afterburners_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Utility_components.html#Advanced_Afterburners" title="Advanced Afterburners"><img alt="Advanced Afterburners" src="images/Slot_frame_utility_a.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span>&#32;Advanced Afterburners
+</td></tr>
+<tr>
+<td><code>{{Component|Perdition Beam|slot=t|type=weapon|iconify=yes}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_perdition_beam.png" class="image"><img alt="Ship part perdition beam.png" src="images/Ship_part_perdition_beam.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Weapon_components.html#Perdition_Beam" title="Perdition Beam"><img alt="Perdition Beam" src="images/Slot_frame_weapon_t.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span></span>&#32;Perdition Beam
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Cached time: 20260707182444
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.030 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 236/1000000
+Post‐expand include size: 3490/2097152 bytes
+Template argument size: 408/2097152 bytes
+Highest expansion depth: 6/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 263/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    7.836      1 -total
+ 48.95%    3.836      1 Template:Template_doc_page_viewed_directly
+ 29.74%    2.330      5 Template:Component
+  7.79%    0.610      1 Template:MultiColumn
+  6.40%    0.502      1 Template:Template
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:16987-0!canonical and timestamp 20260707182444 and revision id 106217.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

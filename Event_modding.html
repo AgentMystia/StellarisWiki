@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Event modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Event_types"><span class="tocnumber">1</span> <span class="toctext">Event types</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Basic_Behavior"><span class="tocnumber">2</span> <span class="toctext">Basic Behavior</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Namespace_and_Event_ID"><span class="tocnumber">2.1</span> <span class="toctext">Namespace and Event ID</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Execution"><span class="tocnumber">2.2</span> <span class="toctext">Execution</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Condition"><span class="tocnumber">2.3</span> <span class="toctext">Condition</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Pre_triggers"><span class="tocnumber">2.3.1</span> <span class="toctext">Pre triggers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Visibility"><span class="tocnumber">2.4</span> <span class="toctext">Visibility</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Code_execution"><span class="tocnumber">2.5</span> <span class="toctext">Code execution</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Mean_Time_To_Happen"><span class="tocnumber">2.6</span> <span class="toctext">Mean Time To Happen</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Calling_events_from_other_events"><span class="tocnumber">3</span> <span class="toctext">Calling events from other events</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#On_Actions"><span class="tocnumber">4</span> <span class="toctext">On Actions</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Conditional_Description"><span class="tocnumber">5</span> <span class="toctext">Conditional Description</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Options"><span class="tocnumber">6</span> <span class="toctext">Options</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Best_Practices"><span class="tocnumber">7</span> <span class="toctext">Best Practices</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Triggering"><span class="tocnumber">7.1</span> <span class="toctext">Triggering</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Chaining_Events,_Scope,_Execution_Order"><span class="tocnumber">7.2</span> <span class="toctext">Chaining Events, Scope, Execution Order</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Example_Events"><span class="tocnumber">7.3</span> <span class="toctext">Example Events</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Example_event_with_all_parameters"><span class="tocnumber">8</span> <span class="toctext">Example event with all parameters</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#Empty_Event_Box_Bug"><span class="tocnumber">9</span> <span class="toctext">Empty Event Box Bug</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#What_is_happening?"><span class="tocnumber">9.1</span> <span class="toctext">What is happening?</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#How_to_deal_with_it"><span class="tocnumber">9.2</span> <span class="toctext">How to deal with it</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#References"><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Event_types">Event types</span></h2>
+<p>There are several types of events:
+</p>
+<ol><li><code>event</code> – for an entire game (global event)</li>
+<li><code>country_event</code> – for an entire <a href="/Empire_modding.html" title="Empire modding">empire</a></li>
+<li><code>planet_event</code> – for a <a href="/Planet_modding.html" title="Planet modding">planet</a></li>
+<li><code>fleet_event</code> – for a <a href="/Fleet_modding.html" title="Fleet modding">fleet</a></li>
+<li><code>ship_event</code> – for a <a href="/Ship_modding.html" title="Ship modding">ship</a></li>
+<li><code>pop_faction_event</code> – for a <a href="https://stellaris.paradoxwikis.com/Faction" class="mw-redirect" title="Faction">faction</a></li>
+<li><code>pop_group_event</code> – for a <a href="/Population.html" title="Population">population</a> unit (since v4.0, former <code>pop_event</code>)</li>
+<li><code>observer_event</code> – for the observer (development usage only; use console command "observe" to enter observer mode)</li>
+<li><code>system_event</code> – for a <a href="/System_modding.html" title="System modding">system</a>, <a href="/Scopes.html#Scope_Types" title="Scopes">galactic_object</a> (since v3.0)</li>
+<li><code>starbase_event</code> – for a <a href="/Starbase_modding.html" title="Starbase modding">starbase</a> (since v3.0)</li>
+<li><code>leader_event</code> – for a <a href="/Leader_modding.html" title="Leader modding">leader</a> (since v3.0)</li>
+<li><code>espionage_operation_event</code> – for use inside <a href="https://stellaris.paradoxwikis.com/Espionage" class="mw-redirect" title="Espionage">espionage</a> operations (since v3.0)</li>
+<li><code>first_contact_event</code> – for <a href="https://stellaris.paradoxwikis.com/First_contact" class="mw-redirect" title="First contact">first contacts</a> (since v3.0)</li>
+<li><code>situation_event</code> – for a <a href="/Situations.html" title="Situations">situation</a> (since v3.3)</li>
+<li><code>agreement_event</code> – for <a href="/Subject_empire.html#Terms_of_agreement" title="Subject empire">subject agreements</a> (since v3.4)</li></ol>
+<h2><span class="mw-headline" id="Basic_Behavior">Basic Behavior</span></h2>
+<h3><span class="mw-headline" id="Namespace_and_Event_ID">Namespace and Event ID</span></h3>
+<p>The top of every event file must contain a namespace line.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> The namespace is used as the basis for identifying all events in the file. If you open the <code>on_action_events.txt</code> file near the top of the file you will find <code>namespace = action</code>. Then every event in this file has an ID that starts with <code>action</code> followed by a period then a unique number as shown here for the <code>actions.8</code> event:
+</p>
+<pre>country_event = {
+	<b style="color:#900">id = action.8</b>
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = default
+		from = { is_country_type = default }
+		NOT = { has_communications = from }
+		is_hostile = from
+	}
+	immediate = {
+		establish_communications = from
+		fromfrom = {
+			conquer = root
+			set_controller = root
+		}
+	}
+}
+</pre>
+<p>Anywhere in the game that needs to call this event will use the ID property.
+</p><p>An event file can have any number of namespace.
+</p><p>Namespace names can be very long. Max character length that's currently verified for is 100 characters.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup>
+</p><p>Also, namespaces can include numbers as part of their name (see the vanilla <b>paragon_2</b> namespace).
+</p><p>Event ID can't have letters, or it will be recognized as "namespace.0". Leading zeros in IDs are truncated (namespace.003 is the same as namespace.3).
+</p>
+<h3><span class="mw-headline" id="Execution">Execution</span></h3>
+<p>By default every event has all its triggers checked against every game object at least once per game day, possibly once per game tick. For the objects where the triggers are all met, the code of the event is executed with the <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a> of said object.
+</p><p>However, events should usually not be run in this fashion, as it is very expensive on performance. Instead, an event should either use <code>is_triggered_only = yes</code>, which will exempt the event from this persistent polling, and trigger the event from elsewhere; or it should use <code>mean_time_to_happen</code>, which increases the intervals at which the event is checked.<sup id="cite_ref-MTTH_3-0" class="reference"><a href="#cite_note-MTTH-3">&#91;3&#93;</a></sup>
+</p><p>Similarly works <code>fire_only_once = yes</code>. However unlike <code>is_triggered_only</code> the code will still be polled, only to be removed after it was executed at least once. Also, as of 2.1.2, the conditions for a <code>fire_only_once</code> event should exclude the event firing a second time or error log entries are created.
+</p>
+<h3><span class="mw-headline" id="Condition">Condition</span></h3>
+<p>Events can have conditions represented with <code>trigger</code> section of <a href="/Conditions.html" title="Conditions">Condition</a> statements . If the condition is evaluated false, this event doesn't trigger. Here is an example from the event "apoc.1".
+</p>
+<div class="mw-highlight mw-highlight-lang-tcl mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="nv">trigger</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="k">{</span><span class="w"></span>
+<span class="w"> 	</span><span class="nv">owner</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="k">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="nv">NOT</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="nv">has_country_flag</span><span class="w"> </span><span class="err">=</span><span class="w"> </span>encountered_first_gateway<span class="w"> </span><span class="k">}</span>
+<span class="w"> 	</span><span class="k">}</span>
+<span class="w"> 	</span><span class="nv">from</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="k">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="nv">has_star_flag</span><span class="w"> </span><span class="err">=</span><span class="w"> </span>abandoned_gateway
+<span class="w"> 		</span><span class="nv">any_system_megastructure</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="nv">is_megastructure_type</span><span class="w"> </span><span class="err">=</span><span class="w"> </span>gateway_ruined<span class="w"> </span><span class="k">}</span>
+<span class="w"> 	</span><span class="k">}</span>
+<span class="w"> </span><span class="k">}</span>
+</pre></div>
+<h4><span class="mw-headline" id="Pre_triggers">Pre triggers</span></h4>
+<p><tt>Pre-triggers</tt> are fast triggers that are tested before full triggers, they are meant to be fast and quickly exclude target scopes from events, they take the form of "yes/no" question. Use this to improve performance related to events.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup>
+If an entry is not included, it will be ignored. They work for planet, pop, system, starbase and leader scopes.
+</p><p>Note: <tt>Pre-triggers</tt> are functionally independent of normal triggers. Any naming similarities are just for convenience (they don't share the same code base and work independently).
+</p><p>Possible <b>planet</b> values:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="n">pre_triggers</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">has_owner</span> <span class="o">=</span> <span class="n">yes</span>				<span class="c1"># whether the planet has an owner</span>
+	<span class="n">is_homeworld</span> <span class="o">=</span> <span class="n">no</span>			<span class="c1"># whether the planet is its owner&#39;s homeworld</span>
+	<span class="n">original_owner</span> <span class="o">=</span> <span class="n">yes</span>		<span class="c1"># whether the planet still belong to its original owner</span>
+	<span class="n">has_ground_combat</span> <span class="o">=</span> <span class="n">no</span>		<span class="c1"># whether ground combat is going on the planet</span>
+	<span class="n">is_capital</span> <span class="o">=</span> <span class="n">no</span>				<span class="c1"># whether the planet is the capital world of the empire it belongs too</span>
+	<span class="n">is_occupied_flag</span> <span class="o">=</span> <span class="n">no</span>		<span class="c1"># whether the planet is occupied</span>
+    <span class="n">is_ai</span> <span class="o">=</span> <span class="n">no</span>					<span class="c1"># whether the planet owner is controlled by the computer or by a human</span>
+<span class="p">}</span>
+</pre></div>
+<p>Note: In this case, all triggers have counterparts with normal triggers, except for <code>is_ai</code>, which is seemingly the only one which has not a direct planet scope (in older versions, pre v3.3 it was not functional).<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">&#91;5&#93;</a></sup>
+</p><p>Possible <b>pop</b> from jobs values:<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">&#91;6&#93;</a></sup>
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="n">possible_pre_triggers</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">has_owner</span> <span class="o">=</span> <span class="n">yes</span>				<span class="c1"># whether the pop planet has an owner</span>
+	<span class="n">is_enslaved</span> <span class="o">=</span> <span class="n">no</span>			<span class="c1"># whether the pop is enslaved</span>
+	<span class="n">is_being_purged</span> <span class="o">=</span> <span class="n">no</span>		<span class="c1"># whether the pop is being purged</span>
+	<span class="n">is_being_assimilated</span> <span class="o">=</span> <span class="n">no</span>	<span class="c1"># whether the pop is being assimilated</span>
+	<span class="n">has_planet</span> <span class="o">=</span> <span class="n">yes</span>			<span class="c1"># whether the pop is on a planet or not</span>
+	<span class="n">is_sapient</span> <span class="o">=</span> <span class="n">yes</span>			<span class="c1"># whether the pop is sapient</span>
+	<span class="n">is_robotic</span> <span class="o">=</span> <span class="n">yes</span>			<span class="c1"># whether the pop is robotic - since v4.0</span>
+<span class="p">}</span>
+</pre></div>
+<p><code>can_join_pre_triggers</code> in <code>pop_factions</code> accepts the same parameters.
+</p>
+<dl><dt>system</dt>
+<dd><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> 	<span class="n">has_owner</span>				<span class="c1"># whether the system has an owned starbase</span>
+ 	<span class="n">is_capital</span>				<span class="c1"># whether the system has its owner&#39;s capital in it</span>
+ 	<span class="n">is_occupied_flag</span>		<span class="c1"># whether the system is fully occupied by someone other than its owner, including all of its planets</span>
+</pre></div></dd>
+<dt>starbase</dt>
+<dd><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> 	<span class="n">has_owner</span>				<span class="c1"># whether it has an owner</span>
+ 	<span class="n">is_occupied_flag</span>		<span class="c1"># whether the controller is not the owner</span>
+</pre></div></dd>
+<dt>leader</dt>
+<dd><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span>	<span class="n">has_owner</span>
+	<span class="n">is_idle</span>					<span class="c1"># whether the leader is assigned to a task</span>
+</pre></div></dd></dl>
+<p>Note: Any other syntax in this <tt>pre-triggers</tt> blocks will raise an error (except for code comment syntax, of course).
+</p>
+<h3><span class="mw-headline" id="Visibility">Visibility</span></h3>
+<p>By default every Event will display a window and thus needs at least one option and a number of textfields to display. In order to suppress that window (and the need to set all the necessary text fields) <code>hide_window = yes</code> can be used. This is mainly used to trigger events that are used for achievements or events that the player should not know are happening.
+</p>
+<h3><span class="mw-headline" id="Code_execution">Code execution</span></h3>
+<p>The primary place for code is the <code>immediate</code> section of <a href="/Effects.html" title="Effects">Effect</a> statements. Most events have all their code contained inside this block. You can use if statement in <code>immediate</code> section, like the following, as seen in colony.events.txt.
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">immediate</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="k">if</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">event_target</span><span class="p">:</span><span class="n">subterranean_nation</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">NOT</span> <span class="o">=</span> <span class="p">{</span> <span class="n">has_country_flag</span> <span class="o">=</span> <span class="n">tech_request_approved</span> <span class="p">}</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 		<span class="n">create_army</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;NAME_Invading_Horde&quot;</span>
+ 			<span class="n">owner</span> <span class="o">=</span> <span class="n">event_target</span><span class="p">:</span><span class="n">subterranean_nation</span>
+ 			<span class="n">species</span> <span class="o">=</span> <span class="n">event_target</span><span class="p">:</span><span class="n">subterranean_species</span>
+ 			<span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;industrial_army&quot;</span>
+ 			<span class="n">leader</span> <span class="o">=</span> <span class="n">last_created_leader</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>However visible events need at least one option (the OK Button of a message box). Every option can carry its own code.<sup id="cite_ref-opt_7-0" class="reference"><a href="#cite_note-opt-7">&#91;7&#93;</a></sup>
+</p><p><a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">Scope</a> is a very important consideration for any code executed in any event and it is heavily based on how the event was called.
+</p>
+<h3><span class="mw-headline" id="Mean_Time_To_Happen">Mean Time To Happen</span></h3>
+<p>A additional condition very often used on event that triggered by regular polling, is the <b>mean_time_to_happen</b> (MTTH). This will delay the execution of the event by a random amount of ingame days. On <b>average</b> the activation will be delayed as given, but the exact number can vary considerably. Counting starts the moment all other trigger conditions are met and it is not clear how exact the internal implementation of this delay works, however it seems likely the MTTH is regularly polled just like all other triggers.
+</p>
+<ul><li><code>mean_time_to_happen = { months = 5 }</code> or <code>mean_time_to_happen = { days = 15 }</code></li></ul>
+<p>Available time units&#160;: days, months, years.
+</p><p>The MTTH can be modified with any number of conditional modifiers and it seems such things can take effect after the MTTH counting has begun.
+</p><p>Testing has shown that a simple MTTH will be called with a 50% chance during the period of time specified for each item in that scope e.g. each country for a country event. It will then check the triggers, and if they are true, the event will be triggered. However, if modifiers to the MTTH are introduced, the game will check the conditions every day for each scope – meaning that these are <b>considerably</b> more expensive in terms of performance.
+</p><p><b>Warning: Due to poor performance, using MTTH has fallen out of favor, and vanilla has started to remove uses of MTTH, and is instead using events with random delays (see below).</b>
+</p>
+<h2><span class="mw-headline" id="Calling_events_from_other_events">Calling events from other events</span></h2>
+<p>It is possible to manually call an event onto any gameobject from a running event. Doing so will put the event into the game objects <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a>. There might be a slight delay of at least one or more game ticks until the event is actually called. For example:
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">random_galaxy_planet</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">planet_event</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">my_planet_event</span><span class="o">.</span><span class="mi">1</span> <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>While doing this the triggering can be delayed by any fixed or semi-fixed timeframe (with optional DAYS and RANDOM delay).<br />
+For example: <code>country_event = { id = crisis.2000 days = 200 random = 100 }</code> delays it by 200–300 days.
+</p><p>As the event attempts to execute, if its conditions are not met, it doesn't execute. If the event is delayed, the conditions are checked only before execute, but not before queuing up.
+</p><p>Since 3.0 there is also an optional <b><code>scope</code></b> parameter, where you can override the calling scope: <code>scopes = { from = fromfrom }</code>.
+Do note that when defining scopes, local event_targets will not be properly scoped to in events firing from the event.<sup id="cite_ref-scopes_8-0" class="reference"><a href="#cite_note-scopes-8">&#91;8&#93;</a></sup> For more see section <i>On Actions</i> below.
+</p>
+<h2><span class="mw-headline" id="On_Actions">On Actions</span></h2>
+<p>Aside from the default polling another very common way to get an event triggered is <code>on_action</code>. The vanilla game itself has a number of events registered this way in <code>Stellaris\common\on_actions\00_on_actions.txt</code>
+</p><p>Mods can provide their own, uniquely named, on_action file whose events are called in addition the vanilla events. The file should be put into <code>Stellaris\common\on_actions\</code>, but the <a href="/Modding.html#Guidelines" title="Modding">Modding Guidelines</a> should be observed
+</p><p>The situations of triggering range from polling less aggressive (monthly or yearly) to numerous developments of the galaxy like ending of a planetary invasion, survey, entering of a system and so forth. This is later part is comparable to registering an Event in a GUI Environment of many higher programming languages.
+</p><p>Registered events should be marked with "triggered only" modifier. As easily dozens of events can be registered to any one development (often belonging to the same chain) the triggers decide which events are actually called.
+</p><p>A special case is random events which have a specific chance to trigger anytime that development happens. However, the triggers can make this a lot rarer than even chance might indicates.
+</p><p>Aside from "on_actions", events can be triggered from any file with an effects field. Most notable are anomalies, but one can similarly trigger an event from e.g. within an edict (it will then trigger every time the edict is activated), policy, diplomatic action, etc.
+</p><p>Since 3.0 you can define your own "on_actions" in script by <a href="/Effects.html" title="Effects">effect</a> <code>fire_on_action = { on_action = &lt;string&gt; scopes = { from = X fromfrom = Y } }</code>.
+Do note that when defining scopes, fire_on_action appears to be considered a scope and all non-event_target scopes require a prev added before them (<code>from = prev</code> will scope to the scope firing the on_action, and to scope to the previous scope <code>from = prevprev</code> must be used instead).
+In addition, event_targets will not be properly scoped to in events firing from the on_action if used for any scope above from (fromfrom, fromfromfrom, etc.).<sup id="cite_ref-scopes_8-1" class="reference"><a href="#cite_note-scopes-8">&#91;8&#93;</a></sup>
+</p>
+<h2><span class="mw-headline" id="Conditional_Description">Conditional Description</span></h2>
+<p>The description of an event may change based on conditions. It uses the following syntax as seen in <code>colony_events.txt</code>.
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">planet_event</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="nb">id</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span>
+ 	<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;colony.182.name&quot;</span>
+ 	<span class="n">desc</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">owner</span> <span class="o">=</span> <span class="p">{</span> <span class="n">NOT</span> <span class="o">=</span> <span class="p">{</span> <span class="n">has_authority</span> <span class="o">=</span> <span class="n">auth_machine_intelligence</span> <span class="p">}</span> <span class="p">}</span>
+ 		<span class="p">}</span>
+ 		<span class="n">text</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span>
+ 	<span class="p">}</span>
+ 	<span class="n">desc</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">owner</span> <span class="o">=</span> <span class="p">{</span> <span class="n">has_authority</span> <span class="o">=</span> <span class="n">auth_machine_intelligence</span> <span class="p">}</span>
+ 		<span class="p">}</span>
+ 		<span class="n">text</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">mach</span>
+ 	<span class="p">}</span>
+ 	<span class="err">…</span>
+ <span class="p">}</span>
+</pre></div>
+<p>If multiple triggers match, only one of them will be shown at random. If none of the triggers match, the system will show the first description anyway.
+</p><p>If more than one desc entry is provided, only one of them will be shown at random (since 3.0).
+</p><p>So conditional description and static description can be used together. For instance:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">planet_event</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="nb">id</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span>
+ 	<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;colony.182.name&quot;</span>
+ 	<span class="n">desc</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">owner</span> <span class="o">=</span> <span class="p">{</span> <span class="n">NOT</span> <span class="o">=</span> <span class="p">{</span> <span class="n">has_authority</span> <span class="o">=</span> <span class="n">auth_machine_intelligence</span> <span class="p">}</span> <span class="p">}</span>
+ 		<span class="p">}</span>
+ 		<span class="n">text</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span>
+ 	<span class="p">}</span>
+ 	<span class="n">desc</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">mach</span>
+ 	<span class="err">…</span>
+ <span class="p">}</span>
+</pre></div><p>Additionally, you can use this setup below create Dynamic Localisation that allows usage of multiple Loc Keys (as long as triggers match) in a single desc entry:</p><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">planet_event</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="nb">id</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span>
+ 	<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;colony.182.name&quot;</span>
+ 	<span class="n">desc</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="c1"># Always Available TEXT (1)</span>
+ 			<span class="n">text</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">top</span>
+ 			<span class="c1"># Text to Show if the Game is Multiplayer</span>
+ 			<span class="n">success_text</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">text</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">multiplayer</span>
+				<span class="n">is_multiplayer</span> <span class="o">=</span> <span class="n">yes</span>
+			<span class="p">}</span>
+ 			<span class="c1"># Text to Show if the Game is Singleplayer</span>
+ 			<span class="n">fail_text</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">text</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">singleplayer</span>
+				<span class="n">is_multiplayer</span> <span class="o">=</span> <span class="n">yes</span>
+			<span class="p">}</span>
+ 			<span class="err">…</span>
+ 			<span class="o">&lt;</span><span class="n">triggers</span><span class="o">&gt;</span>
+ 			<span class="err">…</span>
+ 			<span class="c1"># Always Available TEXT (2)</span>
+ 			<span class="n">text</span> <span class="o">=</span> <span class="n">colony</span><span class="mf">.182</span><span class="o">.</span><span class="n">desc</span><span class="o">.</span><span class="n">bottom</span>
+ 			<span class="err">…</span>
+			<span class="o">&lt;</span><span class="n">triggers</span><span class="o">&gt;</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="err">…</span>
+ <span class="p">}</span>
+</pre></div><p>You can use this setup in combination with multiple desc entries as shown above for incredibly dynamic localisations.
+</p><h2><span class="mw-headline" id="Options">Options</span></h2>
+<p>All visible events need at least one Option (comparable to the “OK” button of a message box). Options themselves have numerous variables that can be set.
+</p><p>The <b>after</b> block has to be written as a peer of the options, it is executed after an option is chosen, regardless which option was chosen. That makes it comparable to a finally block in many error handling systems of a language like Java.
+</p><p><b>name</b> Defines the display name of the option. It is the only value somewhat mandatory. Often a localizable string is used here. There are numerous default strings that can be used here which are already localised.
+</p>
+<dl><dd><i>name</i> can also take a triggered block with multiple <i>name</i> blocks per <i>option'</i></dd></dl>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">option</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="nb">name</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">display_triggers</span><span class="o">&gt;</span> <span class="p">}</span>
+		<span class="n">text</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">localization_string</span><span class="o">&gt;</span>
+	<span class="p">}</span>
+ 	<span class="nb">name</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">display_triggers</span><span class="o">&gt;</span> <span class="p">}</span>
+		<span class="n">text</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">localization_string</span><span class="o">&gt;</span>
+	<span class="p">}</span>
+	<span class="o">...</span>
+ <span class="p">}</span>
+</pre></div>
+<p><b>trigger</b> Defines if the option is shown at all. If it’s not shown, so is it unchoosable.
+</p><p><b>exclusive_trigger</b> If valid, disables all other event options (added with 2.0).
+</p><p><b>default_hide_option</b> If set to yes, this option is selected by default when a “Cancel” key is pressed (does NOT hide the option as the name suggests).
+</p><p><b>icon</b> Defines an optional icon sprite.
+</p><p><b>sound</b> Defines an optional sound-effect file played when the option is chosen.
+</p><p><b>allow</b> Defines if the option is choosable. A option can be both shown and not choosable, often to show which options will become available with specific play. This subblock is comparable to the "Enabled" value or property in many GUI environments. The check is done only when the Event window is first shown and not updated with game progress.
+</p><p><b>tag</b> Special tag to indicate that this is the option to dismiss/hire a leader, only works if the country event has <code>event_window_type = leader_recruit</code> (added with 3.8). 
+</p><p><b>hide_option_if_not_allowed</b> Special option that hides this Option if it's not allowed, only works if the country event has <code>event_window_type = leader_recruit</code> (added with 3.10). 
+</p><p><b><a href="/Effects.html" title="Effects">Effect</a> statements</b> can be put into the body of the option. No special block must be put around it.
+</p><p>The game tries to generate a tooltip for this option based on all the effects. <code>custom_tooltip = xxx</code> can be used to show the player a tooltip in addition to the generated tooltips. Also, <code>hidden_effect = { … }</code> can be used to contain other effects to prevent the game from generating tooltips based on them.
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">option</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;xxx&quot;</span>
+ 	<span class="n">custom_tooltip</span> <span class="o">=</span> <span class="s2">&quot;yyy&quot;</span>
+ 	<span class="n">hidden_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 		 <span class="p">(</span><span class="no">Effect</span> <span class="n">statements</span> <span class="n">to</span> <span class="n">be</span> <span class="n">executed</span> <span class="k">when</span> <span class="n">this</span> <span class="n">event</span> <span class="n">is</span> <span class="n">chosen</span><span class="p">)</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p><b>ai_chance</b> use this subblock to allow an AI to do a semi-random decision between all available options, to make some choices more likely to be picked by the AI. Here is an example from a War in Heaven event.
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">ai_chance</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">factor</span> <span class="o">=</span> <span class="mi">100</span>
+ 	<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">factor</span> <span class="o">=</span> <span class="mi">0</span>
+ 		<span class="no">OR</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">has_valid_civic</span> <span class="o">=</span> <span class="n">civic_hive_devouring_swarm</span>
+ 			<span class="n">has_valid_civic</span> <span class="o">=</span> <span class="n">civic_fanatic_purifiers</span>
+ 			<span class="n">has_valid_civic</span> <span class="o">=</span> <span class="n">civic_machine_terminator</span>
+ 		<span class="p">}</span>
+ 		<span class="c1"># Instead you can also use the corresponding scripted trigger: is_homicidal = yes</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>The following options are available for diplomatic events (if <code>diplomatic = yes</code>):
+</p>
+<dl><dd><b>response_text</b>: optional setting for an localisation key. <b>NOTE:</b> Without 'is_dialog_only' setting, Event window shows localisation key with just an 'OK' button to exit the Event. In this case,the <b>after = {}</b> code block gets Executed immediately. It doesn't wait for the Player to press the 'OK' Button.</dd>
+<dd><b>is_dialog_only</b>: optional boolean setting that opens a text response only. <b>NOTE:</b> Dialog only Event Buttons still fire their effects, just without closing the event. Thus, the <b>after = {}</b> code block doesn't get executed. Requires <b>response_text</b> (without it, game gives error and exits event)</dd>
+<dd><b>custom_gui</b>: optional setting that changes the Event look with designated GUI.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">&#91;9&#93;</a></sup> Can also be used inside event options to change the focused event option's gui with a custom gui.</dd>
+<dd><b>custom_gui_option</b>: optional setting that changes <b>Every</b> existing Event Button with a custom gui. Can <b>NOT</b> be used inside event option fields. Can be overwritten by <b>custom_gui</b> used in option's themselves.</dd></dl>
+<h2><span class="mw-headline" id="Best_Practices">Best Practices</span></h2>
+<p>Unlike literally any other game file, which does LIOS, Stellaris loads /events with First In Only Serve basis, meaning in order to override a vanilla event without overriding the entire file, the filename for the event text file needs to be higher than vanilla files in UTF-8 order. This is usually achieved by attaching exclamation point(s) to the front of filename, like <code>!!vanilla_override_event.txt</code>
+</p>
+<h3><span class="mw-headline" id="Triggering">Triggering</span></h3>
+<p>Hide Window and Triggered Only are the two most common settings for events, with the bulk of vanilla events having either or even both of them. The MTTH is also a very common setting on any event that is using polling to add some randomness to the game where it seems useful.
+</p><p>Due to a possible massive CPU load load regular polling should be avoided unless absolutely necessary. The preferred way to get a series of events started initially is either via a gatekeeper event that does use regular polling with early failing triggers, or by having it triggered by a on_action development. A combination of on_action developments that lead to gatekeeper events may also be useful.
+</p>
+<h3><span id="Chaining_Events.2C_Scope.2C_Execution_Order"></span><span class="mw-headline" id="Chaining_Events,_Scope,_Execution_Order">Chaining Events, Scope, Execution Order</span></h3>
+<p>The vanilla code often has long chains of events calling one another indicating that this chaining might be necessary for proper execution and scope setting.
+</p><p>In particular a pattern where there is a hidden Event is calling a visible event is extremely common. The hidden event often doing actually (setup) work. This indicates that even "Immediate" code needs a least until the next event is called to take effect past any internal caching.
+</p>
+<h3><span class="mw-headline" id="Example_Events">Example Events</span></h3>
+<p>Visible Events (Robot Rebellion, 1.6.2 version; <i>actually removed</i>):
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># Servant AI Perfected</span>
+ <span class="n">country_event</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="nb">id</span> <span class="o">=</span> <span class="n">crisis</span><span class="mf">.2192</span>
+ 	<span class="n">title</span> <span class="o">=</span> <span class="n">crisis</span><span class="mf">.2192</span><span class="o">.</span><span class="n">name</span>
+ 	<span class="n">desc</span> <span class="o">=</span> <span class="n">crisis</span><span class="mf">.2192</span><span class="o">.</span><span class="n">desc</span>
+ 	<span class="n">picture</span> <span class="o">=</span> <span class="n">GFX_evt_robot_assembly_plant</span>
+ 	<span class="n">show_sound</span> <span class="o">=</span> <span class="n">event_laboratory_sound</span>
+ 	<span class="n">location</span> <span class="o">=</span> <span class="n">root</span>
+
+ 	<span class="n">is_triggered_only</span> <span class="o">=</span> <span class="n">yes</span>
+
+ 	<span class="n">immediate</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">set_country_flag</span> <span class="o">=</span> <span class="n">robots_pacified</span>
+ 	<span class="p">}</span>
+
+ 	<span class="n">option</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">name</span> <span class="o">=</span> <span class="n">crisis</span><span class="mf">.2192</span><span class="o">.</span><span class="n">a</span>
+ 		<span class="n">custom_tooltip</span> <span class="o">=</span> <span class="n">crisis</span><span class="mf">.2192</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">tooltip</span>
+ 		<span class="n">hidden_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">set_country_flag</span> <span class="o">=</span> <span class="n">ai_perfect_servants</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+
+ 	<span class="n">option</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">name</span> <span class="o">=</span> <span class="n">crisis</span><span class="mf">.2192</span><span class="o">.</span><span class="n">b</span>
+ 		<span class="n">hidden_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">country_event</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="nb">id</span> <span class="o">=</span> <span class="n">crisis</span><span class="mf">.2000</span>
+ 				<span class="n">days</span> <span class="o">=</span> <span class="mi">400</span>
+ 				<span class="n">random</span> <span class="o">=</span> <span class="mi">400</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>Invisible Events (test Prethoryn crisis – from version 1.8.3):
+</p>
+<div class="mw-code"><i class="effect-green"># <b>WARNING:</b> May cause galactic mass extinction and/or loss of appetite</i>
+<p>country_event = {
+	<b>id</b> = crisis.199				<i class="effect-green"># Event ID</i>
+	<b>hide_window</b> = yes			<i class="effect-green"># Makes the event run without the player knowing, essential because this is a trigger event</i>
+</p><p>	<b>trigger</b> = { always = no }		<i class="effect-green"># Makes event only trigger when called on (I think)</i>
+</p><p>	<b>immediate</b> = {
+		set_global_flag = prethoryn_invasion_happened <i class="effect-green"># Global Flags are created to tell the game that the crisis is happening</i>
+		set_global_flag = prethoryn_transmission
+		begin_event_chain = {
+			event_chain = "coming_storm_chain"
+			target = ROOT
+		}
+		random_rim_system = {
+			set_star_flag = swarm_invasion_target_1
+			save_event_target_as = prethoryn_invasion_system
+		}
+		create_point_of_interest = {
+			id = coming_storm_poi.1
+			name = "coming_storm_poi_1_poi"
+			desc = "coming_storm_poi_1_poi_desc"
+			event_chain = "coming_storm_chain"
+			location = event_target:prethoryn_invasion_system
+		}
+		country_event = { id = crisis.17 days = 10 }
+	}
+</p>
+}</div>
+<h2><span class="mw-headline" id="Example_event_with_all_parameters">Example event with all parameters</span></h2>
+<div class="mw-code thumb"><i class="autocomment"># Specifies the type of the event.</i>
+<p><b>country_event</b> = {
+	<i class="autocomment"># Unique ID for your event. Must match namespace parameter</i>
+	<b>id</b> = example.1
+</p><p>	<i class="autocomment"># Specifies localization string for the title (Header) of the event</i>
+	<b>title</b> = example.1.name
+</p><p>	<i class="autocomment"># Specifies localization string for event text that describes what’s happening.</i>
+	<i class="autocomment"># Multiple is allowed; random one will be shown.</i>
+	<b>desc</b> = example.1.desc
+	<i class="autocomment"># Descriptions can be conditional</i>
+	<b>desc</b> = {
+		<b>text</b> = example.1.desc.conditional	<i class="effect-green"># Localization string</i>
+		<b>trigger</b> = {
+			<i class="autocomment"># Conditions for this to be available.</i>
+			<i class="autocomment"># For example: has_authory = auth_machine_intelligence</i>
+			<i class="autocomment"># Similar to custom_tooltip few sub commands can be used (also switch trigger)</i>
+			<b>text</b> = example.1.desc.conditional	<i class="effect-green"># Shows custom text</i>
+			<b>success_text</b> = <i class="autocomment"># Shows custom text when the associated trigger passes (multiple are possible and merged)</i>
+			<b>fail_text</b> = <i class="autocomment"># Shows custom text when the associated trigger not passes</i>
+		}
+		<i class="autocomment"># If valid, disables all other desc (added with 2.1).</i>
+		<b>exclusive_trigger</b> = {
+			<i class="autocomment"># Condition statement(s)</i>
+		}
+	}
+</p><p>	<i class="autocomment"># A name of a picture to display. Pictures are defined at "interface/xxx.gfx".</i><sup id="cite_ref-10" class="reference"><a href="#cite_note-10">&#91;10&#93;</a></sup>
+	<b>picture</b> = GFX_evt_exploding_ship
+	<i class="autocomment"># Pictures can also be conditional</i>
+	<b>picture</b> = {
+		<b>picture</b> = <i class="autocomment"># The name of a picture</i>
+		<b>trigger</b> = { <i class="autocomment"># Condition statement(s)</i> }
+		<b>exclusive_trigger</b> = {
+			<i class="autocomment"># Condition statement(s) – if you have more than one</i>
+		}
+	}
+</p><p>	<i class="autocomment"># A scope to the object that is relevant to the event that player can move to. For example, the planet where event is happening.</i>
+	<b>location</b> = from
+</p><p>	<i class="autocomment"># Name of the sound clip to be played when event is shown. Sounds are defined in "sound/xxx.asset".</i>
+	<b>show_sound</b> = event_ship_explosion
+</p><p>	<i class="autocomment"># If event is not meant to be seen or there’s no person to see. Makes title and desc unnecessary.</i>
+	<i class="autocomment"># Service event that runs some sort of routine or prepares grounds for other events should have this.</i>
+	<b>hide_window</b> = yes
+</p><p>	<i class="autocomment"># Makes event look like diplomatic communications. First contact events use this.</i>
+	<b>diplomatic</b> = yes
+</p><p>	<i class="autocomment"># An optional setting that changes the looking of this event window, if "diplomatic = yes".</i>
+	<b>custom_gui</b> = "enclave_caravaneer_window"
+</p><p>	<i class="autocomment"># An optional setting that changes the looking of all used event option's buttons view, if "diplomatic = yes".</i>
+	<b>custom_gui_option</b> = "enclave_caravaneer_option"
+</p><p>	<i class="autocomment"># Specifies picture for diplomatic event. Most options are optional here</i>
+	<b>picture_event_data</b> = {
+		<i class="autocomment"># Animated portrait. Accepts country, leader or species scope as an input</i>
+		<b>portrait</b> = event_target:contact_empire
+		<i class="autocomment"># Planet background, if your picture has a window</i>
+		<b>planet_background</b> = event_target:contact_empire
+		<i class="autocomment"># City graphic type on the planet in the window</i>
+		<b>graphical_culture</b> = event_target:contact_empire
+		<i class="autocomment"># The size of the city. Usable to make planet behind look like capital</i>
+		<b>city_level</b> = event_target:contact_empire
+		<i class="autocomment"># Static background. Can use static pictures or scopes as the input</i>
+		<b>room</b> = event_target:contact_empire.ruler
+	}
+</p><p>	<i class="autocomment"># Probably removed in v.3.8: Event will show for other countries if this is set to yes. Those countries can be narrowed down with major_trigger.</i>
+	<s><i>major</i> = yes</s>
+</p><p>	<b>auto_select</b> = yes
+</p><p>	<i class="autocomment"># Force a diplomatic event to be viewed.</i>
+	<b>force_open</b> = yes
+</p><p>	<i class="autocomment"># Forces the event to pop-up even if player has supressed pop-ups.</i>
+	<b>auto_opens</b> = yes
+</p><p>	<i class="autocomment"># Makes the event happen only once per game</i>
+	<b>fire_only_once</b> = yes
+</p><p>	<i class="autocomment"># enables the Auto-Track feature button at the top of the event (requires <b>location</b>)</i>
+	<b>trackable</b> = yes
+</p><p>	<i class="autocomment"># This event will not fire itself. It must be called by another event or an on_action.</i>
+	<i class="autocomment"># Most events will use this.</i>
+	<b>is_triggered_only</b> = yes
+</p><p>	<i class="autocomment"># The event be considered for starting with daily probability calculated so on average it would happen in time specified.</i><sup id="cite_ref-MTTH_3-1" class="reference"><a href="#cite_note-MTTH-3">&#91;3&#93;</a></sup>
+	<b>mean_time_to_happen</b> = {
+		<i class="autocomment"># To specify average time for the event to fire. "months" or "days" are also acceptable input.</i>
+		years = 100
+</p><p>		<i class="autocomment"># Mean time to happen can be conditionally modified</i>
+		<b>modifier</b> = {
+			<i class="autocomment"># Multiply MTTH by number specify. Here it will make this event trigger in a mean time of 10 years.</i>
+			factor = 0.1
+			<i class="autocomment"># Condition statement(s)</i>
+		}
+	}
+</p><p>	<i class="autocomment"># If neither is_triggered_only or MTTH is set, the event will trigger every day the conditions are met.</i>
+	<i class="autocomment"># So don't forget them, lest you might affect the entire galaxy or see event trigger again and again forever.</i>
+</p><p>	<i class="autocomment"># Trigger block contains conditions. The event will not start if conditions inside aren't met.</i>
+	<i class="autocomment"># Used for events on mean_time_to_happen or for events that called from situation where</i>
+	<i class="autocomment"># you can't or want specify conditions for it to happen, before calling</i>
+	<i class="autocomment"># (For example an event in on_action block or a delayed event that might be blocked by other events)</i>
+	<b>trigger</b> = {
+		<i class="autocomment"># Condition statement(s)</i>
+	}
+</p><p>	<i class="autocomment"># Effects that are applied the moment event fires. Can be effects that can't wait like</i>
+	<i class="autocomment"># setting a flag to prevent other events, or the undesirable effects you don't want player to be able to delay</i>
+	<i class="autocomment"># (For example, killing science ship’s captain.) This is also the only block you'll need on hidden events</i>
+	<b>immediate</b> = {
+		<i class="autocomment"># Effect statement(s)</i>
+	}
+</p><p>	<i class="autocomment"># The button under the event, allowing player to pick a reaction.</i>
+	<i class="autocomment"># Any event that is not hidden, needs at least one. Multiple can be specified.</i><sup id="cite_ref-opt_7-1" class="reference"><a href="#cite_note-opt-7">&#91;7&#93;</a></sup>
+	<b>option</b> = {
+		<i class="autocomment"># Reference to localization string with option text</i>
+		<b>name</b> = example.1.a
+</p><p><i class="autocomment"># An optional setting that changes the looking of this event option window, if "diplomatic = yes" Overwrites the 'custom_gui_option' gui only on this option.</i>
+		<b>custom_gui</b> = "enclave_curator_option"
+</p><p><i class="autocomment"># If not met, this option will be disabled and hidden.</i>
+		<b>trigger</b> = {
+			<i class="autocomment"># Condition statement(s)</i>
+		}
+</p><p>		<i class="autocomment"># If valid, disables all other event options (added with 2.0).</i>
+		<b>exclusive_trigger</b> = {
+			<i class="autocomment"># Condition statement(s)</i>
+		}
+</p><p>		<i class="autocomment"># If not met, this option will be disabled, but still shown.</i>
+		<b>allow</b> = {
+			<i class="autocomment"># Condition statement(s)</i>
+		}
+</p><p>		<i class="autocomment"># Effects of the event can be described here. They will generate tooltips shown when hovering over option.</i>
+</p><p>		<i class="autocomment"># This is a special Effect that it does nothing more than a customizable tooltip.</i>
+		<i class="autocomment"># Static strings can be used here, but using localisation keys is recommended.</i>
+		<b>custom_tooltip</b> = example.1.a.tooltip
+</p><p>		<i class="autocomment"># This is a special Effect that it makes the game to generate tooltips based on the Effects inside.</i>
+		<i class="autocomment"># These statements have NO actual effects, just tooltips.</i>
+		<b>tooltip</b> = {
+			<i class="autocomment"># effect statement(s)</i>
+		}
+</p><p>		<i class="autocomment"># This is a special Effect that it prevents the game from generating tooltips based on the Effects inside.</i>
+		<b>hidden_effect</b> = {
+			<i class="autocomment"># effect statement(s)</i>
+		}
+	}
+</p><p>	<i class="autocomment"># Probably removed in v.3.8: Triggers for other countries on whether a major event should show for them. I.e. if it reads has_ethic = ethic_materialist, then all materialist countries will see the event.</i>
+	<s><i>major_trigger</i> = {
+		<i class="autocomment"># Condition statement(s)</i>
+	}</s>
+	<i class="autocomment"># Event will cancel (disappear without executing any of the effects in the options) if these triggers return true. Not evaluated while the game is paused.</i>
+	<b>abort_trigger</b> = {
+		<i class="autocomment"># Condition statement(s)</i>
+	}
+	<i class="autocomment"># Effects executed when abort_trigger returns true.</i>
+	<b>abort_effect</b> = {
+		<i class="autocomment"># effect statement(s)</i>
+	}
+</p><p>	<b>after</b> = {
+		<i class="autocomment"># Effects that are applied after option is chosen.</i>
+		<i class="autocomment"># Will generate a tooltip in addition the tooltip of every option, unless hidden_effect is used.</i>
+	}
+</p>
+}</div>
+<p>With v.3.4 there is a new “<b>event inheritance</b>” system added (e.g. it saved thousands of lines in the scripts for enclaves). With this, an event can be specified to inherit properties from another via “<code>base = &lt;some_event_id&gt;</code>”. Then, various properties can be overwritten via “<code>desc_clear</code>”, “<code>option_clear</code>”, “<code>picture_clear</code>” and “<code>show_sound_clear</code>”. Basically, this lets us inherit the behaviour of a given event while changing its flavour.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11">&#91;11&#93;</a></sup>
+<b>Note:</b> the base event must be defined before.
+</p>
+<h2><span class="mw-headline" id="Empty_Event_Box_Bug">Empty Event Box Bug</span></h2>
+<p>Sometimes the game fills the screen with empty event boxes. They have no title, no text, no picture and a single button that says "OK". New events like that pop up every day rendering game unplayable. Normally this happens in a modded game.
+</p>
+<h3><span id="What_is_happening.3F"></span><span class="mw-headline" id="What_is_happening?">What is happening?</span></h3>
+<p>This bug is caused by a corrupted event file being loaded into the game. When game encounters a pair of <b>curly braces</b> in the wrong places, or doesn't find curly braces where they should be, the file becomes corrupted. The events after the syntax error still exist, however their code gets essentially hollowed out – parameters such as title, description and whatever is supposed to keep the event from firing daily on every single object in the game are not read.
+</p><p>Usually this is a result of a mod that hasn't been <b>updated to accommodate syntax</b> changes between versions – either by modders themselves or new file simply haven't made it to your machine.
+</p>
+<h3><span class="mw-headline" id="How_to_deal_with_it">How to deal with it</span></h3>
+<p>First you need to find out what events are causing it. By using <code>debugtooltip</code> <a href="https://stellaris.paradoxwikis.com/Console_command" class="mw-redirect" title="Console command">console command</a> and hovering over "OK" button, you can find out the event’s id. With luck, the modder who made this event would add some kind of identification to help you, such as adding an acronym of their mod’s name, or their own.
+</p><p>You would need then to investigate if the mod is up to date. If it is not, you'd have to disable it and wait. If the problem is on your local machine, you'd need to force a re-download of the mod files – starting with unsubscribing and subscribing again.
+</p><p><b>Note:</b> There is also a (<a href="http://en.wikipedia.org/wiki/Python_(programming_language)" class="extiw" title="wikipedia:Python (programming language)">Python</a>) <a rel="nofollow" class="external text" href="https:github.com/F1r3Pr1nc3/StellarisModpackUtility/blob/master/modupdater.py">tool on GitHub</a>, which can easily fix outdated syntax of an entire mod folder for you <small>(created by FirePrince)</small>.
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Technically, you can place the namespace anywhere as long as the file is loaded before the namespace is used, but it’s absolutely not good practise.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">See the proof in "Stellaris Modding Den" Discord Server link: <a rel="nofollow" class="external free" href="https://discord.com/channels/378985949373399040/379554282204168193/1450870245471424543">https://discord.com/channels/378985949373399040/379554282204168193/1450870245471424543</a></span>
+</li>
+<li id="cite_note-MTTH-3"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-MTTH_3-0">3.0</a></sup> <sup><a href="#cite_ref-MTTH_3-1">3.1</a></sup></span> <span class="reference-text">See <i><a href="#Mean_Time_To_Happen">#Mean Time To Happen</a></i> for more details on both of these processes.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">(in-game pre_triggers docu "000_added_pre_triggers_to_planet_events.txt").</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><code class="tooltip">is_ai</code> –  Probably <a href="/Patch_3.3.html" title="Patch 3.3">Stellaris 3.3 "Libra" update</a> fixed this trigger, as part of the comprehensive scripting and modifier system overhaul.</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">"possible_pre_triggers" to jobs, see "common/pop_jobs/000_pretriggers.txt"</span>
+</li>
+<li id="cite_note-opt-7"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-opt_7-0">7.0</a></sup> <sup><a href="#cite_ref-opt_7-1">7.1</a></sup></span> <span class="reference-text">See <i><a href="#Options">#Options</a></i> for details.</span>
+</li>
+<li id="cite_note-scopes-8"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-scopes_8-0">8.0</a></sup> <sup><a href="#cite_ref-scopes_8-1">8.1</a></sup></span> <span class="reference-text">This only applies if the event target is not global.</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">See the Modding Page for Custom Event Window modding &gt; <a href="https://stellaris.paradoxwikis.com//stellaris.paradoxwikis.com/Interface_modding" class="new" title="/stellaris.paradoxwikis.com/Interface modding (page does not exist)">Interface modding - Stellaris Wiki</a></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">See <i><a href="/Event_pictures.html" title="Event pictures">Event pictures</a></i> for more.</span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text">Forum: <a href="https://forum.paradoxplaza.com/forum/index.php?threads/1523352" class="extiw" title="forum:1523352">Stellaris Dev Diary #253 – Three in One 3.4 'Cepheus’ Patch Notes and more!</a>, 2022-05-05</span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181231
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.112 seconds
+Real time usage: 3.275 seconds
+Preprocessor visited node count: 540/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 23958/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 3162.604      1 -total
+  0.43%   13.508      1 Template:ModdingNavbox
+  0.28%    8.917      1 Template:Navbox
+  0.09%    2.984     14 Template:Navboxgroup
+  0.08%    2.450      1 Template:Version
+  0.08%    2.421      1 Template:Clear
+  0.03%    1.077      1 Template:Infobox
+  0.01%    0.286      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:4148-0!canonical and timestamp 20260707181228 and revision id 112649.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

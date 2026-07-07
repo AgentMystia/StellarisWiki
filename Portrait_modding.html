@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portrait modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Portrait modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>There are 2 types of portraits in <a href="/Stellaris.html" title="Stellaris">Stellaris</a>: static and animated.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Structure"><span class="tocnumber">1</span> <span class="toctext">Structure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Assets"><span class="tocnumber">1.1</span> <span class="toctext">Assets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Portraits_and_Portrait_Groups"><span class="tocnumber">2</span> <span class="toctext">Portraits and Portrait Groups</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Other_references"><span class="tocnumber">2.1</span> <span class="toctext">Other references</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Static_portraits"><span class="tocnumber">3</span> <span class="toctext">Static portraits</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Animated_Portraits"><span class="tocnumber">4</span> <span class="toctext">Animated Portraits</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Photoshop"><span class="tocnumber">4.1</span> <span class="toctext">Photoshop</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Maya"><span class="tocnumber">4.2</span> <span class="toctext">Maya</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Material"><span class="tocnumber">4.2.1</span> <span class="toctext">Material</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Animation"><span class="tocnumber">4.2.2</span> <span class="toctext">Animation</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Shader"><span class="tocnumber">4.2.3</span> <span class="toctext">Shader</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Export"><span class="tocnumber">4.2.4</span> <span class="toctext">Export</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#How_to_add_it_to_the_game"><span class="tocnumber">5</span> <span class="toctext">How to add it to the game</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Alternative:_Non-intrusive_Replacer"><span class="tocnumber">5.1</span> <span class="toctext">Alternative: Non-intrusive Replacer</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Structure">Structure</span></h2>
+<h3><span class="mw-headline" id="Assets">Assets</span></h3>
+<p>All Assets are located in <code>\gfx\models\portraits</code>.
+</p>
+<h2><span class="mw-headline" id="Portraits_and_Portrait_Groups">Portraits and Portrait Groups</span></h2>
+<p>What is being chosen as "the Appearance" for the Species of an Empire is called a "Portrait Group". Each Portrait Group may hold one or several portraits.
+</p><p>Each Portrait is defined by specifying:
+</p>
+<ol><li><code>entity</code>: Defined in <code>\gfx\models\portraits</code>, in files named "xxxxxx_portraits.asset". They specify the mesh and animation used for the Portraits</li>
+<li><code>clothes_selector</code> and attachment_selector: Defined in <code>\gfx\portraits\asset_selectors</code>, about which hairstyle and clothing a Portrait chooses in different conditions.</li>
+<li><code>greeting_sound</code>: Chosen from <code>\sound</code>, in various subfolders, they are the sound the Species will make when you open up a window. This entry may also be a collection, listed in <code>\sound\category.asset</code>. They represent different moods associated with the same "Species".</li>
+<li><code>character_textures</code>: Chosen from <code>\gfx\models\portraits</code>, they are the dds files with the textures to be painted on the Mesh defined in the Entity.</li></ol>
+<p>A Portrait Group defines what circumstances which Portrait is used for the Species. It basically has 6 settings:
+</p>
+<ol><li><code>default</code>: Controls if nothing if specified, which one Portrait to fall back to.</li>
+<li><code>game_setup</code>: Controls which Portrait to display when we are creating a country in the Empire Selection screen.</li>
+<li><code>species</code>: Controls which Portrait to display when the Species is seen in the Species Tab in the main game.</li>
+<li><code>pop</code>: Controls which Portrait to display for the Pop of this Species when viewed in the Planet’s Tab.</li>
+<li><code>leader</code>: Controls which Portrait to display for different Leaders of the country.</li>
+<li><code>ruler</code>: Controls which Portrait to display for the Ruler of the country.</li></ol>
+<h3><span class="mw-headline" id="Other_references">Other references</span></h3>
+<p>Modded Portraits usually have wrong greetings and insults. Because the state of the Portrait Groups are located in <code>\common\species_classes\00_species_classes.txt</code>, <code>01_base_species_classes.txt</code> and <code>\common\scripted_triggers\00_scripted_triggers.txt</code>.
+</p><p>In <code>00_species_classes.txt</code>:
+HUM defines every humanoid species. Anything not listed there (or modded to be listed there) will not be considered humanoids.
+</p><p>In <code>01_base_species_classes.txt</code>:
+The file defines all the names of the Portrait Groups. These Portrait Groups all would belong to a certain Species Class defined by the settings here.
+</p><p>Any name of Portrait Groups not listed in these files will not show up in the game. And definitely will not received greetings and insults according to their Species Class.
+</p><p>In <code>00_scripted_triggers.txt</code>:
+</p>
+<ul><li><code>wears_clothes</code> defines if your species wears clothes. This will be referenced when an insult is made between nudists and clothed species.</li>
+<li><code>lithoids_portrait</code> defines if your species is Lithoids.</li>
+<li><code>necroids_portrait</code> defines if your species is Necroids.</li></ul>
+<h2><span class="mw-headline" id="Static_portraits">Static portraits</span></h2>
+<p>These are very simple, just create a .dds image, with a character cut out so it has no background. Save it somewhere in the <code>\gfx</code> folder.
+Then add the portrait in the game <code>\gfx\portraits\portraits\00_portraits.txt</code>
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">portraits</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">mam1</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">spriteType</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;GFX_portrait_mam1&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>or
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">portraits</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">mam1</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">texturefile</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;gfx/interface/portraits/YOUR_TEXTURE_NAME.dds&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<h2><span class="mw-headline" id="Animated_Portraits">Animated Portraits</span></h2>
+<p>This guide will go over how to create a new portrait using Autodesk Maya, animating it and implementing it in the game.
+</p><p>Portraits in Stellaris are animated 2D characters. It works by having body parts split up on a texture map, assigning each body part to an individual polygonal plane, sorting them correctly in Maya and animating them using the skeleton feature.
+</p><p>To create an animated portrait, you will need a painting software like Adobe Photoshop, as well as Autodesk Maya 2015/2016. You will also need a plugin to export your texture to .dds. This can be done with the Photoshop plugin installed with the exporter. But we recommend downloading the Nvidia Photoshop .dds plugin (because it is simpler in this case).<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> The way this works is that when you “export” the file in Photoshop, it will save one file to your work folder and one file to the game folder. It can also be done manually, but then you have to copy the .dds file to the game folder.
+</p>
+<h3><span class="mw-headline" id="Photoshop">Photoshop</span></h3>
+<p>But, let’s start off, and take Fungoid 11 as an example. First create a texture of your alien. Separate the body parts that will be moving in different layers, and remember to paint behind any moving parts such as arms/tentacles/jaw/ears. The original should look something like Fig.1 (observe the amount of layers):
+</p><p><a href="https://stellaris.paradoxwikis.com/File%3APortrait_rigging_fig1.jpg" class="image"><img alt="Portrait rigging fig1.jpg" src="images/Portrait_rigging_fig1.jpg" decoding="async" loading="lazy" width="604" height="341" data-file-width="604" data-file-height="341" /></a>
+</p><p><i>Fig.1: Source texture file of alien portrait</i>
+</p><p>Next separate each layer and place them a few pixels away from each other like in Fig.2.
+</p><p><a href="https://stellaris.paradoxwikis.com/File%3APortrait_rigging_fig2.jpg" class="image"><img alt="Portrait rigging fig2.jpg" src="images/Portrait_rigging_fig2.jpg" decoding="async" loading="lazy" width="602" height="332" data-file-width="602" data-file-height="332" /></a>
+</p><p><i>Fig.2: Body parts separated</i>
+</p><p>Select all the separated layers, duplicate them, merge the duplicated layers, add the merged layer to the bottom of the folder, rename it to “padding” (this is to prevent alpha bleeding), ctrl-select the padding layer and go to “Select &gt; Modify &gt; Expand”, expand it by around 5 pixels. Make sure that the expansion doesn’t connect to any other selection. Now we want to fill in the expanded area with the same colours as the body parts. This can either be done manually by painting in the area with the body parts’ colours or by using a plug-in that does it for you. A plug-in we have been using is the Free Plug-Ins from Flaming Pear found here: <a rel="nofollow" class="external free" href="http://www.flamingpear.com/download.html">http://www.flamingpear.com/download.html</a> (go to Free Plugins at the bottom), then in Filters, go to Flaming Pear, then Solidify A to fill the selection.
+</p><p>Now when our padding layer is done we want to create an alpha. This is done by ctrl+shift+selecting the layers, go to Channels tab in the layer window and clicking the “Save selection as channel” button at the bottom of the window.
+</p><p>Having our alpha created the texture file should be complete, however it is probably pretty large. Save your .psd file, then resize the image to 512x512 (don’t save the .psd file here!), save the file as a .dds with DXT5 settings and then ctrl+Z to get your original size back to your .psd.
+</p><p>Your texture should now be ready to be rigged in Maya.
+</p>
+<h3><span class="mw-headline" id="Maya">Maya</span></h3>
+<p>Open up Maya and start off by creating a new skeleton. See Fig.3 for joint hierarchy.
+</p><p><a href="https://stellaris.paradoxwikis.com/File%3APortrait_rigging_fig3.jpg" class="image"><img alt="Portrait rigging fig3.jpg" src="images/Portrait_rigging_fig3.jpg" decoding="async" loading="lazy" width="471" height="851" data-file-width="471" data-file-height="851" /></a>
+</p><p><i>Fig.3: Joint hierarchy for Fungoid 11</i>
+</p><p>You probably don’t need to create as many joints as can be seen in Fig.3 just yet, so start off by just creating the top ones: “root”, “root_center”, “spine_1”. You can add more as you see fit depending on the design of your character.
+</p>
+<h4><span class="mw-headline" id="Material">Material</span></h4>
+<p>Open up your .dds in Photoshop, open the image size window (<kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">^Ctrl</kbd>+<kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">alt</kbd>+<kbd style="border: 1px solid #aaa; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; background-color: #f9f9f9; background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding: 1px 3px; font-family: inherit; font-size: 0.85em;">i</kbd>) and change the format from pixels to centimeters. The values here are the values we will use to create the polygonal planes in Maya. The Fungoid 11 texture file is 512x512 px which results in 18.06x18.06 cm.
+</p><p>Go to Maya and Create &gt; Polygon Primitives &gt; Plane &gt; Option box. Set the axis to Z and then input 18.06 in both height and width. Now to create a proper material for it. Go to the Hypershader (Windows &gt; Rendering Editors &gt; Hypershader) and create a Phong material in the menu to your left. Assign the texture to the diffuse channel and assign a black texture to the normalmap and specular map channels. You can do this by assigning a file and never adding an actual texture. Assign the new material to the newly created plane. If your texture isn’t a perfect square you will need to go to the UV Editor and move the UV edge to the texture edge (however in the example of 512x512 it is a square).
+</p><p>Now duplicate your plane until you have one for each body part, like in Fig.4. Add more vertices to the planes and move each parts’ vertices to exclude the other parts (make sure you have "Preserve UVs" checked in the Move Tool settings) and place them above each other in the correct positions and order. It’s easiest to work in the front view. Put them in the same order in the outliner. The one furthest in the back should be at the top of the list and the one most in front at the bottom, this is to make the game know in which order to render them.
+</p><p><a href="https://stellaris.paradoxwikis.com/File%3APortrait_rigging_fig4.jpg" class="image"><img alt="Portrait rigging fig4.jpg" src="images/Portrait_rigging_fig4.jpg" decoding="async" loading="lazy" width="600" height="192" data-file-width="600" data-file-height="192" /></a>
+</p><p><i>Fig.4: Polygon planes to map out the body parts</i>
+</p>
+<h4><span class="mw-headline" id="Animation">Animation</span></h4>
+<p>To get better deformations on your mesh you should cut it up (add more splits) to get more polygons where the mesh will deform.
+</p><p>Now let’s continue to your skeleton, the skinning of the character, animating it and exporting it. If you have created the skeleton already with the structure which can be seen above you need to skin the meshes to it. To do this go to the "Rigging" menu in Maya &gt; Skin &gt; Bind Skin and press the options box. Make sure your settings looks like in the picture below, important is to have 4 max influences and uncheck "Remove unused influences".
+</p><p><a href="https://stellaris.paradoxwikis.com/File%3APortrait_skinning_settings.jpg" class="image"><img alt="Portrait skinning settings.jpg" src="images/Portrait_skinning_settings.jpg" decoding="async" loading="lazy" width="548" height="384" data-file-width="548" data-file-height="384" /></a>
+</p><p><i>Portrait skinning settings</i>
+</p><p>When you have tweaked the skinning, by using the Paint Skin Weights Tool for each mesh, you need to animate it. First you need to give the root joint an animation attribute which will control where your animations start and where they end. To do this, select the root joint, open the export window and press "add animation attr." while having the correct exporting project selected (in which you might have a few animation strings already specified). This will add a new attribute to your joint which can be seen in the Channel Box. If you already had some animation strings in your Stellaris export project, in the clausewitz.txt file, these can now be found in the animation attribute on the root joint. You need to have at least one called "none" and one other with whatever name you prefer. If you don't have an animation called "none" you can add one manually if you select the root joint, go to "Modify" and select "Edit Attribute". In the new window, select the animation attribute and click on any slot under "Enum Names" to add a new state and name it "none".
+</p><p>Now when you animate your character you need to set a key on the animation attribute on the root joint for where your animations start with "idle" (for example) and "none" where they end. If done correctly, it should look like in Fig.5, each pillar is an animation and the space between where the graph is on 0 value it is "none".
+</p><p><a href="https://stellaris.paradoxwikis.com/File%3APortrait_rigging_fig5.jpg" class="image"><img alt="Portrait rigging fig5.jpg" src="images/Portrait_rigging_fig5.jpg" decoding="async" loading="lazy" width="598" height="374" data-file-width="598" data-file-height="374" /></a>
+</p><p><i>Fig.5: Graph of “animation” attribute for “root” joint</i>
+</p>
+<h4><span class="mw-headline" id="Shader">Shader</span></h4>
+<p>For the body you should use the shader "PdxMeshPortrait", to use this select the shader your made previously in the Hypershader, then in the <a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> window select "Stellaris" and click "add shader attr." and select the mentioned shader in the drop-down menu at the bottom of the attributes in the channel box of the previously made shader (named Shader).
+</p><p>If the list doesn’t contain the Portrait shader, and only contains other kinds of shaders, you can either go to <code>Documents\Paradox Interactive\PdxExporter\settings</code>, open the <code>clausewitz.txt</code> file and add the shader you want to the list (remember to also increase the number at the start with 1 for each shader you add).
+</p><p>Alternatively you can select the shader in the Hypershader, go to Modify &gt; Edit Attribute…, select “shader”, click on the empty space below the shaders in the list, then write in the text box the name of the shader to add it. “PdxMeshPortraitClothes” for clothes and “PdxMeshPortraitHair” for hair. More on how to script clothes and hair later.
+</p>
+<h4><span class="mw-headline" id="Export">Export</span></h4>
+<p>Open up the exporter, make sure you check the “Skip Merge” option in the exporter, see Fig.6 for options (normally the export optimizes the mesh by merging separate meshes, to reduce the amount of draw calls when rendering). Set a name and location and press export.
+</p><p><a href="https://stellaris.paradoxwikis.com/File%3APortrait_rigging_fig6.jpg" class="image"><img alt="Portrait rigging fig6.jpg" src="images/Portrait_rigging_fig6.jpg" decoding="async" loading="lazy" width="600" height="322" data-file-width="600" data-file-height="322" /></a>
+</p><p><i>Fig.6: Portrait export options</i>
+</p>
+<h2><span class="mw-headline" id="How_to_add_it_to_the_game">How to add it to the game</span></h2>
+<p>When you have exported, you need to add the animations manually.
+Each animation needs an entry in your .asset file (make sure the animations and .asset file is in the same folder).
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w">	</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_14_portrait_happy_animation&quot;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="ow">&lt;-</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">shortcut</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">put</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="o">.</span><span class="n">gfx</span><span class="w"> </span><span class="n">file</span><span class="o">.</span><span class="w"></span>
+<span class="w">		</span><span class="n">file</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_14_portrait_happy.anim&quot;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="ow">&lt;-</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="n">animation</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">name</span><span class="o">.</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_14_portrait_happy_2_animation&quot;</span><span class="w"></span>
+<span class="w">		</span><span class="n">file</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_14_portrait_happy_2.anim&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>You will then need to add these animations in the .gfx file.
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">objectTypes</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">pdxmesh</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;portrait_molluscoid_14_mesh&quot;</span><span class="w"></span>
+<span class="w">			</span><span class="n">file</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;gfx/models/portraits/molluscoid/molluscoid_14_portrait.mesh&quot;</span><span class="w"></span>
+<span class="w">			</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w">	</span><span class="kr">type</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_14_portrait_happy_animation&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">			</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle2&quot;</span><span class="w">	</span><span class="kr">type</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_14_portrait_happy_2_animation&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">			</span><span class="n">scale</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>Then you will need to add these animations in .asset file with your character (can be the same file as the animations).
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">entity</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;portrait_molluscoid_14_entity&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="n">pdxmesh</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;portrait_molluscoid_14_mesh&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="n">default_state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w"></span>
+<span class="w">	</span><span class="n">state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w">		</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w">	</span><span class="n">animation_blend_time</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">chance</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="n">looping</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">next_state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">idle</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="n">state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w">		</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle2&quot;</span><span class="w">	</span><span class="n">animation_blend_time</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">chance</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="n">looping</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">next_state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">idle</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="n">scale</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mf">1.12</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>If you have many idle animations you can use this option to randomize the idle animations:
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w">		</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w">	</span><span class="n">chance</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="n">looping</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">next_state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">idle</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle&quot;</span><span class="w">		</span><span class="n">animation</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;idle2&quot;</span><span class="w">	</span><span class="n">chance</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="n">looping</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">next_state</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">idle</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>This will make the animation “idle” be twice as likely to play as the animation “idle2”.
+</p><p>After you’ve done this it is time to add it to the phenotype list! To do this go to the file <code>gfx/portraits/portraits/[##]_portraits_[phenotype].txt</code>. In the bracket <code>portraits = {}</code> copy a portrait and change the numbers to whatever you want for your portrait. It should look like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">mol14</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	 </span><span class="n">entity</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;portrait_molluscoid_14_entity&quot;</span><span class="w"> </span><span class="n">clothes_selector</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_massive_clothes_01&quot;</span><span class="w"> </span><span class="n">hair_selector</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;no_texture&quot;</span><span class="w">	</span><span class="n">greeting_sound</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;molluscoid_01_greetings&quot;</span><span class="w"></span>
+<span class="w">			</span><span class="n">character_textures</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">					</span><span class="s">&quot;gfx/models/portraits/molluscoid/molluscoid_massive_14_1.dds&quot;</span><span class="w"></span>
+<span class="w">					</span><span class="s">&quot;gfx/models/portraits/molluscoid/molluscoid_massive_14_2.dds&quot;</span><span class="w"></span>
+<span class="w">					</span><span class="s">&quot;gfx/models/portraits/molluscoid/molluscoid_massive_14_3.dds&quot;</span><span class="w"></span>
+<span class="w">					</span><span class="s">&quot;gfx/models/portraits/molluscoid/molluscoid_massive_14_4.dds&quot;</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p><code>mol14</code> is the name of the portrait, entity is the entity it will use (which you created earlier), <code>clothes_selector</code> is which clothes to use (if none just write <code>no_texture</code> and <code>hair_selector</code> is for the hair it will use (if none just write <code>no_texture</code>).
+In the bracket <code>character_textures</code> you can assign different textures. If you only have one you can still add it there by using its search path.
+</p><p>Next open the file <code>00_species_classes</code> found in game <code>\common\species_classes</code>. Add your portrait name (like rep1) to the list of portraits under the correct phenotype. It should look like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="no">FUN</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">portraits</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;fun1&quot;</span>
+		<span class="s2">&quot;fun2&quot;</span>
+		<span class="s2">&quot;fun3&quot;</span>
+		<span class="s2">&quot;fun4&quot;</span>
+		<span class="s2">&quot;fun6&quot;</span>
+		<span class="s2">&quot;fun7&quot;</span>
+		<span class="s2">&quot;fun8&quot;</span>
+		<span class="s2">&quot;fun9&quot;</span>
+		<span class="s2">&quot;fun10&quot;</span>
+		<span class="s2">&quot;fun11&quot;</span>
+		<span class="s2">&quot;fun12&quot;</span>
+		<span class="s2">&quot;fun13&quot;</span>
+		<span class="s2">&quot;fun14&quot;</span>
+		<span class="s2">&quot;YOUR_PORTRAIT&quot;</span>
+	<span class="p">}</span>
+
+ <span class="n">graphical_culture</span> <span class="o">=</span> <span class="n">fungoid_01</span>
+	<span class="n">move_pop_sound_effect</span> <span class="o">=</span> <span class="s2">&quot;fungoid_pops_move&quot;</span>
+ <span class="p">}</span>
+</pre></div>
+<p>If you have clothes and hair you need to create a file where you can specify those. This file can be found in <code>gfx/portraits/asset_selectors/[phenotype]_[size]_clothes_[##].txt</code>
+Copy one of the clothes files and change the textures to yours, then do the same to one of the hair files and change the textures.
+Copy the file names and paste them in the <code>gfx/portraits/portraits/[##]_portraits_[phenotype].txt</code> file in the <code>clothes_selector</code> and <code>hair_selector</code> by replacing the <code>no_texture</code> string.
+</p><p>If it’s all correct it should now show up in the character designer.
+</p>
+<h3><span class="mw-headline" id="Alternative:_Non-intrusive_Replacer">Alternative: Non-intrusive Replacer</span></h3>
+<p>This subsection is an innovative new method to add a new portrait into the game as a replacer, but in a non-intrusive way. This method should:
+</p>
+<ul><li>Not change the checksum, thus preserving the allowing of Achievements</li>
+<li>Change the portrait of an existing portrait group, and the modded portrait only appears when the species name, or empire flag, matches a certain condition.</li>
+<li>Allow both the unmodded portrait and the modded portrait to coexist in the same game.</li></ul>
+<ol><li>Perform the above steps, but skip any change in the "common" folder.</li>
+<li>Instead, pick a vanilla portrait group to replace, and include a replacement file for that portrait class. In this example, we will use "Humanoid 2".
+<ol><li>Copy <code>\gfx\portraits\portraits\09_portraits_humanoid.txt</code> into your mod folder</li>
+<li>Open the working copy (the one in your mod folder) and look for the <code>portrait_groups</code> block.</li>
+<li>Find <code>humanoid_02</code>, and comment the whole block by adding a "<b>#</b>" in front of every line.
+<ol><li>If using <a href="http://en.wikipedia.org/wiki/Notepad%2B%2B" class="extiw" title="wikipedia:Notepad++">Notepad++</a>, replace "<b>\n</b>" with "<b>\n#</b>" within the selection does the trick.</li>
+<li>Depending on the portrait group you have chosen to replace, choose the corresponding file. Some simple portraits don't have a portrait group, e.g. rep2, then you may skip this step.</li></ol></li>
+<li>Go to your own Portrait file, which you have defined your own portraits and groups, add several triggers, checking the species name, to the blocks. A working example looks like this:</li></ol></li></ol>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span><span class="n">portrait_groups</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">mol14</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">default</span> <span class="o">=</span> <span class="n">batarian_male</span>
+		<span class="n">game_setup</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># will run with a limited country scope. species and government is set but the country does not actually exist</span>
+			<span class="n">add</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">ruler</span> <span class="o">=</span> <span class="p">{</span> <span class="n">gender</span> <span class="o">=</span> <span class="n">male</span> <span class="p">}</span>
+				<span class="p">}</span>
+				<span class="n">portraits</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">batarian_male</span>
+					<span class="n">mol14</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="c1"># Omitted due to repetitive patterns</span>
+		<span class="p">}</span>
+		<span class="c1"># species scope</span>
+		<span class="n">species</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># generic portrait for a species</span>
+			<span class="n">add</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">is_species</span> <span class="o">=</span> <span class="s2">&quot;Batarian&quot;</span>
+				<span class="p">}</span>
+				<span class="n">portraits</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">batarian_male</span>
+					<span class="n">batarian_female</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="n">add</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="no">NOT</span> <span class="o">=</span> <span class="p">{</span> <span class="n">is_species</span> <span class="o">=</span> <span class="s2">&quot;Batarian&quot;</span> <span class="p">}</span>
+				<span class="p">}</span>
+				<span class="n">portraits</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">mol14</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="c1"># pop scope</span>
+		<span class="n">pop</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># for a specific pop</span>
+			<span class="c1"># Omitted due to repetitive patterns</span>
+		<span class="p">}</span>
+		<span class="c1"># leader scope</span>
+		<span class="n">leader</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># scientists, generals, admirals, governor</span>
+			<span class="n">add</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">gender</span> <span class="o">=</span> <span class="n">female</span>
+					<span class="n">is_species</span> <span class="o">=</span> <span class="s2">&quot;Batarian&quot;</span>
+				<span class="p">}</span>
+				<span class="n">portraits</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">batarian_female</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="c1"># Omitted due to repetitive patterns</span>
+			<span class="n">add</span> <span class="o">=</span> <span class="p">{</span>
+				<span class="n">trigger</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="no">NOT</span> <span class="o">=</span> <span class="p">{</span> <span class="n">is_species</span> <span class="o">=</span> <span class="s2">&quot;Batarian&quot;</span> <span class="p">}</span>
+				<span class="p">}</span>
+				<span class="n">portraits</span> <span class="o">=</span> <span class="p">{</span>
+					<span class="n">mol14</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="c1"># ruler scope</span>
+		<span class="n">ruler</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="c1"># Omitted due to repetitive patterns</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<ul><li><code>game_setup</code> governs which portraits are added to the empire designer where you can choose the portraits for your first ruler. It has no bearing in the game.</li>
+<li><code>species</code> and <code>pop</code> are very similar.
+<ul><li><code>species</code> is about which portrait to display in the species screen.
+<ul><li>If you put multiple portraits for your species scope, only one will be valid (never random). You must choose the portrait you want for the species here. If you put Hum1, Hum2 and Hum3 in species scope, your species portrait will always be Hum1. (Sometimes a random one, but during creation, the same one is ALWAYS picked.)</li>
+<li>In-game, the <code>species</code>portrait can only be changed through creating a template of the species, where the game will pick one at random from the <code>pop</code> scope.</li></ul></li>
+<li><code>pop</code> is about which portraits can be chosen for creating pops of this species.</li></ul></li>
+<li><code>leader</code> and <code>ruler</code> are scopes for creating leaders and rulers.</li></ul>
+<p>In the above example, the portrait remains as Molluscoid 14 whenever it is not named "Batarian". When it is named "Batarian", the corresponding batarian portraits will replace the portrait.
+</p><p>And in a game, an empire of Batarian and Molluscoid 14 can co-exist without conflicting each other.
+</p><p>A similar method can be used to only replace the portrait for a specific empire. Instead of asking for <code>is_species</code>, ask for <code>has_country_flag</code>. A working example is this:
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w">			</span><span class="n">trigger</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="n">owner</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">					</span><span class="n">has_country_flag</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;me_cerberus&quot;</span><span class="w"></span>
+<span class="w">				</span><span class="p">}</span><span class="w"></span>
+<span class="w">				</span><span class="kt">NOT</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">is_species</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;Husk&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>This asks first the species name is not "Husk", and then it checks if the empire has the flag "me_cerberus".
+</p>
+<ul><li>Then, you need to make a prescripted empire and include the lines:</li></ul>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w">		</span><span class="n">flags</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="s">&quot;me_cerberus&quot;</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<ul><li>All subsequent empires saved out of this prescripted empire should inherit the flag, and therefore will trigger the portrait replacement.</li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="/Species_modding.html" title="Species modding">Species modding</a></li>
+<li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2792423451">Example Static Portrait Species Mod</a> on Steam</li></ul>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://developer.nvidia.com/nvidia-texture-tools-adobe-photoshop">https://developer.nvidia.com/nvidia-texture-tools-adobe-photoshop</a></span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a class="mw-selflink selflink">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181744
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.067 seconds
+Real time usage: 1.792 seconds
+Preprocessor visited node count: 397/1000000
+Post‐expand include size: 19473/2097152 bytes
+Template argument size: 8192/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 22778/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1742.527      1 -total
+  0.42%    7.243      1 Template:Version
+  0.27%    4.633      1 Template:Infobox
+  0.26%    4.597      1 Template:ModdingNavbox
+  0.20%    3.500      3 Template:Key_press
+  0.12%    2.009      1 Template:Nowrap
+  0.10%    1.700      1 Template:Navbox
+  0.03%    0.528     14 Template:Navboxgroup
+  0.01%    0.258      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:558-0!canonical and timestamp 20260707181742 and revision id 106250.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

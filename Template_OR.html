@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:OR - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">OR</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div style="width:344px; height:auto; float:right; clear:none; text-align:left" class="eu4box"><div class="heading"><div style="padding: 3px 0px; text-align:left">This template uses the following modules:</div></div><a href="https://stellaris.paradoxwikis.com/Module%3AString" title="Module:String">Module:String</a><br /></div><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:OR/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:OR/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_OR/doc.html" title="Template:OR/doc">Template:OR/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:OR/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:OR/doc&amp;action=history">history</a>)</small></div>
+<p>A template for creating OR condition blocks.
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Contents of the condition block</td>
+<td><b>required</b></td>
+<td>—
+</td></tr>
+<tr>
+<td>rowspan</td>
+<td>Height of the condition block in rows.</td>
+<td>optional</td>
+<td>2
+</td></tr>
+<tr>
+<td>operator</td>
+<td>Logical operator, replaces OR.</td>
+<td>optional</td>
+<td><b>OR</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<pre>{{OR|
+* Condition 1
+* Condition 2
+}}</pre> results in:
+<div style="display:flex; align-items:center; justify-content:flex-start; gap:4px;">
+<div style="font-weight:bold;">OR</div>
+<div style="width:10px; overflow:hidden;"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mstyle mathcolor="#f9f9f9">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mrow>
+                <mo>{</mo>
+                <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                </mtable>
+                <mo fence="true" stretchy="true" symmetric="true"></mo>
+              </mrow>
+            </mrow>
+          </mstyle>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}</annotation>
+  </semantics>
+</math></span><img src="https://en.wikipedia.org/api/rest_v1/media/math/render/svg/4c1c0c41c8376d3388c7d90d6845eb2e3fd6e9b6" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:2.519ex; height:6.176ex;" alt="{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}"/></span></div>
+<div>
+<ul><li>Condition 1</li>
+<li>Condition 2</li></ul>
+</div>
+</div>
+<pre>{{OR|rowspan=3|
+* Condition 1
+* Condition 2
+* Condition 3
+}}</pre> results in:
+<div style="display:flex; align-items:center; justify-content:flex-start; gap:4px;">
+<div style="font-weight:bold;">OR</div>
+<div style="width:10px; overflow:hidden;"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\color {gray}{\begin{cases}\\\\\\\end{cases}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mstyle mathcolor="gray">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mrow>
+                <mo>{</mo>
+                <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                </mtable>
+                <mo fence="true" stretchy="true" symmetric="true"></mo>
+              </mrow>
+            </mrow>
+          </mstyle>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\color {gray}{\begin{cases}\\\\\\\end{cases}}}}</annotation>
+  </semantics>
+</math></span><img src="https://en.wikipedia.org/api/rest_v1/media/math/render/svg/d34d014a4b04c9904c0bc3b0fa96ddb306d58e90" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.671ex; width:2.842ex; height:8.509ex;" alt="{\displaystyle {\color {gray}{\begin{cases}\\\\\\\end{cases}}}}"/></span></div>
+<div>
+<ul><li>Condition 1</li>
+<li>Condition 2</li>
+<li>Condition 3</li></ul>
+</div>
+</div>
+<p>Note that this template cannot be used with wikilists such as <code>*</code> or <code>#</code> as this breaks the format, <code>* {{OR|}}</code>:
+</p>
+<ul><li><div style="display:flex; align-items:center; justify-content:flex-start; gap:4px;"></div></li></ul>
+<div style="font-weight:bold;">OR</div>
+<div style="width:10px; overflow:hidden;"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mstyle mathcolor="#f9f9f9">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mrow>
+                <mo>{</mo>
+                <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                </mtable>
+                <mo fence="true" stretchy="true" symmetric="true"></mo>
+              </mrow>
+            </mrow>
+          </mstyle>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}</annotation>
+  </semantics>
+</math></span><img src="https://en.wikipedia.org/api/rest_v1/media/math/render/svg/4c1c0c41c8376d3388c7d90d6845eb2e3fd6e9b6" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:2.519ex; height:6.176ex;" alt="{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}"/></span></div>
+<div>
+<ul><li>Condition 1</li>
+<li>Condition 2</li></ul>
+</div>
+</div>
+<p>If used in a <code>plainlist</code>, this can be set alongside a wikilist; if a list marker must be used, wrap the template in <code>&lt;ul&gt;&lt;li&gt;{{OR|}}&lt;/li&gt;&lt;/ul&gt;</code>
+</p>
+<ul><li><div style="display:flex; align-items:center; justify-content:flex-start; gap:4px;">
+<div style="font-weight:bold;">OR</div>
+<div style="width:10px; overflow:hidden;"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mstyle mathcolor="#f9f9f9">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mrow>
+                <mo>{</mo>
+                <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                  <mtr>
+                    <mtd />
+                  </mtr>
+                </mtable>
+                <mo fence="true" stretchy="true" symmetric="true"></mo>
+              </mrow>
+            </mrow>
+          </mstyle>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}</annotation>
+  </semantics>
+</math></span><img src="https://en.wikipedia.org/api/rest_v1/media/math/render/svg/4c1c0c41c8376d3388c7d90d6845eb2e3fd6e9b6" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:2.519ex; height:6.176ex;" alt="{\displaystyle {\color {gray}{\begin{cases}\\\\\end{cases}}}}"/></span></div>
+<div>
+<ul><li>Condition 1</li>
+<li>Condition 2</li></ul>
+</div>
+</div></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260707182641
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [vary‐page‐id, vary‐revision‐sha1]
+CPU time usage: 0.229 seconds
+Real time usage: 0.498 seconds
+Preprocessor visited node count: 147/1000000
+Post‐expand include size: 10842/2097152 bytes
+Template argument size: 2468/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 3/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 320/5000000 bytes
+Lua time usage: 0.010/7 seconds
+Lua virtual size: 5058560/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   71.521      1 -total
+ 70.27%   50.256      1 Template:Lua
+ 29.51%   21.104      1 Template:Template_doc
+ 26.52%   18.969      1 Template:Template_doc_inline
+ 21.63%   15.472      1 Template:OR/doc
+ 14.63%   10.461      4 Template:OR
+  3.67%    2.627      1 Template:Template_doc_page_transcluded
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:16254-0!canonical and timestamp 20260707182641 and revision id 103196.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

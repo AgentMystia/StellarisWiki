@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empire modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Empire modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.0.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This article is about creating mods adding custom (prescripted) empires. Please note the fact this guide is not describing the process of modding any graphic assets (alien portraits, flag symbols, starship models etc.), just txt instructions needed to create the custom empire using default assets of a game.
+</p><p>Some parts of this guide describe fairly easy or even obvious things, there are however parts of empire modding much more complicated or containing unexpected nuances.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Prescripted_countries"><span class="tocnumber">1</span> <span class="toctext">Prescripted countries</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Empire_and_species_name"><span class="tocnumber">1.1</span> <span class="toctext">Empire and species name</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Species_class_and_portrait"><span class="tocnumber">1.2</span> <span class="toctext">Species class and portrait</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Traits"><span class="tocnumber">1.3</span> <span class="toctext">Traits</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Government_and_ethics"><span class="tocnumber">1.4</span> <span class="toctext">Government and ethics</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Starting_solar_system"><span class="tocnumber">1.5</span> <span class="toctext">Starting solar system</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Graphic_style_of_spaceship_and_city"><span class="tocnumber">1.6</span> <span class="toctext">Graphic style of spaceship and city</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Modding_empire_flag"><span class="tocnumber">1.7</span> <span class="toctext">Modding empire flag</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Modding_starting_leader_of_an_empire"><span class="tocnumber">1.8</span> <span class="toctext">Modding starting leader of an empire</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Custom_start_screen_flag"><span class="tocnumber">1.9</span> <span class="toctext">Custom start screen flag</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Empire_spawn_enabled_-_how_to_make_empires_appear_in_random_games_as_AI_opponents"><span class="tocnumber">1.10</span> <span class="toctext">Empire spawn enabled - how to make empires appear in random games as AI opponents</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Implementing_custom_Start_Screen_introductory_text_and_empire_description"><span class="tocnumber">2</span> <span class="toctext">Implementing custom Start Screen introductory text and empire description</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Prescripted_countries.txt"><span class="tocnumber">2.1</span> <span class="toctext">Prescripted_countries.txt</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Start_screen_messages.txt"><span class="tocnumber">2.2</span> <span class="toctext">Start_screen_messages.txt</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Localisation"><span class="tocnumber">2.3</span> <span class="toctext">Localisation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Custom_AI_personalities_for_AI-controlled_custom_empires"><span class="tocnumber">3</span> <span class="toctext">Custom AI personalities for AI-controlled custom empires</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Name_lists"><span class="tocnumber">4</span> <span class="toctext">Name lists</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#General_rules_of_adding_names_to_namelists"><span class="tocnumber">4.1</span> <span class="toctext">General rules of adding names to namelists</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Names_of_ships,_stations_and_planets"><span class="tocnumber">4.2</span> <span class="toctext">Names of ships, stations and planets</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="#Sequential"><span class="tocnumber">4.2.1</span> <span class="toctext">Sequential</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Names_of_characters"><span class="tocnumber">4.3</span> <span class="toctext">Names of characters</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Other_nuances"><span class="tocnumber">5</span> <span class="toctext">Other nuances</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#Unique_diplomatic_responses"><span class="tocnumber">5.1</span> <span class="toctext">Unique diplomatic responses</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Unique_ruler_titles"><span class="tocnumber">5.2</span> <span class="toctext">Unique ruler titles</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Restricting_human_empires_to_particular_skin_color_or_gender"><span class="tocnumber">5.3</span> <span class="toctext">Restricting human empires to particular skin color or gender</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Prescripted_countries">Prescripted countries</span></h2>
+<p>99_prescripted_countries.txt is a file contained in a folder Stellaris-&gt;prescripted_countries, which is the base file you need to modify in order to make your custom empire appear correctly in a Stellaris New Game empire selection screen. Modding that file is enough to add the most basic custom empire to the game.
+</p><p>By default, 99_prescripted_countries.txt contains code for the game's default empires, beginning with United Nations of Earth. The order of empires coded in this file is also the order of those empires displaying on the New Game scrolled list of empires, so uppermost humans display first. In your mod you can either delete default prescripted countries and replace them with your own, or simply add your own to the bottom of the list so they will display after default ones.
+</p>
+<pre> tzynn = {
+	name = "tzynn"
+	adjective = "PRESCRIPTED_adjective_tzynn"
+	spawn_enabled = yes # yes / no / always
+	
+	ship_prefix = "PRESCRIPTED_ship_prefix_tzynn"
+	
+	species = {
+		class = "REP"
+		portrait = "rep9"
+		name = "PRESCRIPTED_species_name_tzynn"
+		plural = "PRESCRIPTED_species_plural_tzynn"
+		adjective = "PRESCRIPTED_species_adjective_tzynn"
+		name_list = "REP1"
+		trait = "trait_strong"
+		trait = "trait_resilient"
+		trait = "trait_talented"
+		trait = "trait_rapid_breeders"
+		trait = "trait_nonadaptive"
+	}
+	
+	room = "personality_slaving_despots_room"
+	
+	authority = "auth_imperial"
+	civics = { "civic_police_state" "civic_slaver_guilds" }
+	government = gov_star_empire
+
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_fanatic_militarist"
+	
+	planet_name = "PRESCRIPTED_planet_name_tzynn"
+	planet_class = "pc_desert"
+	system_name = "PRESCRIPTED_system_name_tzynn"
+	
+	graphical_culture = "reptilian_01"
+	city_graphical_culture = "reptilian_01"
+	
+	empire_flag = {
+		icon= {
+			category = "pointy"
+			file = "flag_pointy_2.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "v.dds"
+		}
+		colors={
+			"red"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "PRESCRIPTED_ruler_name_tzynn"
+		gender = male
+		portrait = "rep9"
+		texture = 1
+		clothes = 4
+	}	
+ }
+</pre>
+<h3><span class="mw-headline" id="Empire_and_species_name">Empire and species name</span></h3>
+<ul><li>PRESCRIPTED_species_name_xanid: "Xani"</li>
+<li>PRESCRIPTED_species_plural_xanid: "Xanis"</li>
+<li>PRESCRIPTED_species_adjective_xanid: "Xanid"</li>
+<li>PRESCRIPTED_adjective_xanid: "Xanid"</li>
+<li>PRESCRIPTED_planet_name_xanid: "Xanth"</li>
+<li>PRESCRIPTED_system_name_xanid: "Dir-Xan"</li>
+<li>PRESCRIPTED_ruler_name_xanid: "Zaox Huketkin"</li>
+<li>PRESCRIPTED_ruler_title_xanid: "Suzerain"</li></ul>
+<p>Self-explanatory part. "humans1" in this case is the base code for the empire, it will be referenced in other files but won't display in game. Name = "humans1" means the full name of that empire displaying in the game - such as United Nations of Earth or Human Commonwealth - is coded in the localisation files this way. Species_name is the name a singular pop of those species will have, plural form is used in appropriate moments in game.
+The difference between species_adjective and adjective is, the first one applies to species and the second one to imperial adjectives. This shouldn't matter in most cases though.
+</p>
+<ul><li>PRESCRIPTED_ship_prefix_xanid: "XAN"</li></ul>
+<p>This is a ship prefix appearing before name of every single starship in the game. For example, if namelist contains starship name "Discovery" and you type "USS" as United States Ship in prefix, then the result in game will be USS Discovery. You can invent whatever abbreviation and prefix you want - for extra immersion check rules of real life ship prefixes here <a rel="nofollow" class="external free" href="https://en.wikipedia.org/wiki/Ship_prefix">https://en.wikipedia.org/wiki/Ship_prefix</a>
+</p><p>These scripted names are localised in the prescripted_countries_names.yml
+</p>
+<h3><span class="mw-headline" id="Species_class_and_portrait">Species class and portrait</span></h3>
+<pre>species_class = "REP"
+</pre>
+<p>Here you put the phenotype of your species, one of the following: mammalian, reptilian, avian, molluscoid, arthropoid, fungoid, robotic and machine. You have to type the phenotype of your empires species portrait here, or portraits of your species may display wrongly.
+The code for species classes is: mammalians - MAM, reptilians - REP, avians - AVI, arthropoids - ART, molluscoids - MOL, fungoids - FUN, plants - PLANT, machine - MACHINE, robotic - ROBOT.
+</p>
+<pre>portrait = "rep9"
+</pre>
+<p>You put the codename of portrait here.
+For reference, code for all default Stellaris portraits is in file Stellaris-&gt;common-&gt;species_classes-&gt;00_species_classes.txt
+</p>
+<h3><span class="mw-headline" id="Traits">Traits</span></h3>
+<p>		trait = "trait_strong"
+		trait = "trait_resilient"
+		trait = "trait_talented"
+		trait = "trait_rapid_breeders"
+		trait = "trait_nonadaptive"
+</p><p>Reference file for traits is in Stellaris-&gt;common-&gt;traits-&gt;00_species_traits.txt, here is everything you need to know while assigning traits to your custom race.
+You just need to paste here all traits you want your race to have.
+<b>Remember about default trait limits and rules.</b> It is impossible for species to have more than 4 positive and negative traits, some of traits exclude each other (quick learners-slow learners etc.) and traits need to fit under trait points limit. If you break one of those rules then empire may be bugged or not display. 00_species_traits.txt contains cost of each traits point cost and list of traits contradicting each other, so use it for reference.
+</p>
+<h3><span class="mw-headline" id="Government_and_ethics">Government and ethics</span></h3>
+<p>	authority = "auth_imperial"
+	civics = { "civic_police_state" "civic_slaver_guilds" }
+	government = gov_star_empire
+</p><p>	ethic = "ethic_authoritarian"
+	ethic = "ethic_fanatic_militarist"
+</p><p>The names of government types and general gov references are in common-&gt;governments-&gt;00_governments.txt. 
+<a href="/Ethics.html" title="Ethics">Ethics</a> are in common-&gt;ethics-&gt;00_ethics.txt
+Remember about default government-ethics restrictions: democracies are not allowed with authoritarian ethics, autocracies with egalitarian, oligarchies with fanatic egalitarianism or fanatic authoritarianism etc. If you make the inappropriate combination of gov type and ethics, then custom empire may not work.
+</p>
+<h3><span class="mw-headline" id="Starting_solar_system">Starting solar system</span></h3>
+<pre>planet_name = "Earth"
+system_name = "Sol"
+planet_class = "pc_continental"
+initializer = "sol_system_initializer"
+       
+</pre>
+<p>First two names are self-explanatory, here you input whatever names you want starting planet and system of your empire to have. As for the planet class, here you choose type (climate) of planet preferred by your species; code of allowed planet classes is pc_desert, pc_tropical, pc_continental, pc_ocean, pc_arctic, pc_tundra and pc_arid. As you probably care what climates your Xenomorph species want to inhabit, remember about the Habitability Wheel while assigning base planet class.
+</p><p>Setting planet class is mandatory and lack of it breaks the country, planet and system names are mandatory unless you want them to be blank.
+Initializer is an optional and more complicated thing. "System initializer" is a custom-made solar system with each celestial body in it and distances between them separately designed and named. If you created such system initializer, put its code name here. If you aren't that kind of perfectionist, delete the entire "initializer" line of code - then your custom empire will spawn in entirely randomly generated system, except custom name of it, homeworld planet and its class.
+</p>
+<h3><span class="mw-headline" id="Graphic_style_of_spaceship_and_city">Graphic style of spaceship and city</span></h3>
+<pre>graphical_culture = "mammalian_01"
+city_graphical_culture = "mammalian_01"
+</pre>
+<p>Each phenotype in Stellaris has different 3d models of ships and different 2d graphics of cities displayed on planetary view. The first line applies to ship 3d models, the second one is self-explanatory. You can freely mix phenotypes of your species portraits, starship graphics and city graphics, so don't worry about that. Code names of graphical cultures are simple: humanoid_01, plantoid_01, mammalian_01, reptilian_01, avian_01, molluscoid_01, fungoid_01, arthropoid_01.
+</p>
+<h3><span class="mw-headline" id="Modding_empire_flag">Modding empire flag</span></h3>
+<p>In a new game screen, using graphical interface, editing flag of an empire is easy, but to code this flag in txt - using default Paradox flag symbols, patterns and colors - you need to know code names for all those elements. For reference, use <a href="https://stellaris.paradoxwikis.com/Colors_and_flags_reference_guide" class="mw-redirect" title="Colors and flags reference guide">this separate guide</a> - it makes this task incomparably easier.
+</p>
+<h3><span class="mw-headline" id="Modding_starting_leader_of_an_empire">Modding starting leader of an empire</span></h3>
+<p>Remember, modding leader of an empire matters much more for autocracies and oligarchies than for democracies where he/she can change after 5 years anyway.
+</p>
+<pre>ruler = {
+	name = "PRESCRIPTED_ruler_name_humans1"
+	gender = female
+	portrait = "human_female_05"
+	texture = 0
+	hair = 1
+	clothes = 0
+}
+</pre>
+<p>Class should be left as "ruler" and experience as 1200, name is self-explanatory (if you don't type it here, it won't be imported from namelists - your starting ruler will display blank in game!), few other nuances are less obvious.
+</p><p>"Texture" means color variations of aliens (they are in game to make alien leaders have more individual character), this line doesn't matter for humans at all. Portrait of a leader should be usually the same as species portrait - humans are exception here, as humans have different portraits for sex and skin color. Regarding skin color of human portraits, 01 is "eastern white" (?), 02 "asian", 03 "brown", 04 "western white" and 05 "black". Regarding clothes and hair, check this illustrated reference guide [LINK TO THE GUIDE]
+</p>
+<h3><span class="mw-headline" id="Custom_start_screen_flag">Custom start screen flag</span></h3>
+<pre>flags = { human_1 custom_start_screen }
+</pre>
+<p>If you don't want your custom empire to have a custom introductory text, just delete this mysterious line. Then your mod empire will have auto-generated introduction similar to that of all normally generated species. If you do want a custom introduction, later part of this guide covers that issue in detail.
+</p>
+<h3><span class="mw-headline" id="Empire_spawn_enabled_-_how_to_make_empires_appear_in_random_games_as_AI_opponents">Empire spawn enabled - how to make empires appear in random games as AI opponents</span></h3>
+<pre>spawn_enabled = no       # yes / no / always
+</pre>
+<p>This may be one of the most confusing aspects of modding empires in Stellaris. Spawn_enabled is a setting that decides whether the empire you create will be available to appear in a random new game, controlled by AI, instead of usual randomized AI species. 
+If you type "spawn_enabled = no", then your mod empire will be still possible for human player to chose, edit it and play it in the new game, but otherwise it will never appear randomly in galaxies under AI control (as an opponent to human player). Use this setting if you want your custom empires to be playable only for human, never possible to show up under AI control.
+If you type "spawn_enabled = yes", then the empire may (or may not) randomly spawn in the new game under AI control.
+If you type "spawn_enabled = always", then that empire is forced to appear in every random game as an AI nation instead of randomized race. 
+</p><p>The last option means, if you have created 1 mod empire, set "spawn_enabled = always", then start a new game and set 1 AI opponent, then this opponent will always be that custom empire - because mod empires with "spawn_enabled = always" setting always have priority over default randomly generated species. If you created 16 mod empires, set "spawn_enabled = always" for all of them and then launch a new game with 16 AI opponents, every single of those AI opponents will be one of these mod empires. However, if you created 16 mod empires with that setting and then launch a new game with less than 16 AI opponents, then only some of your mod empires will appear in that game - but again, every AI opponent will be one of them, as I said: custom empires with spawn_enabled = always setting always have a priority over randomized ones.
+</p><p><b>WARNING</b> - if human player on a new game screen chooses one of mod empires to play as, then this custom empire will not spawn in the game as AI opponent even with spawn_enabled = always, because it is already in game: human-controlled. <b>Unless</b> you change (edit) the name on the new game screen (then game thinks it is entirely different empire, and populates the galaxy with originally named one because of spawn_setting = always) - so don't change the name and everything will be fine.
+</p>
+<h2><span class="mw-headline" id="Implementing_custom_Start_Screen_introductory_text_and_empire_description">Implementing custom Start Screen introductory text and empire description</span></h2>
+<p>In Stellaris, every single empire gets auto-generated introductory text when starting a new game, built from 'text pieces' based on <a href="/Ethics.html" title="Ethics">ethics</a>, government, planet class, FTL and few other "characteristic traits" of it. However, there is also an option of creating custom introductory text for a custom empire. If you want to do this, you will need to modify few separate files.
+</p>
+<h3><span class="mw-headline" id="Prescripted_countries.txt">Prescripted_countries.txt</span></h3>
+<p>One of the lines in 00_prescripted_countries.txt is mysterious
+</p>
+<pre>flags = { human_1 custom_start_screen }
+</pre>
+<p>If you don't want your empire to have unique, custom introduction text, just delete it. Otherwise, leave it in place. Imperial "flag" (in this case human_1) is used to identify the particular empire, so it needs to be the same here and in the next file.
+</p>
+<h3><span class="mw-headline" id="Start_screen_messages.txt">Start_screen_messages.txt</span></h3>
+<p>Go to Stellaris-&gt;common-&gt;start_screen_messages folder, here is the file <b>00_start_screen_messages.txt</b>. On the bottom of this file there is code allowing custom introductory text to appear instead of a randomly generated one. 
+In case of our example, United Nations of Earth, it is 
+</p>
+<pre># United Nations of Earth
+part = {
+        location = 0
+        localization = "START_SCREEN_UNE"	
+        trigger = {
+               has_country_flag = human_1
+        }		
+}
+</pre>
+<p>Just copy that code for your custom empire. Location should always be 0. Localization should be exactly the same code as in the localisation files, and has_country_flag has to point at the same "imperial flag" as in prescripted countries.txt
+</p>
+<pre>has_country_flag = human_1
+                   human_1 custom_start_screen
+</pre>
+<h3><span class="mw-headline" id="Localisation">Localisation</span></h3>
+<p>Then you just need to create localisation file which will contain introductory text for your empire. All localisation files need to be in YML format (in Stellaris-&gt;localisation you can see how do they look, you may copy one of them and remake it) and their names have to end in l_language (l_english, l_russian etc.) to work. For example, introductory text of United Nations of Earth look like this: 
+</p>
+<pre>START_SCREEN_UNE:0 "Much has happened since modern Humans first emerged in Africa (...)"
+</pre>
+<p>Just use the same START_SCREEN_CUSTOMEMPIRENAME line here and in Start_screen_messages.txt file.
+Also, remember about two things. If you want your text to enter new paragraph, use <b>\n\n</b> as in
+</p>
+<pre>civilizations took form.\n\nScientific progress has been swift
+</pre>
+<p>And as for now, be careful not to create too long introductory text, as it will be cut if not fitting inside of the start screen window. Just make it not much longer than exemplary introduction of UNE.
+</p><p><br />
+Each Stellaris empire also may have a description displaying on a new game screen when browsing through playable empires. In case of United Nations on Earth this description is in localisation-&gt;prescripted_l_english.yml:
+</p>
+<pre>EMPIRE_DESIGN_humans1:0 "United Nations of Earth"
+EMPIRE_DESIGN_humans1_desc:0 "The myriad Human nations that constitute their interstellar government (...)"
+
+</pre>
+<p>You can, of course, do the similar description for your custom empire. Remember about appropriate codename, paragraphs and length (although in case of descriptions, 'too long' ones will display under scrollbar).
+</p><p><br />
+Due to how the game sets up the start screen messages, this can be overridden by the message created due to your empire's origin. As such, you should set the origin to one of Prosperous Unification, Post-Apocalyptic, Life-Seeded or Resource Consolidation, as these have the triggers to be ignored if the empire has the "imperial flag" custom_start_screen.
+</p>
+<h2><span class="mw-headline" id="Custom_AI_personalities_for_AI-controlled_custom_empires">Custom AI personalities for AI-controlled custom empires</span></h2>
+<p>If you want your custom empire to be used as an AI opponent, you would probably like it to behave in "appropriate way" - for example custom Zerg or Tyranid empire should be extremely aggressive and unwilling of any diplomacy. You can make this happen in two ways.
+First one, you simply create custom empire and hope it will get appropriate default AI personality assigned (in this case, Fanatical Purifiers or Hive Mind). Personalities of AI nations in Stellaris are assigned on the beginning of new game basing on certain combinations (and, to lesser extent, government or traits) of empires - you can check the weights in Stellaris-&gt;common-&gt;personalities-&gt;00_personalities.txt.
+</p><p>However much more reliable way, and often the only one, is to <b>make a new personality for your custom empire. This is much easier task than it sounds.</b> 00_personalities.txt file contains notes which explain what each line of code in this file means, so you can easily create your own AI personality just by changing few words and tweaking few numbers.
+Example of such custom AI personality made for custom empire is
+</p>
+<pre>xenomorph_hive = { 
+       type = purifier          #these words seems mysterious but they are all explained in original file
+       aggressiveness = 2.0
+       trade_willingness = 0.0
+       bravery = 1.0
+       military_spending = 1.2
+       colony_spending = 1.2	
+       alliance_acceptance = -1000
+       federation_acceptance = -1000
+       threat_modifier = 0
+       friction_modifier = 10
+       behaviour = {
+               conqueror = yes
+               subjugator = no
+               liberator = no
+               opportunist = yes
+               slaver = no
+               uplifter = no
+               purger = yes
+               dominator = yes
+               infiltrator = no
+               robot_exploiter = yes
+               robot_liberator = no
+               migrator = no
+        }
+        allow = {
+               has_country_flag = xenomorph
+        }
+        weight_modifier = {
+               weight = 1000			
+        }
+}
+</pre>
+<p>This way, AI xenomorphs will always get the personality "Xenomorph Hive", making them unable of diplomacy, aggressive and murderous, and no other AI empire will ever get it.
+You can of course add the localisation of such custom personality too, so it will display when you encounter Xenomorphs in game - add something like that to your mod's localisation file:
+</p>
+<pre>personality_xenomorph_hive:0 "Xenomorph Hive"
+personality_xenomorph_hive_desc:0 "Xenomorph Hive is a collective of terrifying predatory species. Diplomacy with them   is impossible, they wish to exterminate all other life they perceive as danger to them."
+</pre>
+<h2><span class="mw-headline" id="Name_lists">Name lists</span></h2>
+<p>"Name lists" are list of names used for starships, leaders, planets, stations and other features of empires. They are separate from localisation files, located in Stellaris-&gt;common-&gt;name_lists.
+In prescripted_countries.txt file, what name list is used by an empire is set by the line
+</p>
+<pre>name_list = "Human"
+</pre>
+<p>Where in this case "Human" is the name of a file Human.txt in name_lists folder. A single name list may be used by many empires (all default races but human use generic "phenotype-based" lists) but you probably want your empire to have unique names. Adding names to the namelists contains some not so obvious nuances, so they are listed here.
+</p>
+<h3><span class="mw-headline" id="General_rules_of_adding_names_to_namelists">General rules of adding names to namelists</span></h3>
+<p>Do not use commas anywhere in namelist files, names are separated by space instead. If you want the name to consist of more than one word, for example Morning Star or al-Gezira, put them under quotation marks like this:
+</p>
+<pre>constructor = {
+  Ziryab Zewail "al-Sufi" "ibn Ridwan" "Al-Zarkali" "al-Haytham" "al-Battani" "al Farabi"
+</pre>
+<p>Be very careful about using quotation marks in namelist files, though - one unnecessary quotation here, or one one quotation left open, may break an entire namelist (make names display blank). Try also to avoid using "weird" unicode symbols, for example at the current moment the game does not handle many diacritics such as đ, Ă or Ư.
+</p>
+<h3><span id="Names_of_ships.2C_stations_and_planets"></span><span class="mw-headline" id="Names_of_ships,_stations_and_planets">Names of ships, stations and planets</span></h3>
+<p>Most of this section is self-explanatory — use Human.txt namelist as a reference. Regarding starships: the 'generic' category means names put here may appear for any type of starship. Additionally/alternatively you can make separate name lists by ship type: scientist ships, destroyers, battleships, transport etc. If a list includes names under both the 'generic' tag and a more specific tag (e.g. 'cruiser'), ships of that type will pull their names from either collection of names.
+</p><p>Similarly, you may make planet names apply for any type of planet (generic) or separate planet name lists for separate planet types. For example:
+</p>
+<pre>pc_tropical = {
+names = {
+Amazonia Congo Ecuador Rain Storm Monsoon Bengal "New Africa" Kishkindha Zanzibar Kipling
+ }
+}
+</pre>
+<h4><span class="mw-headline" id="Sequential">Sequential</span></h4>
+<p>Some fields allow a <code>sequential_name</code>. This should be a string. Numbers can be expressed in several formats using an escape sequence:
+</p>
+<ul><li>Cardinal: <code>$C$</code> will produce cardinal numbers: 1, 2, 3, 4...</li>
+<li>Ordinal: <code>$ORD$</code> will produce ordinal numbers: 1st, 2nd, 3rd, 4th...</li>
+<li>Roman: <code>$R$</code> will produce cardinal numbers in the Roman numeral system: I, II, III, IV...</li>
+<li>Hexadecimal: <code>$HEX$</code> will produce cardinal numbers in the hexadecimal numbering system: 001, 002, 003, 004...</li></ul>
+<p>The fields that support <code>sequential_name</code> are the following:
+</p>
+<ul><li><code>fleet_names</code></li>
+<li><code>army_names</code></li></ul>
+<p>As of 3.6, this only works if you use it a localization file, instead of the common-&gt;name_lists file.
+</p>
+<h3><span class="mw-headline" id="Names_of_characters">Names of characters</span></h3>
+<p>Example of character namelist:
+</p>
+<pre>names7 = {
+          weight = 15
+          first_names_male = {
+          Aarav Vivaan Aditya Arjun Reyansh Arnav Krishna Ishaan Shaurya Atharv Advik Pranav 
+          Kayaan Darsh Veer Rahul Mahesh Shyam Raj Kumar Palash Rakesh Nishant Neeraj 
+           }
+          first_names_female = {
+           Saanvi Aanya Aadhya Aaradhya Ananya Pari Anika Navya Diya Avani Myra Ira Aahana         
+           Shanaya Kyra Siya Priyanka Divya Mahima Shivangi Juvina Anoushka Anushri Apoorva 
+                       }
+           second_names = {
+           Kumar Moorthi Shastri Prasad Acharya Swamy Pillai Gowda Nayak Desmukh Bhat 
+           Kulkarni Dodamani Patil Gupta Sharma Namboodiri Pannikar Potti Kutty Varma  
+                       }
+           regnal_first_names_male = {
+           Kayaan Darsh Veer Rahul Mahesh Shaurya Atharv Advik Pranav
+                       }
+           regnal_first_names_female = {
+           Saanvi Aanya Aadhya Aaradhya Ananya Priyanka Divya Mahima Shivangi
+                       }
+           regnal_second_names = {
+           Kumar Moorthi Shastri Prasad Acharya Patil Gupta Sharma Namboodiri Pannikar Potti 
+                       }
+           }
+</pre>
+<p>Each custom empire may contain many character name lists such as this one - United Nations of Earth, for example, have 15 such lists for 15 various major human ethnicities. This is why each of them has weight - if you create empire with few different lists of names, weight decides about the frequency of that group's characters appearing as recruitable leaders compared to others. That frequency is calculated as follows:
+</p>
+<pre>Weight / Total weight of all character namelists within the empire
+</pre>
+<p>So for example if your empire has character namelist of three nationalities, Swedish, Danish and Finnish, and their weights are appropriately 15-10-5, then chance of leader with Finnish name being generated is 5/(15+10+5) = 5/30 = 1/6, so on average one of six leaders generated within your empire will have a Finnish name.
+Try to always add some regnal names - if an empire has no regnal names and happens to be a monarchy, its monarch have no names at all (they are blank). Adding some regnal names may be necessary even if said empire is not a monarchic state, because if a rebellion happens and part of it secedes and adopts monarchic government, then its monarch will not have any names too (namelists of an empire are shared by any successor states born from it).
+WARNING - if you want to create namelist of some language with "unorthodox names", for example Korean in which first names written in Latin contain dash, do not put them in quotation marks like starship/planet names.
+</p>
+<pre>first_names_male = {
+                      Min-jun Seo-jun Ha-joon Do-yun Joo-won Ye-jun Joon-woo Ji-ho Ji-hu Jun-seo
+                      Young-ho Il-sung Kyung-soo Young-chul Sung-ki Jong-yul Sang-chul Young-hwan
+                      Byung-chul Sung-ho Sung-soo Jin-ho Jung-ho Sang-hoon Sung-min Sung-min
+}
+</pre>
+<p>^this way they will work.
+</p>
+<h2><span class="mw-headline" id="Other_nuances">Other nuances</span></h2>
+<h3><span class="mw-headline" id="Unique_diplomatic_responses">Unique diplomatic responses</span></h3>
+<p>If you want for your Galactic Empire to contain unique diplomatic text while played by AI ("Welcome. I am Darth Vader and I will show you the power of the Force."), probably the simplest way to implement that is indirect one.
+</p><p>Go to Stellaris-&gt;localisation-&gt;dip_messages_l_english.yml, and in this file scroll down a bit - you'll see the base game contains diplomatic responses unique for particular AI personality types. As this guide shown few steps before, adding custom AI personalities for individual empires is very easy - you just need to make one for your empire, then you can give it unique diplomatic text. 
+</p><p>To sum up, all you need to do is
+1) Make whatever unique AI personality applying just for that one empire, in 00_personalities.txt
+2) Write custom diplomatic text, code it (for example GE_FRIENDLY_GREETING_03) and put in mod's localisation file
+3) Go to Stellaris-&gt;diplo_phrases-&gt;00_diplo_phrases.txt, here you can see the way diplomatic phrases (including unique personality phrases) appear in game and do the same for your custom empire.
+The end result in 00_diplo_phrases.txt would be something like that:
+</p>
+<pre>GALACTIC_EMPIRE_FRIENDLY_GREETING_03
+trigger = {
+ has_ai_personality = darth_vader
+       [rest of the code]
+</pre>
+<h3><span class="mw-headline" id="Unique_ruler_titles">Unique ruler titles</span></h3>
+<p>If you want your custom empire to use unique ruler titles just add the code below under the ruler section of the country.
+</p>
+<pre>ruler_title="Darth"
+                   heir_title="Apprentice"
+                   ruler_title_female="Darth"
+                   heir_title_female="Apprentice"
+</pre>
+<p>You can also give it unique government form. A broader solution can be to change the default ruler title in 00_governments.txt, so rulers of all empires of that government type will have the title.
+</p>
+<h3><span class="mw-headline" id="Restricting_human_empires_to_particular_skin_color_or_gender">Restricting human empires to particular skin color or gender</span></h3>
+<p>If you want to make custom human empire with or without particular skin colors or gender, doing it is fairly easy. 
+Go to Stellaris-&gt;gfx-&gt;portraits-&gt;portraits-&gt;00_portraits.txt and here find the line portrait groups-&gt;human. Here you can see human species and code which makes their pops have one of 10 portraits (5 skin colors, 2 genders). 
+Let's say for example you wanna create Asian faction with only Asian-looking pops. In such case you need to copy code used for humans in this file, rename "human" to "human_asian" or whatever (remember to put the same codename in the appropriate place in prescripted_countries.txt!), and then remove from that simple code portraits other than human_male_02 and human_female_02. As a result, all pops and all leaders of that empire ever generated over the course of game will be only of "asian" variation
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181204
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.034 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 245/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1446/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.627      1 -total
+ 60.04%    7.581      1 Template:Version
+ 36.64%    4.626      1 Template:ModdingNavbox
+ 35.61%    4.497      1 Template:Infobox
+ 15.46%    1.952      1 Template:Nowrap
+ 13.82%    1.745      1 Template:Navbox
+  4.41%    0.557     14 Template:Navboxgroup
+  2.07%    0.261      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1498-0!canonical and timestamp 20260707181204 and revision id 107872.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

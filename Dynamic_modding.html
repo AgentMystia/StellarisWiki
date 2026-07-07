@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Dynamic modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.5.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about the abstract but super flexible modding features, namely <a href="/Effects.html" title="Effects">effects</a> and <a href="/Conditions.html" title="Conditions">conditions</a> as well as scripted localization and scripted variables.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Effects"><span class="tocnumber">1</span> <span class="toctext">Effects</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Scripted_effects"><span class="tocnumber">1.1</span> <span class="toctext">Scripted effects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#How_to_use"><span class="tocnumber">1.1.1</span> <span class="toctext">How to use</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Parameters"><span class="tocnumber">1.1.2</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Parameter_conditions"><span class="tocnumber">1.1.3</span> <span class="toctext">Parameter conditions</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Inline_math"><span class="tocnumber">1.1.4</span> <span class="toctext">Inline math</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Bracket_Localisations"><span class="tocnumber">1.1.5</span> <span class="toctext">Bracket Localisations</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Conditions"><span class="tocnumber">2</span> <span class="toctext">Conditions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Scripted_triggers"><span class="tocnumber">2.1</span> <span class="toctext">Scripted triggers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#How_to_use_2"><span class="tocnumber">2.1.1</span> <span class="toctext">How to use</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Parameters_2"><span class="tocnumber">2.1.2</span> <span class="toctext">Parameters</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Scripted_localization"><span class="tocnumber">3</span> <span class="toctext">Scripted localization</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#How_to_use_3"><span class="tocnumber">3.1</span> <span class="toctext">How to use</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Scripted_variables"><span class="tocnumber">4</span> <span class="toctext">Scripted variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#How_to_use_4"><span class="tocnumber">4.1</span> <span class="toctext">How to use</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Modifiers"><span class="tocnumber">5</span> <span class="toctext">Modifiers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Scripted_Modifiers"><span class="tocnumber">5.1</span> <span class="toctext">Scripted Modifiers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#How_to_use_5"><span class="tocnumber">5.1.1</span> <span class="toctext">How to use</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Flags"><span class="tocnumber">6</span> <span class="toctext">Flags</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Dynamic_flags"><span class="tocnumber">6.1</span> <span class="toctext">Dynamic flags</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="#How_to_use_6"><span class="tocnumber">6.1.1</span> <span class="toctext">How to use</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Script_values"><span class="tocnumber">7</span> <span class="toctext">Script values</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#How_to_use_7"><span class="tocnumber">7.1</span> <span class="toctext">How to use</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Inline_scripts"><span class="tocnumber">8</span> <span class="toctext">Inline scripts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="#How_to_use_8"><span class="tocnumber">8.1</span> <span class="toctext">How to use</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Parameters_3"><span class="tocnumber">8.2</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Good_to_know"><span class="tocnumber">8.3</span> <span class="toctext">Good to know</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#See_also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Effects">Effects</span></h2>
+<p>Effects are statements to be executed and affect game status. Many game objects and <a href="/Event_modding.html" title="Event modding">event modding</a> use this for dynamic effects. Head to effects for full list of effect statements.
+</p><p>Effects must be executed under a <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a>. Head to scopes for details.
+</p>
+<h3><span class="mw-headline" id="Scripted_effects">Scripted effects</span></h3>
+<p>There are more than singular statements of effects to be used for an effect. Scripted effects are moddable blocks of effect statements to be used as an effect. They are defined at "<code>common/scripted_effects/xyz.txt</code>".
+</p>
+<h4><span class="mw-headline" id="How_to_use">How to use</span></h4>
+<p>A scripted effect consists a block of <a href="/Effects.html" title="Effects">effect statements</a> and/or other scripted effects. That’s it:
+</p>
+<pre>example_scripted_effect = {
+	shift_ethic = ethic_materialist
+	…
+}
+</pre>
+<p>Defined scripted effects can be used as though they were effects. For instance, "example_scripted_effect" can be called with <code>example_scripted_effect = yes</code>.
+</p>
+<h4><span class="mw-headline" id="Parameters">Parameters</span></h4>
+<p>Scripted effects can have parameters. All parameters are strings and will be dynamically inserted into the scripted effects.
+</p><p>For example, a scripted effect can be like this, so the empire will have their ethic shifted to materialist:
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># definition</span>
+ <span class="n">example_scripted_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">shift_ethic</span> <span class="o">=</span> <span class="n">ethic_</span><span class="vg">$ETHIC</span><span class="err">$</span>
+ <span class="p">}</span>
+
+ <span class="c1"># calling</span>
+ <span class="n">example_scripted_effect</span> <span class="o">=</span> <span class="p">{</span> <span class="no">ETHIC</span> <span class="o">=</span> <span class="n">materialist</span> <span class="p">}</span>
+</pre></div>
+<p>Or even like this, so the empire will have their ethic shifted to materialist twice:
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># definition</span>
+ <span class="n">example_scripted_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="k">while</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">count</span> <span class="o">=</span> <span class="vg">$COUNT</span><span class="err">$</span>
+ 		<span class="n">shift_ethic</span> <span class="o">=</span> <span class="n">ethic_</span><span class="vg">$ETHIC</span><span class="err">$</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1"># calling</span>
+ <span class="n">example_scripted_effect</span> <span class="o">=</span> <span class="p">{</span> <span class="no">ETHIC</span> <span class="o">=</span> <span class="n">materialist</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">}</span>
+</pre></div>
+<h4><span class="mw-headline" id="Parameter_conditions">Parameter conditions</span></h4>
+<p><small><i>Documentation file:</i> <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/scripted_effects/99_advanced_documentation.txt</span></small>
+</p><p>You can also write a condition block for parameters with "double" square brackets, making the stuff within it only called if the parameter (here $homeworld$) is passed through in the effect call.
+</p>
+<div class="mw-highlight mw-highlight-lang-scala mw-content-ltr" dir="ltr"><pre><span></span><span class="p">[[</span><span class="n">homeworld</span><span class="p">]</span> <span class="o">&lt;&lt;&lt;</span><span class="nc">STUFF</span> <span class="nc">HERE</span><span class="o">&gt;&gt;&gt;</span><span class="p">]</span>
+</pre></div>
+<p>Example:
+</p>
+<div class="mw-highlight mw-highlight-lang-scala mw-content-ltr" dir="ltr"><pre><span></span> 	<span class="n">last_created_species</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">save_global_event_target_as</span> <span class="o">=</span> <span class="n">vaadwaurSpecies</span>
+ 		<span class="p">[[</span><span class="n">homeworld</span><span class="p">]</span><span class="n">set_species_homeworld</span> <span class="o">=</span> <span class="n">event_target</span><span class="p">:</span><span class="n">tempHomeworld</span><span class="p">]</span>
+ 	<span class="p">}</span>
+</pre></div>
+<p>Putting an exclamation mark at the beginning of the parameter will cause the block to only be called if the parameters <i>isn't</i> passed, or is set to no:
+</p>
+<div class="mw-highlight mw-highlight-lang-scala mw-content-ltr" dir="ltr"><pre><span></span><span class="p">[[</span><span class="o">!</span><span class="n">homeworld</span><span class="p">]</span> <span class="o">&lt;&lt;&lt;</span><span class="nc">STUFF</span> <span class="nc">HERE</span><span class="o">&gt;&gt;&gt;</span><span class="p">]</span>
+</pre></div>
+<p>You can also declare a fallback value in the parameter itself using the pipe symbol, e.g.:
+</p>
+<div class="mw-highlight mw-highlight-lang-rust mw-content-ltr" dir="ltr"><pre><span></span><span class="w">	</span><span class="n">has_global_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">crisis_stage_</span><span class="cp">$STAGE</span><span class="o">|</span><span class="mi">1</span><span class="cp">$</span><span class="w"></span>
+</pre></div>
+<p>The vanilla game (<a href="/Patch_2.6.html" title="Patch 2.6">2.6</a>) does not yet use much of this scripted syntax feature (introduced in <a href="/Patch_2.3.html" title="Patch 2.3">patch 2.3</a>). Only few examples can be found in:
+</p>
+<pre>common/scripted_effects/archaeology_event_effects.txt
+common/scripted_triggers/00_scripted_triggers.txt
+</pre>
+<p>Instead, <a href="/Star_Trek_New_Civilisations.html" title="Star Trek New Civilisations">Star Trek</a> mods like "New Civilisations" use this feature a little more often.
+</p>
+<h4><span class="mw-headline" id="Inline_math">Inline math</span></h4>
+<p>Scripted effects and scripted triggers can also have <code>@\[ ... ]</code>, a simple inline math statement.
+</p>
+<div class="mw-highlight mw-highlight-lang-rust mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">inline_math_example</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">add_monthly_resource_mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unity</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cp">$COUNT</span><span class="o">|</span><span class="mi">1</span><span class="cp">$</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="err">\</span><span class="p">[</span><span class="w"> </span><span class="cp">$COUNT</span><span class="o">|</span><span class="mi">1</span><span class="cp">$</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99999999</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>This scripted effect will give the scoped empire X times their monthly unity income (up to 99,999,999 and down to X * 10), where X is the parameter given as COUNT.
+</p><p>For example, <code>inline_math_example = { COUNT = 10 }</code> gives the scoped empire 10 times their monthly unity income (up to 99,999,999 and down to 100).
+</p><p>Inline math has a drawback. Only the <b>FIRST</b> <code>@\[ ... ]</code> statement in a scripted effect / trigger is correctly recognized and evaluated. If multiple inline math statements is needed anyway, create multiple scripted effects that call each other.
+</p><p>To the authoring of this entry there are 4 known functional operators for inline math statements:
+</p>
+<dl><dt>“+”</dt>
+<dd>Adds the number on the right to the number on the left.</dd>
+<dt>“-”</dt>
+<dd>Subtracts the number on the right from the number on the left.</dd>
+<dt>“*”</dt>
+<dd>Multiplies the number on the left by the number on the right.</dd>
+<dt>“/”</dt>
+<dd>Divides the number on the left by the number on the right.</dd></dl>
+<p>Any other attempted operator such as a <code>=</code> or <code>^</code> will result in the joining of the two sides. For example, if the statement <code>@\[ 4 = 2 ]</code> is ran, the resultant will be 42 to the effect.
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># If &lt;condition A&gt; is true, give the scoped empire twice the monthly unity income, otherwise once the monthly unity income.</span>
+ <span class="c1"># If &lt;condition B&gt; is true, unity gained this way is reduced by -25%.</span>
+ <span class="n">inline_math_drawback</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="k">if</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="n">A</span><span class="o">&gt;</span> <span class="p">}</span>
+ 		<span class="n">inline_math_drawback_step_2</span> <span class="o">=</span> <span class="p">{</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="k">else</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">inline_math_drawback_step_2</span> <span class="o">=</span> <span class="p">{</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="n">inline_math_drawback_step_2</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="k">if</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="n">B</span><span class="o">&gt;</span> <span class="p">}</span>
+ 		<span class="n">inline_math_drawback_step_3</span> <span class="o">=</span> <span class="p">{</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="vg">$COUNT</span><span class="err">$</span>  <span class="no">MULT</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">75</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="k">else</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">inline_math_drawback_step_3</span> <span class="o">=</span> <span class="p">{</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="vg">$COUNT</span><span class="err">$</span>  <span class="no">MULT</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="n">inline_math_drawback_step_3</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">inline_math_drawback_step_4</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="no">RESOURCE</span> <span class="o">=</span> <span class="n">unity</span>
+ 		<span class="no">COUNT</span> <span class="o">=</span> <span class="err">@</span><span class="p">\</span><span class="o">[</span> <span class="vg">$COUNT</span><span class="err">$</span> <span class="o">*</span> <span class="vg">$MULT</span><span class="err">$</span> <span class="o">]</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="n">inline_math_drawback_step_4</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">add_monthly_resource_mult</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">resource</span> <span class="o">=</span> <span class="vg">$RESOURCE</span><span class="err">$</span>
+ 		<span class="n">value</span> <span class="o">=</span> <span class="vg">$COUNT</span><span class="err">$</span>
+ 		<span class="n">min</span> <span class="o">=</span> <span class="err">@</span><span class="p">\</span><span class="o">[</span> <span class="vg">$COUNT</span><span class="err">$</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">]</span>
+ 		<span class="n">max</span> <span class="o">=</span> <span class="mi">100000000</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>It should be noted however that if multiple inline math statements are required for your code you will have to execute them in a manner of one per scripted effect call. It is however possible to send an inline math statement as a parameter by wrapping it in a pair of quotations <code>"@\[ ... ]"</code>. Wrapping an inline math statement will allow for a scripted event to use multiple inline statements so long as the statements are a parameter to another effect, although it cannot send more than one statement as a parameter to an effect.
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># If &lt;condition A&gt; is true, give the scoped empire twice the unity income, otherwise once a static unity income.</span>
+ <span class="c1"># If &lt;condition B&gt; is true, unity gained this way is reduced by -25%.</span>
+ <span class="n">inline_math_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="k">if</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="n">A</span><span class="o">&gt;</span> <span class="p">}</span>
+ 		<span class="n">inline_math_drawback_step_2</span> <span class="o">=</span> <span class="p">{</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="k">else</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">inline_math_drawback_step_2</span> <span class="o">=</span> <span class="p">{</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1"># These inline statements won&#39;t run here allowing us to pick and chose which one we want, but it will autofill the $COUNT$ parameter in this statement.</span>
+ <span class="n">inline_math_drawback_step_2</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="k">if</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="n">B</span><span class="o">&gt;</span> <span class="p">}</span>
+ 		<span class="n">inline_math_drawback_step_3</span> <span class="o">=</span> <span class="p">{</span> <span class="no">Resource</span> <span class="o">=</span> <span class="n">unity</span> <span class="no">Value</span> <span class="o">=</span> <span class="s2">&quot;@\[ $COUNT$ * 0.75 * 500]&quot;</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ 	<span class="k">else</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">inline_math_drawback_step_3</span> <span class="o">=</span> <span class="p">{</span> <span class="no">Resource</span> <span class="o">=</span> <span class="n">unity</span> <span class="no">Value</span> <span class="o">=</span> <span class="s2">&quot;@\[ $COUNT$ * 500]&quot;</span> <span class="p">}</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="n">inline_math_drawback_step_3</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">add_resource</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="vg">$Resource</span><span class="err">$</span> <span class="o">=</span> <span class="vg">$Value</span><span class="err">$</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<h4><span class="mw-headline" id="Bracket_Localisations">Bracket Localisations</span></h4>
+<p>Scripted effects change how bracket localisations need to be formatted. As of <a href="/Patch_3.4.html" title="Patch 3.4">3.4</a>, names that use bracket localisations need to be formatted as follows for <code>set_name</code> or a <code>name</code> property:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">name</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;NAME_Imperial_Origin_Empire&quot;</span>
+ 	<span class="n">variable_string</span> <span class="o">=</span> <span class="s2">&quot;[origin_imperial_species.GetAdj]&quot;</span> <span class="c1"># brackets optional inside a variable_string</span>
+ 	<span class="c1"># use one variable_string = &quot;scope.GetX&quot; per bracket command in the localisation string identified by the key</span>
+ <span class="p">}</span>
+</pre></div>
+<p>However, when using bracket localisations in scripted effects, you need to either include two backslashes before the variable string, as follows:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">name</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;NAME_Imperial_Origin_Empire&quot;</span>
+ 	<span class="n">variable_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">[origin_imperial_species.GetAdj]&quot;</span> <span class="c1"># use double slashes before the opening bracket, or omit brackets</span>
+ <span class="p">}</span>
+</pre></div>
+<p>Or omit the brackets in the <code>variable_string</code>. Nothing else needs to be changed. Not doing the above will result in the bracket localisation simply not appearing.
+</p>
+<h2><span class="mw-headline" id="Conditions">Conditions</span></h2>
+<p>Conditions are statements to be evaluated for a yes or no. Many game objects and <a href="/Event_modding.html" title="Event modding">event modding</a> use this for dynamic conditions. Head to <a href="/Conditions.html" title="Conditions">conditions</a> for full list of condition statements.
+</p><p>Conditions must be checked on a <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a>. Head to scopes for details.
+</p>
+<h3><span class="mw-headline" id="Scripted_triggers">Scripted triggers</span></h3>
+<p>Similarly, there are more than singular statements of conditions to be used for a condition. Scripted triggers are moddable blocks of condition statements to be used as a condition. They are defined at "<code>common/scripted_triggers/xyz.txt</code>".
+</p>
+<h4><span class="mw-headline" id="How_to_use_2">How to use</span></h4>
+<p>Like scripted effects, a scripted trigger is a block of <a href="/Conditions.html" title="Conditions">condition statements</a> and/or other scripted triggers.
+</p>
+<pre>example_scripted_trigger = {
+	has_ethic = ethic_materialist
+	has_ethic = ethic_fanatic_materialist
+	…
+}
+</pre>
+<p>Defined scripted triggers can be used as though they were Conditions. For instance, "example_scripted_trigger" can be called with <code>example_scripted_trigger = &lt;yes/no&gt;</code>.
+</p>
+<h4><span class="mw-headline" id="Parameters_2">Parameters</span></h4>
+<p>Scripted triggers do also have parameters.
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="c1"># definition</span>
+ <span class="n">example_scripted_trigger</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">has_ethic</span> <span class="o">=</span> <span class="n">ethic_</span><span class="vg">$ETHIC</span><span class="err">$</span>
+ 	<span class="n">has_ethic</span> <span class="o">=</span> <span class="n">ethic_fanatic_</span><span class="vg">$ETHIC</span><span class="err">$</span>
+ <span class="p">}</span>
+
+ <span class="c1"># calling</span>
+ <span class="n">example_scripted_trigger</span> <span class="o">=</span> <span class="p">{</span> <span class="no">ETHIC</span> <span class="o">=</span> <span class="n">materialist</span> <span class="p">}</span>
+</pre></div>
+<p>A scripted trigger with parameters can't be called in <code>xyz = no</code> form, but can be called in <code>NOT = { … }</code> block.
+</p>
+<h2><span class="mw-headline" id="Scripted_localization">Scripted localization</span></h2>
+<p>Scripted localizations are defined at "<code>common/scripted_loc/xyz.txt</code>".
+</p>
+<h3><span class="mw-headline" id="How_to_use_3">How to use</span></h3>
+<p>First, define an instance.
+</p>
+<pre>defined_text = {
+	name = GetAuthorityName
+	text = {
+		trigger = { has_authority = auth_democratic }
+		localization_key = auth_democratic
+	}
+	text = {
+		trigger = { has_authority = auth_oligarchic }
+		localization_key = auth_oligarchic
+	}
+	…
+}
+</pre>
+<p>Then go to the localisation files and just use <code>[&lt;scope&gt;.GetAuthorityName]</code> to call this scripted loc. This instance of scripted loc is designated to be called from country scopes, but there is actually no scope type limitations on scripted loc itself.
+</p>
+<h2><span class="mw-headline" id="Scripted_variables">Scripted variables</span></h2>
+<p>Scripted variables are defined at "<code>common/scripted_variables/xyz.txt</code>".
+</p><p>A scripted variable file <b>must</b> end in a blank or commented line.
+</p>
+<h3><span class="mw-headline" id="How_to_use_4">How to use</span></h3>
+<p>Scripted variables are no game objects. They are only <code>@</code> variables to be used from other game files. A game file can have its own <code>@</code> variables defined but those variables can't be used by other game files. However, scripted variables are shared through all game files.
+</p><p>For example, we can define a scripted variable like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="nd">@example</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div><p>
+And use it like this:</p><div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">example_scripted_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="k">while</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">count</span> <span class="o">=</span> <span class="nd">@example</span>
+ 		<span class="n">shift_ethic</span> <span class="o">=</span> <span class="n">ethic_</span><span class="err">$</span><span class="n">ETHIC</span><span class="err">$</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div><p>
+Or this:</p><div class="mw-highlight mw-highlight-lang-rust mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">example_scripted_effect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 	</span><span class="k">while</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cp">$COUNT$</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">shift_ethic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ethic_</span><span class="cp">$ETHIC$</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">example_scripted_effect</span> <span class="o">=</span> <span class="p">{</span> <span class="no">ETHIC</span> <span class="o">=</span> <span class="n">materialist</span> <span class="no">COUNT</span> <span class="o">=</span> <span class="vi">@example</span> <span class="p">}</span>
+</pre></div>
+<p>Modifiers can also have <code>@</code> variables for their numeric values.
+</p>
+<h2><span class="mw-headline" id="Modifiers">Modifiers</span></h2>
+<p>Since <a href="/Patch_3.0.html" title="Patch 3.0">patch 3.0</a><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> there is a <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a> <code>multiplier</code> parameter for <code>add_modifier</code>, were you can multiply numeric values.
+</p>
+<div class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="nt">effect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 	</span><span class="err">add_modifier</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="err">modifier</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">soul_diet1</span><span class="w"></span>
+<span class="w"> 		</span><span class="err">multiplier</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">6</span><span class="w"></span>
+<span class="w"> 		</span><span class="err">days</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">360</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="err">}</span><span class="w"></span>
+</pre></div>
+<h3><span class="mw-headline" id="Scripted_Modifiers">Scripted Modifiers</span></h3>
+<p><small><i>Documentation file:</i> <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/scripted_modifiers/00_scripted_modifiers.txt</span> (introduced with <a href="/Patch_3.4.html" title="Patch 3.4">patch 3.4</a>)<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup></small>
+</p><p>You can create new scripted modifiers in <code>common/scripted_modifiers</code>. There are various settings available which will affect how it displays in tooltips.
+</p><p>Note that any modifier created there will do nothing by default. You need to manually give it effects. E.g. by putting '<code>mult = modifier:my_modifier</code>' in certain triggered modifiers or resource tables. See <code>01_ruler_jobs.txt/head_researcher</code> and <code>04_species_traits.txt/trait_charismatic</code> for examples.
+</p>
+<h4><span class="mw-headline" id="How_to_use_5">How to use</span></h4>
+<dl><dt>Settings</dt>
+<dd></dd>
+<dd><code>icon</code>: Name of file in <code>gfx\interface\icons\modifiers</code> (without the .dds). Default is "<code>mod_</code>" + key</dd>
+<dd><code>percentage</code>: Show as a&#160;% or not. Default: no</dd>
+<dd><code>min_mult</code>: Sets the minimum this modifier can be when used as a multiplier in the source code (so probably not relevant since this modifier will not be applied in the source code – but you could theoretically overwrite a code-generated modifier here). Default 0</dd>
+<dd><code>max_decimals</code>: Default 2</dd>
+<dd><code>good</code>: Sets if it registers as "good" (i.e. a positive number is green, a negative red). Default no.</dd>
+<dd><code>neutral</code>: Sets if no value is either good or bad (all is yellow). Default no.</dd>
+<dd><code>hidden</code>: Probably hides it in tooltips? Needs testing. Default no.</dd>
+<dd><code>no_diff</code>: not sure what this does either. Default no</dd>
+<dd><code>cap_zero_to_one</code>: ditto. Default no</dd>
+<dd><code>localize_with_value_key</code>: Expects you to put <code>$VALUE$</code> in the loc key (the number will be printed there). Default no</dd>
+<dd><code>category</code>: Sets the modifier category, which is sometimes used to determine whether it is applied to a certain object (so make sure this is set to what you want).
+<dl><dd>In other words, this is referring to the object that the modifier is read from. I.e. where you could get its value via check_modifier_value, for instance.</dd>
+<dd>It should be set to the lowest possible place in the hierarchy, where country is the top, then planet would be in the middle, and pop would be at the bottom.</dd>
+<dd>Possible values: all, pop, ship, station, fleet, country, army, leader, planet, component, pop_faction (currently unused, do not use), deposit, megastructure, habitability, starbase, economic_unit, system, trade, federation, espionage</dd></dl></dd></dl>
+<p>Example:
+</p>
+<div class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><pre><span></span><span class="nt">pop_job_trade_mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="err">icon</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">mod_trade_value_mult</span><span class="w"></span>
+<span class="w">	</span><span class="err">percentage</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">yes</span><span class="w"></span>
+<span class="w">	</span><span class="err">good</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">yes</span><span class="w"></span>
+<span class="w">	</span><span class="err">category</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">pop</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+<h2><span class="mw-headline" id="Flags">Flags</span></h2>
+<p>Flags are <b>boolean values</b> (flag is either present or not), which can be attached to the following scopes: leader, planet, country (first_contact), fleet, ship, species, pop (pop_faction), federation, galactic_object (ambient_object), megastructure, espionage_operation or global.
+</p><p>The command to set or clear a flag are:
+</p>
+<ul><li><code>set_&lt;scope&gt;_flag = &lt;flag_name&gt;</code></li>
+<li><code>set_timed_&lt;scope&gt;_flag = { flag = &lt;flag_name&gt; days = &lt;int&gt; }</code></li>
+<li><code>remove_&lt;scope&gt;_flag = &lt;flag_name&gt;</code></li></ul>
+<p>Flags can be checked via conditions, for the flag presence <s>or the duration since the flag has been set</s> <sup>(not yet implemented)</sup>:
+</p>
+<ul><li><code>has_&lt;scope&gt;_flag = &lt;flag_name&gt;</code></li>
+<li><s><code>had_&lt;scope&gt;_flag = { flag = &lt;flag_name&gt; days = &lt;duration&gt; } </code></s></li></ul>
+<p>Note that <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a> are somewhat similar to flags, but in addition they alter the statistics of the scope they are attached to.
+</p>
+<h3><span class="mw-headline" id="Dynamic_flags">Dynamic flags</span></h3>
+<p>The flag name may be dynamic, by appending <code>@</code> and a scope (leader, country or title):<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+</p><p>It only affects how the actual flag name is created, but doesn't change how the flag is checked.
+</p><p><code>from = { set_leader_flag = is_friend_of_@root }</code>
+</p>
+<h4><span class="mw-headline" id="How_to_use_6">How to use</span></h4>
+<p>For example, if a leader has a leader ID of 140, the saved leader flag will be <code>is_friend_of_140</code>.
+</p><p>They can also be used in triggers: <code>has_leader_flag = is_friend_of_@from</code>
+</p><p>Use of dynamic flags is currently only supported for set|remove_<i>scope</i>_flag commands and has_<i>scope</i>_flag conditions. They cannot be used in the flag line of the create_leader command (flags used in instances other than those listed previously must be static).<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup>
+</p><p>Note that scopes saved as variables in <a href="https://stellaris.paradoxwikis.com/Event_target" class="mw-redirect" title="Event target">event targets</a> can be used in dynamic flags as well.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">&#91;5&#93;</a></sup>
+</p>
+<h2><span class="mw-headline" id="Script_values">Script values</span></h2>
+<p><small><i>Documentation file:</i> <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/script_values/00_script_values.txt</span> (introduced with <a href="/Patch_3.3.html" title="Patch 3.3">patch 3.3</a>)<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">&#91;6&#93;</a></sup></small>
+</p><p><b>Script values</b> provides the ability to dynamically get numbers like ai_weight versions of <a href="#Scripted_triggers">scripted triggers</a>,<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">&#91;7&#93;</a></sup> with the capabilities of advanced script math on the fly. Basically, the gist of what made them powerful is being able to substitute a value for a key which would run a series of calculations on demand.
+</p>
+<h4><span class="mw-headline" id="How_to_use_7">How to use</span></h4>
+<p>To use one of them, create a txt-file in the "<code>common/script_values</code>" folder and refer to them elsewhere in script via key "<code>value:&lt;value&gt;</code>" e.g. <code>value:example_value</code> to get a number.
+</p><p><b>Important note:</b> Be mindful of performance when using these in triggers that are checked often!
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="n">example_value</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">base</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># default: 0</span>
+	<span class="c1"># List of valid mathematical operations:</span>
+	<span class="c1"># 	Numerical (modifying by a number):</span>
+	<span class="c1"># 	- set/weight (both do the same, replaces the current result with this value)</span>
+	<span class="c1"># 	- add</span>
+	<span class="c1"># 	- subtract</span>
+	<span class="c1"># 	- factor/mult/multiply (&quot;multiply&quot; fits the name scheme of the rest better, but the other two were kept for historical reasons)</span>
+	<span class="c1"># 	- divide</span>
+	<span class="c1"># 	- modulo</span>
+	<span class="c1"># 	- round_to (rounds to nearest of that value, e.g. 10.7 round_to 5 gives you 10)</span>
+	<span class="c1"># 	- max (sets to specified value if currently above it)</span>
+	<span class="c1"># 	- min (sets to specified value if currently below it)</span>
+	<span class="c1"># 	- pow (value is multiplied by itself to the power of x; be careful, you can get overflows if you are not careful)</span>
+	<span class="c1"># 	Simple (do not need a number, but just &quot;yes&quot;, e.g. &quot;round = yes&quot;)</span>
+	<span class="c1"># 	- round (sets to nearest full number)</span>
+	<span class="c1"># 	- ceiling (rounds up)</span>
+	<span class="c1"># 	- floor (rounds down)</span>
+	<span class="c1"># 	- abs (multiply by -1 if negative)</span>
+	<span class="c1"># 	- square (multiply by itself)</span>
+	<span class="c1"># 	- square_root</span>
+	<span class="c1"># All mathematical operations except weight and factor can be used inline e.g.</span>
+	<span class="n">add</span> <span class="o">=</span> <span class="mi">100</span>
+	<span class="n">multiply</span> <span class="o">=</span> <span class="n">value</span><span class="p">:</span><span class="n">some_other_script_value</span>
+	<span class="nb">round</span> <span class="o">=</span> <span class="n">yes</span>
+	<span class="c1"># (Note: weight and factor will instead overwrite the base value - use set, mult or multiply instead)</span>
+	<span class="c1"># They can also be used in modifier = {} fields, which lets you only apply them if triggers are true</span>
+	<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="nb">max</span> <span class="o">=</span> <span class="n">owner</span><span class="o">.</span><span class="n">max_example_variable</span> 					<span class="c1"># Variable set by set_variable</span>
+		<span class="n">owner</span> <span class="o">=</span> <span class="p">{</span> <span class="n">is_variable_set</span> <span class="o">=</span> <span class="n">max_example_variable</span> <span class="p">}</span>	<span class="c1"># Only applied if this trigger is true</span>
+	<span class="p">}</span>
+	<span class="c1"># What works for right hand side values of mathematical operations? See events/00_how_to_use_variables for full list.</span>
+	<span class="n">complex_trigger_modifier</span> <span class="o">=</span> <span class="p">{</span> 	<span class="c1"># This lets you get the value of a trigger that you can&#39;t use in one-liners because it uses {}</span>
+		<span class="n">trigger</span> <span class="o">=</span> <span class="n">count_owned_planet</span>
+		<span class="n">trigger_scope</span> <span class="o">=</span> <span class="n">owner</span> 		<span class="c1"># Lets you get the result of the trigger on a different scope. Default is &quot;this&quot;</span>
+		<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span> 				<span class="c1"># Stick any further information necessary in here, like you&#39;d do within the {} of the trigger normally</span>
+			<span class="n">limit</span> <span class="o">=</span> <span class="p">{</span> <span class="n">num_pops</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">}</span>
+		<span class="p">}</span>
+		<span class="n">mode</span> <span class="o">=</span> <span class="n">add</span> 					<span class="c1"># Allows all numerical operations</span>
+		<span class="n">mult</span> <span class="o">=</span> <span class="mi">5</span> 					<span class="c1"># Multiplies the outcome by this. In this example, this means adding 5 for each planet with more than 10 pops</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Final note: <code>script_values</code> use the same metascript system as <code>scripted_triggers</code> and <code>scripted_effects</code>. This means that you can input parameters into them, in a similar fashion as described in <code>scripted_effects/99_advanced_documentation.txt</code>. The format for doing so is <code>value:my_value|PARAM1|value1|PARAM2|value2|</code>. Then you can use <code>$PARAM1$</code> in the script value and it will replace it with <code>value1</code>.
+</p>
+<h2><span class="mw-headline" id="Inline_scripts">Inline scripts</span></h2>
+<p><small><i>Documentation file:</i> <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/inline_scripts/00_README.txt</span> (introduced with <a href="/Patch_3.5.html" title="Patch 3.5">patch 3.5</a>)<sup id="cite_ref-8" class="reference"><a href="#cite_note-8">&#91;8&#93;</a></sup></small>
+</p><p><b>Inline scripts</b> gives you the ability to write a block of script in one file and then include that block of script into other scripts as if it would have been written directly in those other scripts. This can prevent a huge amount of copy paste. It is especially useful when you may want to update something inside of the block of script since updating the inline_script will automatically update all scripts that are using that inline_script, while otherwise you would need to go through all those scripts yourself and update them one by one.
+</p><p>This is very similar to how <a href="#Scripted_effects">scripted effects</a> and <a href="#Scripted_triggers">scripted triggers</a> work. But inline scripts can be used for modularization or things that are not effect or trigger blocks (e.g. see vanilla Curators dialog).
+</p>
+<h4><span class="mw-headline" id="How_to_use_8">How to use</span></h4>
+<p>Create a txt file in the "<code>common/inline_scripts</code>" folder with the script that you want to inline into other scripts. Note that you can only have one inline script per file and that the file name will be used when inlining the script into other scripts. You can organize the inline scripts by putting them inside subfolders.
+</p><p>Example at <code>common/inline_scripts/edicts/upkeep_low.txt</code>:
+</p>
+<div class="mw-highlight mw-highlight-lang-rust mw-content-ltr" dir="ltr"><pre><span></span><span class="n">resources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edicts</span><span class="w"></span>
+<span class="w">	</span><span class="n">upkeep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">unity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">		</span><span class="n">multiplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span>:<span class="nc">edict_size_effect</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>Then use <code>inline_script = &lt;file_name_without_extension&gt;</code> to inline it. Example at <code>00_edicts.txt</code>:
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="n">fortify_the_border</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">length</span> <span class="o">=</span> <span class="nd">@EdictPerpetual</span>
+	<span class="n">icon</span> <span class="o">=</span> <span class="s2">&quot;GFX_edict_type_policy&quot;</span>
+	<span class="n">inline_script</span> <span class="o">=</span> <span class="s2">&quot;edicts/upkeep_low&quot;</span> <span class="c1"># Game replaces this statement with the contents of common/inline_scripts/edicts/upkeep_low.txt</span>
+	<span class="n">modifier</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">starbase_upgrade_speed_mult</span> <span class="o">=</span> <span class="mf">0.50</span>
+		<span class="n">country_starbase_capacity_add</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+<h4><span class="mw-headline" id="Parameters_3">Parameters</span></h4>
+<p>You can use parameters to change parts of the inline script.
+</p><p><small>E.g. as <code>common/inline_scripts/test_basic_policy.txt</code>:</small>
+</p>
+<div class="mw-highlight mw-highlight-lang-py mw-content-ltr" dir="ltr"><pre><span></span><span class="err">$</span><span class="n">KEY</span><span class="err">$</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">option</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;$KEY$_a&quot;</span>
+		<span class="n">on_enabled</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="n">add_modifier</span> <span class="o">=</span> <span class="p">{</span> <span class="n">modifier</span> <span class="o">=</span> <span class="err">$</span><span class="n">MODIFIER_A</span><span class="err">$</span> <span class="n">days</span> <span class="o">=</span> <span class="mi">360</span> <span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="n">option</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;$KEY$_b&quot;</span>
+		<span class="n">on_enabled</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="n">add_modifier</span> <span class="o">=</span> <span class="p">{</span> <span class="n">modifier</span> <span class="o">=</span> <span class="err">$</span><span class="n">MODIFIER_B</span><span class="err">$</span> <span class="n">days</span> <span class="o">=</span> <span class="mi">360</span> <span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><small>E.g. as <code>common/policies/00_policies.txt</code>:</small>
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span><span class="n">inline_script</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">script</span> <span class="o">=</span> <span class="n">test_basic_policy</span>
+	<span class="no">KEY</span> <span class="o">=</span> <span class="n">test_1</span>
+	<span class="no">MODIFIER_A</span> <span class="o">=</span> <span class="n">evermore_science</span>
+	<span class="no">MODIFIER_B</span> <span class="o">=</span> <span class="n">fumongus_authoritarian</span>
+<span class="p">}</span>
+</pre></div>
+<p>Inline script parameters accept strings so it’s possible to swap in a full statement or even several statements by enclosing it in "".
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span><span class="n">inline_script</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">script</span> <span class="o">=</span> <span class="n">just_an_example</span>
+	<span class="no">MODIFIER</span> <span class="o">=</span> <span class="s2">&quot;num_tech_alternatives_add = 1 scientist_skill_levels = 2&quot;</span> <span class="c1"># &lt;--- like this</span>
+<span class="p">}</span>
+</pre></div>
+<h4><span class="mw-headline" id="Good_to_know">Good to know</span></h4>
+<p>Support for inline_script hasn't been added everywhere, so if you get an error that inline_script is an unexpected token or that inline_script is encountered before init then it’s likely that you can't use inline_scripts there. You also can't use inline scripts within a list of items such as <code>examples = { abc test2 test3 object }</code>.
+</p><p>Also, be careful about usage of comments in inline_script files. Usage of '$PARAM$' in commented lines causes Game Engine to do text replacements as if these lines weren't commented out. Which causes errors when you pass multi-line code in those parameters.
+</p><p><br />
+You can use inline-math based <b>flow control</b> to adjust <u>execution of inline_scripts</u>. This is very useful for <b>mod compatibility</b> purposes and also <b>looping</b> inline_scripts designated amounts without the need to repeat it manually. 
+</p><p>See the discussions &amp; code examples for them in <b>Stellaris Modding Den</b> (<a rel="nofollow" class="external free" href="https://discord.gg/bgZzeFSZtq">https://discord.gg/bgZzeFSZtq</a>) discord server: Using Scripted Variables &amp; Inline Scripts for Mod Compatibility (<a rel="nofollow" class="external free" href="https://discord.com/channels/378985949373399040/1385448934910201946">https://discord.com/channels/378985949373399040/1385448934910201946</a>) + Loop Design 1 (simpler to use,<a rel="nofollow" class="external free" href="https://discord.com/channels/378985949373399040/379554282204168193/1440880215013195776">https://discord.com/channels/378985949373399040/379554282204168193/1440880215013195776</a>) + Loop Design 2 with additional Offset parameter (from Gigastructural Engineering mod, <a rel="nofollow" class="external free" href="https://discord.com/channels/378985949373399040/379554282204168193/1440979107285303297">https://discord.com/channels/378985949373399040/379554282204168193/1440979107285303297</a>)
+</p><p>For seeing math behind it, see <a rel="nofollow" class="external free" href="https://discord.com/channels/378985949373399040/742102654355767386/1156465709279358986">https://discord.com/channels/378985949373399040/742102654355767386/1156465709279358986</a>. You can use an online graphical math tool such as <a rel="nofollow" class="external free" href="https://www.desmos.com/calculator">https://www.desmos.com/calculator</a> to see it visually.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="/Scopes.html#Event_target" title="Scopes">Dynamic event targets</a></li></ul>
+<hr />
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">A bit earlier, but not documented.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Forum: <a href="https://forum.paradoxplaza.com/forum/index.php?threads/1524452" class="extiw" title="forum:1524452">[Dev Team] 3.4.2 'Cepheus’ Patch Released (checksum 7836)</a>, 2022-05-12</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><a href="https://forum.paradoxplaza.com/forum/index.php?threads/774248/page-20#post-20109979" class="extiw" title="forum:774248/page-20">forum:774248/page-20#post-20109979</a></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><a href="https://forum.paradoxplaza.com/forum/index.php?threads/589686/page-1707#post-24382261" class="extiw" title="forum:589686/page-1707">forum:589686/page-1707#post-24382261</a></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><a href="https://forum.paradoxplaza.com/forum/index.php?threads/589686/page-1633#post-23624865" class="extiw" title="forum:589686/page-1633">forum:589686/page-1633#post-23624865</a></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Forum: <a href="https://forum.paradoxplaza.com/forum/index.php?threads/1512412" class="extiw" title="forum:1512412">3.3.1 "Libra" Update Now Available!, 2022-02-23.</a></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text">Forum: <a href="https://forum.paradoxplaza.com/forum/index.php?threads/1508908" class="extiw" title="forum:1508908">Dev Diary #240 – Scripting Improvements in 3.3, 2022-02-03.</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1542303" class="extiw" title="forum:1542303">Dev Diary #267 – 3.5 'Fornax’ Patch Notes</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181151
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.103 seconds
+Real time usage: 5.318 seconds
+Preprocessor visited node count: 563/1000000
+Post‐expand include size: 19707/2097152 bytes
+Template argument size: 8540/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 30029/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 5228.563      1 -total
+  0.30%   15.869      1 Template:ModdingNavbox
+  0.18%    9.493      1 Template:Navbox
+  0.06%    3.206      4 Template:Path
+  0.06%    2.996     14 Template:Navboxgroup
+  0.06%    2.944      1 Template:Clear
+  0.06%    2.903      1 Template:Version
+  0.03%    1.394      1 Template:Infobox
+  0.01%    0.403      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7495-0!canonical and timestamp 20260707181146 and revision id 111890.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

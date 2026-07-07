@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traits modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Traits modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about trait modding, both <a href="/Species_traits.html" title="Species traits">species traits</a> and <a href="https://stellaris.paradoxwikis.com/Leader_traits" class="mw-redirect" title="Leader traits">leader traits</a>. Traits are defined at "common/traits/xxx.txt".
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Data_Structure"><span class="tocnumber">1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Species_Traits"><span class="tocnumber">2.1</span> <span class="toctext">Species Traits</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Ingenious"><span class="tocnumber">2.1.1</span> <span class="toctext">Ingenious</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Proles_(Pre-Sapient)"><span class="tocnumber">2.1.2</span> <span class="toctext">Proles (Pre-Sapient)</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Proles_(Syncretic_Evolution)"><span class="tocnumber">2.1.3</span> <span class="toctext">Proles (Syncretic Evolution)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Leader_Traits"><span class="tocnumber">2.2</span> <span class="toctext">Leader Traits</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Adaptable"><span class="tocnumber">2.2.1</span> <span class="toctext">Adaptable</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Corvette_Focus"><span class="tocnumber">2.2.2</span> <span class="toctext">Corvette Focus</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Chosen_One_(Admiral)"><span class="tocnumber">2.2.3</span> <span class="toctext">Chosen One (Admiral)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Data_Structure">Data Structure</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Property
+</th>
+<th>Required/Default
+</th>
+<th>Species Traits
+</th>
+<th>Leader Traits
+</th></tr>
+<tr>
+<td><b>cost = &lt;int&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" />
+</td>
+<td>The cost of this trait.
+</td>
+<td>Leader traits do also have "costs", see <a href="/Leader_modding.html" title="Leader modding">Leader modding</a> for details.
+</td></tr>
+<tr>
+<td><b>icon = &lt;gfx file path&gt;</b>
+</td>
+<td>gfx/interface/icons/traits/&lt;trait key&gt;.dds
+</td>
+<td>Alternative icon of this trait. gfx/interface/icons/traits/&lt;trait key&gt;.dds
+</td>
+<td>Leader traits always have this property specified because their icons are stored at "gfx/interface/icons/traits/leader_traits/xxx.dds".
+</td></tr>
+<tr>
+<td><b>initial = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">yes
+</td>
+<td>If no, this trait cannot be picked in the empire creator and it cannot be added to a species template.
+</td>
+<td>If no, this trait cannot be given to a leader upon leader generation.
+</td></tr>
+<tr>
+<td><b>randomized = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">yes
+</td>
+<td>If no, this trait can't be picked by species random generator.
+</td>
+<td>It's still unclear, because <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait armchair commander.png" src="images/Leader_trait_armchair_commander.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="/Commander_traits.html#Armchair_Commander" title="Armchair Commander"><img alt="Armchair Commander" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Armchair Commander has <code>randomized = no</code> but can stll be given to a newly generated leader.
+</td></tr>
+<tr>
+<td><b>modification = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">yes
+</td>
+<td>If no, this trait cannot be added to or removed from a species template.
+</td>
+<td>It's still unclear, because leader traits always have <code>modification = no</code>.
+</td></tr>
+<tr>
+<td><b>improves_leaders = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">no
+</td>
+<td>If yes, this trait will have a tooltip that says leaders from this species will have traits that enhance them. Actually, those leader traits must be implemented elsewhere.
+</td>
+<td rowspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>advanced_trait = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">no
+</td>
+<td>If yes, this trait is considered an advanced trait and can be added to or removed from a species template only if the empire has researched any technology with the feature flag "add_advanced_traits".
+<p>This permission overrides <code>initial = no</code>, but doesn't override <code>modification = no</code>.
+</p>
+</td></tr>
+<tr>
+<td><b>forced_happiness = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">no
+</td>
+<td>If yes, Pops of a species with this trait will not be affected by happiness.
+</td></tr>
+<tr>
+<td><b>valid_for_all_ethics = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">yes
+</td>
+<td>Whether this trait is valid for all ethics. Will also need to list which ethics it's compatible with.
+</td></tr>
+<tr>
+<td><b>allowed_ethics = {ethic_xx ethic_yy}</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>The ethics this trait is valid for. Only put this if you have valid_for_all_ethics set to no.
+</td></tr>
+<tr>
+<td><b>sapient = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">yes
+</td>
+<td>Vanilla pre-sapient traits have <code>sapient = no</code>. Seems to allow the trait to be selected by <code>trait = random_presapient_trait</code> in a <code>create_species</code> effect
+</td></tr>
+<tr>
+<td><b>immortal_leaders = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;">no
+</td>
+<td>If yes, leaders from a species with this trait will be immortal. This will also generate an entry of "<span class="effect-green" style="font-weight:bold;">Immortal</span>" in tooltip.
+</td>
+<td>If yes, leaders with this trait will be immortal. This will also generate an entry of "<span class="effect-green" style="font-weight:bold;">Immortal</span>" in tooltip.
+</td></tr>
+<tr>
+<td><b>hide_age = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>If yes, leaders with this trait will have their age hidden in the leader tooltip. Only work for ruler traits.
+</td></tr>
+<tr>
+<td><b>modifier</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to Pops, Armies and Leaders of a species with this trait.
+</td>
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the scope this Leader is assigned at.
+<ul><li>If this leader was a non-heir ruler, its traits will apply to the entire Empire.</li>
+<li>If this leader was a governor, its traits will apply to the Sector it's governing.</li>
+<li>If this leader was a scientist leading a research, only modifiers related to research speed will apply to the category it's researching.</li>
+<li>If this leader was a scientist commanding a science ship, the modifiers will apply to the science ship.</li>
+<li>If this leader was an admiral, its traits will apply to the fleet it's commanding.</li>
+<li>If this leader was a general, its traits will apply to the armies it's commanding.</li></ul>
+</td></tr>
+<tr>
+<td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>triggered_pop_modifier = {</b></span>
+<div class="mw-collapsible-content">
+<dl><dd><b>potential = { &lt;triggers&gt; }</b></dd>
+<dd><b>&lt;modifiers&gt;</b></dd></dl>
+<b>}</b></div></div></div>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Similar to the above, except it only applies if the <code>potential</code> property evaluates true. Multiple allowed (Pop scope). Modifiers in this block will not show in tooltips, and should be used in addition to a custom tooltip.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>growing_modifier</b><br /><b>assembling_modifier</b><br /><b>declining_modifier</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Blocks of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Planet while a Pop of this species is growing / assembling / declining.
+<p>The trait <a href="/Machine_traits.html#Recycled" title="Recycled"><img alt="Recycled" src="images/Trait_robot_recycled.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Recycled uses <b>assembling_modifier</b> to reduce Robot Assembler jobs upkeep by <span class="effect-green" style="font-weight:bold;">−20%</span> to implement its effect.
+</p>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>self_modifier</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied only to the leader itself. Modifiers that affect leader experience gain, leader lifespan and leader cost / upkeep go here.
+</td></tr>
+<tr>
+<td><b>custom_tooltip = &lt;localisation key&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td colspan="2">If specified, it will overwrite the generated tootlips based on modifiers.
+</td></tr>
+<tr>
+<td><b>custom_tooltip_with_modifiers = &lt;localisation key&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td colspan="2">If specified, will show the given tooltip in addition to the generated tootlips based on modifiers.
+</td></tr>
+<tr>
+<td><b>prerequisites = { tech_xxx }</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>This trait can't be added or removed by an Empire unless all technologies listed here have been researched. Vanilla unused.
+</td>
+<td>This trait can't be given to a leader upon leader generation unless all technologies listed here have been researched.
+</td></tr>
+<tr>
+<td><b>opposites = { trait_xx trait_yy }</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>List of trait keys to be mutually exclusive with this trait.
+</td>
+<td>Only relevant upon leader generation, but only rulers will generate with 2 traits. This doesn't prevent excluded leader traits from being added by events.
+</td></tr>
+<tr>
+<td><b>ai_weight</b>
+</td>
+<td style="text-align: center;">100
+</td>
+<td>How much should the AI prioritize this trait when modifying species. The block can also contain conditional modifier tags, (empire scope, ROOT is the species).
+</td>
+<td>How much should AI prioritize this trait when recruiting leaders and when assigning leaders to tasks. Although Vanilla only uses this on scientist traits it works for all classes.
+</td></tr>
+<tr>
+<td><b>leader_age_min = &lt;int&gt;</b><br /><b>leader_age_max = &lt;int&gt;</b>
+</td>
+<td style="text-align: center;">As set in <i>common/defines/</i>
+</td>
+<td>New leaders from this species will have their age randomized ranged among these properties. Vanilla use these to make <a href="/Biological_traits.html#Hive-Minded" title="Hive-Minded"><img alt="Hive-Minded" src="images/Trait_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Hive-Minded leaders younger than usual and <a href="/Biological_traits.html#Lithoid" title="Lithoid"><img alt="Lithoid" src="images/Trait_lithoid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Lithoid leaders older than usual.
+</td>
+<td rowspan="9" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>sorting_priority = &lt;int&gt;</b>
+</td>
+<td style="text-align: center;">0
+</td>
+<td>Species traits with same soring priority are sorted by alphabet order.
+</td></tr>
+<tr>
+<td><b>potential_crossbreeding_chance = &lt;float&gt;</b>
+</td>
+<td style="text-align: center;">0
+</td>
+<td>The chance this trait is inherited by crossbreeding. Relevant to the ascension perk <a href="/Ascension_perks.html#Xeno-Compatibility" title="Xeno-Compatibility"><img alt="Xeno-Compatibility" src="images/Ap_xeno_compatibility.png" decoding="async" loading="lazy" width="22" height="25" data-file-width="52" data-file-height="60" /></a>&#32;Xeno Compatibility.
+</td></tr>
+<tr>
+<td><b>allowed_archetypes = { xxx yyy }</b>
+</td>
+<td style="text-align: center;">ALL
+</td>
+<td>A list of Species Archetype keys that is required by this species trait. See <a href="/Species_modding.html" title="Species modding">Species modding</a> for details.
+</td></tr>
+<tr>
+<td><b>species_class = { xxx yyy }</b>
+</td>
+<td style="text-align: center;">ALL
+</td>
+<td>A list of Species Class keys that is required by this species trait. See <a href="/Species_modding.html" title="Species modding">Species modding</a> for details.
+</td></tr>
+<tr>
+<td><b>allowed_planet_classes = { xxx yyy }</b>
+</td>
+<td>ALL
+</td>
+<td>A list of Planet Class keys that is required (as preferred planet class) by this species trait.
+</td></tr>
+<tr>
+<td><b>random_weight = { &lt;species class key&gt; = &lt;float&gt; &lt;species class key&gt; = &lt;float&gt; }</b>
+</td>
+<td>1 for all
+</td>
+<td>Adjusts the chance of species randomly receiving this trait depending on their species class. However, currently there is a bug where this block works  incorrectly if combined with allowed_planet_classes and has no effect if species_potential_add is also present.
+</td></tr>
+<tr>
+<td><b>slave_cost = { &lt;resource key&gt; = &lt;int&gt; }</b>
+</td>
+<td style="text-align: center;">0
+</td>
+<td>The cost of a Pop of this species on slave market is added by this.
+</td></tr>
+<tr>
+<td><b>species_potential_add</b><br /><b>species_possible_remove</b>
+</td>
+<td style="text-align: center;">always = yes
+</td>
+<td>Blocks of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine can this trait be added to / removed from a species template. (Species scope, FROM is the empire)
+<p><span class="effect-red" style="font-weight:bold;">With "species_potential_add" be evaluated false, a template with this trait can still be applied to Pops lacking it.</span>
+</p><p><span class="effect-red" style="font-weight:bold;">Similarly, "species_possible_remove" doesn't prevent Pops with this trait from being applied with a template laking it.</span>
+</p>
+</td></tr>
+<tr>
+<td><b>leader_trait = { ... }</b>
+</td>
+<td style="text-align: center;">all
+</td>
+<td rowspan="6" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>A list of leader classes. Vanilla generic leader traits have <code>leader_trait = all</code>.
+</td></tr>
+<tr>
+<td><b>leader_class = { ... }</b>
+</td>
+<td style="text-align: center;">?
+</td>
+<td>A list of leader classes. Vanilla leader traits always have it the same as <code>leader_trait</code>. Actual difference between the two is unclear.
+</td></tr>
+<tr>
+<td><b>ai_categories = { ... }</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>What kind of tasks the AI will consider this leader be suit of. Only relevant to scientists. Can be consist of any number of the following four: engineering, physics, society, survey.
+</td></tr>
+<tr>
+<td><b>leader_potential_add</b>
+</td>
+<td style="text-align: center;">always = yes
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine can the trait be added to a leader upon leader generation. (Leader scope, FROM is the empire)
+</td></tr>
+<tr>
+<td><b>trade_acceptance_weight</b>
+</td>
+<td>1
+</td>
+<td>How much extra should the AI value leaders with this trait in trade (multiplied by 10) (not used in Vanilla)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<h3><span class="mw-headline" id="Species_Traits">Species Traits</span></h3>
+<h4><span class="mw-headline" id="Ingenious">Ingenious</span></h4>
+<pre>trait_ingenious = {
+	cost = 2
+	potential_crossbreeding_chance = 1.0
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.15
+	}
+	slave_cost = {
+		energy = 50
+	}
+}
+</pre>
+<h4><span id="Proles_.28Pre-Sapient.29"></span><span class="mw-headline" id="Proles_(Pre-Sapient)">Proles (Pre-Sapient)</span></h4>
+<pre>trait_presapient_proles = {
+	cost = 1
+	opposites = { "trait_presapient_natural_intellectuals" }
+	initial = no
+	sapient = no
+	modification = yes
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		army_damage_mult = 0.10
+		planet_jobs_minerals_produces_mult = 0.10
+		planet_jobs_food_produces_mult = 0.10
+		planet_jobs_physics_research_produces_mult = -0.15
+		planet_jobs_engineering_research_produces_mult = -0.15
+		planet_jobs_society_research_produces_mult = -0.15
+	}
+}
+</pre>
+<h4><span id="Proles_.28Syncretic_Evolution.29"></span><span class="mw-headline" id="Proles_(Syncretic_Evolution)">Proles (Syncretic Evolution)</span></h4>
+<pre>trait_syncretic_proles = {
+	cost = 1
+	potential_crossbreeding_chance = 0.33
+	opposites = { "trait_intelligent" "trait_erudite" "trait_natural_engineers" "trait_natural_physicists" "trait_natural_sociologists" }
+	initial = no
+	modification = yes
+	species_potential_add = { always = no }
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	custom_tooltip = TRAIT_SYNCRETIC_PROLES_EFFECT
+	modifier = {
+		pop_happiness = 0.10
+		planet_jobs_produces_mult = 0.10
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Leader_Traits">Leader Traits</span></h3>
+<h4><span class="mw-headline" id="Adaptable">Adaptable</span></h4>
+<pre>leader_trait_adaptable = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_adaptable.dds"
+	self_modifier = {
+		species_leader_exp_gain = 0.25
+	}
+	leader_potential_add = {
+		NOT = { leader_class = ruler}
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+		
+	}
+	leader_class = { admiral scientist general governor }
+	opposites = { "leader_trait_stubborn" }
+	leader_trait = all
+	
+	ai_categories = {
+		engineering
+		physics
+		society
+		survey
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+</pre>
+<h4><span class="mw-headline" id="Corvette_Focus">Corvette Focus</span></h4>
+<pre>trait_ruler_corvette_focus = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_corvette_focus.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		ship_corvette_cost_mult = -0.2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	prerequisites = { tech_destroyers } # 'corvette focus' is a bit silly when it's the only available ship
+	opposites = { "trait_ruler_destroyer_focus" "trait_ruler_cruiser_focus" "trait_ruler_battleship_focus" }
+}
+</pre>
+<h4><span id="Chosen_One_.28Admiral.29"></span><span class="mw-headline" id="Chosen_One_(Admiral)">Chosen One (Admiral)</span></h4>
+<pre>leader_trait_admiral_chosen = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	immortal_leaders = yes
+	modifier = {
+		ship_weapon_damage = 0.2
+		ship_evasion_mult = 0.3
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+</pre>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a class="mw-selflink selflink">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a class="mw-selflink selflink">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182342
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.088 seconds
+Real time usage: 0.138 seconds
+Preprocessor visited node count: 1831/1000000
+Post‐expand include size: 27076/2097152 bytes
+Template argument size: 9566/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+Lua time usage: 0.010/7 seconds
+Lua virtual size: 4915200/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   99.989      1 -total
+ 72.33%   72.321     24 Template:Icon
+ 61.46%   61.451      5 Template:Iconify
+ 40.89%   40.886      1 Template:Icon/a
+ 32.10%   32.093      1 Template:Trait
+  7.99%    7.985      1 Template:Version
+  7.90%    7.898     18 Template:Icon/n
+  5.28%    5.281      3 Template:Green
+  4.73%    4.729      1 Template:Icon/h
+  4.65%    4.654      1 Template:Infobox
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:2291-0!canonical and timestamp 20260707182342 and revision id 95857.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

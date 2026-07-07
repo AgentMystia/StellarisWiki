@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI Overhaul Dynamic - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">UI Overhaul Dynamic</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner stellaris-outliner-content" style="width:100%; height:auto; margin: 0px 0px 3px 0px; padding: 0px; font-size:150%; text-align: center;"><b><a href="https://stellaris.paradoxwikis.com/Mod" class="mw-redirect" title="Mod">Game modification</a></b>: UI Overhaul Dynamic</div>
+<div class="stellaris-outliner" style="float:right; clear:right; width:330px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="font-size:150%; padding: 3px 0px; margin-bottom: 3px;">UI Overhaul Dynamic</div></span>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><a href="https://stellaris.paradoxwikis.com/File%3AUiod_thumbnail_main.png" class="image"><img alt="Uiod thumbnail main.png" src="images/Uiod_thumbnail_main.png" decoding="async" loading="lazy" width="315" height="315" data-file-width="962" data-file-height="962" /></a>
+<hr />
+<b>Type</b><div style="float:right;">Interface Overhaul</div>
+<hr />
+<b>Author(s)</b><div style="float:right;">Orrie</div>
+<hr />
+<b>Status</b><div style="float:right;">Active</div>
+<hr />
+<b>Forum</b><div style="float:right;"><a href="https://forum.paradoxplaza.com/forum/index.php?threads/1174694" class="extiw" title="forum:1174694">Forum</a></div>
+<hr />
+<b>Steam workshop</b><div style="float:right;"><a rel="nofollow" class="external text" href="http://steamcommunity.com/sharedfiles/filedetails/?id=1623423360">Link</a></div>
+</div>
+</div>
+<p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Interface_Modified"><span class="tocnumber">1</span> <span class="toctext">Interface Modified</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Alternative_Design"><span class="tocnumber">2</span> <span class="toctext">Alternative Design</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Planet_Viewer"><span class="tocnumber">2.1</span> <span class="toctext">Planet Viewer</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Ship_Designer"><span class="tocnumber">2.2</span> <span class="toctext">Ship Designer</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Load_Order"><span class="tocnumber">3</span> <span class="toctext">Load Order</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Supported_Resolutions"><span class="tocnumber">4</span> <span class="toctext">Supported Resolutions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Common_Resolutions"><span class="tocnumber">4.1</span> <span class="toctext">Common Resolutions</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Ultrawide_Resolutions"><span class="tocnumber">4.2</span> <span class="toctext">Ultrawide Resolutions</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Triple_Monitor_Resolutions"><span class="tocnumber">4.3</span> <span class="toctext">Triple Monitor Resolutions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Font_Mods"><span class="tocnumber">5</span> <span class="toctext">Font Mods</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Interface_Modified">Interface Modified</span></h2>
+<p>This mod is specially tailored towards 1920 × 1080 and 2560 × 1440, with no UI scaling usage. 3840 × 2160 users can go up to 1.5 on the UI scaling, but no more.<br />
+Wider screens will have some small adaptations to them, like a wider outliner. Smaller resolutions than 1920 × 1080 will require UI scaling below 1.<br />
+Check the <a href="#Supported_Resolutions">supported resolutions thread</a> to confirm your settings.<br />
+Using any UI scaling outside of the table is freely up to you, but you'll have to life with the consequences of an overflowing interface.
+</p><p><br />
+Pretty much everything visible has had a change, but the short gist of it;
+</p>
+<ul><li>Adapted UI to resize itself depending on user resolution. See <a href="#Supported_Resolutions">supported resolutions</a> for more info.</li>
+<li>Most windows have increased height and width, to increase space for relevant content.</li>
+<li>Increased the height of most list elements.</li>
+<li>Fixes and optimizes vanilla UI wherever possible.</li>
+<li>Bigger Empire Creation.</li>
+<li>New Planet Viewer (See below for info).</li>
+<li>New Ship Designer that vastly increases the whole window space to allow for more ship sections, like New Ship Classes.</li>
+<li>New Fleet Manager that hopefully increases effectiveness</li>
+<li>In-game usable Tech Tree, made by: <a rel="nofollow" class="external text" href="https://github.com/turanar/stellaris-tech-tree">turanar</a>. (Using the built-in web browser)</li>
+<li>Added in keyboard icons from Immersive Keyboard Icons.</li></ul>
+<h2><span class="mw-headline" id="Alternative_Design">Alternative Design</span></h2>
+<h3><span class="mw-headline" id="Planet_Viewer">Planet Viewer</span></h3>
+<p>The planet viewer was recently changed, and as I know people hate change, there are alternatives:<br />
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=1587178040">Bigger Planet View</a> (Will retain the old design)<br /></li>
+<li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2096162410">Bigger Planet View - Building Box Dirty Fix</a> (If you want more than 36 buildings slots)<br /></li>
+<li><s><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239">Planetary Diversity - Planet View</a> (Vanilla look, with larger cityscape)</s> New portraits messes this up.<br /></li></ul>
+<p>Use only one of them.<br />
+</p>
+<h3><span class="mw-headline" id="Ship_Designer">Ship Designer</span></h3>
+<p>Ship designer now has a fully horizontal style, so if you want to retain the old vertical one, subscribe to this alternate sub-mob:<br />
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2964637979">Old Ship Designer</a></li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Load_Order">Load Order</span></h2>
+<p>I'd recommend putting this mod at the very bottom, as in last in your load order.<br />
+This guarantees proper UI changes, as the launcher loads the mods from top to bottom.<br />
+Only exception is with specific instructions given with compatibility patches, or if you want a specific UI mod to overrule the changes in this one.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Supported_Resolutions">Supported Resolutions</span></h2>
+<p>Anything that's not listed will most likely work, but these are the ones I've tested the mod with.<br />
+It should be fine as long as your vertical resolution matches a resolution in the table.
+</p>
+<h3><span class="mw-headline" id="Common_Resolutions">Common Resolutions</span></h3>
+<p>Make sure to run the game in Borderless Fullscreen when using UI scaling.
+</p>
+<table class="wikitable sortable">
+<tbody><tr>
+<th>Resolution (16:9)
+</th>
+<th>Scaling
+</th>
+<th>Resolution(16:10)
+</th>
+<th>Scaling
+</th>
+<th>Resolution(4:3)
+</th>
+<th>Scaling
+</th></tr>
+<tr>
+<td>3820 × 2160 (4K)
+</td>
+<td>1.0 to 1.5
+</td>
+<td>2560 × 1600
+</td>
+<td>1.0
+</td>
+<td>1600 × 1200
+</td>
+<td>1.0
+</td></tr>
+<tr>
+<td>2560 × 1440
+</td>
+<td>1.0
+</td>
+<td>1920 × 1200
+</td>
+<td>1.0
+</td>
+<td>1280 × 1024
+</td>
+<td>0.8📌
+</td></tr>
+<tr>
+<td>1920 × 1080
+</td>
+<td>1.0
+</td>
+<td>1680 × 1050
+</td>
+<td>1.0
+</td></tr>
+<tr>
+<td>1600 × 900
+</td>
+<td>0.9📌
+</td>
+<td>1440 × 900
+</td>
+<td>0.9📌
+</td></tr>
+<tr>
+<td>1366 × 768
+</td>
+<td>0.7📌
+</td>
+<td>1280 × 800
+</td>
+<td>0.7📌
+</td></tr></tbody></table>
+<p>📌 - I don't recommend using this mod with resolutions that requires UI scaling below 1.0 for it to work. It won't look proper.
+</p>
+<h3><span class="mw-headline" id="Ultrawide_Resolutions">Ultrawide Resolutions</span></h3>
+<table class="wikitable sortable">
+<tbody><tr>
+<th>Resolution (32:9)
+</th>
+<th>Scaling
+</th>
+<th>Resolution (21:9)
+</th>
+<th>Scaling
+</th></tr>
+<tr>
+<td>5120 × 1440
+</td>
+<td>1.0
+</td>
+<td>3440 × 1440
+</td>
+<td>1.0
+</td></tr>
+<tr>
+<td>3840 × 1080
+</td>
+<td>1.0
+</td>
+<td>2560 × 1080
+</td>
+<td>1.0
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Triple_Monitor_Resolutions">Triple Monitor Resolutions</span></h3>
+<table class="wikitable sortable">
+<tbody><tr>
+<th>Resolution (32:9)
+</th>
+<th>Note
+</th>
+<th>Scaling
+</th></tr>
+<tr>
+<td>7680 × 1440
+</td>
+<td>3x '2560 × 1440'
+</td>
+<td>1.0
+</td></tr>
+<tr>
+<td>5760 × 1080
+</td>
+<td>3x '1920 × 1080'
+</td>
+<td>1.0
+</td></tr></tbody></table>
+<p>For centred UI, use the <a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2583368621">Triple Monitors submod</a>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Font_Mods">Font Mods</span></h2>
+<p>For those playing at higher resolution that find the text too small, try out one of these font mods:
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2830996883">UI Overhaul Dynamic + Improved Font</a></li>
+<li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2830996776">UI Overhaul Dynamic - Improved Text</a></li></ul>
+<p>Community Font Mods:
+</p>
+<ul><li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2008054135">[简中字体]旗黑 大字号 (Simplified Chinese Font)</a></li>
+<li><a rel="nofollow" class="external text" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2895447512">Japanese Improved Fonts</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260707182345
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.026 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 119/1000000
+Post‐expand include size: 2630/2097152 bytes
+Template argument size: 773/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   11.966      1 Template:Mod
+100.00%   11.966      1 -total
+ 45.56%    5.452      1 Template:Infobox
+ 23.46%    2.807      1 Template:Mod_header
+ 21.58%    2.582      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:11681-0!canonical and timestamp 20260707182345 and revision id 75471.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

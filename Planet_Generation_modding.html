@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planet Generation modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Planet Generation modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.7.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about modding <a href="/Planetary_features.html" title="Planetary features">Deposits</a> and Planet Modifiers.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Deposits"><span class="tocnumber">1</span> <span class="toctext">Deposits</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Data_Structure"><span class="tocnumber">1.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Deposit_Categories"><span class="tocnumber">1.2</span> <span class="toctext">Deposit Categories</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#The_Null_Orbital_Deposit"><span class="tocnumber">1.3</span> <span class="toctext">The Null Orbital Deposit</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Examples"><span class="tocnumber">1.4</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Planet_modifiers"><span class="tocnumber">2</span> <span class="toctext">Planet modifiers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#The_null_planet_modifier"><span class="tocnumber">2.1</span> <span class="toctext">The null planet modifier</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Deposits">Deposits</span></h2>
+<p>Deposits are objects on Planets that can have its own resource production and upkeep and <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to the planet.
+</p><p>There are two types of Deposits, one being the planetary features for the colonizable planets that can be inspected by the player, and another being the orbital deposits for the uncolonizable planets that usually can't be inspected by the player.
+</p><p>There are two types of planetary features, one being normally pure-beneficial and unremovable and another being normally pure-harmful and can be removed by spending resources, called blockers. Some blockers spawn with an additional planetary feature behind it, but the seemingly "blocked" planetary feature isn't actually added to the planet before the blocker to be cleared. Although vanilla unused, a blocker can also block a blocker behind it.
+</p><p>They are defined at "common/deposits/xxx.txt".
+</p>
+<h3><span class="mw-headline" id="Data_Structure">Data Structure</span></h3>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="27%">Planetary Features
+</th>
+<th width="27%">Planetary Blockers
+</th>
+<th width="26%">Orbital Deposits
+</th></tr>
+<tr>
+<td><b>is_for_colonizable = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2">For habitable planets, <code>is_for_colonizable = yes</code>. Default is <code> = no</code>.
+</td>
+<td>For mining station or research station collection, <code>is_for_colonizable = no</code>.
+</td></tr>
+<tr>
+<td><b>station</b>
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>Determines the type of orbital station required to mine this deposit. One of the following is allowed.
+<ul><li><code>shipclass_mining_station</code></li>
+<li><code>shipclass_research_station</code></li></ul>
+</td></tr>
+<tr>
+<td><b>icon = &lt;deposit key&gt;</b>
+</td>
+<td colspan="2">This deposit will use the icon of another deposit instead.
+<p>The default icon path is <code>gfx/interface/icons/deposits/&lt;deposit key&gt;.dds</code>.
+</p>
+</td>
+<td>Since orbital deposits can't be normally inspected, this property will normally not be useful.
+</td></tr>
+<tr>
+<td><b>use_for_min_max_adjustments = &lt;yes/no&gt;</b>
+</td>
+<td colspan="2">If yes, this deposit is used to refresh the maximum districts on planet view. Vanilla have this toggled yes for each deposit that increases maximum number of a certain type of district.
+</td>
+<td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>category = &lt;deposit category&gt;</b>
+</td>
+<td>For obvious reason the deposit category must NOT specify <code>blocker = yes</code>.
+<p>Vanilla use one of the following.
+</p>
+<ul><li><code>deposit_cat_food</code></li>
+<li><code>deposit_cat_energy</code></li>
+<li><code>deposit_cat_minerals</code></li>
+<li><code>deposit_cat_rare</code></li></ul>
+</td>
+<td>For obvious reason the deposit category must specify <code>blocker = yes</code>.
+<p>Vanilla use one of the folliwing.
+</p>
+<ul><li><code>deposit_cat_blockers</code></li>
+<li><code>deposit_cat_rare_blocker</code></li></ul>
+</td></tr>
+<tr>
+<td><b>planet_modifier</b><br /><b>triggered_planet_modifier</b>
+</td>
+<td colspan="2">Blocks of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Planet. Modifiers that add maximum number of buildings / disctricts of a certain type go here. If this deposit is blocked behind a blocker, none of these effects apply.
+</td>
+<td>Modifiers that affect <a href="https://stellaris.paradoxwikis.com/Trade" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade Value go here. The Trade Value can be collected without building any stations on the Planet. Other Modifiers don't apply.
+</td></tr>
+<tr>
+<td><b>country_modifier</b>
+</td>
+<td colspan="2">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire that owns this Planet.
+</td>
+<td rowspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>blocked_modifier</b>
+</td>
+<td colspan="2">Vanilla unused but mentioned it in the comments. Presumably <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Planet for as long as this deposit remains blocked behind a blocker.
+</td></tr>
+<tr>
+<td><b>should_swap_deposit_on_terraforming = &lt;yes/no&gt;</b><br /><b>terraforming_swap_types = { _key_of_deposit_ ...}</b><br /><b>all_terraforming_swap_types = &lt;yes/no&gt;</b><br /><b>use_weights_for_terraforming_swap_types = &lt;yes/no&gt;</b>
+</td>
+<td>Some vanilla planetary features will swap into another of exactly same effect after terraforming. This is implemented through these properties.
+<p>If this deposit should swap on terraforming and it no longer mets its <code>potential</code> after a terraforming, it will swap to a random one from the list that meets its <code>potential</code>.
+</p><p>If "all terraforming swap types" is allowed, then ALL non-blocker deposits that meet their <code>potential</code> on this planet can be chosen.
+</p><p>If "use weights for terraforming swap types", the swap is furtherly weighted by their <code>drop_weight</code>.
+</p>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>blocker_swap_types = { _key_of_deposit_ ... }</b><br /><b>all_blocker_swap_types = &lt;yes/no&gt;</b><br /><b>use_weights_for_blocker_swap_types = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>When this blocker is placed on a Planet, if it has any blocker swap type, a random deposit that meets its <code>potential</code> on this planet is chosen to be visibly "blocked" behind this blocker. Before this blocker to be cleared, the deposit isn't actually added to the planet and none of its effects will apply.
+<p>if "all blocker swap types" is allowed, then ALL non-blocker deposits that meet their <code>potential</code> on this planet can be chosen.
+</p><p>If "use weights for blocker swap types", the swap is furtherly weighted by their <code>drop_weight</code>.
+</p>
+</td></tr>
+<tr>
+<td rowspan="2"><b>resources</b>
+</td>
+<td colspan="3">An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> of this deposit to determine its resource production, upkeep and blocker removal cost.
+</td></tr>
+<tr>
+<td>Vanilla use <code>planet_deposits</code> for the economy category, although it's quite rare for a normal deposit to directly produce resources itself.
+</td>
+<td>Vanilla use <code>deposit_blockers</code> for the economy category.
+</td>
+<td>Vanilla use <code>orbital_mining_deposits</code> and <code>orbital_research_deposits</code> for the economy category.
+</td></tr>
+<tr>
+<td><b>can_be_cleared</b>
+</td>
+<td rowspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check can this blocker be cleared. (Planet scope)
+</td>
+<td rowspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>on_cleared</b>
+</td>
+<td>A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed after this blocker is cleared. (Planet scope)
+</td></tr>
+<tr>
+<td><b>time = &lt;int&gt;</b>
+</td>
+<td>Days it takes to clear this blocker.
+</td></tr>
+<tr>
+<td><b>prerequisites = { &lt;tech key&gt; ...}</b>
+</td>
+<td>A list of Technologies to be researched before this blocker can be cleared.
+</td></tr>
+<tr>
+<td><b>potential</b>
+</td>
+<td colspan="3">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check can this deposit be spawned on a Planet. This block is neglected if the deposit is added via script. (Planet scope)
+</td></tr>
+<tr>
+<td><b>drop_weight</b>
+</td>
+<td colspan="3">Determines how likely this deposit is spawned on a Planet. If drop weight is multiplied by 0 this deposit can't be spawned on this Planet. (Planet scope)
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Deposit_Categories">Deposit Categories</span></h3>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px">Planetary features are grouped by Deposit Categories defined at "common/deposit_categories/xxx.txt". They are so simple that they have only two properties. This is used to diverse planetary features to make the planet have relatively less "extreme" maximum district distribution.</span>
+<div class="mw-collapsible-content">
+<pre>deposit_cat_food = { }
+deposit_cat_energy = {}
+deposit_cat_minerals = {}
+deposit_cat_blockers = { 
+	blocker = yes # Counts as blockers
+}
+deposit_cat_rare = { 
+	important = yes	# Shows up as rare deposits in planetview
+}
+deposit_cat_rare_blocker = { 
+	blocker = yes # Counts as blockers
+	important = yes	# Shows up as rare deposits in planetview
+}
+</pre></div></div></div>
+<h3><span class="mw-headline" id="The_Null_Orbital_Deposit">The Null Orbital Deposit</span></h3>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px">There is a null orbital deposit present. It generates no resources and doesn't support any kind of orbital stations, functioanlly play as a placeholder for the uncolonizable planets devoid of deposits. An uncolonizable planet that doesn't meet the <code>potential</code> of the null deposit will always have an orbital deposit.</span>
+<div class="mw-collapsible-content">
+<pre>d_null_deposit = {
+	is_null = yes
+	
+	potential = {
+		is_primary_star = no
+		NOR = {			
+			is_planet_class = pc_ringworld_habitable_damaged
+			is_planet_class = pc_ringworld_tech_damaged
+		}
+	}
+	
+	drop_weight = {
+		weight = 100
+	}
+}
+</pre></div></div></div>
+<h3><span class="mw-headline" id="Examples">Examples</span></h3>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Planetary Feature: Hot Springs (+1 Max Generator Districts)</b></span>
+<div class="mw-collapsible-content">
+<pre>d_hot_springs = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+	
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+		d_arid_highlands
+		d_buzzing_plains # gaia
+	}	
+	
+	planet_modifier = { 
+		district_generator_max = 1
+	}
+	
+	potential = {
+		OR = {
+			is_cold = yes
+			is_wet = yes
+			is_planet_class = pc_nuked
+		}	
+	}
+	
+	drop_weight = {
+		weight = @high	
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}		
+	}
+}
+</pre></div></div></div>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Blocker: Dangerous Wildlife</b></span>
+<div class="mw-collapsible-content">
+<pre>d_dangerous_wildlife_blocker = {
+	time = 270
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 500
+		}
+	}
+
+	potential = {
+		planet_size &gt;= 10
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -2
+	}
+
+	on_cleared = {
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = owner
+					owner = {
+						has_civic = civic_hive_devouring_swarm
+					}
+				}
+				owner = { add_resource = { food = 200 } }
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @blocker_low
+		modifier = {
+			factor = 0.5
+			planet_size &lt; 15
+		}
+		modifier = {
+			factor = 0
+			num_free_districts = {
+				type = district_city
+				value &lt; 2
+			}
+		}
+	}
+
+	prerequisites = { "tech_dangerous_wildlife" }
+}
+</pre></div></div></div>
+<div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>Orbital Deposit: 1 Society Research</b></span>
+<div class="mw-collapsible-content">
+<pre>d_society_1 = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			society_research = 1
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	
+	potential = {
+		is_planet_class = pc_toxic
+	}
+	
+	drop_weight = {
+		weight = 0	
+	}
+}
+</pre></div></div></div>
+<h2><span class="mw-headline" id="Planet_modifiers">Planet modifiers</span></h2>
+<p>Planet modifiers are additional modifiers given to <a href="/Planet_modding.html" title="Planet modding">planet objects</a> upon planet generation. They are linked to <a href="https://stellaris.paradoxwikis.com/Static_modifiers" class="mw-redirect" title="Static modifiers">static modifiers</a> but not equivalent to them. They are defined by files in the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/planet_modifiers/</span> folder. Static modifiers added directly to a planet by an effect or anomaly don't need to have a planet modifier defined here.
+</p>
+<table class="wikitable mw-collapsible plainlist">
+<caption style="text-align: left"><b>Planet modifier data structure</b>
+</caption>
+<tbody><tr>
+<th>Property</th>
+<th>Description
+</th></tr>
+<tr>
+<td>
+<ul><li><b>spawn_chance = {</b>
+<ul><li><b>base = &lt;int&gt;</b></li>
+<li><b>modifier = {</b>
+<ul><li><b>add = &lt;int&gt;</b></li>
+<li><b>&lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt;</b></li></ul></li>
+<li><b>}</b></li>
+<li><b>modifier = {</b>
+<ul><li><b>factor = &lt;float&gt;</b></li>
+<li><b>&lt;<a href="/Conditions.html" title="Conditions">conditions</a>&gt;</b></li></ul></li>
+<li><b>}</b></li></ul></li>
+<li><b>}</b></li></ul>
+</td>
+<td>
+<ul><li>Modifies the weight of this planet modifier to spawn relative to other randomized planet modifiers.</li>
+<li>All vanilla planet modifiers (except the null modifier, see below) leave the base spawn chance at the default value of 0.</li></ul>
+</td></tr>
+<tr>
+<td><b>modifier = "&lt;<a href="https://stellaris.paradoxwikis.com/Static_modifier" class="mw-redirect" title="Static modifier">static modifier</a>&gt;"</b>
+</td>
+<td>Key of the static modifier to be added to the planet.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="The_null_planet_modifier">The null planet modifier</span></h3>
+<p>There is a null planet modifier defined in the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/planet_modifiers/00_planet_modifiers.txt</span> file that has no linked static modifier. It's purpose is to control how common other modifiers are; it has a base weight of 275 (most vanilla planet modifiers have a weight of 10 before spawn chance weight modifiers), which gets multiplied by 3 for each modifier the planet already has in order to make planets with multiple modifiers increasingly rare. 
+</p>
+<div class="plainlist"><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>pm_null = {</b></span>
+<div class="mw-collapsible-content">
+<dl><dd>is_null = yes</dd>
+<dd></dd>
+<dd>spawn_chance = {
+<dl><dd>base = 275</dd>
+<dd>modifier = {
+<dl><dd>factor = 3</dd>
+<dd>num_modifiers &gt; 2</dd></dl></dd>
+<dd>}</dd>
+<dd>modifier = {
+<dl><dd>factor = 3</dd>
+<dd>num_modifiers &gt; 1</dd></dl></dd>
+<dd>}</dd>
+<dd>modifier = {
+<dl><dd>factor = 3</dd>
+<dd>num_modifiers &gt; 0</dd></dl></dd>
+<dd>}</dd></dl></dd>
+<dd>}</dd></dl></div></div></div><span style="visibility:hidden;color:transparent;">0</span><b>}</b>
+</div>
+<p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a class="mw-selflink selflink">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181711
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.044 seconds
+Real time usage: 0.060 seconds
+Preprocessor visited node count: 698/1000000
+Post‐expand include size: 23291/2097152 bytes
+Template argument size: 10444/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 2205/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   28.524      1 -total
+ 26.31%    7.504      8 Template:Icon
+ 23.43%    6.684      1 Template:ModdingNavbox
+ 20.08%    5.728      1 Template:Plainlist
+ 19.64%    5.603      1 Template:Iconify
+ 17.47%    4.984      1 Template:Icon/t
+ 14.35%    4.094      1 Template:Navbox
+ 11.42%    3.257      6 Template:Collapse_list
+ 10.76%    3.068      2 Template:Path
+  9.09%    2.593      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7559-0!canonical and timestamp 20260707181711 and revision id 81710.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

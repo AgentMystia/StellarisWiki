@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console commands/Planetary features examples and descriptions - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Console commands/Planetary features examples and descriptions</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<div style="margin:1.4px 1.6em;"><i>Main article: <a href="/Console_commands.html" title="Console commands">Console commands</a></i></div>
+<p>All planets have a random number of planetary features which increase the number of districts a world can support. With no planetary features, a planet will have no districts.
+</p><p><b>You can add specific deposit</b> (i.e. from the list below):
+</p>
+<ol><li>Go to the system view and select a planet.</li></ol>
+<ol><li>Use console command: <code>effect add_deposit=d "deposit name"</code></li>
+<li>like this:&#160;:</li>
+<li>effect add_deposit=d_geothermal_vent</li>
+<li>effect add_deposit=d_rich_mountain</li>
+<li>effect add_deposit=d_tropical_island</li></ol>
+<ol><li>The UI will not update in real time, but the planetary features will update to show changes.</li></ol>
+<p><a rel="nofollow" class="external text" href="https://forum.paradoxplaza.com/forum/threads/guide-useful-console-commands-effect-scripts.1060775/">Useful link with a longer script for filling an empty planet </a>
+</p><p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Useful_commands"><span class="tocnumber">1</span> <span class="toctext">Useful commands</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Common_features[1]"><span class="tocnumber">2</span> <span class="toctext">Common features<sup>&#91;1&#93;</sup></span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Rare_features"><span class="tocnumber">3</span> <span class="toctext">Rare features</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Special_features"><span class="tocnumber">4</span> <span class="toctext">Special features</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Unique_features"><span class="tocnumber">5</span> <span class="toctext">Unique features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Earth_features"><span class="tocnumber">5.1</span> <span class="toctext">Earth features</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Blockers"><span class="tocnumber">6</span> <span class="toctext">Blockers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Special_blockers"><span class="tocnumber">6.1</span> <span class="toctext">Special blockers</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Homeworld_blockers"><span class="tocnumber">6.2</span> <span class="toctext">Homeworld blockers</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Useful_commands">Useful commands</span></h3>
+<ul><li><code>effect reroll_deposits</code></li>
+<li><code>effect clear_blockers</code></li>
+<li><code>effect clear_deposits</code></li>
+<li><code>effect add_deposit = d_rich_mountain</code></li>
+<li><code>effect remove_deposit = d_rich_mountain</code></li>
+<li><code>effect reroll_planet_modifiers</code></li>
+<li><code>effect add_modifier = { modifier = ultra_rich }</code></li>
+<li><code>effect remove_modifier = ultra_rich</code></li></ul>
+<p><br />
+</p>
+<h3><span id="Common_features.5B1.5D"></span><span class="mw-headline" id="Common_features[1]">Common features<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup></span></h3>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%">
+</th>
+<th>Feature
+</th>
+<th>Key code
+</th>
+<th>Planets
+</th>
+<th>Effects
+</th>
+<th width="40%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_arid_highlands.png" class="image"><img alt="D arid highlands.png" src="images/D_arid_highlands.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Arid Highland
+</td>
+<td><code>d_arid_highlands</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Generator Districts
+</td>
+<td><i>An elevated, dry ecoregion bearing sparse vegetation of desert grasses and scrubs.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_hot_springs.png" class="image"><img alt="D hot springs.png" src="images/D_hot_springs.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Hot Springs
+</td>
+<td><code>d_hot_springs</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Generator Districts
+</td>
+<td><i>Groundwater heated by geothermal processes steams from the surface of these springs.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_rushing_waterfalls.png" class="image"><img alt="D rushing waterfalls.png" src="images/D_rushing_waterfalls.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Rushing Waterfall
+</td>
+<td><code>d_rushing_waterfalls</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li></ul>
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Generator Districts
+</td>
+<td><i>Picturesque vistas formed when rivers flow over the cliff-sides of steep mountainsides.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_searing_desert.png" class="image"><img alt="D searing desert.png" src="images/D_searing_desert.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Searing Desert
+</td>
+<td><code>d_searing_desert</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Generator Districts
+</td>
+<td><i>With little precipitation, extreme temperatures and limited vegetation, these sandy deserts are hostile to most forms of life.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_frozen_gas_lake.png" class="image"><img alt="D frozen gas lake.png" src="images/D_frozen_gas_lake.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Frozen Gas Lake
+</td>
+<td><code>d_frozen_gas_lake</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Generator Districts
+</td>
+<td><i>Formed under immense pressure in a bygone age, deep-freeze temperatures have kept the gases dissolved in these rimey lakes in a solid state.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_geothermal_vent.png" class="image"><img alt="D geothermal vent.png" src="images/D_geothermal_vent.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Geothermal Vents
+</td>
+<td><code>d_geothermal_vent</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li></ul>
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Generator Districts
+</td>
+<td><i>These fumaroles vent steam and noxious gases from deep within the planet's crust.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_underwater_vent.png" class="image"><img alt="D underwater vent.png" src="images/D_underwater_vent.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Underwater Vents
+</td>
+<td><code>d_underwater_vent</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Generator Districts
+</td>
+<td><i>Metalliferous sediments react with superheated water in the planet's crust, venting chemicals along the seabed where tectonic plates diverge.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_tempestous_mountain.png" class="image"><img alt="D tempestous mountain.png" src="images/D_tempestous_mountain.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Tempestuous Mountain
+</td>
+<td><code>d_tempestous_mountain</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Generator_District" title="Max generator districts"><img alt="Max generator districts" src="images/Mod_district_generator_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Generator Districts
+</td>
+<td><i>Wind-torn vegetation clings to the high crags and stormy cliffs of these rainy mountains.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_veiny_cliffs.png" class="image"><img alt="D veiny cliffs.png" src="images/D_veiny_cliffs.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Ore-Veined Cliffs
+</td>
+<td><code>d_veiny_cliffs</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Mining_District" title="Max mining districts"><img alt="Max mining districts" src="images/Mod_district_mining_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Mining Districts
+</td>
+<td><i>Bands of valuable mineral ores run like veins through these exposed cliff faces.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_mineral_fields.png" class="image"><img alt="D mineral fields.png" src="images/D_mineral_fields.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Mineral Fields
+</td>
+<td><code>d_mineral_fields</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li></ul>
+</td>
+<td><a href="/Districts.html#Mining_District" title="Max mining districts"><img alt="Max mining districts" src="images/Mod_district_mining_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Mining Districts
+</td>
+<td><i>Geological upheaval exposed these useful minerals to the planet's surface long ago.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_prosperous_mesa.png" class="image"><img alt="D prosperous mesa.png" src="images/D_prosperous_mesa.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Prosperous Mesa
+</td>
+<td><code>d_prosperous_mesa</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Mining_District" title="Max mining districts"><img alt="Max mining districts" src="images/Mod_district_mining_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Mining Districts
+</td>
+<td><i>This flat-topped hill has steep sides lined with useful resources.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_ore_rich_caverns.png" class="image"><img alt="D ore rich caverns.png" src="images/D_ore_rich_caverns.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Ore-Rich Caverns
+</td>
+<td><code>d_ore_rich_caverns</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Mining_District" title="Max mining districts"><img alt="Max mining districts" src="images/Mod_district_mining_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Mining Districts
+</td>
+<td><i>These deep caverns are rife with metallic and mineral ore deposits.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_rich_mountain.png" class="image"><img alt="D rich mountain.png" src="images/D_rich_mountain.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Rich Mountain
+</td>
+<td><code>d_rich_mountain</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Mining_District" title="Max mining districts"><img alt="Max mining districts" src="images/Mod_district_mining_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Mining Districts
+</td>
+<td><i>These mountainsides glint with rich ore resources and precious stones.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_submerged_ore_veins.png" class="image"><img alt="D submerged ore veins.png" src="images/D_submerged_ore_veins.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Submerged Ore Veins
+</td>
+<td><code>d_submerged_ore_veins</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Mining_District" title="Max mining districts"><img alt="Max mining districts" src="images/Mod_district_mining_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Mining Districts
+</td>
+<td><i>Useful ore deposits line parts of the ocean floor, providing opportunities for deep-sea mining.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_lichen_fields.png" class="image"><img alt="D lichen fields.png" src="images/D_lichen_fields.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Lichen Fields
+</td>
+<td><code>d_lichen_fields</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Agriculture Districts
+</td>
+<td><i>Dewy moss, lichens and fungi form a plush carpet that stretches across these rocky lands.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_bountiful_plains.png" class="image"><img alt="D bountiful plains.png" src="images/D_bountiful_plains.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Bountiful Plains
+</td>
+<td><code>d_bountiful_plains</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Agriculture Districts
+</td>
+<td><i>Fertile soils and tall grasses cover these sweeping plains, providing rich potential for farmlands.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_rugged_woods.png" class="image"><img alt="D rugged woods.png" src="images/D_rugged_woods.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Rugged Woods
+</td>
+<td><code>d_rugged_woods</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Agriculture Districts
+</td>
+<td><i>Cold, rocky woods with herbaceous understories.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_green_hills.png" class="image"><img alt="D green hills.png" src="images/D_green_hills.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Green Hills
+</td>
+<td><code>d_green_hills</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Agriculture Districts
+</td>
+<td><i>Rolling hills covered in greenery and fertile soils.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_forgiving_tundra.png" class="image"><img alt="D forgiving tundra.png" src="images/D_forgiving_tundra.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Fair Tundra
+</td>
+<td><code>d_forgiving_tundra</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Agriculture Districts
+</td>
+<td><i>Sedges, shrubs and lichens cover this high-latitude biome, where the subsoil permafrost is nevertheless covered in more fertile sediment.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_boggy_fens.png" class="image"><img alt="D boggy fens.png" src="images/D_boggy_fens.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Boggy Fens
+</td>
+<td><code>d_boggy_fens</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Agriculture Districts
+</td>
+<td><i>These low-lying wetlands provide a wealth of plant nutrients.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_nutritious_mudland.png" class="image"><img alt="D nutritious mudland.png" src="images/D_nutritious_mudland.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Nutritious Mudlands
+</td>
+<td><code>d_nutritious_mudland</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Agriculture Districts
+</td>
+<td><i>A watery slurry of clay, silt, and loam stretches across the horizon, where low vegetation flourishes.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fungal_caves.png" class="image"><img alt="D fungal caves.png" src="images/D_fungal_caves.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Fungal Caves
+</td>
+<td><code>d_fungal_caves</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Agriculture Districts
+</td>
+<td><i>These extensive cave networks are covered in many species of edible fungi, which require neither sunlight nor fertile soil to flourish.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_lush_jungle.png" class="image"><img alt="D lush jungle.png" src="images/D_lush_jungle.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Lush Jungle
+</td>
+<td><code>d_lush_jungle</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Agriculture Districts
+</td>
+<td><i>With a dense canopy and nigh-impenetrable vegetation density, these jungles are poor in soil quality, but rich in plant-life and fruit-bearing trees.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fertile_lands.png" class="image"><img alt="D fertile lands.png" src="images/D_fertile_lands.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Fertile Lands
+</td>
+<td><code>d_fertile_lands</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Agriculture Districts
+</td>
+<td><i>This vast stretch of open plains provides ideal farmland.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_great_river.png" class="image"><img alt="D great river.png" src="images/D_great_river.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Great River
+</td>
+<td><code>d_great_river</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Agriculture Districts
+</td>
+<td><i>A slow-flowing river of enormous volume provides water and vegetation for a rich abundance of life.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_black_soil.png" class="image"><img alt="D black soil.png" src="images/D_black_soil.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Black Soil
+</td>
+<td><code>d_black_soil</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Agriculture Districts
+</td>
+<td><i>With a remarkably high moisture capacity and high amounts of chemicals integral to plant life, these soils promise impressive agricultural yields.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_teeming_reef.png" class="image"><img alt="D teeming reef.png" src="images/D_teeming_reef.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Teeming Reef
+</td>
+<td><code>d_teeming_reef</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Agriculture Districts
+</td>
+<td><i>A vibrant ecosystem brimming with corals, fish, mollusks, mammals, invertebrates, and all kinds of edible marine life.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_marvelous_oasis.png" class="image"><img alt="D marvelous oasis.png" src="images/D_marvelous_oasis.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Marvelous Oasis
+</td>
+<td><code>d_marvelous_oasis</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Agriculture Districts
+</td>
+<td><i>A shimmering jewel of water and greenery in a barren wasteland.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_tropical_island.png" class="image"><img alt="D tropical island.png" src="images/D_tropical_island.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Tropical Island
+</td>
+<td><code>d_tropical_island</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Agriculture Districts
+</td>
+<td><i>From fruit laden trees to plentiful fauna, the bounties of this paradisaical island promise a rich harvest.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fungal_forest.png" class="image"><img alt="D fungal forest.png" src="images/D_fungal_forest.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Fungal Forest
+</td>
+<td><code>d_fungal_forest</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li></ul>
+</td>
+<td><a href="/Districts.html#Agriculture_District" title="Max agriculture districts"><img alt="Max agriculture districts" src="images/Mod_district_farming_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Max Agriculture Districts
+</td>
+<td><i>In lieu of trees, towering mushrooms dominate these fecund forests, the enormous caps of fungal giants blotting out sunlight to create the perfect environment for a rich variety of smaller specimens.</i>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Rare_features">Rare features</span></h3>
+<p>Rare Planetary Features allow the construction of a limited number of buildings that can extract advanced resources directly. They are twice more likely to appear on Gaia Worlds and cannot appear on homeworlds.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%">
+</th>
+<th>Feature
+</th>
+<th>Key code
+</th>
+<th>Planets
+</th>
+<th>Effects
+</th>
+<th width="40%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dust_caverns.png" class="image"><img alt="D dust caverns.png" src="images/D_dust_caverns.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Dust Caverns
+</td>
+<td><code>d_dust_caverns</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_mote_harvesting_traps_max.png" class="image"><img alt="Mod building mote harvesting traps max.png" src="images/Mod_building_mote_harvesting_traps_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Mote Harvesting Traps
+</td>
+<td><i>Rare Volatile Motes condense in these sandy caves and hidden hollows.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dust_desert.png" class="image"><img alt="D dust desert.png" src="images/D_dust_desert.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Dust Desert
+</td>
+<td><code>d_dust_desert</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_mote_harvesting_traps_max.png" class="image"><img alt="Mod building mote harvesting traps max.png" src="images/Mod_building_mote_harvesting_traps_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Mote Harvesting Traps
+</td>
+<td><i>A vast expanse of sand that covers scattered pockets of rare and valuable Volatile Motes. Extraction is possible with the right equipment.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_bubbling_swamp.png" class="image"><img alt="D bubbling swamp.png" src="images/D_bubbling_swamp.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Bubbling Swamp
+</td>
+<td><code>d_bubbling_swamp</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_gas_extractors_max.png" class="image"><img alt="Mod building gas extractors max.png" src="images/Mod_building_gas_extractors_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Gas Extraction Wells
+</td>
+<td><i>A hotbed of aquatic plants, insects, and swamp gas, this wetland is characterized by slow-moving water and rich vegetation.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fuming_bog.png" class="image"><img alt="D fuming bog.png" src="images/D_fuming_bog.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Fuming Bog
+</td>
+<td><code>d_fuming_bog</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_gas_extractors_max.png" class="image"><img alt="Mod building gas extractors max.png" src="images/Mod_building_gas_extractors_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Gas Extraction Wells
+</td>
+<td><i>A noxious quagmire covered in low vegetation, mosses and fungi, where gases steam from the water's surface.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crystalline_caverns.png" class="image"><img alt="D crystalline caverns.png" src="images/D_crystalline_caverns.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Crystalline Caverns
+</td>
+<td><code>d_crystalline_caverns</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_crystal_mines_max.png" class="image"><img alt="Mod building crystal mines max.png" src="images/Mod_building_crystal_mines_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Crystal Mines
+</td>
+<td><i>Like enormous geodes, these caves are filled on all sides with rare crystals.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crystal_forest.png" class="image"><img alt="D crystal forest.png" src="images/D_crystal_forest.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Crystal Forest
+</td>
+<td><code>d_crystal_forest</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_crystal_mines_max.png" class="image"><img alt="Mod building crystal mines max.png" src="images/Mod_building_crystal_mines_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Crystal Mines
+</td>
+<td><i>Glittering crystals grow like hoarfrost in these exotic forests.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crystal_reef.png" class="image"><img alt="D crystal reef.png" src="images/D_crystal_reef.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Crystal Reef
+</td>
+<td><code>d_crystal_reef</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine, <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra,</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_crystal_mines_max.png" class="image"><img alt="Mod building crystal mines max.png" src="images/Mod_building_crystal_mines_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+2</span> Max Crystal Mines
+</td>
+<td><i>Crystal lattices glimmer amongst the rocks and corals of this sandy reef.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_betharian_deposit.png" class="image"><img alt="D betharian deposit.png" src="images/D_betharian_deposit.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Betharian Fields
+</td>
+<td><code>d_betharian_deposit</code>
+</td>
+<td>Any
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_betharian_power_plant_max.png" class="image"><img alt="Mod building betharian power plant max.png" src="images/Mod_building_betharian_power_plant_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Betharian Power Plant
+</td>
+<td><i>Thousands upon thousands of valuable Betharian stones glint like stars in these fields.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_alien_pets_deposit.png" class="image"><img alt="D alien pets deposit.png" src="images/D_alien_pets_deposit.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Isolated Valley
+</td>
+<td><code>d_alien_pets_deposit</code>
+</td>
+<td>Any
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_xeno_zoo_max.png" class="image"><img alt="Mod building xeno zoo max.png" src="images/Mod_building_xeno_zoo_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Max Alien Zoo
+</td>
+<td><i>This pristine valley lies sheltered amongst the surrounding mountains, its fauna shielded from roving predators.</i>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Special_features">Special features</span></h3>
+<p>Some features are created by some colony events or certain planet modifiers.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%">
+</th>
+<th>Feature
+</th>
+<th>Key code
+</th>
+<th>Created By
+</th>
+<th>Effects
+</th>
+<th width="30%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_tribal_settlement.png" class="image"><img alt="D tribal settlement.png" src="images/D_tribal_settlement.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Abandoned Primitive Homesteads
+</td>
+<td><code>d_abandoned_primitive_homesteads</code>
+</td>
+<td>Broken Union event chain
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+10%</span> <br />Max Agriculture Districts: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>These abandoned homesteads were once inhabited by a society of reptiles. They still populate the planet, but have since lost all capacity for sentient thought.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="D organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Ancient Battlefield
+</td>
+<td><code>d_ancient_battlefield</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Engineering Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>The civilization that once inhabited this world was destroyed by an invading force from somewhere beyond their solar system. This ancient battlefield is littered with ancient debris from their desperate last stand.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crater.png" class="image"><img alt="D crater.png" src="images/D_crater.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Ancient Bombardment Craters
+</td>
+<td><code>d_ancient_bombardment_craters</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Physics_research.html" title="Physics research"><img alt="Physics research.png" src="images/Physics_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Physics Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>This world was subjected to intense orbital bombardment long ago. Parts of the surface are still pockmarked with impact craters.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_building_complex.png" class="image"><img alt="D building complex.png" src="images/D_building_complex.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Ancient Mining Site
+</td>
+<td><code>d_ancient_mining_site</code>
+</td>
+<td>Unknown
+</td>
+<td>Max Mining Districts: <span class="effect-green" style="font-weight:bold;">+5</span>
+</td>
+<td><i>The site of an ancient mining operation. Despite its age, much of the equipment can still be operated</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fungal_forest.png" class="image"><img alt="D fungal forest.png" src="images/D_fungal_forest.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Ancient One
+</td>
+<td><code>d_ancient_one</code>
+</td>
+<td>Unknown
+</td>
+<td>Produces: <a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>4
+</td>
+<td><i>An ancient being, living beneath the waves, is the dominating life force on this planet.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_building.png" class="image"><img alt="D building.png" src="images/D_building.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Ancient Particle Accelerator
+</td>
+<td><code>d_ancient_particle_accelerator</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Physics_research.html" title="Physics research"><img alt="Physics research.png" src="images/Physics_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Physics Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>This old particle accelerator was built using a novel design, and the surviving terminals within the structure contain a massive amount of research data composed by what must have been a brilliant theoretical physicist.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ABogplants.png" class="image"><img alt="Bogplants.png" src="images/Bogplants.png" decoding="async" loading="lazy" width="98" height="78" data-file-width="101" data-file-height="80" /></a>
+</td>
+<td>Bogplants
+</td>
+<td>d_bogplants
+</td>
+<td>Unknown
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AMod_building_gas_extractors_max.png" class="image"><img alt="Mod building gas extractors max.png" src="images/Mod_building_gas_extractors_max.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> 0.25 Gas per 100 Farmers
+<p><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+10%</span>
+</p>
+</td>
+<td>Super acidic bogs are home to a unique species of flora that secretes exotic  gas as it feeds.
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_monument.png" class="image"><img alt="D monument.png" src="images/D_monument.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Cryonic Clones Monument
+</td>
+<td><code>d_cryonic_clones</code>
+</td>
+<td>Unknown
+</td>
+<td>Produces: <a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>6
+</td>
+<td><i>Hundreds of alien clones were left sealed in cryostasis chambers when this Ring World was still a ruin. Now fully restored, the clones have been preserved in this monument</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_monument.png" class="image"><img alt="D monument.png" src="images/D_monument.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Dragonslayer Monument
+</td>
+<td><code>d_dragon_monument</code>
+</td>
+<td>Kill the Ether drake
+</td>
+<td>Produces: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>22
+</td>
+<td><i>A monument commemorating the defeat of the Ether Drake.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_teeming_reef.png" class="image"><img alt="D teeming reef.png" src="images/D_teeming_reef.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Flooded Mounds
+</td>
+<td><code>d_flooded_mounds</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>Thousands of thousands of interconnected termite-like mounds can be found far beneath the ocean on this world, the last remnants of an ancient species of sapient arthropods</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fertile_lands.png" class="image"><img alt="D fertile lands.png" src="images/D_fertile_lands.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Harvester Fields
+</td>
+<td><code>d_harvester_fields</code>
+</td>
+<td>Unknown
+</td>
+<td>Max Agriculture Districts: <span class="effect-green" style="font-weight:bold;">+6</span>
+</td>
+<td><i>Vast fields of dense, edible vegetation where ancient solar-powered harvesters assist in gathering crops.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_alien_pets_deposit.png" class="image"><img alt="D alien pets deposit.png" src="images/D_alien_pets_deposit.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Hyperfertile Valley
+</td>
+<td><code>d_hyperfertile_valley</code>
+</td>
+<td>Unknown
+</td>
+<td>Max Agriculture Districts: <span class="effect-green" style="font-weight:bold;">+5</span>
+</td>
+<td><i>The soil in this valley is extremely fertile, and it is covered in intense greenery.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crater.png" class="image"><img alt="D crater.png" src="images/D_crater.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Impact Crater
+</td>
+<td><code>d_impact_crater</code>
+</td>
+<td>Asteroid Sighted event
+</td>
+<td>Max Mining Districts: <span class="effect-green" style="font-weight:bold;">+3</span>
+</td>
+<td><i>A crater from a large meteor impact. Minerals from the meteor itself can still be found at the site.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_metal_boneyard.png" class="image"><img alt="D metal boneyard.png" src="images/D_metal_boneyard.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Irradiated Ruins
+</td>
+<td><code>d_irradiated_ruins</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>Remnants from a massive nuclear war waged by the two global superpowers that once inhabited this world.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fertile_lands.png" class="image"><img alt="D fertile lands.png" src="images/D_fertile_lands.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Loop-Plowed Farm
+</td>
+<td><code>d_worm_farm</code>
+</td>
+<td>Horizon Signal: The Waiting World
+</td>
+<td>Max Agriculture Districts: <span class="effect-green" style="font-weight:bold;">+4</span>
+</td>
+<td><i>The food crops lean into the wind, somehow.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_huge_tree.png" class="image"><img alt="D huge tree.png" src="images/D_huge_tree.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Migrating Forests Reserve
+</td>
+<td><code>d_migrating_forest_reserve</code>
+</td>
+<td>Migrating forest event chain
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>The entire region has been set aside for the migrating forests that are native to this world. Here they can roam in peace, without causing damage to urban areas.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="D organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Mutant Landfill
+</td>
+<td><code>d_mutant_landfill</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>A putrid mass of dead mutated horrors. Their volatile organic matter has twisted together to form a structure of sorts.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_geothermal_vent.png" class="image"><img alt="D geothermal vent.png" src="images/D_geothermal_vent.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Numa's Breath
+</td>
+<td><code>d_numas_breath</code>
+</td>
+<td>Numistic Order caravan deal
+</td>
+<td>Max Generator Districts: <span class="effect-green" style="font-weight:bold;">+3</span> <br />Max Districts: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>This stable vent reaching into the planet's crust was created by The Numistic Order.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_building.png" class="image"><img alt="D building.png" src="images/D_building.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Odd Factory
+</td>
+<td><code>d_odd_factory</code>
+</td>
+<td>Odd Factory event
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AJob_foundry.png" class="image"><img alt="Job foundry.png" src="images/Job_foundry.png" decoding="async" loading="lazy" width="30" height="30" data-file-width="30" data-file-height="30" /></a> <span class="effect-green" style="font-weight:bold;">+1</span> Odd Factory Worker job
+</td>
+<td><i>A well-crafted facility that produces high value resources.  left on the planet by a different civilization.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_tradestation_interior.png" class="image"><img alt="D tradestation interior.png" src="images/D_tradestation_interior.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Party Fever
+</td>
+<td><code>d_disco_planet</code>
+</td>
+<td>Dancing Plague event
+</td>
+<td>+1 Gas Extraction Well, +15% Pop Growth Speed
+</td>
+<td><i>Gas = Dance</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crystalline_caverns.png" class="image"><img alt="D crystalline caverns.png" src="images/D_crystalline_caverns.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Portal Research Area
+</td>
+<td><code>d_portal_research_zone</code>
+</td>
+<td>Portal research event chain
+</td>
+<td>Dimensional Portal Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+1</span> <br /><span class="effect-green" style="font-weight:bold;">+1</span> Dimensional Portal Researcher Job per <span class="effect-green" style="font-weight:bold;">40</span> Pops
+</td>
+<td><i>A secure complex has been built around the Dimensional Portal to house research staff dedicated to probing its mysteries.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_quarantine_zone.png" class="image"><img alt="D quarantine zone.png" src="images/D_quarantine_zone.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Processing Pens
+</td>
+<td><code>d_processing_pens</code>
+</td>
+<td>Wild Eukaryotes event chain
+</td>
+<td>Produces: <a href="https://stellaris.paradoxwikis.com/Food" title="Food"><img alt="Food.png" src="images/Food.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>16
+</td>
+<td><i>The fungoids native to this planet were genetically engineered to be docile... and delicious. In these vast processing pens, the fungoids are nourished and then harvested.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dangerous_wildlife_blocker.png" class="image"><img alt="D dangerous wildlife blocker.png" src="images/D_dangerous_wildlife_blocker.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Savage Wildlands
+</td>
+<td><code>d_savage_wildlands</code>
+</td>
+<td><a href="/Distant_Stars.html" title="Distant Stars"><img alt="Distant Stars.png" src="images/Distant_Stars.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Alien Life anomaly
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+10%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+1</span>
+</td>
+<td><i>The indigenous creatures who inhabit this region appear to operate as a single organism.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crystalline_caverns.png" class="image"><img alt="D crystalline caverns.png" src="images/D_crystalline_caverns.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Spiral-Hewn Mine
+</td>
+<td><code>d_worm_mine</code>
+</td>
+<td>Horizon Signal: The Waiting World
+</td>
+<td>Max Mining Districts: <span class="effect-green" style="font-weight:bold;">+4</span>
+</td>
+<td><i>Narrow shafts twist around spiraling mineral veins.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_quarantine_zone.png" class="image"><img alt="D quarantine zone.png" src="images/D_quarantine_zone.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Subterranean Contact Zone
+</td>
+<td><code>d_underground_contact_zone</code>
+</td>
+<td>Subterranean Civilization event chain (Establish Communications)
+</td>
+<td>Max Generator Districts: <span class="effect-green" style="font-weight:bold;">+2</span> <br />Max Districts: <span class="effect-green" style="font-weight:bold;">+2</span> <br />Subterranean Liaison Officer Jobs: <span class="effect-green" style="font-weight:bold;">+1</span> <br /><span class="effect-green" style="font-weight:bold;">+1</span> Subterranean Liaison Officer Job per <span class="effect-yellow" style="font-weight:bold;">20</span> pops
+</td>
+<td><i>An area were Subterranean dwellers and Surfacers can work together towards peace and prosperity.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_fungal_caves.png" class="image"><img alt="D fungal caves.png" src="images/D_fungal_caves.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Subterranean Farming Caverns
+</td>
+<td><code>d_underground_farm</code>
+</td>
+<td>Subterranean Civilization event chain (Destroy/Preemptive Strike)
+</td>
+<td>Max Agriculure Districts: <span class="effect-green" style="font-weight:bold;">+3</span> <br />Max Districts: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>A network of vast caverns which contain numerous fungal farms, hunting areas, and lakes teeming with edible flora and fauna.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_underwater_vent.png" class="image"><img alt="D underwater vent.png" src="images/D_underwater_vent.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Subterranean Generator Areas
+</td>
+<td><code>d_underground_generator</code>
+</td>
+<td>Subterranean Civilization event chain (Destroy/Preemptive Strike)
+</td>
+<td>Max Generator Districts: <span class="effect-green" style="font-weight:bold;">+3</span> <br />Max Districts: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>Subterranean rivers and the geothermal energy from the molten core of the planet offer vast potential for energy generation.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crystalline_caverns.png" class="image"><img alt="D crystalline caverns.png" src="images/D_crystalline_caverns.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Subterranean Mining Sites
+</td>
+<td><code>d_underground_mine</code>
+</td>
+<td>Subterranean Civilization event chain (Destroy/Preemptive Strike)
+</td>
+<td>Max Mining Districts: <span class="effect-green" style="font-weight:bold;">+3</span> <br />Max Districts: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>Underground tunnels lead to a variety of mineral-rich ore veins inaccessible from the surface.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_building_complex.png" class="image"><img alt="D building complex.png" src="images/D_building_complex.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Toy Factory Complex
+</td>
+<td><code>d_toy_factory_complex</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+10%</span> <br /><a href="/Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Engineering Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>Complex machinery ceaseless molds complex polymers into small items of varying shapes and inscrutable purpose.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_bunker_door.png" class="image"><img alt="D bunker door.png" src="images/D_bunker_door.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Underground Vault
+</td>
+<td><code>d_underground_vault</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Society Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>A massive underground vault, intended as a bomb shelter by this world's original inhabitants. The vault's occupants turned on each other when their food ran out.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_toxic_kelp.png" class="image"><img alt="D toxic kelp.png" src="images/D_toxic_kelp.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Wetware Computer
+</td>
+<td><code>d_wetware_computer</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Engineering Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+20%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span>
+</td>
+<td><i>The oceans of this world are almost completely covered in a fine network of algae that appear to be a primitive wetware computer</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_levitating_rocks.png" class="image"><img alt="D levitating rocks.png" src="images/D_levitating_rocks.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Zone A
+</td>
+<td><code>d_the_zone</code>
+</td>
+<td>Unknown
+</td>
+<td><a href="/Physics_research.html" title="Physics research"><img alt="Physics research.png" src="images/Physics_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Physics Research from <a href="/Jobs.html" title="Jobs"><img alt="Pop job.png" src="images/Pop_job.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="26" data-file-height="28" /></a> Jobs: <span class="effect-green" style="font-weight:bold;">+15%</span> <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+2</span> <br />Produces: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>4
+</td>
+<td><i>A thirteen-by-thirteen kilometer stretch of land on this planet is a ruin of unknown origin, littered with many bizarre and unique alien artifacts. Bafflingly, it also produces sensations of deep contentment in its visitors.</i>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Unique_features">Unique features</span></h3>
+<p>A number of unique planets in the galaxy come with special Planetary Features.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%">
+</th>
+<th>Feature
+</th>
+<th>Key code
+</th>
+<th>Planets
+</th>
+<th>Effects
+</th>
+<th width="30%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_alien_pets_deposit.png" class="image"><img alt="D alien pets deposit.png" src="images/D_alien_pets_deposit.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Valley of Zanaam
+</td>
+<td><code>d_valley_of_zanaam</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Zanaam</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Research" title="Research"><img alt="Research.png" src="images/Research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> +30% Research from Jobs <br />Researcher Jobs: <span class="effect-green" style="font-weight:bold;">+4</span>
+</td>
+<td><i>This Valley is home to a mysterious obelisk that is covered in letters from a dead alien language. It hums with power and those in its proximity suffer headaches.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="D organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Junk Canals
+</td>
+<td><code>d_junk_canals</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Junk Rattlings planets</li></ul>
+</td>
+<td>+3 Max Agriculture Districts
+</td>
+<td><i>These narrow canals shake around the junk piles, and some adjacent soil is surprisingly fertile.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="D organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Junk Hollows
+</td>
+<td><code>d_junk_hollows</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Junk Rattlings planets</li></ul>
+</td>
+<td>+3 Max Generator Districts
+</td>
+<td><i>These hollows deep beneath the surface junk would serve well as isolated reactor chambers.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="D organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Junk Wastes
+</td>
+<td><code>d_junk_wastes</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Junk Rattlings planets</li></ul>
+</td>
+<td>+3 Max Mining Districts
+</td>
+<td><i>The wastes stretch as far as one can see, with occasional pieces of larger junk jutting up out of the ground.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_metal_boneyard.png" class="image"><img alt="D metal boneyard.png" src="images/D_metal_boneyard.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Metal Boneyards
+</td>
+<td><code>d_metal_boneyard</code>
+</td>
+<td>
+<ul><li><a href="/Machine_intelligence_civics.html#Driven_Assimilator" title="Driven Assimilator"><img alt="Driven Assimilator" src="images/Civic_machine_assimilator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Driven Assimilator and <a href="/Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator homeworlds</li></ul>
+</td>
+<td>
+<ul><li>+4 Max Mining Districts</li>
+<li><a href="https://stellaris.paradoxwikis.com/Pop_society_output" title="Pop society output"><img alt="Pop resource society research mult.png" src="images/Pop_resource_society_research_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> +10% Society Research from Jobs</li></ul>
+</td>
+<td><i>The hollowed-out metal skeletons of fallen infrastructure seem almost to groan as the wind whistles through them.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="D organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Organic Landfills
+</td>
+<td><code>d_organic_landfill</code>
+</td>
+<td>
+<ul><li><a href="/Machine_intelligence_civics.html#Driven_Assimilator" title="Driven Assimilator"><img alt="Driven Assimilator" src="images/Civic_machine_assimilator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Driven Assimilator and <a href="/Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator homeworlds</li></ul>
+</td>
+<td>
+<ul><li>+4 Max Generator Districts</li>
+<li><a href="https://stellaris.paradoxwikis.com/Pop_society_output" title="Pop society output"><img alt="Pop resource society research mult.png" src="images/Pop_resource_society_research_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> +10% Society Research from Jobs</li></ul>
+</td>
+<td><i>Toxic biohazard waste rots and fumes in vast heaps under the sun.</i>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Earth_features">Earth features</span></h4>
+<p>Earth will always feature 9 unique Planetary Features instead of randomized ones. Their description also reveals part of humanity's history before the events of Stellaris.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%">
+</th>
+<th>Feature
+</th>
+<th>Key code
+</th>
+<th>Effects
+</th>
+<th width="50%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_city.png" class="image"><img alt="D city.png" src="images/D_city.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Delhi Sprawl
+</td>
+<td><code>d_delhi_sprawl</code>
+</td>
+<td>+2 Max Generator Districts
+</td>
+<td><i>Lakshmi Commerce Tower was the tallest building on Earth for the better part of the 22nd century, and its unique shape remains an iconic feature of the Delhi skyline.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_city.png" class="image"><img alt="D city.png" src="images/D_city.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>BosWash Metropolitan Axis
+</td>
+<td><code>d_boswash_metropolitan_axis</code>
+</td>
+<td>+3 Max Generator Districts
+</td>
+<td><i>The BosWash Riots traumatized an entire generation and led to sweeping legal reforms. Never Forget!</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_building_complex.png" class="image"><img alt="D building complex.png" src="images/D_building_complex.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Pearl River Agglomerate
+</td>
+<td><code>d_pearl_river_agglomerate</code>
+</td>
+<td>+3 Max Generator Districts
+</td>
+<td><i>The first region on Earth to be officially designated a megacity. Several other developing urban regions would eventually adopt their own versions of the Golden Delta's successful anti-pollution policies.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_quarantine_zone.png" class="image"><img alt="D quarantine zone.png" src="images/D_quarantine_zone.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Mauritanian Security Zone
+</td>
+<td><code>d_mauritanian_security_zone</code>
+</td>
+<td>+1 Max Mining Districts
+</td>
+<td><i>Unexploded munitions are still occasionally found near the compound where Colonel Tetchu and the remnants of his brigade made their famous last stand.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_marvelous_oasis.png" class="image"><img alt="D marvelous oasis.png" src="images/D_marvelous_oasis.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Mesopotamian Urban Corridor
+</td>
+<td><code>d_mesopotamian_urban_corridor</code>
+</td>
+<td>+3 Max Mining Districts
+</td>
+<td><i>The megalopolis that stretches along most of the Fertile Crescent is in itself a monument to this ancient birthplace of civilization.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crater.png" class="image"><img alt="D crater.png" src="images/D_crater.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Great Albertan Crater
+</td>
+<td><code>d_great_albertan_crater</code>
+</td>
+<td>+3 Max Mining Districts
+</td>
+<td><i>When 711494 Satis approached Earth and triggered the Great Panic of '72, everyone thought this was it - the Big One had finally arrived. Fortunately, it wasn't big enough to cause an extinction event. Unfortunately, it wiped out much of Alberta.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_radioactive_wasteland.png" class="image"><img alt="D radioactive wasteland.png" src="images/D_radioactive_wasteland.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Scandinavian Reclamation Sector
+</td>
+<td><code>d_scandinavian_reclamation_sector</code>
+</td>
+<td>+1 Max Agriculture Districts
+</td>
+<td><i>Reclamation efforts in the late 22nd century eliminated all but the most stubborn pockets of radiation, and mutation levels are now at an all-time low since the Containment Breach.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_green_hills.png" class="image"><img alt="D green hills.png" src="images/D_green_hills.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Saharan Irrigation Project
+</td>
+<td><code>d_saharan_irrigation_project</code>
+</td>
+<td>+4 Max Agriculture Districts
+</td>
+<td><i>Few today remember the vicious ridicule that Operation Green Sahara faced when it was first proposed by Professor Izquierdo.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_toxic_kelp.png" class="image"><img alt="D toxic kelp.png" src="images/D_toxic_kelp.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a>
+</td>
+<td>Pacific Algae Tracts
+</td>
+<td><code>d_pacific_algae_tracts</code>
+</td>
+<td>+3 Max Agriculture Districts
+</td>
+<td><i>Invisible until you plunge beneath the waves, the algae tracts seem to stretch into infinity.</i>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Blockers">Blockers</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p>Blockers are obstacles that block Planetary Features. Until a Blocker is cleared the obstructed Planetary Feature cannot be exploited. Each also reduces the maximum number of Districts on the planet by 1 or more, so they are worth clearing even if the extra possible districts are never built. Blockers can be cleared for a modest cost in minerals, energy, and time, if the player has researched the required technology. There are 9 such technologies, one for every normal blocker type, and they are all relatively easy to research. All normal blockers cost the same amount of resources to remove.
+</p><p>Taking the <a href="https://stellaris.paradoxwikis.com/File%3AAp_mastery_of_nature.png" class="image"><img alt="Ap mastery of nature.png" src="images/Ap_mastery_of_nature.png" decoding="async" loading="lazy" width="21" height="24" data-file-width="52" data-file-height="60" /></a> Mastery of Nature ascension perk will reduce the cost of clearing blocks by 33%.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%"></th>
+<th width="12%">Blocker
+</th>
+<th width="15%">Key code
+</th>
+<th width="15%">Spawn chance
+</th>
+<th width="11%">Removal cost
+</th>
+<th width="25%">Required removal tech
+</th>
+<th width="20%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_active_volcano.png" class="image"><img alt="D active volcano.png" src="images/D_active_volcano.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Active Volcano
+</td>
+<td><code>d_active_volcano</code>
+</td>
+<td>
+<ul><li>x0.5 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine</li>
+<li>x0.5 if <a href="https://stellaris.paradoxwikis.com/Planet_Size" title="Planet Size"><img alt="Planet Size.png" src="images/Planet_Size.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Planet Size &lt; 15</li>
+<li>x0 if world is a moon</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1000 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 270
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Volcano_Removal" title="Volcano Removal"><img alt="Tech tb volcano.png" src="images/Tech_tb_volcano.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Deep Crust Engineering
+</td>
+<td><i>There is an active volcano in this region, spewing forth lava and volcanic gases.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crater.png" class="image"><img alt="D crater.png" src="images/D_crater.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Bomb Crater
+</td>
+<td><code>d_bomb_crater</code>
+</td>
+<td>
+<ul><li>x0 if not <a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb World</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 800 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 270
+</td>
+<td>
+</td>
+<td><i>This massive crater was created by the detonation of a particularly devastating hydrogen bomb.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_city_ruins.png" class="image"><img alt="D city ruins.png" src="images/D_city_ruins.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>City Ruins
+</td>
+<td><code>d_city_ruins</code>
+</td>
+<td>
+<ul><li>x0 if not <a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb World</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1200 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 360
+</td>
+<td>
+</td>
+<td><i>Once a great city, now just a metal boneyard stretching as far as the eye can see.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dangerous_wildlife_blocker.png" class="image"><img alt="D dangerous wildlife blocker.png" src="images/D_dangerous_wildlife_blocker.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Dangerous Wildlife
+</td>
+<td><code>d_dangerous_wildlife_blocker</code>
+</td>
+<td>
+<ul><li>x2 if <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_dangerous_wildlife.png" class="image"><img alt="Pm dangerous wildlife.png" src="images/Pm_dangerous_wildlife.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/Hostile_Fauna" title="Hostile Fauna"><img alt="Hostile Fauna" src="images/Pm_frame_yellow.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Hostile Fauna modifier</li>
+<li>x10 if <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_titanic_life.png" class="image"><img alt="Pm titanic life.png" src="images/Pm_titanic_life.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/Titanic_Life" title="Titanic Life"><img alt="Titanic Life" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Titanic Life modifier</li>
+<li>x0.5 if <a href="https://stellaris.paradoxwikis.com/Planet_Size" title="Planet Size"><img alt="Planet Size.png" src="images/Planet_Size.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Planet Size &lt; 15</li>
+<li>x0 if world is a moon</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 500 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 270
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="/Society_research.html#Dangerous_Wildlife_Removal" title="Dangerous Wildlife Removal"><img alt="Dangerous Wildlife Removal" src="images/Tech_tb_dangerous_wildlife.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a>&#32;Dangerous Wildlife Removal
+</td>
+<td><i>The wildlife in this region is particularly lethal, with many dangerous predators and poisonous plants.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_deep_sinkhole.png" class="image"><img alt="D deep sinkhole.png" src="images/D_deep_sinkhole.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Deep Sinkhole
+</td>
+<td><code>d_deep_sinkhole</code>
+</td>
+<td>
+<ul><li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid</li>
+<li>x2 if  <a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 500 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Deep_Sinkhole_Removal" title="Deep Sinkhole Removal"><img alt="Tech tb deep sinkhole.png" src="images/Tech_tb_deep_sinkhole.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Subterranean Colonization
+</td>
+<td><i>A colossal sinkhole covers most of this region.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dense_jungle.png" class="image"><img alt="D dense jungle.png" src="images/D_dense_jungle.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Dense Jungle
+</td>
+<td><code>d_dense_jungle</code>
+</td>
+<td>
+<ul><li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical</li>
+<li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 500 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Dense_Jungle_Removal" title="Dense Jungle Removal"><img alt="Tech tb dense jungle.png" src="images/Tech_tb_dense_jungle.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Selective Defoliants
+</td>
+<td><i>This entire region is completely overgrown with thick, impassable jungle.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_massive_glacier.png" class="image"><img alt="D massive glacier.png" src="images/D_massive_glacier.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Massive Glacier
+</td>
+<td><code>d_massive_glacier</code>
+</td>
+<td>
+<ul><li>x2 if  <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine</li>
+<li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arctic.png" class="image"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arctic</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 500 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Massive_Glacier_Removal" title="Massive Glacier Removal"><img alt="Tech tb massive glacier.png" src="images/Tech_tb_massive_glacier.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Climate Control Network
+</td>
+<td><i>An immense body of dense ice covers this region.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_mountain_range.png" class="image"><img alt="D mountain range.png" src="images/D_mountain_range.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Mountain Range
+</td>
+<td><code>d_mountain_range</code>
+</td>
+<td>
+<ul><li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_alpine.png" class="image"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Alpine</li>
+<li>x0.5 if <a href="https://stellaris.paradoxwikis.com/Planet_Size" title="Planet Size"><img alt="Planet Size.png" src="images/Planet_Size.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Planet Size &lt; 15</li>
+<li>x0 if world is a moon</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1000 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 270
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Mountain_Range_Removal" title="Mountain Range Removal"><img alt="Tech tb mountain range.png" src="images/Tech_tb_mountain_range.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Planetary Resurfacing
+</td>
+<td><i>A vast range of tall and impassable mountains stretches across this region.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_noxious_swamp.png" class="image"><img alt="D noxious swamp.png" src="images/D_noxious_swamp.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Noxious Swamp
+</td>
+<td><code>d_noxious_swamp</code>
+</td>
+<td>
+<ul><li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 500 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Noxious_Swamp_Removal" title="Noxious Swamp Removal"><img alt="Tech tb noxious swamp.png" src="images/Tech_tb_noxious_swamp.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Xeno-Hydraulic Mastery
+</td>
+<td><i>Treacherous swamplands and bogs surrounded by putrid gases.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_quicksand_basin.png" class="image"><img alt="D quicksand basin.png" src="images/D_quicksand_basin.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Quicksand Basin
+</td>
+<td><code>d_quicksand_basin</code>
+</td>
+<td>
+<ul><li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 500 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Quicksand_Basin_Removal" title="Quicksand Basin Removal"><img alt="Tech tb quicksand basin.png" src="images/Tech_tb_quicksand_basin.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Soil Remediation
+</td>
+<td><i>A vast body of quicksand covers this region, making construction impossible.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_radioactive_wasteland.png" class="image"><img alt="D radioactive wasteland.png" src="images/D_radioactive_wasteland.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Radioactive Wasteland
+</td>
+<td><code>d_radioactive_wasteland</code>
+</td>
+<td>
+<ul><li>x0 if not <a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb World</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 800 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 270
+</td>
+<td>
+</td>
+<td><i>Few organisms can survive in this desolate, irradiated wasteland.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_toxic_kelp.png" class="image"><img alt="D toxic kelp.png" src="images/D_toxic_kelp.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Toxic Kelp
+</td>
+<td><code>d_toxic_kelp</code>
+</td>
+<td>
+<ul><li>x2 if <a href="https://stellaris.paradoxwikis.com/File%3APlanet_ocean.png" class="image"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Ocean</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 500 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATB_Removal.png" class="image" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <a href="https://stellaris.paradoxwikis.com/Toxic_Kelp_Removal" title="Toxic Kelp Removal"><img alt="Tech tb toxic kelp.png" src="images/Tech_tb_toxic_kelp.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="52" data-file-height="52" /></a> Ocean Ecology Management
+</td>
+<td><i>A thick forest of kelp that is toxic to most forms of life covers the ocean in this region.</i>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Special_blockers">Special blockers</span></h4>
+<p>These blockers are not generated randomly. They are either a result of particular actions, other are tied to events or created in preset systems. A few blockers cannot be removed, with the upside being that they add adjacency bonuses or unique effects.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%"></th>
+<th width="12%">Blocker
+</th>
+<th width="15%">Key code
+</th>
+<th width="15%">Spawn chance
+</th>
+<th width="11%"><a href="https://stellaris.paradoxwikis.com/Tile_Blocker" title="Tile Block Removal"><img alt="Tile Block Removal" src="images/TB_Removal.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> Clear cost
+</th>
+<th width="15%">Notes</th>
+<th width="30%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/Special%3AUpload" class="new" title="File:Ancient ruins.png">File:Ancient ruins.png</a></td>
+<td>Ancient Ruins
+</td>
+<td><code>d_ancient_ruins</code>
+</td>
+<td>Keepers of Knowledge ringworlds without Synthetic Dawn
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td>
+</td>
+<td><i>Once a great city built with highly advanced technology, now just ruins and rubble that has been abandoned for centuries.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crater.png" class="image"><img alt="D crater.png" src="images/D_crater.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Impact Crater
+</td>
+<td><code>d_crater</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_nuked.png" class="image"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tomb world
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 100
+</td>
+<td>Can appear on tomb worlds with the orbital debris modifier
+</td>
+<td><i>Something collided with the surface of this world at some point, creating this massive impact crater.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_deep_sinkhole.png" class="image"><img alt="D deep sinkhole.png" src="images/D_deep_sinkhole.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Rifts
+</td>
+<td><code>d_egg_cracking</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_desert.png" class="image"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Desert</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 120
+</td>
+<td>Generated by the Voidspawn event
+</td>
+<td><i>Seismological phenomena are causing the planet crust to crack, spewing out sulfuric gases and toxic slime.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/Special%3AUpload" class="new" title="File:Ancient ruins.png">File:Ancient ruins.png</a></td>
+<td>Ruined Stasis Chambers
+</td>
+<td><code>d_ancient_cryo_chambers</code>
+</td>
+<td>Ancient Caretakers ringworlds
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 180
+</td>
+<td>
+</td>
+<td><i>A sprawling, partially ruined complex containing millions of stasis chambers. The complex is unpowered and only trace biomatter remains in the chambers' occupants, who appear to have come from dozens of distinct biological species.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_deep_sinkhole.png" class="image"><img alt="D deep sinkhole.png" src="images/D_deep_sinkhole.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Subterranean Entrance
+</td>
+<td><code>d_sinkhole_subterraneans</code>
+</td>
+<td>Any
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 100
+</td>
+<td>Generated by the Subterranean Civilization event
+</td>
+<td><i>A large hole in the ground that leads into the extensive cave network stretching beneath the surface of this world.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dangerous_wildlife_blocker.png" class="image"><img alt="D dangerous wildlife blocker.png" src="images/D_dangerous_wildlife_blocker.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Titanic Lifeforms
+</td>
+<td><code>d_titanic_life_blocker</code>
+</td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_titanic_life.png" class="image"><img alt="Pm titanic life.png" src="images/Pm_titanic_life.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/Titanic_Life" title="Titanic Life"><img alt="Titanic Life" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Titanic Life
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="32" data-file-height="32" />
+</td>
+<td>Generated via events
+</td>
+<td><i>Numerous Titanic aliens make this area their home, it would be wise to avoid it.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_infestation.png" class="image"><img alt="D infestation.png" src="images/D_infestation.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Toxic Wasteland
+</td>
+<td><code>d_fungoid_extermination</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Gaia
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 60 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 120
+</td>
+<td>Generated by the Paradise Lost event
+</td>
+<td><i>A noxious slush of chemical solvents and dissolved organic matter make this area uninhabitable.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dense_jungle.png" class="image"><img alt="Dense jungle.png" src="images/D_dense_jungle.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Wandering Forest Reserve
+</td>
+<td><code>d_wandering_forest_reserve</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li></ul>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="32" data-file-height="32" />
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Adjacency" title="Adjacency"><img alt="Adjacency.png" src="images/Adjacency.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="55" data-file-height="55" /></a> <a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> <span class="effect-green" style="font-weight:bold;">+3</span> Society research</li>
+<li>Created by choosing to study the Migrating Forests</li></ul>
+</td>
+<td><i>A nature reserve that covers the vast expanse of territory where the wandering forests range.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_dense_jungle.png" class="image"><img alt="Dense jungle.png" src="images/D_dense_jungle.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Wandering Forests
+</td>
+<td><code>d_wandering_forests</code>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Arid</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_continental.png" class="image"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Continental</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_savannah.png" class="image"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Savannah</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tropical.png" class="image"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tropical</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3APlanet_tundra.png" class="image"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> Tundra</li></ul>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="32" data-file-height="32" />
+</td>
+<td>
+<ul><li>Generated by the Migrating Forests event</li>
+<li>Will move periodically to any free space</li></ul>
+</td>
+<td><i>The mobile forests of this world frequently migrate en masse to new regions, disrupting efforts at building roads, power lines and other infrastructure.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AXeno_preserve.png" class="image"><img alt="Xeno preserve.png" src="images/Xeno_preserve.png" decoding="async" loading="lazy" width="82" height="64" data-file-width="82" data-file-height="64" /></a></td>
+<td>Xeno Preserve
+</td>
+<td><code>d_xeno_preserve</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_gaia.png" class="image"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="38" data-file-height="38" /></a> The Preserve
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="32" data-file-height="32" />
+</td>
+<td>
+<ul><li>Can be replaced with a building as a result of Enigmatic Observers requests</li></ul>
+</td>
+<td><i>This entire region has been set aside as a reservation for endangered alien species.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_infestation.png" class="image"><img alt="D infestation.png" src="images/D_infestation.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Exofungus Infestation
+</td>
+<td><code>d_exofungus_blocker</code>
+</td>
+<td>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_unstable_tectonics.png" class="image"><img alt="Pm unstable tectonics.png" src="images/Pm_unstable_tectonics.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="/Planet_modifiers.html#Exofungus_Infestation" title="Exofungus Infestation"><img alt="Exofungus Infestation" src="images/Pm_frame_red.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Exofungus Infestation</li></ul>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300 <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 100
+</td>
+<td>Generated on planets with the Exofungus Infestation planet modifier
+</td>
+<td><i>The exofungus that has invaded this planet spreads like a cancer, choking the terrain and interfering with infrastructure.</i>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Homeworld_blockers">Homeworld blockers</span></h4>
+<p>Two or three of each of these blockers are automatically generated on every empire's homeworld. They don't require technology to be removed and all cost 300 <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Energy and take 120 days to remove.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th width="1%">
+</th>
+<th>Blocker
+</th>
+<th>Key code
+</th>
+<th>Clear rewards
+</th>
+<th>Source
+</th>
+<th width="29%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_slums.png" class="image"><img alt="Sprawling slums.png" src="images/D_slums.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Sprawling Slums
+</td>
+<td><code>d_decrepit_dwellings</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> 1 Pop
+</td>
+<td>
+<ul><li>Organic homeworlds</li>
+<li>Can also appear from the Lost to Bureaucracy event</li></ul>
+</td>
+<td><i>This region is covered by vast shanty towns and slums filled with the poor and the outcast. It contributes nothing to society.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_metal_boneyard.png" class="image"><img alt="Metal boneyard.png" src="images/D_metal_boneyard.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Industrial Wasteland
+</td>
+<td><code>d_failing_infrastructure</code>
+</td>
+<td>
+</td>
+<td>
+<ul><li>Organic and homeworlds</li>
+<li>Can also appear from the Lost to Bureaucracy event</li></ul>
+</td>
+<td><i>This region is covered by ruined industrial complexes and toxic soil; detritus from a past age of progress.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_deep_sinkhole.png" class="image"><img alt="Deep sinkhole.png" src="images/D_deep_sinkhole.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Collapsed Burrows
+</td>
+<td><code>d_collapsed_burrows</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> 1 Pop
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Hive_Mind" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind homeworlds
+</td>
+<td><i>This site once housed extensive underground tunnel systems inhabited by the Hive, but was abandoned due to overexploitation of local resources and wildlife.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_crater.png" class="image"><img alt="Crater.png" src="images/D_crater.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Abandoned Strip Mine
+</td>
+<td><code>d_strip_mine</code>
+</td>
+<td>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence homeworlds
+</td>
+<td><i>This area was heavily strip mined in the past, by older and more primitive machine models that unfortunately were not programmed to take future development of the region into account.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_slums.png" class="image"><img alt="Sprawling slums.png" src="images/D_slums.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Unsupervised Settlement
+</td>
+<td><code>d_unsupervised_settlement</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> 1 Pop
+</td>
+<td><a href="/Machine_intelligence_civics.html#Rogue_Servitor" title="Rogue Servitor"><img alt="Rogue Servitor" src="images/Civic_machine_servitor.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Rogue Servitor homeworlds
+</td>
+<td><i>A pocket of organic society on this world still exists outside of machine supervision. Violence, disease and starvation runs rampant inside the settlement's walls, whose inhabitants have regressed technologically by several centuries.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_city_ruins.png" class="image"><img alt="City ruins.png" src="images/D_city_ruins.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Silent Ruins
+</td>
+<td><code>d_assimilators_ruins</code><i>Not sure...</i>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="Organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a> Organic Landfills Planetary Feature
+</td>
+<td><a href="/Machine_intelligence_civics.html#Driven_Assimilator" title="Driven Assimilator"><img alt="Driven Assimilator" src="images/Civic_machine_assimilator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Driven Assimilator homeworlds
+</td>
+<td><i>This once major settlement is now a crumbling ruin, occupied only by the decaying bodies of those organics that chose self-termination rather than be assimilated.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_city_ruins.png" class="image"><img alt="City ruins.png" src="images/D_city_ruins.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Former Organic City
+</td>
+<td><code>d_irradiated_ruins</code><i>Not sure...</i>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_metal_boneyard.png" class="image"><img alt="Metal boneyard.png" src="images/D_metal_boneyard.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a> Metal Boneyards Planetary Feature
+</td>
+<td><a href="/Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator homeworlds
+</td>
+<td><i>The charred and irradiated ruins of what was once a major organic population center. Those buildings that still remain standing contain nothing but ashes now.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_radioactive_wasteland.png" class="image"><img alt="Radioactive wasteland.png" src="images/D_radioactive_wasteland.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Battlefield Remains
+</td>
+<td><code>d_exterminators_ruins</code><i>Not sure...</i>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_organic_landfill.png" class="image"><img alt="Organic landfill.png" src="images/D_organic_landfill.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a> Organic Landfills Planetary Feature
+</td>
+<td><a href="/Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator homeworlds
+</td>
+<td><i>Tens of thousands of burnt warmachines and the twisted skeletal remains of organic soldiers litter the ground at this former battlefield. Residual pockets of radiation interfere with most electronics.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_city_ruins.png" class="image"><img alt="City ruins.png" src="images/D_city_ruins.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Settled Ruins
+</td>
+<td><code>d_tomb_world_ruins</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Pop" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a> 1 Pop
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Post-Apocalyptic" title="Post-Apocalyptic"><img alt="Origins post apocalyptic.png" src="images/Origins_post_apocalyptic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Post-Apocalyptic homeworlds
+</td>
+<td><i>A scattered population of scavengers are eking out a desperate existence in the ruins of this once major city.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_radioactive_wasteland.png" class="image"><img alt="Radioactive wasteland.png" src="images/D_radioactive_wasteland.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Radiation Zone
+</td>
+<td><code>d_tomb_world_wasteland</code>
+</td>
+<td>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Post-Apocalyptic" title="Post-Apocalyptic"><img alt="Origins post apocalyptic.png" src="images/Origins_post_apocalyptic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Post-Apocalyptic homeworlds
+</td>
+<td><i>A region that was the target of numerous nuclear warheads. Though the radiation in this area has gone down since the initial impact, it is still unfit for habitation barring a major clean-up effort.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_boggy_fens.png" class="image"><img alt="Boggy fens.png" src="images/D_boggy_fens.png" decoding="async" loading="lazy" width="98" height="75" data-file-width="98" data-file-height="75" /></a></td>
+<td>Great Pacific Algae Tract
+</td>
+<td><code>d_great_pacific_garbage_patch</code>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AD_toxic_kelp.png" class="image"><img alt="Toxic kelp.png" src="images/D_toxic_kelp.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a> Pacific Algae Tracts Planetary Feature
+</td>
+<td>Earth
+</td>
+<td><i>A swirling miasma of plastic refuse covers a good portion of Earth's largest ocean.</i>
+</td></tr></tbody></table>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">List obtained from <code>common/deposits/01_planetary_deposits.txt</code> file.</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181048
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.373 seconds
+Real time usage: 0.460 seconds
+Preprocessor visited node count: 17209/1000000
+Post‐expand include size: 56527/2097152 bytes
+Template argument size: 7735/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 166/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  130.527      1 -total
+ 72.03%   94.014    145 Template:Icon
+ 16.51%   21.554     20 Template:Iconify
+ 14.35%   18.732     91 Template:Green
+ 12.11%   15.813     33 Template:Icon/m
+  8.81%   11.499     92 Template:Symbolfirst
+  7.22%    9.423     22 Template:Icon/t
+  6.78%    8.852      2 Template:Icon/h
+  6.30%    8.228      1 Template:Icon/a
+  5.26%    6.866     14 Template:Icon/p
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:5940-0!canonical and timestamp 20260707181048 and revision id 110625.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

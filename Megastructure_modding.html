@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Megastructure modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Megastructure modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p><a href="/Megastructures.html" title="Megastructures">Megastructures</a> are massive space objects to be built by Constructor ships.
+</p><p>They are defined at "common/megastructures/xxx.txt".
+</p>
+<h2><span class="mw-headline" id="Data_Structure">Data Structure</span></h2>
+<table class="wikitable mw-collapsible">
+
+<tbody><tr>
+<th width="20%">Property
+</th>
+<th width="27%">Built Around a Planet
+</th>
+<th width="27%">Freely Placed
+</th>
+<th width="26%">Upgraded
+</th></tr>
+<tr>
+<td><b>portrait = &lt;GFX entry&gt;</b>
+</td>
+<td colspan="3">Determines the image of this Megastructure to be displayed in the GUI.
+</td></tr>
+<tr>
+<td><b>entity = &lt;entity key&gt;</b><br /><b>construction_entity = &lt;entity key&gt;</b>
+</td>
+<td colspan="3">Determines the entity of this Megastructure and the placeholder entity while it’s being constructed by the Constructor ship.
+</td></tr>
+<tr>
+<td><b>entity_offset = { x = &lt;int&gt; y = &lt;int&gt; }</b>
+</td>
+<td>Moves the position of this Megastructure relatively to the Planet.
+</td>
+<td rowspan="2" colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>place_entity_on_planet_plane = &lt;yes/no&gt;</b>
+</td>
+<td>If set to "yes", megastructure would be placed on the same Z-coordinate as the planet. If set to "no" it will be above the planet.
+</td></tr>
+<tr>
+<td><b>show_galactic_map_icon = &lt;yes/no&gt;</b>
+</td>
+<td colspan="3">Default yes. If no, having this Megastructure doesn't trigger the Megastructure galaxy view icon.
+</td></tr>
+<tr>
+<td><b>potential</b>
+</td>
+<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this Megastructure appear in the construction list. (Country scope)
+</td>
+<td>If evaluated to false, this Megastructure doen't appear as an upgrade option.
+</td></tr>
+<tr>
+<td><b>possible</b>
+</td>
+<td colspan="2">A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine can this Megastructure be built in a solar system. (Solar System scope, FROM is the builder empire)
+</td>
+<td>If evaluated to false, this Megastructure as an upgrade option will be disabled and grayed out.
+</td></tr>
+<tr>
+<td><b>placement_rules</b>
+<ul><li><b>planet_possible</b></li></ul>
+</td>
+<td>A nested block. The inner <code>planet_possible</code> is a block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine can this Megastructure be built on a Planet or Star. (Planet scope, FROM is the builder empire)
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>build_outside_gravity_well = &lt;yes/no&gt;</b>
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>If yes, this Megastructure is built outside the system gravity well and doesn't need to be built around a Planet.
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>upgrade_from = { &lt;megastructure key&gt; }</b><br /><b>upgrade_desc = &lt;default/hide&gt;</b>
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td>A list of Megastructures that can be used as a base to upgrade into This.
+<p>Don't specify a Megastructure as a pre-upgrade version of 2 or more Upgraded Megastructures.
+</p><p>If <code>upgrade_desc = hide</code>, this Megastructure doesn't appear in the tooltip in the Megastructure construction view. The level 4 Science Nexus is hidden from tooltip this way, because it can only be obtained by event.
+</p>
+</td></tr>
+<tr>
+<td><b>prerequisites = { &lt;technology key&gt; }</b>
+</td>
+<td colspan="3">Technologies required to build or upgrade into this Megastructure.
+</td></tr>
+<tr>
+<td><b>show_prereqs = &lt;yes/no&gt;</b><br /><b>prereq_name = &lt;localisation key&gt;</b>
+</td>
+<td colspan="3">Default no. If yes, this Megastructure will trigger a tooltip in the prerequisite tech that reads "Unlock Megastructure: My Megastructure".
+<p>If <code>prereq_name</code> is specified, the tooltip reads "Unlock Megastructure: My Megastructure Prereq Name".
+</p>
+</td></tr>
+<tr>
+<td><b>build_time = &lt;int&gt;</b>
+</td>
+<td colspan="3">Days it takes to build this Megastructure or upgrade an existing Megastructure into this.
+</td></tr>
+<tr>
+<td><b>resources</b>
+</td>
+<td colspan="3">An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> to determine the cost, production and upkeep of this Megastructure.
+</td></tr>
+<tr>
+<td><b>country_modifier</b>
+</td>
+<td colspan="3">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire.
+</td></tr>
+<tr>
+<td><b>station_modifier</b>
+</td>
+<td colspan="3">Used exclusively by the Mega Shipyard. Only one modifier (<code>starbase_shipyard_capacity_add = &lt;int&gt;</code>) is used here to make this Megastructure capable to build Ships.
+</td></tr>
+<tr>
+<td><b>ship_modifier</b>
+</td>
+<td colspan="3">Used exclusively by the Mega Shipyard. These modifiers apply to the Ships built by this Megastructure.
+</td></tr>
+<tr>
+<td><b>bypass_type = &lt;bypass key&gt;</b>
+</td>
+<td colspan="3">Specifies a Bypass type of this Megastructure. See <a href="/Bypass_modding.html" title="Bypass modding">Bypass modding</a> for details.
+</td></tr>
+<tr>
+<td><b>sensor_range = &lt;int&gt;</b><br /><b>hyperlane_range = &lt;int&gt;</b>
+</td>
+<td colspan="3">Determines the sensor range and hyperlane detection range of this Megastructure.
+</td></tr>
+<tr>
+<td><b>on_build_start</b>
+</td>
+<td colspan="3">A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed to the solar system scope when the construction or upgrade begins. Vanilla unused. (Solar System scope, FROM = builder empire, FROMFROM = the megastructure to be upgraded into this)
+</td></tr>
+<tr>
+<td><b>on_build_cancel</b>
+</td>
+<td colspan="2">A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed to the solar system scope when the construction is canceled. Vanilla unused. (Solar System scope, FROM is the builder empire)
+</td>
+<td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr>
+<tr>
+<td><b>on_build_complete</b>
+</td>
+<td colspan="3">A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed to the solar system scope when the construction or upgrade is finished. (Solar System scope, FROM = builder empire, FROMFROM = the megastructure)
+</td></tr>
+<tr>
+<td><b>ai_weight</b>
+</td>
+<td colspan="3">How much relatively the AI will want to build this. (Solar System scope, FROM is the builder empire)
+</td></tr>
+<tr>
+<td><s><i>construction_blocks_others = &lt;yes/no&gt;</i><br /><i>construction_blocked_by_others = &lt;yes/no&gt;</i></s><sup>(replaced with 3.4)</sup>
+</td>
+<td colspan="3">Both default yes.
+<p>Megastructures with both property being yes or undefined use megastructure construction capacity.
+</p><p>Megastructures with both property being no doesn't use megastructure construction capacity.
+</p><p>It’s not recommended to set one of them to "yes" and another to "no".
+</p>
+</td></tr>
+<tr>
+<td><b>construction_blocks_and_blocked_by</b> <sup>(with 3.4)</sup>
+</td>
+<td colspan="3">Default <code>multi_stage_type</code>
+<p>Use <code>none</code> if construction can not block and can not be blocked by any constructions.
+</p><p>Use <code>self_type</code> if construction blocks and blocked by same type of constructions.
+</p><p>Use <code>multi_stage_type</code> if construction blocks and blocked by multi-stage constructions.
+</p>
+</td></tr>
+<tr>
+<td><b>scales_with_planet = &lt;yes/no&gt;</b>
+</td>
+<td>Default = no
+</td>
+<td colspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Planetized_Megastructures">Planetized Megastructures</span></h2>
+<p>Some Megastructures, namely Habitats and Ringworlds, will be transformed into Planets once built. They spawn planets based on their own positions and then remove themselves by <code>remove_megastructure = FROMFROM</code>.
+</p><p>Additionally, there is an Effect executed on the Ringworld habitable segment: <code>trigger_megastructure_icon = yes</code>. This effect makes it so that having this planet in solar system triggers the Megastructure galaxy view icon, regardless of there being any megastructures-by-technical or not.
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a class="mw-selflink selflink">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181454
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.045 seconds
+Real time usage: 0.058 seconds
+Preprocessor visited node count: 420/1000000
+Post‐expand include size: 19505/2097152 bytes
+Template argument size: 8222/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   27.902      1 -total
+ 43.26%   12.070      1 Template:ModdingNavbox
+ 33.92%    9.464      1 Template:Version
+ 31.27%    8.725      1 Template:Navbox
+ 21.21%    5.919      7 Template:Icon
+ 20.67%    5.768      1 Template:Infobox
+ 10.32%    2.880     14 Template:Navboxgroup
+  9.27%    2.585      1 Template:Nowrap
+  9.13%    2.547      1 Template:Clear
+  8.93%    2.491      7 Template:Icon/n
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7566-0!canonical and timestamp 20260707181454 and revision id 80321.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On actions - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">On actions</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.7.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Custom_On_Actions"><span class="tocnumber">2</span> <span class="toctext">Custom On Actions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Performance"><span class="tocnumber">2.1</span> <span class="toctext">Performance</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Order_of_Events"><span class="tocnumber">3</span> <span class="toctext">Order of Events</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Firing_Behavior"><span class="tocnumber">4</span> <span class="toctext">Firing Behavior</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#List_of_Vanilla_On_Actions"><span class="tocnumber">5</span> <span class="toctext">List of Vanilla On Actions</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>Aside from the default polling another very common way to get an event triggered is <code>on_action</code>. The vanilla game itself has a number of events registered this way in <code>Stellaris\common\on_actions\00_on_actions.txt</code>
+</p><p>The situations of triggering range from polling less aggressive (monthly or yearly) to numerous developments of the galaxy like ending of a planetary invasion, survey, entering of a system and so forth. This is later part is comparable to registering an Event in a GUI Environment of many higher programming languages.
+</p><p>Registered events should be marked with "triggered only" modifier. As easily dozens of events can be registered to any one development (often belonging to the same chain) the triggers decide which events are actually called.
+</p>
+<h2><span class="mw-headline" id="Custom_On_Actions">Custom On Actions</span></h2>
+<p>Since 3.0 you can define your own "on_actions" in script by <a href="/Effects.html" title="Effects">effect</a> <code>fire_on_action = { on_action = &lt;string&gt; scopes = { from = X fromfrom = Y } }</code>.
+<s>Do note that when defining scopes, fire_on_action appears to be considered a scope and all non-event_target scopes require a prev added before them (<code>from = prev</code> will scope to the scope firing the on_action, and to scope to the previous scope <code>from = prevprev</code> must be used instead)</s>.<sup>(fixed in v3.2)</sup>
+In addition, non-global event_targets will not be available in the fired events if the <code>from</code> scope is overwritten.
+</p>
+<h3><span class="mw-headline" id="Performance">Performance</span></h3>
+<p>For planet, system, starbase, leader and pop events, it's recommended to use <a href="/Event_modding.html#Pre_triggers" title="Event modding">pre_triggers</a> (fast triggers that are checked before normal ones) to improve performance.
+</p>
+<h2><span class="mw-headline" id="Order_of_Events">Order of Events</span></h2>
+<p>When multiple events are registered to the same action, they will be fired in the order listed. If they are registered in multiple files, they are fired in ASCII-betical order. So, if you have a file <code>aaa_on_actions.txt</code> with <code>on_game_start = { events = { event.1 event.2 } }</code> and a file <code>bbb_on_actions.txt</code> with <code>on_game_start = { event = { event.3 event.4 } }</code>, then those events will be fired in the order event.1, event.2, event.3, event.4. The ID of the event has no effect.
+</p>
+<h2><span class="mw-headline" id="Firing_Behavior">Firing Behavior</span></h2>
+<p>Every time an On Action gets fired, it will:
+</p>
+<ul><li>Go through every single event in its <code>events = {}</code> block, exclude the ones that trigger false, and fire all the other events.</li>
+<li>Go through every single event in its <code>random_events = {}</code> block, exclude the ones that trigger false, roll weights, and fire one random valid event.
+<ul><li>Unlike <code>random_list = {}</code>, <code>random_events = {}</code> don't support weight modifiers, but you can add a <code>weight_multiplier = {}</code> block to the event itself.</li></ul></li></ul>
+<h2><span class="mw-headline" id="List_of_Vanilla_On_Actions">List of Vanilla On Actions</span></h2>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Name</th>
+<th>Desc</th>
+<th>Community Notes
+</th></tr>
+<tr>
+<td>on_game_start</td>
+<td>Triggers when the game starts</td>
+<td>
+</td></tr>
+<tr>
+<td>on_game_start_country</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_single_player_save_game_load</td>
+<td>No scope, like on_game_start<br />Does not run when loading MP saves due to OOS concerns</td>
+<td>Border related triggers/effects do not work.
+</td></tr>
+<tr>
+<td>on_monthly_pulse</td>
+<td>No scope, like on_game_start</td>
+<td>
+</td></tr>
+<tr>
+<td>on_monthly_pulse_pre_ftl_observation</td>
+<td>Via pre_ftl_tech_progress_situation / preftl.50<br />See also: on_monthly_pulse_pre_ftl_observation_broken_shackles (below)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_monthly_pulse_pre_ftl_observation_broken_shackles</td>
+<td>The following are considered valid for "Broken Shackles" empires observing their original civilizations; see also on_monthly_pulse_pre_ftl_observation (above)<br />Via pre_ftl_tech_progress_situation / preftl.50</td>
+<td>
+</td></tr>
+<tr>
+<td>on_yearly_pulse</td>
+<td>No scope, like on_game_start</td>
+<td>
+</td></tr>
+<tr>
+<td>on_bi_yearly_pulse</td>
+<td>No scope, like on_game_start</td>
+<td>
+</td></tr>
+<tr>
+<td>on_five_year_pulse</td>
+<td>No scope, like on_game_start</td>
+<td>
+</td></tr>
+<tr>
+<td>on_decade_pulse</td>
+<td>No scope, like on_game_start</td>
+<td>
+</td></tr>
+<tr>
+<td>on_mid_game_pulse</td>
+<td>No scope, like on_game_start</td>
+<td>
+</td></tr>
+<tr>
+<td>on_late_game_pulse</td>
+<td>No scope, like on_game_start</td>
+<td>
+</td></tr>
+<tr>
+<td>on_monthly_pulse_country</td>
+<td>this = country</td>
+<td>Only country_types with has_pulse_events = yes will get these events. Notably, Fallen/Awakened Empires will not get these events.
+</td></tr>
+<tr>
+<td>on_yearly_pulse_country</td>
+<td>this = country</td>
+<td>Only country_types with has_pulse_events = yes will get these events. Notably, Fallen/Awakened Empires will not get these events.
+</td></tr>
+<tr>
+<td>on_bi_yearly_pulse_country</td>
+<td>this = country</td>
+<td>Only country_types with has_pulse_events = yes will get these events. Notably, Fallen/Awakened Empires will not get these events.
+</td></tr>
+<tr>
+<td>on_five_year_pulse_country</td>
+<td>this = country</td>
+<td>Only country_types with has_pulse_events = yes will get these events. Notably, Fallen/Awakened Empires will not get these events.
+</td></tr>
+<tr>
+<td>on_five_year_random_pulse_country</td>
+<td>this = country, fired via action.220 from on_five_year_pulse_country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_five_year_random_pulse_overlord</td>
+<td>this = country, fired via action.420</td>
+<td>
+</td></tr>
+<tr>
+<td>on_five_year_random_pulse_pre_ftl</td>
+<td>this = country, fired via action.620</td>
+<td>
+</td></tr>
+<tr>
+<td>on_five_year_random_pulse_pre_ftl_tech_events</td>
+<td>this = country, fired via action.630</td>
+<td>
+</td></tr>
+<tr>
+<td>on_five_year_random_pulse_country_negative_list</td>
+<td>Why do this, you might ask, and not just use a random_list? Because on_actions check the triggers of the event before they try to fire them and exclude them from the list if they are false, so a list with no 0 weight will always fire an event so long as any of them are able to be fired<br />Used in operation_diplomatic_incident. Beware when changing.<br />this = country, fired via action.2211 from on_five_year_random_pulse_country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_decade_pulse_country</td>
+<td>this = country</td>
+<td>Only country_types with has_pulse_events = yes will get these events. Notably, Fallen/Awakened Empires will not get these events.
+</td></tr>
+<tr>
+<td>on_mid_game_pulse_country</td>
+<td>this = country</td>
+<td>Only country_types with has_pulse_events = yes will get these events. Notably, Fallen/Awakened Empires will not get these events.
+</td></tr>
+<tr>
+<td>on_decade_random_pulse_country_payback_broken_shackles</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_late_game_pulse_country</td>
+<td>this = country</td>
+<td>Only country_types with has_pulse_events = yes will get these events. Notably, Fallen/Awakened Empires will not get these events.
+</td></tr>
+<tr>
+<td>on_initialize_advanced_colony</td>
+<td>setup advanced colony. So far it has a pop on the capital and a colony shelter building matching the is_colony trigger<br />scope: planet<br />from: country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_become_advanced_empire</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_press_begin</td>
+<td>Triggers when pressing begin in the intro window<br />This = country to press begin</td>
+<td>
+</td></tr>
+<tr>
+<td>on_custom_diplomacy</td>
+<td>Triggers when trying to open the diplomacy view for countries with custom diplomacy.<br />Country scope<br />This = target country (player)<br />From = source country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_first_contact</td>
+<td>Triggered when two empires discover each other<br />This = Empire 1<br />From = Empire 2<br />Fromfromfrom = System where contact occurred</td>
+<td>
+</td></tr>
+<tr>
+<td>on_first_contact_finished</td>
+<td>Triggered when a first contact process is finished<br />This = first contact scope<br />From = other country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_enforce_borders</td>
+<td>Triggered when an Empire has fleets within another Empire’s borders.<br />This = receiver<br />From = sender<br />FromFrom = fleet<br />FromFromFrom = system</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ground_combat_started</td>
+<td>Triggers when ground combat starts<br />This = planet<br />From = country attacking</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_attackers_win</td>
+<td>Triggers country_event for the attacker upon victory<br />(Before controller is switched)<br />This = country, leader attacker<br />From = country, planet owner<br />FromFrom = planet<br />IDENTITIES: attacker is the side that "IsHostile" to<br />the planet controller; e.g. spawned monster armies<br />are attackers, but if they win and the player attempts<br />to retake the planet, the player is the attacker</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_attackers_lose</td>
+<td>Triggers country_event for the attacker upon defeat<br />This = country, attack leader<br />From = country, planet owner<br />FromFrom = planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_defenders_win</td>
+<td>Triggers country_event for the defender upon victory<br />Root = country, planet owner<br />From = country, attack leader<br />FromFrom = planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_defenders_lose</td>
+<td>Triggers country_event for the defender upon defeat<br />This = country, planet owner<br />From = country, attack leader<br />FromFrom = planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_first_visited</td>
+<td>Fires when you first get intel (_low and up) on a new system<br />Scope = Country<br />From = System</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_system_first_time</td>
+<td>Triggers event when each country first sends a ship into the system (once per country)<br />Scope = Ship<br />From = System<br />FromFrom = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_system</td>
+<td>Triggers event when ship enters a system. It’s usually better to use on_entering_system_first_time or on_entering_system_fleet<br />Scope = Ship<br />From = System<br />FromFrom = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_system_fleet</td>
+<td>See also: on_fleet_auto_move_arrival<br />Scope = Fleet<br />From = System</td>
+<td>
+</td></tr>
+<tr>
+<td>on_crossing_border</td>
+<td>A fleet executes a move order to exit borders<br />Scope = Fleet<br />From = Origin System<br />FromFrom = Destination System</td>
+<td>
+</td></tr>
+<tr>
+<td>on_survey</td>
+<td>A ship has surveyed a planet.<br />Scope = Ship<br />From = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_surveyed</td>
+<td>A country has gained a surveyed status on a planet. Happens after "on_survey" if a science ship surveyed a planet. (Can also happen without a ship through changes in intel levels)<br />Root = Planet<br />From = Country<br />FromFrom = Fleet of the science ship that surveyed it, if any</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_survey</td>
+<td>A country has gained a surveyed status on a planet. Happens after "on_survey" if a science ship surveyed a planet.<br />Root = Country<br />From = system<br />FromFrom = Fleet of the science ship that surveyed it, if any</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_survey_ship</td>
+<td>A ship is done surveying the last unsurveyed planet in a system<br />Scope = ship<br />From = system</td>
+<td>
+</td></tr>
+<tr>
+<td>on_colonization_started</td>
+<td>A planet has begun the colonization process.<br />Scope = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_colonized</td>
+<td>A planet has been colonized.<br />Scope = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_destroyed</td>
+<td>A colony has been destroyed. Called just before owner and controller is cleared<br />Scope = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_battle</td>
+<td>This = owner of fleet 1<br />From = owner of fleet 2<br />FromFrom = fleet 1<br />FromFromFrom = fleet 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_destroyed_victim</td>
+<td>This = owner of ship 1 (destroyed)<br />From = owner of ship 2 (combatant)<br />FromFrom = ship 1<br />FromFromFrom = ship 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_destroyed_perp</td>
+<td>This = owner of ship 1 (combatant)<br />From = owner of ship 2 (destroyed)<br />FromFrom = ship 1<br />FromFromFrom = ship 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_starbase_destroyed</td>
+<td>This = starbase being destroyed (not ship!)<br />From = fleet that destroyed the starbase</td>
+<td>
+</td></tr>
+<tr>
+<td>on_starbase_disabled</td>
+<td>This = starbase being disabled (not ship!)<br />From = fleet that disabled the starbase</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_disengaged_victim</td>
+<td>This = owner of ship 1 (destroyed)<br />From = owner of ship 2 (combatant)<br />FromFrom = ship 1<br />FromFromFrom = ship 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_disengaged_perp</td>
+<td>This = owner of ship 1 (combatant)<br />From = owner of ship 2 (destroyed)<br />FromFrom = ship 1<br />FromFromFrom = ship 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_destroyed_victim</td>
+<td>This = owner of fleet 1 (destroyed)<br />From = owner of fleet 2 (combatant)<br />FromFrom = fleet 1<br />FromFromFrom = fleet 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_destroyed_perp</td>
+<td>This = owner of fleet 1 (combatant)<br />From = owner of fleet 2 (destroyed)<br />FromFrom = fleet 1<br />FromFromFrom = fleet 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_space_battle_won</td>
+<td>This = owner of fleet 1 (winner)<br />From = owner of fleet 2 (loser)<br />FromFrom = fleet 1<br />FromFromFrom = fleet 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_space_battle_lost</td>
+<td>This = owner of fleet 1 (loser)<br />From = owner of fleet 2 (winner)<br />FromFrom = fleet 1<br />FromFromFrom = fleet 2</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_disbanded</td>
+<td>This = owner of fleet<br />From = disbanded fleet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_auto_move_arrival</td>
+<td>This = owner of fleet<br />From = fleet<br />FromFrom = planet (if any)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_contract_started</td>
+<td>This = fleet<br />From = country that borrowed the fleet<br />FromFrom = country that owns the fleet<br />Is fired immediately after fleet is leased out</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_contract_expired</td>
+<td>This = fleet<br />From = country that borrowed the fleet<br />FromFrom = country that owns the fleet<br />FromFromFrom = country that initiated the ending (the same as owner in a case of expiration)<br />Is fired immediately after fleet contract is expired</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_contract_cancelled</td>
+<td>This = fleet<br />From = country that borrowed the fleet<br />FromFrom = country that owns the fleet<br />FromFromFrom = country that initiated the ending (trade deal actor when the contract cancellation is a part of trade deal)<br />Is fired immediately after fleet contract is cancelled (when controller prematurely finishes the contract or when the contract cancellation is a part of trade deal)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_contract_broken</td>
+<td>This = fleet<br />From = country that borrowed the fleet<br />FromFrom = country that owns the fleet<br />FromFromFrom = country that initiated the ending (main attacker in a case of war)<br />Is fired immediately after fleet contract is broken (when country is attacked by someone of when a war is started)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_mining_station</td>
+<td>This = construction ship<br />From = planet it is built on<br />Fires when construction is complete,<br />immediately before station is created</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_research_station</td>
+<td>This = construction ship<br />From = planet it is built on<br />Fires when construction is complete,<br />immediately before station is created</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_outpost_station</td>
+<td>This = construction ship<br />From = planet it is built on<br />Fires when construction is complete,<br />immediately before station is created</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_wormhole_station</td>
+<td>This = construction ship<br />Fires when construction is complete,<br />immediately before station is created</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_starbase_outpost</td>
+<td>This = ship (starbase)<br />From = owner country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_starbase_fe_outpost</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_observation_station</td>
+<td>This = construction ship<br />From = planet it is built on</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_starbase_ai</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_starbase_exd_0</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_starbase_exd</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_starbase_swarm</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_starbase_marauder</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_destroying_station</td>
+<td>This = station<br />From = planet it was built on</td>
+<td>
+</td></tr>
+<tr>
+<td>on_losing_station_control</td>
+<td>This = station<br />From = planet it was built on</td>
+<td>
+</td></tr>
+<tr>
+<td>on_gaining_station_control</td>
+<td>This = station<br />From = planet it was built on</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_war</td>
+<td>This = country<br />From = opponent war leader</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_detected</td>
+<td>This = Country<br />From = Fleet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_disabled</td>
+<td>This = Ship<br />From = Disabler Ship</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_enabled</td>
+<td>This = Ship</td>
+<td>
+</td></tr>
+<tr>
+<td>on_uplift_completion</td>
+<td>Triggers when a Special Project to uplift a pre-sapient species is completed.<br />Note that this will trigger once for each combination of planet &amp; original<br />species (but for uplifting this should be only once).<br /><br />Scope = planet_event<br />This = planet scope<br />From = uplifted species (pre-modification)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_terraforming_begun</td>
+<td>Planets starts being terraformed<br />This = Planet<br />From = Terraforming country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_terraforming_complete</td>
+<td>Planet has been terraformed<br />This = Planet<br />From = Terraforming country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_class_changed</td>
+<td>Planet has changed planet class in whatever way. Note that this is also called during galaxy creation in some places.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_bombarded</td>
+<td>Planet has taken damage from orbital bombardment – Damage is applied daily<br />This = Planet<br />From = Bombarder</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_zero_pops</td>
+<td>Planet has reached 0 pops from orbital bombardment<br />This = Planet<br />From = Bombarder</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_zero_pops_ground_combat</td>
+<td>Planet has reached 0 pops from collateral damage<br />This = Planet<br />From = Army owner</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_abducted</td>
+<td>Pop is abducted by raiding stance<br />This = Pop scope<br />From = planet abducted from</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_enslaved</td>
+<td>Pop is enslaved<br />This = Pop scope<br />owner_species = { (species)<br />owner = { owner_species = { (empire main species)<br />owner = { (empire)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_emancipated</td>
+<td>Pop is released from slavery<br />This = Pop scope<br />owner_species = { (species)<br />owner = { owner_species = { (empire main species)<br />owner = { (empire)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_resettled</td>
+<td>Pop is resettled<br />From is previous planet<br />planet = { } is new planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pre_communications_established</td>
+<td>Executed right before a country has established communications with another country<br />This = Country which established the communications<br />From = Country which communications were established with</td>
+<td>
+</td></tr>
+<tr>
+<td>on_post_communications_established</td>
+<td>Executed right after country has established communications with another country. Does not fire if comms are established with establish_communications_no_message<br />This = Country which established the communications<br />From = Country which communications were established with</td>
+<td>
+</td></tr>
+<tr>
+<td>on_post_communications_established_always_fire</td>
+<td>Executed right after country has established communications with another country. Always fires, even if comms are established with establish_communications_no_message<br />This = Country which established the communications<br />From = Country which communications were established with</td>
+<td>
+</td></tr>
+<tr>
+<td>on_presence_revealed</td>
+<td>Serves to reveal presence to pre-ftl country<br />This = Country which is revealing its presence<br />From = Pre-ftl country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_bombed_to_death</td>
+<td>Executed just after country has established communications with another country<br />This = Planet where the pop was bombed to death<br />From = Country which is raining down fire and brimstone</td>
+<td>
+</td></tr>
+<tr>
+<td>on_leader_death</td>
+<td>Executed as a leader has died<br />This = Country<br />From = Leader</td>
+<td>
+</td></tr>
+<tr>
+<td>on_leader_fired</td>
+<td>Executed as a leader has been fired<br />This = Country<br />From = Leader</td>
+<td>
+</td></tr>
+<tr>
+<td>on_leader_level_up</td>
+<td>A leader leveled up.<br />Scope = Country<br />From = Leader</td>
+<td>
+</td></tr>
+<tr>
+<td>on_leader_assigned</td>
+<td>Scope: Leader (after assignment)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_leader_unassigned</td>
+<td>Scope: Leader (just before unassignment)<br />Fires if a leader is unassigned from their position for any reason (including being assigned elsewhere)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ruler_set</td>
+<td>Executed as new ruler has been set<br />This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ruler_removed</td>
+<td>Executed when a ruler has been removed<br />From = Previous Ruler<br />This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ruler_back_to_pre_ruler_class</td>
+<td>Executed when the ruler is ousted and goes back to their pre-ruler class<br />From = Previous Ruler, already has the new class<br />This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_blocker_cleared</td>
+<td>This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_order</td>
+<td>A ship has started a new order<br />Root = Ship<br />From = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_policy_changed</td>
+<td>Executes after a policy has been changed<br />use last_changed_policy to identify which policy it was<br />This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_built</td>
+<td>Scope: Ship Event<br />A ship has been built<br />Root = Ship<br />From = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_designed</td>
+<td>A ship design has been finished<br />Root = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_upgraded</td>
+<td>A ship has been upgraded<br />Root = Ship</td>
+<td>
+</td></tr>
+<tr>
+<td>on_war_beginning</td>
+<td>A war is beginning, executed for every country in the war.<br />Root = Country<br />From = War</td>
+<td>
+</td></tr>
+<tr>
+<td>on_war_ended</td>
+<td>A war has ended<br />Root = Loser<br />From = Main Winner</td>
+<td>
+</td></tr>
+<tr>
+<td>on_country_released_in_war</td>
+<td>A country has been released through a peace deal in a war<br />Root = new country<br />From = country forcing the release<br />FromFrom = country they are released from<br />FromFromFrom = war</td>
+<td>
+</td></tr>
+<tr>
+<td>on_tech_increased</td>
+<td>A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.<br />This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_modification_complete</td>
+<td>Triggers when a Special Project to apply a species modification template has completed.<br />Note that this will trigger once for each combination of planet &amp; original species.<br /><br />This = Country<br />From = Species (Post Modification )</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_occupied</td>
+<td>A planets controller becomes a country not the same as the owner.<br />Root = Planet<br />From = Planet Owner<br />FromFrom = Planet Controller (the one occupying)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_emergency_ftl</td>
+<td>A fleet has successfully escaped from combat, executed right before the fleet enters FTL<br />This = escaping fleet<br />From = system escaped from<br />FromFrom = system escaping to</td>
+<td>
+</td></tr>
+<tr>
+<td>on_army_recruited</td>
+<td>An army construction has been completed.<br />This = Planet<br />From = Army</td>
+<td>
+</td></tr>
+<tr>
+<td>on_army_killed_in_combat</td>
+<td>An army has been killed in ground combat<br />This = owner<br />From = army<br />FromFrom = opponent<br />FromFromFrom = planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_army_killed_no_combat</td>
+<td>An army has ceased to exist for any other reason<br />This = country<br />From = army</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_complete</td>
+<td>A building construction has been completed.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_queued</td>
+<td>A building construction has been queued.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_unqueued</td>
+<td>A building construction has been unqueued.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_upgraded</td>
+<td>A building construction has been completed, which is an upgrade of previous building.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_demolished</td>
+<td>A building construction has demolished.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_district_complete</td>
+<td>A district construction has been completed.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_replaced</td>
+<td>A building construction has finished, replacing another building.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_building_downgraded</td>
+<td>A building construction has been downgraded and replaced.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_district_queued</td>
+<td>A district construction has been queued.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_district_unqueued</td>
+<td>A district construction has been unqueued.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_district_demolished</td>
+<td>A district construction has demolished.<br />This = Planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_tutorial_level_changed</td>
+<td>Tutorial level for a country has changed<br />This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_war_won</td>
+<td>A war has been won<br />Root = Winner Warleader<br />From = Loser Warleader<br />FromFrom = War</td>
+<td>
+</td></tr>
+<tr>
+<td>on_war_lost</td>
+<td>A war has been lost<br />Root = Loser Warleader<br />From = Winner Warleader<br />FromFrom = War</td>
+<td>
+</td></tr>
+<tr>
+<td>on_status_quo</td>
+<td>A status quo has been signed<br />Root = Actor<br />From = Recipient<br />FromFrom = Main Attacker<br />FromFromFrom = Main Defender<br />FromFromFromFrom = War</td>
+<td>
+</td></tr>
+<tr>
+<td>on_status_quo_forced</td>
+<td>A status quo has been signed, by force<br />Root = Recipient<br />From = Actor<br />FromFrom = Main Attacker<br />FromFromFrom = Main Defender<br />FromFromFromFrom = War</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_added</td>
+<td>A pop has been added to the planet<br />Root = pop<br />From = planet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_rights_change</td>
+<td>We changed a species right<br />This = pop</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_grown</td>
+<td>A pop has finished growing<br />This = Planet scope<br />From = Country<br />FromFrom = Pop</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_assembled</td>
+<td>A pop has finished assembling<br />This = Planet scope<br />From = Country<br />FromFrom = Pop</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_purged</td>
+<td>A pop has finished purging<br />This = Planet scope<br />From = Country<br />FromFrom = Pop</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_declined</td>
+<td>A pop has finished declining (while not being purged)<br />This = Planet scope<br />From = Country<br />FromFrom = Pop</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pop_displaced</td>
+<td>A pop has been displaced<br />This = Planet scope<br />From = Country<br />FromFrom = Pop</td>
+<td>
+</td></tr>
+<tr>
+<td>on_rebels_take_planet</td>
+<td>Initial rebels manage to take control of the planet, happens before the new owner is set, after the war is created.<br />This = Rebel Country<br />From = Planet<br />FromFrom = War</td>
+<td>
+</td></tr>
+<tr>
+<td>on_rebels_take_planet_owner_switched</td>
+<td>Initial rebels manage to take control of the planet, happens after the new owner is set, after the war is created.<br />This = Rebel Country<br />From = Planet<br />FromFrom = War</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_ownerless</td>
+<td>FromFrom = Former Owner<br />From = Country scope (new owner, so invalid)<br />This = Planet scope</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_transfer</td>
+<td>Fired whenever a new owner is set for a planet,<br />be it after a war or through a trade<br />FromFrom = Former Owner (if any)<br />From = Country scope (new owner)<br />This = Planet scope</td>
+<td>
+</td></tr>
+<tr>
+<td>on_planet_conquer</td>
+<td>Fired whenever a new owner is set for a planet, and the planet was aggressively conquered<br />Fired in ADDITION to on_planet_transfer<br />FromFrom = Former Owner<br />From = Country scope (new owner)<br />This = Planet scope</td>
+<td>
+</td></tr>
+<tr>
+<td>on_capital_changed</td>
+<td>You have changed the location of your capital. Also called when a country’s capital is first set e.g. during galaxy creation (but then FROM is not set)<br />this/root = new capital<br />from = old capital</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_enter_orbit</td>
+<td>From = Planet/Starbase/Megastructure scope<br />This = Fleet scope</td>
+<td>
+</td></tr>
+<tr>
+<td>on_join_federation</td>
+<td>This = Federation leader<br />From = Joining member</td>
+<td>
+</td></tr>
+<tr>
+<td>on_leave_federation</td>
+<td>This = Federation leader<br />From = Leaving member</td>
+<td>
+</td></tr>
+<tr>
+<td>on_federation_law_vote_succeed</td>
+<td>This = Country scope, federation leader<br />From = Country to initiate the vote</td>
+<td>
+</td></tr>
+<tr>
+<td>on_federation_law_vote_failed</td>
+<td>This = Country scope, federation leader<br />From = Country to initiate the vote</td>
+<td>
+</td></tr>
+<tr>
+<td>on_federation_leader_elections</td>
+<td>This = Country scope, federation leader<br />From = Country to exclude from the federation elections</td>
+<td>
+</td></tr>
+<tr>
+<td>on_federation_new_leader</td>
+<td>This = Country scope, new federation leader<br />From = Previous leader (if still existing)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_federation_leader_challenge</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_country_created</td>
+<td>A country is created via create_country or create_rebels<br />This = created country<br />From = root of context where create_country/create_rebels happens</td>
+<td>
+</td></tr>
+<tr>
+<td>on_country_destroyed</td>
+<td>This = destroyed country<br />From = optional, destroyer (country)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_megastructure_built</td>
+<td>A Megastructure has been built<br />Root = Country<br />From = Megastructure<br />FromFrom = System<br />FromFromFrom = Fleet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_megastructure_upgrade_begin</td>
+<td>A Megastructure has begun to be upgraded<br />Root = Country<br />From = Megastructure<br />FromFrom = System</td>
+<td>
+</td></tr>
+<tr>
+<td>on_megastructure_upgraded</td>
+<td>A Megastructure has been upgraded<br />Root = Country<br />From = Megastructure<br />FromFrom = System</td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_1_year_old</td>
+<td>X years has passed since a planet was colonized (won't trigger on empire homeworld)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_2_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_3_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_4_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_5_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_6_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_7_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_8_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_9_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_10_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_25_years_old</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_yearly_pulse</td>
+<td>Fires for each planet every year (counting up from colonisation date, includes home planet)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_5_year_pulse</td>
+<td>Fires for each planet every 5 years (counting up from colonisation date, includes home planet)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_colony_10_year_pulse</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_leader_spawned</td>
+<td>a new leader is generated for an empire, to be available for recruitment<br />scope: country, from: leader</td>
+<td>
+</td></tr>
+<tr>
+<td>on_election_started</td>
+<td>Called when an election starts<br />scope: country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_election_ended</td>
+<td>Called when an election ends<br />scope: country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_gateway</td>
+<td>Called upon entering FTL (on-action name scripted on the Bypass type)<br />THIS = Fleet<br />FROM = System jumping to<br />FROMFROM = System jumped from</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_wormhole</td>
+<td>Called upon entering FTL (on-action name scripted on the Bypass type)<br />THIS = Fleet<br />FROM = System jumping to<br />FROMFROM = System jumped from</td>
+<td>
+</td></tr>
+<tr>
+<td>on_entering_shroud_tunnel</td>
+<td>Called upon entering FTL (on-action name scripted on the Bypass type)<br />THIS = Fleet<br />FROM = System jumping to<br />FROMFROM = System jumped from</td>
+<td>
+</td></tr>
+<tr>
+<td>on_jump_drive</td>
+<td>THIS = Ship</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ship_quantum_catapult</td>
+<td>Called upon a catapult jump being finished, per ship in catapulted fleet<br />THIS = Ship<br />FROM = System jumping to<br />FROMFROM = System jumped from</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_quantum_catapult</td>
+<td>Called upon a catapult jump being finished, per fleet<br />THIS = Fleet<br />FROM = System jumping to<br />FROMFROM = System jumped from</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pirate_spawn</td>
+<td>this = country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_starbase_transfer</td>
+<td>Called when a Starbase changes owner<br />THIS = Ship (Starbase)<br />FROM = Former Owner (Country)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_combat_joined_attacker</td>
+<td>This = Aggressor Fleet<br />From = Attacked Fleet<br />FromFrom = Additional Attacked Fleet (if part of ongoing combat)<br />FromFromFrom = Additional Attacked Fleet (if part of ongoing combat)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_fleet_combat_joined_defender</td>
+<td>This = Attacked Fleet<br />From = Aggressor Fleet<br />FromFrom = Additional Attacked Fleet (if joining ongoing combat)<br />FromFromFrom = Additional Attacked Fleet (if joining ongoing combat)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_lost</td>
+<td>From = system<br />FromFrom = country (new owner)<br />This = country (previous owner)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_gained</td>
+<td>From = system<br />FromFrom = country (previous owner)<br />This = country (new owner)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_slave_sold_on_market</td>
+<td>This = Pop<br />From = Country (buyer)<br />Fromfrom = Country (seller)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_relic_activated</td>
+<td>This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_arch_stage_finished</td>
+<td>This = Fleet (science vessel )<br />From = Archaeological Site</td>
+<td>
+</td></tr>
+<tr>
+<td>on_arch_site_finished</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_resolution_passed</td>
+<td>A galcom resolution passed<br />this/root = proposer<br />from = target if valid<br />To find out which resolution it was, use last_resolution_changed trigger</td>
+<td>
+</td></tr>
+<tr>
+<td>on_resolution_failed</td>
+<td>A galcom resolution failed to pass<br />this/root = proposer<br />from = target if valid<br />To find out which resolution it was, use last_resolution_changed trigger</td>
+<td>
+</td></tr>
+<tr>
+<td>on_galactic_community_formed</td>
+<td>This = Country, first member added</td>
+<td>
+</td></tr>
+<tr>
+<td>on_galactic_council_established</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_add_community_member</td>
+<td>This = Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_remove_community_member</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_add_to_council</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_remove_from_council</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_join_alliance</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_leave_alliance</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_sign_commercial_pact</td>
+<td>This = Country who accepted the proposal<br />From = Country who proposed the commercial pact</td>
+<td>
+</td></tr>
+<tr>
+<td>on_sign_defensive_pact</td>
+<td>This = Country who accepted the proposal<br />From = Country who proposed the defensive pact</td>
+<td>
+</td></tr>
+<tr>
+<td>on_sign_migration_pact</td>
+<td>This = Country who accepted the proposal<br />From = Country who proposed the migration treaty</td>
+<td>
+</td></tr>
+<tr>
+<td>on_sign_non_aggression_pact</td>
+<td>This = Country who accepted the proposal<br />From = Country who proposed the non-aggression pact</td>
+<td>
+</td></tr>
+<tr>
+<td>on_sign_research_act</td>
+<td>This = Country who accepted the proposal<br />From = Country who proposed the research agreement</td>
+<td>
+</td></tr>
+<tr>
+<td>on_becoming_subject</td>
+<td>This = subject<br />From = subject’s overlord</td>
+<td>
+</td></tr>
+<tr>
+<td>on_subject_integrated</td>
+<td>fires when a country finishes being integrated<br />This = overlord<br />From = subject</td>
+<td>
+</td></tr>
+<tr>
+<td>on_released_as_vassal</td>
+<td>fires when a country releases a sector as a vassal<br />This = released vassal<br />From = overlord</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ask_to_leave_federation_declined</td>
+<td>This = empire trying to leave federation<br />From = empire who declined (federation leader)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_spynetwork_formed</td>
+<td>this = owner country, from = spynetwork scope</td>
+<td>
+</td></tr>
+<tr>
+<td>on_add_to_imperial_council</td>
+<td>THIS = Country: Emperor<br />FROM = Country added to council</td>
+<td>
+</td></tr>
+<tr>
+<td>on_remove_from_imperial_council</td>
+<td>THIS = Country: Emperor<br />FROM = Country removed from council</td>
+<td>
+</td></tr>
+<tr>
+<td>on_first_contact_started</td>
+<td>these three are fired from script, basically for modders who want to change how first contact works or add some extra flavour stories in without overwriting things<br />THIS = first_contact</td>
+<td>
+</td></tr>
+<tr>
+<td>on_first_contact_stage_1_no_path</td>
+<td>use for custom country types that need first contact paths<br />THIS = first_contact</td>
+<td>
+</td></tr>
+<tr>
+<td>on_first_contact_generic_stage_2</td>
+<td>THIS = first_contact</td>
+<td>
+</td></tr>
+<tr>
+<td>on_branch_office_established</td>
+<td>THIS = Planet: Branch office planet<br />FROM = Country: Branch office owner</td>
+<td>
+</td></tr>
+<tr>
+<td>on_branch_office_closed</td>
+<td>THIS = Planet: Branch office planet<br />FROM = Country: Branch office owner</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_occupied</td>
+<td>THIS = System: system being occupied<br />FROM = Country: Conqueror of the system<br />FROMFROM = Country: Original owner of the system</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_controller_changed</td>
+<td>THIS = System: system whos controller has changed<br />FROM = Country: New controller of the system<br />FROMFROM = Country: Old controller of the system</td>
+<td>
+</td></tr>
+<tr>
+<td>on_system_returned</td>
+<td>THIS = System: system being returned from occupation<br />FROM = Country: Previous owner of the system<br />FROMFROM = Country: Occupier of the system</td>
+<td>
+</td></tr>
+<tr>
+<td>on_orbital_defense_planet_ownerless</td>
+<td>A planet has been rendered ownerless, it has an orbital ring or similar, though. The orbital ring is still there, but is about to be deleted<br />this = starbase<br />from = planet<br />fromfrom = old owner</td>
+<td>
+</td></tr>
+<tr>
+<td>on_operation_chapter_finished</td>
+<td>THIS = Espionage operation<br />FROM = Operation target</td>
+<td>
+</td></tr>
+<tr>
+<td>on_operation_finished</td>
+<td>THIS = Espionage operation<br />FROM = Operation target</td>
+<td>
+</td></tr>
+<tr>
+<td>on_operation_cancelled</td>
+<td>THIS = Espionage operation</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pre_government_changed</td>
+<td>Executed just as country is changing its government, before the new one is applied<br />THIS = country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_post_government_changed</td>
+<td>Executed just as country is changing its government, after the new one is applied<br />THIS = country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_custodian_term_ends</td>
+<td>Executed when the Custodian’s term ends<br />THIS = country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_tradition_picked</td>
+<td>Executed when a country picks any tradition (including starters and finishers)<br />THIS = country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_ascension_perk_picked</td>
+<td>Executed when a country picks an ascension perk<br />THIS = country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_megastructure_change_owner</td>
+<td>Executed when a megastructure has a new owner<br />this = new owner<br />from = megastructure<br />fromfrom = old owner (if existing)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_megastructure_ownerless</td>
+<td>Executed when a megastructure is rendered ownerless<br />this = solar system containing megastructure<br />from = megastructure<br />fromfrom = old owner (if existing)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_crystalline_empire_task</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_destroy_star_system</td>
+<td>Fired from destroy_star_system scripted effect<br />This = system<br />From = destroyer (if using a star cracker)</td>
+<td>
+</td></tr>
+<tr>
+<td>on_admirals_bickering_event_chain</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_establish_mercenary_enclave</td>
+<td>Executed when an empire wishes to turn a mercenary fleet into a Mercenary enclave<br />This = fleet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_debris_researched</td>
+<td>Fired when a science ship succesfully analyzed or scavenged debris<br />this = country<br />from = debris<br />fromfrom = controller of destroyed ship</td>
+<td>
+</td></tr>
+<tr>
+<td>on_debris_scavenged</td>
+<td>Fired when a science ship succesfully analyzed or scavenged debris<br />this = country<br />from = debris<br />fromfrom = controller of destroyed ship</td>
+<td>
+</td></tr>
+<tr>
+<td>on_debris_scavenged_and_researched</td>
+<td>Fired when a science ship succesfully analyzed or scavenged debris<br />this = country<br />from = debris<br />fromfrom = controller of destroyed ship</td>
+<td>
+</td></tr>
+<tr>
+<td>on_specialist_subject_conversion_started</td>
+<td>Fired when a subject has started converting to a specialist type<br />This = agreement<br />owner = overlord<br />target = subject</td>
+<td>
+</td></tr>
+<tr>
+<td>on_specialist_subject_conversion_finished</td>
+<td>Fired when a subject has finished converting to a specialist type<br />This = agreement<br />owner = overlord<br />target = subject</td>
+<td>
+</td></tr>
+<tr>
+<td>on_specialist_subject_conversion_aborted</td>
+<td>Fired when a subject specialist conversion has been aborted<br />This = agreement<br />owner = overlord<br />target = subject</td>
+<td>
+</td></tr>
+<tr>
+<td>on_capitals_connected</td>
+<td>Executed when a two capitals get connected through relay network<br />THIS = Country: Owner<br />FROM = Country: Other</td>
+<td>
+</td></tr>
+<tr>
+<td>on_agreement_change_accepted</td>
+<td>Fired when a change to an existing subject agreement has been accepted<br />This = agreement<br />owner = overlord<br />target = subject</td>
+<td>
+</td></tr>
+<tr>
+<td>on_shroudwalker_divination_visitors_situation</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_shroudwalker_divination_locus_situation</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_shroudwalker_insight_situation_finish</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td>on_cloaking_activated</td>
+<td>Fired when a fleet activates cloaking<br />This = Fleet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_cloaking_deactivated</td>
+<td>Fired when cloaking is deactivated for a fleet (voluntarily or involuntarily)<br />This = Fleet</td>
+<td>
+</td></tr>
+<tr>
+<td>on_awareness_level_increase</td>
+<td>Fired when a pre-FTL's awareness level increases (by uncloaking ships or using add/set_awareness in events)<br />This = PreFTL Country<br />From = Observing Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_awareness_level_decrease</td>
+<td>Fired when a pre-FTL's awareness level decreases (by uncloaking ships or using add/set_awareness in events)<br />This = PreFTL Country<br />From = Observing Country</td>
+<td>
+</td></tr>
+<tr>
+<td>on_pre_ftl_pop_ethic_shift</td>
+<td>Chance of pre-FTL civilizations to shift their ethics</td>
+<td>
+</td></tr>
+<tr>
+<td>on_country_attacked</td>
+<td>Fired when a country attacks another country<br />This = attacked country<br />From = attacker country</td>
+<td>
+</td></tr></tbody></table>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a class="mw-selflink selflink">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181523
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.056 seconds
+Real time usage: 0.067 seconds
+Preprocessor visited node count: 172/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   13.713      1 -total
+ 65.29%    8.953      1 Template:Version
+ 37.23%    5.105      1 Template:Infobox
+ 33.94%    4.654      1 Template:ModdingNavbox
+ 15.90%    2.180      1 Template:Nowrap
+ 13.66%    1.873      1 Template:Navbox
+  5.02%    0.689     14 Template:Navboxgroup
+  1.82%    0.250      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:11044-0!canonical and timestamp 20260707181523 and revision id 115992.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

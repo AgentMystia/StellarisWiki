@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Mutation - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Mutation</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Mutation/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Mutation/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_Mutation/doc.html" title="Template:Mutation/doc">Template:Mutation/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Mutation/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Mutation/doc&amp;action=history">history</a>)</small></div>
+<p>This template can be used to generate icons for space fauna components and weapons (mutations). Use <code><a href="/Template_Component.html" title="Template:Component">{{Component}}</a></code> for non-Space Fauna and core components.
+</p><p>Mutation images can be found here: <a href="/Category_Mutation_icons.html" title="Category:Mutation icons">Category:Mutation icons</a>
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Mutation icon name, minus "mutation"</td>
+<td><b>required</b></td>
+<td><i>none</i>
+</td></tr>
+<tr>
+<td>2</td>
+<td>Localized name, if different</td>
+<td><i>optional</i></td>
+<td><i>none</i>
+</td></tr>
+<tr>
+<td>type
+</td>
+<td>Mutation type, one of:
+<ul><li>weapon</li>
+<li>utility</li></ul>
+<p>Also functions as page link selector
+</p>
+</td>
+<td><i>optional</i></td>
+<td><i>none</i>
+</td></tr>
+<tr>
+<td>slot
+</td>
+<td>Mutation size, any of:<div style="columns:50px 5; column-gap: 10px;-webkit-columns:50px 5; -webkit-column-gap: 10px;-moz-columns:50px 5; -moz-column-gap: 10px;">
+<ul><li>a</li>
+<li>g</li>
+<li>h</li>
+<li>l ('ell')</li>
+<li>m</li>
+<li>p</li>
+<li>s</li>
+<li>t</li>
+<li>w</li>
+<li>x</li></ul></div>
+</td>
+<td><i>optional</i>
+</td>
+<td><i>a</i> for utility <code>type</code>
+<p><i>s</i> for weapon <code>type</code>
+</p>
+</td></tr>
+<tr>
+<td>w</td>
+<td>Sets icon size</td>
+<td><i>optional</i></td>
+<td><i>58px</i>
+</td></tr>
+<tr>
+<td>iconify</td>
+<td>if set to "yes", appends text of parameter 2 or 1</td>
+<td><i>optional</i></td>
+<td><i>none</i>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Wikitext
+</th>
+<th>Procudes
+</th></tr>
+<tr>
+<td><code>{{Mutation|Berserker Glands|type=utility}}</code><br /></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AMutation_berserker_glands.png" class="image"><img alt="Mutation berserker glands.png" src="images/Mutation_berserker_glands.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Mutations.html#Berserker_Glands" title="Berserker Glands"><img alt="Berserker Glands" src="images/Slot_frame_utility_a.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span></span>
+</td></tr>
+<tr>
+<td><code>{{Mutation|Berserker Glands|type=utility|iconify=yes|w=30px}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="30" height="30" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AMutation_berserker_glands.png" class="image"><img alt="Mutation berserker glands.png" src="images/Mutation_berserker_glands.png" decoding="async" loading="lazy" width="30" height="30" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Mutations.html#Berserker_Glands" title="Berserker Glands"><img alt="Berserker Glands" src="images/Slot_frame_utility_a.png" decoding="async" loading="lazy" width="30" height="30" data-file-width="58" data-file-height="58" /></a></span></span>&#32;Berserker Glands
+</td></tr>
+<tr>
+<td><code>{{Mutation|Energy Siphon|type=weapon}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AMutation_energy_siphon.png" class="image"><img alt="Mutation energy siphon.png" src="images/Mutation_energy_siphon.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Offensive_mutations.html#Energy_Siphon" title="Energy Siphon"><img alt="Energy Siphon" src="images/Slot_frame_weapon_s.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span></span>
+</td></tr>
+<tr>
+<td><code>{{Mutation|Nanocomposite Carapace 1|Nanocomposite Carapace|slot=m|type=utility|iconify=yes|w=30px}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="30" height="30" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AMutation_nanocomposite_carapace_1.png" class="image"><img alt="Mutation nanocomposite carapace 1.png" src="images/Mutation_nanocomposite_carapace_1.png" decoding="async" loading="lazy" width="30" height="30" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Mutations.html#Nanocomposite_Carapace" title="Nanocomposite Carapace"><img alt="Nanocomposite Carapace" src="images/Slot_frame_utility_m.png" decoding="async" loading="lazy" width="30" height="30" data-file-width="58" data-file-height="58" /></a></span></span>&#32;Nanocomposite Carapace
+</td></tr>
+<tr>
+<td><code>{{Mutation|Null Void Siphon|slot=x|type=weapon|iconify=yes}}</code></td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3ASlot_bg.png" class="image"><img alt="Slot bg.png" src="images/Slot_bg.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3AMutation_null_void_siphon.png" class="image"><img alt="Mutation null void siphon.png" src="images/Mutation_null_void_siphon.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span><span style="grid-area:1/1"><a href="/Offensive_mutations.html#Null_Void_Siphon" title="Null Void Siphon"><img alt="Null Void Siphon" src="images/Slot_frame_weapon_x.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></span></span>&#32;Null Void Siphon
+</td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182637
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.033 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 271/1000000
+Post‐expand include size: 16856/2097152 bytes
+Template argument size: 4321/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 304/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   18.252      1 Template:Template_doc
+100.00%   18.252      1 -total
+ 79.31%   14.476      1 Template:Template_doc_inline
+ 59.21%   10.807      1 Template:Mutation/doc
+ 14.16%    2.584      1 Template:Template_doc_page_transcluded
+ 13.54%    2.471      1 Template:Template
+  7.62%    1.390      5 Template:Mutation
+  5.33%    0.973      1 Template:MultiColumn
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:16939-0!canonical and timestamp 20260707182637 and revision id 106237.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

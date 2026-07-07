@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diplomacy modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Diplomacy modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>This page is about the moddings of <a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>, <a href="/Subject_empire.html" title="Subject empire">Subjects</a>, <a href="https://stellaris.paradoxwikis.com/Federations" class="mw-redirect" title="Federations">Federations</a>, and <a href="https://stellaris.paradoxwikis.com/Galactic_community" class="mw-redirect" title="Galactic community">galactic community</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Diplomacy_Actions"><span class="tocnumber">1</span> <span class="toctext">Diplomacy Actions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Data_Structure"><span class="tocnumber">1.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Diplomacy_Economy"><span class="tocnumber">2</span> <span class="toctext">Diplomacy Economy</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Data_Structure_2"><span class="tocnumber">2.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Diplomacy_Economy_Example"><span class="tocnumber">2.2</span> <span class="toctext">Diplomacy Economy Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Subjects"><span class="tocnumber">3</span> <span class="toctext">Subjects</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Agreement_Presets"><span class="tocnumber">3.1</span> <span class="toctext">Agreement Presets</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Agreement_Resources"><span class="tocnumber">3.2</span> <span class="toctext">Agreement Resources</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Data_Structure_3"><span class="tocnumber">3.2.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Agreement_Terms"><span class="tocnumber">3.3</span> <span class="toctext">Agreement Terms</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#Data_Structure_4"><span class="tocnumber">3.3.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Agreement_Term_Values"><span class="tocnumber">3.4</span> <span class="toctext">Agreement Term Values</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Data_Structure_5"><span class="tocnumber">3.4.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Specialist_Subject_Types"><span class="tocnumber">3.5</span> <span class="toctext">Specialist Subject Types</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#Data_Structure_6"><span class="tocnumber">3.5.1</span> <span class="toctext">Data Structure</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Specialist_Subject_Perks"><span class="tocnumber">3.6</span> <span class="toctext">Specialist Subject Perks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Federations"><span class="tocnumber">4</span> <span class="toctext">Federations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Federation_Types"><span class="tocnumber">4.1</span> <span class="toctext">Federation Types</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#Data_Structure_7"><span class="tocnumber">4.1.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Federation_Type_Example"><span class="tocnumber">4.1.2</span> <span class="toctext">Federation Type Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Federation_Perks"><span class="tocnumber">4.2</span> <span class="toctext">Federation Perks</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Data_Structure_8"><span class="tocnumber">4.2.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Federation_Perk_Example"><span class="tocnumber">4.2.2</span> <span class="toctext">Federation Perk Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#Federation_Law_Categories"><span class="tocnumber">4.3</span> <span class="toctext">Federation Law Categories</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#Data_Structure_9"><span class="tocnumber">4.3.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Federation_Law_Category_Example"><span class="tocnumber">4.3.2</span> <span class="toctext">Federation Law Category Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Federation_Laws"><span class="tocnumber">4.4</span> <span class="toctext">Federation Laws</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#Data_Structure_10"><span class="tocnumber">4.4.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Federation_Law_Example"><span class="tocnumber">4.4.2</span> <span class="toctext">Federation Law Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="#Relevant_Dynamic_Modding_Statements"><span class="tocnumber">4.5</span> <span class="toctext">Relevant Dynamic Modding Statements</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="#Galactic_community"><span class="tocnumber">5</span> <span class="toctext">Galactic community</span></a>
+<ul>
+<li class="toclevel-2 tocsection-32"><a href="#Resolution_categories"><span class="tocnumber">5.1</span> <span class="toctext">Resolution categories</span></a>
+<ul>
+<li class="toclevel-3 tocsection-33"><a href="#Data_structure_11"><span class="tocnumber">5.1.1</span> <span class="toctext">Data structure</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#Resolution_Category_Example"><span class="tocnumber">5.1.2</span> <span class="toctext">Resolution Category Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="#Resolutions"><span class="tocnumber">5.2</span> <span class="toctext">Resolutions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-36"><a href="#Data_Structure_12"><span class="tocnumber">5.2.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#Resolution_Example"><span class="tocnumber">5.2.2</span> <span class="toctext">Resolution Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-38"><a href="#Galactic_Focuses"><span class="tocnumber">5.3</span> <span class="toctext">Galactic Focuses</span></a>
+<ul>
+<li class="toclevel-3 tocsection-39"><a href="#Data_Structure_13"><span class="tocnumber">5.3.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#Galactic_Focus_Example"><span class="tocnumber">5.3.2</span> <span class="toctext">Galactic Focus Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-41"><a href="#Relevant_Dynamic_Modding_Statements_2"><span class="tocnumber">5.4</span> <span class="toctext">Relevant Dynamic Modding Statements</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Diplomacy_Actions">Diplomacy Actions</span></h2>
+<p>Diplomacy Actions are defined at "common/diplomatic_actions/xxx.txt".
+</p><p>There is little we can do with diplomacy actions. New diplomacy actions can't be added, only existing ones can be limitedly modified.
+</p>
+<h3><span class="mw-headline" id="Data_Structure">Data Structure</span></h3>
+<ul><li><b>icon</b> - A reference to a GFX instance that indicates the icon of this diplomatic status to be shown in the diplomacy GUI.</li>
+<li><b>requires_actor_peace</b> - (yes/no) If yes, empires at war can't perform this action.</li>
+<li><b>requires_recipient_peace</b> - (yes/no) If yes, empires at war can't be targeted by this action.</li>
+<li><b>requires_actor_independence</b> - (yes/no) If yes, this action can't be performed by subject empires.</li>
+<li><b>requires_recipient_independence</b> - (yes/no) If yes, subject empires can't be targeted by this action.</li>
+<li><b>requires_actor_federation_leader</b> - (yes/no) If yes, empires in federations that aren't federation leaders can't perform this action.</li>
+<li><b>requires_recipient_federation_leader</b> - (yes/no) If yes, empires in federations that aren't federation leaders can't be targeted by this action.</li>
+<li><b>should_notify_all_communications</b> - (yes/no) If yes, all empires that share communication with at least one empire revelant to this diplomatic action will receive a notification about this action once it's accepted.</li>
+<li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that hides this action from diplomacy view if unmet.</li>
+<li><b>possible</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that blocks this action from being sent if unmet.</li>
+<li><b>proposable</b> - Same above. It's unclear what's the difference between the two.</li></ul>
+<p>Other fields have little mean to be modified since they are heavily hard-coded.
+</p>
+<h2><span class="mw-headline" id="Diplomacy_Economy">Diplomacy Economy</span></h2>
+<p>An abstract game object defined at "common/diplomacy_economy/xxx.txt". Diplomacy related resource upkeeps and productions are implemented through diplomacy economy.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_2">Data Structure</span></h3>
+<p>An instance can be assigned to the "once" group or the "per_relation" group. The former will apply to each empire up to once and the later can apply to the same empire more than once.
+</p>
+<ul><li><b>trigger</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that determines should this diplomacy economy apply. Scope is empire A. If this object was assigned to the "per_relation" group, then FROM is empire B.</li>
+<li><b>resources</b> - An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> that applies to empire A. If this object was assigned to the "per_relation" group, instead it applies to empire A once for each valid empire B.</li></ul>
+<h3><span class="mw-headline" id="Diplomacy_Economy_Example">Diplomacy Economy Example</span></h3>
+<pre>once = {
+	# this is applied only once per country
+	federation = {
+		trigger = {
+			has_federation = yes
+		}
+		resources = {
+			category = federation
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+}
+</pre>
+<pre>per_relation = {
+	# this is applied for each such relation with another country
+	# scope: this = current country, FROM&#160;: other country in the relation
+	rivalry = {
+		trigger = {
+			has_rival = FROM
+		}
+		resources = {
+			category = rivalries
+			produces = {
+				influence = 0.5
+			}
+		}
+	}
+
+	non_aggression_pact = {
+		trigger = {
+			has_non_aggression_pact = FROM
+		}
+		resources = {
+			category = non_aggression_pacts
+			upkeep = {
+				influence = 0.25
+			}
+		} 
+	}
+
+	...
+}
+</pre>
+<h2><span class="mw-headline" id="Subjects">Subjects</span></h2>
+<p>The way Stellaris defines subjects was reworked in game version 3.4. Section is WIP.
+</p>
+<h3><span class="mw-headline" id="Agreement_Presets">Agreement Presets</span></h3>
+<p>Agreement Presets are defined at common/agreement_presets
+</p><p><b>Data Structure</b>
+</p>
+<ul><li><b>icon</b></li>
+<li><b>term_data</b>
+<ul><li><b>discrete_terms</b> Allows setting various terms like whether integration is possible
+<ul><li><b>key</b> Name refers to those in Agreement Terms (see below)</li>
+<li><b>value</b></li></ul></li>
+<li><b>resource_terms</b>
+<ul><li><b>key</b> Name refers to those in Agreement Terms (see below)</li>
+<li><b>value</b></li></ul></li></ul></li>
+<li><b>overlord_weight</b></li>
+<li><b>subject_weight</b></li>
+<li><b>potential</b></li>
+<li><b>hidden</b> Boolean, default to false</li></ul>
+<h3><span class="mw-headline" id="Agreement_Resources">Agreement Resources</span></h3>
+<p>Agreement Resources are defined at common/agreement_resources
+</p>
+<h4><span class="mw-headline" id="Data_Structure_3">Data Structure</span></h4>
+<ul><li><b>resources</b>
+<ul><li><b>category</b></li>
+<li><b>upkeep</b></li></ul></li></ul>
+<h3><span class="mw-headline" id="Agreement_Terms">Agreement Terms</span></h3>
+<p>Agreement Terms are defined at common/agreement_terms
+</p>
+<h4><span class="mw-headline" id="Data_Structure_4">Data Structure</span></h4>
+<ul><li><b>term_type</b> discrete or resource</li>
+<li><b>hidden</b> Boolean, defaults to false, whether to show the term in the Agreements window</li></ul>
+<h3><span class="mw-headline" id="Agreement_Term_Values">Agreement Term Values</span></h3>
+<p>Agreement Term Values are defined at common/agreement_term_values
+</p>
+<h4><span class="mw-headline" id="Data_Structure_5">Data Structure</span></h4>
+<ul><li><b>icon</b></li>
+<li><b>triggered_loyalty_change</b></li>
+<li><b>term</b>
+<ul><li><b>activate_effect</b></li>
+<li><b>deactivate_effect</b></li></ul></li>
+<li><b>potential</b></li></ul>
+<h3><span class="mw-headline" id="Specialist_Subject_Types">Specialist Subject Types</span></h3>
+<p>Specialist Subject Types are defined at common/specialist_subject_types
+</p>
+<h4><span class="mw-headline" id="Data_Structure_6">Data Structure</span></h4>
+<ul><li><b>icon</b></li>
+<li><b>icon_large</b></li>
+<li><b>preferred_ethic</b></li>
+<li><b>base_conversion_time</b> Time in months to convert into the subject type</li>
+<li><b>on_progress_complete</b> A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when conversion is done</li>
+<li><b>levels</b> A list of level entries. The order in this list is the order of the levels to be activated.
+<ul><li>The first level is always active for the federation for no experience requirement.</li>
+<li><b>experience_needed_for_next_level</b> Amount of experience needed to get to the next level</li>
+<li><b>perks</b> A list of perks (see below) to apply for the subject and overlord if at least this level is met</li></ul></li></ul>
+<h3><span class="mw-headline" id="Specialist_Subject_Perks">Specialist Subject Perks</span></h3>
+<p>Specialist Subject Perks are defined at common/specialist_subject_perks
+</p><p><b>Data Structure</b>
+</p>
+<ul><li><b>icon</b></li>
+<li><b>main_perk</b> Boolean</li>
+<li><b>subject_modifier</b> A list of modifiers to apply to the subject</li>
+<li><b>overlord_modifier</b> A list of modifiers to apply to the overlord</li>
+<li><b>overlord_relay_network_modifier</b> The modifier to apply to colonies neighboring the subject</li>
+<li><b>activate_effect</b> A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when the perk is applied</li>
+<li><b>deactivate_effect</b> A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when the perk is removed</li>
+<li><b>desc</b> Description override</li></ul>
+<h2><span class="mw-headline" id="Federations">Federations</span></h2>
+<p>Full Federation modding consist of Federation Types, Federation Perks, Federation Law Categories, and Federation Laws.
+</p><p>A Federation Type have level entries that refer to Federation Perks, while Federation Law Categories and Federation Laws work like <a href="/Policies_modding.html" title="Policies modding">policies and policy options</a>.
+</p>
+<h3><span class="mw-headline" id="Federation_Types">Federation Types</span></h3>
+<p>Federation Types are defined at "common/federation_types/xxx.txt".
+</p>
+<h4><span class="mw-headline" id="Data_Structure_7">Data Structure</span></h4>
+<ul><li><b>icon</b> - A reference to a GFX instance that indicates the icon of this federation type.</li>
+<li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that checks if this federation type is visible in federation type selection menu. (Country scope)</li>
+<li><b>allow</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that checks if this federation type can be selected. (Country scope)</li>
+<li><b>levels</b> - A list of level entries. The order in this list is the order of the levels to be activated.
+<ul><li>The key of each level entry is just flavor text. Technically it can be anything. Using just the level_1-5 is recommended since the federation UI is designed for federations of just 5 levels. The first level is always active for the federation for no experience requirement.</li>
+<li><b>experience</b> - Experience required from this level to the next level.
+<ul><li>If set to "100 200 300 400", the 5th level actually requires 100+200+300+400 experience to be achieved.</li></ul></li>
+<li><b>perks</b> - A list of Federation Perks to be activated upon activation of this level as well as to be deactivated upon deactivation of this level.</li></ul></li>
+<li><b>on_create</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed when this federation is created.</li>
+<li><b>ai_weight</b> - The higher the weight, the more likely the AI will be happy to form or join a federation of this type, as well as to swich an existing federation into this type.</li></ul>
+<h4><span class="mw-headline" id="Federation_Type_Example">Federation Type Example</span></h4>
+<p>This is the default federation type.
+</p>
+<pre>default_federation = {
+	icon = "GFX_default_federation"
+	potential = {
+		always = yes
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = requires_actor_not_barbaric_despoilers
+			NOT = { has_valid_civic = civic_barbaric_despoilers }
+		}
+	}
+	levels = {
+		level_1 = { # Starting rank
+			experience = @xp_to_level_2 # Experience until next rank
+			perks = {
+				default_federation_passive
+			}
+		}
+		...
+	}
+	on_create = {
+		remove_federation_flag = enable_federation_cooldowns
+		set_federation_law = centralization_minimal
+		set_federation_law = succession_type_rotation
+		...
+	}
+	
+	ai_weight = {
+		base = 0
+		modifier = {
+			desc = federation_acceptance_honorbound_warriors
+			add = -10
+			from = {
+				has_ai_personality = honorbound_warriors
+			}
+		}
+		...
+	}
+}
+</pre>
+<p>Unlike the <b>ai_weight</b> block of most other game objects, each <b>modifier</b> block of federation types do have a <b>desc</b> localisation key used to display AI acceptance to this federation type.
+</p>
+<h3><span class="mw-headline" id="Federation_Perks">Federation Perks</span></h3>
+<p>Federation Perks are defined at "common/federation_perks/xxx.txt".
+</p><p>Unlike other "perks", the federation perks can't be freely picked. They are bound to the federation level entries.
+</p>
+<h4><span class="mw-headline" id="Data_Structure_8">Data Structure</span></h4>
+<ul><li><b>federation_modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to the Federation scope.</li>
+<li><b>members_modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to all members of the federation, including the president.</li>
+<li><b>leader_modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to only the federation president.</li>
+<li><b>on_activate</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> executed to the Federation scope when this perk is activated because of level up.</li>
+<li><b>on_deactivate</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> executed to the Federation scope when this perk is deactivated because of level down. Used to cancel the effects of <b>on_activate</b>.</li></ul>
+<h4><span class="mw-headline" id="Federation_Perk_Example">Federation Perk Example</span></h4>
+<p>This is the passive effect of the research federation. It's activated through level-1 entry.
+</p>
+<pre>research_federation_passive = {
+	federation_modifier = {
+		description = research_federation_passive_effect
+		federation_research_sharing_mult = 0.25
+	}
+	on_activate = {
+		set_federation_settings = {
+			research_sharing = yes
+		}
+	}
+	on_deactivate = {
+		set_federation_settings = {
+			research_sharing = no
+		}
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Federation_Law_Categories">Federation Law Categories</span></h3>
+<p>Federation Law Categories are defined at "common/federation_law_categories/xxx.txt".
+</p>
+<h4><span class="mw-headline" id="Data_Structure_9">Data Structure</span></h4>
+<ul><li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this federation law category be displayed in the GUI.</li>
+<li><b>laws</b> - A list of keys of Federation Laws.</li>
+<li><b>centralization</b> - (yes/no) The Centralization law category use this.</li></ul>
+<h4><span class="mw-headline" id="Federation_Law_Category_Example">Federation Law Category Example</span></h4>
+<p>This is the Succession Power federation law category.
+</p>
+<pre>law_category_succession_power = {
+	potential = {
+		OR = {
+			has_federation_law = succession_type_strongest
+			has_federation_law = succession_type_strongest_hegemony
+		}
+	}
+	laws = {
+		succession_power_economy
+		succession_power_diplomatic_weight
+		succession_power_tech
+		succession_power_fleet
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Federation_Laws">Federation Laws</span></h3>
+<p>Federation Laws are defined at "common/federation_laws/xxx.txt".
+</p>
+<h4><span class="mw-headline" id="Data_Structure_10">Data Structure</span></h4>
+<ul><li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine should this federation law option be displayed.</li>
+<li><b>allow</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine can this federation law be voted to activate.</li>
+<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to the Federation scope.</li>
+<li><b>on_enact</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> executed to the Federation scope when the federation law is changed to this.</li>
+<li><b>ai_weight</b> - Determines AI acceptance to this federation law option.</li></ul>
+<h4><span class="mw-headline" id="Federation_Law_Example">Federation Law Example</span></h4>
+<p>This is the Federation Law "Succession Power: Diplomatic Weight".
+</p>
+<pre>succession_power_diplomatic_weight = {
+	potential = {
+		OR = {
+			has_federation_law = succession_type_strongest
+			has_federation_law = succession_type_strongest_hegemony
+		}
+	}
+	allow = { 
+		custom_tooltip = {
+			NOT = {
+				AND = {
+					NOT = { has_federation_law = succession_power_diplomatic_weight }
+					has_modifier = federation_law_category_succession_power_cooldown
+					has_any_federation_law_in_category = law_category_succession_power
+				}
+			}
+		}
+	}
+	on_enact = {
+		set_federation_succession_type = diplomatic_weight
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_succession_power_cooldown
+				days = @cooldown
+			}
+		}
+		add_cohesion = -5
+	}
+
+	ai_weight = {
+		base = 26
+		
+		#Behaviour-specific
+		modifier = {
+			add = 25
+			federation = { 
+				has_federation_type = trade_federation
+				NOT = { federation = { has_federation_law = succession_power_economy } }
+			}
+		}
+		...
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Relevant_Dynamic_Modding_Statements">Relevant Dynamic Modding Statements</span></h3>
+<p>Country Conditions
+</p>
+<ul><li><b>is_federation_leader = yes/no</b> - Checks if this empire is federation leader.</li>
+<li><b>num_envoys_to_federation &lt;=&gt; int</b> - Checks the number of envoys this empire assigned to the federation.</li>
+<li><b>is_in_federation_with = &lt;country scope&gt;</b> - Checks if this empire and the target empire are in the same federation.</li></ul>
+<p>Country Effects
+</p>
+<ul><li><b>set_federation_leader = yes</b> - Makes this empire the federation leader.</li></ul>
+<p>Federation Conditions
+</p>
+<ul><li><b>federation_experience &lt;=&gt; int</b> - Checks the federation experience.</li>
+<li><b>federation_cohesion &lt;=&gt; int</b> - Checks the federation cohesion.</li>
+<li><b>federation_cohesion_growth &lt;=&gt; int</b> - Checks the federation cohesion monthly growth.</li>
+<li><b>federation_level &lt;=&gt; int</b> - Checks the federation level.</li>
+<li><b>has_any_federation_law_in_category = &lt;federation law category key&gt;</b> - Checks if there is an active federation law under a specific category.</li>
+<li><b>has_federation_law = &lt;federation law key&gt;</b> - Checks if this federation has a specific law.</li>
+<li><b>has_federation_perk = &lt;federation perk key&gt;</b> - Checks if this federation has a specific perk.</li>
+<li><b>has_federation_type = &lt;federation type key&gt;</b> - Checks the federation type.</li>
+<li><b>has_federation_setting = &lt;federation setting key&gt;</b> - Checks the federation setting.</li></ul>
+<p>Federation Effects
+</p>
+<ul><li><b>add_federation_experience = int</b> - Changes the federation experience.</li>
+<li><b>add_cohesion = int</b> - Changes the federation cohesion.</li>
+<li><b>set_federation_law = &lt;federation law key&gt;</b> - Makes the federation law to activate.</li>
+<li><b>set_federation_type = &lt;federation type key&gt;</b> - Changes the federation type.</li>
+<li><b>set_federation_succession_type = strongest/diplomatic_weight/rotation/challenge/random</b> - Using this effect outside the federation laws is discouraged.</li>
+<li><b>set_federation_succession_term = status_change/years_10/years_20/years_30/years_40</b> - Using this effect outside the federation laws is discouraged.</li>
+<li><b>set_only_leader_builds_fleets = yes/no</b> - Using this effect outside the federation laws is discouraged.</li>
+<li><b>set_allow_subjects_to_join = yes/no</b> - Using this effect outside the federation laws is discouraged.</li>
+<li><b>set_equal_voting_power = yes/no</b> - Using this effect outside the federation laws is discouraged.</li>
+<li><b>set_free_migration = yes/no</b> - Using this effect outside the federation laws is discouraged.</li>
+<li><b>set_diplomacy_action_setting</b> - Using this effect outside the federation laws is discouraged.</li></ul>
+<pre>set_diplomacy_action_setting = {
+	action = &lt;diplomatic action key that requires federation vote&gt;
+	settings = {
+		vote_type = unanimous_vote/majority_vote/leader
+	}
+}
+</pre>
+<ul><li><b>set_federation_settings</b> - Using this effect outside the federation laws is discouraged.</li></ul>
+<pre>set_federation_settings = {
+	research_sharing = yes/no
+	failed_vote_half_price = yes/no
+}
+</pre>
+<h2><span class="mw-headline" id="Galactic_community">Galactic community</span></h2>
+<p>Full galactic community modding consist of Resolution Categories and Resolutions. They work like <a href="/Policies_modding.html" title="Policies modding">policies and policy options</a>.
+</p>
+<h3><span class="mw-headline" id="Resolution_categories">Resolution categories</span></h3>
+<p>Federation law categories are defined at "common/resolution_categories/xxx.txt".
+</p>
+<h4><span class="mw-headline" id="Data_structure_11">Data structure</span></h4>
+<ul><li><b>group</b> - A localisation key. Multiple Resolution Categories of the same group will be grouped together in the galactic community view.</li>
+<li><b>icon</b> - A reference to a GFX instance that indicates the icon of this Resolution Category.</li>
+<li><b>resolution_types</b> - A list of keys of Resolutions.</li></ul>
+<h4><span class="mw-headline" id="Resolution_Category_Example">Resolution Category Example</span></h4>
+<p>These are the ecology and technology resolutions in the "blue group".
+</p>
+<pre>resolution_category_ecology = {
+	group = environment_technology
+	icon = "GFX_resolution_ecolgical_protection"
+
+	resolution_types = {
+		"resolution_ecology_repeal_1"
+		...
+	}
+}
+
+resolution_category_galacticstudies = {
+	group = environment_technology
+	icon = "GFX_resolution_galactic_studies"
+
+	resolution_types = {
+		"resolution_galacticstudies_repeal_1"
+		...
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Resolutions">Resolutions</span></h3>
+<p>Resolutions are defined at "common/resolutions/xxx.txt".
+</p>
+<h4><span class="mw-headline" id="Data_Structure_12">Data Structure</span></h4>
+<ul><li><b>icon</b> - A reference to a GFX instance that indicates the icon of this Resolution.</li>
+<li><b>target</b> - (yes/no) Determines if this resolution needs an empire for a target.</li>
+<li><b>harmful</b> - (yes/no) Determines if the AI should consider this Resolution harmful while choosing the target.</li>
+<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a>. For as long as this Resolution is passed, all members of the galactic community receive these modifiers.</li>
+<li><b>triggered_modifier</b> - Similarly, except each block has a potential block.
+<ul><li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if this block of triggered_modifier should apply to an empire. (Country scope)</li></ul></li>
+<li><b>effect</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed on the proposing empire when this resolution passed. If this resolution needs a target, instead this block is executed on the target empire. (Country scope)</li>
+<li><b>fail_effects</b> - Similarly, this block is executed when this resolution is declined.</li>
+<li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if this resolution can be displayed to an empire on the resolution proposal view. (Country scope)</li>
+<li><b>allow</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if this resolution can be proposed by an empire. (Country scope)</li>
+<li><b>ai_weight</b> - Determines AI acceptance of this resolution.</li>
+<li><b>valid_target</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to determine if an empire is a valid target of this resolution. <b>targeted = yes</b> only.</li></ul>
+<h4><span class="mw-headline" id="Resolution_Example">Resolution Example</span></h4>
+<p>The following examples are the first level of Economy Sanction and the Council Denouncement.
+</p>
+<pre>resolution_sanctions_economic_1 = {
+	icon = "GFX_sanctions_orange"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_denounce
+		}
+	}
+
+	target = no
+
+	effect = {
+		custom_tooltip = sanctions_effect
+	}
+
+	modifier = {
+	}
+
+	triggered_modifier = {
+		potential = {
+			OR = {
+				is_in_breach_of_any = yes
+				has_modifier = resolution_denounced
+			}
+		}
+		modifier = {
+			resolution_sanctions_economic = 1
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_something_illegal"
+			has_global_flag = resolution_with_breach_effect_passed
+		}
+		custom_tooltip = {
+			NOT = {
+				is_active_resolution = "resolution_sanctions_economic_2"
+				is_active_resolution = "resolution_sanctions_economic_3"
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_normal
+
+		modifier = {
+			factor = 0
+			is_in_breach_of_any = yes
+		}
+
+		...
+	}
+}
+</pre>
+<pre>resolution_council_denouncement = {
+	icon = "GFX_resolution_purges"
+
+	potential = {
+		has_federations_dlc = yes
+	}
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+
+	target = yes
+	harmful = yes
+	valid_target = {
+		is_country_type = default
+		is_galactic_community_member = yes
+		NOT = { is_same_value = from } # don't denounce yourself.
+		OR = {
+			opinion_level = { who = from level &lt; neutral }
+			from = { is_rival = prev }
+			is_in_breach_of_any = yes
+		}
+	}
+
+	effect = {
+		add_modifier = { modifier = resolution_denounced days = 3600 }
+	}
+
+	potential = {
+		is_galactic_council_established = yes
+		NOT = { has_global_flag = resolution_council_denouncement_abolished }
+	}
+
+	allow = {
+		is_part_of_galactic_council = yes
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_disliked
+	}
+}
+</pre>
+<p>The "resolution_sanctions_economic" statement is a <a href="https://stellaris.paradoxwikis.com/Modifiers#Static_Modifiers" class="mw-redirect" title="Modifiers">Static Modifier</a>, not just a Modifier. A "resolution_sanctions_economic = 1" statement in a modifier block means this block has one time the effect as that Static Modifier while "= 2" means twice.
+</p>
+<h3><span class="mw-headline" id="Galactic_Focuses">Galactic Focuses</span></h3>
+<p>Galactic Focuses are defined at "common/galactic_focuses/xxx.txt".
+</p>
+<h4><span class="mw-headline" id="Data_Structure_13">Data Structure</span></h4>
+<ul><li><b>icon</b> - A reference to a GFX entry.</li>
+<li><b>potential</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check if this galactic focus is vaild. (Global scope)</li>
+<li><b>trigger</b> - A block of <a href="/Conditions.html" title="Conditions">Conditions</a> to check if this galactic focus is fulfilled. (Global scope)</li>
+<li><b>effect</b> - A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed to each galactic community member when this focus is fulfilled. (Country scope)</li></ul>
+<h4><span class="mw-headline" id="Galactic_Focus_Example">Galactic Focus Example</span></h4>
+<pre>galactic_focus_crisis_prethoryn = {
+	icon = "GFX_galactic_focus_threat_to_galaxy"
+
+	effect = {
+		add_resource = { influence = 100 }
+		country_event = { id = crisis.211 }
+	}
+
+	potential = {
+		has_global_flag = galactic_focus_crisis_prethoryn
+		NOT = { has_global_flag = prethoryn_invasion_defeated }
+	}
+
+	trigger = {
+		custom_tooltip = {
+			fail_text = "galactic_focus_crisis_prethoryn"
+			has_global_flag = prethoryn_invasion_defeated
+		}
+	}
+}
+</pre>
+<h3><span class="mw-headline" id="Relevant_Dynamic_Modding_Statements_2">Relevant Dynamic Modding Statements</span></h3>
+<p>Country Conditions
+</p>
+<ul><li><b>num_envoys_to_galcom &lt;=&gt; int</b> - Checks the number of envoys this empire assigned to the galactic community.</li>
+<li><b>is_proposing_resolution = &lt;resolution key/any&gt;</b> - Checks if this empire is proposing a specific, or any, resolution.</li>
+<li><b>is_galactic_community_member = yes/no</b> - Checks if this empire is a member of the galactic community.</li>
+<li><b>is_part_of_galactic_council = yes/no</b> - Checks if this empire is a member of the galactic council.</li>
+<li><b>galactic_community_rank &lt;=&gt; int</b> - Checkes the rank of diplomatic weight this empire of in the galactic community. Returns -1 if this empire is not a member.</li>
+<li><b>is_permanent_councillor = yes/no</b> - Checks if this empire is a permanent councillor.</li>
+<li><b>is_in_breach_of_any = yes/no</b> - Checks if this empire is in breach of any galactic law.</li></ul>
+<p>Country Effects
+</p>
+<ul><li><b>pass_resolution = &lt;resolution key&gt;</b> - Immediately passes a resolution. It's considered to be proposed by this empire. Targeted resolutions can't be passed this way.</li>
+<li><b> pass_resolution_no_cooldown = &lt;resolution type&gt;</b>- Same as pass_resolution but skips the resolution category's cooldown.</li>
+<li><b>pass_targeted_resolution = { resolution = &lt;resolution type&gt; target = &lt;target&gt; }</b> - Immediately passes the first found (oldest) proposed/voting for/failed resolution OR a new resolution of this type that has the specified target. Ignores whether the target is valid or not.</li>
+<li><b>add_to_galactic_council = yes</b> - Makes this empire a councillor.</li>
+<li><b>remove_from_galactic_council = yes</b> - Removes this empire from the galactic council.</li>
+<li><b>add_permanent_councillor = yes</b> - Makes this empire a permanent councillor.</li>
+<li><b>remove_permanent_councillor = yes</b> - Removes this empire from permanent councillors.</li>
+<li><b>add_to_galactic_community = yes</b> - Adds this empire to the galactic community.</li>
+<li><b>remove_from_galactic_community = yes</b> - Removes this empire from the galactic community.</li></ul>
+<p>Global Conditions
+</p>
+<ul><li><b>is_galactic_community_formed = yes/no</b> - Checks if the galactic community is formed or not.</li>
+<li><b>is_years_since_community_formationn &lt;=&gt; int</b> - Checks the years since the formation of the galactic community.</li>
+<li><b>is_galactic_council_established = yes/no</b> - Checks if the galactic council is established or not.</li>
+<li><b>is_years_since_council_establishment &lt;=&gt; int</b> - Checks the years since the establishment of the galactic council.</li>
+<li><b>num_council_positions &lt;=&gt; int</b> - Checks the number of council positions.</li>
+<li><b>is_voting_on_resolution = &lt;resolution key/any&gt;</b> - Checks if the galactic community is now voting on a specific, or any, resolution.</li>
+<li><b>is_active_resolution = &lt;resolution key&gt;</b> - Checks if a specific resolution is in effect.</li></ul>
+<p>Global Effects
+</p>
+<ul><li><b>set_council_size = int</b> - Sets the galactic council size.</li>
+<li><b>increase_council_size = yes</b> - Increases the galactic council size by 1.</li>
+<li><b>decrease_council_size = yes</b> - Decreases the galactic council size by 1.</li>
+<li><b>set_council_veto = yes/no</b> - Sets whether council members can veto resolutions or not.</li>
+<li><b>set_council_emergency_measures = yes/no</b> - Sets whether council members can propose emergency measures or not.</li></ul>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707181129
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.063 seconds
+Real time usage: 0.069 seconds
+Preprocessor visited node count: 311/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    8.847      1 -total
+ 72.03%    6.372      1 Template:ModdingNavbox
+ 30.87%    2.731      1 Template:Navbox
+ 24.64%    2.180      1 Template:Version
+ 16.60%    1.469      1 Template:Infobox
+ 10.64%    0.941     14 Template:Navboxgroup
+  4.76%    0.421      1 Template:Nowrap
+  4.62%    0.409      1 Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7494-0!canonical and timestamp 20260707181129 and revision id 103443.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

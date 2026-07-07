@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Icon/doc - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Icon/doc</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="messagebox" id="template_doc_page_viewed_directly" style="text-align: center">
+This is the <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> page for <a href="/Template_Icon.html" title="Template:Icon">Template:Icon</a>. <div style="font-size: 90%">When it is viewed directly, links using <a href="http://en.wikipedia.org/wiki/Help:Variable" class="extiw" title="wikipedia:Help:Variable">variables</a> may appear broken; do not replace these with <a href="http://en.wikipedia.org/wiki/hard_coding" class="extiw" title="wikipedia:hard coding">hardcoded</a> page names or URLs.</div>
+</div>
+<p>This template can be used for embedding icons in the Stellaris wiki, thus making them more colorful, easy to read and standardized. The available icons link to the concept they represent.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Creating_new_icons"><span class="tocnumber">3</span> <span class="toctext">Creating new icons</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Icon_images"><span class="tocnumber">3.1</span> <span class="toctext">Icon images</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Subtemplates"><span class="tocnumber">3.2</span> <span class="toctext">Subtemplates</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Improve_this_template"><span class="tocnumber">4</span> <span class="toctext">Improve this template</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#List_of_available_icons"><span class="tocnumber">5</span> <span class="toctext">List of available icons</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Parameter
+</th>
+<th>Descriptions
+</th>
+<th>Required
+</th>
+<th>Default
+</th></tr>
+<tr>
+<td>1</td>
+<td>Identifier for the icon</td>
+<td><b>required</b></td>
+<td><i>none</i>
+</td></tr>
+<tr>
+<td>2</td>
+<td>Width of the icon</td>
+<td>optional</td>
+<td>24px (usually, depends on icon)
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<dl><dt>Syntax</dt>
+<dd><code>{{icon|identifier}}</code> or <code>{{icon|identifier|width}}</code></dd></dl>
+<dl><dd>Insert the relevant identifier in the above syntax. The available identifier can be found in the table below.</dd></dl>
+<dl><dt>Example</dt>
+<dd><code>{{icon|militarist}}</code> will generate <a href="https://stellaris.paradoxwikis.com/Militarist" title="Militarist"><img alt="Militarist.png" src="images/Militarist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>.</dd></dl>
+<dl><dt>Related templates</dt></dl>
+<p>See also:
+</p>
+<ul><li><code><a href="/Template_Iconify.html" title="Template:Iconify">{{iconify}}</a></code> to add the text of the identifier after the icon</li>
+<li><code><a href="/Template_Icon_link.html" title="Template:Icon link">{{icon link}}</a></code> to use icons with a custom anchor link</li>
+<li><code><a href="/Template_File_icon.html" title="Template:File icon">{{file icon}}</a></code> to create icons directly from image files</li></ul>
+<h2><span class="mw-headline" id="Creating_new_icons">Creating new icons</span></h2>
+<p>Icons are created by adding a new entry to one of the icon subtemplates found at <a href="/Category_Subtemplates.html" title="Category:Subtemplates">Category:Subtemplates</a> or in the table below.
+</p>
+<ul><li>New icons must also be manually added to this doc page.</li>
+<li>From SolSys: An important thing to note when adding new entries to the icon template is <i>how often an icon is going to be used</i>. If an icon is going to be used only a couple of times, and in a specific page, it is best to directly link the file. The reasoning is the that templates are being called as a whole each time they are used. If they are being loaded with one-time use icons it means they become more "expensive" to use and lead to slower page loads. Due to this please use caution when adding new icons.</li></ul>
+<h4><span class="mw-headline" id="Icon_images">Icon images</span></h4>
+<ul><li>Images for icons can be found in <a href="/Category_Icons.html" title="Category:Icons">Category:Icons</a> on the wiki, and in <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/gfx/interface/icons/</span> in the game files.</li>
+<li>The default width for most icons is 24px, although certain categories are at 52px (buildings, modules, technology, avatars).
+<ul><li>If the icon image is taller that it is wide, set the height with x24px instead.</li></ul></li>
+<li>Images for modifier icons should preferably be modified to add a black circle background, but I've been unable to get anyone who makes these images to locate or upload the template to do so.</li></ul>
+<h4><span class="mw-headline" id="Subtemplates">Subtemplates</span></h4>
+<p>Subtemplate pages where the icons are defined.
+</p><p>By default, most icons will be defined in one of the alphabetical pages:
+</p>
+<table>
+
+<tbody><tr style="vertical-align:top;">
+<td>
+<ul><li><a href="/Template_Icon/a.html" title="Template:Icon/a">Icon/a</a></li>
+<li><a href="/Template_Icon/b.html" title="Template:Icon/b">Icon/b</a></li>
+<li><a href="/Template_Icon/c.html" title="Template:Icon/c">Icon/c</a></li>
+<li><a href="/Template_Icon/d.html" title="Template:Icon/d">Icon/d</a></li>
+<li><a href="/Template_Icon/e.html" title="Template:Icon/e">Icon/e</a></li>
+<li><a href="/Template_Icon/f.html" title="Template:Icon/f">Icon/f</a></li>
+<li><a href="/Template_Icon/g.html" title="Template:Icon/g">Icon/g</a></li></ul>
+</td>
+<td>
+<ul><li><a href="/Template_Icon/h.html" title="Template:Icon/h">Icon/h</a></li>
+<li><a href="/Template_Icon/i.html" title="Template:Icon/i">Icon/i</a></li>
+<li><a href="/Template_Icon/j.html" title="Template:Icon/j">Icon/j</a></li>
+<li><a href="/Template_Icon/k.html" title="Template:Icon/k">Icon/k</a></li>
+<li><a href="/Template_Icon/l.html" title="Template:Icon/l">Icon/l</a></li>
+<li><a href="/Template_Icon/m.html" title="Template:Icon/m">Icon/m</a></li>
+<li><a href="/Template_Icon/n.html" title="Template:Icon/n">Icon/n</a></li></ul>
+</td>
+<td>
+<ul><li><a href="/Template_Icon/o.html" title="Template:Icon/o">Icon/o</a></li>
+<li><a href="/Template_Icon/p.html" title="Template:Icon/p">Icon/p</a></li>
+<li><a href="/Template_Icon/q.html" title="Template:Icon/q">Icon/q</a></li>
+<li><a href="/Template_Icon/r.html" title="Template:Icon/r">Icon/r</a></li>
+<li><a href="/Template_Icon/s.html" title="Template:Icon/s">Icon/s</a></li>
+<li><a href="/Template_Icon/t.html" title="Template:Icon/t">Icon/t</a></li>
+<li><a href="/Template_Icon/u.html" title="Template:Icon/u">Icon/u</a></li></ul>
+</td>
+<td>
+<ul><li><a href="/Template_Icon/v.html" title="Template:Icon/v">Icon/v</a></li>
+<li><a href="/Template_Icon/w.html" title="Template:Icon/w">Icon/w</a></li>
+<li><a href="/Template_Icon/x.html" title="Template:Icon/x">Icon/x</a></li>
+<li><a href="/Template_Icon/y.html" title="Template:Icon/y">Icon/y</a></li>
+<li><a href="/Template_Icon/z.html" title="Template:Icon/z">Icon/z</a></li></ul>
+</td></tr></tbody></table>
+<p>Additionally, some icons are defined in dedicated subtemplate pages for their category.
+</p>
+<ul><li><a href="/Template_Icon/job.html" title="Template:Icon/job">Icon/job</a> - for job icons</li>
+<li><a href="/Template_Icon/tech.html" title="Template:Icon/tech">Icon/tech</a> - for technology icons</li>
+<li><a href="/Template_Icon/species_trait.html" title="Template:Icon/species trait">Icon/species trait</a> - for species trait icons</li></ul>
+<h2><span class="mw-headline" id="Improve_this_template">Improve this template</span></h2>
+<p>This template is protected due to high traffic. If you have suggestions for improvements or extensions please note them on the <a href="https://stellaris.paradoxwikis.com/Template_talk%3AIcon/doc" title="Template talk:Icon/doc">talk page</a>.
+</p>
+<h2><span class="mw-headline" id="List_of_available_icons">List of available icons</span></h2>
+<table class="metadata plainlinks ambox ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> <div style="margin-right: 4px;">
+  <img alt="Wiki letter w.png" src="https://central.paradoxwikis.com/images/6/6a/Wiki_letter_w.png" decoding="async" loading="lazy" width="44" height="44" data-file-width="44" data-file-height="44" /></div></td>
+<td class="mbox-text" style="">Please help improve this article or section by <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Icon/doc&amp;action=edit"><b>expanding it</b></a>&#32;with: any undocumented icons you can find in the subtemplates. The technology section in particular needs to be updated.</td>
+</tr>
+</tbody></table>
+<div class="tabber"><header class="tabber__header"><noscript>Tabber requires Javascript to function.</noscript></header><section class="tabber__section"><article class="tabber__panel" data-title="DLC" data-tabber-page-title="Template:Icon/doc/dlc"><div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:; ;">
+<table class="wikitable" style="width:250px; margin-right:1em;">
+<tbody><tr>
+<th colspan="2">Base
+</th></tr>
+<tr>
+<td>ste, stellaris</td>
+<td width="30px"><a href="/Stellaris.html" title="Stellaris"><img alt="Stellaris.png" src="images/Stellaris.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>soundtrack</td>
+<td><a href="/Complete_Soundtrack.html" title="Complete Soundtrack"><img alt="DLC complete soundtrack.png" src="images/DLC_complete_soundtrack.png" decoding="async" loading="lazy" width="26" height="27" data-file-width="42" data-file-height="43" /></a>
+</td></tr>
+<tr>
+<td>ann, anniversary</td>
+<td><a href="/Downloadable_content.html#Anniversary_Portraits" title="Anniversary Portraits"><img alt="Anniversary Portraits" src="images/DLC_anniversary_portraits.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr></tbody></table>
+<table class="wikitable" style="width:250px; margin-right:1em;">
+<tbody><tr>
+<th colspan="2">DLC (expansions)
+</th></tr>
+<tr>
+<td>utp, utopia</td>
+<td width="30px"><a href="/Utopia.html" title="Utopia"><img alt="Utopia.png" src="images/Utopia.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>apc, apocalypse</td>
+<td><a href="/Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>mgc, megacorp</td>
+<td><a href="/MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>fed, federations</td>
+<td><a href="/Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>nem, nemesis</td>
+<td><a href="/Nemesis.html" title="Nemesis"><img alt="Nemesis.png" src="images/Nemesis.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>ovl, overlord</td>
+<td><a href="/Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>tma, the machine age</td>
+<td><a href="/The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>cos, cosmic storms</td>
+<td><a href="/Cosmic_Storms_(DLC).html" title="Cosmic Storms (DLC)"><img alt="Cosmic Storms.png" src="images/Cosmic_Storms.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>bio, biogenesis</td>
+<td><a href="/BioGenesis.html" title="BioGenesis"><img alt="BioGenesis.png" src="images/BioGenesis.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>sos, shadows of the shroud</td>
+<td><a href="/Shadows_of_the_Shroud.html" title="Shadows of the Shroud"><img alt="Shadows of the Shroud.png" src="images/Shadows_of_the_Shroud.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr></tbody></table>
+<table class="wikitable" style="width:250px; margin-right:1em;">
+<tbody><tr>
+<th colspan="2">DLC (story packs)
+</th></tr>
+<tr>
+<td>lev, leviathans</td>
+<td width="10px"><a href="/Leviathans.html" title="Leviathans"><img alt="Leviathans.png" src="images/Leviathans.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>snd, synthetic dawn</td>
+<td><a href="/Synthetic_Dawn.html" title="Synthetic Dawn"><img alt="Synthetic Dawn.png" src="images/Synthetic_Dawn.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>dst, distant stars</td>
+<td><a href="/Distant_Stars.html" title="Distant Stars"><img alt="Distant Stars.png" src="images/Distant_Stars.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>anr, ancient relics</td>
+<td><a href="/Ancient_Relics.html" title="Ancient Relics"><img alt="Ancient Relics.png" src="images/Ancient_Relics.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>fct, first contact</td>
+<td><a href="/First_Contact_(DLC).html" title="First Contact"><img alt="First Contact" src="images/First_Contact.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>asp, astral planes</td>
+<td><a href="/Astral_Planes.html" title="Astral Planes"><img alt="Astral Planes.png" src="images/Astral_Planes.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>gra, grand archive</td>
+<td><a href="/Grand_Archive_(DLC).html" title="Grand Archive"><img alt="Grand Archive" src="images/Grand_Archive.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr></tbody></table>
+<table class="wikitable" style="width:250px; margin-right:1em;">
+<tbody><tr>
+<th colspan="2">DLC (species packs)
+</th></tr>
+<tr>
+<td>pln, plantoids</td>
+<td width="30px"><a href="https://stellaris.paradoxwikis.com/Plantoids" title="Plantoids"><img alt="DLC plantoids species pack.png" src="images/Plantoids.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>hum, humanoids</td>
+<td><a href="https://stellaris.paradoxwikis.com/Humanoids" title="Humanoids"><img alt="DLC humanoids species pack.png" src="images/Humanoids.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>lit, lithoids</td>
+<td><a href="https://stellaris.paradoxwikis.com/Lithoids_%28DLC%29" title="Lithoids (DLC)"><img alt="Lithoids.png" src="images/Lithoids.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>nec, necroids</td>
+<td><a href="https://stellaris.paradoxwikis.com/Necroids" title="Necroids"><img alt="Necroids.png" src="images/Necroids.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>aqu, aquatics</td>
+<td><a href="https://stellaris.paradoxwikis.com/Aquatics" title="Aquatics"><img alt="Aquatics.png" src="images/Aquatics.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>tox, toxoids</td>
+<td><a href="https://stellaris.paradoxwikis.com/Toxoids" title="Toxoids"><img alt="Toxoids.png" src="images/Toxoids.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td>inf, infernals</td>
+<td><a href="https://stellaris.paradoxwikis.com/Infernals" title="Infernals"><img alt="Infernals.png" src="images/Infernals.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>
+</td></tr></tbody></table>
+</div></article><article class="tabber__panel" data-title="Common" data-tabber-page-title="Template:Icon/doc/common" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fcommon}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/common.html" title="Template:Icon/doc/common" rel="nofollow">Template:Icon/doc/common</a></div></article><article class="tabber__panel" data-title="Planets" data-tabber-page-title="Template:Icon/doc/planets" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fplanets}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/planets.html" title="Template:Icon/doc/planets" rel="nofollow">Template:Icon/doc/planets</a></div></article><article class="tabber__panel" data-title="Diplomacy" data-tabber-page-title="Template:Icon/doc/diplomacy" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fdiplomacy}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/diplomacy.html" title="Template:Icon/doc/diplomacy" rel="nofollow">Template:Icon/doc/diplomacy</a></div></article><article class="tabber__panel" data-title="Government" data-tabber-page-title="Template:Icon/doc/government" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fgovernment}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/government.html" title="Template:Icon/doc/government" rel="nofollow">Template:Icon/doc/government</a></div></article><article class="tabber__panel" data-title="Jobs" data-tabber-page-title="Template:Icon/doc/jobs" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fjobs}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/jobs.html" title="Template:Icon/doc/jobs" rel="nofollow">Template:Icon/doc/jobs</a></div></article><article class="tabber__panel" data-title="Military" data-tabber-page-title="Template:Icon/doc/military" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fmilitary}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/military.html" title="Template:Icon/doc/military" rel="nofollow">Template:Icon/doc/military</a></div></article><article class="tabber__panel" data-title="Modifiers" data-tabber-page-title="Template:Icon/doc/modifiers" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fmodifiers}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/modifiers.html" title="Template:Icon/doc/modifiers" rel="nofollow">Template:Icon/doc/modifiers</a></div></article><article class="tabber__panel" data-title="Technology" data-tabber-page-title="Template:Icon/doc/tech" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Ftech}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/tech.html" title="Template:Icon/doc/tech" rel="nofollow">Template:Icon/doc/tech</a></div></article><article class="tabber__panel" data-title="Collection" data-tabber-page-title="Template:Icon/doc/collection" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fcollection}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/collection.html" title="Template:Icon/doc/collection" rel="nofollow">Template:Icon/doc/collection</a></div></article><article class="tabber__panel" data-title="Traits" data-tabber-page-title="Template:Icon/doc/traits" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Ftraits}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/traits.html" title="Template:Icon/doc/traits" rel="nofollow">Template:Icon/doc/traits</a></div></article><article class="tabber__panel" data-title="Obsolete" data-tabber-page-title="Template:Icon/doc/obsolete" data-tabber-pending-load="1" data-tabber-load-url="https://stellaris.paradoxwikis.com/api.php?action=parse&amp;format=json&amp;formatversion=2&amp;title=Template%3AIcon%2Fdoc&amp;text={{:Template%3AIcon%2Fdoc%2Fobsolete}}&amp;redirects=1&amp;prop=text&amp;disablelimitreport=1&amp;disabletoc=1&amp;wrapoutputclass="><div class="tabber__transclusion"><a href="/Template_Icon/doc/obsolete.html" title="Template:Icon/doc/obsolete" rel="nofollow">Template:Icon/doc/obsolete</a></div></article></section></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182525
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.105 seconds
+Real time usage: 0.160 seconds
+Preprocessor visited node count: 1867/1000000
+Post‐expand include size: 12433/2097152 bytes
+Template argument size: 1339/2097152 bytes
+Highest expansion depth: 11/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 14873/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   67.765      1 -total
+ 71.77%   48.632      1 Template:Icon/doc/dlc
+ 60.95%   41.306     28 Template:Icon
+  9.24%    6.261      5 Template:Icon/a
+  8.14%    5.514      1 Template:Expand
+  8.03%    5.442      4 Template:Icon/s
+  5.96%    4.041      1 Template:Template_doc_page_viewed_directly
+  4.41%    2.991      1 Template:End_box_wrapper
+  4.20%    2.847      3 Template:Template
+  4.19%    2.842      2 Template:Icon/m
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:197-0!canonical and timestamp 20260707182524 and revision id 111933.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

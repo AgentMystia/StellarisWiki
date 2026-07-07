@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Flex end - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Flex end</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Flex_end/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Flex_end/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="https://stellaris.paradoxwikis.com/Template%3AFlex_end/doc" class="mw-redirect" title="Template:Flex end/doc">Template:Flex end/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Flex_end/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Flex_end/doc&amp;action=history">history</a>)</small></div>
+<p>Used to display elements next to each other, vertically aligned to the center. Supports up to 10 elements.
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Parameter</th>
+<th>Description
+</th>
+<th>Default</th>
+<th>Status
+</th></tr>
+<tr>
+<td>1
+</td>
+<td rowspan="2">Items to display next to each other
+</td>
+<td>–
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>2-10
+</td>
+<td>–
+</td>
+<td>optional
+</td></tr>
+<tr>
+<td>margin</td>
+<td>Sets horizontal gap between flexbox items, 'px' included in template</td>
+<td>6</td>
+<td>optional
+</td></tr>
+<tr>
+<td>gap</td>
+<td>Sets horizontal and vertical gap between flexbox items, overrides the margin parameter</td>
+<td>0px 6px</td>
+<td>optional
+</td></tr>
+<tr>
+<td>align</td>
+<td>Vertical alignment of the contents.
+<ul><li><code>flex-start</code> to align to top</li>
+<li><code>flex-end</code> to align to bottom</li>
+<li><code>center</code> to align to center</li></ul>
+</td>
+<td>center</td>
+<td>optional
+</td></tr>
+<tr>
+<td>justify</td>
+<td>Horizontal alignment of the contents.
+<ul><li><code>flex-start</code> to align to left</li>
+<li><code>flex-end</code> to align to right</li>
+<li><code>center</code> to align to center</li></ul>
+</td>
+<td>flex-start</td>
+<td>optional
+</td></tr>
+<tr>
+<td>wrap</td>
+<td>Set to <code>wrap</code> or <code>yes</code> to enable wrapping of flexbox items. <br /> Set to <code>nowrap</code> or <code>no</code> to disable it.
+</td>
+<td>nowrap</td>
+<td>optional
+</td></tr>
+<tr>
+<td>style</td>
+<td>Specifies additional style properties of the flexbox.
+</td>
+<td>–</td>
+<td>optional
+</td></tr>
+<tr>
+<td>itemstyle</td>
+<td>Sets a style parameter for all items
+</td>
+<td>–</td>
+<td>optional
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Example">Example</span></h2>
+<p><code>{{flex|Item 1|Item 2&lt;br&gt;Item3|Item 4|align=center}}</code>
+</p>
+<div style="display:flex; align-items:center; justify-content:flex-start; gap:0px 6px; flex-wrap:nowrap;"><div style="">Item 1</div><div style="">Item 2<br />Item3</div><div style="">Item 4</div></div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182515
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.022 seconds
+Real time usage: 0.032 seconds
+Preprocessor visited node count: 112/1000000
+Post‐expand include size: 8732/2097152 bytes
+Template argument size: 2127/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 57/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   20.470      1 Template:Template_doc
+100.00%   20.470      1 -total
+ 80.50%   16.478      1 Template:Template_doc_inline
+ 60.65%   12.414      1 Template:Flex_end/doc
+ 19.17%    3.923      1 Template:Flex
+ 14.67%    3.002      1 Template:Template_doc_page_transcluded
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:14575-0!canonical and timestamp 20260707182515 and revision id 91702.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Special Project modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Special Project modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.1.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>The special project game data can be found in these files/folders: <code>common/special_projects</code>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Special_Projects_file_structure"><span class="tocnumber">1</span> <span class="toctext">Special Projects file structure</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#requirements"><span class="tocnumber">1.1</span> <span class="toctext">requirements</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Example"><span class="tocnumber">1.1.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Example_2"><span class="tocnumber">2.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Localisation"><span class="tocnumber">3</span> <span class="toctext">Localisation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Example_3"><span class="tocnumber">3.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Special_Projects_file_structure">Special Projects file structure</span></h2>
+<p>The file consists of a series of <i><code>special_project = {}</code></i> entries.
+</p>
+<table class="wikitable">
+<caption>special_project properties
+</caption>
+<tbody><tr>
+<th>Name</th>
+<th>Description</th>
+<th>Values</th>
+<th>Required</th>
+<th>Example
+</th></tr>
+<tr>
+<td><b>key</b></td>
+<td>The ID of the project, it is used in events and also in the localisation file (description is expected as e.g. <small><code>"MYMOD_EXAMPLE_1_PROJECT_DESC"</code></small>).</td>
+<td>String</td>
+<td>Yes</td>
+<td class="mw-code">key = <small>"MYMOD_EXAMPLE_1_PROJECT"</small>
+</td></tr>
+<tr>
+<td><b>event_chain</b></td>
+<td>An associated event chain.</td>
+<td>ID of an existing <a href="https://stellaris.paradoxwikis.com/Event_chain_modding" class="new" title="Event chain modding (page does not exist)">Event chain</a></td>
+<td>No</td>
+<td class="mw-code">event_chain = "mymod_example_event_chain"
+</td></tr>
+<tr>
+<td><b>picture</b></td>
+<td>A picture for the project.</td>
+<td>String</td>
+<td>No</td>
+<td class="mw-code">picture = GFX_evt_alien_nature
+</td></tr>
+<tr>
+<td><b>sound</b></td>
+<td>Does this project have a specific sound?</td>
+<td>yes/no</td>
+<td>No</td>
+<td class="mw-code">sound = no
+</td></tr>
+<tr>
+<td><b>icon</b></td>
+<td>An icon to show on the left in the event log tree.</td>
+<td>String</td>
+<td>No</td>
+<td class="mw-code">icon = <small>"gfx/interface/icons/situation_log/situation_log_quest.dds"</small>
+</td></tr>
+<tr>
+<td><b>cost</b></td>
+<td>Science point cost of the project (must be '0' if using days_to_research).</td>
+<td>Integer</td>
+<td>No</td>
+<td class="mw-code">cost = 560
+</td></tr>
+<tr>
+<td><b>days_to_research</b></td>
+<td>How many days it will take to complete this project. Either cost or days_to_research must be defined.</td>
+<td>Integer</td>
+<td>No</td>
+<td class="mw-code">days = 180
+</td></tr>
+<tr>
+<td><b>tech_department</b></td>
+<td>Which department will handle this.</td>
+<td>physics_technology, society_technology, engineering_technology</td>
+<td>Yes</td>
+<td class="mw-code">tech_department = physics_technology
+</td></tr>
+<tr>
+<td><b>same_option_group_as</b></td>
+<td>If it is a sub-project of another</td>
+<td>special_project ID</td>
+<td>No</td>
+<td class="mw-code">same_option_group_as = { KETLING_PROJECT_1 }
+</td></tr>
+<tr>
+<td><b>AI_wait_days</b></td>
+<td>AI will wait for the amount of days specified. Works like normal AI weight fields, with factor/add/weight. Country scope, FROM is creation scope</td>
+<td>weight integer, modifier_rule fields</td>
+<td>No</td>
+<td class="mw-code">
+<p>AI_wait_days = {
+	weight = 80
+	modifier = {
+		factor = 0.5
+		has_ethic = ethic_fanatic_militarist
+	}
+}
+</p>
+</td></tr>
+<tr>
+<td><b>timelimit</b></td>
+<td>In how many days will this project fail, triggering the on_fail statement.</td>
+<td>Integer, -1 for unlimited</td>
+<td>No</td>
+<td class="mw-code">timelimit = 100
+</td></tr>
+<tr>
+<td><b>location</b></td>
+<td>Does this project have a specific location?</td>
+<td>yes/no</td>
+<td>No</td>
+<td class="mw-code">location = no
+</td></tr>
+<tr>
+<td><b>event_scope</b></td>
+<td>The scope in which the statements run.</td>
+<td>ship_event, planet_event</td>
+<td>Yes</td>
+<td class="mw-code">event_scope = planet_event
+</td></tr>
+<tr>
+<td><b>requirements</b></td>
+<td>Conditions needed to start the project.<sup><a href="#requirements">[more]</a></sup></td>
+<td>Conditions</td>
+<td>No</td>
+<td class="mw-code">
+<p>requirements = {
+	shipclass_science_ship = 1
+	leader = scientist
+	skill &gt; 1
+}
+</p>
+</td></tr>
+<tr>
+<td><b>abort_trigger</b></td>
+<td>Ongoing project will be canceled if this trigger returns true
+<ul><li>this = country (project owner)</li>
+<li>from = event scope (planet or ship, MIGHT NOT EXIST)</li>
+<li>fromfrom = project creation scope (usually equals location)</li></ul>
+</td>
+<td>Conditions</td>
+<td>No
+</td>
+<td class="mw-code">
+<p>abort_trigger = {
+	NOT = { exists = fromfrom }
+}
+</p>
+</td></tr>
+<tr>
+<td><b>on_start</b>
+</td>
+<td>Statements to run when the project starts.
+<ul><li>this = event scope (ship or planet)</li>
+<li>from = project creation scope (usually equals location)</li></ul>
+</td>
+<td>Statements</td>
+<td>No
+</td>
+<td class="mw-code">
+<p>on_start = {
+	owner = {
+		set_country_flag = started_x_project
+	}
+}
+</p>
+</td></tr>
+<tr>
+<td><b>on_success</b> / <b>on_progress_25/50/75</b>
+</td>
+<td>Statements to run when the project is complete.
+<ul><li>this = event scope (ship or planet)</li>
+<li>from = project creation scope (usually equals location)</li></ul>
+</td>
+<td>Statements</td>
+<td>Yes
+</td>
+<td class="mw-code">
+<p>on_success = {
+	owner = {
+		country_event = { id = mymod.event.1 }
+	}
+}
+on_success = {
+	ship_event = { id = mymod.anomaly.1 }
+}
+</p>
+</td></tr>
+<tr>
+<td><b>on_cancel</b></td>
+<td>Statement fires if the abort trigger returns true
+<ul><li>this = country (project owner)</li>
+<li>from = event scope (planet or ship, MIGHT NOT EXIST)</li>
+<li>fromfrom = project creation scope (usually equals location)</li></ul>
+</td>
+<td>Statements</td>
+<td>No</td>
+<td class="mw-code">on_cancel = {}
+</td></tr>
+<tr>
+<td><b>on_fail</b></td>
+<td>Statements to run when the project fails.
+<ul><li>this = country (project owner)</li>
+<li>from = project creation scope (usually equals location)</li></ul>
+</td>
+<td>Statements</td>
+<td>No</td>
+<td class="mw-code">on_fail = { #times out
+<p>	owner = {
+		country_event = { id = federations3.2129 }
+	}
+}
+</p>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="requirements">requirements</span></h3>
+<p>Requirements use condition-like syntax, but they have their own set of commands. They <b>do not</b> support AND and OR commands.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Name</th>
+<th>Description</th>
+<th>Values</th>
+<th>Required</th>
+<th>Example
+</th></tr>
+<tr>
+<td>leader</td>
+<td>The type of leader needed at location.</td>
+<td>scientist, admiral, general, ruler, governor</td>
+<td>No</td>
+<td>leader = scientist
+</td></tr>
+<tr>
+<td>skill</td>
+<td>The skill level of the leader.</td>
+<td>Integer</td>
+<td>No</td>
+<td>skill &gt; 2
+</td></tr>
+<tr>
+<td>has_trait</td>
+<td>The leader must have this trait</td>
+<td>Leader trait ID</td>
+<td>No</td>
+<td>has_trait = leader_trait_expertise_voidcraft
+</td></tr>
+<tr>
+<td>shipclass_military</td>
+<td>The number of military ships required.</td>
+<td>Integer</td>
+<td>No</td>
+<td>shipclass_military = 1
+</td></tr>
+<tr>
+<td>shipclass_constructor</td>
+<td>The number of constructor ships required</td>
+<td>Integer</td>
+<td>No</td>
+<td>shipclass_constructor = 1
+</td></tr>
+<tr>
+<td>shipclass_science_ship</td>
+<td>The number of science ships required</td>
+<td>Integer</td>
+<td>No</td>
+<td>shipclass_science_ship = 1
+</td></tr>
+<tr>
+<td>shipclass_colonizer</td>
+<td>The number of colonizers required</td>
+<td>Integer</td>
+<td>No</td>
+<td>shipclass_colonizer = 1
+</td></tr>
+<tr>
+<td>shipclass_transport</td>
+<td>The number of transport ships required</td>
+<td>Integer</td>
+<td>No</td>
+<td>shipclass_transport = 1
+</td></tr>
+<tr>
+<td>assault_armies</td>
+<td>The number of assault armies required</td>
+<td>Integer</td>
+<td>No</td>
+<td>assault_armies = 1
+</td></tr>
+<tr>
+<td>defense_armies</td>
+<td>The number of defense armies required</td>
+<td>Integer</td>
+<td>No</td>
+<td>defense_armies = 2
+</td></tr>
+<tr>
+<td>research_station</td>
+<td>Is a research station required at location?</td>
+<td>yes</td>
+<td>No</td>
+<td>research_station = yes
+</td></tr>
+<tr>
+<td>mining_station</td>
+<td>Is a mining station required at location?</td>
+<td>yes</td>
+<td>No</td>
+<td>mining_station= yes
+</td></tr>
+<tr>
+<td>observation_station</td>
+<td>Is an observation station required at location?</td>
+<td>yes</td>
+<td>No</td>
+<td>observation_station = yes
+</td></tr>
+<tr>
+<td>fleet_power</td>
+<td>If shipclass_military the power of the fleet required</td>
+<td>Integer</td>
+<td>No</td>
+<td>fleet_power &gt; 999999
+</td></tr>
+<tr>
+<td>is_founder_species</td>
+<td>Does owner has to be a founder species?</td>
+<td>yes</td>
+<td>No</td>
+<td>is_founder_species = yes
+</td></tr></tbody></table>
+<h5><span class="mw-headline" id="Example">Example</span></h5>
+<pre>requirements = {
+	shipclass_science_ship = 1
+	leader = scientist
+	skill &gt; 2
+}</pre>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Once you have a special project defined, you can start it in an event by using the <i><code>enable_special_project</code></i> command. The command has three parameters:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Name</th>
+<th>Description</th>
+<th>Example
+</th></tr>
+<tr>
+<td>name</td>
+<td>The key of the special project.</td>
+<td>name = "MYMOD_EXAMPLE_1_PROJECT"
+</td></tr>
+<tr>
+<td>location</td>
+<td>The location where the event takes place, for events with no location, it’s usually set to the capital.</td>
+<td>
+<pre>capital_scope = {
+	enable_special_project = {
+		name = "MYMOD_EXAMPLE_1_PROJECT"
+		location = this
+		owner = root
+	}
+}</pre>
+</td></tr>
+<tr>
+<td>owner</td>
+<td>The country which will have this project enabled.</td>
+<td>owner = root
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Example_2">Example</span></h4>
+<pre>	enable_special_project = {
+		name = "MYMOD_EXAMPLE_1_PROJECT"
+		location = this
+		owner = root
+	}
+</pre>
+<p>There is also the <i><code>abort_special_project</code></i> command to end a special project, it is used like:
+</p>
+<pre>	abort_special_project = {
+		type = MYMOD_EXAMPLE_1_PROJECT
+		location = capital_scope
+	}
+</pre>
+<p>The country is inferred from the location parameter.
+</p><p>A trigger example: <code>has_special_project = CAPTURE_QUEEN</code>
+</p>
+<h2><span class="mw-headline" id="Localisation">Localisation</span></h2>
+<p>The localisation entries depend on the <i>key</i> property. The <i>key</i> is used for title and <i>key</i>_DESC is used for description.
+</p>
+<h5><span class="mw-headline" id="Example_3">Example</span></h5>
+<pre>MYMOD_EXAMPLE_1_PROJECT:0 "Example title"
+MYMOD_EXAMPLE_1_PROJECT_DESC:0 "Example description"
+</pre>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a class="mw-selflink selflink">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182038
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.049 seconds
+Real time usage: 0.169 seconds
+Preprocessor visited node count: 195/1000000
+Post‐expand include size: 18735/2097152 bytes
+Template argument size: 8180/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 433/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   67.007      1 -total
+ 50.16%   33.611      1 Template:ModdingNavbox
+ 49.37%   33.084      1 Template:Version
+ 32.02%   21.458      1 Template:Navbox
+ 15.44%   10.343      1 Template:Clear
+  9.45%    6.330      1 Template:Infobox
+  4.86%    3.254     14 Template:Navboxgroup
+  4.24%    2.841      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:3612-0!canonical and timestamp 20260707182038 and revision id 71723.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

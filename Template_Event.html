@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template:Event - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Template</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Event</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="template-documentation">
+<div style="font-size: 1.5em; border-bottom: 1px solid #aaa;"><span class="editsection" id="doc_editlinks" style="font-size: small">[<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/Template:Event/doc">view</a></span>] [<span class="plainlinks"><a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Event/doc&amp;action=edit&amp;preload=Template%3ATemplate+doc%2FPreload">edit</a></span>]</span><a href="https://stellaris.paradoxwikis.com/File%3ATemplate-info.png" class="image"><img alt="Template-info.png" src="https://central.paradoxwikis.com/images/e/e2/Template-info.png" decoding="async" loading="lazy" width="50" height="26" data-file-width="50" data-file-height="26" /></a> <span class="mw-headline">Template documentation</span></div>
+<div class="notice plainlinks" id="template_doc_page_transcluded"><i>This <a href="http://en.wikipedia.org/wiki/Template_documentation" class="extiw" title="wikipedia:Template documentation">documentation</a> is <a href="http://en.wikipedia.org/wiki/Transclusion" class="extiw" title="wikipedia:Transclusion">transcluded</a> from <a href="/Template_Event/doc.html" title="Template:Event/doc">Template:Event/doc</a></i>. <small>(<a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Event/doc&amp;action=edit">edit</a> | <a rel="nofollow" class="external text" href="https://stellaris.paradoxwikis.com/index.php?title=Template:Event/doc&amp;action=history">history</a>)</small></div>
+<p><br />
+<b>Event</b> can be used to diplay description, trigger, trigger condition and options of an event in a compact infobox.
+</p>
+<h2><span class="mw-headline" id="Parameter">Parameter</span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Parameter
+</th>
+<th>Description
+</th>
+<th>Default
+</th>
+<th>Status
+</th></tr>
+<tr>
+<td>version
+</td>
+<td>To specify the major patch for which the event was written or updated.
+</td>
+<td>empty
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>event_id
+</td>
+<td>Event identification code as it appears in the file to serve as an anchor
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>event_name
+</td>
+<td>Title of the event.
+</td>
+<td>empty
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>cond_event_text
+</td>
+<td>Set to "yes" if the event has multiple descriptions available for use.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>event_text
+</td>
+<td>In-game description text of the event. If multiple descriptions exist then use only the first one.
+</td>
+<td>empty
+</td>
+<td><b>optional, but desired</b>
+</td></tr>
+<tr>
+<td>img
+</td>
+<td>Shows a picture above the event description.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>picture
+</td>
+<td>Shows a picture above the event description.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>fire_only_once
+</td>
+<td>As in the script code - set to "yes" if the event happens <i>only once</i> during a campaign.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>mtth
+</td>
+<td>For the base weight and its modifiers of <a href="/Events.html#Mean_time_to_happen" title="Events">MTTH-events</a>.
+</td>
+<td>empty
+</td>
+<td rowspan="2">One of theses two is <b>required</b>.
+</td></tr>
+<tr>
+<td>triggered only
+</td>
+<td>To specify the trigger of <a href="/Events.html#Triggered_events" title="Events">'triggered only'-events</a>.
+</td>
+<td>empty
+</td></tr>
+<tr>
+<td>trigger
+</td>
+<td>Trigger conditions of the event.
+</td>
+<td>
+<ul><li>None</li></ul>
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>immediate
+</td>
+<td>The immediate effects of the event.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>option conditions
+</td>
+<td>If set to <i>‘yes’</i> the section heading 'Option conditions' for events with conditional options is displayed.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>options
+</td>
+<td>The possible effects of the event. Please use <code><a href="/Template_Option.html" title="Template:Option">{{option}}</a></code>.
+</td>
+<td>empty
+</td>
+<td><b>required</b>
+</td></tr>
+<tr>
+<td>after
+</td>
+<td>Effects that happen after selecting any option.
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr>
+<tr>
+<td>collapse
+</td>
+<td>Whether to collapse the event. If set to <i>‘yes’</i> the content will be collapsed.<br />
+<p>(Please use collapsed content on country pages.)
+</p>
+</td>
+<td>empty
+</td>
+<td><b>optional</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<pre>{{Event
+|version = 
+|event_id = 
+|event_name = 
+|event_text = &lt;!-- optional, but desired --&gt;
+|picture = &lt;!-- optional --&gt;
+|trigger = 
+|mtth    = &lt;!-- for Mtth events --&gt;
+|triggered only = &lt;!-- for triggered only events --&gt;
+|immediate = &lt;!-- optional for immediate effects --&gt;
+|options = &lt;!-- options use {{option}} template --&gt;
+}}
+</pre>
+<p><b>Note:</b> Please use either “mtth”-parameter <i>or</i> “triggered only”-parameter.
+</p>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<h3><span class="mw-headline" id="MTTH_event">MTTH event</span></h3>
+<p>The following code
+</p>
+<pre>{{Event
+|version = 2.8
+|event_id = colony.2050
+|event_name = Lost to Bureaucracy
+|img = [[File:Evt colony settlement.png]]
+|event_text = Due to a major clerical error parts of [colony name] has fallen behind in infrastructure maintenance and accommodation services. The people live in rather bleak conditions and will not tolerate it for long. Remedying these problems will cost us time and effort.
+|trigger = 
+* Colony is not a [[File:Planet habitat.png|24px]] Habitat
+* Colony has any building
+* Not {{iconify|Gestalt Consciousness}}
+|mtth = 36 months
+|options = 
+{{option |option_text = Unfortunate.|effect = 
+* Adds a [[File:D slums.png|24px]] Sprawling Slums Blocker to the colony
+* Adds an [[File:D metal boneyard.png|24px]] Industrial Wasteland Blocker to the colony}}
+{{option |option_text = We must invest in this area.|effect = 
+* Energy Credits: {{icon|energy}} {{red|-500}}
+* Influence: {{icon|influence}} {{red|-100}}
+* Unity Gained: {{icon|unity}} 150-1000}}
+{{option |option_text = {{icon|authoritarian}}{{icon|fanatic authoritarian}} We have a strong community, help them recover.|effect = 
+* Energy Credits: {{icon|energy}} {{red|-250}}
+* Influence: {{icon|influence}} {{red|-50}}
+* Unity Gained: {{icon|unity}} 150-1000}}
+{{option |option_text = {{icon|militarist}}{{icon|fanatic militarist}} Throw out the inhabitants and raze the area.|effect = 
+* Influence Gained: {{icon|influence}} 80-175
+* The colony gets {{red|+20}} {{iconify|Devastation}}}}
+}}
+</pre>
+<p>will display:
+</p>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="colony.2050"></span></span></div><h3><span class="mw-headline" id="Lost_to_Bureaucracy">Lost to Bureaucracy</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.8.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_colony_settlement.png" class="image"><img alt="Evt colony settlement.png" src="images/Evt_colony_settlement.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Due to a major clerical error parts of [colony name] has fallen behind in infrastructure maintenance and accommodation services. The people live in rather bleak conditions and will not tolerate it for long. Remedying these problems will cost us time and effort.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>Colony is not a <a href="https://stellaris.paradoxwikis.com/File%3APlanet_habitat.png" class="image"><img alt="Planet habitat.png" src="images/Planet_habitat.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Habitat</li>
+<li>Colony has any building</li>
+<li>Not <a href="https://stellaris.paradoxwikis.com/Gestalt_Consciousness" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness</li></ul>
+</td>
+<td width="40%"><span class="subheading">Mean time to happen:</span>
+<p><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> 36 months
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>Unfortunate.</b></div></div>
+<ul><li>Adds a <a href="https://stellaris.paradoxwikis.com/File%3AD_slums.png" class="image"><img alt="D slums.png" src="images/D_slums.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a> Sprawling Slums Blocker to the colony</li>
+<li>Adds an <a href="https://stellaris.paradoxwikis.com/File%3AD_metal_boneyard.png" class="image"><img alt="D metal boneyard.png" src="images/D_metal_boneyard.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a> Industrial Wasteland Blocker to the colony</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>We must invest in this area.</b></div></div>
+<ul><li>Energy Credits: <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−500</span></li>
+<li>Influence: <a href="https://stellaris.paradoxwikis.com/Influence" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> <span class="effect-red" style="font-weight:bold;">−100</span></li>
+<li>Unity Gained: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 150-1000</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="https://stellaris.paradoxwikis.com/Authoritarian" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="https://stellaris.paradoxwikis.com/Fanatic_Authoritarian" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> We have a strong community, help them recover.</b></div></div>
+<ul><li>Energy Credits: <a href="https://stellaris.paradoxwikis.com/Energy" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−250</span></li>
+<li>Influence: <a href="https://stellaris.paradoxwikis.com/Influence" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> <span class="effect-red" style="font-weight:bold;">−50</span></li>
+<li>Unity Gained: <a href="https://stellaris.paradoxwikis.com/Unity" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 150-1000</li></ul>
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b><a href="https://stellaris.paradoxwikis.com/Militarist" title="Militarist"><img alt="Militarist.png" src="images/Militarist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="https://stellaris.paradoxwikis.com/Fanatic_Militarist" title="Fanatic Militarist"><img alt="Fanatic militarist.png" src="images/Fanatic_militarist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a> Throw out the inhabitants and raze the area.</b></div></div>
+<ul><li>Influence Gained: <a href="https://stellaris.paradoxwikis.com/Influence" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> 80-175</li>
+<li>The colony gets <span class="effect-red" style="font-weight:bold;">+20</span> <a href="https://stellaris.paradoxwikis.com/Devastation" title="Devastation"><img alt="Devastation.png" src="images/Devastation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a>&#32;Devastation</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<h3><span class="mw-headline" id="Triggered_only_event">Triggered only event</span></h3>
+<p>The following code
+</p>
+<pre>{{Event
+| version = 1.6
+| event_id = progress.2
+| event_name = The Discovery of Alien Life
+| event_text = The [Root.GetName] has made a startling find on [From.GetName] - the [From.GetPlanetMoon] is teeming with alien life! For the first time in history, we have encountered life forms that did not originate on [Root.Owner.Capital.GetName].&lt;br/&gt;&lt;br/&gt;This amazing discovery has silenced those who believed we were alone in the universe. Although none of the alien creatures found on [From.GetName] are sentient, it is likely only a matter of time before we encounter beings that are...
+| picture = evt_alien_planet
+| trigger = 
+* The following country flag are ''not'' set: {{MultiColumn|
+** ''first_alien_life''
+** ''Story1''
+** ''Story2''
+** ''Story3''
+** ''Story4''
+** ''Story5''
+** ''Story6''
+** ''Story7''
+** ''Story8''
+|2}}
+* Planet is habitable ''and'' unowned 
+| triggered only = * On survey
+| immediate = * Set country flag ''first_alien_life''
+| options = 
+{{Option
+| option_text = We may not be alone out here.
+| effect = 
+* {{reward|soc|res1}}
+* Get country event if planet has a {{icon|tile blocker|21px}} ''Dangerous Wildlife'' tile blocker
+** {{icon|yes}} Present: [[Story events#story.3|''"Contact Report: Planetary Animalia"'']] in 30 days
+** {{icon|no}} Present: [[Story events#story.1|''"Contact Report: Simple Forms of Life"'']] in 30 days
+}}
+}}
+</pre>
+<p>will display:
+</p>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="progress.2"></span></span></div><h3><span class="mw-headline" id="The_Discovery_of_Alien_Life">The Discovery of Alien Life</span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 1.6.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_alien_planet.png" class="image"><img alt="Evt alien planet.png" src="images/Evt_alien_planet.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">The [Root.GetName] has made a startling find on [From.GetName] - the [From.GetPlanetMoon] is teeming with alien life! For the first time in history, we have encountered life forms that did not originate on [Root.Owner.Capital.GetName].<br /><br />This amazing discovery has silenced those who believed we were alone in the universe. Although none of the alien creatures found on [From.GetName] are sentient, it is likely only a matter of time before we encounter beings that are...</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>The following country flag are <i>not</i> set: <div style="columns:100px 2; column-gap: 10px;-webkit-columns:100px 2; -webkit-column-gap: 10px;-moz-columns:100px 2; -moz-column-gap: 10px;">
+<ul><li><i>first_alien_life</i></li>
+<li><i>Story1</i></li>
+<li><i>Story2</i></li>
+<li><i>Story3</i></li>
+<li><i>Story4</i></li>
+<li><i>Story5</i></li>
+<li><i>Story6</i></li>
+<li><i>Story7</i></li>
+<li><i>Story8</i></li></ul></div></li></ul>
+
+<ul><li>Planet is habitable <i>and</i> unowned</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<ul><li>On survey</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+</td></tr>
+<tr>
+<td colspan="2"><span class="subheading">Immediate effects:</span>
+<ul><li>Set country flag <i>first_alien_life</i></li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div style="color: #FFCD51; width: 480px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="480" height="29" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 5px;"><b>We may not be alone out here.</b></div></div>
+<ul><li><a href="/Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> <span class="effect-green" style="font-weight:bold;">12x</span> society output (<span class="effect-green" style="font-weight:bold;">250~100&#8239;000</span>)</li>
+<li>Get country event if planet has a <a href="https://stellaris.paradoxwikis.com/Blocker" title="Blocker"><img alt="Tile Blocker.png" src="images/Tile_Blocker.png" decoding="async" loading="lazy" width="21" height="21" data-file-width="18" data-file-height="18" /></a> <i>Dangerous Wildlife</i> tile blocker
+<ul><li><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> Present: <a href="https://stellaris.paradoxwikis.com/Story_events#story.3" class="mw-redirect" title="Story events"><i>"Contact Report: Planetary Animalia"</i></a> in 30 days</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /> Present: <a href="https://stellaris.paradoxwikis.com/Story_events#story.1" class="mw-redirect" title="Story events"><i>"Contact Report: Simple Forms of Life"</i></a> in 30 days</li></ul></li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<h3><span class="mw-headline" id="Event_with_conditional_options_and_after_effects">Event with conditional options and after effects</span></h3>
+<p>The following code
+</p>
+<pre>{{Event
+| version = 1.4
+| event_id = akx.9005
+| event_name = The Horizon Signal: &lt;span style="color:orange"&gt;THE WORM&lt;/span&gt;
+| event_text = Science Officer [Root.GetLeaderName] reports that the signal was unexpectedly easy to decipher... but their team has spent considerable time confirming that it's not a hoax. It is a repeating, half-coherent message in the [Root.Owner.GetAdj] language - something like a poem. It repeats the phrases &lt;span style="color:orange"&gt;GRAVITY IS DESIRE&lt;/span&gt; and &lt;span style="color:orange"&gt;TIME IS SIGHT&lt;/span&gt;. It encodes co-ordinates near the black hole. And it ends with a dedication {{green|by name}} to the Science Officer - who adds dispassionately that they have confirmed that the signal has been radiating into interstellar space since before their birth. In fact, the signal may predate our civilization.
+| picture = evt_black_hole
+| triggered only = Event ''"The Horizon Signal: &lt;span style="color:orange"&gt;GRAVITY IS DESIRE&lt;/span&gt;"''&lt;!-- akx.9001 --&gt; option ''"Fascinating! Send the vessel to those co-ordinates."''
+| immediate =
+* Fleet is temporarily locked in place.
+* Fleet leader is temporarily exiled.
+| after =
+* Fleet owner:
+** Gain between {{icon|physics}} 600 and 3000 monthly physics research, scaled by&#160;???
+** Trigger event ''"The Horizon Signal: &lt;span style="color: orange"&gt;REPRISE&lt;/span&gt;"''&lt;!-- akx.9010 --&gt; in a random amount of time (about 320 days)
+* Fleet is deleted.
+| option conditions = yes
+| options =
+{{Option
+| option_text = Darkness; light; darkness.
+| trigger = the fleet's owner has {{icon|spiritualist}} Spiritualist or {{icon|fanatic spiritualist}} Fanatic Spiritualist ethics
+}}
+{{Option
+| option_text = We learn, and we go on.
+| trigger = the fleet's owner has {{icon|materialist}} Materialist or {{icon|fanatic materialist}} Fanatic Materialist ethics
+}}
+{{Option|end
+| option_text = They won't be forgotten.
+| trigger = the fleet's owner has none of these ethics
+}}
+}}
+</pre>
+<p>will display:
+</p>
+<div class="stellaris-outliner" style="float:none; clear:none; width:500px;">
+<div class="stellaris-outliner-header">
+<span style="white-space:nowrap"><div style="height:6px;"></div><div style="float:left; position:absolute;"><span style=""><span id="akx.9005"></span></span></div><h3><span class="mw-headline" id="The_Horizon_Signal:_THE_WORM">The Horizon Signal: <span style="color:orange">THE WORM</span></span></h3></span>
+</div><div style="height:3px;"></div><img alt="Outliner top 500px.png" src="images/Outliner_top_500px.png" decoding="async" loading="lazy" width="500" height="36" data-file-width="500" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:484px; height:auto"><table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this infobox. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 1.4.</div></td>
+</tr>
+</tbody></table>
+<hr />
+<div style="text-align:center"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_black_hole.png" class="image"><img alt="Evt black hole.png" src="images/Evt_black_hole.png" decoding="async" loading="lazy" width="450" height="150" data-file-width="450" data-file-height="150" /></a></div>
+<div style="font-style:italic;">Science Officer [Root.GetLeaderName] reports that the signal was unexpectedly easy to decipher... but their team has spent considerable time confirming that it's not a hoax. It is a repeating, half-coherent message in the [Root.Owner.GetAdj] language - something like a poem. It repeats the phrases <span style="color:orange">GRAVITY IS DESIRE</span> and <span style="color:orange">TIME IS SIGHT</span>. It encodes co-ordinates near the black hole. And it ends with a dedication <span class="effect-green" style="font-weight:bold;">by name</span> to the Science Officer - who adds dispassionately that they have confirmed that the signal has been radiating into interstellar space since before their birth. In fact, the signal may predate our civilization.</div><hr />
+<div class="mw-collapsible">&#160;
+<div class="mw-collapsible-content">
+<table width="100%" cellspacing="4">
+
+<tbody><tr valign="top">
+<td width="60%"><span class="subheading">Trigger conditions:</span>
+<ul><li>None</li></ul>
+</td>
+<td width="40%"><span class="subheading">Is triggered only by:</span>
+<p>Event <i>"The Horizon Signal: <span style="color:orange">GRAVITY IS DESIRE</span>"</i> option <i>"Fascinating! Send the vessel to those co-ordinates."</i>
+</p>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+</td></tr>
+<tr>
+<td colspan="2"><span class="subheading">Immediate effects:</span>
+<ul><li>Fleet is temporarily locked in place.</li>
+<li>Fleet leader is temporarily exiled.</li></ul>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+<div class="subheading">Option conditions</div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" />&#8201;<b>Enabled if:</b>
+the fleet's owner has <a href="https://stellaris.paradoxwikis.com/Spiritualist" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Spiritualist or <a href="https://stellaris.paradoxwikis.com/Fanatic_Spiritualist" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a> Fanatic Spiritualist ethics
+</p>
+<div style="margin-left: 20px;">
+<div style="color: #FFCD51; width: 460px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="460" height="28" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 10px;"><b>Darkness; light; darkness.</b></div></div>
+<ul><li>None</li></ul>
+<hr /></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" />&#8201;<b>Enabled if:</b>
+the fleet's owner has <a href="https://stellaris.paradoxwikis.com/Materialist" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Materialist or <a href="https://stellaris.paradoxwikis.com/Fanatic_Materialist" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a> Fanatic Materialist ethics
+</p>
+<div style="margin-left: 20px;">
+<div style="color: #FFCD51; width: 460px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="460" height="28" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 10px;"><b>We learn, and we go on.</b></div></div>
+<ul><li>None</li></ul>
+<hr /></div>
+<p><img alt="Event trigger.png" src="https://central.paradoxwikis.com/images/3/35/Event_trigger.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="18" data-file-height="18" />&#8201;<b>Enabled if:</b>
+the fleet's owner has none of these ethics
+</p>
+<div style="margin-left: 20px;">
+<div style="color: #FFCD51; width: 460px"><div class="option_button"><img alt="Event button on.png" src="images/Event_button_on.png" decoding="async" loading="lazy" width="460" height="28" data-file-width="528" data-file-height="32" /></div><div class="option_title" style="position:relative; text-align:center; margin:-26px 0px 10px;"><b>They won't be forgotten.</b></div></div>
+<ul><li>None</li></ul>
+</div>
+</td></tr>
+<tr>
+<td colspan="2"><hr />
+</td></tr>
+<tr>
+<td colspan="2"><span class="subheading">Effects after selecting any option:</span>
+<ul><li>Fleet owner:
+<ul><li>Gain between <a href="/Physics_research.html" title="Physics research"><img alt="Physics research.png" src="images/Physics_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> 600 and 3000 monthly physics research, scaled by&#160;???</li>
+<li>Trigger event <i>"The Horizon Signal: <span style="color: orange">REPRISE</span>"</i> in a random amount of time (about 320 days)</li></ul></li>
+<li>Fleet is deleted.</li></ul>
+</td></tr></tbody></table></div>
+</div>
+</div>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707182506
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.133 seconds
+Real time usage: 0.174 seconds
+Preprocessor visited node count: 2510/1000000
+Post‐expand include size: 96916/2097152 bytes
+Template argument size: 41097/2097152 bytes
+Highest expansion depth: 23/100
+Expensive parser function count: 1/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 5284/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   90.148      1 Template:Template_doc
+100.00%   90.148      1 -total
+ 98.32%   88.630      1 Template:Template_doc_inline
+ 96.18%   86.707      1 Template:Event/doc
+ 87.61%   78.980      3 Template:Event
+ 86.27%   77.767      3 Template:Infobox
+ 47.67%   42.972      8 Template:Option
+ 47.36%   42.697     23 Template:Icon
+ 13.15%   11.856      3 Template:SVersion
+  9.51%    8.569      2 Template:Iconify
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:1660-0!canonical and timestamp 20260707182506 and revision id 102906.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

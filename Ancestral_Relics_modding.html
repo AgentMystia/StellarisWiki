@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ancestral Relics modding - Stellaris Wiki</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="/Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-main">Ancestral Relics modding</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
+</div>
+</div>
+<p>The <a href="/Relics.html" title="Relics">Relics</a>, Minor Artifacts as well as <a href="https://stellaris.paradoxwikis.com/Precursors#Archaeological_sites" class="mw-redirect" title="Precursors">Archaeological Sites</a> are mechanics introduced since Stellaris <a href="/Patch_2.3.html" title="Patch 2.3">v.2.3</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Relics"><span class="tocnumber">1</span> <span class="toctext">Relics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Data_Structure"><span class="tocnumber">1.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Relic_Example"><span class="tocnumber">1.2</span> <span class="toctext">Relic Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Artifact_Actions"><span class="tocnumber">2</span> <span class="toctext">Artifact Actions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Data_Structure_2"><span class="tocnumber">2.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Artifact_Action_Example"><span class="tocnumber">2.2</span> <span class="toctext">Artifact Action Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Archaeological_Sites"><span class="tocnumber">3</span> <span class="toctext">Archaeological Sites</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Data_Structure_3"><span class="tocnumber">3.1</span> <span class="toctext">Data Structure</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Archaeological_Site_Example"><span class="tocnumber">3.2</span> <span class="toctext">Archaeological Site Example</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Relics">Relics</span></h2>
+<p>Relics are defined at '<code>common/relics/xxx.txt</code>'.
+</p>
+<h3><span class="mw-headline" id="Data_Structure">Data Structure</span></h3>
+<ul><li><b>activation_duration</b> – An integer of days for this Relic to "shine" if it’s activated.</li>
+<li><b>portrait</b> – A reference to a GFX instance that indicates the icon of this Relic. This is defined in '<code>interface/relics_view.gfx'.</code></li>
+<li><b>sound</b> – A reference to a sound instance that indicates the sound to be played for activation.</li>
+<li><b>resources</b> – An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> that determines the resource output and activation cost.</li>
+<li><b>ai_weight</b> – Determines how likely the AI will activate this relic.</li>
+<li><b>triggered_country_modifier</b> – A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> for the Passive Effect of this relic.
+<ul><li><b>potential</b> – A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that determines should the modifier apply. Vanilla relics always have '<code>always = yes</code>'. It is unclear if relics have <b>country_modifier</b>.</li></ul></li>
+<li><b>score</b> – An integer of victory score should this Relic count.</li>
+<li><b>active_effect</b> – A block of <a href="/Effects.html" title="Effects">Effects</a> for the Activation Effect of this relic.</li>
+<li><b>possible</b> – A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that determines can this relic be activated.</li></ul>
+<h3><span class="mw-headline" id="Relic_Example">Relic Example</span></h3>
+<p>This is the "Ether Drake Trophy".
+</p>
+<div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="vi">@activation_cost</span> <span class="o">=</span> <span class="mi">3000</span>
+ <span class="vi">@triumph_duration</span> <span class="o">=</span> <span class="mi">3600</span>
+ <span class="vi">@triumph_duration_short</span> <span class="o">=</span> <span class="mi">1800</span>
+ <span class="vi">@triumph_duration_veryshort</span> <span class="o">=</span> <span class="mi">900</span>
+
+ <span class="n">r_dragon_trophy</span> <span class="o">=</span> <span class="p">{</span>
+ 	<span class="n">activation_duration</span> <span class="o">=</span> <span class="vi">@triumph_duration</span>
+ 	<span class="n">portrait</span> <span class="o">=</span> <span class="s2">&quot;GFX_relic_dragon_trophy&quot;</span>
+ 	<span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;relic_activation_ether_drake_trophy&quot;</span>
+
+ 	<span class="n">resources</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">category</span> <span class="o">=</span> <span class="n">relics</span>
+ 		<span class="c1"># Activation cost</span>
+ 		<span class="n">cost</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">unity</span> <span class="o">=</span> <span class="vi">@activation_cost</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+
+ 	<span class="n">ai_weight</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">weight</span> <span class="o">=</span> <span class="mi">100</span>
+ 	<span class="p">}</span>
+
+ 	<span class="n">triggered_country_modifier</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">potential</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">always</span> <span class="o">=</span> <span class="n">yes</span>
+ 		<span class="p">}</span>
+ 		<span class="n">country_unity_produces_mult</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">10</span>
+ 	<span class="p">}</span>
+
+ 	<span class="n">score</span> <span class="o">=</span> <span class="mi">1000</span>
+
+ 	<span class="n">active_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">add_modifier</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">modifier</span> <span class="o">=</span> <span class="s2">&quot;ether_drake_triumph&quot;</span>
+ 			<span class="n">days</span> <span class="o">=</span> <span class="vi">@triumph_duration</span>
+ 		<span class="p">}</span>
+ 		<span class="n">custom_tooltip</span> <span class="o">=</span> <span class="n">relic_triumph_cooldown</span>
+ 		<span class="n">hidden_effect</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">add_modifier</span> <span class="o">=</span> <span class="p">{</span>
+ 				<span class="n">modifier</span> <span class="o">=</span> <span class="s2">&quot;relic_activation_cooldown&quot;</span>
+ 				<span class="n">days</span> <span class="o">=</span> <span class="vi">@triumph_duration</span>
+ 			<span class="p">}</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+
+ 	<span class="c1"># Possible check for activation</span>
+ 	<span class="n">possible</span> <span class="o">=</span> <span class="p">{</span>
+ 		<span class="n">custom_tooltip</span> <span class="o">=</span> <span class="p">{</span>
+ 			<span class="n">fail_text</span> <span class="o">=</span> <span class="s2">&quot;requires_relic_no_cooldown&quot;</span>
+ 			<span class="no">NOT</span> <span class="o">=</span> <span class="p">{</span> <span class="n">has_modifier</span> <span class="o">=</span> <span class="n">relic_activation_cooldown</span> <span class="p">}</span>
+ 		<span class="p">}</span>
+ 	<span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+<p>All relics should add the modifier '<code>relic_activation_cooldown</code>' to the empire upon activation as well as they should be blocked from activating if the empire has this modifier in order to have the relics UI and "relics can be activted" alert message work properly.
+</p>
+<h2><span class="mw-headline" id="Artifact_Actions">Artifact Actions</span></h2>
+<p>Artifact Actions are defined at '<code>common/artifact_actions/xxx.txt</code>'. Without the <a href="/Ancient_Relics.html" title="Ancient Relics"><img alt="Ancient Relics.png" src="images/Ancient_Relics.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a>&#32;Ancient Relics DLC, Artifact Actions are hidden from the UI and can't be used.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_2">Data Structure</span></h3>
+<ul><li><b>resources</b> – An <a href="/Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> that determines the action cost. Vanilla actions always cost <a href="/Minor_artifacts.html" title="Minor artifacts"><img alt="Minor artifacts.png" src="images/Minor_artifacts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Minor Artifacts.</li>
+<li><b>ai_weight</b> – Determines how likely the AI will use this action.</li>
+<li><b>potential</b> – A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that determines should this action be shown in the UI.</li>
+<li><b>allow</b> – A block of <a href="/Conditions.html" title="Conditions">Conditions</a> that determines can this action be took by the empire.</li>
+<li><b>effect</b> – A block of <a href="/Effects.html" title="Effects">Effects</a> to be executed upon action.</li></ul>
+<h3><span class="mw-headline" id="Artifact_Action_Example">Artifact Action Example</span></h3>
+<p>This is the "Reverse-Engineer Arcane Technology" Artifact Action.
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">artifact_arcane_deciphering</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">resources</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">category</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">artifact_actions</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">cost</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">minor_artifacts</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="w"> 		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+
+<span class="w"> 	</span><span class="n">ai_weight</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">weight</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">modifier</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">factor</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">has_resource</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">minor_artifacts</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">105</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+
+<span class="w"> 	</span><span class="n">potential</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">has_technology</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">tech_arcane_deciphering</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+
+<span class="w"> 	</span><span class="n">allow</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">custom_tooltip</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">fail_text</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;requires_arcane_deciphering_no_cooldown&quot;</span><span class="w"></span>
+<span class="w"> 			</span><span class="kt">NOT</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">has_modifier</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">arcane_deciphering_cooldown</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+
+<span class="w"> 	</span><span class="n">effect</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">custom_tooltip</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">artifact_arcane_deciphering_effect</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">hidden_effect</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 			</span><span class="kr">if</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">limit</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 					</span><span class="n">is_ai</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
+<span class="w"> 					</span><span class="kt">NOT</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">has_country_flag</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">arcana_achievement</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 				</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">set_country_flag</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">arcana_achievement</span><span class="w"></span>
+<span class="w"> 			</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">add_modifier</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">modifier</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;arcane_deciphering_cooldown&quot;</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">days</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">720</span><span class="w"></span>
+<span class="w"> 			</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">owner</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 				</span><span class="n">country_event</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ancrel</span><span class="o">.</span><span class="mi">10000</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 			</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<p>Artifact Action cooldown is implemented through <a href="https://stellaris.paradoxwikis.com/Modifiers#Static_Modifiers" class="mw-redirect" title="Modifiers">Static Modifiers</a>.
+</p><p>There are some Artifact Actions that are not meant to be activated through this menu.
+</p>
+<ul><li>Before acquiring the technology "Arcane Deciphering", relevant Artifact Actions are displayed as "???". Actually, those "???" actions are different actions that can only be seen if the empire doesn't have this technology and can never be activated.</li>
+<li>Some actions can only be done through planets. They are also Artifact Actions that can never be activated and actual effects are implemented through <a href="/Decision_modding.html" title="Decision modding">Decisions</a>.</li></ul>
+<h2><span class="mw-headline" id="Archaeological_Sites">Archaeological Sites</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for <a href="/Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.3.</div></td>
+</tr>
+</tbody></table>
+<p>Archaeological Sites are defined at '<code>common/archaeological_site_types/xxx.txt</code>'. Full implementation of Archaeological Sites is largely dependent to <a href="/Event_modding.html" title="Event modding">Event modding</a> as well as <a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a>.
+</p>
+<h3><span class="mw-headline" id="Data_Structure_3">Data Structure</span></h3>
+<ul><li><b>desc</b> – A localisation key (triggered event desc) that designates the description of this site (scope = site).</li>
+<li><b>picture</b> – A reference to a GFX instance (sprite key) that indicates the picture of this site.</li>
+<li><b>max_instances </b> – An integer of max stages instances of this type a galaxy can have, only checked when using '<code>create_archaeological_site = random</code>'</li>
+<li><b>weight</b> – A scriptable value used for random weight, only used when using '<code>create_archaeological_site = random</code>'. Scriptable value type is defined either by an integer or '<a href="https://stellaris.paradoxwikis.com/MTTH" class="mw-redirect" title="MTTH">mean time to happen</a>'.</li>
+<li><b>stages</b> – An integer of max stages of this site. It must be exactly match the number of <b>state</b> blocks of this site.</li>
+<li><b>potential </b> – A <a href="https://stellaris.paradoxwikis.com/Trigger" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines if a scope (fleet) is potential to excavate this archaeological site (from = site, this will add/remove this option without giving the player a reason).</li>
+<li><b>allow</b> – A <a href="https://stellaris.paradoxwikis.com/Trigger" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines can a ship delve into this site (scope = fleet, from = site). All vanilla sites are only open to Science Ships with a Scientist (this will toggle enable/disabled mode on buttons etc).</li>
+<li><b>visible</b> – A <a href="https://stellaris.paradoxwikis.com/Trigger" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines can an empire see this site (scope = country, from = site).</li>
+<li><b>stage</b> – Defines a stage of this site, order dependent
+<ul><li><b>difficulty</b> – A 'min max interval type', interval is defined either by an integer or '<code>{ min = &lt;int&gt; max=&lt;int&gt; }</code>' where the later will randomize a value between min and max.</li>
+<li><b>icon</b> – A reference to a GFX instance (rune icon gfx type) that indicates the picture of this stage.</li>
+<li><b>event</b> – An 'fleet_event' id to trigger on the delver fleet when this stage is cleared. A fleet is a 'container' of ships and can consist of one or more ships.</li></ul></li>
+<li><b>on_roll_failed</b> – An <a href="/Effects.html" title="Effects">Effect</a> block to be executed when a roll is failed (scope = fleet, from = site).</li>
+<li><b>on_create</b> – An <a href="/Effects.html" title="Effects">Effect</a> block to be executed upon site creation (scope = site).</li>
+<li><b>on_visible</b> – An <a href="/Effects.html" title="Effects">Effect</a> block to be executed upon site visible (scope = country, from = site).</li></ul>
+<h3><span class="mw-headline" id="Archaeological_Site_Example">Archaeological Site Example</span></h3>
+<p>This is the first Zroni site:
+</p>
+<div class="mw-highlight mw-highlight-lang-haskell mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="n">zroni_digsite_1</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">desc</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">zroni_digsite_1_desc</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">picture</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">GFX_evt_overgrown_city</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">stages</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">max_instances</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">allow</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">is_ship_class</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">shipclass_science_ship</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">exists</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">leader</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">visible</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">has_country_flag</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">zroni_intro</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">default_site_visible_trigger</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">stage</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">difficulty</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">icon</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">GFX_archaeology_runes_F1</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">event</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ancrel</span><span class="o">.</span><span class="mi">2</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">stage</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">difficulty</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">icon</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">GFX_archaeology_runes_F2</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">event</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ancrel</span><span class="o">.</span><span class="mi">3</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">stage</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">difficulty</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">icon</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">GFX_archaeology_runes_F3</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">event</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">ancrel</span><span class="o">.</span><span class="mi">4</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="n">on_roll_failed</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 		</span><span class="n">from</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> 			</span><span class="n">standard_archaeological_site_on_roll_failed</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">RANDOM_EVENTS</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">all_random_events</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> 		</span><span class="p">}</span><span class="w"></span>
+<span class="w"> 	</span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+<dl><dd>Note: '<code>standard_archaeological_site_on_roll_failed</code>' is a <a href="https://stellaris.paradoxwikis.com/Scripted_effect" class="mw-redirect" title="Scripted effect">scripted effect</a>.</dd></dl>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="/Modding.html" title="Modding">Modding</a></b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Empire.html" title="Empire">Empire</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Empire_modding.html" title="Empire modding">Empire</a> • <a href="/Ethics_modding.html" title="Ethics modding">Ethics</a> • <a href="/Government_modding.html" title="Government modding">Governments • Civics • Origins</a> • <a href="/Mandate_modding.html" title="Mandate modding">Mandates</a> • <a href="/Agenda_modding.html" title="Agenda modding">Agendas</a> • <a href="/Tradition_modding.html" title="Tradition modding">Traditions • Ascension perks</a> • <a href="/Edicts_modding.html" title="Edicts modding">Edicts</a> • <a href="/Policies_modding.html" title="Policies modding">Policies</a> • <a href="/Ancestral_Relics_modding.html#Relics" title="Ancestral Relics modding">Relics</a> • <a href="/Technology_modding.html" title="Technology modding">Technologies</a> • <a href="/Custom_empire_designs_editing.html" title="Custom empire designs editing">Custom empires</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="/Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Leaders.html" title="Leaders">Leaders</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Leader_modding.html" title="Leader modding">Leaders</a> • <a href="/Traits_modding.html" title="Traits modding">Leader traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Species.html" title="Species">Species</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Species_modding.html" title="Species modding">Species</a> • <a href="/Traits_modding.html" title="Traits modding">Species traits</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Planet_modding.html" title="Planet modding">Planets</a> • <a href="/Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="/Building_modding.html" title="Building modding">Buildings</a> • <a href="/District_modding.html" title="District modding">Districts</a> • <a href="/Decision_modding.html" title="Decision modding">Planetary decisions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/System_modding.html" title="System modding">Systems</a> • <a href="/Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="/Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="/Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="/Map_modding.html" title="Map modding">Map</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="/Ship_modding.html" title="Ship modding">Ships • Components</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Land_warfare.html" title="Land warfare">Land warfare</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Army_modding.html" title="Army modding">Armies</a> • <a href="/Bombardment_Stance_modding.html" title="Bombardment Stance modding">Bombardment stance</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Diplomacy.html" title="Diplomacy">Diplomacy</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Diplomacy_modding.html" title="Diplomacy modding">Diplomacy • Federations • Galactic community</a> • <a href="/Opinion_modifier_modding.html" title="Opinion modifier modding">Opinion modifiers</a> • <a href="/War_modding.html" title="War modding">Casus Belli • War goals</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Events.html" title="Events">Events</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Event_modding.html" title="Event modding">Events</a> • <a href="/Anomalies_modding.html" title="Anomalies modding">Anomalies</a> • <a href="/Special_Project_modding.html" title="Special Project modding">Special projects</a> • <a href="/Ancestral_Relics_modding.html#Archaeological_Sites" title="Ancestral Relics modding">Archaeological sites</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="/Beginner%27s_guide.html#Basic_gameplay_concepts" title="Beginner&#39;s guide">Gameplay</a>
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Gameplay_modding.html" title="Gameplay modding">Gameplay</a> • <a href="/Defines.html" title="Defines">Defines</a> • <a href="/Economy_modding.html" title="Economy modding">Resources • Economy</a> • <a href="/Game_start_modding.html" title="Game start modding">Game start</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="/Effects.html" title="Effects">Effects</a> • <a href="/Conditions.html" title="Conditions">Conditions</a> • <a href="/Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="/Variables.html" title="Variables">Variables</a> • <a href="/AI_modding.html" title="AI modding">AI</a> • <a href="/On_actions.html" title="On actions">On actions</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Media/localisation
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Maya_exporter.html" title="Maya exporter">Maya exporter</a> • <a href="/Font_modding.html" title="Font modding">Fonts</a> • <a href="/Portrait_modding.html" title="Portrait modding">Portraits</a> • <a href="/Flag_modding.html" title="Flag modding">Flags</a> • <a href="/Event_pictures.html" title="Event pictures">Event pictures</a> • <a href="/Interface_modding.html" title="Interface modding">Interface</a> • <a href="/Icon_modding.html" title="Icon modding">Icons</a> • <a href="/Music_modding.html" title="Music modding">Music</a> • <a href="/Localisation_modding.html" title="Localisation modding">Localisation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Other
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="/Console_commands.html" title="Console commands">Console commands</a> • <a href="/Save-game_editing.html" title="Save-game editing">Save-game editing</a> • <a href="/Steam_Workshop.html" title="Steam Workshop">Steam Workshop</a> • <a href="/Modding_tutorial.html" title="Modding tutorial">Modding tutorial</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707180914
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.081 seconds
+Real time usage: 0.571 seconds
+Preprocessor visited node count: 554/1000000
+Post‐expand include size: 21780/2097152 bytes
+Template argument size: 8882/2097152 bytes
+Highest expansion depth: 11/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 17515/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  507.194      1 -total
+  2.00%   10.136      1 Template:SVersion
+  1.55%    7.845      1 Template:ModdingNavbox
+  1.24%    6.293      1 Template:Ambox
+  1.21%    6.154      2 Template:Iconify
+  1.05%    5.317      2 Template:Icon
+  0.84%    4.251      1 Template:Navbox
+  0.74%    3.741      1 Template:Ambox/core
+  0.56%    2.851      1 Template:Version
+  0.48%    2.434      1 Template:Icon/a
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7493-0!canonical and timestamp 20260707180913 and revision id 90790.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>
