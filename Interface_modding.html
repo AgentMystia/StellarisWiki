@@ -118,7 +118,7 @@ Currently, the game has two condition methods, which are <code>if_resolution</co
 }
 </pre>
 <h3><span class="mw-headline" id="Dynamic_Text_Values">Dynamic Text Values</span></h3>
-<p>Most values displayed outside of tooltips and event windows are hard coded to link to certain internal variables.  For most UI elements, any localization using bracket <i>[]</i> commands will just display the actual commands as static text rather than processing the commands.  The exception is effectButtonType elements. If you want to display the value of a <a href="Variables.html#Using_variables_.E2.80.93_the_wheres" title="Variables">variable</a>, the buttonText of an effectButtonType is the only localization that will work.
+<p>Most values displayed outside of tooltips and event windows are hard coded to link to certain internal variables.  For most UI elements, any localization using bracket <i></i> commands will just display the actual commands as static text rather than processing the commands.  The exception is effectButtonType elements. If you want to display the value of a <a href="Variables.html#Using_variables_.E2.80.93_the_wheres" title="Variables">variable</a>, the buttonText of an effectButtonType is the only localization that will work.
 </p>
 <h2><span class="mw-headline" id="GUI_Files">GUI Files</span></h2>
 <p>GUI files are object oriented structures that defines the interface layout for the user interface. All elements need to be declared inside <code>guiTypes = {}</code>.
@@ -1351,7 +1351,7 @@ iconType = { <sup><b># Displays a centered hexagon pattern background</b></sup>
 }
 </pre>
 <h2><span class="mw-headline" id="GFX_Files">GFX Files</span></h2>
-<p>GFX files are libraries for binding together the graphical sprites in <a href="https://stellaris.paradoxwikis.com/Graphics_modding" class="new" title="Graphics modding (page does not exist)">graphics</a> and the interface. When you want to add a new event image, or a resource icon, this is where you'll be adding the reference. You can have as many libraries that you want, and it's advisable to always add your changes into a new file, instead of editing the vanilla Stellaris files. This is to assure maximum compatibility as possible with other mods, and is just generally more orderly.
+<p>GFX files are libraries for binding together the graphical sprites in graphics and the interface. When you want to add a new event image, or a resource icon, this is where you'll be adding the reference. You can have as many libraries that you want, and it's advisable to always add your changes into a new file, instead of editing the vanilla Stellaris files. This is to assure maximum compatibility as possible with other mods, and is just generally more orderly.
 </p><p>The structure of a sprite library is very straight forward, using the most often references as an example:
 </p>
 <pre>spriteTypes = {
@@ -1837,7 +1837,7 @@ containerWindowType = { name = "portrait" … }
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -1858,21 +1858,21 @@ containerWindowType = { name = "portrait" … }
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -1909,7 +1909,7 @@ containerWindowType = { name = "portrait" … }
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

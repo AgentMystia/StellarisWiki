@@ -233,7 +233,7 @@ Some of the most useful features include:
 <p>Following sources are invaluable to have at hand:
 </p>
 <ul><li><a href="Modding.html" title="Modding">Modding</a> section of <a href="Stellaris_Wiki.html" title="Stellaris Wiki">Stellaris Wiki</a></li>
-<li>List of Stellaris <a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">triggers</a>, <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a> and <a href="Effects.html" title="Effects">effects</a>, see <a rel="nofollow" class="external text" href="https://github.com/OldEnt/stellaris-triggers-modifiers-effects-list">GitHub page</a> for comprehensive all-in-one list.</li>
+<li>List of Stellaris <a href="Triggers.html" class="mw-redirect" title="Triggers">triggers</a>, <a href="Modifiers.html" class="mw-redirect" title="Modifiers">modifiers</a> and <a href="Effects.html" title="Effects">effects</a>, see <a rel="nofollow" class="external text" href="https://github.com/OldEnt/stellaris-triggers-modifiers-effects-list">GitHub page</a> for comprehensive all-in-one list.</li>
 <li><a rel="nofollow" class="external text" href="https://discord.gg/WpeXm2h">Stellaris Modding Den</a> Discord Server access for live help.</li></ul>
 <h3><span class="mw-headline" id="Mod_content">Mod content</span></h3>
 <p>Story-focused mods differ from mods introducing new gameplay mechanics or graphics components, but overlap almost always exists. This tutorial tries to touch as wide array of subjects as possible without delving into intricacies.
@@ -628,18 +628,18 @@ Supported Scopes: all</pre>
 </pre></div>
 <p>For now, all we need to know that there is an icon missing for <kbd>tutmod_civic</kbd>.
 </p><p><b>Note:</b> The `<tt>error.log</tt>` is handled through exception catching, so most of the time (about 90%+) of <b>crashes</b> (CTD) it won’t contain anything related to the actual crash. For the remaining cases (~10%-), the crash is caused by the same issue that was momentarily logged elsewhere, still making the log unhelpful for the specific crash event. <i>Crash-related data</i> is instead stored in the <code>Stellaris\crashes\</code> directory, but this information is primarily useful only to the <i>Stellaris developers</i>.
-</p><p>See <a href="https://stellaris.paradoxwikis.com/Error.log" class="new" title="Error.log (page does not exist)">Error.log</a> for a list of common errors and their possible causes.
+</p><p>See Error.log for a list of common errors and their possible causes.
 </p>
 <h3><span class="mw-headline" id="Events">Events</span></h3>
 <h4><span class="mw-headline" id="fire_only_once">fire_only_once</span></h4>
 <dl><dd><i>See also: <a href="Event_modding.html" title="Event modding">Event modding</a>, <a rel="nofollow" class="external text" href="https://github.com/OldEnt/stellaris-triggers-modifiers-effects-list">List of Stellaris triggers, modifiers and effects</a></i></dd></dl>
-<p><a href="Events.html" title="Events">Event</a> is a script which changes state of the game by using <a href="Effects.html" title="Effects">effects</a>, provided <a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">triggers</a> are met and event was called.
+<p><a href="Events.html" title="Events">Event</a> is a script which changes state of the game by using <a href="Effects.html" title="Effects">effects</a>, provided <a href="Triggers.html" class="mw-redirect" title="Triggers">triggers</a> are met and event was called.
 </p><p>Create a new <code>\events\tutmod_events.txt</code> file.
 Every events file has to have at least one namespace declared at the beginning. We use:
 </p>
 <pre>namespace = tutmod
 </pre>
-<p>It is a good practice for any mod which affects gameplay (changes <a href="https://stellaris.paradoxwikis.com/Checksum" class="mw-redirect" title="Checksum">checksum</a>) to notify its presence to other mods. The commonly accepted way is to set up a <kbd>global_flag</kbd> other mods can check if it exists via effect:
+<p>It is a good practice for any mod which affects gameplay (changes <a href="Checksum.html" class="mw-redirect" title="Checksum">checksum</a>) to notify its presence to other mods. The commonly accepted way is to set up a <kbd>global_flag</kbd> other mods can check if it exists via effect:
 </p>
 <pre>set_global_flag - Sets an arbitrarily-named global flag
 set_global_flag = &lt;key&gt;
@@ -665,7 +665,7 @@ country_event = {
 <li><b><code>id = tutmod.1</code></b> – declares unique id of the event. Consists of namespace and number, separated by a stop.</li>
 <li><b><code>hide_window = yes</code></b> – a popup window for player will not be created. This is how most events in the game work.</li>
 <li><b><code>fire_only_once = yes</code></b> – successfully fired event (called and met trigger <a href="Conditions.html" title="Conditions">conditions</a>) will be added to blocklist and will never be used again in current game.</li>
-<li><b><code>trigger = {}</code></b> – contains list of conditions (<a href="https://stellaris.paradoxwikis.com/Triggers" class="mw-redirect" title="Triggers">triggers</a>) which have to be met in order for called event to fire. Default this/root scope is defined by name of event scope (country_event here).</li>
+<li><b><code>trigger = {}</code></b> – contains list of conditions (<a href="Triggers.html" class="mw-redirect" title="Triggers">triggers</a>) which have to be met in order for called event to fire. Default this/root scope is defined by name of event scope (country_event here).</li>
 <li><b><code>immediate = {}</code></b> – contains list of <a href="Effects.html" title="Effects">effects</a> which change the state of the game when event fires.</li></ul>
 <p>This event does not contain the <code>is_triggered_only = yes</code> declaration. This means event will be checked DAILY for EVERY country. If the event was of different scope, ie. pop_event, it would check for EVERY pop in the game DAILY. With a galaxy of 5000 pops it would mean 5000 checks every day. It is a very resource intensive way of scripting and therefore you should always add <code>is_triggered_only = yes</code>, unless there is a good reason not to. <code>is_triggered_only = yes</code> blocks event from checking itself and will require it to be called from elsewhere (more on that below).
 </p><p>We can limit checking of the event by using the aforementioned <code>fire_only_once = yes</code>. Event still checks daily for every country, but as soon as the first country fires the event it will be blocklisted and no longer checked. Since the conditions of the event are simple (<code>NOT = { has_global_flag = tutmod_installed }</code>) event will fire as soon as game starts.
@@ -872,7 +872,7 @@ prev = country
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -893,21 +893,21 @@ prev = country
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -944,7 +944,7 @@ prev = country
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

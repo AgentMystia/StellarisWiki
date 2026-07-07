@@ -44,7 +44,7 @@
 </div>
 
 <h2><span class="mw-headline" id="Deposits">Deposits</span></h2>
-<p>Deposits are objects on Planets that can have its own resource production and upkeep and <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to the planet.
+<p>Deposits are objects on Planets that can have its own resource production and upkeep and <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to the planet.
 </p><p>There are two types of Deposits, one being the planetary features for the colonizable planets that can be inspected by the player, and another being the orbital deposits for the uncolonizable planets that usually can't be inspected by the player.
 </p><p>There are two types of planetary features, one being normally pure-beneficial and unremovable and another being normally pure-harmful and can be removed by spending resources, called blockers. Some blockers spawn with an additional planetary feature behind it, but the seemingly "blocked" planetary feature isn't actually added to the planet before the blocker to be cleared. Although vanilla unused, a blocker can also block a blocker behind it.
 </p><p>They are defined at "common/deposits/xxx.txt".
@@ -113,21 +113,21 @@
 <tr>
 <td><b>planet_modifier</b><br /><b>triggered_planet_modifier</b>
 </td>
-<td colspan="2">Blocks of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Planet. Modifiers that add maximum number of buildings / disctricts of a certain type go here. If this deposit is blocked behind a blocker, none of these effects apply.
+<td colspan="2">Blocks of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Planet. Modifiers that add maximum number of buildings / disctricts of a certain type go here. If this deposit is blocked behind a blocker, none of these effects apply.
 </td>
-<td>Modifiers that affect <a href="https://stellaris.paradoxwikis.com/Trade" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade Value go here. The Trade Value can be collected without building any stations on the Planet. Other Modifiers don't apply.
+<td>Modifiers that affect <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade Value go here. The Trade Value can be collected without building any stations on the Planet. Other Modifiers don't apply.
 </td></tr>
 <tr>
 <td><b>country_modifier</b>
 </td>
-<td colspan="2">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire that owns this Planet.
+<td colspan="2">A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire that owns this Planet.
 </td>
 <td rowspan="4" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
 </td></tr>
 <tr>
 <td><b>blocked_modifier</b>
 </td>
-<td colspan="2">Vanilla unused but mentioned it in the comments. Presumably <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Planet for as long as this deposit remains blocked behind a blocker.
+<td colspan="2">Vanilla unused but mentioned it in the comments. Presumably <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Planet for as long as this deposit remains blocked behind a blocker.
 </td></tr>
 <tr>
 <td><b>should_swap_deposit_on_terraforming = &lt;yes/no&gt;</b><br /><b>terraforming_swap_types = { _key_of_deposit_ ...}</b><br /><b>all_terraforming_swap_types = &lt;yes/no&gt;</b><br /><b>use_weights_for_terraforming_swap_types = &lt;yes/no&gt;</b>
@@ -346,7 +346,7 @@ deposit_cat_rare_blocker = {
 }
 </pre></div></div></div>
 <h2><span class="mw-headline" id="Planet_modifiers">Planet modifiers</span></h2>
-<p>Planet modifiers are additional modifiers given to <a href="Planet_modding.html" title="Planet modding">planet objects</a> upon planet generation. They are linked to <a href="https://stellaris.paradoxwikis.com/Static_modifiers" class="mw-redirect" title="Static modifiers">static modifiers</a> but not equivalent to them. They are defined by files in the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/planet_modifiers/</span> folder. Static modifiers added directly to a planet by an effect or anomaly don't need to have a planet modifier defined here.
+<p>Planet modifiers are additional modifiers given to <a href="Planet_modding.html" title="Planet modding">planet objects</a> upon planet generation. They are linked to <a href="Static_modifiers.html" class="mw-redirect" title="Static modifiers">static modifiers</a> but not equivalent to them. They are defined by files in the <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/planet_modifiers/</span> folder. Static modifiers added directly to a planet by an effect or anomaly don't need to have a planet modifier defined here.
 </p>
 <table class="wikitable mw-collapsible plainlist">
 <caption style="text-align: left"><b>Planet modifier data structure</b>
@@ -374,7 +374,7 @@ deposit_cat_rare_blocker = {
 <li>All vanilla planet modifiers (except the null modifier, see below) leave the base spawn chance at the default value of 0.</li></ul>
 </td></tr>
 <tr>
-<td><b>modifier = "&lt;<a href="https://stellaris.paradoxwikis.com/Static_modifier" class="mw-redirect" title="Static modifier">static modifier</a>&gt;"</b>
+<td><b>modifier = "&lt;<a href="Static_modifier.html" class="mw-redirect" title="Static modifier">static modifier</a>&gt;"</b>
 </td>
 <td>Key of the static modifier to be added to the planet.
 </td></tr></tbody></table>
@@ -417,7 +417,7 @@ deposit_cat_rare_blocker = {
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -438,21 +438,21 @@ deposit_cat_rare_blocker = {
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a class="mw-selflink selflink">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -489,7 +489,7 @@ deposit_cat_rare_blocker = {
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

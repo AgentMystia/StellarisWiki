@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console:Colonization - Stellaris Wiki</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Console</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Colonization</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.12.<br /><br />This article is for the console version of Stellaris only.</div>
+</div>
+</div>
+<div class="floatleft"><a href="https://stellaris.paradoxwikis.com/File%3AFleet_task_colonize_2.png" class="image"><img alt="Fleet task colonize 2.png" src="images/Fleet_task_colonize_2.png" decoding="async" loading="lazy" width="44" height="44" data-file-width="44" data-file-height="44" /></a></div>
+<div class="stellaris-outliner" style="float:right; clear:right; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Celestial object</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Celestial_object.html" title="Celestial object">Classification</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Colonization.html" title="Colonization">Colonization</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Planetary_features.html" title="Planetary features">Planetary features</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Planet_modifiers.html" title="Planet modifiers">Planet modifiers</a></div></div>
+</div>
+</div>
+<p><b>Colonization</b> is the process of establishing control over an uninhabited, habitable planet with a Colony Ship.
+</p><p>The first time an empire colonizes another world, it gains&#32;<a href="Engineering_research.html" title="Engineering research"><img alt="Engineering research.png" src="images/Engineering_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> <span class="effect-green" style="font-weight:bold;">12x</span> engineering output (between&#32;<span class="effect-green" style="font-weight:bold;">250~100&#8239;000</span>) from an event.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:322px;"><a href="https://stellaris.paradoxwikis.com/File%3AHumanoid_Colonization.png" class="image"><img alt="" src="images/Humanoid_Colonization.png" decoding="async" loading="lazy" width="320" height="134" class="thumbimage" data-file-width="1920" data-file-height="806" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AHumanoid_Colonization.png" class="internal" title="Enlarge"></a></div>Humanoid empire colonizing a new world</div></div></div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Habitability"><span class="tocnumber">1</span> <span class="toctext">Habitability</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Visual_cues"><span class="tocnumber">1.1</span> <span class="toctext">Visual cues</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Improving_habitability"><span class="tocnumber">1.2</span> <span class="toctext">Improving habitability</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Terraforming"><span class="tocnumber">1.3</span> <span class="toctext">Terraforming</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Ecumenopolis"><span class="tocnumber">1.3.1</span> <span class="toctext">Ecumenopolis</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Alternative_terraforming_methods"><span class="tocnumber">1.3.2</span> <span class="toctext">Alternative terraforming methods</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Cost_reduction_&amp;_speed"><span class="tocnumber">1.3.3</span> <span class="toctext">Cost reduction &amp; speed</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Colony_ships"><span class="tocnumber">2</span> <span class="toctext">Colony ships</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Alternative_colony_ships"><span class="tocnumber">2.1</span> <span class="toctext">Alternative colony ships</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Colony_development"><span class="tocnumber">2.2</span> <span class="toctext">Colony development</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Open_Seed_Pods"><span class="tocnumber">2.3</span> <span class="toctext">Open Seed Pods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Habitability">Habitability</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.12.</div></td>
+</tr>
+</tbody></table>
+<p><b><a href="Habitability.html" title="Habitability"><img alt="Mod habitability.png" src="images/Mod_habitability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Habitability</b> is the measure of how comfortably a species can live on a planet. Most species have a <a href="Climate_preference.html" class="mw-redirect" title="Climate preference">climate preference</a> for one of the primary <a href="Celestial_body.html#Habitable_planets" class="mw-redirect" title="Celestial body">habitable planet</a> types, although more exotic preferences are possible. A planet's habitability for a given species is determined by how closely its climate matches that species' preference. The 9 regular habitable world types are divided into 3 climate categories: dry, frozen, and wet. <a href="Robot.html" title="Robot"><img alt="Trait robotic 1.png" src="images/Trait_robotic_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Robots and <a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machines have habitability traits tied to climate groups. <a href="Ring_World_(planet_class).html" title="Ring World"><img alt="Ring World" src="images/Planet_ringworld.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Ring Worlds, <a href="Gaia_World.html" title="Gaia World"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Gaia Worlds, and <a href="Ecumenopolis.html" title="Ecumenopolis"><img alt="Planet city.png" src="images/Planet_city.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Ecumenopolises have maximum habitability for all species, while <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb Worlds, <a href="Machine_World.html" title="Machine World"><img alt="Planet ai.png" src="images/Planet_ai.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Machine Worlds, and <a href="Hive_World.html" title="Hive World"><img alt="Planet infested.png" src="images/Planet_infested.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Hive Worlds normally have <a href="Habitability.html" title="Habitability"><img alt="Mod habitability.png" src="images/Mod_habitability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;<span class="effect-red" style="font-weight:bold;">0%</span>&#32;habitability and require certain traits for pops to comfortably live there.
+</p>
+<table class="mildtable" style="float: right; margin-right: 30px;">
+
+<tbody><tr>
+<th>Tier</th>
+<th>Base
+</th></tr>
+<tr>
+<td>Gaia World, Ecumenopolis, and Ring World</td>
+<td><span class="effect-green" style="font-weight:bold;">100%</span>
+</td></tr>
+<tr>
+<td>Hive World for <a href="Biological_traits.html#Hive-Minded" title="Hive-Minded"><img alt="Hive-Minded" src="images/Trait_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Hive-Minded species</td>
+<td><span class="effect-green" style="font-weight:bold;">100%</span>
+</td></tr>
+<tr>
+<td>Machine World for <a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine species</td>
+<td><span class="effect-green" style="font-weight:bold;">100%</span>
+</td></tr>
+<tr>
+<td>Relic World or exact match</td>
+<td><span class="effect-green" style="font-weight:bold;">80%</span>
+</td></tr>
+<tr>
+<td>Robotic climate match</td>
+<td><span class="effect-green" style="font-weight:bold;">75%</span>
+</td></tr>
+<tr>
+<td>Climate category match</td>
+<td><span class="effect-yellow" style="font-weight:bold;">60%</span>
+</td></tr>
+<tr>
+<td>Robot climate category mismatch</td>
+<td><span class="effect-yellow" style="font-weight:bold;">50%</span>
+</td></tr>
+<tr>
+<td>Habitat (Tier III)</td>
+<td><span class="effect-yellow" style="font-weight:bold;">60%</span>
+</td></tr>
+<tr>
+<td>Habitat (Tier II)</td>
+<td><span class="effect-yellow" style="font-weight:bold;">50%</span>
+</td></tr>
+<tr>
+<td>Habitat (Tier I)</td>
+<td><span class="effect-yellow" style="font-weight:bold;">40%</span>
+</td></tr>
+<tr>
+<td>Climate category mismatch</td>
+<td><span class="effect-red" style="font-weight:bold;">20%</span>
+</td></tr>
+<tr>
+<td>Tomb World, Machine World, and Hive World</td>
+<td><span class="effect-red" style="font-weight:bold;">0%</span>
+</td></tr></tbody></table>
+<ul><li>Every <b>1%</b> reduction of habitability below <span class="effect-green" style="font-weight:bold;">100%</span> increases pops' <img alt="Upkeep" src="images/Maintenance.png" decoding="async" loading="lazy" title="Upkeep" width="24" height="24" data-file-width="28" data-file-height="28" />&#32;upkeep and <a href="Pop_amenities_usage.html" title="Pop amenities usage"><img alt="Mod pop amenities usage mult.png" src="images/Mod_pop_amenities_usage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;amenities usage by <span class="effect-red" style="font-weight:bold;">+1%</span> and reduces their <a href="Pop_resource_output.html" title="Pop resource output"><img alt="Mod pop resource output.png" src="images/Mod_pop_resource_output.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> job output and <a href="Pop_growth_speed.html" title="Pop growth speed"><img alt="Mod pop growth speed.png" src="images/Mod_pop_growth_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> species growth by <span class="effect-red" style="font-weight:bold;">−0.5%</span>. It floors at <span class="effect-red" style="font-weight:bold;">0%</span> Habitability, giving <span class="effect-red" style="font-weight:bold;">+100%</span> pop upkeep and amenities usage, and <span class="effect-red" style="font-weight:bold;">−50%</span> job output and pop growth.</li>
+<li>Homeworlds have <span class="effect-green" style="font-weight:bold;">+30%</span> habitability for the species originating from them.</li>
+<li>Low habitability can trigger various events.</li>
+<li>A confirmation message will pop-up if you attempt to settle a planet with less than 70% habitability.</li>
+<li>In some cases, there may be a raised habitability floor or a lowered habitability ceiling:
+<ul><li>Robotic pops or species with <a href="Biological_traits.html#Cave_Dweller" title="Cave Dweller"><img alt="Cave Dweller" src="images/Trait_cave_dweller.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Cave Dweller/<a href="Machine_traits.html#Molebots" title="Molebots"><img alt="Molebots" src="images/Trait_robot_cave_dweller.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Molebots traits have a habitability floor of 50%. This can stack, giving Molebots effectively 100% habitability everywhere.</li>
+<li>The habitability ceiling can be reduced to below 100%, such as pops with <a href="Biological_traits.html#Noxious" title="Noxious"><img alt="Noxious" src="images/Trait_noxious.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Noxious traits or from certain rare <a href="Blockers.html" class="mw-redirect" title="Blockers">blockers</a>.</li>
+<li>The habitability floor will override the habitability ceiling if it is higher.</li></ul></li></ul>
+<p>There are four ways to improve habitability:
+</p>
+<ul><li>Terraforming the planet. This needs a certain technology and may have additional requirements depending on the original planet. Some terraforming methods also require an <a href="Ascension_perk.html" class="mw-redirect" title="Ascension perk">ascension perk</a>.</li>
+<li><a href="Population_modification.html" class="mw-redirect" title="Population modification">Modifying</a> the climate preference of the pops, which requires the <a href="Society_research.html#Glandular_Acclimation" title="Glandular Acclimation"><img alt="Glandular Acclimation" src="images/Tech_glandular_acclimation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Glandular Acclimation technology for biological pops (robots/machines do not require technology to change habitability), or adding traits that increase habitability. A template with the appropriate traits can be applied to pops on relevant planets, or used by colony ships.</li>
+<li>Obtaining alien species with a different climate preference. This can be done by conquest, migration treaty, infiltrating a pre-FTL civilization, uplifting a pre-sapient species, certain events and offers, or purchasing from the <a href="MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Slave Market. Empires can colonize with any species that has migration access to the empire, even if no pops of that species currently live on the empire's worlds, provided they have the <a href="Species_rights.html#Colonization_rights" title="Species rights">Colonization Allowed</a> species right.</li>
+<li>Researching technologies, acquiring traditions, or constructing buildings that increase base habitability.</li></ul>
+<div style="clear:both;"></div>
+<h3><span class="mw-headline" id="Visual_cues">Visual cues</span></h3>
+<p>Systems containing habitable worlds will have one or more planet icons that are either green, yellow, orange, red, or blue – depending on the habitability percentage and/or status of the planet(s) in question.
+</p>
+<table class="mildtable plainlist sortable">
+<tbody><tr>
+<th>Icon</th>
+<th>Meaning
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AColonizability_green.png" class="image"><img alt="Colonizability green.png" src="images/Colonizability_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="27" data-file-height="27" /></a></td>
+<td>World is has at least <a href="Habitability.html" title="Habitability"><img alt="Mod habitability.png" src="images/Mod_habitability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;70%&#32;habitability for at least one species in the player's empire that can colonize
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AColonizability_yellow.png" class="image"><img alt="Colonizability yellow.png" src="images/Colonizability_yellow.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="27" data-file-height="27" /></a></td>
+<td>World has <a href="Habitability.html" title="Habitability"><img alt="Mod habitability.png" src="images/Mod_habitability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;40–69%&#32;habitability for at least one species in the player's empire that can colonize
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AColonizability_red.png" class="image"><img alt="Colonizability red.png" src="images/Colonizability_red.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="27" data-file-height="27" /></a></td>
+<td>World has below <a href="Habitability.html" title="Habitability"><img alt="Mod habitability.png" src="images/Mod_habitability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;40%&#32;habitability for all species in the player's empire that can colonize
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AColonizability_orange.png" class="image"><img alt="Colonizability orange.png" src="images/Colonizability_orange.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="27" data-file-height="27" /></a></td>
+<td>World is habitable but not surveyed
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AColonizability_blue.png" class="image"><img alt="Colonizability blue.png" src="images/Colonizability_blue.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="27" data-file-height="27" /></a></td>
+<td>World is currently being terraformed
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AColonizability_white.png" class="image"><img alt="Colonizability white.png" src="images/Colonizability_white.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="27" data-file-height="27" /></a></td>
+<td>World has a <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Terraforming Candidate modifier
+</td></tr></tbody></table>
+<p>Planets with an <a href="Anomaly.html" title="Anomaly">anomaly</a> or a primitive civilization cannot be colonized.
+</p>
+<h3><span class="mw-headline" id="Improving_habitability">Improving habitability</span></h3>
+<p>Aside from changing climate preference, there are also various other methods for improving habitability: 
+</p>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:10px; ;">
+<table class="mildtable mw-collapsible mw-collapsed" style="border:2px solid #DDDDDD;">
+<tbody><tr>
+<th colspan="2">Habitability (empire)<span style="visibility:hidden;color:transparent;">0</span>
+</th></tr>
+<tr>
+<th>Source</th>
+<th style="min-width:50px">Effect
+</th></tr>
+<tr>
+<td><a href="Galactic_Community.html#Ecological_Protection" title="Ecological Protection"><img alt="Ecological Protection" src="images/Resolution_ecological_protection.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> The Paradise Initiative resolution (5)</td>
+<td><span class="effect-green" style="font-weight:bold;">+15%</span>
+</td></tr>
+<tr>
+<td><a href="Traditions.html#Adaptability" title="Environmental Diversification"><img alt="Environmental Diversification" src="images/Tradition_adaptability_environmental_diversification.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Environmental Diversification tradition</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Traditions.html#Genetics" title="Stem Cell Stimulation"><img alt="Stem Cell Stimulation" src="images/Tradition_genetics_efficient_cloning.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Stem Cell Stimulation tradition</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Planet_unique_buildings.html#Sanctum_of_the_Composer" title="Sanctum of the Composer"><img alt="Sanctum of the Composer" src="images/Building_composer_sanctum.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Sanctum of the Composer building</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Galactic_Community.html#Ecological_Protection" title="Ecological Protection"><img alt="Ecological Protection" src="images/Resolution_ecological_protection.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Environmental Control Board resolution (4)</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Galactic_Community.html#Ecological_Protection" title="Ecological Protection"><img alt="Ecological Protection" src="images/Resolution_ecological_protection.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Integrated Gardens resolution (3)</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Hive_mind_civics.html#Ascetic" title="Ascetic"><img alt="Ascetic" src="images/Civic_hive_ascetic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Ascetic civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Society_research.html#Atmospheric_Filtering" title="Atmospheric Filtering"><img alt="Atmospheric Filtering" src="images/Tech_colonization_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Atmospheric Filtering technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Hostile_Environment_Adaptation.html" title="Hostile Environment Adaptation"><img alt="Tech colonization 3.png" src="images/Tech_colonization_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Hostile Environment Adaptation technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Foreign_Soil_Enrichment.html" title="Foreign Soil Enrichment"><img alt="Tech colonization 4.png" src="images/Tech_colonization_4.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Foreign Soil Enrichment technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Society_research.html#Eco-Integration_Studies" title="Eco-Integration Studies"><img alt="Eco-Integration Studies" src="images/Tech_colonization_5.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Eco-Integration Studies technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Integrated_Cybernetics.html" title="Integrated Cybernetics"><img alt="Tech integrated cybernetics.png" src="images/Tech_integrated_cybernetics.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Integrated Cybernetics technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_Template_System.html" title="Machine Template System"><img alt="Tech robomodding.png" src="images/Tech_robomodding.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Machine Template System technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Agenda.html#Conquer_Nature" title="Conquer Nature"><img alt="Conquer Nature" src="images/Agenda_conquer_nature.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="124" data-file-height="124" /></a> Conquer Nature agenda</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Galactic_Community.html#Industrial_Development" title="Industrial Development"><img alt="Industrial Development" src="images/Resolution_industrial_development.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Regulatory Facilitation resolution (1)</td>
+<td><span class="effect-red" style="font-weight:bold;">−2%</span>
+</td></tr>
+<tr>
+<td><a href="Galactic_Community.html#Industrial_Development" title="Industrial Development"><img alt="Industrial Development" src="images/Resolution_industrial_development.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Collective Waste Management resolution (2)</td>
+<td><span class="effect-red" style="font-weight:bold;">−5%</span>
+</td></tr>
+<tr>
+<td><a href="Galactic_Community.html#Industrial_Development" title="Industrial Development"><img alt="Industrial Development" src="images/Resolution_industrial_development.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Building a Better Tomorrow resolution (3)</td>
+<td><span class="effect-red" style="font-weight:bold;">−10%</span>
+</td></tr>
+<tr>
+<td><a href="Galactic_Community.html#Industrial_Development" title="Industrial Development"><img alt="Industrial Development" src="images/Resolution_industrial_development.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Environmental Ordinance Waivers resolution (4)</td>
+<td><span class="effect-red" style="font-weight:bold;">−20%</span>
+</td></tr>
+<tr>
+<td><a href="Galactic_Community.html#Industrial_Development" title="Industrial Development"><img alt="Industrial Development" src="images/Resolution_industrial_development.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Project Cornucopia resolution (5)</td>
+<td><span class="effect-red" style="font-weight:bold;">−25%</span>
+</td></tr></tbody></table>
+<table class="mildtable mw-collapsible mw-collapsed" style="border:2px solid #DDDDDD;">
+<tbody><tr>
+<th colspan="2">Habitability (species)<span style="visibility:hidden;color:transparent;">0</span>
+</th></tr>
+<tr>
+<th>Source</th>
+<th style="min-width:50px">Effect
+</th></tr>
+<tr>
+<td><a href="Biological_traits.html#Lithoid" title="Lithoid"><img alt="Lithoid" src="images/Trait_lithoid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Lithoid trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Nivlac" title="Nivlac"><img alt="Nivlac" src="images/Ethic_default.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Nivlac trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+
+<tr id="Extradimensional">
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_exd.png" class="image"><img alt="Trait exd.png" src="images/Trait_exd.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Extradimensional</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Robust" title="Robust"><img alt="Robust" src="images/Trait_robust.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Robust trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_traits.html#Volatile_Mote_Reactor" title="Volatile Mote Reactor"><img alt="Volatile Mote Reactor" src="images/Trait_robot_volatile_mote_reactor.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Volatile Mote Reactor trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Excessive_Endurance" title="Excessive Endurance"><img alt="Excessive Endurance" src="images/Trait_excessive_endurance.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Excessive Endurance trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_traits.html#Shielded_Components" title="Shielded Components"><img alt="Shielded Components" src="images/Trait_robot_shielded_components.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Shielded Components trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Exotic_Metabolism" title="Exotic Metabolism"><img alt="Exotic Metabolism" src="images/Trait_exotic_metabolism.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Exotic Metabolism trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Cybernetic" title="Cybernetic"><img alt="Cybernetic" src="images/Trait_cybernetic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Cybernetic trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Clone_Soldier_Ascendant" title="Clone Soldier Ascendant"><img alt="Clone Soldier Ascendant" src="images/Trait_clone_soldier_ascendant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Clone Soldier Ascendant trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Extremely_Adaptive" title="Extremely Adaptive"><img alt="Extremely Adaptive" src="images/Trait_extremely_adaptive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Extremely Adaptive trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Spliced_Adaptability" title="Spliced Adaptability"><img alt="Spliced Adaptability" src="images/Trait_spliced_adaptability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Spliced Adaptability trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Plasmic" title="Plasmic"><img alt="Plasmic" src="images/Trait_plasmic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Plasmic trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+15%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Adaptive" title="Adaptive"><img alt="Adaptive" src="images/Trait_adaptive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Adaptive trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Starborn" title="Starborn"><img alt="Starborn" src="images/Trait_presapient_starborn.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Starborn trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Stargazer" title="Stargazer"><img alt="Stargazer" src="images/Trait_stargazer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Stargazer trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Invasive_Species" title="Invasive Species"><img alt="Invasive Species" src="images/Trait_plantoid_invasive_species.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Invasive Species trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span> per negative trait
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Nonadaptive" title="Nonadaptive"><img alt="Nonadaptive" src="images/Trait_nonadaptive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Nonadaptive trait</td>
+<td><span class="effect-red" style="font-weight:bold;">−10%</span>
+</td></tr></tbody></table>
+<table class="mildtable mw-collapsible mw-collapsed" style="border:2px solid #DDDDDD;">
+<tbody><tr>
+<th colspan="2">Minimum Habitability <span style="visibility:hidden;color:transparent;">0</span>
+</th></tr>
+<tr>
+<th>Source</th>
+<th style="min-width:50px">Effect
+</th></tr>
+<tr>
+<td><a href="Biological_traits.html#Voidling" title="Voidling"><img alt="Voidling" src="images/Trait_voidling.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Voidling trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+80%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine or <a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Mechanical trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_traits.html#Molebots" title="Molebots"><img alt="Molebots" src="images/Trait_robot_cave_dweller.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Molebots trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Cave_Dweller" title="Cave Dweller"><img alt="Cave Dweller" src="images/Trait_cave_dweller.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Cave Dweller trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Noxious" title="Noxious"><img alt="Noxious" src="images/Trait_noxious.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Noxious trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Bioadaptability" title="Bioadaptability"><img alt="Bioadaptability" src="images/Trait_bioadaptability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Bioadaptability trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_traits.html#Virtual" title="Virtual"><img alt="Virtual" src="images/Trait_robot_digital.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Virtual trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr></tbody></table>
+</div>
+<h3><span class="mw-headline" id="Terraforming">Terraforming</span></h3>
+<p>Terraforming is the act of changing the planet classification of a planet in order to make it more Habitable for the empire's species. Terraforming technologies requires significant <a href="Society_research.html" title="Society research"><img alt="Society research.png" src="images/Society_research.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> <a href="Society_research.html" title="Society research">society research</a> to unlock, and each terraforming project requires large investments of <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;energy and <img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" />&#32;time. 
+</p><p>The first time a planet is terraformed, there's a chance of triggering a <a href="Terraforming_event.html" class="mw-redirect" title="Terraforming event">terraforming event</a>. Terraformed planets cannot receive <a href="Colony_events.html" title="Colony events">colony events</a>.
+</p><p>A planet must be surveyed and within the empire's borders to be terraformed. It is possible to terraform inhabited planets if the empire has the <a href="Society_research.html#Ecological_Adaptation" title="Ecological Adaptation"><img alt="Ecological Adaptation" src="images/Tech_ecological_adaptation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Ecological Adaptation technology. Doing so inflicts a <a href="Happiness.html" title="Happiness"><img alt="Happiness.png" src="images/Happiness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;<span class="effect-red" style="font-weight:bold;">−20%</span>&#32;happiness penalty on the planet for the duration of the process.
+</p><p>Only the following terraformings are possible:
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th>Original climate</th>
+<th>New climate</th>
+<th><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Cost</th>
+<th><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> Years</th>
+<th>Requirements
+</th></tr>
+<tr>
+<td><a href="Alpine_World.html" title="Alpine World"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Arctic_World.html" title="Arctic World"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tundra_World.html" title="Tundra World"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen</td>
+<td><a href="Alpine_World.html" title="Alpine World"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Arctic_World.html" title="Arctic World"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tundra_World.html" title="Tundra World"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen</td>
+<td rowspan="3" align="right">2000</td>
+<td rowspan="3" align="right">5</td>
+<td rowspan="6"><a href="Terrestrial_Sculpting.html" title="Terrestrial Sculpting"><img alt="Tech terrestrial sculpting.png" src="images/Tech_terrestrial_sculpting.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Terrestrial Sculpting technology
+</td></tr>
+<tr>
+<td><a href="Arid_World.html" title="Arid World"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Desert_World.html" title="Desert World"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Savanna_World.html" title="Savanna World"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Dry</td>
+<td><a href="Arid_World.html" title="Arid World"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Desert_World.html" title="Desert World"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Savanna_World.html" title="Savanna World"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Dry
+</td></tr>
+<tr>
+<td><a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tropical_World.html" title="Tropical World"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Wet</td>
+<td><a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tropical_World.html" title="Tropical World"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Wet
+</td></tr>
+<tr>
+<td><a href="Alpine_World.html" title="Alpine World"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Arctic_World.html" title="Arctic World"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tundra_World.html" title="Tundra World"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen</td>
+<td><a href="Arid_World.html" title="Arid World"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Desert_World.html" title="Desert World"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Savanna_World.html" title="Savanna World"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Dry or <a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tropical_World.html" title="Tropical World"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Wet</td>
+<td rowspan="3" align="right">5000</td>
+<td rowspan="3" align="right">10
+</td></tr>
+<tr>
+<td><a href="Arid_World.html" title="Arid World"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Desert_World.html" title="Desert World"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Savanna_World.html" title="Savanna World"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Dry</td>
+<td><a href="Alpine_World.html" title="Alpine World"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Arctic_World.html" title="Arctic World"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tundra_World.html" title="Tundra World"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen or <a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tropical_World.html" title="Tropical World"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Wet
+</td></tr>
+<tr>
+<td><a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tropical_World.html" title="Tropical World"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Wet</td>
+<td><a href="Alpine_World.html" title="Alpine World"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Arctic_World.html" title="Arctic World"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tundra_World.html" title="Tundra World"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen or <a href="Arid_World.html" title="Arid World"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Desert_World.html" title="Desert World"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Savanna_World.html" title="Savanna World"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Dry
+</td></tr>
+<tr>
+<td rowspan="3"><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren.png" class="image"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Barren</td>
+<td><a href="Arid_World.html" title="Arid World"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Desert_World.html" title="Desert World"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Savanna_World.html" title="Savanna World"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Dry</td>
+<td align="right">5000</td>
+<td align="right">10
+</td>
+<td rowspan="7">
+<ul><li><a href="Society_research.html#Climate_Restoration" title="Climate Restoration"><img alt="Climate Restoration" src="images/Tech_climate_restoration.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Climate Restoration technology</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Terraforming Candidate modifier</li></ul>
+</td></tr>
+<tr>
+<td><a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tropical_World.html" title="Tropical World"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Wet</td>
+<td align="right">10000</td>
+<td align="right">15
+</td></tr>
+<tr>
+<td><a href="Alpine_World.html" title="Alpine World"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Arctic_World.html" title="Arctic World"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tundra_World.html" title="Tundra World"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen</td>
+<td align="right">15000</td>
+<td align="right">20
+</td></tr>
+<tr>
+<td rowspan="3"><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren_cold.png" class="image"><img alt="Planet barren cold.png" src="images/Planet_barren_cold.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Barren (Cold)</td>
+<td><a href="Alpine_World.html" title="Alpine World"><img alt="Planet alpine.png" src="images/Planet_alpine.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Arctic_World.html" title="Arctic World"><img alt="Planet arctic.png" src="images/Planet_arctic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tundra_World.html" title="Tundra World"><img alt="Planet tundra.png" src="images/Planet_tundra.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen</td>
+<td align="right">5000</td>
+<td align="right">10
+</td></tr>
+<tr>
+<td><a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Tropical_World.html" title="Tropical World"><img alt="Planet tropical.png" src="images/Planet_tropical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Wet</td>
+<td align="right">10000</td>
+<td align="right">15
+</td></tr>
+<tr>
+<td><a href="Arid_World.html" title="Arid World"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Desert_World.html" title="Desert World"><img alt="Planet desert.png" src="images/Planet_desert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="Savanna_World.html" title="Savanna World"><img alt="Planet savannah.png" src="images/Planet_savannah.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Dry</td>
+<td align="right">15000</td>
+<td align="right">20
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_toxic.png" class="image"><img alt="Planet toxic.png" src="images/Planet_toxic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Nanite</td>
+<td>Any regular climate</td>
+<td align="right">1000</td>
+<td align="right">1
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_frozen.png" class="image"><img alt="Planet frozen.png" src="images/Planet_frozen.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Frozen</td>
+<td><a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Ocean</td>
+<td align="right">12500</td>
+<td align="right">25
+</td>
+<td>
+<ul><li><a href="Society_research.html#Climate_Restoration" title="Climate Restoration"><img alt="Climate Restoration" src="images/Tech_climate_restoration.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Climate Restoration technology</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Frozen Terraforming Candidate modifier</li>
+<li><a href="Ascension_perks.html#Hydrocentric" title="Hydrocentric"><img alt="Hydrocentric" src="images/Ap_hydrocentric.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Hydrocentric ascension perk</li></ul>
+</td></tr>
+<tr>
+<td><a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb</td>
+<td rowspan="3">Any regular climate</td>
+<td rowspan="3" align="right">10000</td>
+<td rowspan="3" align="right">20</td>
+<td rowspan="3"><a href="Society_research.html#Climate_Restoration" title="Climate Restoration"><img alt="Climate Restoration" src="images/Tech_climate_restoration.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Climate Restoration technology
+</td></tr>
+<tr>
+<td><a href="Hive_World.html" title="Hive World"><img alt="Planet infested.png" src="images/Planet_infested.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Hive
+</td></tr>
+<tr>
+<td><a href="Machine_World.html" title="Machine World"><img alt="Planet ai.png" src="images/Planet_ai.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Machine
+</td></tr>
+<tr>
+<td>All regular climates</td>
+<td rowspan="3"><a href="Gaia_World.html" title="Gaia World"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Gaia</td>
+<td align="right">7500</td>
+<td align="right">10</td>
+<td rowspan="2"><a href="Ascension_perks.html#World_Shaper" title="World Shaper"><img alt="World Shaper" src="images/Ap_world_shaper.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;World Shaper ascension perk
+</td></tr>
+<tr>
+<td><a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb</td>
+<td rowspan="2" align="right">12500</td>
+<td rowspan="2" align="right">25
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren.png" class="image"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren_cold.png" class="image"><img alt="Planet barren cold.png" src="images/Planet_barren_cold.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Barren
+</td>
+<td>
+<ul><li><a href="Ascension_perks.html#World_Shaper" title="World Shaper"><img alt="World Shaper" src="images/Ap_world_shaper.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;World Shaper ascension perk</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Terraforming Candidate modifier</li></ul>
+</td></tr>
+<tr>
+<td>Any habitable</td>
+<td rowspan="2"><a href="Hive_World.html" title="Hive World"><img alt="Planet infested.png" src="images/Planet_infested.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Hive</td>
+<td rowspan="4" align="right">10000</td>
+<td rowspan="4" align="right">20</td>
+<td><a href="Ascension_perks.html#Hive_Worlds" title="Hive Worlds"><img alt="Hive Worlds" src="images/Ap_hive_worlds.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Hive Worlds ascension perk
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren.png" class="image"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren_cold.png" class="image"><img alt="Planet barren cold.png" src="images/Planet_barren_cold.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Barren
+</td>
+<td>
+<ul><li><a href="Ascension_perks.html#Hive_Worlds" title="Hive Worlds"><img alt="Hive Worlds" src="images/Ap_hive_worlds.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Hive Worlds ascension perk</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Terraforming Candidate modifier</li></ul>
+</td></tr>
+<tr>
+<td>Any habitable</td>
+<td rowspan="2"><a href="Machine_World.html" title="Machine World"><img alt="Planet ai.png" src="images/Planet_ai.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Machine</td>
+<td><a href="Ascension_perks.html#Machine_Worlds" title="Machine Worlds"><img alt="Machine Worlds" src="images/Ap_machine_worlds.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Machine Worlds ascension perk
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren.png" class="image"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren_cold.png" class="image"><img alt="Planet barren cold.png" src="images/Planet_barren_cold.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Barren
+</td>
+<td>
+<ul><li><a href="Ascension_perks.html#Machine_Worlds" title="Machine Worlds"><img alt="Machine Worlds" src="images/Ap_machine_worlds.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Machine Worlds ascension perk</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Terraforming Candidate modifier</li></ul>
+</td></tr>
+<tr>
+<td rowspan="2"><a href="Toxic_World.html" title="Toxic World"><img alt="Planet toxic.png" src="images/Planet_toxic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Toxic</td>
+<td>Any habitable except <a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Continental</td>
+<td rowspan="2" align="right">10000</td>
+<td align="right">10
+</td>
+<td rowspan="2">
+<ul><li><a href="Ascension_perks.html#Detox" title="Detox"><img alt="Detox" src="images/Ap_detox.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Detox ascension perk</li>
+<li><a href="Society_research.html#Climate_Restoration" title="Climate Restoration"><img alt="Climate Restoration" src="images/Tech_climate_restoration.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Climate Restoration technology</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Toxic Terraforming Candidate modifier</li></ul>
+</td></tr>
+<tr>
+<td><a href="Continental_World.html" title="Continental World"><img alt="Planet continental.png" src="images/Planet_continental.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Continental</td>
+<td align="right">15
+</td></tr>
+<tr>
+<td>All regular climates</td>
+<td rowspan="3"><a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb</td>
+<td align="right"><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1000<br /><a href="Exotic_gases.html" title="Exotic gases"><img alt="Exotic gases.png" src="images/Exotic_gases.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100<br /><a href="Volatile_motes.html" title="Volatile motes"><img alt="Volatile motes.png" src="images/Volatile_motes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100</td>
+<td align="right">10
+</td>
+<td rowspan="2">
+<ul><li><div class="tooltip"><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Civics.html#Relentless_Industrialists" title="Relentless Industrialists"><img alt="Relentless Industrialists" src="images/Civic_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Corporate_civics.html#Shareholder_Values" title="Shareholder Values"><img alt="Shareholder Values" src="images/Civic_corporate_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span></span>&#32; Relentless Industrialists<div class="tooltiptext tooltipBG2" style="text-align:left; background:#FFFFFF; left:28px; top:100%;"><div class="plainlist" style="; display:inline-block; font-family:sans-serif; padding:6px; white-space:nowrap;"><div><a href="Civics.html#Relentless_Industrialists" title="Relentless Industrialists"><img alt="Relentless Industrialists" src="images/Civic_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Relentless Industrialists</div><div><a href="Corporate_civics.html#Shareholder_Values" title="Shareholder Values"><img alt="Shareholder Values" src="images/Civic_corporate_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Shareholder Values</div></div></div></div></li>
+<li><a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <i>For Science!</i> Industrialism policy</li></ul>
+</td></tr>
+<tr>
+<td><a href="Gaia_World.html" title="Gaia World"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Gaia</td>
+<td align="right"><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 2500<br /><a href="Exotic_gases.html" title="Exotic gases"><img alt="Exotic gases.png" src="images/Exotic_gases.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 200<br /><a href="Volatile_motes.html" title="Volatile motes"><img alt="Volatile motes.png" src="images/Volatile_motes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 200</td>
+<td align="right">15
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren.png" class="image"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Barren</td>
+<td align="right">12500</td>
+<td align="right">25
+</td>
+<td>
+<ul><li><div class="tooltip"><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Civics.html#Relentless_Industrialists" title="Relentless Industrialists"><img alt="Relentless Industrialists" src="images/Civic_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Corporate_civics.html#Shareholder_Values" title="Shareholder Values"><img alt="Shareholder Values" src="images/Civic_corporate_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span></span>&#32; Relentless Industrialists<div class="tooltiptext tooltipBG2" style="text-align:left; background:#FFFFFF; left:28px; top:100%;"><div class="plainlist" style="; display:inline-block; font-family:sans-serif; padding:6px; white-space:nowrap;"><div><a href="Civics.html#Relentless_Industrialists" title="Relentless Industrialists"><img alt="Relentless Industrialists" src="images/Civic_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Relentless Industrialists</div><div><a href="Corporate_civics.html#Shareholder_Values" title="Shareholder Values"><img alt="Shareholder Values" src="images/Civic_corporate_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Shareholder Values</div></div></div></div></li>
+<li><a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <i>For Science!</i> Industrialism policy</li>
+<li><a href="Society_research.html#Climate_Restoration" title="Climate Restoration"><img alt="Climate Restoration" src="images/Tech_climate_restoration.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Climate Restoration technology</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Terraforming Candidate modifier</li></ul>
+</td></tr></tbody></table>
+<p>The following <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_unknown.png" class="image"><img alt="Pm unknown.png" src="images/Pm_unknown.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html" title="Planet modifiers"><img alt="Planet modifiers" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span>&#32;planet modifiers are always removed when terraforming a planet:
+</p>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_bleak.png" class="image"><img alt="Pm bleak.png" src="images/Pm_bleak.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Bleak.html" title="Bleak"><img alt="Bleak" src="images/Pm_frame_red.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Bleak</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_irradiated.png" class="image"><img alt="Pm irradiated.png" src="images/Pm_irradiated.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Irradiated" title="Irradiated"><img alt="Irradiated" src="images/Pm_frame_red.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span> Irradiated</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_hazardous_weather.png" class="image"><img alt="Pm hazardous weather.png" src="images/Pm_hazardous_weather.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Hazardous_Weather.html" title="Hazardous Weather"><img alt="Hazardous Weather" src="images/Pm_frame_yellow.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Hazardous Weather</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_dangerous_wildlife.png" class="image"><img alt="Pm dangerous wildlife.png" src="images/Pm_dangerous_wildlife.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Hostile_Fauna.html" title="Hostile Fauna"><img alt="Hostile Fauna" src="images/Pm_frame_yellow.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Hostile Fauna</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_wild_storms.png" class="image"><img alt="Pm wild storms.png" src="images/Pm_wild_storms.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Wild_Storms.html" title="Wild Storms"><img alt="Wild Storms" src="images/Pm_frame_yellow.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Wild Storms</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Second_Home" title="Second Home"><img alt="Second Home" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span> Second Home</li></ul>
+<p>If the planet is being terraformed into either a <a href="Machine_World.html" title="Machine World"><img alt="Planet ai.png" src="images/Planet_ai.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Machine or <a href="Hive_World.html" title="Hive World"><img alt="Planet infested.png" src="images/Planet_infested.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Hive World the following modifiers are also removed:
+</p>
+<ul><li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_atmospheric_hallucinogen.png" class="image"><img alt="Pm atmospheric hallucinogen.png" src="images/Pm_atmospheric_hallucinogen.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Atmospheric_Hallucinogen" title="Atmospheric Hallucinogen"><img alt="Atmospheric Hallucinogen" src="images/Pm_frame_yellow.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Atmospheric Hallucinogen</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_atmospheric_aphrodisiac.png" class="image"><img alt="Pm atmospheric aphrodisiac.png" src="images/Pm_atmospheric_aphrodisiac.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Atmospheric_Aphrodisiac" title="Atmospheric Aphrodisiac"><img alt="Atmospheric Aphrodisiac" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Atmospheric Aphrodisiac</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_lush.png" class="image"><img alt="Pm lush.png" src="images/Pm_lush.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><img alt="Lush" src="images/Pm_frame_green.png" decoding="async" loading="lazy" title="Lush" width="26" height="26" data-file-width="60" data-file-height="60" /></span></span>&#32;Lush</li>
+<li><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_natural_beauty.png" class="image"><img alt="Pm natural beauty.png" src="images/Pm_natural_beauty.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Natural_Beauty" title="Natural Beauty"><img alt="Natural Beauty" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="60" data-file-height="60" /></a></span></span>&#32;Natural Beauty</li></ul>
+<p>If the planet being terraformed was a <a href="Toxic_World.html" title="Toxic World"><img alt="Planet toxic.png" src="images/Planet_toxic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Toxic World, the following <a href="Planetary_features.html#Detox_blockers" title="Planetary features">blockers</a> will be created:
+</p>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3AD_poisonous_algae_blocker.png" class="image"><img alt="D poisonous algae blocker.png" src="images/D_poisonous_algae_blocker.png" decoding="async" loading="lazy" width="26" height="20" data-file-width="98" data-file-height="75" /></a> Poisonous Algae</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AD_rotten_soil_blocker.png" class="image"><img alt="D rotten soil blocker.png" src="images/D_rotten_soil_blocker.png" decoding="async" loading="lazy" width="26" height="20" data-file-width="98" data-file-height="75" /></a> Rotten Soil</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AD_tainted_snowcaps_blocker.png" class="image"><img alt="D tainted snowcaps blocker.png" src="images/D_tainted_snowcaps_blocker.png" decoding="async" loading="lazy" width="26" height="20" data-file-width="98" data-file-height="75" /></a> Tainted Snowcaps</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AD_unpleasant_atmosphere_blocker.png" class="image"><img alt="D unpleasant atmosphere blocker.png" src="images/D_unpleasant_atmosphere_blocker.png" decoding="async" loading="lazy" width="26" height="20" data-file-width="98" data-file-height="75" /></a> Unpleasant Atmosphere</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AD_venomous_insects_blocker.png" class="image"><img alt="D venomous insects blocker.png" src="images/D_venomous_insects_blocker.png" decoding="async" loading="lazy" width="26" height="20" data-file-width="98" data-file-height="75" /></a> Venomous Insects</li></ul>
+<p>Some planet modifiers make planet unable to be terraformed by standard methods:
+</p>
+<ul><li>Unstable Tectonics</li>
+<li>Molten Mineral Rivers</li></ul>
+<p>If the planet is terraformed into a <a href="Machine_World.html" title="Machine World"><img alt="Planet ai.png" src="images/Planet_ai.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Machine World any <a href="Pop.html" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;Pops on the planet without the <a href="Biological_traits.html#Cybernetic" title="Cybernetic"><img alt="Cybernetic" src="images/Trait_cybernetic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Cybernetic, <a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Mechanical, or <a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine traits are all killed and an <a href="Planetary_features.html#Organic_Slurry" title="Planetary features"><img alt="D bubbling swamp.png" src="images/D_bubbling_swamp.png" decoding="async" loading="lazy" width="32" height="24" data-file-width="98" data-file-height="75" /></a> Organic Slurry deposit is added.
+</p><p>When and if terraforming a planet to Hive or Machine World, keep in mind that all planetary features, excluding a few rare ones that give access to rare resources, will always be removed.
+</p>
+<h4><span class="mw-headline" id="Ecumenopolis">Ecumenopolis</span></h4>
+<p>Terraforming planets into a sprawling <a href="Ecumenopolis.html" title="Ecumenopolis"><img alt="Planet city.png" src="images/Planet_city.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Ecumenopolis world requires the <a href="Engineering_research.html#Anti-Gravity_Engineering" title="Anti-Gravity Engineering"><img alt="Anti-Gravity Engineering" src="images/Tech_housing_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Anti-Gravity Engineering technology, and must be done by a planetary decision on a colonized world rather than through the terraforming window. The process takes 10 years and requires a hefty cost of 20,000 <a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;minerals and 200 <a href="Influence.html" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;influence and all blockers cleared. Like with Machine and Hive Worlds, terraforming into Ecumenopoli removes all existing planetary features barring some related to events.
+</p><p>There are two decisions that can create an ecumenopolis:
+</p>
+<ul><li>For regular worlds, the <a href="Planetary_management.html#Arcology_Project" title="Planetary management">Arcology Project</a> decision must be undertaken. This requires the <a href="Traditions.html#Arcology_Project" title="Traditions">Arcology Project</a> ascension perk and all districts must be filled as city or industrial districts.</li>
+<li>For <a href="Relic_World.html" title="Relic World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Relic Worlds, the <a href="Planetary_management.html#Restore_Ecumenopolis" title="Planetary management">Restore Ecumenopolis</a> is used instead. This does not require Arcology Project perk or any districts filled, and creates a <a href="Planetary_feature.html#Former_Relic_World" class="mw-redirect" title="Planetary feature">Former Relic World</a> planetary feature.</li></ul>
+<h4><span class="mw-headline" id="Alternative_terraforming_methods">Alternative terraforming methods</span></h4>
+<p>In addition to the regular terraforming mechanics above, certain events, special projects, decisions, or other actions can change a planet's classification. The following is a partial list:
+</p>
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3ABombardment_armageddon.png" class="image"><img alt="Bombardment armageddon.png" src="images/Bombardment_armageddon.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Armageddon bombardment will turn the planet into a <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb World if the last pop is killed.</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3ABombardment_full.png" class="image"><img alt="Bombardment full.png" src="images/Bombardment_full.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Javorian Pox bombardment will turn the planet into a <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb World if the last pop is killed. This does not kill <a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Mechanical or <a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine pops.</li>
+<li><a href="Buildings.html" title="Buildings"><img alt="Tooltip building.png" src="images/Tooltip_building.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a> Gaia Seeders building and Gaia Seeder Outpost holding will terraform the world into a <a href="Gaia_World.html" title="Gaia World"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Gaia world.</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AR_baol.png" class="image"><img alt="R baol.png" src="images/R_baol.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a> Activating the The Last Baol relic enables the "Nu-Baol Life-Seeding" decision, which will terraform a colonized planet into a <a href="Gaia_World.html" title="Gaia World"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Gaia World and spawn 4 Nu-Baol pops. Note that this method does not remove any features or blockers.</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_deluge.png" class="image"><img alt="Ship part deluge.png" src="images/Ship_part_deluge.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Deluge Machine colossus will turn the planet into an <a href="Ocean_World.html" title="Ocean World"><img alt="Planet ocean.png" src="images/Planet_ocean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Ocean World. It will also kill all pops without the <a href="Biological_traits.html#Aquatic" title="Aquatic"><img alt="Aquatic" src="images/Trait_aquatic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Aquatic or <a href="Machine_traits.html#Waterproof" title="Waterproof"><img alt="Waterproof" src="images/Trait_robot_aquatic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Waterproof trait. Owned planets can be targeted. If any pops remain, the colossus owner gains ownership of the planet if not already owned.</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_world_cracker.png" class="image"><img alt="Ship part world cracker.png" src="images/Ship_part_world_cracker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> World Cracker colossus will turn the planet into a <a href="Shattered_World.html" title="Shattered World"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Shattered World.</li>
+<li><a href="Toxoids.html" title="Toxoids"><img alt="Toxoids.png" src="images/Toxoids.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Toxic God colossus will turn the planet into a <a href="Toxic_World.html" title="Toxic World"><img alt="Planet toxic.png" src="images/Planet_toxic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Toxic World with the <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_planet_from_space.png" class="image"><img alt="Pm planet from space.png" src="images/Pm_planet_from_space.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Terraforming_Candidate.html" title="Terraforming Candidate"><img alt="Terraforming Candidate" src="images/Pm_frame_green.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Toxic Terraforming Candidate modifier.</li>
+<li>The <a href="Abandoned_Terraforming_Equipment.html" title="Abandoned Terraforming Equipment">Abandoned Terraforming Equipment</a> event may result in the planet being terraformed into a different climate, Gaia World, or a Tomb World.</li>
+<li><a href="Horizon_Signal.html" title="Horizon Signal">The Worm</a> can terraform all planets and moons in the empire's capital system, habitable and uninhabitable alike, into <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb Worlds; only <a href="https://stellaris.paradoxwikis.com/File%3APlanet_gas_giant.png" class="image"><img alt="Planet gas giant.png" src="images/Planet_gas_giant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Gas Giants, <a href="Relic_World.html" title="Relic World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Relic Worlds, and <a href="Ecumenopolis.html" title="Ecumenopolis"><img alt="Planet city.png" src="images/Planet_city.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Ecumenopolises are spared. Moreover, the climate preference of every pop living on those planets will be changed to <a href="https://stellaris.paradoxwikis.com/File%3ATrait_pc_nuked_preference.png" class="image"><img alt="Trait pc nuked preference.png" src="images/Trait_pc_nuked_preference.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Tomb World climate preference.</li>
+<li><div class="tooltip"><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Civics.html#Relentless_Industrialists" title="Relentless Industrialists"><img alt="Relentless Industrialists" src="images/Civic_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Corporate_civics.html#Shareholder_Values" title="Shareholder Values"><img alt="Shareholder Values" src="images/Civic_corporate_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span></span>&#32; Relentless Industrialists<div class="tooltiptext tooltipBG2" style="text-align:left; background:#FFFFFF; left:28px; top:100%;"><div class="plainlist" style="; display:inline-block; font-family:sans-serif; padding:6px; white-space:nowrap;"><div><a href="Civics.html#Relentless_Industrialists" title="Relentless Industrialists"><img alt="Relentless Industrialists" src="images/Civic_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Relentless Industrialists</div><div><a href="Corporate_civics.html#Shareholder_Values" title="Shareholder Values"><img alt="Shareholder Values" src="images/Civic_corporate_relentless_industrialists.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Shareholder Values</div></div></div></div> can build <a href="Buildings.html#Coordinated_Fulfillment_Center" title="Coordinated Fulfillment Center"><img alt="Coordinated Fulfillment Center" src="images/Building_coordinated_fulfillment_center_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Coordinated Fulfillment Center and <a href="Buildings.html#Universal_Productivity_Alignment_Facility" title="Universal Productivity Alignment Facility"><img alt="Universal Productivity Alignment Facility" src="images/Building_coordinated_fulfillment_center_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Universal Productivity Alignment Facility buildings which terraform planets into <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb Worlds over time. The first time triggers the <a href="Situations.html#Environmental_Deterioration" title="Situations">Environmental Deterioration</a> situation; if the situation reaches maximum, the planet turns into a Tomb World. After the situations ends, <i>Industrialism</i> policy is unlocked. If the policy is set to <a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <i>Full Steam Ahead</i> or <a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <i>For Science!</i>, next planets with a <a href="Buildings.html#Coordinated_Fulfillment_Center" title="Coordinated Fulfillment Center"><img alt="Coordinated Fulfillment Center" src="images/Building_coordinated_fulfillment_center_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Coordinated Fulfillment Center will be turned into <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb Worlds in 30 years and planets with a <a href="Buildings.html#Universal_Productivity_Alignment_Facility" title="Universal Productivity Alignment Facility"><img alt="Universal Productivity Alignment Facility" src="images/Building_coordinated_fulfillment_center_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Universal Productivity Alignment Facility will turn into <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb Worlds in 15 years, this time without any warning. Only choosing <a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <i>Cleanup</i> policy stops this effect.</li>
+<li>The science ship used by <a href="Paragons.html#Astrocreator_Azaryn" title="Paragons">Astrocreator Azaryn</a> has the ability to terraform 3 planets into <a href="Gaia_World.html" title="Gaia World"><img alt="Planet gaia.png" src="images/Planet_gaia.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Gaia Worlds with the <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_overgrowth.png" class="image"><img alt="Pm overgrowth.png" src="images/Pm_overgrowth.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Overgrowth" title="Overgrowth"><img alt="Overgrowth" src="images/Pm_frame_yellow.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Overgrowth modifier at the cost of <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-red" style="font-weight:bold;">10000</span>&#32;Energy and 10 years. <a href="https://stellaris.paradoxwikis.com/File%3APlanet_barren.png" class="image"><img alt="Planet barren.png" src="images/Planet_barren.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Barren Worlds, even without Terraforming Candidate modifier, can be terraformed this way as well but the time is increased to 25 years. The science ship merely starts the process and does not have to stay there.</li></ul>
+<h4><span id="Cost_reduction_.26_speed"></span><span class="mw-headline" id="Cost_reduction_&amp;_speed">Cost reduction &amp; speed</span></h4>
+<p><a href="Terraforming_cost.html" title="Terraforming cost"><img alt="Mod country terraforming cost.png" src="images/Mod_country_terraforming_cost.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Terraforming cost and <a href="Terraforming_speed.html" title="Terraforming speed"><img alt="Mod country terraforming speed.png" src="images/Mod_country_terraform_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> speed can be affected by the following:
+</p>
+<table class="wikitable" style="text-align: center;">
+<tbody><tr>
+<th>Source</th>
+<th><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Cost</th>
+<th><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" /> Speed</th>
+<th>DLC
+</th></tr>
+<tr>
+<td style="text-align:left;"><a href="Ascension_perks.html#World_Shaper" title="World Shaper"><img alt="World Shaper" src="images/Ap_world_shaper.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a> World Shaper ascension perk</td>
+<td><span class="effect-green" style="font-weight:bold;">−25%</span></td>
+<td>—</td>
+<td>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Edicts.html#Terraforming_Gases" title="Terraforming Gases"><img alt="Terraforming Gases" src="images/Menu_icon_edicts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Terraforming Gases edict</td>
+<td>—</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span></td>
+<td>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Ascension_perks.html#Hydrocentric" title="Hydrocentric"><img alt="Hydrocentric" src="images/Ap_hydrocentric.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a> Hydrocentric</td>
+<td><span class="effect-green" style="font-weight:bold;">−25%</span> <br /> (to Ocean)</td>
+<td>—</td>
+<td><a href="Aquatics.html" title="Aquatics"><img alt="Aquatics.png" src="images/Aquatics.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Ancient_Relics.html" title="Ancient Relics"><img alt="Ancient Relics.png" src="images/Ancient_Relics.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a> <i>Secrets of the Baol</i> empire modifier</td>
+<td><span class="effect-green" style="font-weight:bold;">−15%</span></td>
+<td>—</td>
+<td><a href="Ancient_Relics.html" title="Ancient Relics"><img alt="Ancient Relics.png" src="images/Ancient_Relics.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait cartographer.png" src="images/Leader_trait_cartographer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 3.png" src="images/Leader_trait_tier_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Scientist_traits.html#24px" title="24px III"><img alt="24px III" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Cartographer III councilor trait</td>
+<td>—</td>
+<td><span class="effect-green" style="font-weight:bold;">+33%</span></td>
+<td><a href="Galactic_Paragons.html" title="Galactic Paragons"><img alt="Galactic Paragons.png" src="images/Galactic_Paragons.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait cartographer.png" src="images/Leader_trait_cartographer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 2.png" src="images/Leader_trait_tier_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Scientist_traits.html#24px" title="24px II"><img alt="24px II" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Cartographer II councilor trait</td>
+<td>—</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span></td>
+<td><a href="Galactic_Paragons.html" title="Galactic Paragons"><img alt="Galactic Paragons.png" src="images/Galactic_Paragons.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Terraforming_speed.html" title="Terraforming speed"><img alt="Mod country terraforming speed.png" src="images/Mod_country_terraform_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <i>Shallarian Terraforming Knowledge</i> empire modifier</td>
+<td><span class="effect-green" style="font-weight:bold;">−10%</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span></td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Terraforming_speed.html" title="Terraforming speed"><img alt="Mod country terraforming speed.png" src="images/Mod_country_terraform_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> <i>Mask of Transformation</i> empire modifier</td>
+<td><span class="effect-green" style="font-weight:bold;">−10%</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span></td>
+<td>
+</td></tr>
+<tr>
+<td style="text-align:left;"><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait cartographer.png" src="images/Leader_trait_cartographer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 1.png" src="images/Leader_trait_tier_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Scientist_traits.html#24px" title="Scientist traits"><img alt="Leader trait overlay transparent.png" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Cartographer I councilor trait</td>
+<td>—</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span></td>
+<td><a href="Galactic_Paragons.html" title="Galactic Paragons"><img alt="Galactic Paragons.png" src="images/Galactic_Paragons.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Galactic_Community.html#Ecological_Protection" title="Ecological Protection"><img alt="Ecological Protection" src="images/Resolution_ecological_protection.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Environmental Control Board resolution (4)</td>
+<td><span class="effect-red" style="font-weight:bold;">+25%</span></td>
+<td>—</td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Galactic_Community.html#Ecological_Protection" title="Ecological Protection"><img alt="Ecological Protection" src="images/Resolution_ecological_protection.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> The Paradise Initiative resolution (5)</td>
+<td><span class="effect-red" style="font-weight:bold;">+100%</span></td>
+<td>—</td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Exotic_gases.html" title="Exotic gases"><img alt="Exotic gases.png" src="images/Exotic_gases.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Exotic Gases minor deficit</td>
+<td>—</td>
+<td><span class="effect-red" style="font-weight:bold;">−20%</span></td>
+<td>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Exotic_gases.html" title="Exotic gases"><img alt="Exotic gases.png" src="images/Exotic_gases.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Exotic Gases major deficit</td>
+<td>—</td>
+<td><span class="effect-red" style="font-weight:bold;">−40%</span></td>
+<td>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Exotic_gases.html" title="Exotic gases"><img alt="Exotic gases.png" src="images/Exotic_gases.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Exotic Gases severe deficit</td>
+<td>—</td>
+<td><span class="effect-red" style="font-weight:bold;">−60%</span></td>
+<td>
+</td></tr>
+<tr>
+<td style="text-align:left;"><a href="Exotic_gases.html" title="Exotic gases"><img alt="Exotic gases.png" src="images/Exotic_gases.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Exotic Gases catastrophic deficit</td>
+<td>—</td>
+<td><span class="effect-red" style="font-weight:bold;">−80%</span></td>
+<td>
+</td></tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Colony_ships">Colony ships</span></h2>
+<p>Colony ships allow an empire to settle <a href="Planets.html#Habitable_planets" class="mw-redirect" title="Planets">habitable planets or megastructures</a> in owned systems. When ordering the construction of a colony ship, the player is given the option of choosing the species or sub-species of the <a href="Pop.html" title="Pop"><img alt="Icon pop.png" src="images/Icon_pop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;pop(s) that will be sent to the new colony. Species require the <a href="Colonization_rights.html" title="Colonization rights"><img alt="Species right colonization rights.png" src="images/Species_right_colonization_rights.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> <i>Colonization Allowed</i> species rights to be selected for new colony ships. Pops are neither consumed nor transported in this process. Once constructed, the colony ship may be sent to any habitable world within an owned system to start a colony. Colony ships take one year to build and their upkeep cost is maintained throughout the whole colonization process. Colony ships can also be built through the <a href="Planet_interface.html" title="Planet interface">interface</a> of the planet to be colonized, which automatically queues the colonization order as long as the path is not blocked.
+</p><p>The cost of a colony ship in an organic empire depends on the government and the empire's primary species class.
+</p>
+<table class="wikitable plainlist">
+<tbody><tr>
+<th>Primary species
+</th>
+<th><a href="Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a><a href="Government.html#Oligarchic" title="Oligarchic"><img alt="Oligarchic" src="images/Auth_oligarchic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a><a href="Government.html#Dictatorial" title="Dictatorial"><img alt="Dictatorial" src="images/Auth_dictatorial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a><a href="Government.html#Imperial" title="Imperial"><img alt="Imperial" src="images/Auth_imperial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a><a href="Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>
+</th>
+<th><a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>
+</th>
+<th><a href="Tree_of_Life.html" title="Tree of Life"><img alt="Origins tree of life.png" src="images/Origins_tree_of_life.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>
+</th></tr>
+<tr>
+<td>Biological
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Alloys</li>
+<li><a href="Food.html" title="Food"><img alt="Food.png" src="images/Food.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Food</li>
+<li><a href="Consumer_goods.html" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Consumer Goods</li></ul>
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Alloys</li>
+<li><a href="Food.html" title="Food"><img alt="Food.png" src="images/Food.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;500&#32;Food</li></ul>
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;50&#32;Alloys</li>
+<li><a href="Food.html" title="Food"><img alt="Food.png" src="images/Food.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;1000&#32;Food</li></ul>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Lithoid" title="Lithoid"><img alt="Lithoid" src="images/Trait_lithoid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Lithoid
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Alloys</li>
+<li><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Minerals</li>
+<li><a href="Consumer_goods.html" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Consumer Goods</li></ul>
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Alloys</li>
+<li><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;500&#32;Minerals</li></ul>
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;50&#32;Alloys</li>
+<li><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;500&#32;Minerals</li>
+<li><a href="Food.html" title="Food"><img alt="Food.png" src="images/Food.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;500&#32;Food</li></ul>
+</td></tr>
+<tr>
+<td><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a><a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Alloys</li>
+<li><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Energy</li>
+<li><a href="Consumer_goods.html" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Consumer Goods</li></ul>
+</td>
+<td>
+<ul><li><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;Alloys</li>
+<li><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;500&#32;Energy</li></ul>
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td></tr></tbody></table>
+<p>Councilors with the <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait frontier spirit.png" src="images/Leader_trait_frontier_spirit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Official_traits.html#24px" title="Official traits"><img alt="Leader trait overlay transparent.png" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Frontier Spirit trait reduces the cost of colony ships by <a href="https://stellaris.paradoxwikis.com/Ship_build_cost" title="Ship build cost"><img alt="Mod spaceport ship build cost mult.png" src="images/Mod_starbase_shipyard_build_cost_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">−5%</span> at tier I and <a href="https://stellaris.paradoxwikis.com/Ship_build_cost" title="Ship build cost"><img alt="Mod spaceport ship build cost mult.png" src="images/Mod_starbase_shipyard_build_cost_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">−10%</span> at tiers II and III.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:322px;"><a href="https://stellaris.paradoxwikis.com/File%3AMeteorite_colony_ship.png" class="image"><img alt="" src="images/Meteorite_colony_ship.png" decoding="async" loading="lazy" width="320" height="195" class="thumbimage" data-file-width="1379" data-file-height="842" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AMeteorite_colony_ship.png" class="internal" title="Enlarge"></a></div>Meteorite Colony Ship</div></div></div>
+<h3><span class="mw-headline" id="Alternative_colony_ships">Alternative colony ships</span></h3>
+<p>In addition to regular colony ships, empires with the <a href="Civics.html#Corporate_Dominion" title="Corporate Dominion"><img alt="Corporate Dominion" src="images/Civic_corporate_dominion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Corporate Dominion or <a href="Corporate_civics.html#Private_Prospectors" title="Private Prospectors"><img alt="Private Prospectors" src="images/Civic_private_prospectors.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Private Prospectors civics can also construct <b>Private Colony Ships</b>, which cost <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;500&#32;energy instead.
+</p><p>Similarly, empires with the <a href="Calamitous_Birth.html" title="Calamitous Birth"><img alt="Calamitous Birth" src="images/Origins_lithoid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Calamitous Birth origin can also construct <b>Lithoid Meteorites</b>, which cost <a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;500&#32;minerals instead, have no upkeep cost, and take only 150 days to build. Lithoid Meteorites also have a much faster sublight speed than regular colony ships. A planet colonized by a lithoid meteorite gains two Buried Lithoids <a href="Planetary_features.html#Blockers" title="Planetary features">blockers</a> and the <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_asteroid_impacts.png" class="image"><img alt="Pm asteroid impacts.png" src="images/Pm_asteroid_impacts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Lithoid_Crater" title="Lithoid Crater"><img alt="Lithoid Crater" src="images/Pm_frame_red.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Lithoid Crater modifier.
+</p><p>Empires with <a href="Civics.html#Genesis_Guides" title="Genesis Guides"><img alt="Genesis Guides" src="images/Civic_guided_sapience.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Corporate_civics.html#Astrogenesis_Technologies" title="Astrogenesis Technologies"><img alt="Astrogenesis Technologies" src="images/Civic_corporate_guided_sapience.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Machine_intelligence_civics.html#Genesis_Architects" title="Genesis Architects"><img alt="Genesis Architects" src="images/Civic_machine_guided_sapience.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Hive_mind_civics.html#Genesis_Symbiotes" title="Genesis Symbiotes"><img alt="Genesis Symbiotes" src="images/Civic_hive_guided_sapience.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Genesis civics use <b>Genesis Arks</b> instead of regular colony ships. These arks cost additional <a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;200&#32;alloys and will create pre-sapient pops (if none are present) along with a <a href="Planetary_features.html#Genesis_Preserve" title="Planetary features">Genesis Preserve</a> planetary feature in the new colony.
+</p>
+<h3><span class="mw-headline" id="Colony_development">Colony development</span></h3>
+<p>When a Colony Ship lands on a planet, a period of initial development will occur during which a colony is extremely vulnerable: just a few days of orbital bombardment will wipe it out completely and the new colony will not produce any resources nor will pops grow on the world. It is possible to remove <a href="Blocker.html" title="Blocker"><img alt="Tile Blocker.png" src="images/Tile_Blocker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="18" data-file-height="18" /></a>&#32;blockers while the colony is developing, however their clearance cannot be cancelled or reordered until the colony is fully established. The initial development period lasts about 2 years and 10 months. Colony development speed can also be reduced by the following: 
+</p>
+<table class="mildtable mw-collapsible mw-collapsed" style="border:2px solid #DDDDDD;">
+<tbody><tr>
+<th colspan="2">Colony development speed<span style="visibility:hidden;color:transparent;">0</span>
+</th></tr>
+<tr>
+<th>Source</th>
+<th style="min-width:50px">Effect
+</th></tr>
+<tr>
+<td><a href="Relics.html#Yuht_Cryo_Core" title="Yuht Cryo Core"><img alt="Yuht Cryo Core" src="images/R_cryo_core.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a>&#32;Yuht Cryo Core relic</td>
+<td><span class="effect-green" style="font-weight:bold;">+200%</span>
+</td></tr>
+<tr>
+<td><a href="Edicts.html#Evacuation_Protocols" title="Evacuation Protocols"><img alt="Evacuation Protocols" src="images/Menu_icon_edicts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Evacuation Protocols edict</td>
+<td><span class="effect-green" style="font-weight:bold;">+100%</span>
+</td></tr>
+<tr>
+<td><a href="Physics_research.html#AI-Controlled_Colony_Ships" title="AI-Controlled Colony Ships"><img alt="AI-Controlled Colony Ships" src="images/Tech_cryostasis_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;AI-controlled Colony Ships technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Self-Aware_Colony_Ships.html" title="Self-Aware Colony Ships"><img alt="Tech cryostasis 2.png" src="images/Tech_cryostasis_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Self-Aware Colony Ships technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td>Leader with <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait frontier spirit.png" src="images/Leader_trait_frontier_spirit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Official_traits.html#Frontier_Spirit" title="Frontier Spirit"><img alt="Frontier Spirit" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Frontier Spirit II on the council</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td>Leader with <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait frontier spirit.png" src="images/Leader_trait_frontier_spirit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Official_traits.html#Frontier_Spirit" title="Frontier Spirit"><img alt="Frontier Spirit" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Frontier Spirit I on the council</td>
+<td><span class="effect-green" style="font-weight:bold;">+33%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence authority</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="Society_research.html#Ceramo-Metal_Infrastructure" title="Ceramo-Metal Infrastructure"><img alt="Ceramo-Metal Infrastructure" src="images/Tech_planetary_infrastructure_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Ceramo-Metal Infrastructure technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="Society_research.html#Durasteel_Infrastructure" title="Durasteel Infrastructure"><img alt="Durasteel Infrastructure" src="images/Tech_planetary_infrastructure_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Durasteel Infrastructure technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="Traditions.html#Expansion" title="Expansion"><img alt="Expansion" src="images/Tradition_icon_expansion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Expansion tradition tree</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="Agenda.html#Superior_Colonies" title="Superior Colonies"><img alt="Superior Colonies" src="images/Agenda_superior_colonies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="124" data-file-height="124" /></a> Superior Colonies agenda</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ADiplomatic_stance_expansionist.png" class="image"><img alt="Diplomatic stance expansionist.png" src="images/Diplomatic_stance_expansionist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a> Expansionist diplomatic stance</td>
+<td><span class="effect-green" style="font-weight:bold;">+15%</span>
+</td></tr></tbody></table>
+<p><br />
+Once the colony has been successfully established, it will have a tier 1 <a href="Capital_building.html" class="mw-redirect" title="Capital building">capital building</a> and a single pop of the species selected for the colony ship. It is then possible to develop the planet by constructing <a href="Districts.html" title="Districts"><img alt="Tooltip district.png" src="images/Tooltip_district.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;districts and <a href="Buildings.html" title="Buildings"><img alt="Tooltip building.png" src="images/Tooltip_building.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;buildings. The amount of initial pops are increased by <span class="effect-green" style="font-weight:bold;">+1</span> from each of the following:
+</p>
+<ul><li><a href="Traditions.html#Expansion" title="Colonization Fever"><img alt="Colonization Fever" src="images/Tradition_expansion_colonization_fever.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Colonization Fever tradition</li>
+<li><a href="Relics.html#Yuht_Cryo_Core" title="Yuht Cryo Core"><img alt="Yuht Cryo Core" src="images/R_cryo_core.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a>&#32;Yuht Cryo Core relic</li>
+<li><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence authority</li>
+<li>Leader with <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait frontier spirit.png" src="images/Leader_trait_frontier_spirit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Official_traits.html#Frontier_Spirit" title="Frontier Spirit"><img alt="Frontier Spirit" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Frontier Spirit III on the council</li></ul>
+<h3><span class="mw-headline" id="Open_Seed_Pods">Open Seed Pods</span></h3>
+<p>Empires with the <a href="Fruitful_Partnership.html" title="Fruitful Partnership"><img alt="Origins gardeners.png" src="images/Origins_gardeners.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> Fruitful Partnership origin have an alternative method of colonizing worlds: seed pods distributed by <a href="Space_fauna.html" class="mw-redirect" title="Space fauna">space fauna</a> on uncolonized worlds can be activated by the "Open Seed Pods" special project. This enables a colony to be remotely established on a world with the seed pods for 3,000 <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;energy without needing to build a colony ship. Once established, the new colony will automatically create an outpost if the system was unclaimed. This method cannot be used on uncolonized planets in systems owned by other empires.
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<p><br />
+</p>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b>Game concepts</b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Exploration
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Exploration.html" title="Exploration">Exploration</a> • <a href="FTL.html" class="mw-redirect" title="FTL">FTL</a> • <a href="Unique_systems.html" title="Unique systems">Unique systems</a> • <a href="L-Cluster.html" title="L-Cluster">L-Cluster</a> • <a href="Pre-FTL_species.html" title="Pre-FTL species">Pre-FTL species</a> • <a href="Fallen_empire.html" title="Fallen empire">Fallen empire</a> • <a href="Spaceborne_aliens.html" title="Spaceborne aliens">Spaceborne aliens</a> • <a href="Enclaves.html" title="Enclaves">Enclaves</a>  • <a href="Guardians.html" title="Guardians">Guardians</a> • <a href="Marauders.html" title="Marauders">Marauders</a> • <a href="Caravaneers.html" title="Caravaneers">Caravaneers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Celestial bodies
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Celestial_body.html" class="mw-redirect" title="Celestial body">Celestial body</a> • <a href="Colonization.html" title="Colonization">Colonization</a> • <a href="Planetary_features.html" title="Planetary features">Planetary features</a> • <a href="Planet_modifiers.html" title="Planet modifiers">Planet modifiers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Discovery
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Discovery.html" title="Discovery">Discovery</a> • <a href="Anomaly.html" title="Anomaly">Anomaly</a> • <a href="Archaeological_site.html" title="Archaeological site">Archaeological site</a> • <a href="Astral_rift.html" title="Astral rift">Astral rift</a> • <a href="Relics.html" title="Relics">Relics</a> • <a href="Collection.html" title="Collection">Collection</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Species
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a> • <a href="Species_traits.html" title="Species traits">Pop modification</a> • <a href="Biological_traits.html" title="Biological traits">Biological traits</a> • <a href="Machine_traits.html" title="Machine traits">Machine traits</a> • <a href="Population.html" title="Population">Population</a> • <a href="Species_rights.html" title="Species rights">Species rights</a> • <a href="Ethics.html" title="Ethics">Ethics</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Leaders
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader.html" class="mw-redirect" title="Leader">Leader</a> • <a href="Common_leader_traits.html" title="Common leader traits">Common leader traits</a> • <a href="Commander_traits.html" title="Commander traits">Commander traits</a> • <a href="Official_traits.html" title="Official traits">Official traits</a> • <a href="Scientist_traits.html" title="Scientist traits">Scientist traits</a> • <a href="Paragons.html" title="Paragons">Paragons</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Governance
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a> • <a href="Origin.html" title="Origin">Origin</a> • <a href="Government.html" title="Government">Government</a> • <a href="Civics.html" title="Civics">Civics</a> • <a href="Council.html" title="Council">Council</a> • <a href="Policies.html" title="Policies">Policies</a> • <a href="Edicts.html" title="Edicts">Edicts</a> • <a href="Factions.html" title="Factions">Factions</a> • <a href="Traditions.html" title="Traditions">Traditions</a> • <a href="Ascension_perks.html" title="Ascension perks">Ascension perks</a> • <a href="Ambition.html" title="Ambition">Ambition</a> • <a href="Situations.html" title="Situations">Situations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Economy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Resources.html" title="Resources">Resources</a> • <a href="Planetary_management.html" title="Planetary management">Planetary management</a> • <a href="Districts.html" title="Districts">Districts</a>  • <a href="Jobs.html" title="Jobs">Jobs</a> • <a href="Designation.html" title="Designation">Designation</a> • <a href="Trade.html" class="mw-redirect" title="Trade">Trade</a> • <a href="Megastructures.html" title="Megastructures">Megastructures</a> • <a href="Waystation.html" title="Waystation">Waystation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Buildings
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_capital.html" title="Planet capital">Planet capital</a> • <a href="Buildings.html" title="Buildings">Common buildings</a> • <a href="Planet_unique_buildings.html" title="Planet unique buildings">Planet unique</a> • <a href="Empire_unique_buildings.html" title="Empire unique buildings">Empire unique</a> • <a href="Holdings.html" title="Holdings">Holdings</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Ships
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Ship.html" title="Ship">Ship</a> • <a href="Arkship.html" title="Arkship">Arkship</a> • <a href="Ship_designer.html" title="Ship designer">Ship designer</a> • <a href="Core_components.html" title="Core components">Core components</a> • <a href="Weapon_components.html" title="Weapon components">Weapon components</a> • <a href="Utility_components.html" title="Utility components">Utility components</a> • <a href="Mutations.html" title="Mutations">Mutations</a> • <a href="Offensive_mutations.html" title="Offensive mutations">Offensive mutations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Technology
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Technology.html" title="Technology">Technology</a> • <a href="Physics_research.html" title="Physics research">Physics research</a> • <a href="Society_research.html" title="Society research">Society research</a> • <a href="Engineering_research.html" title="Engineering research">Engineering research</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Diplomacy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a> • <a href="Relations.html" title="Relations">Relations</a> • <a href="Galactic_community.html" class="mw-redirect" title="Galactic community">Galactic community</a> • <a href="Federation.html" title="Federation">Federations</a> • <a href="Subject_empire.html" title="Subject empire">Subject empires</a> • <a href="Intelligence.html" title="Intelligence">Intelligence</a> • <a href="Contracts.html" title="Contracts">Contracts</a> • <a href="AI_personalities.html" title="AI personalities">AI personalities</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Warfare
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Warfare.html" title="Warfare">Warfare</a> • <a href="Space_warfare.html" title="Space warfare">Space warfare</a> • <a href="Land_warfare.html" title="Land warfare">Land warfare</a> • <a href="Starbase.html" title="Starbase">Starbase</a> • <a href="Crisis.html" title="Crisis">Crisis</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Others
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a> • <a href="The_Shroud.html" title="The Shroud">The Shroud</a> • <a href="Preset_empires.html" title="Preset empires">Preset empires</a> • <a href="AI_players.html" title="AI players">AI players</a> • <a href="Stat_modifiers.html" title="Stat modifiers">Stat modifiers</a> • <a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Easter_eggs.html" title="Easter eggs">Easter eggs</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707234823
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.600 seconds
+Real time usage: 0.781 seconds
+Preprocessor visited node count: 49567/1000000
+Post‐expand include size: 207086/2097152 bytes
+Template argument size: 36472/2097152 bytes
+Highest expansion depth: 14/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+Lua time usage: 0.030/7 seconds
+Lua virtual size: 5058560/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  432.746      1 -total
+ 56.20%  243.209    309 Template:Icon
+ 45.51%  196.931    177 Template:Iconify
+ 14.67%   63.476      7 Template:Trait
+  7.49%   32.415     45 Template:Icon/a
+  5.16%   22.319     28 Template:Icon/m
+  5.07%   21.959     27 Template:Icon/c
+  4.77%   20.624     47 Template:Icon/t
+  4.50%   19.473     73 Template:Green
+  4.00%   17.316     12 Template:Icon/f
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:9205-0!canonical and timestamp 20260707234822 and revision id 115643.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

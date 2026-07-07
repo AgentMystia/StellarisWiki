@@ -23,7 +23,7 @@
 <div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
-<p><a href="Traditions.html" title="Traditions">Traditions</a> and <a href="https://stellaris.paradoxwikis.com/Ascension_Perks" class="mw-redirect" title="Ascension Perks">Ascension Perks</a> are mechanics in Stellaris.
+<p><a href="Traditions.html" title="Traditions">Traditions</a> and <a href="Ascension_Perks.html" class="mw-redirect" title="Ascension Perks">Ascension Perks</a> are mechanics in Stellaris.
 </p>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
@@ -144,7 +144,7 @@
 </p>
 <h3><span class="mw-headline" id="Data_Structure_2">Data Structure</span></h3>
 <ul><li><b>possible</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to be checked if this empire can adopt this tradition. Frequently used to check if all previous traditions in the group are adopted.</li>
-<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the empire adopted this tradition. Unlike all other game objects these modifiers will NOT generate a tooltip for this tradition.</li>
+<li><b>modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the empire adopted this tradition. Unlike all other game objects these modifiers will NOT generate a tooltip for this tradition.</li>
 <li><b>on_enabled</b> - A block of <a href="Effects.html" title="Effects">Effects</a> to be executed when this tradition becomes adopted.</li>
 <li><b>tradition_swap</b> - Like Tradition Groups, Traditions also have swap types.
 <ul><li><b>name</b> - Alternative key used for this Tradition if this swap applies.</li>
@@ -152,7 +152,7 @@
 <li><b>inherit_icon</b> - (yes/no) If set to no, this Tradition will have an alternative icon if this swap applies.</li>
 <li><b>inherit_name</b> - (yes/no) If set to no, this Tradition will use alternative localisation keys for name and description if this swap applies.</li>
 <li><b>trigger</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine should this swap apply. (Country scope)</li>
-<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to take the place of the primary <b>modifier</b> block if this swap applies.</li>
+<li><b>modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to take the place of the primary <b>modifier</b> block if this swap applies.</li>
 <li><b>weight</b> - If multiple swaps are valid to an empire, one with the highest weight wins.</li></ul></li>
 <li><b>ai_weight</b> - Determines how likely the AI will adopt this Tradition.</li></ul>
 <h3><span class="mw-headline" id="Localisation_Keys_2">Localisation Keys</span></h3>
@@ -398,7 +398,7 @@ Adopting all Example Traditions will do something. In addition, we will unlock 1
 <ul><li><b>potential</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine should this AP appear in the AP selection menu. Also used to hide DLC perks. All APs should exclude itself with potential. (Country scope)</li>
 <li><b>possible</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine is this AP available to an empire. (Country scope)</li>
 <li><b>on_enabled</b> - A block of <a href="Effects.html" title="Effects">Effects</a> to be executed when the empire adopted this AP. (Country scope)</li>
-<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a>. Easy understanding.</li>
+<li><b>modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a>. Easy understanding.</li>
 <li><b>ai_weight</b> - The higher the weight is, the more likely the AI will pick this perk.</li></ul>
 <h3><span class="mw-headline" id="Localisation_Keys_3">Localisation Keys</span></h3>
 <ul><li>ap_example:0 "Example"</li>
@@ -488,7 +488,7 @@ Adopting all Example Traditions will do something. In addition, we will unlock 1
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -509,21 +509,21 @@ Adopting all Example Traditions will do something. In addition, we will unlock 1
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -560,7 +560,7 @@ Adopting all Example Traditions will do something. In addition, we will unlock 1
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console:User interface - Stellaris Wiki</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Console</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">User interface</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.<br /><br />This article is for the console version of Stellaris only.</div>
+</div>
+</div>
+<p>Stellaris' user interface has many different screens and visual elements. This collection of articles strives to be the reference for Stellaris Console Edition's User Interface.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Launch_Screen"><span class="tocnumber">1</span> <span class="toctext">Launch Screen</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Main_Menu"><span class="tocnumber">2</span> <span class="toctext">Main Menu</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#New_Game"><span class="tocnumber">3</span> <span class="toctext">New Game</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Select_Empire"><span class="tocnumber">3.1</span> <span class="toctext">Select Empire</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Empire_Selection"><span class="tocnumber">3.1.1</span> <span class="toctext">Empire Selection</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Change_Spawn_Setting"><span class="tocnumber">3.1.2</span> <span class="toctext">Change Spawn Setting</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Manage_Empire"><span class="tocnumber">3.1.3</span> <span class="toctext">Manage Empire</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Edit_Empire"><span class="tocnumber">3.1.4</span> <span class="toctext">Edit Empire</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Delete_Empire"><span class="tocnumber">3.1.5</span> <span class="toctext">Delete Empire</span></a>
+<ul>
+<li class="toclevel-4 tocsection-10"><a href="#Delete_Empire_Confirmation"><span class="tocnumber">3.1.5.1</span> <span class="toctext">Delete Empire Confirmation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Randomize_Empire"><span class="tocnumber">3.2</span> <span class="toctext">Randomize Empire</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Create_New_Empire"><span class="tocnumber">3.3</span> <span class="toctext">Create New Empire</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Load_Game"><span class="tocnumber">4</span> <span class="toctext">Load Game</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Multiplayer"><span class="tocnumber">5</span> <span class="toctext">Multiplayer</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Join_Game"><span class="tocnumber">5.1</span> <span class="toctext">Join Game</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Search_Filters"><span class="tocnumber">5.1.1</span> <span class="toctext">Search Filters</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Game_Room"><span class="tocnumber">5.1.2</span> <span class="toctext">Game Room</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Host_New_Game"><span class="tocnumber">5.2</span> <span class="toctext">Host New Game</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Host_Saved_Game"><span class="tocnumber">5.3</span> <span class="toctext">Host Saved Game</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Settings"><span class="tocnumber">6</span> <span class="toctext">Settings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Gameplay"><span class="tocnumber">6.1</span> <span class="toctext">Gameplay</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Controls"><span class="tocnumber">6.2</span> <span class="toctext">Controls</span></a>
+<ul>
+<li class="toclevel-3 tocsection-23"><a href="#Default_(Xbox)"><span class="tocnumber">6.2.1</span> <span class="toctext">Default (Xbox)</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#Reversed_(Xbox)"><span class="tocnumber">6.2.2</span> <span class="toctext">Reversed (Xbox)</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#Japan_(Xbox)"><span class="tocnumber">6.2.3</span> <span class="toctext">Japan (Xbox)</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Alternative_(Xbox)"><span class="tocnumber">6.2.4</span> <span class="toctext">Alternative (Xbox)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Sound"><span class="tocnumber">6.3</span> <span class="toctext">Sound</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#Credits"><span class="tocnumber">7</span> <span class="toctext">Credits</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#Paradox_Account"><span class="tocnumber">8</span> <span class="toctext">Paradox Account</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="#Downloadable_Content"><span class="tocnumber">9</span> <span class="toctext">Downloadable Content</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="#Sharing_DLC"><span class="tocnumber">9.1</span> <span class="toctext">Sharing DLC</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Launch_Screen">Launch Screen</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Launch_Screen.png" class="image" title="Stellaris Console Edition - Launch Screen"><img alt="Stellaris Console Edition - Launch Screen" src="images/Console_UI_Launch_Screen.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Launch Screen
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player is greeted with the launch screen. Press any button to launch the main menu.
+</p>
+<div class="toccolours mw-collapsible mw-collapsed">
+<p><b>Note for Xbox players</b>
+</p>
+<div class="mw-collapsible-content">
+<ul><li>Does not launch main menu
+<ul><li>Left or Right trigger</li>
+<li>Xbox button</li>
+<li>Wireless enrollment button</li></ul></li>
+<li>Does launch main menu
+<ul><li>Left or Right bumper</li>
+<li>Left or Right stick</li>
+<li>View or Menu button</li>
+<li>Y, B, A, or X button</li></ul></li></ul>
+</div>
+</div>
+<h2><span class="mw-headline" id="Main_Menu">Main Menu</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Main_Menu-Xbox.png" class="image" title="Stellaris Console Edition - Main Menu"><img alt="Stellaris Console Edition - Main Menu" src="images/Console_UI_Main_Menu-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Main Menu
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The main menu of Stellaris where the player can choose from a variety of menu options to complete the task they wish to perform.
+</p><p><b>Menu options:</b>
+</p>
+<ul><li><a href="Console_User_Interface.html#New_Game" class="mw-redirect" title="Console:User Interface">New Game</a> - Choosing this option allows the player to start a new single player game.</li>
+<li><a href="Console_User_Interface.html#Load_Game" class="mw-redirect" title="Console:User Interface">Load Game</a> - Choosing this option allows the player to continue a previously started single player game.</li>
+<li><a href="Console_User_Interface.html#Multiplayer" class="mw-redirect" title="Console:User Interface">Multiplayer</a> - Choosing this option allows the player to join, host a new or host a saved multiplayer game.</li>
+<li><a href="Console_User_Interface.html#Settings" class="mw-redirect" title="Console:User Interface">Settings</a> - Choosing this option allows the player to view, alter, reset, or save various global game options. These settings apply to all aspects of the game and its user interface.</li>
+<li><a href="Console_User_Interface.html#Credits" class="mw-redirect" title="Console:User Interface">Credits</a> - Choosing this option allows the player to view the game credits.</li>
+<li><a href="Console_User_Interface.html#Paradox_Account" class="mw-redirect" title="Console:User Interface">Paradox Account</a> - Choosing this option allows the player to log in to, log out of, link to, or unlink from their Paradox account. The player will also find Paradox's terms of use and privacy policy at this location.</li>
+<li><a href="Console_User_Interface.html#Downloadable_Content" class="mw-redirect" title="Console:User Interface">Downloadable Content</a> - Choosing this option allows the player to view, activate, deactivate, or purchase available DLC content.</li></ul>
+<div class="toccolours mw-collapsible mw-collapsed">
+<p><b>Note for Xbox and PS4 players</b>
+</p>
+<div class="mw-collapsible-content">
+<ul><li><i>A Paradox account is required to play multiplayer games.</i></li>
+<li><i>DLC must be activated before it will be accessible in game.</i></li>
+<li><i>An active internet connection is required to play multiplayer games and to purchase DLC</i>.</li></ul>
+</div>
+</div>
+<h2><span class="mw-headline" id="New_Game">New Game</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_New_Game-Xbox.png" class="image" title="Stellaris Console Edition - New Game"><img alt="Stellaris Console Edition - New Game" src="images/Console_UI_New_Game-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - New Game
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>Here a player will find all options for new single player games.
+</p>
+<ul><li><i>Select Empire</i> - Choosing this option allows the player to select which empire they would like to start a new single player game with.</li>
+<li><i>Randomize Empire</i> - Choosing this option randomizes which empire the player will start their new single player game with.</li>
+<li><i>Create New Empire</i> - Choosing this option allows the player to create a new empire and then start a new game.</li></ul>
+<h3><span class="mw-headline" id="Select_Empire">Select Empire</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_New_Game_Select_Empire-Xbox.png" class="image" title="Stellaris Console Edition - Select Empire"><img alt="Stellaris Console Edition - Select Empire" src="images/Console_UI_New_Game_Select_Empire-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Select Empire
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>Welcome to the <i>Select Empire</i> screen. From here a player can select, delete, manage, or change the spawn setting of their empire(s). A player may also choose <i>Back</i> which if chosen will return the player to the <i>New Game</i> menu.
+</p>
+<h4><span class="mw-headline" id="Empire_Selection">Empire Selection</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_New_Game_Select_Empire_Select-Xbox.png" class="image" title="Stellaris Console Edition - Empire Selection"><img alt="Stellaris Console Edition - Empire Selection" src="images/Console_UI_New_Game_Select_Empire_Select-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Empire Selection
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The outlined area contains a list of all available empires. Navigation of this area is accomplished by pressing <i>Up</i> or <i>Down</i> on the directional pad. In the picture <i>First Council of Nicaea</i> is highlighted. If the player chooses <i>Select</i> now they will be taken to <i><a href="Console_New_Game_Settings.html" class="mw-redirect" title="Console:New Game Settings">Game Details</a></i> where they may configure their game which will feature the <i>First Council of Nicaea</i> as their empire of choice. Visit <i><a href="Console_New_Game_Settings.html" class="mw-redirect" title="Console:New Game Settings">Game Details</a></i> to learn about configuring your galaxy.
+</p>
+<h4><span class="mw-headline" id="Change_Spawn_Setting">Change Spawn Setting</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_New_Game_Select_Empire_Select-Xbox.png" class="image" title="Stellaris Console Edition - Change Spawn Setting"><img alt="Stellaris Console Edition - Change Spawn Setting" src="images/Console_UI_New_Game_Select_Empire_Select-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Change Spawn Setting
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>After selecting an empire to interact with the player may press <i>Left</i> or <i>Right</i> on the directional pad or the <i>Right stick</i> to alter that empire's spawn setting. Changing spawn settings is only available for empires the player has created. All pre-created empires default to using <i>Empire Spawning Allowed</i> as their spawn setting.
+</p><p>Using the above screenshot for reference the <i>First Council of Nicaea</i> has a spawn setting of <i>Empire Spawning Forced</i>. Directly below them is <i>Greater Terraian Empire</i> which has <i>Empire Spawning Allowed</i> as a spawn setting. Next empire down is <i>Sol Liberation Front</i> which has <i>Empire Spawning Forbidden</i> as a spawn setting.
+</p>
+<ul><li><i>Empire Spawning Forced</i> - <i>First Council of Nicaea</i> <i><b>will always</b></i> appear in a regular game instead of a randomly generated empire.</li>
+<li><i>Empire Spawning Allowed</i> - <i>Greater Terraian Empire</i> <i><b>is allowed</b></i> to appear in a regular game instead of a randomly generated empire.</li>
+<li><i>Empire Spawning Forbidden</i> - <i>Sol Liberation Front</i> <i><b>is NOT</b></i> allowed to appear in a regular game instead of a randomly generated empire.</li></ul>
+<h4><span class="mw-headline" id="Manage_Empire">Manage Empire</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_New_Game_Select_Empire_Manage_Empire-Xbox.png" class="image" title="Stellaris Console Edition - Manage Empire"><img alt="Stellaris Console Edition - Manage Empire" src="images/Console_UI_New_Game_Select_Empire_Manage_Empire-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Manage Empire
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player has chosen the <i>First Council of Nicaea</i> as the empire they want to <i>Manage</i> and has moved their focus from the <i>Select Empire</i> section on the left to the <i>Manage</i> empire section in the middle of the screen. In the above screenshot the <i>Traits</i> sub-section is highlighted and an overview of its information is displayed in the right section of the screen.
+</p><p>They player may navigate around the six sub-sections of the <i>Manage Empire</i> area to review their empire's information by using <i>Up</i>, <i>Right</i>, <i>Down</i>, or <i>Left</i> on their directional pad.
+</p>
+<h4><span class="mw-headline" id="Edit_Empire">Edit Empire</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p>If a player decides they would rather <i>Edit</i> this empire they may do so by selecting <i>Edit</i>. Selecting <i>Edit</i> will result in the player being taken to <i><span class="effect-red" style="font-weight:bold;">Create New Empire</span></i> where they will be able to edit all aspects of their empire.
+</p>
+<h4><span class="mw-headline" id="Delete_Empire">Delete Empire</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_New_Game_Select_Empire-Xbox.png" class="image" title="Stellaris Console Edition - Select Empire"><img alt="Stellaris Console Edition - Select Empire" src="images/Console_UI_New_Game_Select_Empire-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Select Empire
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>In the above screenshot the <i>First Council of Nicaea</i> is selected. To <i>Delete</i> the <i>First Council of Nicaea</i> the player would select <i>Delete</i>. If the player has chosen to <i>Delete</i> the <i>First Council of Nicaea</i> they will be encounter a <i><a href="Console_User_Interface.html#Delete_Empire_Confirmation" class="mw-redirect" title="Console:User Interface">Delete Empire Confirmation</a></i> pop-up screen. <i>Delete</i> is only available for empires the player has created and not pre-created empires, however the player may <i>Manage</i> or <i>Edit</i> pre-created empires.
+</p>
+<h5><span class="mw-headline" id="Delete_Empire_Confirmation">Delete Empire Confirmation</span></h5>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Delete_Empire_Confirmation_Screen-Xbox.png" class="image" title="Stellaris Console Edition - Delete Empire Confirmation"><img alt="Stellaris Console Edition - Delete Empire Confirmation" src="images/Console_UI_Delete_Empire_Confirmation_Screen-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Delete Empire Confirmation
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The <i>Delete Empire Confirmation</i> screen. If the player is absolutely sure they want to delete the <i>First Council of Nicaea</i> they may choose <i>Confirm</i>. Choosing <i>Confirm</i> <i><b>will delete</b></i> the <i>First Council of Nicaea</i>, refresh the list of empires, and then return the player to the <i>Select Empire</i> screen. If the player has reached this screen and <i><b>does not</b></i> wish to delete the <i>First Council of Nicaea</i> they may select <i>Cancel</i> and be returned to the <i>Select Empire</i> screen.
+</p>
+<h3><span class="mw-headline" id="Randomize_Empire">Randomize Empire</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p>Selecting <i>Randomize Empire</i> will give the player a randomly-generated AI Empire for their new game. The player <i><b>will not</b></i> be able to edit this empire. After empire creation the player will be taken to the <i><a href="Console_New_Game_Settings.html" class="mw-redirect" title="Console:New Game Settings">Game Details</a></i> screen to complete the setup of their game. To learn more visit <i><a href="Console_New_Game_Settings.html" class="mw-redirect" title="Console:New Game Settings">Game Details</a></i>.
+</p>
+<h3><span class="mw-headline" id="Create_New_Empire">Create New Empire</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p>Selecting <i>Create New Empire</i> will take the player to the <i><span class="effect-red" style="font-weight:bold;">Create New Empire</span></i> screen where they can create their new unique custom empire.
+</p>
+<h2><span class="mw-headline" id="Load_Game">Load Game</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Load_Game_Menu-Xbox.png" class="image" title="Stellaris Console Edition - Load Game Menu"><img alt="Stellaris Console Edition - Load Game Menu" src="images/Console_UI_Load_Game_Menu-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Load Game Menu
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player is presented with the Load Game screen. In this area a player has access to all options pertaining to loading previously played games.
+</p><p>The Load Game screen is divided into two separate sections. The left is the empire selection area and the right is the saved game section. Navigation of these areas is accomplished by the player utilizing their directional pad. <i>Up</i> and <i>Down</i> on the directional pad will navigate either up or down in the current section while <i>Left</i> and <i>Right</i> are used to switch between screen sections.
+</p><p>Once a player has highlighted the empire they wish to load a previously saved game of the following options become relevant.
+</p>
+<ul><li>Load Latest - Choosing this option will load the most recently saved save file of the highlighted empire.</li>
+<li>Back - Choosing this option will navigate back one menu to the <a href="Console_User_Interface.html#Main_Menu" class="mw-redirect" title="Console:User Interface">Main Menu</a>.</li>
+<li>Delete All - Choosing this option will present the player with a pop-up confirmation asking if the player is sure they want to delete the chosen empire's saved game. Selecting <i>Confirm</i> <b>will delete</b> the chosen empire's saved game. Selecting <i>Cancel</i> <b>will not delete</b> the chosen empire's saved game and will instead return the player to the Load Game menu.</li>
+<li>Select - Choosing this option will display all saved games for the currently highlighted empire in the right side saved game section of the screen. <i>Please refer to the following section for further information</i>.</li></ul>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Load_Game_Select_Save-Xbox.png" class="image" title="Stellaris Console Edition - Select saved game to load."><img alt="Stellaris Console Edition - Select saved game to load." src="images/Console_UI_Load_Game_Select_Save-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Select saved game to load.
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player has selected to load all saved games for the highlighted empire (in the screenshot above the selected empire is <i>First Council of Nicaea 2</i>) and their saved games appear in the right side saved game section. From the above screenshot we can see that the player has only one saved game and that saved game is highlighted. Now that the player has selected the saved game they wish to interact with the following options become available.
+</p>
+<ul><li>Load - Choosing this option will allow the player to load the currently highlighted saved game and continue their playthrough.</li>
+<li>Back - Choosing this option will not load the currently highlighted saved game and will instead navigate back to the left side empire selection area. The player can now navigate up and down on their directional pad to select a different empire to interact with.</li>
+<li>Delete - Choosing this option will present the player with a pop-up confirmation asking if they are sure they want to delete the chosen saved game. Selecting <i>Confirm</i> <b>will delete</b> the chosen saved game. Selecting <i>Cancel</i> <b>will not delete</b> the chosen saved game and will instead return the player to the saved game section of the Load Game menu.</li></ul>
+<p>If the player has chosen to delete the currently highlighted saved game (in the above screenshot this is saved game <i>0001</i>) then they are presented with the following confirmation pop-up.
+</p>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Delete_Single_Save_Confirmation-Xbox.png" class="image" title="Stellaris Console Edition - Delete single saved game confirmation pop-up."><img alt="Stellaris Console Edition - Delete single saved game confirmation pop-up." src="images/Console_UI_Delete_Single_Save_Confirmation-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Delete single saved game confirmation pop-up.
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>This is the confirmation pop-up that a player will be shown when they have selected to delete a saved game. Choosing <i>Confirm</i> <b>will delete</b> the chosen saved game and result in the saved game section being refreshed. Choosing <i>Cancel</i> <b>will not delete</b> the chosen saved game and instead will the player to the saved game section of the Load Game menu.
+</p>
+<h2><span class="mw-headline" id="Multiplayer">Multiplayer</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p><i><span class="effect-yellow" style="font-weight:bold;">Attention:</span> having and being logged into a <a href="Console_User_Interface.html#Paradox_Account" class="mw-redirect" title="Console:User Interface">Paradox Account</a> as well as having an active internet connection is required for multiplayer play. This section assumes the player has a Paradox Account, is logged into it, and has an active internet connection.</i>
+</p>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Multiplayer_Menu-Xbox.png" class="image" title="Stellaris Console Edition - Multiplayer Menu"><img alt="Stellaris Console Edition - Multiplayer Menu" src="images/Console_UI_Multiplayer_Menu-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Multiplayer Menu
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player has decided to engage in a multiplayer game and is greeted with the Multiplayer menu which provides three different options to the player. The player can choose to <i><a href="Console_User_Interface.html#Join_Game" class="mw-redirect" title="Console:User Interface">Join Game</a></i> and join a game that another player is hosting. Second the player could decide to <i><a href="Console_User_Interface.html#Host_New_Game" class="mw-redirect" title="Console:User Interface">Host New Game</a></i> and host a game that other players could then join. The final option the player could decide to choose is <i><a href="Console_User_Interface.html#Host_Saved_Game" class="mw-redirect" title="Console:User Interface">Host Saved Game</a></i>. This option allows the player to select a previously played multiplayer game save and continue hosting that game.
+</p>
+<h3><span class="mw-headline" id="Join_Game">Join Game</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Multiplayer_Join_Game_Menu-Xbox.png" class="image" title="Stellaris Console Edition - Multiplayer Join Game Menu"><img alt="Stellaris Console Edition - Multiplayer Join Game Menu" src="images/Console_UI_Multiplayer_Join_Game_Menu-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Multiplayer Join Game Menu
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player has chosen to join a multiplayer game and finds themselves here at the <i>Join Game</i> menu. This area can be broken down into two specific parts. The left section is <i>Search Filters</i> and the right is the <i>Game Room</i>. By making use of <i>Search Filters</i> the player can search for games that match their requirements and the results of those applied search filters will be displayed to the right in the <i>Game Room</i>.
+</p>
+<h4><span class="mw-headline" id="Search_Filters">Search Filters</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul><li><i>No password</i> - Selecting this option (as pictured above) will result in games that require a password <b>are not</b> displayed in the <i>Game Room</i> results.
+<ul><li><i>Not full</i> - Selecting this option (as pictured above) will result in only multiplayer games that <b>are not</b> currently full to be displayed in the <i>Game Room</i> results.</li></ul></li>
+<li><i>Any Region</i> - This option allows the player to filter <i>Game Room</i> results by geographic locations. Keeping this set to <i>Any Region</i> (as pictured above) will result with the <i>Game Room</i> displaying multiplayer games that are hosted in <b>any region</b>. Players that encounter multiplayer game connection issues might receive better results by making use of the following geographic region filters.
+<ul><li>Africa - Select this option to have the <i>Game Room</i> only show games that are hosted in <i>Africa</i>.</li>
+<li>Asia - Select this option to have the <i>Game Room</i> only show games that are hosted in <i>Asia</i>.</li>
+<li>Europe - Select this option to have the <i>Game Room</i> only show games that are hosted in <i>Europe</i>.</li>
+<li>North America - Select this option to have the <i>Game Room</i> only show games that are hosted in <i>North America</i>.</li>
+<li>Oceania - Select this option to have the <i>Game Room</i> only show games that are hosted in <i>Oceania</i>.</li>
+<li>South America - Select this option to have the <i>Game Room</i> only show games that are hosted in <i>South America</i>.</li></ul></li>
+<li><i>Search for name...</i> - This option allows the player to search for a specific multiplayer game by entering the games name.</li></ul>
+<h4><span class="mw-headline" id="Game_Room">Game Room</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul><li><i>Game Name</i> - This option enables the player to sort <i>Game Room</i> results in alphabetical or reverse alphabetical order by <i>Game Name</i>. The default option is alphabetical.</li>
+<li><i>Password</i> - This option, which is visualized as a golden skeleton key, allows the player to sort <i>Game Room</i> results by their <i>Password</i> requirement. Games that have a <i>Password</i> requirement will display a golden skeleton key in their <i>Game Room</i> result listing and games that do not have a <i>Password</i> requirement will not display a golden skeleton key in their <i>Game Room</i> result listing.</li>
+<li><i>Players</i> - This option can be used to sort <i>Game Room</i> results by how many players are in each individual game.</li>
+<li><i>Region</i> - Allows the player to sort <i>Game Room</i> results alphabetically by the name of their hosted region. This option may be more useful if the player has kept their region <i>Search Filters</i> as <i>Any Region</i>.</li>
+<li><i>Status</i> - This option displays and allows the sorting of <i>Game Room</i> results by their status.
+<ul><li><i>Running</i> - The game is currently in progress.</li>
+<li><i>Starting</i> - The game has not yet begun.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Host_New_Game">Host New Game</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Multiplayer_Host_New_Game_Menu-Xbox.png" class="image" title="Stellaris Console Edition - Multiplayer Host New Game Menu"><img alt="Stellaris Console Edition - Multiplayer Host New Game Menu" src="images/Console_UI_Multiplayer_Host_New_Game_Menu-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Multiplayer Host New Game Menu
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player has decided to host a new multiplayer game and finds themselves here at the <i>Host New Game</i> configuration screen. Looking at the above screenshot for reference the options that are available to a player are <i>Game Name</i>, <i>Password</i>, <i>Region</i>, <i>Hide from session browser</i>, and <i>Host</i>. Let's review what exactly these options do.
+</p>
+<ul><li><i>Game Name</i> - This is the name a player's multiplayer game will be referenced by in the <i><a href="Console_User_Interface.html#Game_Room" class="mw-redirect" title="Console:User Interface">Game Room</a></i> results of other players. This option <i>does not</i> accept player input and instead is auto-created. <i>Game Name</i> is created by using a player's gamertag in the <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/English_possessive#Formation_of_possessive_construction">possessive form</a>,adding a space, and the word <i>game</i> to the end of the string. <b>Example:</b> If a player's gamertag is <i>Player</i> then their <i>Game Name</i> will be <i>Player's game</i>.</li>
+<li><i>Password</i> - This option lets the player decide if they wish to require a password for their multiplayer game. The default option is <i>disabled</i> - a password is <i><b>not required</b></i>. If a player wishes to <i><b>require</b></i> a password for their multiplayer game they may enter it here. If a game requires a password then any player that wants to join the game will need the password.</li>
+<li><i>Region</i> - This option allows the player to choose the geographic region their game will be hosted from. This option will be visible to other players in <i><a href="Console_User_Interface.html#Search_Filters" class="mw-redirect" title="Console:User Interface">Search Filters</a></i> and <i><a href="Console_User_Interface.html#Game_Room" class="mw-redirect" title="Console:User Interface">Game Room</a></i> results. If a player experiences connection issues with multiplayer games they may want to host games in their own region. Available regions are the following.
+<ul><li>Africa</li>
+<li>Asia</li>
+<li>Europe</li>
+<li>North America</li>
+<li>Oceania</li>
+<li>South America</li></ul></li>
+<li><i>Hide from session browser</i> - This option, if selected, will hide a player's game from the <i>Game Room</i> results. This option is useful if a player wishes to have a semi-private multiplayer game, but does not wish to require the use of a password. Other players wishing to join a game that is <i>hidden from session browser</i> will need to know the name of the multiplayer game to find it with <i><a href="Console_User_Interface.html#Search_Filters" class="mw-redirect" title="Console:User Interface">Search Filters</a>'</i> <i>Search for name...</i> option and then join it.</li>
+<li><i>Host</i> - Selecting this option will transition the player to the <i>Game Lobby</i> where they can setup and configure their multiplayer game.</li></ul>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Host_New_Game_Game_Lobby-Xbox.png" class="image" title="Stellaris Console Edition - Game Lobby"><img alt="Stellaris Console Edition - Game Lobby" src="images/Console_UI_Host_New_Game_Game_Lobby-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Game Lobby
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>The player has chosen to host a new multiplayer game and has been greeted with the (above pictured) <i>Game Lobby</i>. The <i>Game Lobby</i> is divided into two main sections. The left is the game lobby which has options to <i>Start</i> or <i>Invite Friends</i> to the game as well as a list of the players that have already joined the game. On the right is the <i>Galaxy Settings</i> which provides access to all options pertaining to the game's galaxy.
+</p>
+<h3><span class="mw-headline" id="Host_Saved_Game">Host Saved Game</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Multiplayer_Host_Saved_Game_Menu-Xbox.png" class="image" title="Stellaris Console Edition - Multiplayer Host Saved Game Menu"><img alt="Stellaris Console Edition - Multiplayer Host Saved Game Menu" src="images/Console_UI_Multiplayer_Host_Saved_Game_Menu-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Multiplayer Host Saved Game Menu
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<h2><span class="mw-headline" id="Settings">Settings</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p>The <i>Settings</i> described in this section are <i>Global Settings</i>. Unlike <i><a href="Console_New_Game_Settings.html" class="mw-redirect" title="Console:New Game Settings">Game Details</a></i> these settings are considered global because they apply to all aspects of Stellaris Console Edition.
+</p>
+<ul><li><i><a href="Console_User_Interface.html#Gameplay" class="mw-redirect" title="Console:User Interface">Gameplay</a></i> - <i>Gameplay</i> includes settings for <i>Language</i>, <i>Autosave</i>, <i>Events</i> and more.</li>
+<li><i><a href="Console_User_Interface.html#Controls" class="mw-redirect" title="Console:User Interface">Controls</a></i> - Here a player can choose a control scheme for their controller.</li>
+<li><i><a href="Console_User_Interface.html#Sound" class="mw-redirect" title="Console:User Interface">Sound</a></i> - All options for sound are here.</li></ul>
+<h3><span class="mw-headline" id="Gameplay">Gameplay</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Settings_Gameplay-Xbox.png" class="image" title="Stellaris Console Edition - Gameplay Settings"><img alt="Stellaris Console Edition - Gameplay Settings" src="images/Console_UI_Settings_Gameplay-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Gameplay Settings
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>Gameplay settings are global and apply to all aspects of Stellaris Console Edition.
+</p>
+<ul><li><i>Language</i> - Choose desired language. Available languages are listed below.
+<ul><li><i>English</i></li>
+<li><i>German</i></li>
+<li><i>French</i></li>
+<li><i>Spanish</i></li>
+<li><i>Portuguese (Brazil)</i></li>
+<li><i>Russian</i></li>
+<li><i>Polish</i></li></ul></li>
+<li><i>Camera Rotation Sensitivity</i> - Decrease sensitivity by moving the slider to the left or increase sensitivity by moving the slider to the right.
+<ul><li>Ranges from <i>0%</i> (<i>fully left</i>) to <i>100%</i> (<i>fully right</i>). Default is <i>50%</i> (<i>in the middle</i>).</li></ul></li>
+<li><i>Camera Panning Sensitivity</i> - Decrease sensitivity by moving the slider to the left or increase sensitivity by moving the slider to the right.
+<ul><li>Ranges from <i>0%</i> (<i>fully left</i>) to <i>100%</i> (<i>fully right</i>). Default is <i>50%</i> (<i>in the middle</i>).</li></ul></li>
+<li><i>Invert Y Axis</i> - <i>No</i> does not <i>Invert Y Axis</i>. <i>Yes</i> does <i>Invert Y Axis</i>.
+<ul><li>Default is <i>No</i>.</li></ul></li>
+<li><i>Autosave</i> - Choose autosave frequency. Default is <i>Semiannually</i>.
+<ul><li><i>Semiannually</i> - Saves game once every six months.</li>
+<li><i>Annually</i> - Saves game once every year.</li>
+<li><i>Never</i> - Does not save game.</li>
+<li><i>Monthly</i> - Saves game once every month.</li>
+<li><i>Quarterly</i> - Saves game once every three months.</li></ul></li>
+<li><i>Tutorial</i> - Choose whether or not tutorials are used in game playthroughs. New players are encouraged to enable tutorials.
+<ul><li><i>None</i> - Disables tutorials.</li>
+<li><i>Tips</i> - Enables <i>some</i> tutorials.</li>
+<li><i>Full</i> - Enables <i>all</i> tutorials.</li></ul></li>
+<li><i>Event Popups</i> - Choose whether or not events trigger an event notification pop-up screen. <i>On</i> enables event pop-ups. <i>Off</i> disables event pop-ups.
+<ul><li>Default is <i>On</i>.</li></ul></li>
+<li><i>Event Auto-Pause</i> - Choose whether or not event notification pop-ups pause the game. <i>On</i> does pause the game on event notification. <i>Off</i> does not pause the game on event notification.
+<ul><li>Default is <i>On</i>.</li></ul></li>
+<li><i>Event Auto-Unpause</i> - Choose whether or not event notification pop-ups un-pause the game when dismissed. <i>On</i> will un-pause the game when an event notification pop-up is dismissed. <i>Off</i> will not.
+<ul><li>Default is <i>On</i>.</li></ul></li>
+<li><i>Safe Area</i> - The smaller the number the smaller the <i>User Interface</i> size will be. If parts of the <i>User Interface</i> are beyond the edges of the screen (out of the <i>Safe Area</i>) decrease this number to shrink the <i>User Interface</i> size.
+<ul><li>Default is <i>1.000x</i>. Ranges from <i>0.800x</i> to <i>1.000x</i>.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Controls">Controls</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p>Stellaris Console Edition has four available control schemes.
+</p>
+<ul><li><i><a href="Console_User_Interface.html#Default_%28Xbox%29" class="mw-redirect" title="Console:User Interface">Default (Xbox)</a></i></li>
+<li><i><a href="Console_User_Interface.html#Reversed_%28Xbox%29" class="mw-redirect" title="Console:User Interface">Reversed (Xbox)</a></i></li>
+<li><i><a href="Console_User_Interface.html#Japan_%28Xbox%29" class="mw-redirect" title="Console:User Interface">Japan (Xbox)</a></i></li>
+<li><i><a href="Console_User_Interface.html#Alternative_%28Xbox%29" class="mw-redirect" title="Console:User Interface">Alternative (Xbox)</a></i></li></ul>
+<h4><span id="Default_.28Xbox.29"></span><span class="mw-headline" id="Default_(Xbox)">Default (Xbox)</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Settings_Controls_Default-Xbox.png" class="image" title="Stellaris Console Edition - Default Xbox Control Scheme"><img alt="Stellaris Console Edition - Default Xbox Control Scheme" src="images/Console_UI_Settings_Controls_Default-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Default Xbox Control Scheme
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<h4><span id="Reversed_.28Xbox.29"></span><span class="mw-headline" id="Reversed_(Xbox)">Reversed (Xbox)</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Settings_Controls_Reversed-Xbox.png" class="image" title="Stellaris Console Edition - Reversed Xbox Control Scheme"><img alt="Stellaris Console Edition - Reversed Xbox Control Scheme" src="images/Console_UI_Settings_Controls_Reversed-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Reversed Xbox Control Scheme
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<h4><span id="Japan_.28Xbox.29"></span><span class="mw-headline" id="Japan_(Xbox)">Japan (Xbox)</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Settings_Controls_Japan-Xbox.png" class="image" title="Stellaris Console Edition - Japan Xbox Control Scheme"><img alt="Stellaris Console Edition - Japan Xbox Control Scheme" src="images/Console_UI_Settings_Controls_Japan-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Japan Xbox Control Scheme
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<h4><span id="Alternative_.28Xbox.29"></span><span class="mw-headline" id="Alternative_(Xbox)">Alternative (Xbox)</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Settings_Controls_Alternative-Xbox.png" class="image" title="Stellaris Console Edition - Alternative Xbox Control Scheme"><img alt="Stellaris Console Edition - Alternative Xbox Control Scheme" src="images/Console_UI_Settings_Controls_Alternative-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Alternative Xbox Control Scheme
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<h3><span class="mw-headline" id="Sound">Sound</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Settings_Sound-Xbox.png" class="image" title="Stellaris Console Edition - Sound Settings"><img alt="Stellaris Console Edition - Sound Settings" src="images/Console_UI_Settings_Sound-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Sound Settings
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>All sound settings for Stellaris Console Edition are located here.
+</p>
+<ul><li><i>Master Volume</i> - Is master. Overrides all other volume settings.
+<ul><li>Default is <i>100%</i>. Ranges from <i>0%</i> to <i>100%</i>.</li></ul></li>
+<li><i>Effect Volume</i> - Volume level of game effect noises.
+<ul><li>Default is <i>50%</i>. Ranges from <i>0%</i> to <i>100%</i>.</li></ul></li>
+<li><i>Music Volume</i> - Volume level of music.
+<ul><li>Default is <i>50%</i>. Ranges from <i>0%</i> to <i>100%</i>.</li></ul></li>
+<li><i>Ambient Volume</i> - Volume level of ambient (<i>background</i>) noises.
+<ul><li>Default is <i>50%</i>. Ranges from <i>0%</i> to <i>100%</i>.</li></ul></li>
+<li><i>Advisor Volume</i> - Volume level of in-game tutorial advisor.
+<ul><li>Default is <i>50%</i>. Ranges from <i>0%</i> to <i>100%</i>.</li></ul></li>
+<li><i>Voice Chat</i> - <i>Off</i> disables voice chat. <i>On</i> enables voice chat.
+<ul><li>Default is <i>On</i>.</li></ul></li>
+<li><i>Voice Chat Volume</i> - Volume level of voice chat.
+<ul><li>Default is <i>50%</i>. Ranges from <i>0%</i> to <i>100%</i>.</li></ul></li>
+<li><i>Mute Microphone</i> - <i>No</i> does not mute microphone. <i>Yes</i> does mute microphone.
+<ul><li>Default is <i>No</i>.</li></ul></li></ul>
+<h2><span class="mw-headline" id="Credits">Credits</span></h2>
+<h2><span class="mw-headline" id="Paradox_Account">Paradox Account</span></h2>
+<h2><span class="mw-headline" id="Downloadable_Content">Downloadable Content</span></h2>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<ul class="gallery mw-gallery-packed-hover">
+		<li class="gallerybox" style="width: 855.33333333333px"><div style="width: 855.33333333333px">
+			<div class="thumb" style="width: 853.33333333333px;"><div style="margin:0px auto;"><a href="https://stellaris.paradoxwikis.com/File%3AConsole_UI_Downloadable_Content-Xbox.png" class="image" title="Stellaris Console Edition - Downloadable Content"><img alt="Stellaris Console Edition - Downloadable Content" src="images/Console_UI_Downloadable_Content-Xbox.png" decoding="async" loading="lazy" width="854" height="480" data-file-width="1920" data-file-height="1080" /></a></div></div>
+			<div class="gallerytextwrapper" style="width: 834px"><div class="gallerytext">
+<p>Stellaris Console Edition - Downloadable Content
+</p>
+			</div></div>
+		</div></li>
+</ul>
+<p>Downloadable content (DLC) is additional modular content for <a href="Stellaris.html" title="Stellaris">Stellaris</a>: Console Edition. Since DLC is modular each separate DLC can be enabled or disabled without requiring any other DLC to be active. DLC active at the start of a new playthrough will need to be active to later continue that playthrough.
+</p><p>There are two types of DLC for Stellaris: Console Edition.
+</p>
+<ul><li>Cosmetic - Adds visual flavor extras to the game. Does not add or alter game mechanics.</li>
+<li>Expansion - May or may not add visual flavor extras to the game. Does add to and/or alter game mechanics in a minor or major way.</li></ul>
+<h3><span class="mw-headline" id="Sharing_DLC">Sharing DLC</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <img alt="Ambox outdated info.png" src="https://central.paradoxwikis.com/images/thumb/6/65/Ambox_outdated_info.png/22px-Ambox_outdated_info.png" decoding="async" loading="lazy" width="22" height="22" data-file-width="50" data-file-height="50" /></td>
+<td class="mbox-text" style=""><div style="font-size:85%;">Please help with verifying or updating this section. It was last verified for console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.2.</div></td>
+</tr>
+</tbody></table>
+<p>Because Stellaris' DLC is modular players may share their DLC with other players by hosting a multiplayer game. The host of a multiplayer game is the player who decides what DLC is present in a multiplayer game. Any DLC selected by the host of the multiplayer game will be shared with any other players that have joined the game and do not have the host-selected DLC. Players will only have access to DLC they do not own while they are a part of a multiplayer game that is sharing that DLC.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260707235018
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.092 seconds
+Real time usage: 0.108 seconds
+Preprocessor visited node count: 4604/1000000
+Post‐expand include size: 72080/2097152 bytes
+Template argument size: 16822/2097152 bytes
+Highest expansion depth: 11/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 18884/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   62.501      1 -total
+ 35.30%   22.060     29 Template:Console_SVersion
+ 23.24%   14.528     29 Template:Ambox
+ 18.96%   11.851     29 Template:Ambox/core
+  9.40%    5.872      1 Template:Console_version
+  2.05%    1.279      2 Template:Red
+  1.49%    0.931      1 Template:Infobox
+  1.08%    0.675      3 Template:Symbolfirst
+  0.83%    0.521      1 Template:Yellow
+  0.46%    0.287      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:6648-0!canonical and timestamp 20260707235018 and revision id 49360.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

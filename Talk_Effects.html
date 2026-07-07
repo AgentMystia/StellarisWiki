@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talk:Effects - Stellaris Wiki</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Talk</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Effects</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:none; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Assessment</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%;"><b>List</b> - This article is considered a <b>List-class</b> article on the wiki <a href="Stellaris_Wiki_Style.html#Assessment" title="Stellaris Wiki:Style">quality scale</a>
+</div>
+</div>
+</div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Regexp"><span class="tocnumber">1</span> <span class="toctext">Regexp</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Paragon_Leaders"><span class="tocnumber">2</span> <span class="toctext">Paragon Leaders</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Needs_Updated"><span class="tocnumber">3</span> <span class="toctext">Needs Updated</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Can_this_be_sorted_better?"><span class="tocnumber">4</span> <span class="toctext">Can this be sorted better?</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Regexp">Regexp</span></h2>
+<p>For update maintenance, the regexp code for the dump formatting:
+</p>
+<pre>^(\S+) - ([^\n]+)\n*?([\w{}&lt;&gt;()=:_\[\]\|\\\/#.!,;'"\b\d\s+-@]+?)?\n*Supported Scopes: ([^\n]+)\n
+</pre>
+<hr />
+<pre>\n|-
+| $1 || $2 ||class=mw-code| $3
+| $4
+</pre>
+<h2><span class="mw-headline" id="Paragon_Leaders">Paragon Leaders</span></h2>
+<p>I spent some time trying to change a leader's ethic, and pulled this from scripted_effects\paragon_effects.txt
+You can change the leader's ethic with effect change_background_ethic
+Example: effect change_background_ethic = ethic_spiritualist
+</p>
+<h2><span class="mw-headline" id="Needs_Updated">Needs Updated</span></h2>
+<p>A large amount of material in the list here is definitely out of date.  If someone knows of an updated list, that could be copied here.
+</p>
+<h2><span id="Can_this_be_sorted_better.3F"></span><span class="mw-headline" id="Can_this_be_sorted_better?">Can this be sorted better?</span></h2>
+<p>The Hearts of Iron wiki has a similar list, but it's broken up by Scope, which REALLY helps finding the specific code you need. 
+Could we do something similar? Please? --173.185.21.16 19:13, 12 January 2025 (UTC)
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260707235048
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.011 seconds
+Real time usage: 0.015 seconds
+Preprocessor visited node count: 74/1000000
+Post‐expand include size: 1181/2097152 bytes
+Template argument size: 217/2097152 bytes
+Highest expansion depth: 6/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 168/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.105      1 Template:Assessment
+100.00%    4.105      1 -total
+ 22.09%    0.907      1 Template:Infobox
+  6.43%    0.264      1 Template:Nowrap
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:2198-0!canonical and timestamp 20260707235048 and revision id 98207.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

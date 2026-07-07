@@ -196,7 +196,7 @@
 </td>
 <td style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
 </td>
-<td>A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine if this District is shown in the GUI while the planet has no owner. For example, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind will see Hive District on an uncolonized planet while a regular Empire will see City District. (Planet scope, use FROM as a potential owner)
+<td>A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine if this District is shown in the GUI while the planet has no owner. For example, a <a href="Hive_Mind.html" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind will see Hive District on an uncolonized planet while a regular Empire will see City District. (Planet scope, use FROM as a potential owner)
 <p>Check the planet type here by <code>uses_district_set</code> rather than <code>is_planet_class</code>.
 </p>
 </td></tr>
@@ -241,7 +241,7 @@
 <tr>
 <td><b>planet_modifier = { &lt;modifiers&gt; }</b>
 </td>
-<td colspan="2">A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied on the Planet.
+<td colspan="2">A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied on the Planet.
 </td></tr>
 <tr>
 <td><div><div class="mw-collapsible mw-collapsed" style=""><span style="margin-right:5px"><b>triggered_planet_modifier = {</b></span>
@@ -255,7 +255,7 @@
 <tr>
 <td><b>country_modifier = { &lt;modifiers&gt; }</b>
 </td>
-<td>A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire. Used by Resource Silos, Embassies, and Branch Office Buildings in vanilla.
+<td>A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> to be applied to the Empire. Used by Resource Silos, Embassies, and Branch Office Buildings in vanilla.
 </td>
 <td rowspan="2" style="text-align: center;"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
 </td></tr>
@@ -441,7 +441,7 @@
     }
 }
 </pre>
-<p>You can also use other modifiers to change the growth speed, ethics attraction and much more. See the <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> for more. If you want to apply a country-wide modifier, use <i>country_modifier</i> or <i>triggered_country_modifier</i> instead.
+<p>You can also use other modifiers to change the growth speed, ethics attraction and much more. See the <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> for more. If you want to apply a country-wide modifier, use <i>country_modifier</i> or <i>triggered_country_modifier</i> instead.
 </p>
 <h4><span class="mw-headline" id="Upgrades">Upgrades</span></h4>
 <p>Many buildings can be upgraded to an improved version of themself. To support this you must create one or more additional build definitions. Typically, you would duplicate the first building and affix a number to the identifier. You may also want to hide the upgraded building from appearing as a seperate option in the building list by setting <i>can_build = no</i>. 
@@ -529,7 +529,7 @@ building_sample_2 = {
 <h2><span id="Phoenix_4.0_Districts.2C_Zone_Slots.2C_and_Zones"></span><span class="mw-headline" id="Phoenix_4.0_Districts,_Zone_Slots,_and_Zones">Phoenix 4.0 Districts, Zone Slots, and Zones</span></h2>
 <p>The Phoenix 4.0 update brings zone slots and zones (called District Specializations) to districts. It also introduces the concept of a <b>primary</b> district, whereas district sets in 3.14 do not have any such distinction. 
 </p><p>Zone slots specify what zones can be built on a district. For example in the base "City" district (<code>district_city</code>) the <code>slot_city_government</code> slot permits the <code>zone_default</code> zone, which provides 6 buildings and allows some variety of buildings to be built in it.
-</p><p>See <a href="https://stellaris.paradoxwikis.com/Zones_modding" class="mw-redirect" title="Zones modding">Zones modding</a> which covers Zones and Zone Slots.
+</p><p>See <a href="Zones_modding.html" class="mw-redirect" title="Zones modding">Zones modding</a> which covers Zones and Zone Slots.
 </p><p>See <code>common/zones/99_HOW_TO_ZONE.txt</code>
 </p>
 <h3><span id="Migrating_from_3..2A_to_4.0..2A"></span><span class="mw-headline" id="Migrating_from_3.*_to_4.0.*">Migrating from 3.* to 4.0.*</span></h3>
@@ -556,7 +556,7 @@ building_sample_2 = {
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -577,21 +577,21 @@ building_sample_2 = {
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a class="mw-selflink selflink">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -628,7 +628,7 @@ building_sample_2 = {
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

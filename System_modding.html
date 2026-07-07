@@ -55,7 +55,7 @@
 </p>
 <h2><span class="mw-headline" id="Star_classes">Star classes</span></h2>
 <p>Star classes can be found in <i>common/star_classes</i>. If you want to create one from scratch, create a new file and place it in that folder.
-</p><p>Note that "stars" and "star classes" are two different things: individual stars are considered the same as <a href="https://stellaris.paradoxwikis.com/Celestial_body" class="mw-redirect" title="Celestial body">planets</a> in the game code, and are found in <i>common/planet_classes</i>, while star classes refer to the classification of a solar system as a whole and will determine lighting, the system's icon in the <a href="https://stellaris.paradoxwikis.com/Galaxy_map" class="mw-redirect" title="Galaxy map">galaxy map</a>, and number of individual stars in a solar system. Information about modding individual stars can be found <a href="Planet_modding.html" title="Planet modding">here</a>.
+</p><p>Note that "stars" and "star classes" are two different things: individual stars are considered the same as <a href="Celestial_body.html" class="mw-redirect" title="Celestial body">planets</a> in the game code, and are found in <i>common/planet_classes</i>, while star classes refer to the classification of a solar system as a whole and will determine lighting, the system's icon in the <a href="Galaxy_map.html" class="mw-redirect" title="Galaxy map">galaxy map</a>, and number of individual stars in a solar system. Information about modding individual stars can be found <a href="Planet_modding.html" title="Planet modding">here</a>.
 </p>
 <h3><span class="mw-headline" id="Adding_new_star_classes">Adding new star classes</span></h3>
 <p>Making a new star class is easy. Here's an example of a binary system that can be found in <i>00_star_classes</i>:
@@ -90,7 +90,7 @@
 }
 </pre>
 <ul><li>"sc_binary_1" is the name of the star class used by the code. To assign the name the player will see, see <a href="Localisation_modding.html" title="Localisation modding">localisation modding</a>.</li>
-<li>"class" is used to determine the system's lighting. You can use an existing one or create your own via <a href="https://stellaris.paradoxwikis.com/Gfx_modding" class="new" title="Gfx modding (page does not exist)">gfx modding</a>.</li>
+<li>"class" is used to determine the system's lighting. You can use an existing one or create your own via gfx modding.</li>
 <li>"icon" is the icon used by this system type in the galaxy view. By default it'll search for one that matches the star name ("binary_1_star" in this case) in the <i>gfx/map/star_classes</i> folder, but using "icon" lets you overwrite this with whatever icon you want.</li>
 <li>While not included in the example above, you can also use "icon_scale = " to change the size of the icon on the galaxy map. 1 is default, 0.5 is half the size, etc.</li>
 <li>"planet" is the type of star used by this star class by default. If it's a unary system with just one star, you don't need to write "class" again.</li>
@@ -161,31 +161,31 @@
 <td><a href="https://stellaris.paradoxwikis.com/File%3ABlack_Hole.png" class="image"><img alt="Black Hole.png" src="images/Black_Hole.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
 <td>sc_black_hole</td>
 <td>Black Hole</td>
-<td><a href="https://stellaris.paradoxwikis.com/Ship_disengagement_chance" title="Ship disengagement chance"><img alt="Mod ship disengagement.png" src="images/Mod_ship_disengagement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Disengagement Chance Reduction<br /><a href="https://stellaris.paradoxwikis.com/Ship_speed" title="Ship speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Emergency FTL Jump Cooldown
+<td><a href="Ship_disengagement_chance.html" title="Ship disengagement chance"><img alt="Mod ship disengagement.png" src="images/Mod_ship_disengagement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Disengagement Chance Reduction<br /><a href="Ship_speed.html" title="Ship speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Emergency FTL Jump Cooldown
 </td></tr>
 <tr>
 <td><a href="https://stellaris.paradoxwikis.com/File%3ANeutron_Star.png" class="image"><img alt="Neutron Star.png" src="images/Neutron_Star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
 <td>sc_neutron_star</td>
 <td>Neutron Star</td>
-<td><a href="https://stellaris.paradoxwikis.com/Sublight_speed" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Sublight Speed Reduction
+<td><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Sublight Speed Reduction
 </td></tr>
 <tr>
 <td><a href="https://stellaris.paradoxwikis.com/File%3APulsar.png" class="image"><img alt="Pulsar.png" src="images/Pulsar.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="256" data-file-height="256" /></a></td>
 <td>sc_pulsar</td>
 <td>Pulsar</td>
-<td><a href="https://stellaris.paradoxwikis.com/Ship_shield" title="Ship shield"><img alt="Mod ship shield hp mult.png" src="images/Mod_ship_shield_hp_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Shield Nullification
+<td><a href="Ship_shield.html" title="Ship shield"><img alt="Mod ship shield hp mult.png" src="images/Mod_ship_shield_hp_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Shield Nullification
 </td></tr>
 <tr>
 <td><a href="https://stellaris.paradoxwikis.com/File%3AE_binary_star.png" class="image"><img alt="E binary star.png" src="images/E_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
 <td>sc_binary_1</td>
 <td>Binary Stars (A, Pulsar)</td>
-<td><a href="https://stellaris.paradoxwikis.com/Ship_shield" title="Ship shield"><img alt="Mod ship shield hp mult.png" src="images/Mod_ship_shield_hp_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Shield Nullification
+<td><a href="Ship_shield.html" title="Ship shield"><img alt="Mod ship shield hp mult.png" src="images/Mod_ship_shield_hp_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Shield Nullification
 </td></tr>
 <tr>
 <td><a href="https://stellaris.paradoxwikis.com/File%3AE_binary_star.png" class="image"><img alt="E binary star.png" src="images/E_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
 <td>sc_binary_2</td>
 <td>Binary Stars (B, Neutron Star)</td>
-<td><a href="https://stellaris.paradoxwikis.com/Sublight_speed" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Sublight Speed Reduction
+<td><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+50%</span> Sublight Speed Reduction
 </td></tr>
 <tr>
 <td><a href="https://stellaris.paradoxwikis.com/File%3AC_binary_star.png" class="image"><img alt="C binary star.png" src="images/C_binary_star.png" decoding="async" loading="lazy" width="40" height="40" data-file-width="128" data-file-height="128" /></a></td>
@@ -385,7 +385,7 @@ my_system_initializer = {
 <li>"class = pc_arid", so it will be an <a href="https://stellaris.paradoxwikis.com/File%3APlanet_arid.png" class="image"><img alt="Planet arid.png" src="images/Planet_arid.png" decoding="async" loading="lazy" width="25" height="25" data-file-width="38" data-file-height="38" /></a> Arid World.</li>
 <li>"orbit_distance = 30" adds 30 units of space between the planet and the last element (in this case, "change_orbit = 10", so its total distance from the sun is 40 units).</li>
 <li>"orbit_angle = { min = 90 max = 270 )" is pretty straightforward: a random angle, within ninety degrees of the previous element.</li>
-<li>"init_effect" allows you to apply <a href="Effects.html" title="Effects">effects</a> and <a href="https://stellaris.paradoxwikis.com/Scripted_effect" class="mw-redirect" title="Scripted effect">scripted effects</a> to the planet upon system generation. It can also be used in the system scope if you want to apply an effect to the system as a whole instead of just one planet.
+<li>"init_effect" allows you to apply <a href="Effects.html" title="Effects">effects</a> and <a href="Scripted_effect.html" class="mw-redirect" title="Scripted effect">scripted effects</a> to the planet upon system generation. It can also be used in the system scope if you want to apply an effect to the system as a whole instead of just one planet.
 <ul><li>"prevent_anomaly" is an effect that disables <a href="Anomaly.html" title="Anomaly">anomalies</a> from appearing on this planet.</li>
 <li>"generate_primitives_on_planet" is a scripted effect that creates a <a href="Pre-FTL_species.html" title="Pre-FTL species">pre-FTL species</a> on this planet.</li></ul></li></ul>
 <p>Now for a moon.
@@ -472,7 +472,7 @@ my_system_initializer = {
 <li>Give the third star an orbit angle of 70, an orbit distance of 0, and a maximum size of 25.</li></ul></li>
 <li>The orbit distances, orbit angles, and star sizes are entirely up to you; the values given above just look the nicest in my opinion. Feel free to experiment!</li></ul>
 <h4><span class="mw-headline" id="S-Type">S-Type</span></h4>
-<p>In S-Type systems, each star has its own system of planets. Think of them as two or three unary systems that are close enough together that you can travel between them without needing a <a href="https://stellaris.paradoxwikis.com/FTL" class="mw-redirect" title="FTL">hyperdrive</a>. 40 Eridani is an example of such a system, as is <a rel="nofollow" class="external text" href="https://memory-alpha.fandom.com/wiki/Vulcan_(planet)">Vulcan</a> in the Star Trek universe.
+<p>In S-Type systems, each star has its own system of planets. Think of them as two or three unary systems that are close enough together that you can travel between them without needing a <a href="FTL.html" class="mw-redirect" title="FTL">hyperdrive</a>. 40 Eridani is an example of such a system, as is <a rel="nofollow" class="external text" href="https://memory-alpha.fandom.com/wiki/Vulcan_(planet)">Vulcan</a> in the Star Trek universe.
 </p><p>To recap, a unary system with one sun has basically this structure:
 </p>
 <pre>    planet = {
@@ -622,7 +622,7 @@ max_instances = 1
 }
 </pre>
 <ul><li>"usage = custom_empire" is mostly the same as above, except it tells the game that this system is a <i>prescripted</i> empire homeworld which can be chosen in the empire creation screen, like Sol and Deneb. Make sure to give the system a name and description via <a href="Localisation_modding.html" title="Localisation modding">localisation</a>.</li></ul>
-<ul><li>If no usage value is used, or if "usage_odds = 0", the system will never spawn in the galaxy unless specifically called to by an <a href="https://stellaris.paradoxwikis.com/Event" class="mw-redirect" title="Event">event</a> or another external means.</li></ul>
+<ul><li>If no usage value is used, or if "usage_odds = 0", the system will never spawn in the galaxy unless specifically called to by an <a href="Event.html" class="mw-redirect" title="Event">event</a> or another external means.</li></ul>
 <h3><span class="mw-headline" id="General_Advice">General Advice</span></h3>
 <ul><li>Remember when I said that using "class = pc_b_star" is just as good as "class = star" most of the time? That's true in unary systems, but it can lead to problems with planet and star names in binary or trinary systems. If you want to hard-code a specific star class regardless of the system class, use "class = star" and then add "init_effect = { change_pc = pc_b_star }" underneath.</li>
 <li>The same as above goes for giving planets specific names. If you name the third planet in the system "Joe", the fourth planet will use "StarName III" in its place. You can get around this by using "init_effect = { set_name = "Joe" }" instead.</li>
@@ -644,7 +644,7 @@ max_instances = 1
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -665,21 +665,21 @@ max_instances = 1
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -716,7 +716,7 @@ max_instances = 1
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

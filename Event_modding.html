@@ -70,14 +70,14 @@
 <li><code>planet_event</code> – for a <a href="Planet_modding.html" title="Planet modding">planet</a></li>
 <li><code>fleet_event</code> – for a <a href="Fleet_modding.html" title="Fleet modding">fleet</a></li>
 <li><code>ship_event</code> – for a <a href="Ship_modding.html" title="Ship modding">ship</a></li>
-<li><code>pop_faction_event</code> – for a <a href="https://stellaris.paradoxwikis.com/Faction" class="mw-redirect" title="Faction">faction</a></li>
+<li><code>pop_faction_event</code> – for a <a href="Faction.html" class="mw-redirect" title="Faction">faction</a></li>
 <li><code>pop_group_event</code> – for a <a href="Population.html" title="Population">population</a> unit (since v4.0, former <code>pop_event</code>)</li>
 <li><code>observer_event</code> – for the observer (development usage only; use console command "observe" to enter observer mode)</li>
 <li><code>system_event</code> – for a <a href="System_modding.html" title="System modding">system</a>, <a href="Scopes.html#Scope_Types" title="Scopes">galactic_object</a> (since v3.0)</li>
 <li><code>starbase_event</code> – for a <a href="Starbase_modding.html" title="Starbase modding">starbase</a> (since v3.0)</li>
 <li><code>leader_event</code> – for a <a href="Leader_modding.html" title="Leader modding">leader</a> (since v3.0)</li>
-<li><code>espionage_operation_event</code> – for use inside <a href="https://stellaris.paradoxwikis.com/Espionage" class="mw-redirect" title="Espionage">espionage</a> operations (since v3.0)</li>
-<li><code>first_contact_event</code> – for <a href="https://stellaris.paradoxwikis.com/First_contact" class="mw-redirect" title="First contact">first contacts</a> (since v3.0)</li>
+<li><code>espionage_operation_event</code> – for use inside <a href="Espionage.html" class="mw-redirect" title="Espionage">espionage</a> operations (since v3.0)</li>
+<li><code>first_contact_event</code> – for <a href="First_contact.html" class="mw-redirect" title="First contact">first contacts</a> (since v3.0)</li>
 <li><code>situation_event</code> – for a <a href="Situations.html" title="Situations">situation</a> (since v3.3)</li>
 <li><code>agreement_event</code> – for <a href="Subject_empire.html#Terms_of_agreement" title="Subject empire">subject agreements</a> (since v3.4)</li></ol>
 <h2><span class="mw-headline" id="Basic_Behavior">Basic Behavior</span></h2>
@@ -110,7 +110,7 @@
 </p><p>Event ID can't have letters, or it will be recognized as "namespace.0". Leading zeros in IDs are truncated (namespace.003 is the same as namespace.3).
 </p>
 <h3><span class="mw-headline" id="Execution">Execution</span></h3>
-<p>By default every event has all its triggers checked against every game object at least once per game day, possibly once per game tick. For the objects where the triggers are all met, the code of the event is executed with the <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a> of said object.
+<p>By default every event has all its triggers checked against every game object at least once per game day, possibly once per game tick. For the objects where the triggers are all met, the code of the event is executed with the <a href="Scope.html" class="mw-redirect" title="Scope">scope</a> of said object.
 </p><p>However, events should usually not be run in this fashion, as it is very expensive on performance. Instead, an event should either use <code>is_triggered_only = yes</code>, which will exempt the event from this persistent polling, and trigger the event from elsewhere; or it should use <code>mean_time_to_happen</code>, which increases the intervals at which the event is checked.<sup id="cite_ref-MTTH_3-0" class="reference"><a href="#cite_note-MTTH-3">&#91;3&#93;</a></sup>
 </p><p>Similarly works <code>fire_only_once = yes</code>. However unlike <code>is_triggered_only</code> the code will still be polled, only to be removed after it was executed at least once. Also, as of 2.1.2, the conditions for a <code>fire_only_once</code> event should exclude the event firing a second time or error log entries are created.
 </p>
@@ -197,7 +197,7 @@ If an entry is not included, it will be ignored. They work for planet, pop, syst
  <span class="p">}</span>
 </pre></div>
 <p>However visible events need at least one option (the OK Button of a message box). Every option can carry its own code.<sup id="cite_ref-opt_7-0" class="reference"><a href="#cite_note-opt-7">&#91;7&#93;</a></sup>
-</p><p><a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">Scope</a> is a very important consideration for any code executed in any event and it is heavily based on how the event was called.
+</p><p><a href="Scope.html" class="mw-redirect" title="Scope">Scope</a> is a very important consideration for any code executed in any event and it is heavily based on how the event was called.
 </p>
 <h3><span class="mw-headline" id="Mean_Time_To_Happen">Mean Time To Happen</span></h3>
 <p>A additional condition very often used on event that triggered by regular polling, is the <b>mean_time_to_happen</b> (MTTH). This will delay the execution of the event by a random amount of ingame days. On <b>average</b> the activation will be delayed as given, but the exact number can vary considerably. Counting starts the moment all other trigger conditions are met and it is not clear how exact the internal implementation of this delay works, however it seems likely the MTTH is regularly polled just like all other triggers.
@@ -209,7 +209,7 @@ If an entry is not included, it will be ignored. They work for planet, pop, syst
 </p><p><b>Warning: Due to poor performance, using MTTH has fallen out of favor, and vanilla has started to remove uses of MTTH, and is instead using events with random delays (see below).</b>
 </p>
 <h2><span class="mw-headline" id="Calling_events_from_other_events">Calling events from other events</span></h2>
-<p>It is possible to manually call an event onto any gameobject from a running event. Doing so will put the event into the game objects <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a>. There might be a slight delay of at least one or more game ticks until the event is actually called. For example:
+<p>It is possible to manually call an event onto any gameobject from a running event. Doing so will put the event into the game objects <a href="Scope.html" class="mw-redirect" title="Scope">scope</a>. There might be a slight delay of at least one or more game ticks until the event is actually called. For example:
 </p>
 <div class="mw-highlight mw-highlight-lang-ruby mw-content-ltr" dir="ltr"><pre><span></span> <span class="n">random_galaxy_planet</span> <span class="o">=</span> <span class="p">{</span>
  	<span class="n">planet_event</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">my_planet_event</span><span class="o">.</span><span class="mi">1</span> <span class="p">}</span>
@@ -598,7 +598,7 @@ In addition, event_targets will not be properly scoped to in events firing from 
 </p><p>Usually this is a result of a mod that hasn't been <b>updated to accommodate syntax</b> changes between versions – either by modders themselves or new file simply haven't made it to your machine.
 </p>
 <h3><span class="mw-headline" id="How_to_deal_with_it">How to deal with it</span></h3>
-<p>First you need to find out what events are causing it. By using <code>debugtooltip</code> <a href="https://stellaris.paradoxwikis.com/Console_command" class="mw-redirect" title="Console command">console command</a> and hovering over "OK" button, you can find out the event’s id. With luck, the modder who made this event would add some kind of identification to help you, such as adding an acronym of their mod’s name, or their own.
+<p>First you need to find out what events are causing it. By using <code>debugtooltip</code> <a href="Console_command.html" class="mw-redirect" title="Console command">console command</a> and hovering over "OK" button, you can find out the event’s id. With luck, the modder who made this event would add some kind of identification to help you, such as adding an acronym of their mod’s name, or their own.
 </p><p>You would need then to investigate if the mod is up to date. If it is not, you'd have to disable it and wait. If the problem is on your local machine, you'd need to force a re-download of the mod files – starting with unsubscribing and subscribing again.
 </p><p><b>Note:</b> There is also a (<a href="http://en.wikipedia.org/wiki/Python_(programming_language)" class="extiw" title="wikipedia:Python (programming language)">Python</a>) <a rel="nofollow" class="external text" href="https:github.com/F1r3Pr1nc3/StellarisModpackUtility/blob/master/modupdater.py">tool on GitHub</a>, which can easily fix outdated syntax of an entire mod folder for you <small>(created by FirePrince)</small>.
 </p>
@@ -620,7 +620,7 @@ In addition, event_targets will not be properly scoped to in events firing from 
 </li>
 <li id="cite_note-scopes-8"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-scopes_8-0">8.0</a></sup> <sup><a href="#cite_ref-scopes_8-1">8.1</a></sup></span> <span class="reference-text">This only applies if the event target is not global.</span>
 </li>
-<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">See the Modding Page for Custom Event Window modding &gt; <a href="https://stellaris.paradoxwikis.com//stellaris.paradoxwikis.com/Interface_modding" class="new" title="/stellaris.paradoxwikis.com/Interface modding (page does not exist)">Interface modding - Stellaris Wiki</a></span>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">See the Modding Page for Custom Event Window modding &gt; Interface modding - Stellaris Wiki</span>
 </li>
 <li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">See <i><a href="Event_pictures.html" title="Event pictures">Event pictures</a></i> for more.</span>
 </li>
@@ -641,7 +641,7 @@ In addition, event_targets will not be properly scoped to in events firing from 
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -662,21 +662,21 @@ In addition, event_targets will not be properly scoped to in events firing from 
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -713,7 +713,7 @@ In addition, event_targets will not be properly scoped to in events firing from 
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

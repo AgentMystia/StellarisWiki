@@ -90,8 +90,8 @@ toggle_string_id – displays StringIDinstead of localisation
 <p>To overwrite vanilla localisation keys (or keys from other mods), create a folder named "replace" inside your "localisation" folder. Localisation files in this folder will load after all other localisation files, and overwrite any duplicate keys. In this way it is not necessary to overwrite entire localisation files, as individual key entries will be overwritten by the last loaded file, LIOS (Last in, only served). It is possible to overwrite localisation without a "replace" folder, however this is not a reliable method.
 </p>
 <h2><span class="mw-headline" id="Bracket_Commands">Bracket Commands</span></h2>
-<p>Bracket commands (scoped localization statements) are enclosed in square brackets (<code>[ ]</code>), start with a primary scope, end with a text retrieval, and can have one or more secondary scopes in between. The fields are separated by periods (.). Text retrievals can be predefined (as per examples below), can mention <a href="Variables.html" title="Variables">Variables</a> defined in the scope, or can be a scripted_loc (see common/scripted_loc/ files for examples). When writing "<i>scripted_loc</i>" entries, it’s important to note that these entries cannot themselves use bracket commands (i.e., a scripted_loc that includes <code>[Root.GetName]</code> will literally print <code>[Root.GetName]</code>).
-</p><p>Note: if you want to use loc commands e.g. <code>log = [This.GetName]</code> in a <a href="https://stellaris.paradoxwikis.com/Scripted_effect" class="mw-redirect" title="Scripted effect">scripted effect</a> or <a href="https://stellaris.paradoxwikis.com/Scripted_trigger" class="mw-redirect" title="Scripted trigger">trigger</a>, you have to write it <code>\\[This.GetName]</code> or it will bug out (at the latest the second time you use one in the effect).
+<p>Bracket commands (scoped localization statements) are enclosed in square brackets (<code></code>), start with a primary scope, end with a text retrieval, and can have one or more secondary scopes in between. The fields are separated by periods (.). Text retrievals can be predefined (as per examples below), can mention <a href="Variables.html" title="Variables">Variables</a> defined in the scope, or can be a scripted_loc (see common/scripted_loc/ files for examples). When writing "<i>scripted_loc</i>" entries, it’s important to note that these entries cannot themselves use bracket commands (i.e., a scripted_loc that includes <code>[Root.GetName]</code> will literally print <code>[Root.GetName]</code>).
+</p><p>Note: if you want to use loc commands e.g. <code>log = [This.GetName]</code> in a <a href="Scripted_effect.html" class="mw-redirect" title="Scripted effect">scripted effect</a> or <a href="Scripted_trigger.html" class="mw-redirect" title="Scripted trigger">trigger</a>, you have to write it <code>\\[This.GetName]</code> or it will bug out (at the latest the second time you use one in the effect).
 </p><p>In most cases, it is also possible to get the value of variables with <code>'[Scope.my_variable]'</code> and saved dates with <code>'[Scope.my_date_flag]'</code>.<sup>(<a href="Patch_3.1.html" title="Patch 3.1"><i>since 3.1</i></a>)</sup>
 </p><p>Two consecutive opening square brackets <code>'[['</code> will escape it, making a single square bracket show up in text instead, i.e. <code>'[[example]'</code> in loc will display as '[example]' in-game.
 </p><p>There are also several unscoped commands: <code>GetDate, GetMidGameDate, GetLateGameDate, GetYear, LastKilledCountryName</code>.
@@ -128,7 +128,7 @@ toggle_string_id – displays StringIDinstead of localisation
 <tr>
 <td>&lt;event target tag&gt;</td>
 <td>[mytarget.GetName]</td>
-<td><a href="https://stellaris.paradoxwikis.com/Event_target" class="mw-redirect" title="Event target">Event target</a> tags are used without preceding them with <code>event_target:</code> in localisation
+<td><a href="Event_target.html" class="mw-redirect" title="Event target">Event target</a> tags are used without preceding them with <code>event_target:</code> in localisation
 </td></tr>
 <tr>
 <th colspan="3" style="font-size:small">Diplomatic Promotions
@@ -246,12 +246,12 @@ toggle_string_id – displays StringIDinstead of localisation
 <tr>
 <td>GetEngineer</td>
 <td>[Owner.GetEngineer]</td>
-<td>"engineer", "engineering drone", or "engineering unit", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"engineer", "engineering drone", or "engineering unit", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetEngineerPlural</td>
 <td>[Owner.GetEngineerPlural]</td>
-<td>"engineers", "engineering drones", or "engineering units", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"engineers", "engineering drones", or "engineering units", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetFleetName</td>
@@ -286,7 +286,7 @@ toggle_string_id – displays StringIDinstead of localisation
 <tr>
 <td>GetLinguists</td>
 <td>[Owner.GetLinguists]</td>
-<td>"linguists", "language drones", or "linguistic algorithms", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"linguists", "language drones", or "linguistic algorithms", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetName</td>
@@ -366,7 +366,7 @@ toggle_string_id – displays StringIDinstead of localisation
 <tr>
 <td>GetResearchers</td>
 <td>[Owner.GetResearchers]</td>
-<td>"researchers", "research drones", or "research subroutines", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"researchers", "research drones", or "research subroutines", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetRulerName</td>
@@ -381,12 +381,12 @@ toggle_string_id – displays StringIDinstead of localisation
 <tr>
 <td>GetScientist</td>
 <td>[Owner.GetScientist]</td>
-<td>"scientist", "science drone", or "science unit", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"scientist", "science drone", or "science unit", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetScientistPlural</td>
 <td>[Owner.GetScientistPlural]</td>
-<td>"scientists", "science drones", or "science units", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"scientists", "science drones", or "science units", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetSpeciesAdj</td>
@@ -511,12 +511,12 @@ toggle_string_id – displays StringIDinstead of localisation
 <tr>
 <td>GetTerraformer</td>
 <td>[Owner.GetTerraformer]</td>
-<td>"terraforming specialist", "terraforming drone", or "terraforming unit", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"terraforming specialist", "terraforming drone", or "terraforming unit", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetTerraformerPlural</td>
 <td>[Owner.GetTerraformerPlural]</td>
-<td>"terraforming specialists", "terraforming drones", or "terraforming units", depending on whether the scoped empire is a normal empire, a <a href="https://stellaris.paradoxwikis.com/Hive_Mind" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="https://stellaris.paradoxwikis.com/Machine_Intelligence" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
+<td>"terraforming specialists", "terraforming drones", or "terraforming units", depending on whether the scoped empire is a normal empire, a <a href="Hive_Mind.html" class="mw-redirect" title="Hive Mind">Hive Mind</a>, or a <a href="Machine_Intelligence.html" class="mw-redirect" title="Machine Intelligence">Machine Intelligence</a>, respectively
 </td></tr>
 <tr>
 <td>GetWasWere</td>
@@ -860,7 +860,7 @@ The number given for Character Limit is not a hard limit. Depending on the locat
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -881,21 +881,21 @@ The number given for Character Limit is not a hard limit. Depending on the locat
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -932,7 +932,7 @@ The number given for Character Limit is not a hard limit. Depending on the locat
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

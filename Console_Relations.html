@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console:Relations - Stellaris Wiki</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Console</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Relations</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">This article has been verified for the current console <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> (3.14) of the game.</div>
+</div>
+</div>
+<p>All regular and fallen empires have a bilateral <b>Relation</b> with each other empire. The relation level between two empires is based on the sum of their unilateral <a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;opinions of each other, and it primarily determines which diplomatic actions are available between two empires without requiring an <a href="Envoy.html" title="Envoy"><img alt="Envoy.png" src="images/Envoy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Envoy to be sent to Improve or Harm Relations.
+</p><p>The unilateral <a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;opinion of an empire also influences whether an AI empire supports or opposes proposed resolutions in the <a href="Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Community as well as their <a href="Attitude.html" class="mw-redirect" title="Attitude">attitude</a> towards an empire.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Relation_levels"><span class="tocnumber">1</span> <span class="toctext">Relation levels</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Opinion"><span class="tocnumber">2</span> <span class="toctext">Opinion</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Permanent_modifiers"><span class="tocnumber">2.1</span> <span class="toctext">Permanent modifiers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Ethics_compatibility_modifiers"><span class="tocnumber">2.1.1</span> <span class="toctext">Ethics compatibility modifiers</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Species_compatibility_modifiers"><span class="tocnumber">2.1.2</span> <span class="toctext">Species compatibility modifiers</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Civic_modifiers"><span class="tocnumber">2.1.3</span> <span class="toctext">Civic modifiers</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Policy_modifiers"><span class="tocnumber">2.1.4</span> <span class="toctext">Policy modifiers</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Diplomatic_relationship_modifiers"><span class="tocnumber">2.1.5</span> <span class="toctext">Diplomatic relationship modifiers</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Fallen_empire_modifiers"><span class="tocnumber">2.1.6</span> <span class="toctext">Fallen empire modifiers</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#AI_personality_modifiers"><span class="tocnumber">2.1.7</span> <span class="toctext">AI personality modifiers</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Variable_modifiers"><span class="tocnumber">2.1.8</span> <span class="toctext">Variable modifiers</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Event_modifiers"><span class="tocnumber">2.1.9</span> <span class="toctext">Event modifiers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Temporary_modifiers"><span class="tocnumber">2.2</span> <span class="toctext">Temporary modifiers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#Diplomatic_modifiers"><span class="tocnumber">2.2.1</span> <span class="toctext">Diplomatic modifiers</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Variable_modifiers_2"><span class="tocnumber">2.2.2</span> <span class="toctext">Variable modifiers</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#Purge_modifiers"><span class="tocnumber">2.2.3</span> <span class="toctext">Purge modifiers</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Fallen_Empires_only"><span class="tocnumber">2.2.4</span> <span class="toctext">Fallen Empires only</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Event_modifiers_2"><span class="tocnumber">2.2.5</span> <span class="toctext">Event modifiers</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Relation_levels">Relation levels</span></h2>
+<p>The relation level between two empires is determined by the sum of the <a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;opinions both empires hold towards each other and determines what diplomatic options are available without requiring an <a href="Envoy.html" title="Envoy"><img alt="Envoy.png" src="images/Envoy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Envoy to improve or harm relations.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th>Relations</th>
+<th>Opinion</th>
+<th>Available diplomacy without Envoys</th>
+<th>Description
+</th></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">Terrible</span>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">−3000</span> to <span class="effect-red" style="font-weight:bold;">−750</span>
+</td>
+<td>
+<ul><li><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Rivalry</li>
+<li><a href="Insult.html" title="Insult"><img alt="Message insult.png" src="images/Message_insult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="43" data-file-height="43" /></a>&#32;Insult</li></ul>
+</td>
+<td><i>Our empires consider each other enemies. We cannot realistically expect to come to agreement on any issues.</i>
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">Tense</span>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">−750</span> to <span class="effect-red" style="font-weight:bold;">−300</span>
+</td>
+<td><a href="Insult.html" title="Insult"><img alt="Message insult.png" src="images/Message_insult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="43" data-file-height="43" /></a>&#32;Insult
+</td>
+<td><i>Diplomatic efforts are breaking down. We are unlikely to come to an agreement on most issues.</i>
+</td></tr>
+<tr>
+<td><span class="effect-yellow" style="font-weight:bold;">Neutral</span>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">−300</span> to <span class="effect-green" style="font-weight:bold;">+300</span>
+</td>
+<td><a href="Embassy.html" title="Embassy"><img alt="Diplomatic embassy.png" src="images/Diplomatic_embassy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Embassy, <a href="Guarantee_independence.html" title="Guarantee independence"><img alt="Diplomacy guarantee.png" src="images/Diplomacy_guarantee.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Guarantee Independence, <a href="Non-Aggression_Pact.html" title="Non-Aggression Pact"><img alt="Diplomacy non aggression pact.png" src="images/Diplomacy_non_aggression_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Non-Aggression Pact, <a href="Trade.html" title="Trade"><img alt="Diplomatic trade icon.png" src="images/Diplomatic_trade_icon.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Trade
+</td>
+<td><i>Our diplomatic infrastructure is rudimentary. We can only expect agreement on deals that strongly benefit the other side.</i>
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">Positive</span>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+300</span> to <span class="effect-green" style="font-weight:bold;">+750</span>
+</td>
+<td>
+<ul><li><a href="Embassy.html" title="Embassy"><img alt="Diplomatic embassy.png" src="images/Diplomatic_embassy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Embassy, <a href="Guarantee_independence.html" title="Guarantee independence"><img alt="Diplomacy guarantee.png" src="images/Diplomacy_guarantee.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Guarantee Independence, <a href="Non-Aggression_Pact.html" title="Non-Aggression Pact"><img alt="Diplomacy non aggression pact.png" src="images/Diplomacy_non_aggression_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Non-Aggression Pact, <a href="Trade.html" title="Trade"><img alt="Diplomatic trade icon.png" src="images/Diplomatic_trade_icon.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Trade</li>
+<li><a href="Commercial_pact.html" title="Commercial pact"><img alt="Diplomacy commercial pact.png" src="images/Diplomacy_commercial_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Commercial Pact, <a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive Pact, <a href="https://stellaris.paradoxwikis.com/Federation_associate" title="Federation associate"><img alt="Diplomatic embassy.png" src="images/Diplomatic_embassy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation Associate, <a href="Migration_treaty.html" title="Migration treaty"><img alt="Diplomacy migration pact.png" src="images/Diplomacy_migration_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Migration Treaty, <a href="Research_agreement.html" title="Research agreement"><img alt="Diplomacy research agreement.png" src="images/Diplomacy_research_agreement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Research Agreement</li></ul>
+</td>
+<td><i>Diplomatic efforts are beginning to pay off. We are beginning to find common ground on many diplomatic issues.</i>
+</td></tr>
+<tr>
+<td><span class="effect-blue" style="font-weight:bold;">Excellent</span>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+750</span> to <span class="effect-green" style="font-weight:bold;">+3000</span>
+</td>
+<td>
+<ul><li><a href="Embassy.html" title="Embassy"><img alt="Diplomatic embassy.png" src="images/Diplomatic_embassy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Embassy, <a href="Guarantee_independence.html" title="Guarantee independence"><img alt="Diplomacy guarantee.png" src="images/Diplomacy_guarantee.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Guarantee Independence, <a href="Non-Aggression_Pact.html" title="Non-Aggression Pact"><img alt="Diplomacy non aggression pact.png" src="images/Diplomacy_non_aggression_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Non-Aggression Pact, <a href="Trade.html" title="Trade"><img alt="Diplomatic trade icon.png" src="images/Diplomatic_trade_icon.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Trade</li>
+<li><a href="Commercial_pact.html" title="Commercial pact"><img alt="Diplomacy commercial pact.png" src="images/Diplomacy_commercial_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Commercial Pact, <a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive Pact, <a href="https://stellaris.paradoxwikis.com/Federation_associate" title="Federation associate"><img alt="Diplomatic embassy.png" src="images/Diplomatic_embassy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation Associate, <a href="Migration_treaty.html" title="Migration treaty"><img alt="Diplomacy migration pact.png" src="images/Diplomacy_migration_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Migration Treaty, <a href="Research_agreement.html" title="Research agreement"><img alt="Diplomacy research agreement.png" src="images/Diplomacy_research_agreement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Research Agreement</li>
+<li><a href="Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation, <a href="https://stellaris.paradoxwikis.com/File%3ADiplomacy_secret_fealty.png" class="image"><img alt="Diplomacy secret fealty.png" src="images/Diplomacy_secret_fealty.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Secret Fealty, <a href="https://stellaris.paradoxwikis.com/File%3ADiplomacy_hasvassal.png" class="image"><img alt="Diplomacy hasvassal.png" src="images/Diplomacy_hasvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Subjugation</li></ul>
+</td>
+<td><i>Our envoys have forged strong ties with this empire. Our empires are eager to work together diplomatically.</i>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Opinion">Opinion</span></h2>
+<p>Each empire has a unilateral <a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;opinion towards every other empire, ranging from <span class="effect-red" style="font-weight:bold;">−1500</span> to <span class="effect-green" style="font-weight:bold;">+1500</span>. Opinion is influenced by a variety of factors and has a large effect on an empire's <a href="Attitude.html" class="mw-redirect" title="Attitude">attitude</a>.
+</p>
+<h3><span class="mw-headline" id="Permanent_modifiers">Permanent modifiers</span></h3>
+<p>Permanent <a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;opinion modifiers are either permanent or persist until the current diplomatic status changes and are an important factor in deciding how diplomacy proceeds after a first contact.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Same_Authority">
+<td rowspan="4">Same Authority</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Democratic</td>
+<td><a href="Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Democratic
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Government.html#Oligarchic" title="Oligarchic"><img alt="Oligarchic" src="images/Auth_oligarchic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Oligarchic</td>
+<td><a href="Government.html#Oligarchic" title="Oligarchic"><img alt="Oligarchic" src="images/Auth_oligarchic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Oligarchic
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Government.html#Dictatorial" title="Dictatorial"><img alt="Dictatorial" src="images/Auth_dictatorial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Dictatorial</td>
+<td><a href="Government.html#Dictatorial" title="Dictatorial"><img alt="Dictatorial" src="images/Auth_dictatorial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Dictatorial
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Government.html#Imperial" title="Imperial"><img alt="Imperial" src="images/Auth_imperial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Imperial</td>
+<td><a href="Government.html#Imperial" title="Imperial"><img alt="Imperial" src="images/Auth_imperial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Imperial
+</td></tr>
+<tr id="Hive_Mind">
+<td>Hive Mind</td>
+<td><span class="effect-red" style="font-weight:bold;">−30</span></td>
+<td>Not <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness</td>
+<td><a href="Hive_Mind.html" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind
+</td></tr>
+<tr id="Fellow_Hive_Mind">
+<td>Fellow Hive Mind</td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span></td>
+<td><a href="Hive_Mind.html" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind</td>
+<td><a href="Hive_Mind.html" title="Hive Mind"><img alt="Auth hive mind.png" src="images/Auth_hive_mind.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Hive Mind
+</td></tr>
+<tr id="Machine_Intelligence">
+<td>Machine Intelligence</td>
+<td><span class="effect-red" style="font-weight:bold;">−30</span></td>
+<td>Not <a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Materialist or <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness</td>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence
+</td></tr>
+<tr id="Fellow_Machine_Intelligence">
+<td>Fellow Machine Intelligence</td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span></td>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence</td>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence
+</td></tr>
+<tr id="Individual_Machines">
+<td>Individual Machines</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Individualist Machine</td>
+<td><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Individualist Machine
+</td></tr>
+<tr id="Defender_of_the_Galaxy">
+<td>Defender of the Galaxy</td>
+<td><span class="effect-green" style="font-weight:bold;">+200</span></td>
+<td>All empires</td>
+<td><a href="Ascension_perks.html#Defender_of_the_Galaxy" title="Defender of the Galaxy"><img alt="Defender of the Galaxy" src="images/Ap_defender_of_the_galaxy.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Defender of the Galaxy ascension perk
+</td></tr>
+<tr id="First_Contact_Hostilities">
+<td>First Contact Hostilities</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td>Empire attacked before first contact was finished</td>
+<td>Empire attacking before first contact was finished
+</td></tr>
+<tr id="First_Contact_War">
+<td>First Contact War</td>
+<td><span class="effect-red" style="font-weight:bold;">−75</span></td>
+<td>Empire that lost 10 ships or a planet before first contact was finished</td>
+<td>Empire that destroyed 10 ships or occupied a planet before first contact was finished
+</td></tr>
+<tr id="Galactic_Community_Member">
+<td>Galactic Community Member</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td><a href="Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Community Member</td>
+<td><a href="Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Community Member
+</td></tr>
+<tr id="Galactic_Imperium_Member">
+<td>Galactic Imperium Member</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td><a href="Galactic_Community.html#Galactic_Imperium" title="Galactic Imperium"><img alt="Galactic Imperium" src="images/Diplomacy_galactic_empire.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Imperium Member</td>
+<td><a href="Galactic_Community.html#Galactic_Imperium" title="Galactic Imperium"><img alt="Galactic Imperium" src="images/Diplomacy_galactic_empire.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Imperium Member
+</td></tr>
+<tr id="In_Breach_of_Galactic_Law">
+<td>In Breach of Galactic Law</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td><a href="Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Community Member</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AAlert.png" class="image" title="Galactic Community#Galactic Law"><img alt="Galactic Community#Galactic Law" src="images/Alert.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> Galactic Community Member in breach of Galactic Law
+</td></tr>
+<tr id="Left_Galactic_Community">
+<td>Left Galactic Community</td>
+<td><span class="effect-red" style="font-weight:bold;">−75</span></td>
+<td><a href="Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Community Member</td>
+<td>Former Galactic Community Member
+</td></tr>
+<tr id="The_Omnicodes">
+<td>The Omnicodes</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td>Not <a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine main species</td>
+<td><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine main species with the <a href="https://stellaris.paradoxwikis.com/File%3AR_omnicodex.png" class="image"><img alt="R omnicodex.png" src="images/R_omnicodex.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a> The Omnicodex relic
+</td></tr>
+<tr id="Crisis_Empire">
+<td rowspan="8">Crisis Empire</td>
+<td><span class="effect-red" style="font-weight:bold;">−30</span></td>
+<td><a href="Intel.html" title="Intel"><img alt="Intel level mid.png" src="images/Intel_level_mid.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Medium Government Intel</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ACosmogenesis_level_2.png" class="image"><img alt="Cosmogenesis Lvl2 btn.png" src="images/Cosmogenesis_level_2.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="52" data-file-height="57" /></a> Cosmogenesis crisis level 2
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−70</span></td>
+<td><a href="Intel.html" title="Intel"><img alt="Intel level mid.png" src="images/Intel_level_mid.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Medium Government Intel</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ACosmogenesis_level_3.png" class="image"><img alt="Cosmogenesis Lvl3 btn.png" src="images/Cosmogenesis_level_3.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="52" data-file-height="57" /></a> Cosmogenesis crisis level 3
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−120</span></td>
+<td><a href="Intel.html" title="Intel"><img alt="Intel level mid.png" src="images/Intel_level_mid.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Medium Government Intel</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ACosmogenesis_level_4.png" class="image"><img alt="Cosmogenesis Lvl4 btn.png" src="images/Cosmogenesis_level_4.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="52" data-file-height="57" /></a> Cosmogenesis crisis level 4
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>All empires</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ACosmogenesis_level_5.png" class="image"><img alt="Cosmogenesis Lvl5 btn.png" src="images/Cosmogenesis_level_5.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="52" data-file-height="57" /></a> Cosmogenesis crisis level 5
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−60</span></td>
+<td><a href="Intel.html" title="Intel"><img alt="Intel level mid.png" src="images/Intel_level_mid.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Medium Government Intel</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ANemesis_level_2.png" class="image"><img alt="Crisis Lvl2 btn.png" src="images/Nemesis_level_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="50" data-file-height="50" /></a> Galactic Nemesis crisis level 2
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−140</span></td>
+<td><a href="Intel.html" title="Intel"><img alt="Intel level mid.png" src="images/Intel_level_mid.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Medium Government Intel</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ANemesis_level_3.png" class="image"><img alt="Crisis Lvl3 btn.png" src="images/Nemesis_level_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="50" data-file-height="50" /></a> Galactic Nemesis crisis level 3
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−240</span></td>
+<td><a href="Intel.html" title="Intel"><img alt="Intel level mid.png" src="images/Intel_level_mid.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Medium Government Intel</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ANemesis_level_4.png" class="image"><img alt="Crisis Lvl4 btn.png" src="images/Nemesis_level_4.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="50" data-file-height="50" /></a> Galactic Nemesis crisis level 4
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−400</span></td>
+<td>All empires</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ANemesis_level_5.png" class="image"><img alt="Crisis Lvl5 btn.png" src="images/Nemesis_level_5.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="50" data-file-height="50" /></a> Galactic Nemesis crisis level 5
+</td></tr>
+<tr id="Destroying_Star_Systems">
+<td>Destroying Star Systems</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td>All empires</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ANemesis_level_5.png" class="image"><img alt="Crisis Lvl5 btn.png" src="images/Nemesis_level_5.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="50" data-file-height="50" /></a> Empire using Star-Eaters
+</td></tr>
+<tr id="Trying_to_Destroy_Galaxy">
+<td>Trying to Destroy Galaxy</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td>All empires</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ANemesis_level_5.png" class="image"><img alt="Crisis Lvl5 btn.png" src="images/Nemesis_level_5.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="50" data-file-height="50" /></a> Partial Aetherophasic Engine owner
+</td></tr>
+<tr id="Nearby_Crisis_Empire">
+<td>Nearby Crisis Empire</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td>Neighbor of the same Crisis Level 3+ empire</td>
+<td>Neighbor of the same Crisis Level 3+ empire
+</td></tr>
+<tr id="Common_Ground">
+<td>Common Ground</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span></td>
+<td><a href="Common_Ground.html" title="Common Ground"><img alt="Origins common ground.png" src="images/Origins_common_ground.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Common Ground origin Federation member</td>
+<td><a href="Common_Ground.html" title="Common Ground"><img alt="Origins common ground.png" src="images/Origins_common_ground.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Common Ground origin Federation member
+</td></tr>
+<tr id="Fellow_Victims">
+<td>Fellow Victims</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td><a href="Broken_Shackles.html" title="Broken Shackles"><img alt="Origins broken shackles.png" src="images/Origins_broken_shackles.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Broken Shackles or <a href="Payback.html" title="Payback"><img alt="Origins payback.png" src="images/Origins_payback.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Payback origin</td>
+<td><a href="Broken_Shackles.html" title="Broken Shackles"><img alt="Origins broken shackles.png" src="images/Origins_broken_shackles.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Broken Shackles or <a href="Payback.html" title="Payback"><img alt="Origins payback.png" src="images/Origins_payback.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Payback origin
+</td></tr>
+<tr id="Former_Masters">
+<td>Former Masters</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td><a href="Broken_Shackles.html" title="Broken Shackles"><img alt="Origins broken shackles.png" src="images/Origins_broken_shackles.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Broken Shackles or <a href="Payback.html" title="Payback"><img alt="Origins payback.png" src="images/Origins_payback.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Payback origin</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AOrigins_slavers.png" class="image"><img alt="Origins slavers.png" src="images/Origins_slavers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> Minamar Specialized Industries empire
+</td></tr>
+<tr id="Former_Slaves">
+<td>Former Slaves</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AOrigins_slavers.png" class="image"><img alt="Origins slavers.png" src="images/Origins_slavers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> Minamar Specialized Industries empire</td>
+<td><a href="Broken_Shackles.html" title="Broken Shackles"><img alt="Origins broken shackles.png" src="images/Origins_broken_shackles.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Broken Shackles or <a href="Payback.html" title="Payback"><img alt="Origins payback.png" src="images/Origins_payback.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Payback origin
+</td></tr>
+<tr id="Helpful_Gardeners">
+<td>Helpful Gardeners</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td>Owner of a colony with Seed Pods</td>
+<td><a href="Fruitful_Partnership.html" title="Fruitful Partnership"><img alt="Origins gardeners.png" src="images/Origins_gardeners.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Fruitful Partnership that seeded the colony
+</td></tr>
+<tr id="Formula_Pink">
+<td>Formula Pink</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td>Not <a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine or <a href="Biological_traits.html#Lithoid" title="Lithoid"><img alt="Lithoid" src="images/Trait_lithoid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Lithoid main species</td>
+<td>Completed the Tropical Habitat astral rift
+</td></tr>
+<tr id="Fractured_Ambassadors">
+<td>Fractured Ambassadors</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td>Not <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness</td>
+<td>Fractured Ambassadors empire modifier
+</td></tr>
+<tr id="Integrated_Hive">
+<td>Integrated Hive</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Not <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AAuth_cyber_hive_integrated.png" class="image"><img alt="Auth cyber hive integrated.png" src="images/Auth_cyber_hive_integrated.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a> Integrated Hive
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Ethics_compatibility_modifiers">Ethics compatibility modifiers</span></h4>
+<p>Most ethics give a bonus modifier towards empires with the same ethic and a malus modifier to empires with the opposite ethic.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Bright_Materialists">
+<td rowspan="3">Bright Materialists</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist</td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist</td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Materialist
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Materialist</td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Materialist
+</td></tr>
+<tr id="Wise_Spiritualists">
+<td rowspan="3">Wise Spiritualists</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist</td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist</td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist</td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Spiritualist
+</td></tr>
+<tr id="Free_Egalitarianists">
+<td rowspan="3">Free Egalitarianists</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian</td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian</td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian</td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span></span>&#32;Egalitarian
+</td></tr>
+<tr id="Enlightened_Pacifists">
+<td rowspan="3">Enlightened Pacifists</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Pacifist</td>
+<td><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Pacifist
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Pacifist</td>
+<td><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Pacifist
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Pacifist</td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Pacifist
+</td></tr>
+<tr id="Xenophile_Diplomacy">
+<td rowspan="3">Xenophile Diplomacy</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile</td>
+<td><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile</td>
+<td><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile</td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Xenophile
+</td></tr>
+<tr id="Materialist_Fools">
+<td rowspan="4">Materialist Fools</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist</td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Materialist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist</td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist</td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Materialist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist</td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist
+</td></tr>
+<tr id="Spiritualist_Fools">
+<td rowspan="4">Spiritualist Fools</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Materialist</td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Materialist</td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist</td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist</td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist
+</td></tr>
+<tr id="Egalitarian_Rabble">
+<td rowspan="4">Egalitarian Rabble</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Authoritarian.html" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Authoritarian</td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Authoritarian.html" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Authoritarian</td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Authoritarian.html" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Authoritarian</td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><a href="Fanatic_Authoritarian.html" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Authoritarian</td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian
+</td></tr>
+<tr id="Authoritarian_Tyrants">
+<td rowspan="4">Authoritarian Tyrants</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian</td>
+<td><a href="Authoritarian.html" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Authoritarian
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian</td>
+<td><a href="Fanatic_Authoritarian.html" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Authoritarian
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian</td>
+<td><a href="Authoritarian.html" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Authoritarian
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian</td>
+<td><a href="Fanatic_Authoritarian.html" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Authoritarian
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Species_compatibility_modifiers">Species compatibility modifiers</span></h4>
+<p>The primary species of an empire affects how a number of other empires view it.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Xenophilia">
+<td rowspan="6">Xenophilia</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span></td>
+<td rowspan="3"><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile</td>
+<td>Same portrait
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td>Same species class
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td>Different species class
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td rowspan="3"><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile</td>
+<td>Same portrait
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td>Same species class
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+40</span></td>
+<td>Different species class
+</td></tr>
+<tr id="Xenophobia">
+<td rowspan="6">Xenophobia</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span></td>
+<td rowspan="3"><a href="Xenophobe.html" title="Xenophobe"><img alt="Xenophobe.png" src="images/Xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophobe and <img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="Civics.html#Selective_Kinship" title="Selective Kinship"><img alt="Selective Kinship" src="images/Civic_selective_kinship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Selective Kinship</td>
+<td>Same portrait
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td>Same species class
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td>Different species class
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td rowspan="3"><a href="Fanatic_Xenophobe.html" title="Fanatic Xenophobe"><img alt="Fanatic xenophobe.png" src="images/Fanatic_xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophobe and <img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="Civics.html#Selective_Kinship" title="Selective Kinship"><img alt="Selective Kinship" src="images/Civic_selective_kinship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Selective Kinship</td>
+<td>Same species class
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td>Same species class
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td>Different species class
+</td></tr>
+<tr id="Xenophile_Diplomacy">
+<td rowspan="4">Xenophile Diplomacy</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span></td>
+<td rowspan="4"><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Xenophobe.html" title="Xenophobe"><img alt="Xenophobe.png" src="images/Xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Xenophobe.html" title="Fanatic Xenophobe"><img alt="Fanatic xenophobe.png" src="images/Fanatic_xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Xenophobe</td>
+<td><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile with same species class
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile with different species class
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile with same species class
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile with different species class
+</td></tr>
+<tr id="Xenophobic_Bigots">
+<td rowspan="4">Xenophobic Bigots</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span></td>
+<td rowspan="4">All empires</td>
+<td><a href="Xenophobe.html" title="Xenophobe"><img alt="Xenophobe.png" src="images/Xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophobe with same species class
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Xenophobe.html" title="Xenophobe"><img alt="Xenophobe.png" src="images/Xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophobe with different species class
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Fanatic_Xenophobe.html" title="Fanatic Xenophobe"><img alt="Fanatic xenophobe.png" src="images/Fanatic_xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophobe with same species class
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Xenophobe.html" title="Fanatic Xenophobe"><img alt="Fanatic xenophobe.png" src="images/Fanatic_xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophobe with different species class
+</td></tr>
+<tr id="Sophisticated_Machines">
+<td rowspan="2">Sophisticated Machines</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Materialist</td>
+<td rowspan="2"><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Materialist</td>
+<td>
+</td></tr>
+<tr>
+<td rowspan="2">Wicked Cyborgs</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist and <img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="Cybernetic_Creed.html" title="Cybernetic Creed"><img alt="Origins cybernetic creed.png" src="images/Origins_cybernetic_creed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Cybernetic Creed</td>
+<td rowspan="2"><a href="Biological_traits.html#Cybernetic" title="Cybernetic"><img alt="Cybernetic" src="images/Trait_cybernetic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Cybernetic
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist and <img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="Cybernetic_Creed.html" title="Cybernetic Creed"><img alt="Origins cybernetic creed.png" src="images/Origins_cybernetic_creed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Cybernetic Creed</td>
+<td>
+</td></tr>
+<tr id="Hallowed_Cyborgs">
+<td rowspan="2">Hallowed Cyborgs</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist and <a href="Cybernetic_Creed.html" title="Cybernetic Creed"><img alt="Origins cybernetic creed.png" src="images/Origins_cybernetic_creed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Cybernetic Creed</td>
+<td rowspan="2"><a href="Biological_traits.html#Cybernetic" title="Cybernetic"><img alt="Cybernetic" src="images/Trait_cybernetic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Cybernetic
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+40</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist and <a href="Cybernetic_Creed.html" title="Cybernetic Creed"><img alt="Origins cybernetic creed.png" src="images/Origins_cybernetic_creed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Cybernetic Creed</td>
+<td>
+</td></tr>
+<tr id="Soulless_Machines">
+<td rowspan="4">Soulless Machines</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist</td>
+<td rowspan="2"><a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Robotic and <span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Spiritualist</td>
+<td rowspan="2"><a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Robotic and <img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Spiritualist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−60</span></td>
+<td><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Spiritualist
+</td></tr>
+<tr id="Abandoned_Organic_Origins">
+<td>Abandoned Organic Origins</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /> Not <span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Materialist or <a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence</td>
+<td><a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Mechanical
+</td></tr>
+<tr id="Shared_Kin">
+<td>Shared Kin</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span></td>
+<td><a href="Civics.html#Selective_Kinship" title="Selective Kinship"><img alt="Selective Kinship" src="images/Civic_selective_kinship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Selective Kinship</td>
+<td>Same species class
+</td></tr>
+<tr id="Horrid_Alien">
+<td>Horrid Alien</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td><a href="Civics.html#Selective_Kinship" title="Selective Kinship"><img alt="Selective Kinship" src="images/Civic_selective_kinship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Selective Kinship</td>
+<td>Different species class
+</td></tr>
+<tr id="Xeno_Filth">
+<td>Xeno Filth</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td><a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers</td>
+<td>All empires of a different species
+</td></tr>
+<tr id="Fanatic_Purifiers">
+<td>Fanatic Purifiers</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td>All empires besides <a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers of the same species</td>
+<td><a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers
+</td></tr>
+<tr id="Fellow_Fanatic_Purifiers">
+<td>Fellow Fanatic Purifiers</td>
+<td><span class="effect-green" style="font-weight:bold;">+200</span></td>
+<td><a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers of same species</td>
+<td><a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers of same species
+</td></tr>
+<tr id="Organic_Filth">
+<td>Organic Filth</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td><a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator</td>
+<td>Organic main species
+</td></tr>
+<tr id="Fellow_Machines">
+<td>Fellow Machines</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span></td>
+<td><a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator</td>
+<td><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine main species
+</td></tr>
+<tr id="Blorg_Insight">
+<td>Blorg Insight</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td>Human main species</td>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay destiny.png" src="images/Leader_trait_overlay_destiny.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait blorg insight.png" src="images/Leader_trait_blorg_insight.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait overlay councilor.png" src="images/Leader_trait_overlay_councilor.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="34" data-file-height="36" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Official_traits.html#24px" title="Official traits"><img alt="Leader trait overlay transparent.png" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Blorg Insight councilor
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Civic_modifiers">Civic modifiers</span></h4>
+<p>The following modifiers are caused by an empire having a certain civic.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Barbaric_Despoilers">
+<td rowspan="4">Barbaric Despoilers</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Militarist.html" title="Militarist"><img alt="Militarist.png" src="images/Militarist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Militarist.html" title="Fanatic Militarist"><img alt="Fanatic militarist.png" src="images/Fanatic_militarist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Militarist</td>
+<td rowspan="4"><a href="Civics.html#Barbaric_Despoilers" title="Barbaric Despoilers"><img alt="Barbaric Despoilers" src="images/Civic_barbaric_despoilers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Barbaric Despoilers
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Authoritarian.html" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Authoritarian.html" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span></span>&#32;Authoritarian
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−80</span></td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Pacifist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>None of the above
+</td></tr>
+<tr id="Criminal_Syndicate">
+<td>Criminal Syndicate</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 6px;"><a href="Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a></span><span style="grid-column:2; overflow:hidden; width: 6px;"><span style="margin-left: -6px;"><a href="Government.html#Oligarchic" title="Oligarchic"><img alt="Oligarchic" src="images/Auth_oligarchic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a></span></span><span style="grid-column:3; overflow:hidden; width: 6px;"><span style="margin-left: -12px;"><a href="Government.html#Dictatorial" title="Dictatorial"><img alt="Dictatorial" src="images/Auth_dictatorial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a></span></span><span style="grid-column:4; overflow:hidden; width: 6px;"><span style="margin-left: -18px;"><a href="Government.html#Imperial" title="Imperial"><img alt="Imperial" src="images/Auth_imperial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a></span></span></span> Non-Corporate empires</td>
+<td><a href="Corporate_civics.html#Criminal_Heritage" title="Criminal Heritage"><img alt="Criminal Heritage" src="images/Civic_criminal_heritage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Criminal Heritage
+</td></tr>
+<tr id="Crusader_Spirit">
+<td rowspan="2">Crusader Spirit</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td><a href="Individualist_empire.html" title="Individualist"><img alt="Individualist" src="images/Trait_individual.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Individualist and <img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Spiritualist</td>
+<td rowspan="2"><a href="Civics.html#Crusader_Spirit" title="Crusader Spirit"><img alt="Crusader Spirit" src="images/Civic_crusader_spirit.png" decoding="async" loading="lazy" width="24" height="22" data-file-width="58" data-file-height="54" /></a>&#32;Crusader Spirit
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Civics.html#Crusader_Spirit" title="Crusader Spirit"><img alt="Crusader Spirit" src="images/Civic_crusader_spirit.png" decoding="async" loading="lazy" width="24" height="22" data-file-width="58" data-file-height="54" /></a>&#32;Crusader Spirit
+</td></tr>
+<tr id="Misguided_Ascension">
+<td>Misguided Ascension</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td><div class="tooltip"><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Civics.html#Natural_Design" title="Natural Design"><img alt="Natural Design" src="images/Civic_natural_design.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Hive_mind_civics.html#Innate_Design" title="Innate Design"><img alt="Innate Design" src="images/Civic_hive_natural_design.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span></span></span>&#32; Natural Design<div class="tooltiptext tooltipBG2" style="text-align:left; background:#FFFFFF; left:28px; top:100%;"><div class="plainlist" style="; display:inline-block; font-family:sans-serif; padding:6px; white-space:nowrap;"><div><a href="Civics.html#Natural_Design" title="Natural Design"><img alt="Natural Design" src="images/Civic_natural_design.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Natural Design</div><div><a href="Hive_mind_civics.html#Innate_Design" title="Innate Design"><img alt="Innate Design" src="images/Civic_hive_natural_design.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Innate Design</div></div></div></div></td>
+<td><a href="Overtuned.html" title="Overtuned"><img alt="Origins overtuned.png" src="images/Origins_overtuned.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Overtuned or ascended
+</td></tr>
+<tr id="Empath">
+<td>Empath</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Individualist_empire.html" title="Individualist"><img alt="Individualist" src="images/Trait_individual.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Individualist</td>
+<td><a href="Hive_mind_civics.html#Empath" title="Empath"><img alt="Empath" src="images/Civic_empath.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Empath
+</td></tr>
+<tr id="Prey">
+<td>Prey</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td><a href="Hive_mind_civics.html#Devouring_Swarm" title="Devouring Swarm"><img alt="Devouring Swarm" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Devouring Swarm</td>
+<td>All empires
+</td></tr>
+<tr id="Devouring_Swarm">
+<td>Devouring Swarm</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td>All empires</td>
+<td><a href="Hive_mind_civics.html#Devouring_Swarm" title="Devouring Swarm"><img alt="Devouring Swarm" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Devouring Swarm
+</td></tr>
+<tr id="Crusader_Spirit">
+<td>Crusader Spirit</td>
+<td><span class="effect-red" style="font-weight:bold;">−500</span></td>
+<td><a href="Civics.html#Crusader_Spirit" title="Crusader Spirit"><img alt="Crusader Spirit" src="images/Civic_crusader_spirit.png" decoding="async" loading="lazy" width="24" height="22" data-file-width="58" data-file-height="54" /></a>&#32;Crusader Spirit</td>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence
+</td></tr>
+<tr id="Fellow_Assimilators">
+<td>Fellow Assimilators</td>
+<td><span class="effect-green" style="font-weight:bold;">+40</span></td>
+<td><a href="Machine_intelligence_civics.html#Driven_Assimilator" title="Driven Assimilator"><img alt="Driven Assimilator" src="images/Civic_machine_assimilator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Driven Assimilator</td>
+<td rowspan="3"><a href="Machine_intelligence_civics.html#Driven_Assimilator" title="Driven Assimilator"><img alt="Driven Assimilator" src="images/Civic_machine_assimilator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Driven Assimilator
+</td></tr>
+<tr id="Dreaded_Assimilators">
+<td>Dreaded Assimilators</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td><a href="Individualist_empire.html" title="Individualist"><img alt="Individualist" src="images/Trait_individual.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Individualist
+</td></tr>
+<tr id="Soul_Thieves">
+<td>Soul Thieves</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td><span style="display:inline grid; vertical-align:middle;"><span style="grid-column:1; overflow:hidden; width: 12px;"><a href="Spiritualist.html" title="Spiritualist"><img alt="Spiritualist.png" src="images/Spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a></span><span style="grid-column:2; overflow:hidden; width: 12px;"><span style="margin-left: -12px;"><a href="Fanatic_Spiritualist.html" title="Fanatic Spiritualist"><img alt="Fanatic spiritualist.png" src="images/Fanatic_spiritualist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a></span></span></span>&#32;Spiritualist
+</td></tr>
+<tr id="Fellow_Servitors">
+<td>Fellow Servitors</td>
+<td><span class="effect-green" style="font-weight:bold;">+40</span></td>
+<td><a href="Machine_intelligence_civics.html#Rogue_Servitor" title="Rogue Servitor"><img alt="Rogue Servitor" src="images/Civic_machine_servitor.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Rogue Servitor</td>
+<td rowspan="3"><a href="Machine_intelligence_civics.html#Rogue_Servitor" title="Rogue Servitor"><img alt="Rogue Servitor" src="images/Civic_machine_servitor.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Rogue Servitor
+</td></tr>
+<tr id="Biophiles">
+<td>Biophiles</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td><a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator
+</td></tr>
+<tr id="Willing_Servants">
+<td>Willing Servants</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Biological_traits.html#Decadent" title="Decadent"><img alt="Decadent" src="images/Trait_decadent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Decadent organic species
+</td></tr>
+<tr id="Murderer_Machines">
+<td>Murderer Machines</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td><a href="Machine_intelligence_civics.html#Rogue_Servitor" title="Rogue Servitor"><img alt="Rogue Servitor" src="images/Civic_machine_servitor.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Rogue Servitor or organic main species</td>
+<td rowspan="2"><a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator
+</td></tr>
+<tr id="Fellow_Exterminators">
+<td>Fellow Exterminators</td>
+<td><span class="effect-green" style="font-weight:bold;">+200</span></td>
+<td><a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Policy_modifiers">Policy modifiers</span></h4>
+<p>The following modifiers are caused by an empire having a certain policy.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Both_Supremacists">
+<td>Both Supremacists</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td><a href="Diplomatic_stance.html#Supremacist" title="Supremacist"><img alt="Supremacist" src="images/Diplomatic_stance_supremacy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Supremacist Diplomatic Stance</td>
+<td><a href="Diplomatic_stance.html#Supremacist" title="Supremacist"><img alt="Supremacist" src="images/Diplomatic_stance_supremacy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Supremacist Diplomatic Stance
+</td></tr>
+<tr id="Bombardment_Policy">
+<td rowspan="2">Bombardment Policy</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Pacifist</td>
+<td><i>Indiscriminate</i> or <i>Armageddon</i> Orbital Bombardment
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Pacifist</td>
+<td><i>Indiscriminate</i> or <i>Armageddon</i> Orbital Bombardment
+</td></tr>
+<tr id="Slavery_Policy">
+<td rowspan="2">Slavery Policy</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian or <a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile</td>
+<td><i>Allowed</i> Slavery
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian or <a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile</td>
+<td><i>Allowed</i> Slavery
+</td></tr>
+<tr id="Interference_Policy">
+<td rowspan="3">Interference Policy</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span></td>
+<td><a href="Xenophobe.html" title="Xenophobe"><img alt="Xenophobe.png" src="images/Xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophobe</td>
+<td><i>Passive Studies</i> Pre-FTL Interference
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Fanatic_Xenophobe.html" title="Fanatic Xenophobe"><img alt="Fanatic xenophobe.png" src="images/Fanatic_xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophobe</td>
+<td><i>Passive Studies</i> Pre-FTL Interference
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <i>Passive Studies</i> Pre-FTL Interference</td>
+<td><a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <i>Passive Studies</i> Pre-FTL Interference
+</td></tr>
+<tr id="Xenophages">
+<td rowspan="3">Xenophages</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td>Not <a href="Authoritarian.html" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Authoritarian.html" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Authoritarian or <a href="Xenophobe.html" title="Xenophobe"><img alt="Xenophobe.png" src="images/Xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Xenophobe.html" title="Fanatic Xenophobe"><img alt="Fanatic xenophobe.png" src="images/Fanatic_xenophobe.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Xenophobe</td>
+<td><i>Livestock</i> or <i>Grid Amalgamation</i> slavery or <i>Processing</i> or <i>Chemical Processing</i> purge user
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Xenophile</td>
+<td><i>Livestock</i> or <i>Grid Amalgamation</i> slavery or <i>Processing</i> or <i>Chemical Processing</i> purge user
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Not <a href="Authoritarian.html" title="Authoritarian"><img alt="Authoritarian.png" src="images/Authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Authoritarian.html" title="Fanatic Authoritarian"><img alt="Fanatic authoritarian.png" src="images/Fanatic_authoritarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Authoritarian and <a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Xenophile</td>
+<td><i>Livestock</i> or <i>Grid Amalgamation</i> slavery or <i>Processing</i> or <i>Chemical Processing</i> purge user
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Diplomatic_relationship_modifiers">Diplomatic relationship modifiers</span></h4>
+<p>The following modifiers are caused by two empires having certain diplomatic conditions with each other or a third empire.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Subject">
+<td>Subject</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td><a href="Vassal.html" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Subject</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ADiplomacy_hasvassal.png" class="image"><img alt="Diplomacy hasvassal.png" src="images/Diplomacy_hasvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Overlord
+</td></tr>
+<tr id="Same_Overlord">
+<td>Same Overlord</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td><a href="Vassal.html" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Subject of the same Overlord</td>
+<td><a href="Vassal.html" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Subject of the same Overlord
+</td></tr>
+<tr id="Allied_to_Rivals">
+<td>Allied to Rivals</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Rivalry with the same third empire</td>
+<td><a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive pact with the same third empire
+</td></tr>
+<tr id="Rivals_with_Allies">
+<td>Rivals with Allies</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td><a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive pact with the same third empire</td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Rivalry with the same third empire
+</td></tr>
+<tr id="Ally_of_Ally">
+<td>Ally of Ally</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td><a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive pact with the same third empire</td>
+<td><a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive pact with the same third empire
+</td></tr>
+<tr id="Mutual_Rivals">
+<td>Mutual Rivals</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Rivalry with the same third empire</td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Rivalry with the same third empire
+</td></tr>
+<tr id="Closed_Borders">
+<td>Closed Borders</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="https://stellaris.paradoxwikis.com/Closed_borders" title="Closed borders"><img alt="Diplomacy closed borders.png" src="images/Diplomacy_closed_borders.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Target of closed borders</td>
+<td><a href="https://stellaris.paradoxwikis.com/Closed_borders" title="Closed borders"><img alt="Diplomacy closed borders.png" src="images/Diplomacy_closed_borders.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Empire with closed borders
+</td></tr>
+<tr id="Guarantees_Independence">
+<td>Guarantees Independence</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="Guarantee_independence.html" title="Guarantee independence"><img alt="Diplomacy guarantee.png" src="images/Diplomacy_guarantee.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Guaranteed empire</td>
+<td><a href="Guarantee_independence.html" title="Guarantee independence"><img alt="Diplomacy guarantee.png" src="images/Diplomacy_guarantee.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a> Guarantor empire
+</td></tr>
+<tr id="Federation">
+<td>Federation</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td><a href="Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation member</td>
+<td><a href="Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation member
+</td></tr>
+<tr id="Federation_Associate">
+<td>Federation Associate</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><a href="https://stellaris.paradoxwikis.com/Federation_associate" title="Federation associate"><img alt="Diplomatic embassy.png" src="images/Diplomatic_embassy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation associate or member</td>
+<td><a href="https://stellaris.paradoxwikis.com/Federation_associate" title="Federation associate"><img alt="Diplomatic embassy.png" src="images/Diplomatic_embassy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation associate or member
+</td></tr>
+<tr id="Defensive_Pact">
+<td>Defensive Pact</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive pact</td>
+<td><a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive pact
+</td></tr>
+<tr id="At_War">
+<td>At War</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td><a href="War.html" title="War"><img alt="Diplomacy war.png" src="images/Diplomacy_war.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;War enemy</td>
+<td><a href="War.html" title="War"><img alt="Diplomacy war.png" src="images/Diplomacy_war.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;War enemy
+</td></tr>
+<tr id="Rivaling_us">
+<td>Rivaling us</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Rivaled empire</td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Rivaling empire
+</td></tr>
+<tr id="Our_Rival">
+<td rowspan="2">Our Rival</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Rivaling empire without the Antagonistic diplomatic stance</td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Rivaled empire
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Rivaling empire with the Antagonistic diplomatic stance</td>
+<td><a href="Rivalry.html" title="Rivalry"><img alt="Diplomacy rivalry.png" src="images/Diplomacy_rivalry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Rivaled empire
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Fallen_empire_modifiers">Fallen empire modifiers</span></h4>
+<p>The following modifiers can only happen between a <a href="Fallen_empire.html" title="Fallen empire">fallen empire</a> and a regular empire.
+</p>
+<table class="mildtable">
+
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Encroaching_Borders">
+<td>Encroaching Borders</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>Militant Isolationists</td>
+<td>Owner of any bordering system
+</td></tr>
+<tr id="Desecrated_Holy_Planet">
+<td>Desecrated Holy Planet</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>Holy Guardians</td>
+<td>Owner of at least one Holy World colony and doesn't have <a href="Relics.html#Head_of_Zarqlan" title="Head of Zarqlan"><img alt="Head of Zarqlan" src="images/R_severed_head.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a>&#32;Head of Zarqlan relic
+</td></tr>
+<tr id="Zarqlan&#39;s_Chosen">
+<td>Zarqlan's Chosen</td>
+<td><span class="effect-green" style="font-weight:bold;">+150</span></td>
+<td>Holy Guardians</td>
+<td>Owner of the <a href="Relics.html#Head_of_Zarqlan" title="Head of Zarqlan"><img alt="Head of Zarqlan" src="images/R_severed_head.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a>&#32;Head of Zarqlan relic
+</td></tr>
+<tr id="Scion">
+<td>Scion</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span></td>
+<td>Overlord</td>
+<td><a href="Subject_empire.html" title="Scion"><img alt="Scion" src="images/Diplomacy_isprotectorate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Scion subject
+</td></tr>
+<tr id="Devouring_Swarm">
+<td>Devouring Swarm</td>
+<td><span class="effect-red" style="font-weight:bold;">−80</span></td>
+<td>Enigmatic Observers</td>
+<td>Empires with the <a href="Hive_mind_civics.html#Devouring_Swarm" title="Devouring Swarm"><img alt="Devouring Swarm" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Devouring Swarm or <a href="Hive_mind_civics.html#Terravore" title="Terravore"><img alt="Terravore" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Terravore civics
+</td></tr>
+<tr id="Determined_Exterminator">
+<td>Determined Exterminator</td>
+<td><span class="effect-red" style="font-weight:bold;">−40</span></td>
+<td>Enigmatic Observers</td>
+<td>Empires with the <a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator civic
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="AI_personality_modifiers">AI personality modifiers</span></h4>
+<p>The following modifiers can only happen when one of the involved empires has a certain AI personality.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Pacifist_Cowards">
+<td rowspan="2">Pacifist Cowards</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Honorbound Warriors</td>
+<td><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Pacifist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td>Honorbound Warriors</td>
+<td><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Pacifist
+</td></tr>
+<tr id="Infidel_Unbelievers">
+<td>Infidel Unbelievers</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td>Evangelizing Zealots</td>
+<td><a href="Materialist.html" title="Materialist"><img alt="Materialist.png" src="images/Materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Materialist.html" title="Fanatic Materialist"><img alt="Fanatic materialist.png" src="images/Fanatic_materialist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Materialist
+</td></tr>
+<tr id="Fanatical_Befrienders">
+<td>Fanatical Befrienders</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span></td>
+<td>Fanatical Befrienders</td>
+<td>All empires
+</td></tr>
+<tr id="Metalheads">
+<td>Metalheads</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td>Metalheads</td>
+<td>All empires
+</td></tr>
+<tr id="Is_a_Democracy">
+<td>Is a Democracy</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td>Democratic Crusaders</td>
+<td><a href="Government.html#Democratic" title="Democratic"><img alt="Democratic" src="images/Auth_democratic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Democratic authority
+</td></tr>
+<tr id="Is_an_Oligarchy">
+<td>Is an Oligarchy</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Democratic Crusaders</td>
+<td><a href="Government.html#Oligarchic" title="Oligarchic"><img alt="Oligarchic" src="images/Auth_oligarchic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Oligarchic or <a href="Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Corporate authority and not <a href="Corporate_civics.html#Worker_Cooperative" title="Worker Cooperative"><img alt="Worker Cooperative" src="images/Civic_worker_coop.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Worker Cooperative
+</td></tr>
+<tr id="Is_an_Autocracy">
+<td>Is an Autocracy</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td>Democratic Crusaders</td>
+<td><a href="Government.html#Dictatorial" title="Dictatorial"><img alt="Dictatorial" src="images/Auth_dictatorial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Dictatorial or <a href="Government.html#Imperial" title="Imperial"><img alt="Imperial" src="images/Auth_imperial.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Imperial authority
+</td></tr>
+<tr id="Oppressors">
+<td rowspan="2">Oppressors</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td>Democratic Crusaders</td>
+<td><a href="Machine_intelligence_civics.html#Rogue_Servitor" title="Rogue Servitor"><img alt="Rogue Servitor" src="images/Civic_machine_servitor.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Rogue Servitor civic
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span></td>
+<td>Democratic Crusaders</td>
+<td><a href="Machine_intelligence_civics.html#Driven_Assimilator" title="Driven Assimilator"><img alt="Driven Assimilator" src="images/Civic_machine_assimilator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Driven Assimilator civic
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Variable_modifiers">Variable modifiers</span></h4>
+<p>The following modifiers can have various values depending on how many times an empire meets the required condition.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards</th>
+<th>Limit
+</th></tr>
+<tr id="Our_Claims_on_Them">
+<td>Our Claims on Them</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span> per Claim</td>
+<td>Claiming empire</td>
+<td>Claimed system owner</td>
+<td>
+</td></tr>
+<tr id="Their_Claims_on_Us">
+<td>Their Claims on Us</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span> per Claim</td>
+<td>Claimed system owner</td>
+<td>Claiming empire</td>
+<td>
+</td></tr>
+<tr id="Relative_Power_of_Subjects">
+<td>Relative Power of Subjects</td>
+<td><span class="effect-red" style="font-weight:bold;">−1</span> per 1% of difference between the overlord and the sum of all subjects</td>
+<td>Subject</td>
+<td>Overlord</td>
+<td>
+</td></tr>
+<tr id="Border_Friction">
+<td>Border Friction</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span> for each connected system (multiplied by <i>Border Friction</i> factor of <a href="AI_personalities.html" title="AI personalities">AI personalities</a>)</td>
+<td>All empires except subjects, Federation members and Fallen Empires</td>
+<td>Empires with hyperlane connection borders</td>
+<td>
+</td></tr>
+<tr id="Criminal_Branch_Offices">
+<td>Criminal Branch Offices</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span> for each branch office</td>
+<td>Planet owner</td>
+<td>Branch office owner with <a href="Corporate_civics.html#Criminal_Heritage" title="Criminal Heritage"><img alt="Criminal Heritage" src="images/Civic_criminal_heritage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Criminal Heritage civic</td>
+<td>
+</td></tr>
+<tr id="Reveres_Holy_World">
+<td>Reveres Holy World</td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span> per Consecrated Holy World</td>
+<td>Holy Guardians</td>
+<td>Empire consecrating a Holy World</td>
+<td>
+</td></tr>
+<tr id="Trust">
+<td>Trust</td>
+<td><span class="effect-green" style="font-weight:bold;">+1</span> per trust</td>
+<td>Mutual</td>
+<td>Mutual</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span>
+</td></tr>
+<tr id="Threat">
+<td>Threat
+</td>
+<td><span class="effect-red" style="font-weight:bold;">−1</span> per point of threat
+</td>
+<td>Threatened empires</td>
+<td>Threatening empires</td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Mutual_Threats">
+<td>Mutual Threats
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+0.5</span> per sum total of point of threat at others, <span class="effect-red" style="font-weight:bold;">−4</span> per point of threat from the opinioning empire, down to 0
+</td>
+<td>Threatened empires</td>
+<td>All other empires</td>
+<td><span class="effect-green" style="font-weight:bold;">+200</span>
+</td></tr>
+<tr id="Interstellar_Assembly">
+<td rowspan="4">Interstellar Assembly</td>
+<td><span class="effect-green" style="font-weight:bold;">+15</span> per Structure stage I</td>
+<td>All empires</td>
+<td><a href="MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Interstellar Assembly (stage I) owner</td>
+<td>
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+30</span> per Structure stage II</td>
+<td>All empires</td>
+<td><a href="MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Interstellar Assembly (stage II) owner</td>
+<td>
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+75</span> per Structure stage III</td>
+<td>All empires</td>
+<td><a href="MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Interstellar Assembly (stage III) owner</td>
+<td>
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">+150</span> per Structure stage IV</td>
+<td>All empires</td>
+<td><a href="MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Interstellar Assembly (stage IV) owner</td>
+<td>
+</td></tr>
+<tr id="Meddlesome_Younger_Race">
+<td rowspan="4">Meddlesome Younger Race</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span> for each fallen empire technology researched</td>
+<td>Enigmatic Observers, Holy Guardians, Militant Isolationists</td>
+<td>All empires except their subjects
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span> for each fallen empire technology researched</td>
+<td>Keepers of Knowledge</td>
+<td>All empires except their subjects
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Event_modifiers">Event modifiers</span></h4>
+<p>The following modifiers can only be obtained through events.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards
+</th></tr>
+<tr id="Saved_Captives">
+<td>Saved Captives</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td>Target of the The Ransomeers event chain</td>
+<td>Accidentally saves captives
+</td></tr>
+<tr id="Killed_Captives">
+<td>Killed Captives</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td>Target of the The Ransomeers event chain</td>
+<td>Accidentally kills captives
+</td></tr>
+<tr id="Literary_Savior">
+<td>Literary Savior</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td>Target of the The Prince event</td>
+<td>Returned the text during the Prince event
+</td></tr>
+<tr id="Book_Burner">
+<td>Book Burner</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td>Target of the The Prince event</td>
+<td>Refused to return the text during the Prince event
+</td></tr>
+<tr id="Nurtured_Forebears">
+<td>Nurtured Forebears</td>
+<td><span class="effect-green" style="font-weight:bold;">+200</span></td>
+<td>Nivlac Circle</td>
+<td>Relocated the Nivlacs in the Impossible Organism event chain
+</td></tr>
+<tr id="Discarded_Forebears">
+<td>Discarded Forebears</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>Nivlac Circle</td>
+<td>Shot the Nivlacs into space in the Impossible Organism event chain
+</td></tr>
+<tr id="Bold_Explorers">
+<td>Bold Explorers</td>
+<td><span class="effect-green" style="font-weight:bold;">+750</span></td>
+<td>Target of the Propulsion Proponent Proclamation event</td>
+<td>Helped the civilization achieve FTL in the Propulsion Proponent Proclamation
+</td></tr>
+<tr id="Close_Cousins">
+<td>Close Cousins</td>
+<td><span class="effect-green" style="font-weight:bold;">+150</span></td>
+<td>Mirror Empire</td>
+<td>Was diplomatic in the Strange Station astral rift expedition
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Temporary_modifiers">Temporary modifiers</span></h3>
+<p>Temporary <a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;opinion modifiers last for a predetermined amount of time and will eventually disappear, as they decay yearly by a certain amount. However, many can also be reinforced and increased up to a certain limit. Many temporary opinion modifiers come from events.
+</p>
+<h4><span class="mw-headline" id="Diplomatic_modifiers">Diplomatic modifiers</span></h4>
+<p>Some diplomatic actions apply a temporary, decaying <a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;opinion modifier.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards</th>
+<th>Decay</th>
+<th>Limit
+</th></tr>
+<tr id="Insulted">
+<td>Insulted</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>Insulted empire</td>
+<td>Insulting empire</td>
+<td><b>2 monthly</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span>
+</td></tr>
+<tr id="Changed_Federation">
+<td>Changed Federation</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>Empires in federation</td>
+<td>Empire that left federation</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Broke_Federation">
+<td>Broke Federation</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>Empires in federation</td>
+<td>Empire that left federation</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Ended_Federation_Association">
+<td>Ended Federation Association</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td>Former associate or federation members</td>
+<td>Empire(s) ending association</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Kicked_us_from_Alliance">
+<td>Kicked us from Alliance</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td>Empire kicked from federation</td>
+<td>Federation member who proposed kicking</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Tried_to_kick_us_from_Alliance">
+<td>Tried to kick us from Alliance</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td>Empire targeted</td>
+<td>Federation member who proposed kicking</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Broke_Defensive_Pact">
+<td>Broke Defensive Pact</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span></td>
+<td>Former <a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;defensive pact partner</td>
+<td>Empire which broke the defensive pact</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Broke_Research_Agreement">
+<td>Broke Research Agreement</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td>Former <a href="Research_agreement.html" title="Research agreement"><img alt="Diplomacy research agreement.png" src="images/Diplomacy_research_agreement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;research agreement partner</td>
+<td>Empire which broke the research agreement</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Broke_Non-Aggression_Pact">
+<td>Broke Non-Aggression Pact</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td>Former <a href="Non-Aggression_Pact.html" title="Non-Aggression Pact"><img alt="Diplomacy non aggression pact.png" src="images/Diplomacy_non_aggression_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;non-aggression pact partner</td>
+<td>Empire which broke the non-aggression pact</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Broke_Migration_Treaty">
+<td>Broke Migration Treaty</td>
+<td><span class="effect-red" style="font-weight:bold;">−15</span></td>
+<td>Former <a href="Migration_treaty.html" title="Migration treaty"><img alt="Diplomacy migration pact.png" src="images/Diplomacy_migration_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;migration treaty partner</td>
+<td>Empire which broke the migration treaty</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Broke_Guarantee">
+<td>Broke Guarantee</td>
+<td><span class="effect-red" style="font-weight:bold;">−15</span></td>
+<td>Former <a href="Guarantee_independence.html" title="Guarantee independence"><img alt="Diplomacy guarantee.png" src="images/Diplomacy_guarantee.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;guaranteed empire</td>
+<td>Empire which broke the Guarantee</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Was_at_War">
+<td>Was at War</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td><a href="Warfare.html" title="Warfare"><img alt="Diplomacy war 2.png" src="images/Diplomacy_defensive_war.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Defender</td>
+<td><a href="War.html" title="War"><img alt="Diplomacy war.png" src="images/Diplomacy_war.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;War declarer</td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Accepted_plea_for_protection">
+<td>Accepted plea for protection</td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span></td>
+<td>Empire that proposed <a href="Vassal.html" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> subjugation</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ADiplomacy_hasvassal.png" class="image"><img alt="Diplomacy hasvassal.png" src="images/Diplomacy_hasvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Overlord</td>
+<td><b>5</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span>
+</td></tr>
+<tr id="Rejected_Status_Quo_Peace_Offer">
+<td>Rejected Status Quo Peace Offer</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td>Empire proposing status quo</td>
+<td>Empire rejecting status quo</td>
+<td><b>5</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span>
+</td></tr>
+<tr id="Broke_free_from_Overlord">
+<td>Broke free from Overlord</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Former <a href="https://stellaris.paradoxwikis.com/File%3ADiplomacy_hasvassal.png" class="image"><img alt="Diplomacy hasvassal.png" src="images/Diplomacy_hasvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Overlord</td>
+<td>Former <a href="Vassal.html" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> subject</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span>
+</td></tr>
+<tr id="Released_from_Overlord">
+<td>Released from Overlord</td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span></td>
+<td>Former <a href="Vassal.html" title="Vassal"><img alt="Diplomacy isvassal.png" src="images/Diplomacy_isvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> subject</td>
+<td>Former <a href="https://stellaris.paradoxwikis.com/File%3ADiplomacy_hasvassal.png" class="image"><img alt="Diplomacy hasvassal.png" src="images/Diplomacy_hasvassal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a> Overlord</td>
+<td><b>1</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span>
+</td></tr>
+<tr id="Vaporous_Mega-Orchid">
+<td>Vaporous Mega-Orchid</td>
+<td><span class="effect-green" style="font-weight:bold;">+150</span></td>
+<td>Empire activating <a href="Relics.html#Vaporous_Mega-Orchid" title="Relics"><img alt="R vaporous mega orchid.png" src="images/R_vaporous_mega_orchid.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a> Vaporous Mega-Orchid relic</td>
+<td>All non-genocidal and non-fallen organic empires</td>
+<td><b>10 years</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+150</span>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Variable_modifiers_2">Variable modifiers</span></h4>
+<p>Variable modifiers start small but will keep growing as long as an empire continues doing the same action.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards</th>
+<th>Decay</th>
+<th>Limit
+</th></tr>
+<tr id="Improve_Relations">
+<td>Improve Relations</td>
+<td><span class="effect-green" style="font-weight:bold;">+0.25</span> monthly, <span class="effect-green" style="font-weight:bold;">+0.75</span> if embassy is established</td>
+<td>Mutual</td>
+<td>Mutual</td>
+<td><b>1</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span>
+</td></tr>
+<tr id="Harm_Relations">
+<td>Harm Relations</td>
+<td><span class="effect-red" style="font-weight:bold;">−0.5</span> monthly</td>
+<td>Mutual</td>
+<td>Mutual</td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span>
+</td></tr>
+<tr id="Broke_Trade_Pact">
+<td>Broke Trade Pact</td>
+<td><span class="effect-red" style="font-weight:bold;">−1</span> per 1/5 of the value of your side of the trade agreement</td>
+<td>Recipient</td>
+<td>Deal breaker</td>
+<td><b>2</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span>
+</td></tr>
+<tr id="Favorable_Trade_Deal">
+<td>Favorable Trade Deal</td>
+<td><span class="effect-green" style="font-weight:bold;">+1</span> per every trade acceptance point above 1</td>
+<td>Recipient</td>
+<td>Proposer</td>
+<td><b>2</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span>
+</td></tr>
+<tr id="Seized_Resource_Station">
+<td rowspan="2">Seized Resource Station</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span> per station lost by system conquest</td>
+<td>Regular empire</td>
+<td>Conqueror</td>
+<td rowspan="2"><b>2</b></td>
+<td rowspan="2"><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span> per station lost by system conquest</td>
+<td>Fallen empire</td>
+<td>Conqueror
+</td></tr>
+<tr id="Terror_Bombing">
+<td rowspan="4">Terror Bombing</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span> per Pop killed by orbital bombardment</td>
+<td>Not <a href="Militarist.html" title="Militarist"><img alt="Militarist.png" src="images/Militarist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Militarist.html" title="Fanatic Militarist"><img alt="Fanatic militarist.png" src="images/Fanatic_militarist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Militarist</td>
+<td rowspan="4">Bombarding empire</td>
+<td rowspan="4"><b>1</b></td>
+<td rowspan="4"><span class="effect-red" style="font-weight:bold;">−100</span>
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span> per Pop killed by orbital bombardment</td>
+<td><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Pacifist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−15</span> per Pop killed by orbital bombardment</td>
+<td><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Pacifist
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span> per Pop killed by orbital bombardment</td>
+<td>Benevolent Interventionists
+</td></tr>
+<tr id="Butchered_Tiyanki">
+<td>Butchered Tiyanki
+</td>
+<td>
+<ul><li><span class="effect-red" style="font-weight:bold;">−10</span> per killed Tyianki fleet if <a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile</li>
+<li><span class="effect-red" style="font-weight:bold;">−20</span> per killed Tyianki fleet if <a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile</li></ul>
+</td>
+<td><a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Xenophile</td>
+<td>Hunting empire</td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Supported_Resolution">
+<td>Supported Resolution</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span> per proposed resolution voted for</td>
+<td>Resolution proposer</td>
+<td>Resolution supporter</td>
+<td><b>1</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+1000</span>
+</td></tr>
+<tr id="Opposed_Resolution">
+<td>Opposed Resolution</td>
+<td><span class="effect-red" style="font-weight:bold;">−10</span> per proposed resolution voted against</td>
+<td>Resolution proposer</td>
+<td>Resolution opposer</td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr id="Declared_Emergency_Measure">
+<td>Declared Emergency Measure</td>
+<td><span class="effect-green" style="font-weight:bold;">+30</span> per proposed resolution declared emergency measure</td>
+<td>Resolution proposer</td>
+<td>Emergency declarer</td>
+<td><b>1</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+1000</span>
+</td></tr>
+<tr id="Vetoed_Resolution">
+<td>Vetoed Resolution</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span> per proposed resolution vetoed</td>
+<td>Resolution proposer</td>
+<td>Vetoer</td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Purge_modifiers">Purge modifiers</span></h4>
+<p>Most <a href="Purge.html" title="Purge"><img alt="Purge.png" src="images/Purge.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;purge types cause an opinion loss for each pop purged towards the purging empire, but only from non-Gestalt, non-Fallen empires with sufficient intel on the purging empire.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;Opinion loss per pop</th>
+<th>Condition</th>
+<th>Decay</th>
+<th>Limit
+</th></tr>
+<tr id="Genocidal">
+<td rowspan="7">Genocidal</td>
+<td><span class="effect-red" style="font-weight:bold;">−5</span></td>
+<td><a href="Intel.html" title="Intel"><img alt="Intel level low.png" src="images/Intel_level_low.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Low Economy Intel or higher on purging empire and doesn't have <i>purger</i> <a href="AI_personality.html" class="mw-redirect" title="AI personality">AI personality</a><br />Also applies to all conditions below</td>
+<td rowspan="7"><b>1</b></td>
+<td rowspan="7"><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−10</span></td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian <i>or</i> <a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile and doesn't purge
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−15</span></td>
+<td><a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian <i>and</i> <a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile and doesn't purge
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−15</span></td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian <i>or</i> <a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile and doesn't purge
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Egalitarian.html" title="Fanatic Egalitarian"><img alt="Fanatic egalitarian.png" src="images/Fanatic_egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Egalitarian <i>and</i> <a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile and doesn't purge
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td><a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile <i>and</i> <a href="Egalitarian.html" title="Egalitarian"><img alt="Egalitarian.png" src="images/Egalitarian.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Egalitarian and doesn't purge
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td>Benevolent Interventionists
+</td></tr>
+<tr id="Purged_our_Species">
+<td>Purged our Species</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span>
+</td>
+<td>
+<ul><li>Main species was purged</li>
+<li><a href="Intel.html" title="Intel"><img alt="Intel level low.png" src="images/Intel_level_low.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Low Economy Intel or higher on purging empire</li></ul>
+</td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−1000</span>
+</td></tr>
+<tr>
+<th colspan="5" style="text-align: center;">Necrophage purge or <a href="Jobs.html#Necrophyte" title="Necrophyte"><img alt="Necrophyte" src="images/Job_apprentice.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Necrophyte 'elevation'
+</th></tr>
+<tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a>&#32;Opinion loss per pop</th>
+<th>Condition</th>
+<th>Decay</th>
+<th>Limit
+</th></tr>
+<tr id="Mysterious_Disappearances">
+<td>Mysterious Disappearances
+</td>
+<td>
+<ul><li><span class="effect-red" style="font-weight:bold;">−1</span></li>
+<li><span class="effect-red" style="font-weight:bold;">−2</span> if <a href="Xenophile.html" title="Xenophile"><img alt="Xenophile.png" src="images/Xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Xenophile</li>
+<li><span class="effect-red" style="font-weight:bold;">−3</span> if <a href="Fanatic_Xenophile.html" title="Fanatic Xenophile"><img alt="Fanatic xenophile.png" src="images/Fanatic_xenophile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Fanatic Xenophile</li>
+<li><span class="effect-red" style="font-weight:bold;">−3</span> if Benevolent Interventionists</li></ul>
+</td>
+<td>
+<ul><li>Not <a href="Necrophage_(origin).html" title="Necrophage"><img alt="Necrophage" src="images/Origins_necrophage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Necrophage origin</li>
+<li>Not <a href="Civics.html#Death_Cult" title="Death Cult"><img alt="Death Cult" src="images/Civic_death_cult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Corporate_civics.html#Corporate_Death_Cult" title="Corporate Death Cult"><img alt="Corporate Death Cult" src="images/Civic_corporate_death_cult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Death Cult and doesn't have <i>purger</i> <a href="AI_personality.html" class="mw-redirect" title="AI personality">AI personality</a></li>
+<li>Main species was not necrophaged</li>
+<li><a href="Intel.html" title="Intel"><img alt="Intel level mid.png" src="images/Intel_level_mid.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Medium Economy Intel or higher on necrophaging empire</li></ul>
+</td>
+<td>
+<ul><li><b>3</b> (if <a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive Pact or in <a href="Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation together)</li>
+<li><b>2</b> (otherwise)</li></ul>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span>
+</td></tr>
+<tr id="Necrophaged_our_Species">
+<td>Necrophaged our Species
+</td>
+<td>
+<ul><li><span class="effect-red" style="font-weight:bold;">−10</span></li>
+<li><span class="effect-red" style="font-weight:bold;">−6.5</span> if has <a href="Migration_treaty.html" title="Migration treaty"><img alt="Diplomacy migration pact.png" src="images/Diplomacy_migration_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Migration Treaty with necrophaging empire</li></ul>
+</td>
+<td>
+<ul><li>Main species was necrophaged</li>
+<li><a href="Intel.html" title="Intel"><img alt="Intel level low.png" src="images/Intel_level_low.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="24" data-file-height="26" /></a> Low Economy Intel or higher on necrophaging empire</li></ul>
+</td>
+<td>
+<ul><li><b>5</b> (if <a href="Defensive_pact.html" title="Defensive pact"><img alt="Diplomacy defensive pact.png" src="images/Diplomacy_defensive_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="37" data-file-height="37" /></a>&#32;Defensive Pact or in <a href="Federation.html" title="Federation"><img alt="Diplomacy federation.png" src="images/Diplomacy_federation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="33" data-file-height="33" /></a>&#32;Federation together)</li>
+<li><b>3</b> (otherwise)</li></ul>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">−500</span>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Fallen_Empires_only">Fallen Empires only</span></h4>
+<p>Fallen Empire Opinion modifiers only apply from Fallen or Awakened Empires and play a large part in diplomacy with them.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>Decay</th>
+<th>Limit
+</th></tr>
+<tr id="Accepted_Gift">
+<td>Accepted Gift</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td><b>2</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span>
+</td></tr>
+<tr id="Accepted_Demands">
+<td>Accepted Demands</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span></td>
+<td><b>1</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span>
+</td></tr>
+<tr id="Refused_Demands">
+<td>Refused Demands</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span>
+</td></tr>
+<tr id="Spurned_Gift">
+<td>Spurned Gift</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span>
+</td></tr>
+<tr id="Failed_Task">
+<td>Failed Task</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span>
+</td></tr>
+<tr id="Failed_Major_Task">
+<td>Failed Major Task</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span>
+</td></tr>
+<tr id="Refused_Task">
+<td>Refused Task</td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span></td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−25</span>
+</td></tr>
+<tr id="Completed_Task">
+<td>Completed Task</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span></td>
+<td><b>1</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+200</span>
+</td></tr>
+<tr id="Refused_Request">
+<td>Refused Request</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−100</span>
+</td></tr>
+<tr id="Accepted_Request">
+<td>Accepted Request</td>
+<td><span class="effect-green" style="font-weight:bold;">+100</span></td>
+<td><b>2</b></td>
+<td><span class="effect-green" style="font-weight:bold;">+200</span>
+</td></tr>
+<tr id="Refused_Subjugation">
+<td>Refused Subjugation</td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span></td>
+<td><b>1</b></td>
+<td><span class="effect-red" style="font-weight:bold;">−200</span>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Event_modifiers_2">Event modifiers</span></h4>
+<p>Opinion modifiers added from events
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th>Name</th>
+<th><a href="Opinion.html" title="Opinion"><img alt="Diplomacy opinion.png" src="images/Diplomacy_opinion.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="27" data-file-height="24" /></a> Value</th>
+<th>From</th>
+<th>Towards</th>
+<th>Decay</th>
+<th>Event
+</th></tr>
+<tr id="Desecrated_Tomb_(opinion_graverobber_1)">
+<td>Desecrated Tomb (opinion_graverobber_1)</td>
+<td><span class="effect-red" style="font-weight:bold;">−20</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>3</b></td>
+<td>[other empire name] event
+</td></tr>
+<tr id="Desecrated_Tomb_(opinion_graverobber_2)">
+<td>Desecrated Tomb (opinion_graverobber_1)</td>
+<td><span class="effect-red" style="font-weight:bold;">−35</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>3</b></td>
+<td>[other empire name] event
+</td></tr>
+<tr id="Desecrated_Tomb_(opinion_graverobber_3)">
+<td>Desecrated Tomb (opinion_graverobber_1)</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>4</b></td>
+<td>[other empire name] event
+</td></tr>
+<tr id="Repulsive_Aliens">
+<td>Repulsive Aliens</td>
+<td><span class="effect-red" style="font-weight:bold;">−75</span></td>
+<td>Event owner</td>
+<td>Other empire</td>
+<td><b>.5</b></td>
+<td>A Terrible Sight to Behold first contact event
+</td></tr>
+<tr id="Not_the_Brightest">
+<td>Not the Brightest</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>.5</b></td>
+<td>Speaking in Riddles first contact event chain
+</td></tr>
+<tr id="Speak_Like_Us">
+<td>Speak Like Us</td>
+<td><span class="effect-green" style="font-weight:bold;">+150</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>1</b></td>
+<td>Speaking in Riddles first contact event chain
+</td></tr>
+<tr id="Friendly_First_Greetings">
+<td>Friendly First Greetings</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>.5</b></td>
+<td>First Contact with the [other country name] first contact event
+</td></tr>
+<tr id="Pre-Hadean_Relations">
+<td>Pre-Hadean Relations</td>
+<td><span class="effect-green" style="font-weight:bold;">+150</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>.5</b></td>
+<td>First Contact with the [other country name] first contact event
+</td></tr>
+<tr id="Hostile_First_Greetings">
+<td>Hostile First Greetings</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>.5</b></td>
+<td>First Contact with the [other country name] first contact event
+</td></tr>
+<tr id="Stole_Wreckage_Cargo">
+<td>Stole Wreckage Cargo</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>2.5</b></td>
+<td>Supply Ship Wreckage Cargo event
+</td></tr>
+<tr id="Returned_Wreckage_Cargo">
+<td>Returned Wreckage Cargo</td>
+<td><span class="effect-green" style="font-weight:bold;">+50</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>2.5</b></td>
+<td>Wreckage Cargo Returned event
+</td></tr>
+<tr id="Ketling_Planet_Subdued">
+<td>Ketling Planet Subdued</td>
+<td><span class="effect-red" style="font-weight:bold;">−50</span></td>
+<td>Other empire</td>
+<td>Event owner</td>
+<td><b>2.5</b></td>
+<td>Communications Established (action.13) event
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b>Game concepts</b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Exploration
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Exploration.html" title="Exploration">Exploration</a> • <a href="FTL.html" class="mw-redirect" title="FTL">FTL</a> • <a href="Unique_systems.html" title="Unique systems">Unique systems</a> • <a href="L-Cluster.html" title="L-Cluster">L-Cluster</a> • <a href="Pre-FTL_species.html" title="Pre-FTL species">Pre-FTL species</a> • <a href="Fallen_empire.html" title="Fallen empire">Fallen empire</a> • <a href="Spaceborne_aliens.html" title="Spaceborne aliens">Spaceborne aliens</a> • <a href="Enclaves.html" title="Enclaves">Enclaves</a>  • <a href="Guardians.html" title="Guardians">Guardians</a> • <a href="Marauders.html" title="Marauders">Marauders</a> • <a href="Caravaneers.html" title="Caravaneers">Caravaneers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Celestial bodies
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Celestial_body.html" class="mw-redirect" title="Celestial body">Celestial body</a> • <a href="Colonization.html" title="Colonization">Colonization</a> • <a href="Planetary_features.html" title="Planetary features">Planetary features</a> • <a href="Planet_modifiers.html" title="Planet modifiers">Planet modifiers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Discovery
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Discovery.html" title="Discovery">Discovery</a> • <a href="Anomaly.html" title="Anomaly">Anomaly</a> • <a href="Archaeological_site.html" title="Archaeological site">Archaeological site</a> • <a href="Astral_rift.html" title="Astral rift">Astral rift</a> • <a href="Relics.html" title="Relics">Relics</a> • <a href="Collection.html" title="Collection">Collection</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Species
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a> • <a href="Species_traits.html" title="Species traits">Pop modification</a> • <a href="Biological_traits.html" title="Biological traits">Biological traits</a> • <a href="Machine_traits.html" title="Machine traits">Machine traits</a> • <a href="Population.html" title="Population">Population</a> • <a href="Species_rights.html" title="Species rights">Species rights</a> • <a href="Ethics.html" title="Ethics">Ethics</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Leaders
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader.html" class="mw-redirect" title="Leader">Leader</a> • <a href="Common_leader_traits.html" title="Common leader traits">Common leader traits</a> • <a href="Commander_traits.html" title="Commander traits">Commander traits</a> • <a href="Official_traits.html" title="Official traits">Official traits</a> • <a href="Scientist_traits.html" title="Scientist traits">Scientist traits</a> • <a href="Paragons.html" title="Paragons">Paragons</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Governance
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a> • <a href="Origin.html" title="Origin">Origin</a> • <a href="Government.html" title="Government">Government</a> • <a href="Civics.html" title="Civics">Civics</a> • <a href="Council.html" title="Council">Council</a> • <a href="Policies.html" title="Policies">Policies</a> • <a href="Edicts.html" title="Edicts">Edicts</a> • <a href="Factions.html" title="Factions">Factions</a> • <a href="Traditions.html" title="Traditions">Traditions</a> • <a href="Ascension_perks.html" title="Ascension perks">Ascension perks</a> • <a href="Ambition.html" title="Ambition">Ambition</a> • <a href="Situations.html" title="Situations">Situations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Economy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Resources.html" title="Resources">Resources</a> • <a href="Planetary_management.html" title="Planetary management">Planetary management</a> • <a href="Districts.html" title="Districts">Districts</a>  • <a href="Jobs.html" title="Jobs">Jobs</a> • <a href="Designation.html" title="Designation">Designation</a> • <a href="Trade.html" class="mw-redirect" title="Trade">Trade</a> • <a href="Megastructures.html" title="Megastructures">Megastructures</a> • <a href="Waystation.html" title="Waystation">Waystation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Buildings
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_capital.html" title="Planet capital">Planet capital</a> • <a href="Buildings.html" title="Buildings">Common buildings</a> • <a href="Planet_unique_buildings.html" title="Planet unique buildings">Planet unique</a> • <a href="Empire_unique_buildings.html" title="Empire unique buildings">Empire unique</a> • <a href="Holdings.html" title="Holdings">Holdings</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Ships
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Ship.html" title="Ship">Ship</a> • <a href="Arkship.html" title="Arkship">Arkship</a> • <a href="Ship_designer.html" title="Ship designer">Ship designer</a> • <a href="Core_components.html" title="Core components">Core components</a> • <a href="Weapon_components.html" title="Weapon components">Weapon components</a> • <a href="Utility_components.html" title="Utility components">Utility components</a> • <a href="Mutations.html" title="Mutations">Mutations</a> • <a href="Offensive_mutations.html" title="Offensive mutations">Offensive mutations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Technology
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Technology.html" title="Technology">Technology</a> • <a href="Physics_research.html" title="Physics research">Physics research</a> • <a href="Society_research.html" title="Society research">Society research</a> • <a href="Engineering_research.html" title="Engineering research">Engineering research</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Diplomacy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a> • <a href="Relations.html" title="Relations">Relations</a> • <a href="Galactic_community.html" class="mw-redirect" title="Galactic community">Galactic community</a> • <a href="Federation.html" title="Federation">Federations</a> • <a href="Subject_empire.html" title="Subject empire">Subject empires</a> • <a href="Intelligence.html" title="Intelligence">Intelligence</a> • <a href="Contracts.html" title="Contracts">Contracts</a> • <a href="AI_personalities.html" title="AI personalities">AI personalities</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Warfare
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Warfare.html" title="Warfare">Warfare</a> • <a href="Space_warfare.html" title="Space warfare">Space warfare</a> • <a href="Land_warfare.html" title="Land warfare">Land warfare</a> • <a href="Starbase.html" title="Starbase">Starbase</a> • <a href="Crisis.html" title="Crisis">Crisis</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Others
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a> • <a href="The_Shroud.html" title="The Shroud">The Shroud</a> • <a href="Preset_empires.html" title="Preset empires">Preset empires</a> • <a href="AI_players.html" title="AI players">AI players</a> • <a href="Stat_modifiers.html" title="Stat modifiers">Stat modifiers</a> • <a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Easter_eggs.html" title="Easter eggs">Easter eggs</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707234944
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.593 seconds
+Real time usage: 0.700 seconds
+Preprocessor visited node count: 45847/1000000
+Post‐expand include size: 203522/2097152 bytes
+Template argument size: 41731/2097152 bytes
+Highest expansion depth: 15/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+Lua time usage: 0.010/7 seconds
+Lua virtual size: 4915200/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  392.942      1 -total
+ 48.71%  191.411    284 Template:Iconify
+ 46.01%  180.776    375 Template:Icon
+ 12.57%   49.391    208 Template:Red
+ 11.84%   46.523    326 Template:Symbolfirst
+  9.91%   38.950      1 Template:Trait
+  6.85%   26.906    116 Template:Green
+  4.80%   18.872     16 Template:Icon_split
+  4.46%   17.536     38 Template:Icon/m
+  4.29%   16.868     92 Template:Icon/f
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:7636-0!canonical and timestamp 20260707234944 and revision id 116190.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

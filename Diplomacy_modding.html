@@ -23,7 +23,7 @@
 <div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
-<p>This page is about the moddings of <a href="Diplomacy.html" title="Diplomacy">Diplomacy</a>, <a href="Subject_empire.html" title="Subject empire">Subjects</a>, <a href="https://stellaris.paradoxwikis.com/Federations" class="mw-redirect" title="Federations">Federations</a>, and <a href="https://stellaris.paradoxwikis.com/Galactic_community" class="mw-redirect" title="Galactic community">galactic community</a>.
+<p>This page is about the moddings of <a href="Diplomacy.html" title="Diplomacy">Diplomacy</a>, <a href="Subject_empire.html" title="Subject empire">Subjects</a>, <a href="Federations.html" class="mw-redirect" title="Federations">Federations</a>, and <a href="Galactic_community.html" class="mw-redirect" title="Galactic community">galactic community</a>.
 </p>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
@@ -326,9 +326,9 @@
 </p><p>Unlike other "perks", the federation perks can't be freely picked. They are bound to the federation level entries.
 </p>
 <h4><span class="mw-headline" id="Data_Structure_8">Data Structure</span></h4>
-<ul><li><b>federation_modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to the Federation scope.</li>
-<li><b>members_modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to all members of the federation, including the president.</li>
-<li><b>leader_modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to only the federation president.</li>
+<ul><li><b>federation_modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> applies to the Federation scope.</li>
+<li><b>members_modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> applies to all members of the federation, including the president.</li>
+<li><b>leader_modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> applies to only the federation president.</li>
 <li><b>on_activate</b> - A block of <a href="Effects.html" title="Effects">Effects</a> executed to the Federation scope when this perk is activated because of level up.</li>
 <li><b>on_deactivate</b> - A block of <a href="Effects.html" title="Effects">Effects</a> executed to the Federation scope when this perk is deactivated because of level down. Used to cancel the effects of <b>on_activate</b>.</li></ul>
 <h4><span class="mw-headline" id="Federation_Perk_Example">Federation Perk Example</span></h4>
@@ -382,7 +382,7 @@
 <h4><span class="mw-headline" id="Data_Structure_10">Data Structure</span></h4>
 <ul><li><b>potential</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine should this federation law option be displayed.</li>
 <li><b>allow</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine can this federation law be voted to activate.</li>
-<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> applies to the Federation scope.</li>
+<li><b>modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> applies to the Federation scope.</li>
 <li><b>on_enact</b> - A block of <a href="Effects.html" title="Effects">Effects</a> executed to the Federation scope when the federation law is changed to this.</li>
 <li><b>ai_weight</b> - Determines AI acceptance to this federation law option.</li></ul>
 <h4><span class="mw-headline" id="Federation_Law_Example">Federation Law Example</span></h4>
@@ -519,7 +519,7 @@ resolution_category_galacticstudies = {
 <ul><li><b>icon</b> - A reference to a GFX instance that indicates the icon of this Resolution.</li>
 <li><b>target</b> - (yes/no) Determines if this resolution needs an empire for a target.</li>
 <li><b>harmful</b> - (yes/no) Determines if the AI should consider this Resolution harmful while choosing the target.</li>
-<li><b>modifier</b> - A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a>. For as long as this Resolution is passed, all members of the galactic community receive these modifiers.</li>
+<li><b>modifier</b> - A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a>. For as long as this Resolution is passed, all members of the galactic community receive these modifiers.</li>
 <li><b>triggered_modifier</b> - Similarly, except each block has a potential block.
 <ul><li><b>potential</b> - A block of <a href="Conditions.html" title="Conditions">Conditions</a> to determine if this block of triggered_modifier should apply to an empire. (Country scope)</li></ul></li>
 <li><b>effect</b> - A block of <a href="Effects.html" title="Effects">Effects</a> to be executed on the proposing empire when this resolution passed. If this resolution needs a target, instead this block is executed on the target empire. (Country scope)</li>
@@ -632,7 +632,7 @@ resolution_category_galacticstudies = {
 	}
 }
 </pre>
-<p>The "resolution_sanctions_economic" statement is a <a href="https://stellaris.paradoxwikis.com/Modifiers#Static_Modifiers" class="mw-redirect" title="Modifiers">Static Modifier</a>, not just a Modifier. A "resolution_sanctions_economic = 1" statement in a modifier block means this block has one time the effect as that Static Modifier while "= 2" means twice.
+<p>The "resolution_sanctions_economic" statement is a <a href="Modifiers.html#Static_Modifiers" class="mw-redirect" title="Modifiers">Static Modifier</a>, not just a Modifier. A "resolution_sanctions_economic = 1" statement in a modifier block means this block has one time the effect as that Static Modifier while "= 2" means twice.
 </p>
 <h3><span class="mw-headline" id="Galactic_Focuses">Galactic Focuses</span></h3>
 <p>Galactic Focuses are defined at "common/galactic_focuses/xxx.txt".
@@ -715,7 +715,7 @@ resolution_category_galacticstudies = {
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -736,21 +736,21 @@ resolution_category_galacticstudies = {
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -787,7 +787,7 @@ resolution_category_galacticstudies = {
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

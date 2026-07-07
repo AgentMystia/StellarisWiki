@@ -96,7 +96,7 @@
 
 <h2><span class="mw-headline" id="Effects">Effects</span></h2>
 <p>Effects are statements to be executed and affect game status. Many game objects and <a href="Event_modding.html" title="Event modding">event modding</a> use this for dynamic effects. Head to effects for full list of effect statements.
-</p><p>Effects must be executed under a <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a>. Head to scopes for details.
+</p><p>Effects must be executed under a <a href="Scope.html" class="mw-redirect" title="Scope">scope</a>. Head to scopes for details.
 </p>
 <h3><span class="mw-headline" id="Scripted_effects">Scripted effects</span></h3>
 <p>There are more than singular statements of effects to be used for an effect. Scripted effects are moddable blocks of effect statements to be used as an effect. They are defined at "<code>common/scripted_effects/xyz.txt</code>".
@@ -280,7 +280,7 @@ common/scripted_triggers/00_scripted_triggers.txt
 </p>
 <h2><span class="mw-headline" id="Conditions">Conditions</span></h2>
 <p>Conditions are statements to be evaluated for a yes or no. Many game objects and <a href="Event_modding.html" title="Event modding">event modding</a> use this for dynamic conditions. Head to <a href="Conditions.html" title="Conditions">conditions</a> for full list of condition statements.
-</p><p>Conditions must be checked on a <a href="https://stellaris.paradoxwikis.com/Scope" class="mw-redirect" title="Scope">scope</a>. Head to scopes for details.
+</p><p>Conditions must be checked on a <a href="Scope.html" class="mw-redirect" title="Scope">scope</a>. Head to scopes for details.
 </p>
 <h3><span class="mw-headline" id="Scripted_triggers">Scripted triggers</span></h3>
 <p>Similarly, there are more than singular statements of conditions to be used for a condition. Scripted triggers are moddable blocks of condition statements to be used as a condition. They are defined at "<code>common/scripted_triggers/xyz.txt</code>".
@@ -360,7 +360,7 @@ Or this:</p><div class="mw-highlight mw-highlight-lang-rust mw-content-ltr" dir=
 <p>Modifiers can also have <code>@</code> variables for their numeric values.
 </p>
 <h2><span class="mw-headline" id="Modifiers">Modifiers</span></h2>
-<p>Since <a href="Patch_3.0.html" title="Patch 3.0">patch 3.0</a><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> there is a <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a> <code>multiplier</code> parameter for <code>add_modifier</code>, were you can multiply numeric values.
+<p>Since <a href="Patch_3.0.html" title="Patch 3.0">patch 3.0</a><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> there is a <a href="Modifiers.html" class="mw-redirect" title="Modifiers">modifiers</a> <code>multiplier</code> parameter for <code>add_modifier</code>, were you can multiply numeric values.
 </p>
 <div class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><pre><span></span><span class="w"> </span><span class="nt">effect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w"> 	</span><span class="err">add_modifier</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
@@ -412,7 +412,7 @@ Or this:</p><div class="mw-highlight mw-highlight-lang-rust mw-content-ltr" dir=
 </p>
 <ul><li><code>has_&lt;scope&gt;_flag = &lt;flag_name&gt;</code></li>
 <li><s><code>had_&lt;scope&gt;_flag = { flag = &lt;flag_name&gt; days = &lt;duration&gt; } </code></s></li></ul>
-<p>Note that <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">modifiers</a> are somewhat similar to flags, but in addition they alter the statistics of the scope they are attached to.
+<p>Note that <a href="Modifiers.html" class="mw-redirect" title="Modifiers">modifiers</a> are somewhat similar to flags, but in addition they alter the statistics of the scope they are attached to.
 </p>
 <h3><span class="mw-headline" id="Dynamic_flags">Dynamic flags</span></h3>
 <p>The flag name may be dynamic, by appending <code>@</code> and a scope (leader, country or title):<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
@@ -423,7 +423,7 @@ Or this:</p><div class="mw-highlight mw-highlight-lang-rust mw-content-ltr" dir=
 <p>For example, if a leader has a leader ID of 140, the saved leader flag will be <code>is_friend_of_140</code>.
 </p><p>They can also be used in triggers: <code>has_leader_flag = is_friend_of_@from</code>
 </p><p>Use of dynamic flags is currently only supported for set|remove_<i>scope</i>_flag commands and has_<i>scope</i>_flag conditions. They cannot be used in the flag line of the create_leader command (flags used in instances other than those listed previously must be static).<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup>
-</p><p>Note that scopes saved as variables in <a href="https://stellaris.paradoxwikis.com/Event_target" class="mw-redirect" title="Event target">event targets</a> can be used in dynamic flags as well.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">&#91;5&#93;</a></sup>
+</p><p>Note that scopes saved as variables in <a href="Event_target.html" class="mw-redirect" title="Event target">event targets</a> can be used in dynamic flags as well.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">&#91;5&#93;</a></sup>
 </p>
 <h2><span class="mw-headline" id="Script_values">Script values</span></h2>
 <p><small><i>Documentation file:</i> <span class="inline-sup" style="background-color:#f9f9f9; color:#333; border:1px solid #ddd; font-family: monospace,Courier;">Stellaris/common/script_values/00_script_values.txt</span> (introduced with <a href="Patch_3.3.html" title="Patch 3.3">patch 3.3</a>)<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">&#91;6&#93;</a></sup></small>
@@ -565,7 +565,7 @@ You can use inline-math based <b>flow control</b> to adjust <u>execution of inli
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -586,21 +586,21 @@ You can use inline-math based <b>flow control</b> to adjust <u>execution of inli
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -637,7 +637,7 @@ You can use inline-math based <b>flow control</b> to adjust <u>execution of inli
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

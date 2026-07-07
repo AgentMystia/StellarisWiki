@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console:Core components - Stellaris Wiki</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Console</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Core components</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.12.<br /><br />This article is for the console version of Stellaris only.</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:right; clear:right; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Ships</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Ship.html" title="Ship">Ship</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Ship_designer.html" title="Ship designer">Ship designer</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Core_components.html" title="Core components">Core components</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Weapon_components.html" title="Weapon components">Weapon components</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Utility_components.html" title="Utility components">Utility components</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Grand_Archive_(DLC).html" title="Grand Archive"><img alt="Grand Archive" src="images/Grand_Archive.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="Mutations.html" title="Mutations">Mutations</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Grand_Archive_(DLC).html" title="Grand Archive"><img alt="Grand Archive" src="images/Grand_Archive.png" decoding="async" loading="lazy" width="18" height="18" data-file-width="45" data-file-height="45" /></a> <a href="Offensive_mutations.html" title="Offensive mutations">Offensive mutations</a></div></div>
+</div>
+</div>
+<p>On the right side of the designer, one can select options for different subsystems of the ship. Most of them are required and it is not possible to design a ship without some version of them, but few of them are optional, having the option to install no subsystem in its slot.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Reactor"><span class="tocnumber">1</span> <span class="toctext">Reactor</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#FTL_drive"><span class="tocnumber">2</span> <span class="toctext">FTL drive</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Computer_system"><span class="tocnumber">3</span> <span class="toctext">Computer system</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Sublight_thrusters"><span class="tocnumber">4</span> <span class="toctext">Sublight thrusters</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Sensors"><span class="tocnumber">5</span> <span class="toctext">Sensors</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Aura"><span class="tocnumber">6</span> <span class="toctext">Aura</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Reactor">Reactor</span></h2>
+<p>A ship's reactor generates power for its other systems, and a new ship design cannot be created if it has negative power. Excess power slightly increases a ship's evasion, movement speed, and damage.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th rowspan="2">Reactor
+</th>
+<th colspan="2">Corvette / Nanite Swarmer
+</th>
+<th colspan="2">Destroyer
+</th>
+<th colspan="2">Cruiser / Riddle Escort
+</th>
+<th colspan="2">Battleship
+</th>
+<th colspan="2">Titan / Enigma Battlecruiser
+</th>
+<th colspan="2">Defense platform
+</th>
+<th colspan="2">Juggernaut / Star-Eater / Paradox Titan
+</th>
+<th>Colossus
+</th>
+<th rowspan="2">Required technology
+</th></tr>
+<tr>
+<th>Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th>
+<th>Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th>
+<th>Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th>
+<th>Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th>
+<th>Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th>
+<th>Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th>
+<th>Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /> Power
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_reactor_1.png" class="image"><img alt="Ship part reactor 1.png" src="images/Ship_part_reactor_1.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Fission Reactor
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 10</td>
+<td>75
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 20</td>
+<td>140
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 40</td>
+<td>280
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 80</td>
+<td>550
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 160</td>
+<td>1100
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 20</td>
+<td>200
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 560</td>
+<td>3850
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><a href="Fission_Power.html" title="Fission Power"><img alt="Tech fission power.png" src="images/Tech_fission_power.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Fission Power
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_reactor_2.png" class="image"><img alt="Ship part reactor 2.png" src="images/Ship_part_reactor_2.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Fusion Reactor
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 13</td>
+<td>100
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 26</td>
+<td>180
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 52</td>
+<td>360
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 104</td>
+<td>720
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 208</td>
+<td>1450
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 26</td>
+<td>260
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 730</td>
+<td>5000
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><a href="Fusion_Power.html" title="Fusion Power"><img alt="Tech fusion power.png" src="images/Tech_fusion_power.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Fusion Power
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_reactor_3.png" class="image"><img alt="Ship part reactor 3.png" src="images/Ship_part_reactor_3.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Cold Fusion Reactor
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 17</td>
+<td>130
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 34</td>
+<td>240
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 68</td>
+<td>480
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 136</td>
+<td>950
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 272</td>
+<td>1900
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 34</td>
+<td>340
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 950</td>
+<td>6500
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><a href="Physics_research.html#Cold_Fusion_Power" title="Cold Fusion Power"><img alt="Cold Fusion Power" src="images/Tech_cold_fusion_power.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Cold Fusion Power
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_reactor_4.png" class="image"><img alt="Ship part reactor 4.png" src="images/Ship_part_reactor_4.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Antimatter Reactor
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 22</td>
+<td>170
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 44</td>
+<td>320
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 88</td>
+<td>620
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 176</td>
+<td>1250
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 352</td>
+<td>2500
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 44</td>
+<td>440
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1230</td>
+<td>8460
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><a href="Physics_research.html#Antimatter_Power" title="Antimatter Power"><img alt="Antimatter Power" src="images/Tech_antimatter_power.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Antimatter Power
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_reactor_5.png" class="image"><img alt="Ship part reactor 5.png" src="images/Ship_part_reactor_5.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Zero-Point Reactor
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 28</td>
+<td>220
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 56</td>
+<td>430
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 112</td>
+<td>800
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 224</td>
+<td>1550
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 448</td>
+<td>3200
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 56</td>
+<td>575
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1600</td>
+<td>11000
+</td>
+<td>10000
+</td>
+<td><a href="Zero_Point_Power.html" title="Zero Point Power"><img alt="Tech zero point power.png" src="images/Tech_zero_point_power.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Zero Point Power
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_dark_matter_power_core.png" class="image"><img alt="Ship part dark matter power core.png" src="images/Ship_part_dark_matter_power_core.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Dark Matter Reactor
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 37<br /><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1</td>
+<td>285
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 74<br /><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 2</td>
+<td>550
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 148<br /><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 4</td>
+<td>1030
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 296<br /><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 8</td>
+<td>2000
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 592<br /><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 16</td>
+<td>4200
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 74<br /><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 4</td>
+<td>750
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 2080<br /><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 32</td>
+<td>14300
+</td>
+<td>10000
+</td>
+<td><a href="Physics_research.html#Dark_Matter_Power" title="Dark Matter Power"><img alt="Dark Matter Power" src="images/Tech_enigmatic_power_core.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Dark Matter Power
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="FTL_drive">FTL drive</span></h2>
+<p>This subsystem is optional, although without an FTL drive the ship is incapable of moving between systems.
+</p><p>Jump drives allow the ship to make a direct jump within a limited range, indicated by a yellow dotted circle. Initiate a jump by selecting the fleet, clicking the "Initiate Jump" button and left-clicking the target. After jumping the fleet spends 200 days recharging, during which time it suffers <span class="effect-red" style="font-weight:bold;">−50%</span> sublight speed and weapons damage.
+</p>
+<table class="mildtable" style="text-align: center;">
+<tbody><tr>
+<th>FTL drive
+</th>
+<th><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Cost
+</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" />&#32;Power
+</th>
+<th><a href="Ship_disengagement_chance.html" title="Ship disengagement chance"><img alt="Mod ship disengagement.png" src="images/Mod_ship_disengagement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Disengagement Opportunities
+</th>
+<th>Hyper jump
+</th>
+<th><a href="https://stellaris.paradoxwikis.com/File%3AFleet_action_button_jump.png" class="image"><img alt="Fleet action button jump.png" src="images/Fleet_action_button_jump.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Tactical jump
+</th>
+<th>Required technology
+</th>
+<th>Crisis date
+</th>
+<th width="30%">Description
+</th></tr>
+<tr>
+<td align="left"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_subspace_drive.png" class="image"><img alt="Ship part subspace drive.png" src="images/Ship_part_subspace_drive.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Subspace Drive
+</td>
+<td>5
+</td>
+<td>5
+</td>
+<td>0
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> <span class="effect-green" style="font-weight:bold;">−25%</span> Cooldown<br /><span class="effect-red" style="font-weight:bold;">−50%</span> Range
+</td>
+<td><a href="Subspace_Drive.html" title="Subspace Drive"><img alt="Tech subspace drive.png" src="images/Tech_subspace_drive.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Subspace Drive
+</td>
+<td><span class="effect-green" style="font-weight:bold;">regular</span>
+</td>
+<td align="left"><i>The Subspace Drive creates microtears in spacetime, allowing vessels to jump to nearby systems. The process becomes incredibly unstable if longer jumps are attempted.</i>
+</td></tr>
+<tr>
+<td align="left"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_hyper_drive_1.png" class="image"><img alt="Ship part hyper drive 1.png" src="images/Ship_part_hyper_drive_1.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Hyper Drive I
+</td>
+<td>5
+</td>
+<td>10
+</td>
+<td>1
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" />
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><a href="Hyperspace_Travel.html" title="Hyperspace Travel"><img alt="Tech hyper drive 1.png" src="images/Tech_hyper_drive_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Hyperspace Travel
+</td>
+<td><span class="effect-green" style="font-weight:bold;">regular</span>
+</td>
+<td align="left"><i>Ships equipped with Hyper Drives travel swiftly between the edges of star systems along interstellar hyperlanes.</i>
+</td></tr>
+<tr>
+<td align="left"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_hyper_drive_2.png" class="image"><img alt="Ship part hyper drive 2.png" src="images/Ship_part_hyper_drive_2.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Hyper Drive II
+</td>
+<td>10
+</td>
+<td>15
+</td>
+<td>1
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> <span class="effect-green" style="font-weight:bold;">−25%</span> Charge time
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><a href="Hyperlane_Breach_Points.html" title="Hyperlane Breach Points"><img alt="Tech hyper drive 2.png" src="images/Tech_hyper_drive_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Hyperlane Breach Points
+</td>
+<td><span class="effect-green" style="font-weight:bold;">regular</span>
+</td>
+<td align="left"><i>Ships equipped with Hyper Drives travel swiftly between the edges of star systems along interstellar hyperlanes.</i>
+</td></tr>
+<tr>
+<td align="left"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_hyper_drive_3.png" class="image"><img alt="Ship part hyper drive 3.png" src="images/Ship_part_hyper_drive_3.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Hyper Drive III
+</td>
+<td>15
+</td>
+<td>20
+</td>
+<td>1
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> <span class="effect-green" style="font-weight:bold;">−50%</span> Charge time
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" />
+</td>
+<td><a href="Hyperspace_Slipstreams.html" title="Hyperspace Slipstreams"><img alt="Tech hyper drive 3.png" src="images/Tech_hyper_drive_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Hyperspace Slipstreams
+</td>
+<td><span class="effect-green" style="font-weight:bold;">regular</span>
+</td>
+<td align="left"><i>Ships equipped with Hyper Drives travel swiftly between the edges of star systems along interstellar hyperlanes.</i>
+</td></tr>
+<tr>
+<td align="left"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_jump_drive_1.png" class="image"><img alt="Ship part jump drive 1.png" src="images/Ship_part_jump_drive_1.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Jump Drive
+</td>
+<td>20
+</td>
+<td>30
+</td>
+<td>1
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> <span class="effect-green" style="font-weight:bold;">−70%</span> Charge time
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" />
+</td>
+<td><a href="Jump_Drive_tech.html" title="Jump Drive tech"><img alt="Tech jump drive 1.png" src="images/Tech_jump_drive_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Jump Drive
+</td>
+<td><span class="effect-red" style="font-weight:bold;">25 years earlier</span>
+</td>
+<td align="left"><i>The Jump Drive tears ship-sized holes in the very fabric of reality, allowing for near-instantaneous movement between systems. The nature of the space the ship passes through on this journey is still poorly understood.</i>
+</td></tr>
+<tr>
+<td align="left"><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_psi_jump_drive_1.png" class="image"><img alt="Ship part psi jump drive 1.png" src="images/Ship_part_psi_jump_drive_1.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Psi Jump Drive
+</td>
+<td>20
+</td>
+<td>30
+</td>
+<td>2
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> <span class="effect-green" style="font-weight:bold;">−80%</span> Charge time
+</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /> <span class="effect-green" style="font-weight:bold;">+50%</span> Range
+</td>
+<td><a href="Psi_Jump_Drives.html" title="Psi Jump Drives"><img alt="Tech psi jump drive 1.png" src="images/Tech_psi_jump_drive_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Psi Jump Drives
+</td>
+<td><span class="effect-red" style="font-weight:bold;">25 years earlier</span>
+</td>
+<td align="left"><i>The Psi Jump Drive harnesses the psionic potential of the ship's crew to warp the local space-time continuum, eliminating the distance between the point of origin and the destination. Supposedly.</i>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Computer_system">Computer system</span></h2>
+<p>This component predominantly improves fire-rate as well as various performance, like evasion, tracking, accuracy, or weapons range, depending on behavior type.
+</p><p>When in combat, every military ship will advance to within a certain distance of its target and fire its weapons. The engagement range is determined by the ship's designated role and the effective range of the ship's weapons. Weapon range modifiers will also increase this range. Ships that have similar roles will typically cluster together, stay in formation with each other and attack in groups.
+</p>
+<ul><li><b>Swarm:</b> The ship will charge straight at enemies and try to deal as much damage as possible from the range of their shortest range weapon.</li>
+<li><b>Torpedo:</b> The ship will charge straight at enemies in strafing runs.</li>
+<li><b>Picket:</b> The ship will advance to medium range and attempt to intercept incoming enemies.</li>
+<li><b>Line:</b> The ship will hold advance to medium range and hold formation.</li>
+<li><b>Artillery:</b> The ship will stay at long range, firing its longest range weapons on the target.</li>
+<li><b>Carrier:</b> The ship will stay at the maximum engagement range of its hangars.</li>
+<li><b>Platform:</b> The defensive platform will remain stationary and fire at any enemies in range.</li>
+<li><b>Colossus:</b> The ship will ignore any attackers and carry on with its current task.</li></ul>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th rowspan="2">Level</th>
+<th rowspan="2"><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a></th>
+<th rowspan="2"><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" /></th>
+<th colspan="9" style="text-align: center;">Effects
+</th></tr>
+<tr>
+<th>Swarm</th>
+<th>Torpedo</th>
+<th>Picket</th>
+<th>Line</th>
+<th>Artillery</th>
+<th>Carrier</th>
+<th>Platform</th>
+<th>Starbase</th>
+<th>Colossus
+</th></tr>
+<tr id="Basic_Combat_Computer">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_computer_default.png" class="image"><img alt="Ship part computer default.png" src="images/Ship_part_computer_default.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="58" data-file-height="58" /></a> Basic</td>
+<td>0</td>
+<td>5
+</td>
+<td>Default for corvette
+</td>
+<td>Default for frigate
+</td>
+<td>Default for destroyer
+</td>
+<td>Default for cruiser<br />Default for star-eater
+</td>
+<td>Default for battleship<br />Default for titan
+</td>
+<td>Default for juggernaut
+</td>
+<td>n/a
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+10</span> Tracking</li></ul>
+</td>
+<td>Only option
+</td></tr>
+<tr id="Combat_Computer">
+<td><a href="Specialized_Combat_Computers.html" title="Specialized Combat Computers"><img alt="Tech combat computers 1.png" src="images/Tech_combat_computers_1.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="52" data-file-height="52" /></a> Specialized</td>
+<td>5</td>
+<td>10
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Fire rate</li>
+<li><a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Evasion</li></ul>
+</td>
+<td><a href="Damage.html" title="Damage"><img alt="Damage.png" src="images/Damage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Explosive weapons damage
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+10</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Fire rate</li>
+<li><a href="https://stellaris.paradoxwikis.com/Chance_to_hit" title="Chance to hit"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Chance to hit</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Fire rate</li>
+<li><a href="Ship_weapons_range.html" title="Ship weapons range"><img alt="Mod ship damage mult.png" src="images/Mod_ship_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Weapons range</li></ul>
+</td>
+<td>
+<ul><li><span class="effect-green" style="font-weight:bold;">+25%</span> Engagement range</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+25%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+15</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+20</span> Tracking</li></ul>
+</td>
+<td>n/a
+</td></tr>
+<tr id="Advanced_Combat_Computer">
+<td><a href="Physics_research.html#Extended_Combat_Algorithms" title="Extended Combat Algorithms"><img alt="Extended Combat Algorithms" src="images/Tech_combat_computers_2.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="52" data-file-height="52" /></a> Advanced</td>
+<td>10</td>
+<td>15
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Fire rate</li>
+<li><a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Evasion</li></ul>
+</td>
+<td><a href="Damage.html" title="Damage"><img alt="Damage.png" src="images/Damage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Explosive weapons damage
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+20</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Fire rate</li>
+<li><a href="https://stellaris.paradoxwikis.com/Chance_to_hit" title="Chance to hit"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Chance to hit</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Fire rate</li>
+<li><a href="Ship_weapons_range.html" title="Ship weapons range"><img alt="Mod ship damage mult.png" src="images/Mod_ship_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Weapons range</li></ul>
+</td>
+<td>
+<ul><li><span class="effect-green" style="font-weight:bold;">+50%</span> Engagement range</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+30%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+20</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+30</span> Tracking</li></ul>
+</td>
+<td>n/a
+</td></tr>
+<tr id="Sapient_Combat_Computer">
+<td><a href="Sapient_Combat_Simulations.html" title="Sapient Combat Simulations"><img alt="Tech combat computers 3.png" src="images/Tech_combat_computers_3.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="52" data-file-height="52" /></a> Sapient<br /><a href="Physics_research.html#Autonomous_Ship_Intellects" title="Autonomous Ship Intellects"><img alt="Autonomous Ship Intellects" src="images/Tech_sapient_ai.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="52" data-file-height="52" /></a> Autonomous<div style="float:left; position:absolute;"><span style=""><span id="Autonomous_Ship_Intellect"></span></span></div></td>
+<td>20</td>
+<td>25
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Fire rate</li>
+<li><a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+25%</span> Evasion</li></ul>
+</td>
+<td>
+<ul><li><a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Evasion</li>
+<li><a href="Damage.html" title="Damage"><img alt="Damage.png" src="images/Damage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Explosive weapons damage</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+30</span> Tracking</li>
+<li><a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Evasion</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Fire rate</li>
+<li><a href="https://stellaris.paradoxwikis.com/Chance_to_hit" title="Chance to hit"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Chance to hit</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Fire rate</li>
+<li><a href="Ship_weapons_range.html" title="Ship weapons range"><img alt="Mod ship damage mult.png" src="images/Mod_ship_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Weapons range</li></ul>
+</td>
+<td>
+<ul><li><span class="effect-green" style="font-weight:bold;">+100%</span> Engagement range</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+35%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+25</span> Tracking</li>
+<li><a href="https://stellaris.paradoxwikis.com/Chance_to_hit" title="Chance to hit"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+10%</span> Chance to hit</li></ul>
+</td>
+<td>n/a
+</td>
+<td>n/a
+</td></tr>
+<tr id="Precognitive_Interface">
+<td><a href="Precognition_Interface.html" title="Precognition Interface"><img alt="Tech precognition interface.png" src="images/Tech_precognition_interface.png" decoding="async" loading="lazy" width="32" height="32" data-file-width="52" data-file-height="52" /></a> Precognitive</td>
+<td>20</td>
+<td>25
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Fire rate</li>
+<li><a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Evasion</li>
+<li><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Sublight speed</li></ul>
+</td>
+<td>
+<ul><li><a href="Damage.html" title="Damage"><img alt="Damage.png" src="images/Damage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Explosive weapons damage</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+10</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+40</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Fire rate</li>
+<li><a href="https://stellaris.paradoxwikis.com/Chance_to_hit" title="Chance to hit"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Chance to hit</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+10</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Fire rate</li>
+<li><a href="Ship_weapons_range.html" title="Ship weapons range"><img alt="Mod ship damage mult.png" src="images/Mod_ship_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Weapons range</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+10</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><span class="effect-green" style="font-weight:bold;">+75%</span> Engagement range</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+10</span> Tracking</li></ul>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+35%</span> Fire rate</li>
+<li><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" /> <span class="effect-green" style="font-weight:bold;">+35</span> Tracking</li></ul>
+</td>
+<td>n/a
+</td>
+<td>n/a
+</td></tr>
+<tr>
+<th colspan="3">Allowed ship types
+</th>
+<td>Corvette
+</td>
+<td>
+<ul><li>Frigate</li>
+<li>Cruiser</li></ul>
+</td>
+<td>
+<ul><li>Corvette</li>
+<li>Destroyer</li>
+<li>Cruiser</li></ul>
+</td>
+<td>
+<ul><li>Destroyer</li>
+<li>Cruiser</li>
+<li>Battleship</li>
+<li>Star-eater</li></ul>
+</td>
+<td>
+<ul><li>Frigate</li>
+<li>Destroyer</li>
+<li>Cruiser</li>
+<li>Battleship</li>
+<li>Titan</li>
+<li>Juggernaut</li>
+<li>Star-eater</li></ul>
+</td>
+<td>
+<ul><li>Cruiser</li>
+<li>Battleship</li>
+<li>Titan</li>
+<li>Juggernaut</li>
+<li>Star-eater</li></ul>
+</td>
+<td>
+<ul><li>Defense platform</li>
+<li>Ion Cannon</li></ul>
+</td>
+<td>
+<ul><li>Starbase</li>
+<li>Orbital Ring</li></ul>
+</td>
+<td>Colossus
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Sublight_thrusters">Sublight thrusters</span></h2>
+<p>The sublight thrusters determine how fast the ship maneuvers within a star system and increase its <a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a>&#32;Evasion.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th rowspan="2" style="width:300px;">Name
+</th>
+<th colspan="6" style="text-align: center;">Cost
+</th>
+<th colspan="6" style="text-align: center;"><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" />&#32;Power
+</th>
+<th colspan="6" style="text-align: center;"><a href="Evasion.html" title="Evasion"><img alt="Evasion.png" src="images/Evasion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Chance to Evade
+</th>
+<th rowspan="2"><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Sublight Speed
+</th></tr>
+<tr>
+<th>Corvette</th>
+<th>Destroyer</th>
+<th>Cruiser</th>
+<th>Battleship</th>
+<th>Titan</th>
+<th>Colossal ships
+</th>
+<th>Corvette</th>
+<th>Destroyer</th>
+<th>Cruiser</th>
+<th>Battleship</th>
+<th>Titan</th>
+<th>Colossal ships
+</th>
+<th>Corvette</th>
+<th>Destroyer</th>
+<th>Cruiser</th>
+<th>Battleship</th>
+<th>Titan</th>
+<th>Colossal ships
+</th></tr>
+<tr>
+<td><div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_thruster_1.png" class="image" title="Chemical Thrusters"><img alt="Chemical Thrusters" src="images/Ship_part_thruster_1.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></div><div id="Chemical_Thrusters" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Chemical Thrusters</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">Simple yet moderately effective chemical thrusters that rely on combustible propellant to generate thrust.</div></div></div>
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 3</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 6</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 12</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 24</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 48</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 60</td>
+<td>10</td>
+<td>20</td>
+<td>40</td>
+<td>80</td>
+<td>160</td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td><div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_thruster_2.png" class="image" title="Ion Thrusters"><img alt="Ion Thrusters" src="images/Ship_part_thruster_2.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></div><div id="Ion_Thrusters" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Ion Thrusters</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">These electric thrusters use beams of ions to generate thrust without the need for propellant.</div></div></div>
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 6</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 12</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 24</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 48</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 96</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 120</td>
+<td>15</td>
+<td>30</td>
+<td>60</td>
+<td>120</td>
+<td>240</td>
+<td>300</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+4</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+3</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+2</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+1</span></td>
+<td></td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_thruster_3.png" class="image" title="Plasma Thrusters"><img alt="Plasma Thrusters" src="images/Ship_part_thruster_3.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></div><div id="Plasma_Thrusters" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Plasma Thrusters</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">An advanced form of electric propulsion, plasma thrusters afford ships greater sublight speeds and maneuverability.</div></div></div>
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 9</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 18</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 36</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 72</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 144</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 180</td>
+<td>20</td>
+<td>40</td>
+<td>80</td>
+<td>160</td>
+<td>320</td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+8</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+6</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+4</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+2</span></td>
+<td></td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_thruster_4.png" class="image" title="Impulse Thrusters"><img alt="Impulse Thrusters" src="images/Ship_part_thruster_4.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></div><div id="Impulse_Thrusters" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Impulse Thrusters</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">These highly advanced fusion-powered thrusters provide ships with unmatched maneuverability and speed under sublight conditions.</div></div></div>
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 12</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 24</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 48</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 96</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 192</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 240</td>
+<td>25</td>
+<td>50</td>
+<td>100</td>
+<td>200</td>
+<td>400</td>
+<td>500</td>
+<td><span class="effect-green" style="font-weight:bold;">+15</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+12</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+9</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+6</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+3</span></td>
+<td></td>
+<td><span class="effect-green" style="font-weight:bold;">+75%</span>
+</td></tr>
+<tr>
+<td><div style="display:flex; align-items:center; gap:5px"><div><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_thruster_5.png" class="image" title="Dark Matter Thrusters"><img alt="Dark Matter Thrusters" src="images/Ship_part_thruster_5.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></div><div id="Dark_Matter_Thrusters" style="text-align:left;"><div style="font-size:larger; font-weight:bold; line-height:1.2em;">Dark Matter Thrusters</div><div style="font-size:smaller; font-weight:normal; font-style:italic; line-height:1.2em; margin-top:2px;">These ship thrusters utilize Dark Matter technology to generate propulsion in a manner that appears to defy numerous laws of physics.</div></div></div>
+</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 12<br /> <a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 1</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 24<br /> <a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 2</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 48<br /> <a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 4</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 96<br /> <a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 8</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 192<br /> <a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 16</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300<br /> <a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 32</td>
+<td>30</td>
+<td>60</td>
+<td>120</td>
+<td>240</td>
+<td>480</td>
+<td>600</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+16</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+12</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+8</span></td>
+<td><span class="effect-green" style="font-weight:bold;">+4</span></td>
+<td></td>
+<td><span class="effect-green" style="font-weight:bold;">+125%</span>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Sensors">Sensors</span></h2>
+<p>Sensors determine the ship's detection range on the galaxy map. They also increase tracking of all weapon systems, which is related to accuracy.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th style="width:300px;">Name</th>
+<th><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Cost</th>
+<th><img alt="Power" src="images/Power.png" decoding="async" loading="lazy" title="Power" width="24" height="24" data-file-width="28" data-file-height="28" />&#32;Power</th>
+<th><img alt="Tracking" src="images/Tracking.png" decoding="async" loading="lazy" title="Tracking" width="24" height="24" data-file-width="28" data-file-height="28" />&#32;Tracking</th>
+<th><a href="Sensor_range.html" title="Sensor range"><img alt="Mod planet sensor range mult.png" src="images/Mod_planet_sensor_range_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Sensor range</th>
+<th><a href="Sensor_range.html" title="Sensor range"><img alt="Mod planet sensor range mult.png" src="images/Mod_planet_sensor_range_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> Hyperlane detection range</th>
+<th>Required technology</th>
+<th width="35%">Description
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_sensor_1.png" class="image"><img alt="Ship part sensor 1.png" src="images/Ship_part_sensor_1.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Radar System
+</td>
+<td>2
+</td>
+<td>5
+</td>
+<td>
+</td>
+<td>1
+</td>
+<td>2
+</td>
+<td>
+</td>
+<td><i>A planet-bound technology adapted for use in deep space, the radar system provides basic detection and tracking capability for interstellar vessels.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_sensor_2.png" class="image"><img alt="Ship part sensor 2.png" src="images/Ship_part_sensor_2.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Gravitic Sensors
+</td>
+<td>4
+</td>
+<td>10
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span>
+</td>
+<td>2
+</td>
+<td>3
+</td>
+<td><a href="Physics_research.html#Gravitic_Sensors" title="Gravitic Sensors"><img alt="Gravitic Sensors" src="images/Tech_sensors_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Gravitic Sensors
+</td>
+<td><i>These sensors have been tuned to look for any gravitational changes in space, such as those produced by the presence of a starship.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_sensor_3.png" class="image"><img alt="Ship part sensor 3.png" src="images/Ship_part_sensor_3.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Subspace Sensors
+</td>
+<td>6
+</td>
+<td>15
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span>
+</td>
+<td>3
+</td>
+<td>4
+</td>
+<td><a href="Subspace_Sensors_Tech.html" title="Subspace Sensors"><img alt="Subspace Sensors" src="images/Tech_sensors_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Subspace Sensors
+</td>
+<td><i>Sensors that detect subspace fluctuations left in the wake of traveling starships. Their sensitivity and range are greater than that of a gravitic sensor array.</i>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_sensor_4.png" class="image"><img alt="Ship part sensor 4.png" src="images/Ship_part_sensor_4.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a> Tachyon Sensors
+</td>
+<td>8
+</td>
+<td>20
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+15</span>
+</td>
+<td>4
+</td>
+<td>5
+</td>
+<td><a href="Tachyon_Sensors_Tech.html" title="Tachyon Sensors Tech"><img alt="Tech sensors 4.png" src="images/Tech_sensors_4.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Tachyon Sensors
+</td>
+<td><i>Advanced sensors that rely on rotating tachyon beams to detect ship movements even at extreme distances.</i>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Aura">Aura</span></h2>
+<p>All offensive auras apply a debuff to all enemy ships that are in the system. A titan's defensive aura gives a buff to allied ships in the same fleet while a starbase, juggernaut, offspring ship's defensive aura gives a buff to all allied ships in the system. Multiple instances of same aura do not stack.
+</p>
+<table class="mildtable plainlist">
+<tbody><tr>
+<th colspan="2">Aura
+</th>
+<th>Ship
+</th>
+<th>Target
+</th>
+<th>Effects
+</th></tr>
+<tr id="FTL_Inhibitor">
+<td>File:Subspace Snare.png</td>
+<td>FTL Inhibitor
+</td>
+<td>Starbase (Starport and above)
+</td>
+<td><span class="effect-red" style="font-weight:bold;">Hostiles</span>
+</td>
+<td>
+<ul><li><a href="Ship_disengagement_chance.html" title="Ship disengagement chance"><img alt="Mod ship disengagement.png" src="images/Mod_ship_disengagement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Emergency FTL Jump Cooldown</li>
+<li><a href="https://stellaris.paradoxwikis.com/File%3AFTL_magnet.png" class="image"><img alt="FTL magnet.png" src="images/FTL_magnet.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Enemy ships can only leave the system via the hyperlane they arrived through</li></ul>
+</td></tr>
+<tr id="Quantum_Destabilizer">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_quantum_destabilizer.png" class="image"><img alt="Quantum Destabilizer.png" src="images/Ship_part_aura_quantum_destabilizer.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Quantum Destabilizer
+</td>
+<td>
+<ul><li><a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Titan</li>
+<li><a href="The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Paradox Titan</li></ul>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">Hostiles</span>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−10%</span> Fire Rate
+</td></tr>
+<tr id="Shield_Dampener">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_shield_dampener.png" class="image"><img alt="Shield Dampener.png" src="images/Ship_part_aura_shield_dampener.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Shield Dampener
+</td>
+<td>
+<ul><li><a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Titan</li>
+<li><a href="The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Paradox Titan</li></ul>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">Hostiles</span>
+</td>
+<td><a href="Ship_shield.html" title="Ship shield"><img alt="Mod ship shield hp mult.png" src="images/Mod_ship_shield_hp_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a> <span class="effect-red" style="font-weight:bold;">−20%</span>  Shield Hit Points
+</td></tr>
+<tr id="Subspace_Snare">
+<td>File:Subspace Snare.png</td>
+<td>Subspace Snare
+</td>
+<td>
+<ul><li><a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Titan</li>
+<li><a href="The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Paradox Titan</li></ul>
+</td>
+<td><span class="effect-red" style="font-weight:bold;">Hostiles</span>
+</td>
+<td>
+<ul><li><a href="Ship_disengagement_chance.html" title="Ship disengagement chance"><img alt="Mod ship disengagement.png" src="images/Mod_ship_disengagement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">+100%</span> Emergency FTL Jump Cooldown</li>
+<li><a href="Ship_disengagement_chance.html" title="Ship disengagement chance"><img alt="Mod ship disengagement.png" src="images/Mod_ship_disengagement.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−20%</span> Combat Disengagement Chance</li></ul>
+</td></tr>
+<tr id="Inspiring_Presence">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_inspiring_presence.png" class="image"><img alt="Ship part aura inspiring presence.png" src="images/Ship_part_aura_inspiring_presence.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Inspiring Presence
+</td>
+<td>
+<ul><li><a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Titan</li>
+<li><a href="The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Paradox Titan</li></ul>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Fleet</span>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Fire Rate
+</td></tr>
+<tr id="Ancient_Target_Scrambler">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_detection_scrambler.png" class="image"><img alt="Ship part aura detection scrambler.png" src="images/Ship_part_aura_detection_scrambler.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Ancient Target Scrambler
+</td>
+<td>
+<ul><li><a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Titan</li>
+<li><a href="The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Paradox Titan</li></ul>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Fleet</span>
+</td>
+<td><a href="Ship_evasion.html" title="Ship evasion"><img alt="Mod ship evasion mult.png" src="images/Mod_ship_evasion_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Chance to Evade
+</td></tr>
+<tr id="Nanobot_Cloud">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_nanobot.png" class="image"><img alt="Nanobot Cloud.png" src="images/Ship_part_aura_nanobot.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Nanobot Cloud
+</td>
+<td>
+<ul><li><a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Titan</li>
+<li><a href="The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Paradox Titan</li></ul>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Fleet</span>
+</td>
+<td>
+<ul><li><a href="https://stellaris.paradoxwikis.com/Ship_hull_regen" title="Ship hull regen"><img alt="Mod ship hull regen.png" src="images/Mod_ship_hull_regen.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+5%</span> Daily Hull Regen</li>
+<li><a href="https://stellaris.paradoxwikis.com/Ship_hull_regen" title="Ship hull regen"><img alt="Mod ship hull regen.png" src="images/Mod_ship_hull_regen.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+15%</span> Daily Armor Regen</li></ul>
+</td></tr>
+<tr id="Targeting_Grid">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_targeting_grid.png" class="image"><img alt="Ship part aura targeting grid.png" src="images/Ship_part_aura_targeting_grid.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Targeting Grid
+</td>
+<td>
+<ul><li><a href="Apocalypse.html" title="Apocalypse"><img alt="Apocalypse.png" src="images/Apocalypse.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Titan</li>
+<li><a href="The_Machine_Age.html" title="The Machine Age"><img alt="The Machine Age.png" src="images/The_Machine_Age.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Paradox Titan</li></ul>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Fleet</span>
+</td>
+<td><a href="Ship_tracking.html" title="Ship tracking"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+10</span> Tracking
+</td></tr>
+<tr id="ECM_Emitters">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_pd_penetration.png" class="image"><img alt="Ship part aura pd penetration.png" src="images/Ship_part_aura_pd_penetration.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>ECM Emitters
+</td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Juggernaut
+</td>
+<td><span class="effect-red" style="font-weight:bold;">Hostiles</span>
+</td>
+<td>
+<ul><li><a href="Ship_weapons_damage.html" title="Ship weapons damage"><img alt="Mod ship damage mult.png" src="images/Mod_ship_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−30%</span> Point Defense Damage</li>
+<li><a href="https://stellaris.paradoxwikis.com/Ship_fire_rate" title="Ship fire rate"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−30%</span> Point Defense Firing Rate</li></ul>
+</td></tr>
+<tr id="Munitions_Plant">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_bombardment.png" class="image"><img alt="Ship part aura bombardment.png" src="images/Ship_part_aura_bombardment.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Munitions Plant
+</td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Juggernaut
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Allies</span>
+</td>
+<td><a href="Damage.html" title="Damage"><img alt="Damage.png" src="images/Damage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> <span class="effect-green" style="font-weight:bold;">+30%</span> Orbital Bombardment Damage
+</td></tr>
+<tr id="Strike_Command">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_strike_craft.png" class="image"><img alt="Ship part aura strike craft.png" src="images/Ship_part_aura_strike_craft.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Strike Command
+</td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Juggernaut
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Allies</span>
+</td>
+<td>
+<ul><li><a href="Ship_weapons_damage.html" title="Ship weapons damage"><img alt="Mod ship damage mult.png" src="images/Mod_ship_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Strike Craft Damage</li>
+<li><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+20%</span> Strike Craft Speed</li></ul>
+</td></tr>
+<tr id="Subspace_Amplifier">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_hyperlane.png" class="image"><img alt="Ship part aura hyperlane.png" src="images/Ship_part_aura_hyperlane.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Subspace Amplifier
+</td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Juggernaut
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Allies</span>
+</td>
+<td>
+<ul><li><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">−40%</span> Hyper Jump Charge Time</li>
+<li><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">−40%</span> Hyper Jump Cooldown</li>
+<li><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">−40%</span> Jump Drive Cooldown</li></ul>
+</td></tr>
+<tr id="Target_Acquisition_Array">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_range.png" class="image"><img alt="Ship part aura range.png" src="images/Ship_part_aura_range.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Target Acquisition Array
+</td>
+<td><a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Juggernaut
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Allies</span>
+</td>
+<td><a href="Ship_weapons_range.html" title="Ship weapons range"><img alt="Mod ship damage mult.png" src="images/Mod_ship_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+40%</span> Ship Weapons Range
+</td></tr>
+<tr id="Offspring_Oversight">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_offspring_aura.png" class="image"><img alt="Ship part offspring aura.png" src="images/Ship_part_offspring_aura.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Offspring Oversight
+</td>
+<td><a href="Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Offspring ships
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Allies</span>
+</td>
+<td>
+<ul><li><a href="Ship_accuracy.html" title="Ship accuracy"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-green" style="font-weight:bold;">+55%</span> Accuracy</li>
+<li><a href="Ship_evasion.html" title="Ship evasion"><img alt="Mod ship evasion mult.png" src="images/Mod_ship_evasion_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+55%</span> Evasion</li>
+<li><a href="https://stellaris.paradoxwikis.com/Ship_attack_speed" title="Ship attack speed"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+55%</span> Ship Fire Rate</li>
+<li><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+55%</span> Sublight Speed</li></ul>
+</td></tr>
+<tr id="Bulwark_Battlefield_Repairs">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_battlefield_repairs.png" class="image"><img alt="Ship part aura battlefield repairs.png" src="images/Ship_part_aura_battlefield_repairs.png" decoding="async" loading="lazy" width="58" height="58" data-file-width="58" data-file-height="58" /></a></td>
+<td>Bulwark Battlefield Repairs
+</td>
+<td><a href="Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Battlewright construction ship
+</td>
+<td><span class="effect-green" style="font-weight:bold;">Allies</span>
+</td>
+<td><a href="https://stellaris.paradoxwikis.com/Ship_hull_regen" title="Ship hull regen"><img alt="Mod ship hull regen.png" src="images/Mod_ship_hull_regen.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-green" style="font-weight:bold;">+0.25%</span> Daily Hull Regen
+</td></tr>
+<tr id="Electromagnetic_Disruptor">
+<td>File:Subspace Snare.png</td>
+<td>Electromagnetic Disruptor
+</td>
+<td><a href="Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Arctrellis science ship
+</td>
+<td><span class="effect-red" style="font-weight:bold;">Hostiles</span>
+</td>
+<td>
+<ul><li>Only applies to ships if they're owned by a <a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence empire or using a <a href="Sapient_Combat_Simulations.html" title="Sapient Combat Simulations"><img alt="Tech combat computers 3.png" src="images/Tech_combat_computers_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Sapient or <a href="Physics_research.html#Autonomous_Ship_Intellects" title="Autonomous Ship Intellects"><img alt="Autonomous Ship Intellects" src="images/Tech_sapient_ai.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a> Autonomous combat computer</li>
+<li><a href="Ship_accuracy.html" title="Ship accuracy"><img alt="Mod ship tracking add.png" src="images/Mod_ship_tracking_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a> <span class="effect-red" style="font-weight:bold;">−25%</span> Accuracy</li>
+<li><a href="https://stellaris.paradoxwikis.com/Ship_attack_speed" title="Ship attack speed"><img alt="Mod ship fire rate mult.png" src="images/Mod_ship_fire_rate_mult.png" decoding="async" loading="lazy" width="24" height="23" data-file-width="33" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−25%</span> Ship Fire Rate</li>
+<li><a href="Sublight_speed.html" title="Sublight speed"><img alt="Mod ship speed mult.png" src="images/Mod_ship_speed_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> <span class="effect-red" style="font-weight:bold;">−25%</span> Sublight Speed</li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b>Game concepts</b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Exploration
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Exploration.html" title="Exploration">Exploration</a> • <a href="FTL.html" class="mw-redirect" title="FTL">FTL</a> • <a href="Unique_systems.html" title="Unique systems">Unique systems</a> • <a href="L-Cluster.html" title="L-Cluster">L-Cluster</a> • <a href="Pre-FTL_species.html" title="Pre-FTL species">Pre-FTL species</a> • <a href="Fallen_empire.html" title="Fallen empire">Fallen empire</a> • <a href="Spaceborne_aliens.html" title="Spaceborne aliens">Spaceborne aliens</a> • <a href="Enclaves.html" title="Enclaves">Enclaves</a>  • <a href="Guardians.html" title="Guardians">Guardians</a> • <a href="Marauders.html" title="Marauders">Marauders</a> • <a href="Caravaneers.html" title="Caravaneers">Caravaneers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Celestial bodies
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Celestial_body.html" class="mw-redirect" title="Celestial body">Celestial body</a> • <a href="Colonization.html" title="Colonization">Colonization</a> • <a href="Planetary_features.html" title="Planetary features">Planetary features</a> • <a href="Planet_modifiers.html" title="Planet modifiers">Planet modifiers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Discovery
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Discovery.html" title="Discovery">Discovery</a> • <a href="Anomaly.html" title="Anomaly">Anomaly</a> • <a href="Archaeological_site.html" title="Archaeological site">Archaeological site</a> • <a href="Astral_rift.html" title="Astral rift">Astral rift</a> • <a href="Relics.html" title="Relics">Relics</a> • <a href="Collection.html" title="Collection">Collection</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Species
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a> • <a href="Species_traits.html" title="Species traits">Pop modification</a> • <a href="Biological_traits.html" title="Biological traits">Biological traits</a> • <a href="Machine_traits.html" title="Machine traits">Machine traits</a> • <a href="Population.html" title="Population">Population</a> • <a href="Species_rights.html" title="Species rights">Species rights</a> • <a href="Ethics.html" title="Ethics">Ethics</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Leaders
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader.html" class="mw-redirect" title="Leader">Leader</a> • <a href="Common_leader_traits.html" title="Common leader traits">Common leader traits</a> • <a href="Commander_traits.html" title="Commander traits">Commander traits</a> • <a href="Official_traits.html" title="Official traits">Official traits</a> • <a href="Scientist_traits.html" title="Scientist traits">Scientist traits</a> • <a href="Paragons.html" title="Paragons">Paragons</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Governance
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a> • <a href="Origin.html" title="Origin">Origin</a> • <a href="Government.html" title="Government">Government</a> • <a href="Civics.html" title="Civics">Civics</a> • <a href="Council.html" title="Council">Council</a> • <a href="Policies.html" title="Policies">Policies</a> • <a href="Edicts.html" title="Edicts">Edicts</a> • <a href="Factions.html" title="Factions">Factions</a> • <a href="Traditions.html" title="Traditions">Traditions</a> • <a href="Ascension_perks.html" title="Ascension perks">Ascension perks</a> • <a href="Ambition.html" title="Ambition">Ambition</a> • <a href="Situations.html" title="Situations">Situations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Economy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Resources.html" title="Resources">Resources</a> • <a href="Planetary_management.html" title="Planetary management">Planetary management</a> • <a href="Districts.html" title="Districts">Districts</a>  • <a href="Jobs.html" title="Jobs">Jobs</a> • <a href="Designation.html" title="Designation">Designation</a> • <a href="Trade.html" class="mw-redirect" title="Trade">Trade</a> • <a href="Megastructures.html" title="Megastructures">Megastructures</a> • <a href="Waystation.html" title="Waystation">Waystation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Buildings
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_capital.html" title="Planet capital">Planet capital</a> • <a href="Buildings.html" title="Buildings">Common buildings</a> • <a href="Planet_unique_buildings.html" title="Planet unique buildings">Planet unique</a> • <a href="Empire_unique_buildings.html" title="Empire unique buildings">Empire unique</a> • <a href="Holdings.html" title="Holdings">Holdings</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Ships
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Ship.html" title="Ship">Ship</a> • <a href="Arkship.html" title="Arkship">Arkship</a> • <a href="Ship_designer.html" title="Ship designer">Ship designer</a> • <a href="Core_components.html" title="Core components">Core components</a> • <a href="Weapon_components.html" title="Weapon components">Weapon components</a> • <a href="Utility_components.html" title="Utility components">Utility components</a> • <a href="Mutations.html" title="Mutations">Mutations</a> • <a href="Offensive_mutations.html" title="Offensive mutations">Offensive mutations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Technology
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Technology.html" title="Technology">Technology</a> • <a href="Physics_research.html" title="Physics research">Physics research</a> • <a href="Society_research.html" title="Society research">Society research</a> • <a href="Engineering_research.html" title="Engineering research">Engineering research</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Diplomacy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a> • <a href="Relations.html" title="Relations">Relations</a> • <a href="Galactic_community.html" class="mw-redirect" title="Galactic community">Galactic community</a> • <a href="Federation.html" title="Federation">Federations</a> • <a href="Subject_empire.html" title="Subject empire">Subject empires</a> • <a href="Intelligence.html" title="Intelligence">Intelligence</a> • <a href="Contracts.html" title="Contracts">Contracts</a> • <a href="AI_personalities.html" title="AI personalities">AI personalities</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Warfare
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Warfare.html" title="Warfare">Warfare</a> • <a href="Space_warfare.html" title="Space warfare">Space warfare</a> • <a href="Land_warfare.html" title="Land warfare">Land warfare</a> • <a href="Starbase.html" title="Starbase">Starbase</a> • <a href="Crisis.html" title="Crisis">Crisis</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Others
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a> • <a href="The_Shroud.html" title="The Shroud">The Shroud</a> • <a href="Preset_empires.html" title="Preset empires">Preset empires</a> • <a href="AI_players.html" title="AI players">AI players</a> • <a href="Stat_modifiers.html" title="Stat modifiers">Stat modifiers</a> • <a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Easter_eggs.html" title="Easter eggs">Easter eggs</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707235024
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.502 seconds
+Real time usage: 0.583 seconds
+Preprocessor visited node count: 26213/1000000
+Post‐expand include size: 92687/2097152 bytes
+Template argument size: 19534/2097152 bytes
+Highest expansion depth: 15/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  290.028      1 -total
+ 64.86%  188.117    255 Template:Icon
+ 16.61%   48.174     19 Template:Iconify
+ 16.07%   46.615    126 Template:Green
+ 15.79%   45.790     26 Template:Icon/s
+ 11.07%   32.092    146 Template:Symbolfirst
+ 10.88%   31.542     85 Template:Icon/a
+  3.79%   10.996     33 Template:Icon/f
+  3.17%    9.208      6 Template:Icon/c
+  3.08%    8.927     24 Template:Icon/t
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:6626-0!canonical and timestamp 20260707235024 and revision id 115644.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

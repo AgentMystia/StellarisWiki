@@ -23,7 +23,7 @@
 <div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 2.6.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
-<p>The <a href="Relics.html" title="Relics">Relics</a>, Minor Artifacts as well as <a href="https://stellaris.paradoxwikis.com/Precursors#Archaeological_sites" class="mw-redirect" title="Precursors">Archaeological Sites</a> are mechanics introduced since Stellaris <a href="Patch_2.3.html" title="Patch 2.3">v.2.3</a>.
+<p>The <a href="Relics.html" title="Relics">Relics</a>, Minor Artifacts as well as <a href="Precursors.html#Archaeological_sites" class="mw-redirect" title="Precursors">Archaeological Sites</a> are mechanics introduced since Stellaris <a href="Patch_2.3.html" title="Patch 2.3">v.2.3</a>.
 </p>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
@@ -57,7 +57,7 @@
 <li><b>sound</b> – A reference to a sound instance that indicates the sound to be played for activation.</li>
 <li><b>resources</b> – An <a href="Economy_modding.html#Economy_Units" title="Economy modding">Economy Unit</a> that determines the resource output and activation cost.</li>
 <li><b>ai_weight</b> – Determines how likely the AI will activate this relic.</li>
-<li><b>triggered_country_modifier</b> – A block of <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> for the Passive Effect of this relic.
+<li><b>triggered_country_modifier</b> – A block of <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> for the Passive Effect of this relic.
 <ul><li><b>potential</b> – A block of <a href="Conditions.html" title="Conditions">Conditions</a> that determines should the modifier apply. Vanilla relics always have '<code>always = yes</code>'. It is unclear if relics have <b>country_modifier</b>.</li></ul></li>
 <li><b>score</b> – An integer of victory score should this Relic count.</li>
 <li><b>active_effect</b> – A block of <a href="Effects.html" title="Effects">Effects</a> for the Activation Effect of this relic.</li>
@@ -181,7 +181,7 @@
 <span class="w"> 	</span><span class="p">}</span><span class="w"></span>
 <span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
-<p>Artifact Action cooldown is implemented through <a href="https://stellaris.paradoxwikis.com/Modifiers#Static_Modifiers" class="mw-redirect" title="Modifiers">Static Modifiers</a>.
+<p>Artifact Action cooldown is implemented through <a href="Modifiers.html#Static_Modifiers" class="mw-redirect" title="Modifiers">Static Modifiers</a>.
 </p><p>There are some Artifact Actions that are not meant to be activated through this menu.
 </p>
 <ul><li>Before acquiring the technology "Arcane Deciphering", relevant Artifact Actions are displayed as "???". Actually, those "???" actions are different actions that can only be seen if the empire doesn't have this technology and can never be activated.</li>
@@ -200,11 +200,11 @@
 <ul><li><b>desc</b> – A localisation key (triggered event desc) that designates the description of this site (scope = site).</li>
 <li><b>picture</b> – A reference to a GFX instance (sprite key) that indicates the picture of this site.</li>
 <li><b>max_instances </b> – An integer of max stages instances of this type a galaxy can have, only checked when using '<code>create_archaeological_site = random</code>'</li>
-<li><b>weight</b> – A scriptable value used for random weight, only used when using '<code>create_archaeological_site = random</code>'. Scriptable value type is defined either by an integer or '<a href="https://stellaris.paradoxwikis.com/MTTH" class="mw-redirect" title="MTTH">mean time to happen</a>'.</li>
+<li><b>weight</b> – A scriptable value used for random weight, only used when using '<code>create_archaeological_site = random</code>'. Scriptable value type is defined either by an integer or '<a href="MTTH.html" class="mw-redirect" title="MTTH">mean time to happen</a>'.</li>
 <li><b>stages</b> – An integer of max stages of this site. It must be exactly match the number of <b>state</b> blocks of this site.</li>
-<li><b>potential </b> – A <a href="https://stellaris.paradoxwikis.com/Trigger" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines if a scope (fleet) is potential to excavate this archaeological site (from = site, this will add/remove this option without giving the player a reason).</li>
-<li><b>allow</b> – A <a href="https://stellaris.paradoxwikis.com/Trigger" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines can a ship delve into this site (scope = fleet, from = site). All vanilla sites are only open to Science Ships with a Scientist (this will toggle enable/disabled mode on buttons etc).</li>
-<li><b>visible</b> – A <a href="https://stellaris.paradoxwikis.com/Trigger" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines can an empire see this site (scope = country, from = site).</li>
+<li><b>potential </b> – A <a href="Trigger.html" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines if a scope (fleet) is potential to excavate this archaeological site (from = site, this will add/remove this option without giving the player a reason).</li>
+<li><b>allow</b> – A <a href="Trigger.html" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines can a ship delve into this site (scope = fleet, from = site). All vanilla sites are only open to Science Ships with a Scientist (this will toggle enable/disabled mode on buttons etc).</li>
+<li><b>visible</b> – A <a href="Trigger.html" class="mw-redirect" title="Trigger">Trigger</a> block (conditions) that determines can an empire see this site (scope = country, from = site).</li>
 <li><b>stage</b> – Defines a stage of this site, order dependent
 <ul><li><b>difficulty</b> – A 'min max interval type', interval is defined either by an integer or '<code>{ min = &lt;int&gt; max=&lt;int&gt; }</code>' where the later will randomize a value between min and max.</li>
 <li><b>icon</b> – A reference to a GFX instance (rune icon gfx type) that indicates the picture of this stage.</li>
@@ -250,7 +250,7 @@
 <span class="w"> 	</span><span class="p">}</span><span class="w"></span>
 <span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
-<dl><dd>Note: '<code>standard_archaeological_site_on_roll_failed</code>' is a <a href="https://stellaris.paradoxwikis.com/Scripted_effect" class="mw-redirect" title="Scripted effect">scripted effect</a>.</dd></dl>
+<dl><dd>Note: '<code>standard_archaeological_site_on_roll_failed</code>' is a <a href="Scripted_effect.html" class="mw-redirect" title="Scripted effect">scripted effect</a>.</dd></dl>
 <div style="clear:both;"></div>
 <div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
 <div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b><a href="Modding.html" title="Modding">Modding</a></b></div>
@@ -265,7 +265,7 @@
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -286,21 +286,21 @@
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Planet_modding.html" title="Planet modding">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -337,7 +337,7 @@
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

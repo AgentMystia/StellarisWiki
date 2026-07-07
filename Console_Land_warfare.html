@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console:Land warfare - Stellaris Wiki</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Console</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Land warfare</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.12.<br /><br />This article is for the console version of Stellaris only.</div>
+</div>
+</div>
+<div class="stellaris-outliner" style="float:right; clear:right; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">War</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Warfare.html" title="Warfare">Warfare</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Space_warfare.html" title="Space warfare">Space warfare</a></div></div>
+<div class="infobox-row" style="text-align: center;">
+<div class="infobox-row-single" style="border-top: 1px solid #325448;"><a href="Land_warfare.html" title="Land warfare">Land warfare</a></div></div>
+</div>
+</div>
+<p>Wars are not decided only in space. In order to capture enemy worlds, entire armies are needed, along with the preparation and battlefield awareness to properly use them. However, worlds may only be invaded if the system's starbase has been occupied.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Orbital_bombardment"><span class="tocnumber">1</span> <span class="toctext">Orbital bombardment</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Combat"><span class="tocnumber">2</span> <span class="toctext">Combat</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Army_rank"><span class="tocnumber">2.1</span> <span class="toctext">Army rank</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Army_stat_modifiers"><span class="tocnumber">2.2</span> <span class="toctext">Army stat modifiers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Defense_armies"><span class="tocnumber">3</span> <span class="toctext">Defense armies</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Pre-FTL_armies"><span class="tocnumber">3.1</span> <span class="toctext">Pre-FTL armies</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Assault_armies"><span class="tocnumber">4</span> <span class="toctext">Assault armies</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Event_armies"><span class="tocnumber">5</span> <span class="toctext">Event armies</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Devastation"><span class="tocnumber">6</span> <span class="toctext">Devastation</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Orbital_bombardment">Orbital bombardment</span></h2>
+<p>Orbital bombardment occurs when a fleet is in orbit around a hostile world and causes damage to any armies but also kills pops and causes <a href="Devastation.html" title="Devastation"><img alt="Devastation.png" src="images/Devastation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a>&#32;devastation. Effectiveness is based on the fleet size of the fleet in orbit, although it suffers diminishing returns after 100, and planet size, with every 10 planet size halving damaged from bombardment. The more pops and buildings a world has, the more damage it receives from orbital bombardment. Assault armies take double damage from orbital bombardment.
+</p><p>If orbital bombardment destroys the last army, the world has a chance to surrender if the attacking empire has the <i>Allowed</i> Orbital Surrender Acceptance policy. Worlds from <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness empires will never surrender.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Stance</th>
+<th>Planet damage</th>
+<th>Army damage</th>
+<th>Pop kill chance
+</th>
+<th>Other effects
+</th>
+<th>Requirements
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ABombardment_light.png" class="image"><img alt="Bombardment light.png" src="images/Bombardment_light.png" decoding="async" loading="lazy" width="52" height="52" data-file-width="52" data-file-height="52" /></a> Selective</td>
+<td>50%</td>
+<td>100%</td>
+<td>25%
+</td>
+<td>
+<ul><li>Does not kill the last 21 pops</li>
+<li>Does not bomb planets with no armies on it</li></ul>
+</td>
+<td>None
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ABombardment_limited.png" class="image"><img alt="Bombardment limited.png" src="images/Bombardment_limited.png" decoding="async" loading="lazy" width="52" height="52" data-file-width="52" data-file-height="52" /></a> Indiscriminate</td>
+<td>100%</td>
+<td>150%</td>
+<td>50%
+</td>
+<td>
+<ul><li>Does not kill the last 11 pops</li></ul>
+</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Not&#32;Pacifist
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ABombardment_armageddon.png" class="image"><img alt="Bombardment armageddon.png" src="images/Bombardment_armageddon.png" decoding="async" loading="lazy" width="52" height="52" data-file-width="52" data-file-height="52" /></a> Armageddon</td>
+<td>150%</td>
+<td>200%</td>
+<td>100%
+</td>
+<td>
+<ul><li>If the last pop is killed, the planet becomes a <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb World</li></ul>
+</td>
+<td>Any of:
+<ul><li><a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers</li>
+<li><a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Determined Exterminator</li>
+<li><a href="Ascension_perks.html#Become_the_Crisis" title="Become the Crisis"><img alt="Become the Crisis" src="images/Ap_become_the_crisis.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Become the Crisis</li></ul>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ABombardment_full.png" class="image"><img alt="Bombardment full.png" src="images/Bombardment_full.png" decoding="async" loading="lazy" width="52" height="52" data-file-width="52" data-file-height="52" /></a> Javorian Pox</td>
+<td>20%</td>
+<td>150%</td>
+<td>150%
+</td>
+<td>
+<ul><li>Does not kill <a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Mechanical or <a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine pops</li>
+<li>If the last pop is killed, the planet becomes a <a href="Tomb_World.html" title="Tomb World"><img alt="Planet nuked.png" src="images/Planet_nuked.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a>&#32;Tomb World</li></ul>
+</td>
+<td class="plainlist">
+<ul><li><a href="https://stellaris.paradoxwikis.com/File%3AR_pox_sample.png" class="image"><img alt="R pox sample.png" src="images/R_pox_sample.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a> Javorian Pox Sample relic activation</li>
+<li><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /><a href="Pacifist.html" title="Pacifist"><img alt="Pacifist.png" src="images/Pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Fanatic_Pacifist.html" title="Fanatic Pacifist"><img alt="Fanatic pacifist.png" src="images/Fanatic_pacifist.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="76" data-file-height="77" /></a>&#32;Not&#32;Pacifist}}</li></ul>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ARaiding_bombardment.png" class="image"><img alt="Raiding bombardment.png" src="images/Raiding_bombardment.png" decoding="async" loading="lazy" width="52" height="52" data-file-width="52" data-file-height="52" /></a> Raiding</td>
+<td>50%</td>
+<td>50%</td>
+<td>15%
+</td>
+<td>
+<ul><li>Abducts pops instead of killing them</li>
+<li>Species with <i>Displacement</i>, <i>Neutering</i> or <i>Extermination</i> species rights will still be killed</li>
+<li>Does not cause Terror Bombing opinion if successfully abducted</li>
+<li>Does not kill or abduct the last two Pops</li></ul>
+</td>
+<td>Either:
+<ul><li><a href="Civics.html#Barbaric_Despoilers" title="Barbaric Despoilers"><img alt="Barbaric Despoilers" src="images/Civic_barbaric_despoilers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Barbaric Despoilers</li>
+<li><a href="Ascension_perks.html#Nihilistic_Acquisition" title="Nihilistic Acquisition"><img alt="Nihilistic Acquisition" src="images/Ap_nihilistic_acquisition.png" decoding="async" loading="lazy" width="24" height="28" data-file-width="52" data-file-height="60" /></a>&#32;Nihilistic Acquisition</li></ul>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ASeed_bombing.png" class="image"><img alt="Seed bombing.png" src="images/Seed_bombing.png" decoding="async" loading="lazy" width="52" height="52" data-file-width="52" data-file-height="52" /></a> Seed Bombing</td>
+<td>100%</td>
+<td>50%</td>
+<td>0%
+</td>
+<td>
+<ul><li>After 10% <a href="Devastation.html" title="Devastation"><img alt="Devastation.png" src="images/Devastation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a>&#32;devastation, can spawn <a href="https://stellaris.paradoxwikis.com/File%3AD_fungal_forest.png" class="image"><img alt="D fungal forest.png" src="images/D_fungal_forest.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a><a href="https://stellaris.paradoxwikis.com/File%3AD_dense_jungle.png" class="image"><img alt="D dense jungle.png" src="images/D_dense_jungle.png" decoding="async" loading="lazy" width="24" height="18" data-file-width="98" data-file-height="75" /></a> Explosive Growth blockers</li></ul>
+</td>
+<td><a href="Fruitful_Partnership.html" title="Fruitful Partnership"><img alt="Origins gardeners.png" src="images/Origins_gardeners.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Fruitful Partnership
+</td></tr></tbody></table>
+<p>Orbital bombardment damage dealt to enemy planets can be increased by the following:
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Source</th>
+<th><a href="https://stellaris.paradoxwikis.com/File%3AMod_ship_orbital_bombardment_mult.png" class="image"><img alt="Mod planet orbital bombardment damage.png" src="images/Mod_ship_orbital_bombardment_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Damage
+</th></tr>
+<tr>
+<td><a href="Traditions.html#Supremacy" title="Overwhelming Force"><img alt="Overwhelming Force" src="images/Tradition_supremacy_overwhelming_force.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Overwhelming Force tradition</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_orbital_trash_dispersal.png" class="image"><img alt="Ship part orbital trash dispersal.png" src="images/Ship_part_orbital_trash_dispersal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Orbital Trash Disperser component</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AShip_part_aura_bombardment.png" class="image"><img alt="Ship part aura bombardment.png" src="images/Ship_part_aura_bombardment.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Munitions Plant juggernaut aura</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Crisis.html#Galactic_Nemesis" title="Peril"><img alt="Peril" src="images/Nemesis_level_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="50" data-file-height="50" /></a> Crisis level 3</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr></tbody></table>
+<p>Orbital bombardment damage taken from enemy fleets can be reduced to a maximum of -98% by the following:
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Source</th>
+<th><a href="https://stellaris.paradoxwikis.com/File%3AMod_ship_orbital_bombardment_mult.png" class="image"><img alt="Mod planet orbital bombardment damage.png" src="images/Mod_ship_orbital_bombardment_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Damage
+</th></tr>
+<tr>
+<td><a href="Subterranean.html" title="Subterranean"><img alt="Origins subterranean.png" src="images/Origins_subterranean.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></a>&#32;Subterranean origin</td>
+<td><span class="effect-green" style="font-weight:bold;">−75%</span>
+</td></tr>
+<tr>
+<td><a href="Buildings.html#Planetary_Shield_Generator" title="Planetary Shield Generator"><img alt="Planetary Shield Generator" src="images/Building_planetary_shield_generator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Planetary Shield Generator building</td>
+<td><span class="effect-green" style="font-weight:bold;">−50%</span>
+</td></tr>
+<tr>
+<td><a href="Traditions.html#Adaptability" title="survival Fittest"><img alt="survival Fittest" src="images/Tradition_adaptability_survival_of_the_fittest.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a> Survival of the Fittest tradition</td>
+<td><span class="effect-green" style="font-weight:bold;">−25%</span>
+</td></tr>
+<tr>
+<td><a href="Traditions.html#Unyielding" title="Never Surrender"><img alt="Never Surrender" src="images/Tradition_unyielding_never_surrender.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Never Surrender tradition</td>
+<td><span class="effect-green" style="font-weight:bold;">−25%</span>
+</td></tr>
+<tr>
+<td><a href="Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Fortress World&#32;designation</td>
+<td><span class="effect-green" style="font-weight:bold;">−10%</span>
+</td></tr>
+<tr>
+<td><a href="Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Fortress Station&#32;designation</td>
+<td><span class="effect-green" style="font-weight:bold;">−10%</span>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Combat">Combat</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:332px;"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_ground_combat.png" class="image"><img alt="" src="images/Evt_ground_combat.png" decoding="async" loading="lazy" width="330" height="110" class="thumbimage" data-file-width="450" data-file-height="150" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3AEvt_ground_combat.png" class="internal" title="Enlarge"></a></div>Although secondary to space battles, ground warfare is a vital aspect of many wars.</div></div></div>
+<p>Ground combat takes place between the world owner's armies and the invader's armies. It takes 10 days for armies in orbit to land on a world. The number of armies that can be engaged in combat on either side is five plus one-fifth of the <a href="Planet_Size.html" title="Planet Size"><img alt="Planet Size.png" src="images/Planet_Size.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;planet size. Excess armies are initially placed in a reserve area behind the frontline and replace any disengaged or destroyed armies as combat progresses.
+</p><p>Each day, each army engaged in combat deals its health and morale damage to a randomly selected enemy army; armies with less than 50% health are twice as likely to be selected. Armies below 50% health may also <i>disengage</i> from battle; this moves them from the frontline area to the reserve area. Disengaged armies cannot return to the frontline but can still be attacked by enemy armies and destroyed. Disengaged armies are half as likely to be selected as the target of an enemy army.
+</p><p>Unless an army is immune to morale damage, when its morale drops below certain thresholds, the army will be negatively affected with the following modifiers:
+</p>
+<table class="mildtable" style="text-align: center;">
+<tbody><tr>
+<th>Morale perc.</th>
+<th>Penalty
+</th></tr>
+<tr>
+<td>&lt; 50%</td>
+<td><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-red" style="font-weight:bold;">−25%</span>&#32;Army damage
+</td></tr>
+<tr>
+<td>0%</td>
+<td><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-red" style="font-weight:bold;">−75%</span>&#32;Army damage
+</td></tr></tbody></table>
+<p>After 30 days, the attacker can choose to retreat at any time. However, there is a chance that each retreating army is destroyed while attempting to return to space, with the chance increasing as the army is more damaged. This makes retreating a risky endeavor and something to do only in very poorly chosen engagements.
+</p><p>As long as the ground combat is ongoing, it is possible for either side to land reinforcements, though typically this will only be feasible for the attacker. The ground combat ends when the attacker retreats or all armies of either side are destroyed.
+</p>
+<h3><span class="mw-headline" id="Army_rank">Army rank</span></h3>
+<table class="mildtable plainlist" style="float: right; margin-left: 20px;">
+<tbody><tr>
+<th>Rank</th>
+<th>XP</th>
+<th>Effects
+</th></tr>
+<tr id="Army_Exp_Regular">
+<td>Regular</td>
+<td>0 – 100</td>
+<td>None
+</td></tr>
+<tr id="Army_Exp_Experienced">
+<td>Experienced</td>
+<td>100 – 1000
+</td>
+<td>
+<ul><li><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+10%</span>&#32;Damage</li>
+<li><a href="Army_morale.html" title="Army morale"><img alt="Mod army morale.png" src="images/Mod_army_morale.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+10%</span>&#32;Morale</li></ul>
+</td></tr>
+<tr id="Army_Exp_Veteran">
+<td>Veteran</td>
+<td>1000 – 10000
+</td>
+<td>
+<ul><li><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+20%</span>&#32;Damage</li>
+<li><a href="Army_morale.html" title="Army morale"><img alt="Mod army morale.png" src="images/Mod_army_morale.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+20%</span>&#32;Morale</li>
+<li><a href="Army_health.html" title="Army health"><img alt="Mod army health.png" src="images/Mod_army_health.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+10%</span>&#32;Health</li></ul>
+</td></tr>
+<tr id="Army_Exp_Elite">
+<td>Elite</td>
+<td>≥ 10&#x202f;000
+</td>
+<td>
+<ul><li><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+40%</span>&#32;Damage</li>
+<li><a href="Army_morale.html" title="Army morale"><img alt="Mod army morale.png" src="images/Mod_army_morale.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+40%</span>&#32;Morale</li>
+<li><a href="Army_health.html" title="Army health"><img alt="Mod army health.png" src="images/Mod_army_health.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+20%</span>&#32;Health</li></ul>
+</td></tr></tbody></table>
+<p>As armies fight battles, they will increase in rank, improving their stats based on their experience points. Armies get <span class="effect-green" style="font-weight:bold;">+2</span> experience points each time they deal damage and <span class="effect-green" style="font-weight:bold;">+1</span> when they take damage. Army starting experience can be increased by <span class="effect-green" style="font-weight:bold;">+100</span> by each of the following:
+</p>
+<ul><li><a href="Hive_mind_civics.html#Strength_of_Legions" title="Strength of Legions"><img alt="Strength of Legions" src="images/Civic_strength_of_legions.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Strength of Legions civic</li>
+<li><a href="Corporate_civics.html#Private_Military_Companies" title="Private Military Companies"><img alt="Private Military Companies" src="images/Civic_private_military_companies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Private Military Companies civic</li>
+<li><a href="Buildings.html#Dread_Encampment" title="Dread Encampment"><img alt="Dread Encampment" src="images/Building_dread_encampment.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Dread Encampment building</li>
+<li><a href="Holdings.html#Mercenary_Liaison_Office" title="Mercenary Liaison Office"><img alt="Mercenary Liaison Office" src="images/Building_military_contractors.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Mercenary Liaison Office Corporate holding</li>
+<li><a href="Holdings.html#Pirate_Free_Haven" title="Pirate Free Haven"><img alt="Pirate Free Haven" src="images/Building_pirate_haven.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Pirate Free Haven corporate holding</li></ul>
+<div style="clear:both;"></div>
+<h3><span class="mw-headline" id="Army_stat_modifiers">Army stat modifiers</span></h3>
+<p>In addition to army rank, several technologies, civics, species and leader traits, and other sources affect army damage, health, and other stats. Additionally, <a href="Commander.html" title="Commander"><img alt="Commander" src="images/Commander.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="52" data-file-height="46" /></a>&#32;Commanders provide <a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+5%</span>&#32;army damage per level and plus other bonuses from traits. Modifiers from species traits affect armies recruited from that species, while <a href="Commander.html" title="Commander"><img alt="Commander" src="images/Commander.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="52" data-file-height="46" /></a>&#32;Commander and <a href="Official.html" title="Official"><img alt="Official.png" src="images/Official.png" decoding="async" loading="lazy" width="24" height="21" data-file-width="52" data-file-height="46" /></a>&#32;Official traits affect armies led by that general or on world's in that governor's sector. 
+</p>
+<div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:10px; ;">
+<table class="mildtable mw-collapsible mw-collapsed" style="border:2px solid #DDDDDD;">
+<tbody><tr>
+<th colspan="2">Army damage (empire)<span style="visibility:hidden;color:transparent;">0</span>
+</th></tr>
+<tr>
+<th>Source</th>
+<th style="min-width:50px">Effect
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATradition_modularity_3.png" class="image"><img alt="Tradition modularity 3.png" src="images/Tradition_modularity_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a> Pacification Modules tradition</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><img alt="Unknown.png" src="images/Unknown.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /> Killer Microorganism empire modifier</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><img alt="Unknown.png" src="images/Unknown.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /> Eater of Worlds covenant (50 favor)</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Hive_mind_civics.html#Devouring_Swarm" title="Devouring Swarm"><img alt="Devouring Swarm" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Devouring Swarm / Terravore civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+40%</span>
+</td></tr>
+<tr>
+<td><a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Fanatic Purifiers civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+33%</span>
+</td></tr>
+<tr>
+<td><img alt="Unknown.png" src="images/Unknown.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /> Eater of Worlds covenant</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span>
+</td></tr>
+<tr>
+<td><a href="Civics.html#Warrior_Culture" title="Warrior Culture"><img alt="Warrior Culture" src="images/Civic_warrior_culture.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Warrior Culture civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Hive_mind_civics.html#Strength_of_Legions" title="Strength of Legions"><img alt="Strength of Legions" src="images/Civic_strength_of_legions.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Strength of Legions civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Machine_intelligence_civics.html#Warbots" title="Warbots"><img alt="Warbots" src="images/Civic_machine_warbots.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Warbots civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Corporate_civics.html#Private_Military_Companies" title="Private Military Companies"><img alt="Private Military Companies" src="images/Civic_private_military_companies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Private Military Companies civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Traditions.html#Supremacy" title="Supremacy"><img alt="Supremacy" src="images/Tradition_icon_supremacy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Supremacy tradition tree</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Edicts.html#War_Drone_Campaign" title="War Drone Campaign"><img alt="War Drone Campaign" src="images/Menu_icon_edicts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;War Drone Campaign edict</td>
+<td><span class="effect-green" style="font-weight:bold;">+15%</span>
+</td></tr>
+<tr>
+<td><a href="Policies.html#Knight_Commanders" title="Knight Commanders"><img alt="Knight Commanders" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Knight Commanders Knightly Duties policy</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Powered_Exoskeletons.html" title="Powered Exoskeletons"><img alt="Tech powered exoskeletons.png" src="images/Tech_powered_exoskeletons.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Powered Exoskeletons technology</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Minor_artifacts.html" title="Minor artifacts"><img alt="Minor artifacts.png" src="images/Minor_artifacts.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Minor Artifacts Military Application</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr></tbody></table>
+<table class="mildtable mw-collapsible mw-collapsed" style="border:2px solid #DDDDDD;">
+<tbody><tr>
+<th colspan="2">Army damage (species)<span style="visibility:hidden;color:transparent;">0</span>
+</th></tr>
+<tr>
+<th>Source</th>
+<th style="min-width:50px">Effect
+</th></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_robot_ancient_dreadnought.png" class="image"><img alt="Trait robot ancient dreadnought.png" src="images/Trait_robot_ancient_dreadnought.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Ancient Dreadnought trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+500%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_robot_integrated_weaponry.png" class="image"><img alt="Trait robot integrated weaponry.png" src="images/Trait_robot_integrated_weaponry.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Integrated Weaponry trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+100%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Clone_Soldier_Ascendant" title="Clone Soldier Ascendant"><img alt="Clone Soldier Ascendant" src="images/Trait_clone_soldier_ascendant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Clone Soldier Ascendant trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+75%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Noxious" title="Noxious"><img alt="Noxious" src="images/Trait_noxious.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Noxious trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Clone_Soldier" title="Clone Soldier"><img alt="Clone Soldier" src="images/Trait_clone_soldier.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Clone Soldier trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+50%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Very_Strong" title="Very Strong"><img alt="Very Strong" src="images/Trait_very_strong.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Very Strong trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+40%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_juiced_power.png" class="image"><img alt="Trait juiced power.png" src="images/Trait_juiced_power.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Juiced Power trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+40%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Strong" title="Strong"><img alt="Strong" src="images/Trait_strong.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Strong trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Clone_Soldier_Descendant" title="Clone Soldier Descendant"><img alt="Clone Soldier Descendant" src="images/Trait_clone_soldier_descendant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Clone Soldier Descendant trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Slavery.html" title="Slavery"><img alt="Slavery.png" src="images/Slavery.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> Battle Thralls slavery</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_presapient_proles.png" class="image"><img alt="Trait presapient proles.png" src="images/Trait_presapient_proles.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Proles trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Cybernetic" title="Cybernetic"><img alt="Cybernetic" src="images/Trait_cybernetic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Cybernetic trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Limited_Regeneration" title="Limited Regeneration"><img alt="Limited Regeneration" src="images/Trait_limited_regeneration.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Limited Regeneration trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_robot_history_warbot.png" class="image"><img alt="Trait robot history warbot.png" src="images/Trait_robot_history_warbot.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> War Machine trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_cyborg_ritualistic_implants.png" class="image"><img alt="Trait cyborg ritualistic implants.png" src="images/Trait_cyborg_ritualistic_implants.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Ritualistic Implants trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Serviles" title="Serviles"><img alt="Serviles" src="images/Trait_presapient.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Forcefully Devolved trait</td>
+<td><span class="effect-red" style="font-weight:bold;">−10%</span>
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Weak" title="Weak"><img alt="Weak" src="images/Trait_weak.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Weak trait</td>
+<td><span class="effect-red" style="font-weight:bold;">−20%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_cyborg_delicate_frames.png" class="image"><img alt="Trait cyborg delicate frames.png" src="images/Trait_cyborg_delicate_frames.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Delicate Frames trait</td>
+<td><span class="effect-red" style="font-weight:bold;">−50%</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_robot_delicate_frames.png" class="image"><img alt="Trait robot delicate frames.png" src="images/Trait_robot_delicate_frames.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a> Delicate Chassis trait</td>
+<td><span class="effect-red" style="font-weight:bold;">−50%</span>
+</td></tr></tbody></table>
+<table class="mildtable mw-collapsible mw-collapsed" style="border:2px solid #DDDDDD;">
+<tbody><tr>
+<th colspan="2">Army damage (assigned commander)<span style="visibility:hidden;color:transparent;">0</span>
+</th></tr>
+<tr>
+<th>Source</th>
+<th style="min-width:50px">Effect
+</th></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay destiny.png" src="images/Leader_trait_overlay_destiny.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait fortress cracker.png" src="images/Leader_trait_fortress_cracker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Fortress_Cracker" title="Fortress Cracker"><img alt="Fortress Cracker" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Fortress Cracker commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+40%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay destiny.png" src="images/Leader_trait_overlay_destiny.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait supreme warrior.png" src="images/Leader_trait_supreme_warrior.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Supreme_Warrior" title="Supreme Warrior"><img alt="Supreme Warrior" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Supreme Warrior commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+33%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait heavy hitter.png" src="images/Leader_trait_heavy_hitter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 3.png" src="images/Leader_trait_tier_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Heavy_Hitter" title="Heavy Hitter III"><img alt="Heavy Hitter III" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Heavy Hitter III commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg psionics.png" src="images/Leader_trait_bg_psionic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait eater chosen.png" src="images/Leader_trait_eater_chosen.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Common_leader_traits.html#Chosen_of_the_Eater" title="Chosen of the Eater"><img alt="Chosen of the Eater" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Chosen of the Eater commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg psionics.png" src="images/Leader_trait_bg_psionic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait whisperers chosen.png" src="images/Leader_trait_whisperers_chosen.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Common_leader_traits.html#Chosen_of_the_Whisperers" title="Chosen of the Whisperers"><img alt="Chosen of the Whisperers" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Chosen of the Whisperers leader trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg psionics.png" src="images/Leader_trait_bg_psionic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait psionic chosen one.png" src="images/Leader_trait_psionic_chosen_one.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Common_leader_traits.html#Chosen_One" title="Chosen One"><img alt="Chosen One" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Chosen One leader trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait heavy hitter.png" src="images/Leader_trait_heavy_hitter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 2.png" src="images/Leader_trait_tier_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Heavy_Hitter" title="Heavy Hitter II"><img alt="Heavy Hitter II" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Heavy Hitter II commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+15%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait butcher.png" src="images/Leader_trait_butcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 2.png" src="images/Leader_trait_tier_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Butcher" title="Butcher II"><img alt="Butcher II" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Butcher II commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+15%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg psionics.png" src="images/Leader_trait_bg_psionic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait composer chosen.png" src="images/Leader_trait_composer_chosen.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Common_leader_traits.html#Chosen_of_the_Composer" title="Chosen of the Composer"><img alt="Chosen of the Composer" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Chosen of the Composer leader trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait heavy hitter.png" src="images/Leader_trait_heavy_hitter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 1.png" src="images/Leader_trait_tier_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Heavy_Hitter" title="Heavy Hitter"><img alt="Heavy Hitter" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Heavy Hitter I commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait butcher.png" src="images/Leader_trait_butcher.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 1.png" src="images/Leader_trait_tier_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Butcher" title="Butcher"><img alt="Butcher" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Butcher I commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1"><img alt="Leader trait overlay veteran.png" src="images/Leader_trait_overlay_veteran.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait crusader.png" src="images/Leader_trait_crusader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 3.png" src="images/Leader_trait_tier_3.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Crusader" title="Crusader III"><img alt="Crusader III" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Crusader III commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait mercenary warrior.png" src="images/Leader_trait_mercenary_warrior.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Common_leader_traits.html#Mercenary_Warrior" title="Mercenary Warrior"><img alt="Mercenary Warrior" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Mercenary Warrior commander trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="General.html" title="General"><img alt="Subclass commander general medium.png" src="images/Subclass_commander_general_medium.png" decoding="async" loading="lazy" width="24" height="25" data-file-width="28" data-file-height="29" /></a>&#32;General veteran class</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait erudite.png" src="images/Leader_trait_erudite.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Common_leader_traits.html#Erudition" title="Erudition"><img alt="Erudition" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Erudition leader trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait synthetic.png" src="images/Leader_trait_synth.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Common_leader_traits.html#Synth" title="Synth"><img alt="Synth" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Synth leader trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait armchair commander.png" src="images/Leader_trait_armchair_commander.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 1.png" src="images/Leader_trait_tier_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Armchair_Commander" title="Armchair Commander"><img alt="Armchair Commander" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Armchair Commander I leader trait</td>
+<td><span class="effect-red" style="font-weight:bold;">−5%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg negative.png" src="images/Leader_trait_bg_negative.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait armchair commander.png" src="images/Leader_trait_armchair_commander.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><img alt="Leader trait tier 2.png" src="images/Leader_trait_tier_2.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Commander_traits.html#Armchair_Commander" title="Armchair Commander II"><img alt="Armchair Commander II" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span> Armchair Commander II leader trait</td>
+<td><span class="effect-red" style="font-weight:bold;">−20%</span>
+</td></tr></tbody></table>
+</div>
+<h2><span class="mw-headline" id="Defense_armies">Defense armies</span></h2>
+<p>Defense armies are automatically recruited by certain jobs, based on the species working that job, and can be organic or robotic. Defense armies cannot be moved from the world they are recruited on and are used only to defend against enemy armies. While they are stronger one-for-one than assault armies, their loss does not cause <a href="War_exhaustion.html" title="War exhaustion"><img alt="Mod country war exhaustion.png" src="images/Mod_country_war_exhaustion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;War Exhaustion and they do not cause <a href="https://stellaris.paradoxwikis.com/Collateral_Damage" title="Collateral Damage"><img alt="Mod army collateral damage mult.png" src="images/Mod_army_collateral_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Collateral Damage, their limited recruitment means that significant investment is necessary to fend off a concentrated attack.
+</p><p>The type of army recruited depends on the pop working the building that spawns them. Defense armies do not incur any upkeep beyond that of the building and pop which creates the army.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Type</th>
+<th><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Base Damage</th>
+<th>Morale Damage</th>
+<th><a href="Army_health.html" title="Army health"><img alt="Mod army health.png" src="images/Mod_army_health.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Health</th>
+<th><a href="Army_morale.html" title="Army morale"><img alt="Mod army morale.png" src="images/Mod_army_morale.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Morale</th>
+<th>Requirements</th>
+<th width="30%">Description
+</th></tr>
+<tr id="Defense_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense.png" class="image"><img alt="Army defense.png" src="images/Army_defense.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Defense Army</td>
+<td>2.25 - 4.50</td>
+<td>2.25 - 4.50</td>
+<td>250</td>
+<td>250</td>
+<td>Biological pops</td>
+<td><i>Defense armies are powerful, but cannot be transported from the planet.</i>
+</td></tr>
+<tr id="Robotic_Defense_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense_m.png" class="image"><img alt="Army defense m.png" src="images/Army_defense_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Robotic Defense Army</td>
+<td>1.50 - 3.00</td>
+<td>1.50 - 3.00</td>
+<td>250</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Mechanical pops</td>
+<td><i>Cold and heartless killing-machines designed only for war. They pursue their objectives relentlessly, and are impervious to the shattering effects of poor morale that so often plague organic combat units.</i>
+</td></tr>
+<tr id="Drone_Grid">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense_m.png" class="image"><img alt="Army defense m.png" src="images/Army_defense_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Drone Grid</td>
+<td>1.65 - 3.30</td>
+<td>1.65 - 3.30</td>
+<td>220</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Machine_(species_trait).html" title="Machine"><img alt="Machine" src="images/Trait_machine_unit.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Machine pops</td>
+<td><i>These autonomous sentinel drones will incessantly patrol their assigned sectors. Though lightly armed and not very intelligent, they are legion.</i>
+</td></tr>
+<tr id="Undead_Defense_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_undead.png" class="image"><img alt="Army undead.png" src="images/Army_undead.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Undead Defense Army</td>
+<td>2.25 - 4.50</td>
+<td>3.93 - 7.87</td>
+<td>350</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>Replaces <a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense.png" class="image"><img alt="Army defense.png" src="images/Army_defense.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> Defense Armies if at least one <a href="Jobs.html#Necromancer" title="Necromancer"><img alt="Necromancer" src="images/Job_necromancer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Necromancer is present</td>
+<td><i>Undead soldiers lifted from the grave by necromancers, brought back to life to protect our planets from all that might threaten them!</i>
+</td></tr>
+<tr id="Offspring-Led_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Offspring-Led Army</td>
+<td>2.62 - 5.25</td>
+<td>3.41 - 6.82</td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>Replaces <a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense.png" class="image"><img alt="Army defense.png" src="images/Army_defense.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> Defense Armies if at least one <a href="Jobs.html#Spawning_Drone" title="Spawning Drone"><img alt="Spawning Drone" src="images/Job_spawning_drone.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Offspring Drone is present</td>
+<td><i>Under the direct supervision of the local Offspring, the armies are both deadlier and more challenging to kill than anything a regular hive-mind could produce.</i>
+</td></tr>
+<tr id="Fanatic_Guardians">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense.png" class="image"><img alt="Army defense.png" src="images/Army_defense.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Fanatic Guardians</td>
+<td>4.50 - 9.00</td>
+<td>4.50 - 9.00</td>
+<td>500</td>
+<td>500</td>
+<td>Replaces <a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense.png" class="image"><img alt="Army defense.png" src="images/Army_defense.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> Defense Armies if empire has the <a href="Civics.html#Sovereign_Guardianship" title="Sovereign Guardianship"><img alt="Sovereign Guardianship" src="images/Civic_sovereign_guardianship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Corporate_civics.html#Corporate_Protectorate" title="Corporate Protectorate"><img alt="Corporate Protectorate" src="images/Civic_corporate_sovereign_guardianship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="https://stellaris.paradoxwikis.com/File%3ACivic_hive_sovereign_guardianship.png" class="image"><img alt="Civic hive sovereign guardianship.png" src="images/Civic_hive_sovereign_guardianship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Sovereign Guardianship civic</td>
+<td><i>Stoic defenders of our homeland, these unshakeable soldiers are most effective when protecting those with whom they share a close relationship.</i>
+</td></tr>
+<tr id="Matrix_Unit">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense_m.png" class="image"><img alt="Army defense m.png" src="images/Army_defense_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Matrix Unit</td>
+<td>3.30 - 6.60</td>
+<td>6.60 - 13.20</td>
+<td>440</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>Replaces <a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense_m.png" class="image"><img alt="Army defense m.png" src="images/Army_defense_m.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a> Drone Grids if empire has the <a href="https://stellaris.paradoxwikis.com/File%3ACivic_machine_sovereign_guardianship.png" class="image"><img alt="Civic machine sovereign guardianship.png" src="images/Civic_machine_sovereign_guardianship.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Guardian Matrix civic</td>
+<td><i>These highly lethal protective drones are most effective kept in close proximity to all other strategic nodes.</i>
+</td></tr>
+<tr id="Sentinels">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_defense_m.png" class="image"><img alt="Army defense m.png" src="images/Army_defense_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Sentinels</td>
+<td>6.00 - 12.00</td>
+<td>30.00 - 60.00</td>
+<td>1400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Archaeological_site.html" title="Archaeological site"><img alt="Archaeology map icon.png" src="images/Archaeology_map_icon.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="38" data-file-height="42" /></a> <a href="Archaeological_site.html#The_Sentinels" title="Archaeological site">The Sentinels</a> archaeological site</td>
+<td><i>Living statues with a mechanical core, bodies humming and skin glowing, radiation pulsating from their cores, ready to rain destruction on their enemies!</i>
+</td></tr>
+<tr id="Titanic">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Titanic Guardian</td>
+<td>3.00 - 6.00</td>
+<td>6.00 - 12.00</td>
+<td>1000</td>
+<td>600</td>
+<td>Titanic Lifeforms event chain</td>
+<td><i>While less aggressive than the Titanic Beast, the Titanic Guardian is still a powerful defensive fighter.</i>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Pre-FTL_armies">Pre-FTL armies</span></h3>
+<p>Pre-FTL armies are only used by primitive civilizations. They are weaker than any army and even the strongest Pre-FTL army can easily be defeated by an equal number of any regular army.
+</p>
+<table class="mildtable">
+<tbody><tr>
+<th>Type</th>
+<th><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Base Damage</th>
+<th>Morale Damage</th>
+<th><a href="Army_health.html" title="Army health"><img alt="Mod army health.png" src="images/Mod_army_health.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Health</th>
+<th><a href="Army_morale.html" title="Army morale"><img alt="Mod army morale.png" src="images/Mod_army_morale.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Morale</th>
+<th>Ages
+</th></tr>
+<tr id="Primitive_Army">
+<td>Primitive Army</td>
+<td>0.15 - 0.30</td>
+<td>0.15 - 0.30</td>
+<td>100</td>
+<td>160</td>
+<td>Bronze Age - Steam Age
+</td></tr>
+<tr id="Industrial_Army">
+<td>Industrial Army</td>
+<td>0.60 - 1.20</td>
+<td>0.60 - 1.20</td>
+<td>100</td>
+<td>160</td>
+<td>Industrial Age - Machine Age
+</td></tr>
+<tr id="Post-Atomic_Army">
+<td>Post-Atomic Army</td>
+<td>0.90 - 1.80</td>
+<td>0.90 - 1.80</td>
+<td>200</td>
+<td>200</td>
+<td>Atomic Age - Early Space Age
+</td></tr>
+<tr id="Ketling_Army">
+<td>Ketling Army</td>
+<td>0.90 - 1.80</td>
+<td>0.90 - 1.80</td>
+<td>200</td>
+<td>200</td>
+<td>Pre-space Ketlings
+</td></tr>
+<tr id="Subterranean_Invasion_Defense_Force">
+<td>Subterranean Invasion Defense Force</td>
+<td>1.20 - 2.40</td>
+<td>1.20 - 2.40</td>
+<td>200</td>
+<td>200</td>
+<td>Skeptical Pre-FTL event
+</td></tr>
+<tr id="Pro-Unification_Forces">
+<td>Pro-Unification Forces</td>
+<td>0.15 - 0.30</td>
+<td>0.15 - 0.30</td>
+<td>4000</td>
+<td>1200</td>
+<td><a href="Situations.html#New_World_Order" title="Situations">New World Order</a> situation
+</td></tr>
+<tr id="Rebel_Forces">
+<td>Rebel Forces</td>
+<td>0.15 - 0.30</td>
+<td>0.15 - 0.30</td>
+<td>4000</td>
+<td>1200</td>
+<td><a href="Situations.html#New_World_Order" title="Situations">New World Order</a> situation
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Assault_armies">Assault armies</span></h2>
+<p>An empire can recruit assault armies from a world based on the species living there. The species must not have <a href="Species_rights.html#Military_service" title="Military Service"><img alt="Military Service" src="images/Species_right_military_service.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;<i>Exempt</i>&#32;Military Service rights in order to recruit an army from that species. An empire cannot recruit more assault armies from a species than the total number of pops of that species living in the empire, with the exception of <a href="Land_warfare.html#Clone_Army" title="Clone army"><img alt="Clone army" src="images/Army_clone.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a>&#32;Clone Armies and <a href="Undead_Army.html" title="Undead Army"><img alt="Army undead.png" src="images/Army_undead.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a>&#32;Undead Armies. Armies not tied to a species, such as the <a href="Xenomorph_Army.html" title="Xenomorph Army"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a>&#32;Xenomorph Army, are unlimited unless otherwise specified.
+</p><p>Unlike defense armies, assault armies are based primarily in space and each recruited army boards a <i>transport ship</i>. Transport ships are unarmed but automatically upgraded with the latest defense and utility components. Assault armies can also be ordered to land on any controlled world to provide additional defense against invasion.
+</p>
+<table class="mildtable sortable">
+<tbody><tr>
+<th>Type</th>
+<th>Cost</th>
+<th><img alt="Time" src="images/Time.png" decoding="async" loading="lazy" title="Time" width="24" height="24" data-file-width="40" data-file-height="40" />&#32;Time</th>
+<th><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Upkeep</th>
+<th><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Base Damage</th>
+<th>Morale Damage</th>
+<th><a href="https://stellaris.paradoxwikis.com/Collateral_Damage" title="Collateral Damage"><img alt="Mod army collateral damage mult.png" src="images/Mod_army_collateral_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Collateral Damage</th>
+<th><a href="Army_health.html" title="Army health"><img alt="Mod army health.png" src="images/Mod_army_health.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Health</th>
+<th><a href="Army_morale.html" title="Army morale"><img alt="Mod army morale.png" src="images/Mod_army_morale.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Morale</th>
+<th><a href="War_exhaustion.html" title="War exhaustion"><img alt="Mod country war exhaustion.png" src="images/Mod_country_war_exhaustion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;War exhaustion</th>
+<th>Requirements</th>
+<th>Species
+</th></tr>
+<tr id="Assault_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault.png" class="image"><img alt="Army assault.png" src="images/Army_assault.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Assault Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100</td>
+<td>90</td>
+<td>1</td>
+<td>1.50 - 3.00</td>
+<td>1.50 - 3.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>200</td>
+<td>200</td>
+<td>100%</td>
+<td></td>
+<td>Biological
+</td></tr>
+<tr id="Slave_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_slave.png" class="image"><img alt="Army slave.png" src="images/Army_slave.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Slave Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 50</td>
+<td>60</td>
+<td>0.5</td>
+<td>1.50 - 3.00</td>
+<td>1.12 - 2.25</td>
+<td><span class="effect-red" style="font-weight:bold;">150%</span></td>
+<td>200</td>
+<td>150</td>
+<td>50%</td>
+<td><a href="Buildings.html#Slave_Processing_Facility" title="Slave Processing Facility"><img alt="Slave Processing Facility" src="images/Building_slave_processing.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Slave Processing Facility</td>
+<td>Biological (enslaved)
+</td></tr>
+<tr id="Clone_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_clone.png" class="image"><img alt="Army clone.png" src="images/Army_clone.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Clone Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 75</td>
+<td>30</td>
+<td>0.75</td>
+<td>1.50 - 3.00</td>
+<td>1.50 - 3.00</td>
+<td><span class="effect-red" style="font-weight:bold;">125%</span></td>
+<td>200</td>
+<td>200</td>
+<td>50%</td>
+<td><a href="Society_research.html#Gene_Banks" title="Gene Banks"><img alt="Gene Banks" src="images/Tech_gene_banks.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;<span style="color:#8900CE;"><b>Gene Banks</b></span></td>
+<td>Biological
+</td></tr>
+<tr id="Robotic_Assault_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_robotic.png" class="image"><img alt="Army robotic.png" src="images/Army_robotic.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Robotic Assault Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 150</td>
+<td>90</td>
+<td>1.5</td>
+<td>1.50 - 3.00</td>
+<td>1.50 - 3.00</td>
+<td><span class="effect-red" style="font-weight:bold;">150%</span></td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>50%</td>
+<td><a href="Droids_tech.html" title="Droids"><img alt="Droids" src="images/Tech_droid_workers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Droids<br /><a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Robotic Workers <i>Allowed</i></td>
+<td>Robot
+</td></tr>
+<tr id="Psionic_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_psionic.png" class="image"><img alt="Army psionic.png" src="images/Army_psionic.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Psionic Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 250</td>
+<td>120</td>
+<td>2.5</td>
+<td>3.00 - 6.00</td>
+<td>4.50 - 9.00</td>
+<td><span class="effect-green" style="font-weight:bold;">50%</span></td>
+<td>350</td>
+<td>500</td>
+<td>300%</td>
+<td><a href="Telepathy.html" title="Telepathy"><img alt="Tech telepathy.png" src="images/Tech_telepathy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;<span style="color:#8900CE;"><b>Telepathy</b></span></td>
+<td>Biological (psionic with Utopia)
+</td></tr>
+<tr id="Xenomorph_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Xenomorph Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 200</td>
+<td>100</td>
+<td>2</td>
+<td>3.00 - 6.00</td>
+<td>6.00 - 12.00</td>
+<td><span class="effect-red" style="font-weight:bold;">500%</span></td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>25%</td>
+<td><a href="Morphogenetic_Field_Mastery.html" title="Morphogenetic Field Mastery"><img alt="Tech morphogenetic field mastery.png" src="images/Tech_morphogenetic_field_mastery.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;<span style="color:#8900CE;"><b>Morphogenetic Field Mastery</b></span></td>
+<td>None
+</td></tr>
+<tr id="Gene_Warrior_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_gene_warrior.png" class="image"><img alt="Army gene warrior.png" src="images/Army_gene_warrior.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Gene Warrior Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300</td>
+<td>150</td>
+<td>3</td>
+<td>3.00 - 6.00</td>
+<td>3.00 - 6.00</td>
+<td><span class="effect-green" style="font-weight:bold;">75%</span></td>
+<td>500</td>
+<td>500</td>
+<td>300%</td>
+<td><a href="Society_research.html#Gene_Seed_Purification" title="Gene Seed Purification"><img alt="Gene Seed Purification" src="images/Tech_gene_seed_purification.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;<span style="color:#8900CE;"><b>Gene Seed Purification</b></span></td>
+<td>Biological
+</td></tr>
+<tr id="Undead_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_undead.png" class="image"><img alt="Army undead.png" src="images/Army_undead.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Undead Army</td>
+<td><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100</td>
+<td>60</td>
+<td>0.75</td>
+<td>1.50 - 3.00</td>
+<td>2.40 - 4.80</td>
+<td><span class="effect-red" style="font-weight:bold;">125%</span></td>
+<td>200</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>50%</td>
+<td><a href="Jobs.html#Necromancer" title="Necromancer"><img alt="Necromancer" src="images/Job_necromancer.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Necromancer jobs</td>
+<td>Biological
+</td></tr>
+<tr id="Hunter-Killer_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault_m.png" class="image"><img alt="Army assault m.png" src="images/Army_assault_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Hunter-Killer Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100</td>
+<td>90</td>
+<td>1</td>
+<td>1.50 - 3.00</td>
+<td>1.50 - 3.00</td>
+<td><span class="effect-red" style="font-weight:bold;">200%</span></td>
+<td>200</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>50%</td>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence</td>
+<td>Robot
+</td></tr>
+<tr id="Battle_Frame_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault_m.png" class="image"><img alt="Army assault m.png" src="images/Army_assault_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Battle Frame Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 200</td>
+<td>120</td>
+<td>2</td>
+<td>2.25 - 4.50</td>
+<td>3.00 - 6.00</td>
+<td><span class="effect-red" style="font-weight:bold;">200%</span></td>
+<td>500</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>100%</td>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence<br /><a href="Society_research.html#Adaptive_Combat_Algorithms" title="Adaptive Combat Algorithms"><img alt="Adaptive Combat Algorithms" src="images/Tech_adaptive_combat_algorithms.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;Adaptive Combat Algorithms</td>
+<td>Robot
+</td></tr>
+<tr id="Mega-Warform">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault_m.png" class="image"><img alt="Army assault m.png" src="images/Army_assault_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Mega-Warform</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 800</td>
+<td>500</td>
+<td>8</td>
+<td>6.00 - 12.00</td>
+<td>9.00 - 18.00</td>
+<td><span class="effect-red" style="font-weight:bold;">400%</span></td>
+<td>1200</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>400%</td>
+<td><a href="Machine_Intelligence.html" title="Machine Intelligence"><img alt="Auth machine intelligence.png" src="images/Auth_machine_intelligence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Machine Intelligence<br /><a href="Society_research.html#Biomechanics" title="Biomechanics"><img alt="Biomechanics" src="images/Tech_biomechanics.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="52" data-file-height="52" /></a>&#32;<span style="color:#8900CE;"><b>Biomechanics</b></span></td>
+<td>None
+</td></tr>
+<tr id="Cybrex_Warform">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault_m.png" class="image"><img alt="Army assault m.png" src="images/Army_assault_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Cybrex Warform</td>
+<td><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 250</td>
+<td>500</td>
+<td>8</td>
+<td>7.50 - 15.00</td>
+<td>15.00 - 30.00</td>
+<td><span class="effect-red" style="font-weight:bold;">500%</span></td>
+<td>1400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>400%</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AR_war_forge.png" class="image"><img alt="R war forge.png" src="images/R_war_forge.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="150" data-file-height="150" /></a> Cybrex War Forge relic<br />Can only be recruited on the capital</td>
+<td>None
+</td></tr>
+<tr id="Flamestorm_Troopers">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_flamestorm.png" class="image"><img alt="Army flamestorm.png" src="images/Army_flamestorm.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Flamestorm Troopers</td>
+<td><a href="Astral_threads.html" title="Astral threads"><img alt="Astral threads.png" src="images/Astral_threads.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100</td>
+<td>150</td>
+<td>3</td>
+<td>3.00 - 6.00</td>
+<td>9.00 - 18.00</td>
+<td><span class="effect-red" style="font-weight:bold;">500%</span></td>
+<td>600</td>
+<td>600</td>
+<td>50%</td>
+<td><a href="Astral_rift.html" title="Astral rift"><img alt="Astral rift map icon.png" src="images/Astral_rift_map_icon.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="38" data-file-height="42" /></a> Siege of Paradise astral rift</td>
+<td>Biological
+</td></tr>
+<tr id="Warplings">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Warplings</td>
+<td><a href="Astral_threads.html" title="Astral threads"><img alt="Astral threads.png" src="images/Astral_threads.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 100</td>
+<td>100</td>
+<td>1</td>
+<td>7.50 - 15.00</td>
+<td>15.00 - 30.00</td>
+<td><span class="effect-green" style="font-weight:bold;">50%</span></td>
+<td>500</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>50%</td>
+<td><a href="Astral_rift.html" title="Astral rift"><img alt="Astral rift map icon.png" src="images/Astral_rift_map_icon.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="38" data-file-height="42" /></a> Abandoned Complex astral rift</td>
+<td>None
+</td></tr>
+<tr id="Titanic_Beast">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Titanic Beast</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300</td>
+<td>90</td>
+<td>1</td>
+<td>4.50 - 9.00</td>
+<td>9.00 - 18.00</td>
+<td><span class="effect-red" style="font-weight:bold;">300%</span></td>
+<td>1000</td>
+<td>600</td>
+<td>200%</td>
+<td>Titanic Lifeforms event chain<br />Only 3 can be recruited</td>
+<td>None
+</td></tr>
+<tr id="Azizian_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Azizian Army</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 250<br /><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 50</td>
+<td>90</td>
+<td>1</td>
+<td>4.50 - 9.00</td>
+<td>9.00 - 18.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>1000</td>
+<td>400</td>
+<td>100%</td>
+<td>Ice Alien event chain<br />Only 3 can be recruited</td>
+<td>None
+</td></tr>
+<tr id="Imperial_Legion">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_imperial_legion.png" class="image"><img alt="Army imperial legion.png" src="images/Army_imperial_legion.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Imperial Legion</td>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 300</td>
+<td>150</td>
+<td>3</td>
+<td>3.75 - 7.50</td>
+<td>3.75 - 7.50</td>
+<td><span class="effect-green" style="font-weight:bold;">75%</span></td>
+<td>600</td>
+<td>600</td>
+<td>300%</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AGalactic_Imperium.png" class="image"><img alt="GalacticEmpire mainButton.png" src="images/Galactic_Imperium.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="67" data-file-height="67" /></a> Galactic Emperor<br /><a href="https://stellaris.paradoxwikis.com/File%3AResolution_imperial_institutions.png" class="image"><img alt="Resolution imperial institutions.png" src="images/Resolution_imperial_institutions.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Imperial Legions resolution<br />Only 12 can be recruited</td>
+<td>None
+</td></tr>
+<tr id="Mercenary_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault.png" class="image"><img alt="Army assault.png" src="images/Army_assault.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Mercenary Army</td>
+<td><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 120</td>
+<td>0</td>
+<td>2</td>
+<td>1.65 - 3.30</td>
+<td>1.65 - 3.30</td>
+<td><span class="effect-red" style="font-weight:bold;">250%</span></td>
+<td>200</td>
+<td>100</td>
+<td>50%</td>
+<td><a href="Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Mercenary enclave deal</td>
+<td>Biological
+</td></tr>
+<tr id="Mechanized_Mercenary_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault.png" class="image"><img alt="Army assault.png" src="images/Army_assault.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Mechanized Mercenary Army</td>
+<td><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> 240</td>
+<td>0</td>
+<td>5</td>
+<td>3.3 - 6.6</td>
+<td>3.3 - 6.6</td>
+<td><span class="effect-red" style="font-weight:bold;">300%</span></td>
+<td>360</td>
+<td>200</td>
+<td>50%</td>
+<td><a href="Overlord_(DLC).html" title="Overlord"><img alt="Overlord" src="images/Overlord.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Mercenary enclave deal</td>
+<td>Biological
+</td></tr>
+<tr id="Rebel_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_rebel.png" class="image"><img alt="Army rebel.png" src="images/Army_rebel.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Rebel Army</td>
+<td>Event</td>
+<td>0</td>
+<td>0</td>
+<td>0.75 - 1.50</td>
+<td>0.75 - 1.50</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>100</td>
+<td>200</td>
+<td>100%</td>
+<td>Biological
+</td></tr>
+<tr id="Psionic_Avatar">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_psionic.png" class="image"><img alt="Army psionic.png" src="images/Army_psionic.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Psionic Avatar</td>
+<td>Event</td>
+<td>0</td>
+<td>0</td>
+<td>7.50 - 15.00</td>
+<td>15.00 - 30.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>1400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>500%</td>
+<td><a href="Utopia.html" title="Utopia"><img alt="Utopia.png" src="images/Utopia.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> Shroud event</td>
+<td>None
+</td></tr>
+<tr id="Nanite_Warform">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault_m.png" class="image"><img alt="Army assault m.png" src="images/Army_assault_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Nanite Warform</td>
+<td>Event</td>
+<td>0</td>
+<td>0</td>
+<td>15.00 - 30.00</td>
+<td>90.00 - 180.00</td>
+<td><span class="effect-red" style="font-weight:bold;">500%</span></td>
+<td>3600</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>400%</td>
+<td><a href="Distant_Stars.html" title="Distant Stars"><img alt="Distant Stars.png" src="images/Distant_Stars.png" decoding="async" loading="lazy" width="26" height="26" data-file-width="45" data-file-height="45" /></a> A Quiet Stroll event</td>
+<td>None
+</td></tr>
+<tr id="Skeletal_Giant">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_undead.png" class="image"><img alt="Army undead.png" src="images/Army_undead.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Skeletal Giant</td>
+<td>Event</td>
+<td>0</td>
+<td>1.5</td>
+<td>4.50 - 9.00</td>
+<td>13.50 - 18.00</td>
+<td><span class="effect-red" style="font-weight:bold;">350%</span></td>
+<td>1400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>50%</td>
+<td><a href="Civics.html#Reanimators" title="Reanimators"><img alt="Reanimators" src="images/Civic_reanimated_armies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Reanimators<br />Strange Mountain Formation anomaly</td>
+<td>None
+</td></tr>
+<tr id="Xenofloran_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Xenofloran Army</td>
+<td>Event</td>
+<td>0</td>
+<td>0</td>
+<td>3.00 - 6.00</td>
+<td>6.00 - 12.00</td>
+<td><span class="effect-red" style="font-weight:bold;">500%</span></td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>25%</td>
+<td><a href="https://stellaris.paradoxwikis.com/File%3AOrigins_gardeners.png" class="image"><img alt="Origins gardeners.png" src="images/Origins_gardeners.png" decoding="async" loading="lazy" width="25" height="25" data-file-width="40" data-file-height="40" /></a> Fruitful Partnership<br />Grow Armies on planet special project</td>
+<td>None
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Event_armies">Event armies</span></h2>
+<p>Some hostile armies are produced by events or a <a href="Crisis.html" title="Crisis">crisis</a>.
+</p>
+<table class="mildtable sortable">
+<tbody><tr>
+<th>Type</th>
+<th><a href="Army_damage.html" title="Army damage"><img alt="Mod army damage mult.png" src="images/Mod_army_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Base Damage</th>
+<th>Morale Damage</th>
+<th><a href="https://stellaris.paradoxwikis.com/Collateral_Damage" title="Collateral Damage"><img alt="Mod army collateral damage mult.png" src="images/Mod_army_collateral_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Collateral Damage</th>
+<th><a href="Army_health.html" title="Army health"><img alt="Mod army health.png" src="images/Mod_army_health.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Health</th>
+<th><a href="Army_morale.html" title="Army morale"><img alt="Mod army morale.png" src="images/Mod_army_morale.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Morale</th>
+<th>Source
+</th></tr>
+<tr id="Robot_Uprising_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault_m.png" class="image"><img alt="Army assault m.png" src="images/Army_assault_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Robot Uprising Army</td>
+<td>1.50 - 3.00</td>
+<td>1.50 - 3.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>Pre-FTL Robot Uprising
+</td></tr>
+<tr id="Mutant_Horde">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Mutant Horde</td>
+<td>2.25 - 4.50</td>
+<td>3.00 - 6.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Abandoned_Terraforming_Equipment.html" title="Abandoned Terraforming Equipment">Abandoned Terraforming Equipment</a> <br /> <a href="Underground_Vault.html" title="Underground Vault">Underground Vault</a> <br /> <a href="The_Doorway.html" title="The Doorway">The Doorway</a>
+</td></tr>
+<tr id="Rampaging_Forest">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Rampaging Forest</td>
+<td>1.50 - 3.00</td>
+<td>1.50 - 3.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>200</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Migrating_Forests.html" title="Migrating Forests">Migrating Forests</a>
+</td></tr>
+<tr id="Enraged_Colonists">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Enraged Colonists</td>
+<td>0.75 - 1.50</td>
+<td>0.75 - 1.50</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>100</td>
+<td>200</td>
+<td>Rudimentary Robots planet event
+</td></tr>
+<tr id="Living_Snow_Warrior">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Living Snow Warrior</td>
+<td>2.25 - 4.50</td>
+<td>3.00 - 6.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Situations.html#Unusual_Snow" title="Situations">Unusual Snow</a>
+</td></tr>
+<tr id="Prethoryn_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_xenomorph.png" class="image"><img alt="Army xenomorph.png" src="images/Army_xenomorph.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Prethoryn Army</td>
+<td>3.00 - 6.00</td>
+<td>6.00 - 12.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>Prethoryn Swarm
+</td></tr>
+<tr id="C.A.R.E_Mega-Warform">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_assault_m.png" class="image"><img alt="Army assault m.png" src="images/Army_assault_m.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> C.A.R.E Mega-Warform</td>
+<td>6.00 - 12.00</td>
+<td>9.00 - 18.00</td>
+<td><span class="effect-red" style="font-weight:bold;">400%</span></td>
+<td>1200</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Archaeological_site.html" title="Archaeological site"><img alt="Archaeology map icon.png" src="images/Archaeology_map_icon.png" decoding="async" loading="lazy" width="24" height="27" data-file-width="38" data-file-height="42" /></a> <a href="Archaeological_site.html#Planetary_Machinery" title="Archaeological site">Planetary Machinery</a> archaeological site
+</td></tr>
+<tr id="Subterranean_Crystalline_Entity">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_undead.png" class="image"><img alt="Army undead.png" src="images/Army_undead.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Subterranean Crystalline Entity</td>
+<td>52.50 - 105.00</td>
+<td>2625.00 - 5250.00</td>
+<td><span class="effect-yellow" style="font-weight:bold;">100%</span></td>
+<td>11000</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td><a href="Unexpected_Mineral_Seams.html" title="Unexpected Mineral Seams">Unexpected Mineral Seams</a>
+</td></tr>
+<tr id="Giant_Undead_Army">
+<td><a href="https://stellaris.paradoxwikis.com/File%3AArmy_undead.png" class="image"><img alt="Army undead.png" src="images/Army_undead.png" decoding="async" loading="lazy" width="34" height="34" data-file-width="34" data-file-height="34" /></a> Giant Undead Army</td>
+<td>4.50 - 9.00</td>
+<td>4.50 - 9.00</td>
+<td><span class="effect-red" style="font-weight:bold;">350%</span></td>
+<td>1400</td>
+<td><span class="effect-green" style="font-weight:bold;">Immune</span></td>
+<td>Gigantic Skeleton event
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Devastation">Devastation</span></h2>
+<p>Devastation is a measure of how much damage has been caused to the world's infrastructure. It goes from <span class="effect-green" style="font-weight:bold;">0</span> to <span class="effect-red" style="font-weight:bold;">100%</span>, and every <span class="effect-red" style="font-weight:bold;">1%</span> Devastation causes a <span class="effect-red" style="font-weight:bold;">1%</span> decrease in <a href="Housing.html" title="Housing"><img alt="Housing.png" src="images/Housing.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;housing, <a href="Amenities.html" title="Amenities"><img alt="Amenities.png" src="images/Amenities.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="25" data-file-height="25" /></a>&#32;amenities, <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value, <a href="Pop_resource_output.html" title="Pop resource output"><img alt="Mod pop resource output.png" src="images/Mod_pop_resource_output.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;resources from jobs, <img alt="Upkeep" src="images/Maintenance.png" decoding="async" loading="lazy" title="Upkeep" width="24" height="24" data-file-width="28" data-file-height="28" />&#32;upkeep from Jobs, <a href="Growth_speed.html" title="Growth speed"><img alt="Mod pop growth req.png" src="images/Mod_pop_growth_speed.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a><sup id="cite_ref-obsolete_icon_pop_growth_speed_1-0" class="reference"><a href="#cite_note-obsolete_icon_pop_growth_speed-1">&#91;1&#93;</a></sup>&#32;growth speed and <a href="Migration.html" title="Immigration pull"><img alt="Immigration pull" src="images/Mod_planet_immigration_pull_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;immigration pull. Pops will not migrate to a world that has at least <span class="effect-red" style="font-weight:bold;">10%</span> Devastation.
+</p><p>Devastation is primarily caused by orbital bombardment, and to a lesser degree assault armies. Assault armies have a <a href="https://stellaris.paradoxwikis.com/Collateral_Damage" title="Collateral Damage"><img alt="Mod army collateral damage mult.png" src="images/Mod_army_collateral_damage_mult.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Collateral Damage modifier that determines how fast they cause devastation. It is reduced by half if the assault army is garrisoned on the world.
+</p><p>Devastation decreases by <span class="effect-green" style="font-weight:bold;">0.05%</span> daily if the world is not being invaded or bombarded.
+</p>
+<table class="mildtable" style="text-align: center;">
+<tbody><tr>
+<th rowspan="2"><a href="Devastation.html" title="Devastation"><img alt="Devastation.png" src="images/Devastation.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a>&#32;Devastation</th>
+<th colspan="2" style="text-align:center;">Orbital Bombardment</th>
+<th rowspan="2"><a href="FTL.html#FTL_Inhibitors" title="FTL"><img alt="FTL magnet.png" src="images/FTL_magnet.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a> FTL inhibitors</th>
+<th rowspan="2"><a href="https://stellaris.paradoxwikis.com/File%3AD_huge_tree.png" class="image"><img alt="D huge tree.png" src="images/D_huge_tree.png" decoding="async" loading="lazy" width="30" height="23" data-file-width="98" data-file-height="75" /></a> Tree of Life
+</th></tr>
+<tr>
+<th><a href="Damage.html" title="Damage"><img alt="Damage.png" src="images/Damage.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a>&#32;Damage to armies</th>
+<th><a href="Population.html#Undesirables" title="Undesirables"><img alt="Undesirables" src="images/Pop_cat_purge.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Kills pops
+</th></tr>
+<tr>
+<td>0%-24.9%</td>
+<td>50%</td>
+<td><img alt="No.png" src="images/No.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></td>
+<td><span class="effect-green" style="font-weight:bold;">Functional</span></td>
+<td><span class="effect-green" style="font-weight:bold;">Alive</span>
+</td></tr>
+<tr>
+<td>25%-49.9%</td>
+<td>100%</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></td>
+<td><span class="effect-green" style="font-weight:bold;">Functional</span></td>
+<td><span class="effect-green" style="font-weight:bold;">Alive</span>
+</td></tr>
+<tr>
+<td>50%-74.9%</td>
+<td>100%</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></td>
+<td><span class="effect-red" style="font-weight:bold;">Disabled</span></td>
+<td><span class="effect-red" style="font-weight:bold;">Destroyed</span>
+</td></tr>
+<tr>
+<td>75%-100%</td>
+<td>200%</td>
+<td><img alt="Yes.png" src="images/Yes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="40" data-file-height="40" /></td>
+<td><span class="effect-red" style="font-weight:bold;">Disabled</span></td>
+<td><span class="effect-red" style="font-weight:bold;">Destroyed</span>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-obsolete_icon_pop_growth_speed-1"><span class="mw-cite-backlink"><a href="#cite_ref-obsolete_icon_pop_growth_speed_1-0">↑</a></span> <span class="reference-text">Obsolete icon code, use "pop growth speed"</span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b>Game concepts</b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Exploration
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Exploration.html" title="Exploration">Exploration</a> • <a href="FTL.html" class="mw-redirect" title="FTL">FTL</a> • <a href="Unique_systems.html" title="Unique systems">Unique systems</a> • <a href="L-Cluster.html" title="L-Cluster">L-Cluster</a> • <a href="Pre-FTL_species.html" title="Pre-FTL species">Pre-FTL species</a> • <a href="Fallen_empire.html" title="Fallen empire">Fallen empire</a> • <a href="Spaceborne_aliens.html" title="Spaceborne aliens">Spaceborne aliens</a> • <a href="Enclaves.html" title="Enclaves">Enclaves</a>  • <a href="Guardians.html" title="Guardians">Guardians</a> • <a href="Marauders.html" title="Marauders">Marauders</a> • <a href="Caravaneers.html" title="Caravaneers">Caravaneers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Celestial bodies
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Celestial_body.html" class="mw-redirect" title="Celestial body">Celestial body</a> • <a href="Colonization.html" title="Colonization">Colonization</a> • <a href="Planetary_features.html" title="Planetary features">Planetary features</a> • <a href="Planet_modifiers.html" title="Planet modifiers">Planet modifiers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Discovery
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Discovery.html" title="Discovery">Discovery</a> • <a href="Anomaly.html" title="Anomaly">Anomaly</a> • <a href="Archaeological_site.html" title="Archaeological site">Archaeological site</a> • <a href="Astral_rift.html" title="Astral rift">Astral rift</a> • <a href="Relics.html" title="Relics">Relics</a> • <a href="Collection.html" title="Collection">Collection</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Species
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a> • <a href="Species_traits.html" title="Species traits">Pop modification</a> • <a href="Biological_traits.html" title="Biological traits">Biological traits</a> • <a href="Machine_traits.html" title="Machine traits">Machine traits</a> • <a href="Population.html" title="Population">Population</a> • <a href="Species_rights.html" title="Species rights">Species rights</a> • <a href="Ethics.html" title="Ethics">Ethics</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Leaders
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader.html" class="mw-redirect" title="Leader">Leader</a> • <a href="Common_leader_traits.html" title="Common leader traits">Common leader traits</a> • <a href="Commander_traits.html" title="Commander traits">Commander traits</a> • <a href="Official_traits.html" title="Official traits">Official traits</a> • <a href="Scientist_traits.html" title="Scientist traits">Scientist traits</a> • <a href="Paragons.html" title="Paragons">Paragons</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Governance
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a> • <a href="Origin.html" title="Origin">Origin</a> • <a href="Government.html" title="Government">Government</a> • <a href="Civics.html" title="Civics">Civics</a> • <a href="Council.html" title="Council">Council</a> • <a href="Policies.html" title="Policies">Policies</a> • <a href="Edicts.html" title="Edicts">Edicts</a> • <a href="Factions.html" title="Factions">Factions</a> • <a href="Traditions.html" title="Traditions">Traditions</a> • <a href="Ascension_perks.html" title="Ascension perks">Ascension perks</a> • <a href="Ambition.html" title="Ambition">Ambition</a> • <a href="Situations.html" title="Situations">Situations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Economy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Resources.html" title="Resources">Resources</a> • <a href="Planetary_management.html" title="Planetary management">Planetary management</a> • <a href="Districts.html" title="Districts">Districts</a>  • <a href="Jobs.html" title="Jobs">Jobs</a> • <a href="Designation.html" title="Designation">Designation</a> • <a href="Trade.html" class="mw-redirect" title="Trade">Trade</a> • <a href="Megastructures.html" title="Megastructures">Megastructures</a> • <a href="Waystation.html" title="Waystation">Waystation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Buildings
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_capital.html" title="Planet capital">Planet capital</a> • <a href="Buildings.html" title="Buildings">Common buildings</a> • <a href="Planet_unique_buildings.html" title="Planet unique buildings">Planet unique</a> • <a href="Empire_unique_buildings.html" title="Empire unique buildings">Empire unique</a> • <a href="Holdings.html" title="Holdings">Holdings</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Ships
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Ship.html" title="Ship">Ship</a> • <a href="Arkship.html" title="Arkship">Arkship</a> • <a href="Ship_designer.html" title="Ship designer">Ship designer</a> • <a href="Core_components.html" title="Core components">Core components</a> • <a href="Weapon_components.html" title="Weapon components">Weapon components</a> • <a href="Utility_components.html" title="Utility components">Utility components</a> • <a href="Mutations.html" title="Mutations">Mutations</a> • <a href="Offensive_mutations.html" title="Offensive mutations">Offensive mutations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Technology
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Technology.html" title="Technology">Technology</a> • <a href="Physics_research.html" title="Physics research">Physics research</a> • <a href="Society_research.html" title="Society research">Society research</a> • <a href="Engineering_research.html" title="Engineering research">Engineering research</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Diplomacy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a> • <a href="Relations.html" title="Relations">Relations</a> • <a href="Galactic_community.html" class="mw-redirect" title="Galactic community">Galactic community</a> • <a href="Federation.html" title="Federation">Federations</a> • <a href="Subject_empire.html" title="Subject empire">Subject empires</a> • <a href="Intelligence.html" title="Intelligence">Intelligence</a> • <a href="Contracts.html" title="Contracts">Contracts</a> • <a href="AI_personalities.html" title="AI personalities">AI personalities</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Warfare
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Warfare.html" title="Warfare">Warfare</a> • <a href="Space_warfare.html" title="Space warfare">Space warfare</a> • <a href="Land_warfare.html" title="Land warfare">Land warfare</a> • <a href="Starbase.html" title="Starbase">Starbase</a> • <a href="Crisis.html" title="Crisis">Crisis</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Others
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a> • <a href="The_Shroud.html" title="The Shroud">The Shroud</a> • <a href="Preset_empires.html" title="Preset empires">Preset empires</a> • <a href="AI_players.html" title="AI players">AI players</a> • <a href="Stat_modifiers.html" title="Stat modifiers">Stat modifiers</a> • <a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Easter_eggs.html" title="Easter eggs">Easter eggs</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707234918
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.483 seconds
+Real time usage: 0.699 seconds
+Preprocessor visited node count: 23031/1000000
+Post‐expand include size: 115706/2097152 bytes
+Template argument size: 20709/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 452/5000000 bytes
+Lua time usage: 0.050/7 seconds
+Lua virtual size: 5328896/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  370.961      1 -total
+ 41.26%  153.049    147 Template:Icon
+ 40.33%  149.619     95 Template:Iconify
+ 26.33%   97.687     17 Template:Trait
+  7.57%   28.090    104 Template:Green
+  6.36%   23.591    149 Template:Symbolfirst
+  4.68%   17.344     32 Template:Icon/a
+  3.92%   14.555     23 Template:Icon/m
+  3.43%   12.713     12 Template:Icon/c
+  3.14%   11.656     34 Template:Red
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:9200-0!canonical and timestamp 20260707234917 and revision id 115649.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>

@@ -23,7 +23,7 @@
 <div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.1.<br /><br />This article is for the PC version of Stellaris only.</div>
 </div>
 </div>
-<p>This guide is for adding and modifying <a href="https://stellaris.paradoxwikis.com/Celestial_body" class="mw-redirect" title="Celestial body">Celestial bodies</a> to the game. For guidelines on how to use them in solar systems, including adding modifiers and inhabitants, see <a href="System_modding.html" title="System modding">System modding</a>.
+<p>This guide is for adding and modifying <a href="Celestial_body.html" class="mw-redirect" title="Celestial body">Celestial bodies</a> to the game. For guidelines on how to use them in solar systems, including adding modifiers and inhabitants, see <a href="System_modding.html" title="System modding">System modding</a>.
 </p>
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
@@ -37,7 +37,7 @@
 </div>
 
 <h2><span class="mw-headline" id="Overview">Overview</span></h2>
-<p>Planet and star classes can be found in <i>common/planet_classes</i>. Note that "stars" and "star classes" are two different things: individual stars are considered the same as planets in the game code, while star classes (found in <i>common/star_classes</i>) refer to the classification of a solar system as a whole and will determine lighting, the system's icon in the <a href="https://stellaris.paradoxwikis.com/Galaxy_map" class="mw-redirect" title="Galaxy map">galaxy map</a>, and number of individual stars in a solar system. Information about modding star classes can be found <a href="System_modding.html" title="System modding">here</a>.
+<p>Planet and star classes can be found in <i>common/planet_classes</i>. Note that "stars" and "star classes" are two different things: individual stars are considered the same as planets in the game code, while star classes (found in <i>common/star_classes</i>) refer to the classification of a solar system as a whole and will determine lighting, the system's icon in the <a href="Galaxy_map.html" class="mw-redirect" title="Galaxy map">galaxy map</a>, and number of individual stars in a solar system. Information about modding star classes can be found <a href="System_modding.html" title="System modding">here</a>.
 </p><p>Creating a new planet class is easy: one simply chooses an internal name (ex: "pc_volcanic") and defines how the planet will work in the context of the game. Is it a colonizable world? A star? An inhabitable megastructure? Etc. The internal name doesn't need to reflect the planet's "real" name; using <a href="Localisation_modding.html" title="Localisation modding">localisation</a>, the name visible to players can be whatever you want it to be.
 </p>
 <h2><span class="mw-headline" id="Planet_variables">Planet variables</span></h2>
@@ -182,7 +182,7 @@
 <tr>
 <td>entity</td>
 <td>The planet entities your planet will use by default.</td>
-<td>You can <a href="https://stellaris.paradoxwikis.com/Model_modding" class="new" title="Model modding (page does not exist)">create a custom set of entities</a> (such as "volcanic_planet") or use an existing one (such as "arctic_planet").
+<td>You can create a custom set of entities (such as "volcanic_planet") or use an existing one (such as "arctic_planet").
 </td></tr>
 <tr>
 <td>entity_face_object
@@ -225,7 +225,7 @@
 </td></tr>
 <tr>
 <td>has_colonization_influence_cost</td>
-<td>If <i>yes</i>, players/AI will have to spend <a href="https://stellaris.paradoxwikis.com/Influence" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;Influence to colonize this planet class.</td>
+<td>If <i>yes</i>, players/AI will have to spend <a href="Influence.html" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;Influence to colonize this planet class.</td>
 <td>Appears to be an obsolete feature as of <a href="Patch_2.0.html" title="Patch 2.0">Patch 2.0</a>.
 </td></tr>
 <tr>
@@ -714,7 +714,7 @@
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Pops" class="mw-redirect" title="Pops">Pops</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Pops.html" class="mw-redirect" title="Pops">Pops</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Pop_Job_modding.html" title="Pop Job modding">Jobs</a> • <a href="Pop_Faction_modding.html" title="Pop Faction modding">Factions</a>
 </td></tr></tbody></table>
@@ -735,21 +735,21 @@
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Planets" class="mw-redirect" title="Planets">Planets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Planets.html" class="mw-redirect" title="Planets">Planets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a class="mw-selflink selflink">Planets</a> • <a href="Planet_Generation_modding.html" title="Planet Generation modding">Planetary feature • Orbital deposit</a> • <a href="Building_modding.html" title="Building modding">Buildings</a> • <a href="District_modding.html" title="District modding">Districts</a> • <a href="Decision_modding.html" title="Decision modding">Planetary decisions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Solar_System" class="mw-redirect" title="Solar System">Systems</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Solar_System.html" class="mw-redirect" title="Solar System">Systems</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="System_modding.html" title="System modding">Systems</a> • <a href="Starbase_modding.html" title="Starbase modding">Starbases</a> • <a href="Megastructure_modding.html" title="Megastructure modding">Megastructures</a> • <a href="Bypass_modding.html" title="Bypass modding">Bypasses</a> • <a href="Map_modding.html" title="Map modding">Map</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 
 <tbody><tr>
-<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="https://stellaris.paradoxwikis.com/Fleets" class="mw-redirect" title="Fleets">Fleets</a>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;"><a href="Fleets.html" class="mw-redirect" title="Fleets">Fleets</a>
 </td>
 <td style="text-align: left; padding: 2px 5px;"><a href="Fleet_modding.html" title="Fleet modding">Fleets</a> • <a href="Ship_modding.html" title="Ship modding">Ships • Components</a>
 </td></tr></tbody></table>
@@ -786,7 +786,7 @@
 <tbody><tr>
 <td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Dynamic modding
 </td>
-<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="https://stellaris.paradoxwikis.com/Modifiers" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
+<td style="text-align: left; padding: 2px 5px;"><a href="Dynamic_modding.html" title="Dynamic modding">Dynamic modding</a> • <a href="Effects.html" title="Effects">Effects</a> • <a href="Conditions.html" title="Conditions">Conditions</a> • <a href="Scopes.html" title="Scopes">Scopes</a> • <a href="Modifiers.html" class="mw-redirect" title="Modifiers">Modifiers</a> • <a href="Variables.html" title="Variables">Variables</a> • <a href="AI_modding.html" title="AI modding">AI</a> • <a href="On_actions.html" title="On actions">On actions</a>
 </td></tr></tbody></table>
 <table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
 

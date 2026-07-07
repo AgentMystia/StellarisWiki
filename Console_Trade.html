@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console:Trade - Stellaris Wiki</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="skin-vectorparadox static-mirror">
+<div id="mw-wrapper">
+  <header id="mw-header">
+    <a id="mw-logo" href="Stellaris_Wiki.html"><span class="mw-logo-wordmark">Stellaris Wiki</span></a>
+  </header>
+  <main id="content" class="mw-body" role="main">
+    <h1 id="firstHeading" class="firstHeading"><span class="mw-page-title-namespace">Console</span><span class="mw-page-title-separator">:</span><span class="mw-page-title-main">Trade</span></h1>
+    <div id="bodyContent" class="vectorparadox-body">
+      <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output"><div class="stellaris-outliner" style="float:right; clear:none; width:330px;">
+<div class="stellaris-outliner-header">
+<p><span style="white-space:nowrap">Version</span>
+</p>
+</div><div style="height:3px;"></div><img alt="Outliner top.png" src="images/Outliner_top.png" decoding="async" loading="lazy" width="330" height="36" data-file-width="330" data-file-height="36" />
+<div class="stellaris-outliner-content" style="width:314px; height:auto"><div style="font-size:80%">Please help with verifying or updating older sections of this article. At least some were last verified for <a href="Stellaris_Wiki_Versioning.html" title="Stellaris Wiki:Versioning">version</a> 3.12.<br /><br />This article is for the console version of Stellaris only.</div>
+</div>
+</div>
+<p><b>Trade</b> represents the transfer of goods or resources from one entity to another, usually with the intent of generating a profit from said transaction. There are multiple types of trade possible, each having different mechanics, and all play a large impact on the economy of an empire, multiple empires or even the entire galaxy.
+</p><p><i>For information about trade deals between empires, see <a href="Diplomacy.html#Trade_deals" title="Diplomacy">Diplomacy#Trade deals</a>.</i>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Trade_value"><span class="tocnumber">1</span> <span class="toctext">Trade value</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Trade_collection"><span class="tocnumber">1.1</span> <span class="toctext">Trade collection</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Trade_routes"><span class="tocnumber">1.2</span> <span class="toctext">Trade routes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Bypasses"><span class="tocnumber">1.2.1</span> <span class="toctext">Bypasses</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Piracy"><span class="tocnumber">1.3</span> <span class="toctext">Piracy</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Strategy"><span class="tocnumber">1.3.1</span> <span class="toctext">Strategy</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#The_market"><span class="tocnumber">2</span> <span class="toctext">The market</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Galactic_market"><span class="tocnumber">2.1</span> <span class="toctext">Galactic market</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Slave_market"><span class="tocnumber">2.1.1</span> <span class="toctext">Slave market</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Market_fee"><span class="tocnumber">2.2</span> <span class="toctext">Market fee</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Trade_value">Trade value</span></h2>
+<p><a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade value represents the civilian and private-sector economy of an empire as well as the total value of all goods being traded. All pops generate a small amount of trade value based on their <a href="Living_standards.html" class="mw-redirect" title="Living standards">living standards</a>, with higher living standards generating more trade value per pop; trade value is also produced by a number of different <a href="Jobs.html" title="Jobs">jobs</a>, primarily <a href="Jobs.html#Clerk" title="Clerk"><img alt="Clerk" src="images/Job_clerk.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;clerks and <a href="Jobs.html#Merchant" title="Merchant"><img alt="Merchant" src="images/Job_merchant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;merchants. The trade value of a planet is further affected by its <a href="Stability.html" title="Stability"><img alt="Mod planet stability.png" src="images/Mod_planet_stability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="35" data-file-height="35" /></a>&#32;stability, <a href="Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;designation, and other factors. Additionally, small amounts of trade value can be found as deposits on celestial bodies.
+</p><p>Each unit of trade value is converted into <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;energy credits. Depending on the empire's <a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> <a href="Policy.html#Trade_Policy" class="mw-redirect" title="Policy">trade policy</a>, <a href="Consumer_goods.html" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;consumer goods and <a href="Unity.html" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;unity (or both) may also be produced.
+</p><p>Trade Value is mechanically unique from the Resources it can be converted into because it is not considered a Resource produced by jobs, but a Planet Modifier. Most job modifiers that affect jobs and resource production, such as Planet Habitability, will not affect Trade Value production. Only explicit Trade-related modifiers and Stability will affect Trade Value.
+</p><p>Civilian trade is not available to <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness empires. <a href="Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Corporate empires on the other hand are very efficient at generating and exploiting trade value through branch offices and other methods while <a href="Civics.html#Merchant_Guilds" title="Merchant Guilds"><img alt="Merchant Guilds" src="images/Civic_merchant_guilds.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Merchant Guilds and <a href="Civics.html#Corporate_Dominion" title="Corporate Dominion"><img alt="Corporate Dominion" src="images/Civic_corporate_dominion.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Corporate Dominion empires are also quite well-geared towards generating trade value, with additional <a href="Jobs.html#Merchant" title="Merchant"><img alt="Merchant" src="images/Job_merchant.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;merchants and access to the <a href="Diplomatic_stance.html#Mercantile" title="Mercantile"><img alt="Mercantile" src="images/Diplomatic_stance_mercantile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Mercantile diplomatic stance.
+</p><p><a href="Commercial_pact.html" title="Commercial pact"><img alt="Diplomacy commercial pact.png" src="images/Diplomacy_commercial_pact.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Commercial pacts provide each empire <span class="effect-green" style="font-weight:bold;">10%</span> of the other's trade value without reducing their own benefit. This trade value is then converted according to the receiving empire's <a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;trade&#32;policy.
+</p><p>The trade value produced on a planet can be further modified by the following:
+</p>
+<table class="mildtable" style="float:left; margin-right:10px;">
+<tbody><tr>
+<th>Source</th>
+<th>Trade value
+</th></tr>
+<tr>
+<td><a href="Biological_traits.html#Thrifty" title="Thrifty"><img alt="Thrifty" src="images/Trait_thrifty.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Thrifty species trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span> from jobs
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/File%3ATrait_robot_trading_algorithms.png" class="image"><img alt="Trading algorithms.png" src="images/Trait_robot_trading_algorithms.png" decoding="async" loading="lazy" width="29" height="29" data-file-width="29" data-file-height="29" /></a> Trading Algorithms species trait
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+25%</span> from jobs
+</td></tr>
+<tr>
+<td><a href="Biological_traits.html#Numistic_Administration" title="Numistic Administration"><img alt="Numistic Administration" src="images/Trait_nuumismatic_administration.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Numistic Administration species trait
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+33%</span> from jobs
+<p><span class="effect-green" style="font-weight:bold;">+33%</span> from living standards
+</p>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait enclave trader.png" src="images/Leader_trait_enclave_trader.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Official_traits.html#Enclave_Trader" title="Enclave Trader"><img alt="Enclave Trader" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Enclave Trader or <span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><img alt="Leader trait bg basic.png" src="images/Leader_trait_bg_basic.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></span><span style="grid-area:1/1; scale: calc(28/34);"><img alt="Leader trait merchant of numa.png" src="images/Leader_trait_nuumismatic_priest.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></span><span style="grid-area:1/1; isolation: isolate;"><a href="Official_traits.html#Merchant_of_Numa" title="Merchant of Numa"><img alt="Merchant of Numa" src="images/Leader_trait_overlay_transparent.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="34" data-file-height="34" /></a></span></span>&#32;Merchant of Numa governor trait</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span>
+</td></tr>
+<tr>
+<td><a href="Jobs.html#Culture_Worker" title="Culture Worker"><img alt="Culture Worker" src="images/Job_culture_worker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Culture Worker or <a href="Jobs.html#Death_Chronicler" title="Death Chronicler"><img alt="Death Chronicler" src="images/Job_death_chronicler.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Death Chronicler job
+<p>with Pacifist Empire ethic
+</p>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span> from living standards
+</td></tr>
+<tr>
+<td><a href="Jobs.html#Culture_Worker" title="Culture Worker"><img alt="Culture Worker" src="images/Job_culture_worker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Culture Worker or <a href="Jobs.html#Death_Chronicler" title="Death Chronicler"><img alt="Death Chronicler" src="images/Job_death_chronicler.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Death Chronicler job
+<p>with Fanatic Pacifist Empire ethic
+</p>
+</td>
+<td><span class="effect-green" style="font-weight:bold;">+10%</span> from living standards
+</td></tr>
+<tr>
+<td><a href="Stability.html" title="Stability"><img alt="Mod planet stability.png" src="images/Mod_planet_stability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="35" data-file-height="35" /></a> Stability over 50</td>
+<td><span class="effect-green" style="font-weight:bold;">+0.6%</span> per point,<br />up to <span class="effect-green" style="font-weight:bold;">+30%</span>
+</td></tr>
+<tr>
+<td><a href="Stability.html" title="Stability"><img alt="Mod planet stability.png" src="images/Mod_planet_stability.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="35" data-file-height="35" /></a> Stability under 50</td>
+<td><span class="effect-red" style="font-weight:bold;">−1%</span> per point,<br />down to <span class="effect-red" style="font-weight:bold;">−50%</span>
+</td></tr>
+<tr>
+<td><a href="Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Urban World Designation</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Trade Station Designation</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Commercial Ring World Designation</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Designation.html" title="Designation"><img alt="Colony type picker.png" src="images/Colony_type_picker.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Ecumenopolis Designation</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Buildings.html#Galactic_Stock_Exchange" title="Galactic Stock Exchange"><img alt="Galactic Stock Exchange" src="images/Building_galactic_stock_exchange.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Galactic Stock Exchange building</td>
+<td><span class="effect-green" style="font-weight:bold;">+20%</span>
+</td></tr>
+<tr>
+<td><a href="Holdings.html#Executive_Retreat" title="Executive Retreat"><img alt="Executive Retreat" src="images/Building_executive_retreat.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Executive Retreat Corporate holding</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Holdings.html#Xeno-Outreach_Agency" title="Xeno-Outreach Agency"><img alt="Xeno-Outreach Agency" src="images/Building_xeno_tourism_agency.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="78" data-file-height="78" /></a> Xeno-Outreach Agency Corporate holding</td>
+<td><span class="effect-green" style="font-weight:bold;">+5%</span>
+</td></tr>
+<tr>
+<td><a href="Crime.html" title="Crime"><img alt="Job criminal.png" src="images/Job_criminal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a> Criminal Job</td>
+<td>flat <span class="effect-red" style="font-weight:bold;">−5</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_crime.png" class="image"><img alt="Pm crime.png" src="images/Pm_crime.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Smuggler_Activity" title="Smuggler Activity"><img alt="Smuggler Activity" src="images/Pm_frame_red.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Smuggler Activity (Crime Event Planet Modifier)</td>
+<td><span class="effect-red" style="font-weight:bold;">−20%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_crime.png" class="image"><img alt="Pm crime.png" src="images/Pm_crime.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Travel_Advisory" title="Travel Advisory"><img alt="Travel Advisory" src="images/Pm_frame_red.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Travel Advisory (Crime Event Planet Modifier)</td>
+<td><span class="effect-red" style="font-weight:bold;">−20%</span>
+</td></tr>
+<tr>
+<td><span style="display:inline grid; align-items:center; justify-items:center;"><span style="grid-area:1/1"><a href="https://stellaris.paradoxwikis.com/File%3APm_crime.png" class="image"><img alt="Pm crime.png" src="images/Pm_crime.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span><span style="grid-area:1/1"><a href="Planet_modifiers.html#Trade_Pilfering" title="Trade Pilfering"><img alt="Trade Pilfering" src="images/Pm_frame_red.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="60" data-file-height="60" /></a></span></span> Trade Pilfering (Crime Event Planet Modifier)</td>
+<td><span class="effect-red" style="font-weight:bold;">−20%</span>
+</td></tr></tbody></table>
+<div style="clear:both;"></div>
+<h3><span class="mw-headline" id="Trade_collection">Trade collection</span></h3>
+<p><a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade value is collected by <a href="Starbase.html" title="Starbase"><img alt="Spaceport 1.png" src="images/Spaceport_1.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="26" data-file-height="26" /></a> <a href="Starbase.html" title="Starbase">starbases</a> above outpost level. By default, starbases will only collect trade value from the system in which they are built, but their collection range can be extended by 1 hyperlane jump for each <a href="Starbase.html#Trade_Hub" title="Trade Hub"><img alt="Trade Hub" src="images/Sb_trading_hub.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Trade Hub module present; the <a href="Starbase.html#Hyperlane_Registrar" title="Jyperlane Registrar"><img alt="Jyperlane Registrar" src="images/Sb_hyperlane_registrar.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Hyperlane Registrar starbase building also extends the collection range by 1, as does adopting the <a href="Traditions.html#Mercantile" title="Mercantile"><img alt="Mercantile" src="images/Tradition_icon_mercantile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Mercantile. A starbase with one or more trade hub modules can also have a <a href="Starbase.html#Offworld_Trading_Company" title="Offworld Trading Company"><img alt="Offworld Trading Company" src="images/Sb_offworld_trading_company.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Offworld Trading Company building, which produces <a href="Trade.html" title="Trade"><img alt="Mod trade value add.png" src="images/Mod_trade_value_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+2</span>&#32;trade value for every trade hub module on the starbase, up to a maximum of <a href="Trade.html" title="Trade"><img alt="Mod trade value add.png" src="images/Mod_trade_value_add.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-green" style="font-weight:bold;">+12</span>&#32;trade value on a starbase with 6 Trade Hubs. If the starbase is disabled or occupied, it will not collect trade value until it is restored. All trade value collected by a starbase must be sent through a trade route to the capital system, where it is converted into useable resources (<a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;energy credits, and possibly <a href="Consumer_goods.html" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;consumer goods or <a href="Unity.html" title="Unity"><img alt="Unity.png" src="images/Unity.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;unity) as determined by the empire's <a href="Policies.html" title="Policies"><img alt="Menu icon policies.png" src="images/Menu_icon_policies.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;trade&#32;policy.
+</p>
+<h3><span class="mw-headline" id="Trade_routes">Trade routes</span></h3>
+<p>A trade route is a path that connects a starbase collecting trade value to the capital system, either directly or through another starbase, and is required for the trade value to be exploited. Each upgraded starbase has one outgoing trade route, which initially connects directly to the capital, but can be manually re-routed to any other starbase (select the base in trade route mapmode, then right-click on the target base to cancel or switch route). If the trade route of a starbase leads to another starbase, the receiving starbase will send both its own collected trade value and the trade value received from the other starbases further "downstream" towards the capital system. The length of a trade route has no direct effect on its trade value, and overlapping individual trade routes are equivalent to consolidated routes, thus the primary use of manually setting routes is to reduce piracy risk. Once the trade value reaches the empire's capital, the capital system must contain a starbase of higher than outpost level in order for the trade value to be converted into tangible resources.
+</p><p>Trade routes have their own map filter showing routes, protection, and piracy.
+</p>
+<h4><span class="mw-headline" id="Bypasses">Bypasses</span></h4>
+<div style="margin:1.4px 1.6em;"><i>See also: <a href="FTL.html#Bypasses" class="mw-redirect" title="FTL">FTL#Bypasses</a></i></div>
+<p>Trade value can be collected and routed through wormholes, gateways, and L-gates. Starbases with trade hub modules will collect trade value from the other side of a bypass, treating it as one hyperlane jump, as well as systems neighboring the other end within collection range. Trade routes will also be formed through a bypass if the path is shorter that way, even via the controlled space of another empire if borders are open.
+</p>
+<h3><span class="mw-headline" id="Piracy">Piracy</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:322px;"><a href="https://stellaris.paradoxwikis.com/File%3APirate_Galleon.png" class="image"><img alt="" src="images/Pirate_Galleon.png" decoding="async" loading="lazy" width="320" height="180" class="thumbimage" data-file-width="1920" data-file-height="1080" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://stellaris.paradoxwikis.com/File%3APirate_Galleon.png" class="internal" title="Enlarge"></a></div>Pirate Galleon</div></div></div>
+<p>Lucrative trade always risks attracting piracy. Every trade route that goes through a system without an upgraded starbase attracts <a href="Piracy_risk.html" title="Piracy risk"><img alt="Piracy risk.png" src="images/Piracy_risk.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="28" data-file-height="28" /></a>&#32;piracy in that system, slowly growing for 10 years until it reaches 25% of the trade value going through the system. Piracy is countered in three ways:
+</p>
+<ol><li>All starbases – except outposts – as well as mercenary enclaves eliminate piracy in their systems.</li>
+<li><a href="Piracy_suppression.html" title="Piracy suppression"><img alt="Piracy suppression.png" src="images/Piracy_suppression.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Piracy suppression:
+<dl><dd>Fleets automatically decrease piracy for the systems in which they are located when max piracy is less than piracy suppression. As soon as all fleets leave a system, piracy starts rising again. The total piracy suppression of a fleet equals the sum of piracy suppression of individual ships in the fleet. The amount of piracy suppression per ship depends only on the ship's <a href="Ship_designer.html" title="Ship designer">hull size</a>, with corvettes being the best and titans being the worst.</dd>
+<dd>Any fleet can be given the patrol command in order to facilitate player's piracy suppression across their trade routes. A fleet under patrol command travels from its starting waypoint, through intermediate ones, reaching an ending waypoint, then re-traces the route back and repeats indefinitely. (Starting and ending waypoints can coincide.) In order to set a patrol waypoint on a system, select one or more fleets, left-click Patrol or press P, and then left-click on a system; press Shift + left-click on another system in order to set additional waypoints; the fleet's current system is always used as waypoint.</dd>
+<dd>Defense platforms also add piracy suppression, and since they can be built at outposts, this can add a small amount of static suppression in high value systems without a full starbase.</dd></dl></li>
+<li><a href="https://stellaris.paradoxwikis.com/Trade_protection" title="Trade protection"><img alt="Trade protection.png" src="images/Trade_protection.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="20" data-file-height="20" /></a>&#32;Trade protection: Starbases give a trade protection value representing secure transports and heavily escorted convoys that cannot be attacked by pirates. A trade protection value ensures that the same amount of trade value cannot be lost to piracy. By default, this trade protection only applies to the system in which the starbase is located, but can be extended by 1 hyperlane per weapon module (max 6), which also extends through bypasses. Trade protection also does not extend outside of the territory of the empire to which the starbase belongs. A starbase's protection coverage can be seen in trade routes mapmode as the highlighted trade protection icons. Trade protection is lost immediately if a weapon module is queued for replacement; however, trade protection gained with new modules and upgrades is only shown upon monthly refresh. Trade protection is generated by the following:</li></ol>
+<table class="mildtable">
+<tbody><tr>
+<th>Empirewide sources</th>
+<th>Amount
+</th></tr>
+<tr>
+<td>Base</td>
+<td><span class="effect-green" style="font-weight:bold;">+2</span>
+</td></tr>
+<tr>
+<td><a href="Traditions.html#Mercantile" title="Mercantile"><img alt="Mercantile" src="images/Tradition_icon_mercantile.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="30" data-file-height="30" /></a>&#32;Mercantile adoption</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span>
+</td></tr>
+<tr>
+<td>Member of level 3 or higher <a href="Trade_League.html" title="Trade League"><img alt="Federation trade.png" src="images/Federation_trade.png" decoding="async" loading="lazy" width="24" height="22" data-file-width="56" data-file-height="52" /></a>&#32;Trade League</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span>
+</td></tr>
+<tr>
+<td>Level 2 or 3 of <a href="Galactic_Commerce.html" title="Galactic Commerce"><img alt="Resolution galactic commerce.png" src="images/Resolution_galactic_commerce.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Galactic Commerce resolution</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span>
+</td></tr>
+<tr>
+<td>Level 4 or 5 of <a href="Galactic_Commerce.html" title="Galactic Commerce"><img alt="Resolution galactic commerce.png" src="images/Resolution_galactic_commerce.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Galactic Commerce resolution</td>
+<td><span class="effect-green" style="font-weight:bold;">+25</span>
+</td></tr>
+<tr>
+<td><a href="https://stellaris.paradoxwikis.com/Anti-Piracy_Initiative" title="Anti-Piracy Initiative"><img alt="Resolution anti piracy initiative.png" src="images/Resolution_anti_piracy_initiative.png" decoding="async" loading="lazy" width="24" height="26" data-file-width="56" data-file-height="60" /></a> Anti-Piracy Initiative Custodian resolution</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span>
+</td></tr>
+<tr>
+<td><a href="Corporate_civics.html#Letters_of_Marque" title="Letters of Marque"><img alt="Letters of Marque" src="images/Civic_crusader_spirit_corporate.png" decoding="async" loading="lazy" width="24" height="22" data-file-width="58" data-file-height="54" /></a>&#32;Letters of Marque civic</td>
+<td><span class="effect-green" style="font-weight:bold;">+20</span>
+</td></tr>
+<tr>
+<td><a href="Corporate_civics.html#Letters_of_Marque" title="Letters of Marque"><img alt="Letters of Marque" src="images/Civic_crusader_spirit_corporate.png" decoding="async" loading="lazy" width="24" height="22" data-file-width="58" data-file-height="54" /></a> Privateer Acquisition Officer councilor, per level</td>
+<td><span class="effect-green" style="font-weight:bold;">+1</span>
+</td></tr>
+<tr>
+<th>Starbase sources</th>
+<th>Amount
+</th></tr>
+<tr>
+<td>Each starbase level above outpost</td>
+<td><span class="effect-green" style="font-weight:bold;">+8</span>
+</td></tr>
+<tr>
+<td>Each <a href="Gun_Battery.html" title="Gun Battery"><img alt="Sb gun battery.png" src="images/Sb_gun_battery.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Gun Battery or <a href="Missile_Battery.html" title="Missile Battery"><img alt="Sb missile battery.png" src="images/Sb_missile_battery.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Missile Battery module</td>
+<td><span class="effect-green" style="font-weight:bold;">+5</span>
+</td></tr>
+<tr>
+<td>Each <a href="Hangar_Bay.html" title="Hangar Bay"><img alt="Sb hangar bay.png" src="images/Sb_hangar_bay.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Hangar Bay module</td>
+<td><span class="effect-green" style="font-weight:bold;">+10</span>
+</td></tr></tbody></table>
+<p>If piracy is left unchecked in a system and rises too high, a pirate fleet may spawn and attack the system, representing a situation where the pirates have become so emboldened that they decide to directly attack a system to pillage it. The pirate fleet will attack stations, destroying them, as well as the starbase itself. If the pirates succeed in disabling the system's starbase, then the system will succumb to the pirate attack and be occupied by a pirate station.
+</p><p>The rewards from destroying a pirate station are randomly selected, with a weighting based on the number of years since game start. The table below shows the chance of each reward based on the current game year; all percentages are rounded to one decimal place and so may not sum to 100%
+</p>
+<table class="mildtable" style="text-align: center;">
+<tbody><tr>
+<th rowspan="2" colspan="2" style="text-align: right;" scope="col">Reward<br /><small>Doubled 100 years after game start</small>
+</th>
+<th scope="colgroup" colspan="8" style="text-align: center;">Years since game start
+</th></tr>
+<tr>
+<td>&lt;=80</td>
+<td>80-100</td>
+<td>101-120</td>
+<td>121-140</td>
+<td>141-160</td>
+<td>161-180</td>
+<td>181-200</td>
+<td>201+
+</td></tr>
+<tr>
+<th scope="row">Small
+</th>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;80<span style="visibility:hidden;color:transparent;">0</span>&#32;<a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;50<span style="visibility:hidden;color:transparent;">0</span>&#32;
+</td>
+<td>47.6%</td>
+<td>39.8%</td>
+<td>32.0%</td>
+<td>24.8%</td>
+<td>18.3%</td>
+<td>12.9%</td>
+<td><span style="visibility:hidden;color:transparent;">0</span>8.7%</td>
+<td><span style="visibility:hidden;color:transparent;">0</span>5.7%
+</td></tr>
+<tr>
+<th scope="row">Medium
+</th>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;180&#32;<a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;100&#32;
+</td>
+<td>33.3%</td>
+<td>34.8%</td>
+<td>35.1%</td>
+<td>33.9%</td>
+<td>31.3%</td>
+<td>27.6%</td>
+<td>23.4%</td>
+<td>19.0%
+</td></tr>
+<tr>
+<th scope="row">Large
+</th>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;300&#32;<a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;150&#32;
+</td>
+<td>14.3%</td>
+<td>17.9%</td>
+<td>21.6%</td>
+<td>25.1%</td>
+<td>27.8%</td>
+<td>29.5%</td>
+<td>29.9%</td>
+<td>29.1%
+</td></tr>
+<tr>
+<th scope="row">Huge
+</th>
+<td><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;600&#32;<a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;300&#32;
+</td>
+<td><span style="visibility:hidden;color:transparent;">0</span>4.8%</td>
+<td>7.5%</td>
+<td>11.3%</td>
+<td>16.3%</td>
+<td>22.6%</td>
+<td>30.0%</td>
+<td>38.0%</td>
+<td>46.3%
+</td></tr></tbody></table>
+<p>Pirate ships scale in class and number with the amount of pirated <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value, but their ship modules will never advance beyond tier 3. They use galleons instead of battleships.
+</p>
+<table class="mildtable" style="text-align: center;">
+<tbody><tr>
+<th><a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Trade value lost</th>
+<th>Corvettes</th>
+<th>Destroyers</th>
+<th>Cruisers</th>
+<th>Galleons
+</th></tr>
+<tr>
+<td>0-10</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0
+</td></tr>
+<tr>
+<td>10-40</td>
+<td>14</td>
+<td>0</td>
+<td>0</td>
+<td>0
+</td></tr>
+<tr>
+<td>40-50</td>
+<td>8</td>
+<td>4</td>
+<td>0</td>
+<td>0
+</td></tr>
+<tr>
+<td>50-60</td>
+<td>12</td>
+<td>6</td>
+<td>0</td>
+<td>0
+</td></tr>
+<tr>
+<td>60-80</td>
+<td>12</td>
+<td>8</td>
+<td>2</td>
+<td>0
+</td></tr>
+<tr>
+<td>80-90</td>
+<td>14</td>
+<td>8</td>
+<td>4</td>
+<td>0
+</td></tr>
+<tr>
+<td>90-100</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>1
+</td></tr>
+<tr>
+<td>100+</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>1
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Strategy">Strategy</span></h4>
+<p>Since the piracy suppression of individual ships stacks, when max piracy is high along a trade route, it is more effective to consolidate patrolling ships into one big fleet in order for fleet piracy suppression to approach or match max piracy and to reduce current piracy toward a minimal amount one system at a time, with the goal that current piracy in that system will not bounce back too much by the time the patrolling fleet returns; when max piracy is low, smaller patrols can easily suppress piracy. 
+</p><p>As building ships increases Power Projection to generate more influence, a counter-piracy fleet can be considered an investment to produce more influence. It will also generate a trickle of experience points for the fleet and its commander.
+</p><p>If the player has only used the trade hub module in a starbase for trade value collection in the early game in order to conserve the starbase's building slots, in the late game, as more building slots become available, it can be more efficient to construct a hyperlane registrar building and swap a trade hub module for a weapons module in order to extend piracy protection while maintaining collection coverage. This also coincides with higher amounts of trade value that requires piracy protection in the late game.
+</p><p>Since trade protection extends over bypasses, the player can prioritize weapon modules in starbases near bypasses in order to overlap trade protection coverage. This synergizes with the need for defense at or near bypasses. Alternatively, building fleet capacity modules can provide capacity for more patrol ships, as well as more power projection influence.
+</p><p>Another approach in the early to mid game is to build chains of starbases in adjacent systems toward more remote parts of your empire (outside the collection range of the capital), with a dedicated trade collecting station at the end of each such chain, and then to route the collected trade via these chains from starbase to starbase back to your capital, preventing piracy entirely. Civics, technologies and edicts that increase starbase capacity will enable longer chains to be built without incurring additional upkeep costs from being over capacity.
+</p><p>Connecting all trade hubs to the capital using <a href="Megastructures.html#Gateways" title="Megastructures">gateways</a> will eliminate piracy by removing unprotected systems from the trade routes. Additionally, as trade collection range extends through gateways, it is possible to reduce the total number of collection starbases.
+</p><p>Piracy can be deliberately invoked to harass other empires. If a trade route can be established to go through another empire – such as from a planet you own that is surrounded by their systems – piracy is still generated in the other empire's systems. This can cause pirate fleets to spawn in even gestalt empires which do not normally have trade, and can force an enemy to move their fleets to combat the piracy. Trade routes, and thus piracy, can be blocked by closed borders, however; trade never makes use of jump drive technology.
+</p>
+<h2><span class="mw-headline" id="The_market">The market</span></h2>
+<p>The market is available from the start to every empire and represents various actors within an empire with whom the empire itself can buy and sell resources. Resources are bought and sold for <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;energy credits, with their prices dependent on empire economy, supply and demand, and whether the galactic market is founded. The price can go as low as 20% and as high as 500% of the base price, further subject to market fee. Resources can be purchased either in bulk or by setting up a monthly trade and then setting a minimum sale/maximum purchase price. The market base prices are the following:
+</p>
+<table class="mildtable" style="text-align: right;">
+
+<tbody><tr>
+<th>Resource</th>
+<th><a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a> Price
+</th></tr>
+<tr>
+<td style="text-align: left;"><a href="Minerals.html" title="Minerals"><img alt="Minerals.png" src="images/Minerals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Minerals</td>
+<td>1
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Food.html" title="Food"><img alt="Food.png" src="images/Food.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Food</td>
+<td>1
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Consumer_goods.html" title="Consumer goods"><img alt="Consumer goods.png" src="images/Consumer_goods.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Consumer goods</td>
+<td>2
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Alloys.html" title="Alloys"><img alt="Alloys.png" src="images/Alloys.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Alloys</td>
+<td>4
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Exotic_gases.html" title="Exotic gases"><img alt="Exotic gases.png" src="images/Exotic_gases.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Exotic gases</td>
+<td>10
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Rare_crystals.html" title="Rare crystals"><img alt="Rare crystals.png" src="images/Rare_crystals.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Rare crystals</td>
+<td>10
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Volatile_motes.html" title="Volatile motes"><img alt="Volatile motes.png" src="images/Volatile_motes.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Volatile motes</td>
+<td>10
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Dark_Matter.html" title="Dark Matter"><img alt="Dark matter.png" src="images/Dark_matter.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Dark matter</td>
+<td>20
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Living_Metal.html" title="Living Metal"><img alt="Living Metal.png" src="images/Living_metal.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Living metal</td>
+<td>20
+</td></tr>
+<tr>
+<td style="text-align: left;"><a href="Zro.html" title="Zro"><img alt="Zro.png" src="images/Zro.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Zro</td>
+<td>20
+</td></tr></tbody></table>
+<p><br />
+<b>Internal Market Stable Monthly Trades</b>
+</p><p>The Internal market available at game start resets at a set rate, such that there is a stable trade point where prices reset to the base price by the end of the month. This allows a soft cap of monthly purchases or sales, beyond which every month costs will progressively rise or marginal value per sale decreases.
+</p>
+<table class="wikitable">
+<caption>
+</caption>
+<tbody><tr>
+<th>Maximum 'Automatic Trade' to Keep Internal Market at Base Price
+</th>
+<th>Buy
+</th>
+<th>Sell
+</th></tr>
+<tr>
+<td>Minerals / Food
+</td>
+<td>42
+</td>
+<td>64
+</td></tr>
+<tr>
+<td>Consumer Goods
+</td>
+<td>21
+</td>
+<td>32
+</td></tr>
+<tr>
+<td>Alloys
+</td>
+<td>10
+</td>
+<td>16
+</td></tr>
+<tr>
+<td>Strategic Resources (Crystals / Gas / Motes)
+</td>
+<td>4
+</td>
+<td>6
+</td></tr>
+<tr>
+<td>Living Metal / Zro
+</td>
+<td>2
+</td>
+<td>3
+</td></tr></tbody></table>
+<p><br />
+<b>Making Use of Monthly Trade Purchases</b>
+</p><p>Monthly trades allow energy to be converted into other resources in ways that can be more pop-efficient or strategically useful even at early-game 30% Market Fees.*
+</p><p><b>Minerals</b>: A mineral at 30% market fee costs 1.3 energy. A base 6-energy technician can thus buy 4.6 minerals, more than a base 4-mineral miner. This makes employing technicians preferable to employing miners up to the soft cap. Beyond the soft cap, miners will be needed for further construction and industrial districts.
+</p><p><b>Food</b>: While food and energy have the production base value of 6, and 6 food at 30% fee costs 7.8 energy, a Generator World designation giving +25% energy production will produce 7.5 energy. In the early game when you lack enough high-quality worlds to have one for every designation, purchasing food can free up that world for another designation use instead, increasing planetary use efficiency.
+</p><p><b>Energy</b>: Energy is a conversion resource to convert into other resources on the market. Due to paying the market fee both on converting a resource to energy and then from energy to other resources, it is almost* never more efficient to sell resources produced by a pop to buy resources compared to just employing the same pop in an energy job, or re-allocating pops between jobs.
+</p><p><b>Consumer Goods</b>: Consumer Goods have a base 2 market value even they are converted from 1-value minerals at a base 1-to-1 rate. While it is more pop-efficient to to use a pop to refine minerals into CG than to spend energy buying CG, if you lack the mineral surplus then consumer good purchases can be used to temporarily build stockpiles needed for colony ships or the Distribute Luxury Goods decision
+</p><p><b>Alloys</b>: Alloys are less pop-efficient than Consumer Good purchases, but purchases can be used to meet early alloy needs to maintain early expansion when you still lack the mineral surpluses to afford industrial districts. Alloy purchases can serve as a way to convert stockpiled resources into an emergency fleet buildup when faced with an early threat, such as a neighboring genocidal empire.
+</p><p><b>Strategic Resources</b>: Once strategic resources are unlocked to the market, strategic resource edicts are also unlocked. Strategic resource edicts allow significant military benefits, and so monthly purchases during a war can allow sustained use of these powerful boosts.
+</p><p><b>Zro</b>: Zro is almost never produced or needed at scale before the galactic market. Instead, selling Zro onto the market is a major early game advantage of the Zroni Precursors, which provide Zro deposits on Zroni colonies. Selling 3 Zro for 51 or more energy a month is a major early game economic boost that can fund other purchases
+</p><p>*Angler jobs from the Anglers civic are a significant exception, as their job produces base 8 food and 2 Trade Value. At a 30% market fee, 8 food is sold for 5.6 energy, which with the trade value is more profitable. At 20% Market Fee, such as from the Mercantile tradition for a trade build, the food alone will sell for 6.4 energy, more than a technician of equivalent bonuses.
+</p>
+<h3><span class="mw-headline" id="Galactic_market">Galactic market</span></h3>
+<p>The galactic market is created by via the <a href="https://stellaris.paradoxwikis.com/File%3AGalactic_focus_galactic_market.png" class="image"><img alt="Galactic focus galactic market.png" src="images/Galactic_focus_galactic_market.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a> Form the Galactic Market galactic focus in the Galactic Community. Once the focus is set the Galactic Market Nomination will begin. For 5 years, eligible empires may boost their chances of being selected as the market nexus by nominating one of their planets and further by boosting their nomination bid.
+</p><p>The host for the galactic market is chosen through two random rolls. The first happens when the <a href="https://stellaris.paradoxwikis.com/File%3ADecision_default.png" class="image"><img alt="Decision default.png" src="images/Decision_default.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a> 'Galactic Market Hub Nomination' decision is enacted on a planet (at a cost of <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-red" style="font-weight:bold;">1000</span>&#32;energy and <a href="Influence.html" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;<span class="effect-red" style="font-weight:bold;">150</span>&#32;influence). This randomly assigns a rating ranging from <span class="effect-red" style="font-weight:bold;">weak</span> to <span class="effect-green" style="font-weight:bold;">strong</span> to the planet according to the weightings listed below, under <i>Nomination rating chance</i>. Thus, improving trade value of the planet later on will not retroactively improve the rating of the planet, however the nomination can be revoked (for <a href="Influence.html" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;<span class="effect-red" style="font-weight:bold;">10</span>&#32;influence) then reenacted to reroll the weighting. Additionally, this rating can be improved to the next higher rating by passing the <a href="https://stellaris.paradoxwikis.com/File%3ADecision_default.png" class="image"><img alt="Decision default.png" src="images/Decision_default.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a> ‘Boost Nomination Bid’ decision up to two times (costing <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;<span class="effect-red" style="font-weight:bold;">2000</span>&#32;energy and <a href="Influence.html" title="Influence"><img alt="Influence.png" src="images/Influence.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="24" data-file-height="24" /></a>&#32;<span class="effect-red" style="font-weight:bold;">300</span>&#32;influence each time). Each empire can only nominate a single planet.
+</p><p>Once 5 years have passed, the second random roll happens, determining the planet to host the galactic market. In this roll, each planet is weighted according to the rating of the owning empire's nominated planet, if any, and the total trade value produced in the system, using this calculation:
+</p>
+<ol><li>Start with the empire's market nomination rating as a number from 1 (None) to 6 (Perfect).</li>
+<li>Multiply by the total trade value produced in the same system as the planet. This includes the planet itself, all other colonies in the same system, and any trade value deposits in the same system. It does not include trade gathered from other systems by the starbase.</li>
+<li>If the specific planet is not nominated, divide by 10.</li>
+<li>Raise to the exponent of 1.5.</li></ol>
+<p>For example, a planet with a Strong nomination that produces 90 trade value, with another planet in the system that produces 10 trade value, would have a winning weight of (4 * 100)<sup>1.5</sup> = 8000. The other planet in the same system would have a winning weight of (4 * 100 / 10)<sup>1.5</sup> = 252.98. A planet in another system with 10 trade value, owned by the same empire, would have a winning weight of (4 * 10 / 10)<sup>1.5</sup> = 8.
+</p><p>Winning weight is effectively the chance of each planet succeeding in the bid. Your chance of winning is calculated using <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {YourWinningWeight \over AllWinningWeights}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>Y</mi>
+              <mi>o</mi>
+              <mi>u</mi>
+              <mi>r</mi>
+              <mi>W</mi>
+              <mi>i</mi>
+              <mi>n</mi>
+              <mi>n</mi>
+              <mi>i</mi>
+              <mi>n</mi>
+              <mi>g</mi>
+              <mi>W</mi>
+              <mi>e</mi>
+              <mi>i</mi>
+              <mi>g</mi>
+              <mi>h</mi>
+              <mi>t</mi>
+            </mrow>
+            <mrow>
+              <mi>A</mi>
+              <mi>l</mi>
+              <mi>l</mi>
+              <mi>W</mi>
+              <mi>i</mi>
+              <mi>n</mi>
+              <mi>n</mi>
+              <mi>i</mi>
+              <mi>n</mi>
+              <mi>g</mi>
+              <mi>W</mi>
+              <mi>e</mi>
+              <mi>i</mi>
+              <mi>g</mi>
+              <mi>h</mi>
+              <mi>t</mi>
+              <mi>s</mi>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {YourWinningWeight \over AllWinningWeights}}</annotation>
+  </semantics>
+</math></span><img src="https://en.wikipedia.org/api/rest_v1/media/math/render/svg/da801b2c1f2a551b1fe4eecce1dbe17d93dd531b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:23.071ex; height:6.009ex;" alt="{\displaystyle {YourWinningWeight \over AllWinningWeights}}"/></span>
+</p><p>The lottery weights are:
+</p>
+<table class="mildtable plainlist">
+
+<tbody><tr>
+<th>Rating</th>
+<th>Nomination rating chance</th>
+<th>Winning weight multiplier</th>
+<th>Requirements (any of)
+</th></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">None</span></td>
+<td>–</td>
+<td>x1</td>
+<td>No nomination, all eligible empires
+</td></tr>
+<tr>
+<td><span class="effect-red" style="font-weight:bold;">Weak</span>
+</td>
+<td>
+<ul><li>9</li>
+<li>×2 if <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value below 50</li>
+<li>×0.5 if <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value above 80</li>
+<li>×0.5 if <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value above 120</li>
+<li>×0.33 if <a href="Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Corporate authority</li>
+<li>×1.5 if <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness</li></ul>
+</td>
+<td>x2</td>
+<td>Planet nominated
+</td></tr>
+<tr>
+<td><span class="effect-yellow" style="font-weight:bold;">Adequate</span>
+</td>
+<td>6
+</td>
+<td>x3</td>
+<td>Planet nominated<br /><span class="effect-red" style="font-weight:bold;">Weak</span> rating and boosted once
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">Strong</span>
+</td>
+<td>
+<ul><li>1</li>
+<li>×0.5 if <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value below 50</li>
+<li>×1.5 if <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value above 80</li>
+<li>×2 if <a href="Trade.html" title="Trade"><img alt="Trade value.png" src="images/Trade.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;trade value above 120</li>
+<li>x9 if <a href="Government.html#Corporate" title="Corporate"><img alt="Corporate" src="images/Auth_corporate.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="44" data-file-height="44" /></a>&#32;Corporate authority</li>
+<li>x0.75 if <a href="Gestalt_Consciousness.html" title="Gestalt Consciousness"><img alt="Gestalt consciousness.png" src="images/Gestalt_consciousness.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;Gestalt Consciousness</li>
+<li>x200 if planet is <a href="https://stellaris.paradoxwikis.com/File%3APlanet_city.png" class="image"><img alt="Planet city.png" src="images/Planet_city.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="38" data-file-height="38" /></a> Ecumenopolis</li></ul>
+</td>
+<td>x4</td>
+<td>Planet nominated<br /><span class="effect-yellow" style="font-weight:bold;">Adequate</span> rating and boosted once<br /><span class="effect-red" style="font-weight:bold;">Weak</span> rating and boosted twice
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">Exceptional</span></td>
+<td>–</td>
+<td>x5</td>
+<td><span class="effect-green" style="font-weight:bold;">Strong</span> rating and boosted once<br /><span class="effect-yellow" style="font-weight:bold;">Adequate</span> rating and boosted twice
+</td></tr>
+<tr>
+<td><span class="effect-green" style="font-weight:bold;">Perfect</span></td>
+<td>–</td>
+<td>x6</td>
+<td><span class="effect-green" style="font-weight:bold;">Strong</span> rating and boosted twice
+</td></tr></tbody></table>
+<p>Empires may only access and trade on the galactic market if they are a member of the <a href="Galactic_Community.html" title="Galactic Community"><img alt="Diplomacy restore community.png" src="images/Diplomacy_restore_community.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Galactic Community. The owner of the galactic market system enjoys a reduction in its market fee. Supply and demand on the galactic market affects the prices for every empire, and large shifts in prices will affect the economy of every empire relying on importing or exporting a resource. <a href="Strategic_resources.html" title="Strategic resources"><img alt="Menu icon strategic resource.png" src="images/Menu_icon_strategic_resource.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="36" data-file-height="36" /></a>&#32;Strategic resources will not be available until at least one empire has them in stock.
+</p><p>If the empire hosting the galactic market leaves the galactic community the nomination process will start again to choose a new host. If the hosting empire loses ownership of the system with the galactic market, the market system will be relocated if that system has no owner or is now held by a <a href="Civics.html#Fanatic_Purifiers" title="Fanatic Purifiers"><img alt="Fanatic Purifiers" src="images/Civic_fanatic_purifiers.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Hive_mind_civics.html#Devouring_Swarm" title="Devouring Swarm"><img alt="Devouring Swarm" src="images/Civic_devouring_swarm.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a><a href="Machine_intelligence_civics.html#Determined_Exterminator" title="Determined Exterminator"><img alt="Determined Exterminator" src="images/Civic_machine_terminator.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a>&#32;genocidal empire or another member of the galactic community<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>, with the galactic market station relocating to a weighted random galactic community member's capital system.
+</p>
+<h4><span class="mw-headline" id="Slave_market">Slave market</span></h4>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <a href="MegaCorp.html" title="MegaCorp"><img alt="MegaCorp.png" src="images/MegaCorp.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="45" data-file-height="45" /></a></td>
+<td class="mbox-text" style="font-size:85%">Available only with the <a href="MegaCorp.html" title="MegaCorp">MegaCorp</a> DLC enabled.</td>
+</tr>
+</tbody></table>
+<p>Access to the slave market is granted once the galactic market is founded. Only empires that also have access to the galactic market will be able to use the slave market. Only pops that are enslaved are able to be sold on the slave market, with a base price of 1000 <a href="Energy.html" title="Energy"><img alt="Energy Credits.png" src="images/Energy.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="32" data-file-height="32" /></a>&#32;Energy Credits, raised or lowered by species traits. <a href="Mechanical.html" title="Mechanical"><img alt="Mechanical" src="images/Trait_mechanical.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="29" data-file-height="29" /></a>&#32;Mechanical pops can be bought and sold on the market if enslaved or non-sentient. Empires will be notified if there are slaves of their primary species put on sale.
+</p><p>Empires that have the slavery policy set to <i>Outlawed</i> will set free any pop bought on the slave market, but the pop price will be doubled. This can be useful for diversifying the empire or expanding colonial holdings by purchasing species with different habitability preferences, provided that a compatible planet or habitat is available for the purchased pop.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style="">
+<tbody><tr>
+<td class="mbox-image"> 
+  <a href="Federations_(DLC).html" title="Federations"><img alt="Federations" src="images/Federations.png" decoding="async" loading="lazy" width="28" height="28" data-file-width="45" data-file-height="45" /></a></td>
+<td class="mbox-text" style="font-size:85%">Available only with the <a href="Federations_(DLC).html" title="Federations (DLC)">Federations</a> DLC enabled.</td>
+</tr>
+</tbody></table>
+<p>The slave market can be closed first for organic species and then for all species via Galactic Community resolutions.
+</p>
+<h3><span class="mw-headline" id="Market_fee">Market fee</span></h3>
+<p>All sales or purchases on the internal and galactic market have a market fee added to them. The market fee starts at <b>30%</b> and cannot go below <span class="effect-green" style="font-weight:bold;">5%</span>. It can be altered by the following:
+</p>
+<ul><li><a href="Starbase.html#Trader_Proxy_Office" title="Trader Proxy Office"><img alt="Trader Proxy Office" src="images/Sb_offworld_trading_company.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="58" data-file-height="58" /></a> Trader Proxy Office starbase buildings: <span class="effect-green" style="font-weight:bold;">−5%</span> each</li>
+<li><a href="Traditions.html#Mercantile" title="Insider Trading"><img alt="Insider Trading" src="images/Tradition_mercantile_insider_trading.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Insider Trading tradition: <span class="effect-green" style="font-weight:bold;">−10%</span></li>
+<li><a href="Traditions.html#Versatility" title="Adaptive Programming"><img alt="Adaptive Programming" src="images/Tradition_versatility_adaptive_programming.png" decoding="async" loading="lazy" width="24" height="24" data-file-width="45" data-file-height="45" /></a>&#32;Adaptive Programming tradition: <span class="effect-green" style="font-weight:bold;">−10%</span></li>
+<li>Hosting the Galactic Market: <span class="effect-green" style="font-weight:bold;">−10%</span></li>
+<li>The <i>Economic Sanctions</i> Galactic Community resolution will increase the market fee by <span class="effect-red" style="font-weight:bold;">+10%</span> per level of the sanctions (max <span class="effect-red" style="font-weight:bold;">+30%</span>).</li></ul>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">This appears to be a bug, where the trigger should be <i>not a member of the galactic community</i></span>
+</li>
+</ol></div>
+<div style="clear:both;"></div>
+<div style="padding: 2px; border: 1px solid #aaa; text-align: center; border-collapse: collapse; font-size: 100%;">
+<div style="height: 1.6em; font-weight: bold; font-size: 105%; background-color: #efefef;"><b>Game concepts</b></div>
+<div style="font-size:0.9em;">
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Exploration
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Exploration.html" title="Exploration">Exploration</a> • <a href="FTL.html" class="mw-redirect" title="FTL">FTL</a> • <a href="Unique_systems.html" title="Unique systems">Unique systems</a> • <a href="L-Cluster.html" title="L-Cluster">L-Cluster</a> • <a href="Pre-FTL_species.html" title="Pre-FTL species">Pre-FTL species</a> • <a href="Fallen_empire.html" title="Fallen empire">Fallen empire</a> • <a href="Spaceborne_aliens.html" title="Spaceborne aliens">Spaceborne aliens</a> • <a href="Enclaves.html" title="Enclaves">Enclaves</a>  • <a href="Guardians.html" title="Guardians">Guardians</a> • <a href="Marauders.html" title="Marauders">Marauders</a> • <a href="Caravaneers.html" title="Caravaneers">Caravaneers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Celestial bodies
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Celestial_body.html" class="mw-redirect" title="Celestial body">Celestial body</a> • <a href="Colonization.html" title="Colonization">Colonization</a> • <a href="Planetary_features.html" title="Planetary features">Planetary features</a> • <a href="Planet_modifiers.html" title="Planet modifiers">Planet modifiers</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Discovery
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Discovery.html" title="Discovery">Discovery</a> • <a href="Anomaly.html" title="Anomaly">Anomaly</a> • <a href="Archaeological_site.html" title="Archaeological site">Archaeological site</a> • <a href="Astral_rift.html" title="Astral rift">Astral rift</a> • <a href="Relics.html" title="Relics">Relics</a> • <a href="Collection.html" title="Collection">Collection</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Species
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Species.html" title="Species">Species</a> • <a href="Species_traits.html" title="Species traits">Pop modification</a> • <a href="Biological_traits.html" title="Biological traits">Biological traits</a> • <a href="Machine_traits.html" title="Machine traits">Machine traits</a> • <a href="Population.html" title="Population">Population</a> • <a href="Species_rights.html" title="Species rights">Species rights</a> • <a href="Ethics.html" title="Ethics">Ethics</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Leaders
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Leader.html" class="mw-redirect" title="Leader">Leader</a> • <a href="Common_leader_traits.html" title="Common leader traits">Common leader traits</a> • <a href="Commander_traits.html" title="Commander traits">Commander traits</a> • <a href="Official_traits.html" title="Official traits">Official traits</a> • <a href="Scientist_traits.html" title="Scientist traits">Scientist traits</a> • <a href="Paragons.html" title="Paragons">Paragons</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Governance
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Empire.html" title="Empire">Empire</a> • <a href="Origin.html" title="Origin">Origin</a> • <a href="Government.html" title="Government">Government</a> • <a href="Civics.html" title="Civics">Civics</a> • <a href="Council.html" title="Council">Council</a> • <a href="Policies.html" title="Policies">Policies</a> • <a href="Edicts.html" title="Edicts">Edicts</a> • <a href="Factions.html" title="Factions">Factions</a> • <a href="Traditions.html" title="Traditions">Traditions</a> • <a href="Ascension_perks.html" title="Ascension perks">Ascension perks</a> • <a href="Ambition.html" title="Ambition">Ambition</a> • <a href="Situations.html" title="Situations">Situations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Economy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Resources.html" title="Resources">Resources</a> • <a href="Planetary_management.html" title="Planetary management">Planetary management</a> • <a href="Districts.html" title="Districts">Districts</a>  • <a href="Jobs.html" title="Jobs">Jobs</a> • <a href="Designation.html" title="Designation">Designation</a> • <a href="Trade.html" class="mw-redirect" title="Trade">Trade</a> • <a href="Megastructures.html" title="Megastructures">Megastructures</a> • <a href="Waystation.html" title="Waystation">Waystation</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Buildings
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Planet_capital.html" title="Planet capital">Planet capital</a> • <a href="Buildings.html" title="Buildings">Common buildings</a> • <a href="Planet_unique_buildings.html" title="Planet unique buildings">Planet unique</a> • <a href="Empire_unique_buildings.html" title="Empire unique buildings">Empire unique</a> • <a href="Holdings.html" title="Holdings">Holdings</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Ships
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Ship.html" title="Ship">Ship</a> • <a href="Arkship.html" title="Arkship">Arkship</a> • <a href="Ship_designer.html" title="Ship designer">Ship designer</a> • <a href="Core_components.html" title="Core components">Core components</a> • <a href="Weapon_components.html" title="Weapon components">Weapon components</a> • <a href="Utility_components.html" title="Utility components">Utility components</a> • <a href="Mutations.html" title="Mutations">Mutations</a> • <a href="Offensive_mutations.html" title="Offensive mutations">Offensive mutations</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Technology
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Technology.html" title="Technology">Technology</a> • <a href="Physics_research.html" title="Physics research">Physics research</a> • <a href="Society_research.html" title="Society research">Society research</a> • <a href="Engineering_research.html" title="Engineering research">Engineering research</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Diplomacy
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Diplomacy.html" title="Diplomacy">Diplomacy</a> • <a href="Relations.html" title="Relations">Relations</a> • <a href="Galactic_community.html" class="mw-redirect" title="Galactic community">Galactic community</a> • <a href="Federation.html" title="Federation">Federations</a> • <a href="Subject_empire.html" title="Subject empire">Subject empires</a> • <a href="Intelligence.html" title="Intelligence">Intelligence</a> • <a href="Contracts.html" title="Contracts">Contracts</a> • <a href="AI_personalities.html" title="AI personalities">AI personalities</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Warfare
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Warfare.html" title="Warfare">Warfare</a> • <a href="Space_warfare.html" title="Space warfare">Space warfare</a> • <a href="Land_warfare.html" title="Land warfare">Land warfare</a> • <a href="Starbase.html" title="Starbase">Starbase</a> • <a href="Crisis.html" title="Crisis">Crisis</a>
+</td></tr></tbody></table>
+<table style="font-size: 11px; margin: 0px 0px -2px -2px; width: 100%;">
+
+<tbody><tr>
+<td style="width: 210px; background: #EDEDED; font-weight: bold; text-align: right; padding: 2px 5px;">Others
+</td>
+<td style="text-align: left; padding: 2px 5px;"><a href="Events.html" title="Events">Events</a> • <a href="The_Shroud.html" title="The Shroud">The Shroud</a> • <a href="Preset_empires.html" title="Preset empires">Preset empires</a> • <a href="AI_players.html" title="AI players">AI players</a> • <a href="Stat_modifiers.html" title="Stat modifiers">Stat modifiers</a> • <a href="Console_commands.html" title="Console commands">Console commands</a> • <a href="Easter_eggs.html" title="Easter eggs">Easter eggs</a>
+</td></tr></tbody></table>
+</div></div>
+<!-- 
+NewPP limit report
+Cached time: 20260707235011
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.298 seconds
+Real time usage: 0.541 seconds
+Preprocessor visited node count: 12372/1000000
+Post‐expand include size: 65463/2097152 bytes
+Template argument size: 16035/2097152 bytes
+Highest expansion depth: 18/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 418/5000000 bytes
+Lua time usage: 0.010/7 seconds
+Lua virtual size: 4902912/52428800 bytes
+Lua estimated memory usage: 0 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  249.067      1 -total
+ 69.97%  174.280     77 Template:Iconify
+ 66.48%  165.574     92 Template:Icon
+ 32.09%   79.919     13 Template:Icon/e
+ 30.92%   77.018      2 Template:Trait
+  5.17%   12.883     12 Template:Icon/m
+  5.07%   12.618      2 Template:Expansion
+  4.33%   10.780     41 Template:Green
+  3.95%    9.840      2 Template:Ambox
+  3.64%    9.074      1 Template:ConceptsNavbox
+-->
+
+<!-- Saved in parser cache with key wiki_stellaris-mwstella_:pcache:idhash:9195-0!canonical and timestamp 20260707235010 and revision id 115656.
+ -->
+</div>
+      </div>
+    </div>
+  </main>
+  <footer id="mw-footer"><p>Static mirror of <a href="https://stellaris.paradoxwikis.com/">stellaris.paradoxwikis.com</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></footer>
+</div>
+</body>
+</html>
